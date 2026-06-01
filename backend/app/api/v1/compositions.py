@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.deps import get_current_active_user
+from app.core.pagination import PaginationParams
 from app.db import get_db
 from app.models.skill import Skill, SkillComposition, SkillCompositionItem, User
 from app.schemas.skill import (
@@ -25,8 +26,7 @@ router = APIRouter()
 @router.get("", response_model=CompositionListResponse)
 async def list_compositions(
     search: Optional[str] = Query(None, description="搜索关键词"),
-    page: int = Query(1, ge=1),
-    page_size: int = Query(20, ge=1, le=100),
+    pagination: PaginationParams = Depends(),
     db: AsyncSession = Depends(get_db),
 ) -> CompositionListResponse:
     query = select(SkillComposition).where(SkillComposition.is_public == True)
@@ -40,12 +40,12 @@ async def list_compositions(
     count_query = select(func.count()).select_from(query.subquery())
     total = (await db.execute(count_query)).scalar() or 0
 
-    offset = (page - 1) * page_size
+    offset = (pagination.page - 1) * pagination.page_size
     query = (
         query.options(selectinload(SkillComposition.owner))
         .order_by(SkillComposition.updated_at.desc())
         .offset(offset)
-        .limit(page_size)
+        .limit(pagination.page_size)
     )
 
     result = await db.execute(query)
@@ -54,8 +54,8 @@ async def list_compositions(
     return CompositionListResponse(
         items=[CompositionResponse.model_validate(c) for c in compositions],
         total=total,
-        page=page,
-        page_size=page_size,
+        page=pagination.page,
+        page_size=pagination.page_size,
     )
 
 

@@ -13,7 +13,8 @@ from opentelemetry.sdk.trace import TracerProvider
 from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.core.logging import get_logger
-from app.db.session import engine
+from app.core.seed import seed_initial_data
+from app.db.session import async_session_factory, engine
 from app.middleware.error_handler import ErrorHandlerMiddleware
 from app.middleware.rate_limit import RateLimitMiddleware
 
@@ -43,6 +44,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     except Exception as e:
         logger.error("Failed to connect to database", error=str(e))
         raise
+    try:
+        async with async_session_factory() as db:
+            await seed_initial_data(db)
+    except Exception as e:
+        logger.error("Failed to seed initial data, continuing startup", error=str(e))
     yield
     logger.info("Shutting down application")
     await engine.dispose()

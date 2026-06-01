@@ -18,6 +18,7 @@ export function useSkills(params?: Partial<SearchParams>) {
   return useQuery({
     queryKey: ["skills", params],
     queryFn: () => api.skills.list(params),
+    placeholderData: (previousData) => previousData,
     staleTime: 2 * 60 * 1000,
   });
 }
@@ -41,6 +42,7 @@ export function useSkill(slug: string) {
     queryKey: ["skill", slug],
     queryFn: () => api.skills.get(slug),
     enabled: !!slug,
+    placeholderData: (previousData) => previousData,
     staleTime: 3 * 60 * 1000,
   });
 }
@@ -66,6 +68,7 @@ export function useSearchSkills(params: SearchParams) {
     queryKey: ["skills", "search", params],
     queryFn: () => api.skills.search(params),
     enabled: !!params.q && params.q.length >= 2,
+    placeholderData: (previousData) => previousData,
     staleTime: 1 * 60 * 1000,
   });
 }
@@ -199,6 +202,7 @@ export function useCategoryTree() {
   return useQuery({
     queryKey: ["categories", "tree"],
     queryFn: () => api.categories.tree(),
+    placeholderData: (previousData) => previousData,
     staleTime: 10 * 60 * 1000,
   });
 }
@@ -208,6 +212,7 @@ export function useCategory(slug: string) {
     queryKey: ["category", slug],
     queryFn: () => api.categories.get(slug),
     enabled: !!slug,
+    placeholderData: (previousData) => previousData,
     staleTime: 5 * 60 * 1000,
   });
 }
@@ -217,6 +222,7 @@ export function useCategorySkills(slug: string, params?: Partial<SearchParams>) 
     queryKey: ["category", slug, "skills", params],
     queryFn: () => api.categories.getSkills(slug, params),
     enabled: !!slug,
+    placeholderData: (previousData) => previousData,
   });
 }
 
@@ -224,6 +230,7 @@ export function useCompositions(params?: Partial<SearchParams>) {
   return useQuery({
     queryKey: ["compositions", params],
     queryFn: () => api.compositions.list(params),
+    placeholderData: (previousData) => previousData,
     staleTime: 2 * 60 * 1000,
   });
 }

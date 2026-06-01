@@ -48,3 +48,5 @@ coverage/
 # Misc
 *.log
 .cache/
+*.pyc
+__pycache__/

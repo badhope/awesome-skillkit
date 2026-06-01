@@ -39,6 +39,7 @@ import {
 import { cn, getInitials } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { isAuthenticated, getStoredUser, logout } from "@/lib/auth";
+import { OfflineBanner } from "@/components/OfflineBanner";
 import type { User } from "@/types";
 
 interface NavLink {
@@ -151,14 +152,16 @@ export function Navbar() {
   const moreLinks = navLinks.slice(VISIBLE_LINKS_DESKTOP);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 border-b shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
-      )}
-    >
+    <>
+      <OfflineBanner />
+      <header
+        className={cn(
+          "sticky top-0 z-50 w-full transition-all duration-300",
+          scrolled
+            ? "bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 border-b shadow-sm"
+            : "bg-background/80 backdrop-blur-sm"
+        )}
+      >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6">
         <div className="flex items-center gap-2 sm:gap-6">
           <Link href="/" className="flex items-center gap-2 group shrink-0">
@@ -584,6 +587,7 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </header>
+      </header>
+    </>
   );
 }

@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.deps import get_current_active_user, get_optional_user
+from app.core.pagination import PaginationParams
 from app.db import get_db
 from app.models.skill import (
     Category,
@@ -55,8 +56,7 @@ async def list_skills(
     status: Optional[str] = Query("published", description="状态"),
     sort_by: str = Query("updated_at", description="排序字段"),
     sort_order: str = Query("desc", description="排序方向"),
-    page: int = Query(1, ge=1),
-    page_size: int = Query(20, ge=1, le=100),
+    pagination: PaginationParams = Depends(),
     db: AsyncSession = Depends(get_db),
 ) -> SkillListResponse:
     query = select(Skill)
@@ -78,7 +78,7 @@ async def list_skills(
         )
 
     sort_column = getattr(Skill, sort_by, Skill.updated_at)
-    if sort_order == "asc":
+    if pagination.order == "asc" or sort_order == "asc":
         query = query.order_by(sort_column.asc())
     else:
         query = query.order_by(sort_column.desc())
@@ -86,12 +86,12 @@ async def list_skills(
     count_query = select(func.count()).select_from(query.subquery())
     total = (await db.execute(count_query)).scalar() or 0
 
-    offset = (page - 1) * page_size
+    offset = (pagination.page - 1) * pagination.page_size
     query = query.options(
         selectinload(Skill.category),
         selectinload(Skill.tags),
         selectinload(Skill.author),
-    ).offset(offset).limit(page_size)
+    ).offset(offset).limit(pagination.page_size)
 
     result = await db.execute(query)
     skills = result.scalars().all()
@@ -99,8 +99,8 @@ async def list_skills(
     return SkillListResponse(
         items=[SkillResponse.model_validate(s) for s in skills],
         total=total,
-        page=page,
-        page_size=page_size,
+        page=pagination.page,
+        page_size=pagination.page_size,
     )
 
 

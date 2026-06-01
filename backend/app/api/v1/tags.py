@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.deps import get_current_active_user, get_current_superuser
+from app.core.pagination import PaginationParams
 from app.db import get_db
 from app.models.skill import Skill, Tag
 from app.schemas.skill import (
@@ -23,8 +24,7 @@ router = APIRouter()
 async def list_tags(
     search: Optional[str] = Query(None, description="搜索标签名"),
     sort_by: str = Query("usage_count", description="排序字段"),
-    page: int = Query(1, ge=1),
-    page_size: int = Query(50, ge=1, le=200),
+    pagination: PaginationParams = Depends(),
     db: AsyncSession = Depends(get_db),
 ) -> TagListResponse:
     query = select(Tag)
@@ -38,8 +38,8 @@ async def list_tags(
     count_query = select(func.count()).select_from(query.subquery())
     total = (await db.execute(count_query)).scalar() or 0
 
-    offset = (page - 1) * page_size
-    query = query.offset(offset).limit(page_size)
+    offset = (pagination.page - 1) * pagination.page_size
+    query = query.offset(offset).limit(pagination.page_size)
 
     result = await db.execute(query)
     tags = result.scalars().all()

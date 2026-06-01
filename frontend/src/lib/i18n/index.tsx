@@ -275,6 +275,23 @@ export interface TranslationKeys {
     siteName: string;
     siteDescription: string;
   };
+  errors: {
+    boundaryTitle: string;
+    boundaryDescription: string;
+    errorDetails: string;
+    tryAgain: string;
+    backToHome: string;
+    supportHint: string;
+    notFoundTitle: string;
+    notFoundDescription: string;
+    notFoundHint: string;
+    goHome: string;
+    browseSkills: string;
+    loadingTitle: string;
+    loadingDescription: string;
+    offlineTitle: string;
+    offlineDescription: string;
+  };
 }
 
 const translations: Record<Locale, TranslationKeys> = {
@@ -555,6 +572,24 @@ const translations: Record<Locale, TranslationKeys> = {
       siteDescription:
         "Discover, share, and compose AI skills. A comprehensive library of intelligent capabilities for modern applications.",
     },
+    errors: {
+      boundaryTitle: "Something went wrong",
+      boundaryDescription:
+        "We encountered an unexpected issue. Please try again, or head back to the homepage.",
+      errorDetails: "Error details",
+      tryAgain: "Try again",
+      backToHome: "Back to home",
+      supportHint: "If the problem persists, please contact support.",
+      notFoundTitle: "Page not found",
+      notFoundDescription: "Sorry, the page you are looking for does not exist or has been moved.",
+      notFoundHint: "Check the URL, or use the button below to head back home.",
+      goHome: "Go home",
+      browseSkills: "Browse skills",
+      loadingTitle: "Loading…",
+      loadingDescription: "Preparing the best experience for you.",
+      offlineTitle: "You are offline",
+      offlineDescription: "Please check your internet connection. Some features may be unavailable.",
+    },
   },
 
   zh: {
@@ -832,6 +867,23 @@ const translations: Record<Locale, TranslationKeys> = {
     meta: {
       siteName: "AI技能库",
       siteDescription: "发现、分享和组合AI技能。为现代应用提供全面的智能能力库。",
+    },
+    errors: {
+      boundaryTitle: "出现了一些问题",
+      boundaryDescription: "应用发生了意外错误,请重试或返回首页。",
+      errorDetails: "错误详情",
+      tryAgain: "重试",
+      backToHome: "返回首页",
+      supportHint: "如果问题持续出现,请联系客服。",
+      notFoundTitle: "页面未找到",
+      notFoundDescription: "抱歉,您访问的页面不存在或已被移动。",
+      notFoundHint: "请检查链接是否正确,或点击下方按钮返回首页。",
+      goHome: "返回首页",
+      browseSkills: "浏览技能",
+      loadingTitle: "加载中…",
+      loadingDescription: "正在为您准备最佳体验。",
+      offlineTitle: "您已离线",
+      offlineDescription: "请检查您的网络连接,部分功能可能不可用。",
     },
   },
 };
