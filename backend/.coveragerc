@@ -1,0 +1,27 @@
+[run]
+source = app
+omit =
+    */tests/*
+    */migrations/*
+    */__pycache__/*
+    .venv/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self.debug:
+    if settings.DEBUG
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    @abstractmethod
+    @override
+    pass
+
+show_missing = True
+skip_covered = False
+precision = 2
+sort = Cover

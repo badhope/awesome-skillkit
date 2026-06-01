@@ -1,0 +1,265 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "20"
+  POETRY_VERSION: "1.8.3"
+
+jobs:
+  lint-backend:
+    name: Lint Backend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        run: pip install poetry==${{ env.POETRY_VERSION }}
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Lint with ruff
+        run: poetry run ruff check app/ tests/
+
+      - name: Type check with mypy
+        run: poetry run mypy app/ --ignore-missing-imports
+
+  lint-frontend:
+    name: Lint Frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint with ESLint
+        run: npx eslint src/ --ext .ts,.tsx,.js,.jsx
+
+      - name: Type check with tsc
+        run: npx tsc --noEmit
+
+  lint-sdk-python:
+    name: Lint Python SDK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./sdk/python
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        run: pip install poetry==${{ env.POETRY_VERSION }}
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Lint with ruff
+        run: poetry run ruff check skill_sdk/
+
+      - name: Type check with mypy
+        run: poetry run mypy skill_sdk/ --ignore-missing-imports
+
+  lint-sdk-typescript:
+    name: Lint TypeScript SDK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./sdk/typescript
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: sdk/typescript/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check with tsc
+        run: npx tsc --noEmit
+
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    needs: [lint-backend]
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: skill_test
+          POSTGRES_PASSWORD: skill_test
+          POSTGRES_DB: skill_test_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        run: pip install poetry==${{ env.POETRY_VERSION }}
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Run tests
+        run: |
+          poetry run pytest tests/ \
+            --cov=app \
+            --cov-report=xml \
+            --cov-report=term \
+            -v
+        env:
+          DATABASE_URL: postgresql+asyncpg://skill_test:skill_test@localhost:5432/skill_test_db
+          REDIS_URL: redis://localhost:6379/0
+          JWT_SECRET_KEY: test-secret-key
+          DEBUG: "true"
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./backend/coverage.xml
+          flags: backend
+        continue-on-error: true
+
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    needs: [lint-frontend]
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --coverage
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./frontend/coverage/coverage-final.json
+          flags: frontend
+        continue-on-error: true
+
+  build-backend:
+    name: Build Backend Docker Image
+    runs-on: ubuntu-latest
+    needs: [test-backend]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: false
+          load: true
+          tags: skill-backend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Test built image
+        run: |
+          docker run --rm -d --name skill-backend-test -p 8000:8000 \
+            -e DATABASE_URL=postgresql+asyncpg://test:test@host.docker.internal:5432/test \
+            -e REDIS_URL=redis://host.docker.internal:6379/0 \
+            -e JWT_SECRET_KEY=test-secret \
+            -e DEBUG=true \
+            skill-backend:latest
+          sleep 5
+          curl -f http://localhost:8000/health || exit 1
+          docker stop skill-backend-test
+
+  build-frontend:
+    name: Build Frontend Docker Image
+    runs-on: ubuntu-latest
+    needs: [test-frontend]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          push: false
+          load: true
+          tags: skill-frontend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
