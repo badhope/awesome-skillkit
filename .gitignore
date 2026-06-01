@@ -15,6 +15,38 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*.local
+
+# Secrets and credentials - NEVER commit
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+credentials/
+.credentials/
+*.credentials
+service-account*.json
+gha-creds-*.json
+**/id_rsa*
+**/.ssh/
+**/.aws/credentials
+**/.netrc
+
+# Python caches and build artifacts
+*.pyc
+__pycache__/
+*.egg-info/
+build/
+dist/
+*.so
+*.dylib
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Logs
 npm-debug.log*
@@ -48,5 +80,3 @@ coverage/
 # Misc
 *.log
 .cache/
-*.pyc
-__pycache__/
