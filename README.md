@@ -1,362 +1,308 @@
-# 现代化 AI 技能库系统 (2026)
+# AI-SKILL
 
-## 📋 目录
-- [问题分析](#问题分析)
-- [技术方案](#技术方案)
-- [快速开始](#快速开始)
-- [架构设计](#架构设计)
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  <img src="https://img.shields.io/github/stars/badhope/AI-SKILL?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/issues-pr/badhope/AI-SKILL" alt="Pull Requests">
+  <img src="https://img.shields.io/github/actions/workflow/status/badhope/AI-SKILL/ci.yml?branch=main" alt="Build Status">
+  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" alt="Version">
+  <img src="https://img.shields.io/badge/skills-9400%2B-orange" alt="Skills Count">
+  <img src="https://img.shields.io/badge/python-3.12+-blue" alt="Python">
+  <img src="https://img.shields.io/badge/typescript-5.9+-3178C6" alt="TypeScript">
+</p>
 
----
-
-## 🔴 问题分析 (原 AI-SKILL 项目的严重问题)
-
-### 1. **架构混乱**
-- ❌ 完全没有数据库，使用纯文件存储
-- ❌ 没有 API 层，无法与其他系统集成
-- ❌ 缺少身份认证和权限管理
-- ❌ 硬编码的绝对路径，无法配置
-
-### 2. **数据管理混乱**
-- ❌ 分类系统完全失效 - 1982个技能直接堆在 `development/` 下
-- ❌ 重复数据问题严重，没有一致性保证
-- ❌ 缺少索引文件，搜索效率极低
-- ❌ 没有版本控制，无法追踪变更
-
-### 3. **代码质量问题**
-- ❌ 没有类型提示
-- ❌ 没有测试覆盖
-- ❌ 缺少错误处理
-- ❌ 没有日志系统
-
-### 4. **功能缺失**
-- ❌ 没有语义搜索（关键功能缺失）
-- ❌ 没有技能评分/评价系统
-- ❌ 没有依赖关系管理
-- ❌ 没有使用分析
+<p align="center">
+  <strong>The largest universal agent skill library</strong> — 9,400+ production-ready skills across 50+ categories, supporting 13+ platforms.
+</p>
 
 ---
 
-## 🚀 技术方案 (2026年成熟技术栈)
+## ✨ Features
 
-### 后端技术栈
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| Python | 3.12+ | 编程语言 |
-| FastAPI | 0.115+ | Web 框架（异步高性能） |
-| SQLAlchemy | 2.0+ | ORM（异步支持） |
-| PostgreSQL | 15+ | 主数据库 |
-| Qdrant | 1.9+ | 向量数据库（语义搜索） |
-| Redis | 7+ | 缓存和会话 |
-| Pydantic | 2.9+ | 数据验证 |
-| Poetry | 1.8+ | 依赖管理 |
-
-### 前端技术栈
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| Next.js | 15+ | React 框架（App Router） |
-| TypeScript | 5.6+ | 类型安全 |
-| Tailwind CSS | 3.4+ | 样式框架 |
-| shadcn/ui | 最新 | UI 组件库 |
-| TanStack Query | 5+ | 数据获取和缓存 |
-
-### 基础设施
-- Docker + Docker Compose (容器化)
-- GitHub Actions (CI/CD)
-- OpenTelemetry (可观测性)
-- Sentry (错误追踪)
+- 🔍 **Semantic Search** — Powered by Qdrant vector database with Sentence-BERT embeddings for intelligent, context-aware skill discovery
+- 📱 **Mobile-First Responsive Design** — Optimized Progressive Web App experience across desktop, tablet, and mobile devices
+- 🌐 **English/Chinese i18n** — Full internationalization support with runtime locale switching
+- 🧠 **Vector Search** — Hybrid BM25 + dense vector search for maximum recall and precision
+- 🔄 **Version Control** — Semantic versioning with complete skill change history and rollback support
+- 🔗 **Dependency Management** — Declare skill dependencies with version constraints and cycle detection
+- ⭐ **Quality Assessment** — User ratings, usage analytics, and automated quality scoring
+- 📊 **Analytics Dashboard** — Real-time usage statistics, popularity trends, and engagement metrics
+- 🔌 **REST API** — Fully documented FastAPI backend with auto-generated OpenAPI schema
+- 📦 **Python & TypeScript SDKs** — First-class client libraries for seamless integration
+- 🛡️ **Security** — JWT authentication, RBAC authorization, rate limiting, and audit logging
+- 🐳 **Docker Support** — One-command deployment with Docker Compose
 
 ---
 
-## 🏗️ 核心特性设计
+## 🚀 Quick Start
 
-### 1. 智能分类系统
-```
-frontend/
-  ├── react/
-  │   ├── components
-  │   ├── hooks
-  │   └── state-management
-  ├── vue/
-  └── nextjs/
-
-ai/
-  ├── llms/
-  ├── vector-dbs/
-  └── agents/
-
-devops/
-  ├── docker/
-  ├── kubernetes/
-  └── ci-cd/
-```
-
-### 2. 向量语义搜索
-- 使用 Sentence-BERT 生成技能嵌入
-- Qdrant 存储向量索引
-- 支持语义相似度搜索
-- 可过滤分类和标签
-
-### 3. 版本控制
-- 完整的技能版本历史
-- 语义化版本号 (SemVer)
-- 变更日志自动生成
-- 回滚支持
-
-### 4. 依赖管理
-- 技能之间可声明依赖
-- 依赖版本约束
-- 循环依赖检测
-- 依赖关系可视化
-
-### 5. 质量评估
-- 用户评分系统 (1-5星)
-- 使用统计分析
-- 技能效果反馈
-- 自动化质量检测
-
----
-
-## 💻 快速开始
-
-### 使用 Docker Compose (推荐)
+### Docker (Recommended)
 
 ```bash
-# 1. 克隆项目
-git clone <repo-url>
-cd modern_skill_system
-
-# 2. 启动所有服务
+git clone https://github.com/badhope/AI-SKILL.git
+cd AI-SKILL
+cp .env.example .env
 docker-compose up -d
-
-# 3. 访问应用
-# 前端: http://localhost:3000
-# 后端 API: http://localhost:8000
-# API 文档: http://localhost:8000/docs
 ```
 
-### 手动启动
+Then open **http://localhost:3000** in your browser.
 
-#### 后端
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:3000 |
+| Backend API | http://localhost:8000 |
+| API Documentation (Swagger) | http://localhost:8000/docs |
+| API Documentation (ReDoc) | http://localhost:8000/redoc |
+
+### Manual Setup
+
+#### Prerequisites
+
+- Python 3.12+
+- Node.js 20+
+- PostgreSQL 16+
+- Redis 7+
+- Qdrant (optional, defaults to local)
+
+#### Backend
+
 ```bash
 cd backend
+cp .env.example .env
+# Edit .env with your database credentials
+
+pip install poetry
 poetry install
 poetry run alembic upgrade head
-poetry run uvicorn app.main:app --reload
+poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-#### 前端
+#### Frontend
+
 ```bash
 cd frontend
+cp .env.example .env.local
 npm install
 npm run dev
 ```
 
----
-
-## 📊 数据库设计 (ER图)
-
-```
-┌─────────────┐         ┌─────────────┐
-│    User     │         │   Category  │
-├─────────────┤         ├─────────────┤
-│ id (UUID)   │◄────────│ parent_id   │
-│ email       │         └──────┬──────┘
-│ username    │                │
-│ ...         │                │
-└──────┬──────┘                │
-       │                       │
-       │ writes                │ contains
-       │                       │
-       ▼                       ▼
-┌─────────────┐         ┌─────────────┐
-│    Skill    │         │     Tag     │
-├─────────────┤         ├─────────────┤
-│ id (UUID)   │◄────────│ name        │
-│ slug        │  n:n    │ color       │
-│ name        │         └─────────────┘
-│ description │
-│ version     │         ┌─────────────┐
-│ content     │         │ SkillVersion│
-│ metadata    │         ├─────────────┤
-│ ...         │         │ content     │
-└──────┬──────┘         │ changelog   │
-       │                └─────────────┘
-       │
-       │ depends on
-       │
-       ▼
-┌───────────────────────┐
-│  SkillDependency      │
-├───────────────────────┤
-│ skill_id              │
-│ depends_on_skill_id   │
-│ version_constraint    │
-└───────────────────────┘
-```
+Open **http://localhost:3000**.
 
 ---
 
-## 🔌 API 设计
+## 📚 Documentation
 
-### 技能 API
+| Resource | Link |
+|----------|------|
+| API Reference | http://localhost:8000/docs |
+| Python SDK Docs | [sdk/python/README.md](sdk/python/README.md) |
+| TypeScript SDK Docs | [sdk/typescript/](sdk/typescript/) |
+| Contributing Guide | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Security Policy | [SECURITY.md](SECURITY.md) |
+| Changelog | [CHANGELOG.md](CHANGELOG.md) |
+
+---
+
+## 🏗️ Architecture
+
+```
+                         ┌──────────────────────────┐
+                         │       Client Layer        │
+                         │   Browser  │  Mobile App  │
+                         │   Python SDK │   TS SDK   │
+                         └────────────┬─────────────┘
+                                      │ HTTP/REST
+                         ┌────────────▼─────────────┐
+                         │    Nginx / Load Balancer  │
+                         └────────────┬─────────────┘
+                                      │
+              ┌───────────────────────┼───────────────────────┐
+              │                       │                       │
+    ┌─────────▼─────────┐   ┌────────▼────────┐   ┌──────────▼──────────┐
+    │    Frontend        │   │    Backend       │   │    Vector Search    │
+    │   Next.js 15       │   │   FastAPI 0.115  │   │    Qdrant 1.9+      │
+    │   Port 3000        │   │   Port 8000      │   │    Port 6333        │
+    └───────────────────┘   └────────┬─────────┘   └─────────────────────┘
+                                     │
+                     ┌───────────────┼───────────────┐
+                     │               │               │
+           ┌─────────▼─────┐  ┌──────▼──────┐  ┌─────▼──────┐
+           │  PostgreSQL 16 │  │   Redis 7   │  │  Storage   │
+           │  Port 5432    │  │  Port 6379  │  │ Local / S3 │
+           └───────────────┘  └─────────────┘  └────────────┘
+```
+
+---
+
+## 📊 Tech Stack
+
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| Frontend Framework | Next.js (App Router) | 15.x |
+| Frontend Language | TypeScript | 5.9+ |
+| Styling | Tailwind CSS | 3.4+ |
+| UI Components | shadcn/ui + Radix UI | Latest |
+| Data Fetching | TanStack Query | 5.x |
+| Charts | Recharts | 3.x |
+| Backend Framework | FastAPI | 0.115+ |
+| Backend Language | Python | 3.12+ |
+| ORM | SQLAlchemy (async) | 2.0+ |
+| Data Validation | Pydantic | 2.9+ |
+| Primary Database | PostgreSQL | 16 |
+| Vector Database | Qdrant | 1.9+ |
+| Cache | Redis | 7 |
+| Task Queue | Celery | 5.x |
+| Observability | OpenTelemetry + Sentry | Latest |
+| Containerization | Docker + Docker Compose | Latest |
+| CI/CD | GitHub Actions | Latest |
+
+---
+
+## 🔌 API Overview
+
+### Authentication
+
 ```http
-GET    /api/v1/skills              # 列表（分页、过滤）
-GET    /api/v1/skills/search       # 语义搜索
-GET    /api/v1/skills/featured     # 精选
-GET    /api/v1/skills/{slug}       # 详情
-POST   /api/v1/skills              # 创建
-PUT    /api/v1/skills/{slug}       # 更新
-DELETE /api/v1/skills/{slug}       # 删除
+POST   /api/v1/auth/register         # Register new user
+POST   /api/v1/auth/login            # Login, get JWT tokens
+POST   /api/v1/auth/refresh          # Refresh access token
 ```
 
-### 分类 API
+### Skills
+
 ```http
-GET    /api/v1/categories          # 分类树
-GET    /api/v1/categories/{slug}   # 分类详情
+GET    /api/v1/skills                # List skills (paginated, filterable)
+GET    /api/v1/skills/search         # Semantic vector search
+GET    /api/v1/skills/featured       # Featured/popular skills
+GET    /api/v1/skills/{slug}         # Get skill details
+POST   /api/v1/skills                # Create a new skill
+PUT    /api/v1/skills/{slug}         # Update a skill
+DELETE /api/v1/skills/{slug}         # Delete a skill
+```
+
+### Categories
+
+```http
+GET    /api/v1/categories            # Category tree
+GET    /api/v1/categories/{slug}     # Category with children
+```
+
+### Tags
+
+```http
+GET    /api/v1/tags                  # List all tags
+GET    /api/v1/tags/{name}           # Skills by tag
+```
+
+### Analytics
+
+```http
+GET    /api/v1/analytics/overview    # Dashboard overview stats
+GET    /api/v1/analytics/skills      # Per-skill analytics
+GET    /api/v1/analytics/usage       # Usage trends
 ```
 
 ---
 
-## 🎯 使用示例
+## 📦 SDK
 
 ### Python SDK
+
 ```python
 from skill_sdk import SkillClient
 
-client = SkillClient(api_key="your-key")
+client = SkillClient(
+    base_url="http://localhost:8000",
+    api_key="your-api-key"
+)
 
-# 语义搜索
+# Semantic search
 results = client.search_skills(
-    query="React hook 性能优化",
-    limit=10
+    query="React performance optimization hooks",
+    limit=10,
+    category="frontend/react"
 )
 
-# 获取技能详情
-skill = client.get_skill("react-component-dev")
+# Get skill detail
+skill = client.get_skill("react-use-memo-guide")
 
-# 使用技能
-response = client.use_skill(
-    skill_slug="react-component-dev",
-    input={"name": "Button", "description": "Primary button"}
+# List skills with filters
+skills = client.list_skills(
+    category="ai/llms",
+    tags=["prompt-engineering"],
+    page=1,
+    size=20
 )
 ```
 
-### 集成到 AI 代理
+Install via pip:
+
+```bash
+pip install skill-sdk
+```
+
+### TypeScript SDK
+
 ```typescript
-import { SkillLibrary } from '@skill-lib/sdk';
+import { SkillClient } from '@ai-skill/sdk';
 
-const lib = new SkillLibrary({
-  endpoint: 'https://api.example.com',
-  apiKey: process.env.SKILL_API_KEY
+const client = new SkillClient({
+  baseUrl: 'http://localhost:8000',
+  apiKey: 'your-api-key',
 });
 
-// 自动发现合适的技能
-const agent = new AIAgent({
-  skills: await lib.searchSkills('web development'),
-  onSkillUse: (skill) => lib.recordUsage(skill.id)
+// Semantic search
+const results = await client.searchSkills({
+  query: 'React performance optimization hooks',
+  limit: 10,
+  category: 'frontend/react',
 });
+
+// Get skill detail
+const skill = await client.getSkill('react-use-memo-guide');
+
+// List skills
+const { items, total } = await client.listSkills({
+  category: 'ai/llms',
+  tags: ['prompt-engineering'],
+  page: 1,
+  size: 20,
+});
+```
+
+Install via npm:
+
+```bash
+npm install @ai-skill/sdk
 ```
 
 ---
 
-## 📈 迁移指南 (从旧 AI-SKILL 项目)
+## 🤝 Contributing
 
-### 1. 数据迁移脚本
-```python
-# scripts/migrate_from_old.py
-from pathlib import Path
-import json
-from app.models.skill import Skill, Category
-from app.db.session import SessionLocal
+We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-async def migrate():
-    old_skills_path = Path("/workspace/AI-SKILL/skills")
-    
-    for skill_dir in old_skills_path.rglob("*/"):
-        # 解析旧格式
-        # 创建新记录
-        # 建立向量索引
-```
+- Fork the repository
+- Create a feature branch (`feat/amazing-feature`)
+- Write tests and ensure they pass
+- Submit a Pull Request
 
-### 2. 渐进式迁移
-- ✅ 保持旧系统只读访问
-- ✅ 新技能只写入新系统
-- ✅ 后台任务逐步迁移历史数据
-- ✅ 双写保证一致性
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed workflow, commit conventions, and code style guidelines.
 
 ---
 
-## 🔐 安全最佳实践
+## 📄 License
 
-1. **身份认证** - OAuth 2.0 / OIDC / API Keys
-2. **权限控制** - RBAC (基于角色的访问控制)
-3. **数据加密** - 传输加密 (TLS 1.3)，静态加密
-4. **审计日志** - 所有操作可追溯
-5. **速率限制** - 防止滥用
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📊 监控与可观测性
+## ⭐ Star History
 
-### Metrics (Prometheus)
-- API 请求延迟
-- 技能使用频率
-- 搜索质量指标
-- 系统资源使用
-
-### Logs (Structured Logging)
-- JSON 格式日志
-- Trace ID 关联
-- 错误堆栈跟踪
-
-### Traces (OpenTelemetry)
-- 端到端请求追踪
-- 跨服务关联
-- 性能瓶颈定位
+[![Star History Chart](https://api.star-history.com/svg?repos=badhope/AI-SKILL&type=Date)](https://star-history.com/#badhope/AI-SKILL&Date)
 
 ---
 
-## 🚀 性能优化
-
-1. **数据库**
-   - 适当的索引策略
-   - 连接池配置
-   - 查询优化
-
-2. **缓存**
-   - Redis 缓存热门技能
-   - 页面缓存
-   - 向量查询结果缓存
-
-3. **搜索**
-   - 向量索引优化
-   - 混合搜索（BM25 + 向量）
-   - 查询重写
-
----
-
-## 🤝 贡献指南
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
----
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
-
----
-
-## 🙏 致谢
-
-感谢所有为 AI 技能库做出贡献的开发者们！
-
----
-
-## 📞 联系
-
-如有问题或建议，请 [创建 Issue](https://github.com/your-org/modern-skill-system/issues)。
+<p align="center">
+  Built with ❤️ by the AI-SKILL community
+</p>

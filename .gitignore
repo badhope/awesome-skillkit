@@ -37,6 +37,14 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# Testing databases
+*.db
+*.db-journal
+*.db-wal
+
+# Typescript build info
+*.tsbuildinfo
+
 # Misc
 *.log
 .cache/

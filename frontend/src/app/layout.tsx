@@ -16,9 +16,9 @@ const fontMono = FontMono({
 });
 
 export const metadata: Metadata = {
-  title: "SkillLib - AI Skill Library & Composition Platform",
+  title: "AI-SKILL",
   description:
-    "Discover, compose, and share AI skills. The largest open-source AI skill library with semantic search, composition tools, and community-driven development.",
+    "AI-SKILL — universal agent skill library. Discover, compose, and share AI skills with semantic search, composition tools, and community-driven development.",
   keywords: [
     "AI skills",
     "machine learning",

@@ -10,7 +10,7 @@ from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.sdk.trace import TracerProvider
 
-from app.api.v1.skills import router as skills_router
+from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.core.logging import get_logger
 from app.db.session import engine
@@ -87,7 +87,7 @@ app.add_middleware(RateLimitMiddleware)
 FastAPIInstrumentor.instrument_app(app)
 SQLAlchemyInstrumentor().instrument(engine=engine.sync_engine)
 
-app.include_router(skills_router, prefix=f"{settings.API_PREFIX}/skills", tags=["skills"])
+app.include_router(api_router, prefix=settings.API_PREFIX)
 
 
 @app.get("/health", tags=["health"])

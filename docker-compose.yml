@@ -108,8 +108,8 @@ services:
     container_name: skill-frontend
     restart: unless-stopped
     environment:
-      VITE_API_BASE_URL: http://localhost:8000/api/v1
-      VITE_APP_NAME: "Modern Skill Library"
+      NEXT_PUBLIC_APP_NAME: "AI-SKILL"
+      NEXT_PUBLIC_API_URL: "http://localhost:8000"
     ports:
       - "3000:3000"
     depends_on:
