@@ -28,8 +28,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useComposition } from "@/hooks/useSkills";
-import { formatDate, formatNumber, getInitials, getStatusColor, cn } from "@/lib/utils";
-import type { CompositionNode, CompositionEdge } from "@/types";
+import { formatDate, formatNumber, getInitials, cn } from "@/lib/utils";
+import type { CompositionNode } from "@/types";
 
 export default function CompositionDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -84,29 +84,23 @@ export default function CompositionDetailPage() {
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <h1 className="text-2xl sm:text-3xl font-bold">{composition.name}</h1>
-                <Badge className={cn(getStatusColor(composition.status))}>
-                  {composition.status}
+                <Badge className={composition.is_public ? "bg-emerald-500/10 text-emerald-500" : "bg-muted text-muted-foreground"}>
+                  {composition.is_public ? "Public" : "Private"}
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-3">{composition.description}</p>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                {composition.author && (
+                {composition.owner && (
                   <span className="flex items-center gap-1.5">
                     <Avatar className="h-5 w-5">
-                      <AvatarImage src={composition.author.avatar_url || undefined} />
+                      <AvatarImage src={composition.owner.avatar_url || undefined} />
                       <AvatarFallback className="text-[8px]">
                         {getInitials(
-                          composition.author.full_name || composition.author.username
+                          composition.owner.full_name || composition.owner.username
                         )}
                       </AvatarFallback>
                     </Avatar>
-                    @{composition.author.username}
-                  </span>
-                )}
-                {composition.metrics && (
-                  <span className="flex items-center gap-1">
-                    <Star className="h-4 w-4 text-amber-500 fill-amber-500" />
-                    {composition.metrics.average_rating.toFixed(1)}
+                    @{composition.owner.username}
                   </span>
                 )}
                 <span className="flex items-center gap-1">
@@ -151,7 +145,7 @@ export default function CompositionDetailPage() {
 
                   <div className="relative bg-muted/50 rounded-xl p-8 min-h-[400px] overflow-auto">
                     <div className="flex flex-col items-center gap-4">
-                      {composition.nodes.map((node: CompositionNode, index: number) => (
+                      {composition.items.map((node: CompositionNode, index: number) => (
                         <div key={node.id} className="flex flex-col items-center">
                           <Link
                             href={node.skill ? `/skills/${node.skill.slug}` : "#"}
@@ -162,16 +156,16 @@ export default function CompositionDetailPage() {
                             </div>
                             <div className="min-w-0 flex-1">
                               <p className="font-medium text-sm truncate">
-                                {node.skill?.name || `Node ${node.id}`}
+                                {node.skill?.name || "Unknown Skill"}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                Step {index + 1}
+                                Step {node.sort_order + 1}
                               </p>
                             </div>
                             <ArrowUpRight className="h-4 w-4 text-muted-foreground shrink-0" />
                           </Link>
 
-                          {index < composition.nodes.length - 1 && (
+                          {index < composition.items.length - 1 && (
                             <div className="flex flex-col items-center py-2">
                               <div className="w-0.5 h-8 bg-gradient-to-b from-primary/50 to-primary/20" />
                               <ArrowRight className="h-4 w-4 text-primary" />
@@ -181,9 +175,9 @@ export default function CompositionDetailPage() {
                       ))}
                     </div>
 
-                    {composition.edges.map((edge: CompositionEdge) => (
-                      <div key={edge.id} className="hidden">
-                        {edge.label}
+                    {composition.items.map((node: CompositionNode) => (
+                      <div key={node.id} className="hidden">
+                        {node.notes}
                       </div>
                     ))}
                   </div>
@@ -201,34 +195,19 @@ export default function CompositionDetailPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="text-sm font-semibold mb-3">Input Schema</h4>
-                      <div className="bg-muted rounded-lg p-4">
-                        {composition.input_schema ? (
-                          <pre className="text-xs overflow-x-auto">
-                            <code>{JSON.stringify(composition.input_schema, null, 2)}</code>
-                          </pre>
-                        ) : (
-                          <p className="text-sm text-muted-foreground">
-                            No input schema defined
-                          </p>
-                        )}
-                      </div>
+                    <h4 className="text-sm font-semibold mb-3">Metadata</h4>
+                    <div className="bg-muted rounded-lg p-4">
+                      {composition.metadata && Object.keys(composition.metadata).length > 0 ? (
+                        <pre className="text-xs overflow-x-auto">
+                          <code>{JSON.stringify(composition.metadata, null, 2)}</code>
+                        </pre>
+                      ) : (
+                        <p className="text-sm text-muted-foreground">
+                          No metadata defined
+                        </p>
+                      )}
                     </div>
-
-                    <div>
-                      <h4 className="text-sm font-semibold mb-3">Output Schema</h4>
-                      <div className="bg-muted rounded-lg p-4">
-                        {composition.output_schema ? (
-                          <pre className="text-xs overflow-x-auto">
-                            <code>{JSON.stringify(composition.output_schema, null, 2)}</code>
-                          </pre>
-                        ) : (
-                          <p className="text-sm text-muted-foreground">
-                            No output schema defined
-                          </p>
-                        )}
-                      </div>
-                    </div>
+                  </div>
                   </div>
                 </CardContent>
               </Card>
@@ -242,30 +221,22 @@ export default function CompositionDetailPage() {
                     Node Details
                   </h3>
                   <div className="space-y-4">
-                    {composition.nodes.map((node: CompositionNode, index: number) => (
+                    {composition.items.map((node: CompositionNode) => (
                       <div key={node.id} className="p-4 rounded-lg border">
                         <div className="flex items-center gap-2 mb-2">
                           <Badge variant="purple" className="text-xs">
-                            Step {index + 1}
+                            Step {node.sort_order + 1}
                           </Badge>
                           <span className="font-medium text-sm">
                             {node.skill?.name || "Unknown Skill"}
                           </span>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                        {node.notes && (
                           <div>
-                            <p className="text-xs text-muted-foreground mb-1">Input Mapping</p>
-                            <pre className="text-xs bg-muted rounded p-2 overflow-x-auto">
-                              <code>{JSON.stringify(node.input_mapping, null, 2)}</code>
-                            </pre>
+                            <p className="text-xs text-muted-foreground mb-1">Notes</p>
+                            <p className="text-sm">{node.notes}</p>
                           </div>
-                          <div>
-                            <p className="text-xs text-muted-foreground mb-1">Output Mapping</p>
-                            <pre className="text-xs bg-muted rounded p-2 overflow-x-auto">
-                              <code>{JSON.stringify(node.output_mapping, null, 2)}</code>
-                            </pre>
-                          </div>
-                        </div>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -276,7 +247,7 @@ export default function CompositionDetailPage() {
         </div>
 
         <aside className="lg:w-72 shrink-0 space-y-6">
-          {composition.author && (
+          {composition.owner && (
             <Card>
               <CardHeader>
                 <CardTitle className="text-sm">Author</CardTitle>
@@ -284,17 +255,17 @@ export default function CompositionDetailPage() {
               <CardContent>
                 <div className="flex items-center gap-3">
                   <Avatar className="h-10 w-10">
-                    <AvatarImage src={composition.author.avatar_url || undefined} />
+                    <AvatarImage src={composition.owner.avatar_url || undefined} />
                     <AvatarFallback>
                       {getInitials(
-                        composition.author.full_name || composition.author.username
+                        composition.owner.full_name || composition.owner.username
                       )}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-medium text-sm">{composition.author.full_name}</p>
+                    <p className="font-medium text-sm">{composition.owner.full_name}</p>
                     <p className="text-xs text-muted-foreground">
-                      @{composition.author.username}
+                      @{composition.owner.username}
                     </p>
                   </div>
                 </div>
@@ -308,53 +279,19 @@ export default function CompositionDetailPage() {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Nodes</span>
-                <span className="font-medium">{composition.nodes.length}</span>
+                <span className="text-muted-foreground">Items</span>
+                <span className="font-medium">{composition.items.length}</span>
               </div>
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Edges</span>
-                <span className="font-medium">{composition.edges.length}</span>
-              </div>
-              {composition.metrics && (
-                <>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Downloads</span>
-                    <span className="font-medium">
-                      {formatNumber(composition.metrics.downloads_count)}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Rating</span>
-                    <span className="font-medium flex items-center gap-1">
-                      <Star className="h-3.5 w-3.5 text-amber-500 fill-amber-500" />
-                      {composition.metrics.average_rating.toFixed(1)}
-                    </span>
-                  </div>
-                </>
-              )}
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Created</span>
                 <span className="font-medium">{formatDate(composition.created_at, "short")}</span>
               </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">Updated</span>
+                <span className="font-medium">{formatDate(composition.updated_at, "short")}</span>
+              </div>
             </CardContent>
           </Card>
-
-          {composition.tags && composition.tags.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Tags</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {composition.tags.map((tag) => (
-                    <Badge key={tag.id} variant="secondary">
-                      {tag.name}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          )}
         </aside>
       </div>
     </div>

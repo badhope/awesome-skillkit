@@ -113,21 +113,9 @@ export interface CompositionNode {
   id: string;
   skill_id: string;
   skill?: Skill;
-  position_x: number;
-  position_y: number;
-  config: Record<string, unknown>;
-  input_mapping: Record<string, string>;
-  output_mapping: Record<string, string>;
-}
-
-export interface CompositionEdge {
-  id: string;
-  source_node_id: string;
-  target_node_id: string;
-  source_output: string;
-  target_input: string;
-  condition: Record<string, unknown> | null;
-  label: string | null;
+  sort_order: number;
+  notes: string | null;
+  created_at: string;
 }
 
 export interface Composition {
@@ -135,16 +123,11 @@ export interface Composition {
   name: string;
   slug: string;
   description: string;
-  author_id: string;
-  author?: User;
-  status: "draft" | "published" | "archived";
-  visibility: "public" | "private" | "unlisted";
-  nodes: CompositionNode[];
-  edges: CompositionEdge[];
-  input_schema: Record<string, unknown> | null;
-  output_schema: Record<string, unknown> | null;
-  tags: Tag[];
-  metrics: SkillMetric | null;
+  owner_id: string;
+  owner?: User;
+  is_public: boolean;
+  metadata: Record<string, unknown>;
+  items: CompositionNode[];
   created_at: string;
   updated_at: string;
 }
@@ -281,9 +264,9 @@ export interface ReviewCreateRequest {
 
 export interface CompositionCreateRequest {
   name: string;
+  slug: string;
   description: string;
-  nodes: Omit<CompositionNode, "id">[];
-  edges: Omit<CompositionEdge, "id">[];
-  tags?: string[];
-  visibility?: "public" | "private" | "unlisted";
+  is_public: boolean;
+  items: { skill_id: string; sort_order: number; notes?: string }[];
+  metadata?: Record<string, unknown>;
 }

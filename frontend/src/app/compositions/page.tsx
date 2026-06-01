@@ -176,7 +176,7 @@ export default function CompositionsPage() {
                           {composition.name}
                         </CardTitle>
                         <CardDescription className="text-xs mt-0.5">
-                          {composition.nodes.length} {t("composition.skills")}
+                          {composition.items.length} {t("composition.skills")}
                         </CardDescription>
                       </div>
                       {viewMode === "list" && (
@@ -185,7 +185,7 @@ export default function CompositionsPage() {
                             {composition.name}
                           </p>
                           <p className="text-xs text-muted-foreground mt-0.5">
-                            {composition.nodes.length} {t("composition.skills")}
+                            {composition.items.length} {t("composition.skills")}
                           </p>
                         </div>
                       )}
@@ -208,16 +208,11 @@ export default function CompositionsPage() {
 
                     <div className="flex flex-wrap items-center gap-1.5">
                       <Badge
-                        variant={composition.status === "published" ? "success" : "secondary"}
+                        variant={composition.is_public ? "success" : "secondary"}
                         className="text-xs"
                       >
-                        {composition.status}
+                        {composition.is_public ? "Public" : "Private"}
                       </Badge>
-                      {composition.tags?.slice(0, 2).map((tag) => (
-                        <Badge key={tag.id} variant="outline" className="text-[10px] xs:text-xs">
-                          {tag.name}
-                        </Badge>
-                      ))}
                     </div>
 
                     <div className={cn(
@@ -225,17 +220,17 @@ export default function CompositionsPage() {
                       viewMode === "list" && "sm:pt-0 sm:border-l sm:pl-4 sm:border-t-0"
                     )}>
                       <div className="flex items-center gap-2">
-                        {composition.author && (
+                        {composition.owner && (
                           <>
                             <Avatar className="h-5 w-5 sm:h-6 sm:w-6">
-                              <AvatarImage src={composition.author.avatar_url || undefined} />
+                              <AvatarImage src={composition.owner.avatar_url || undefined} />
                               <AvatarFallback className="text-[8px] xs:text-[10px]">
                                 {getInitials(
-                                  composition.author.full_name || composition.author.username
+                                  composition.owner.full_name || composition.owner.username
                                 )}
                               </AvatarFallback>
                             </Avatar>
-                            <span className="hidden xs:inline">@{composition.author.username}</span>
+                            <span className="hidden xs:inline">@{composition.owner.username}</span>
                           </>
                         )}
                       </div>

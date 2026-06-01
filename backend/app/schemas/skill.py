@@ -204,6 +204,11 @@ class SkillListResponse(BaseModel):
     total: int
     page: int
     page_size: int
+    total_pages: int = 0
+
+    def model_post_init(self, __context) -> None:
+        if self.total_pages == 0 and self.page_size > 0:
+            self.total_pages = (self.total + self.page_size - 1) // self.page_size
 
 
 class SkillSearchResult(BaseModel):
@@ -406,6 +411,11 @@ class CompositionListResponse(BaseModel):
     total: int
     page: int
     page_size: int
+    total_pages: int = 0
+
+    def model_post_init(self, __context) -> None:
+        if self.total_pages == 0 and self.page_size > 0:
+            self.total_pages = (self.total + self.page_size - 1) // self.page_size
 
 
 class DashboardStats(BaseModel):
