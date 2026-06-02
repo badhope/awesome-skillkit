@@ -1,0 +1,58 @@
+# CODEOWNERS — automatic reviewer assignment
+#
+# Lines starting with `#` are comments. Each non-comment line is a
+# `<pattern> <owner>` rule; the LAST matching pattern wins.
+# Owners must be GitHub usernames or team names (org/team-name).
+
+# ─────────────── Default ───────────────
+*                                @badhope
+
+# ─────────────── Backend (Python / FastAPI) ───────────────
+/backend/                        @badhope
+/backend/alembic/                @badhope
+/backend/app/api/                @badhope
+/backend/app/core/               @badhope
+/backend/app/middleware/         @badhope
+/backend/app/models/             @badhope
+/backend/app/schemas/            @badhope
+/backend/app/services/           @badhope
+/backend/app/scripts/            @badhope
+/backend/tests/                  @badhope
+/backend/pyproject.toml          @badhope
+
+# ─────────────── Frontend (Next.js / TypeScript) ───────────────
+/frontend/                       @badhope
+/frontend/src/app/               @badhope
+/frontend/src/components/        @badhope
+/frontend/src/hooks/             @badhope
+/frontend/src/lib/               @badhope
+/frontend/src/types/             @badhope
+/frontend/next.config.ts         @badhope
+/frontend/package.json           @badhope
+
+# ─────────────── SDKs ───────────────
+/sdk/python/                     @badhope
+/sdk/typescript/                 @badhope
+
+# ─────────────── Infrastructure ───────────────
+/docker-compose.yml              @badhope
+/Dockerfile                      @badhope
+/backend/Dockerfile              @badhope
+/frontend/Dockerfile             @badhope
+/.github/workflows/              @badhope
+
+# ─────────────── Security-sensitive ───────────────
+# Any change touching auth, secrets, or the security header middleware
+# MUST be reviewed by the security owner.
+/backend/app/core/security.py    @badhope
+/backend/app/middleware/security_headers.py  @badhope
+/backend/app/core/seed.py        @badhope
+/backend/app/scripts/create_admin.py        @badhope
+/SECURITY.md                     @badhope
+
+# ─────────────── Documentation ───────────────
+/README.md                       @badhope
+/CONTRIBUTING.md                 @badhope
+/CHANGELOG.md                    @badhope
+/CODE_OF_CONDUCT.md              @badhope
+/docs/                           @badhope

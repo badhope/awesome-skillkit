@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use AI-SKILL in academic work, please cite it as below."
+title: "AI-SKILL"
+subtitle: "An open-source universal agent skill library"
+version: "1.0.0"
+date-released: 2026-06-01
+url: "https://github.com/badhope/AI-SKILL"
+repository-code: "https://github.com/badhope/AI-SKILL"
+license: "MIT"
+keywords:
+  - ai
+  - agent
+  - skill-library
+  - vector-search
+  - semantic-search
+  - embeddings
+  - fastapi
+  - nextjs
+  - llm
+  - retrieval
+authors:
+  - family-names: "AI-SKILL Contributors"
+    given-names: "The"
+    email: "maintainers@ai-skill.local"
+preferred-citation:
+  type: software
+  title: "AI-SKILL: An open-source universal agent skill library"
+  version: "1.0.0"
+  date-released: 2026-06-01
+  url: "https://github.com/badhope/AI-SKILL"
+  authors:
+    - family-names: "AI-SKILL Contributors"
+      given-names: "The"
+  notes: "See the README at https://github.com/badhope/AI-SKILL for full details."

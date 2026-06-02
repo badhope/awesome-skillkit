@@ -80,3 +80,15 @@ coverage/
 # Misc
 *.log
 .cache/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Next.js
+.next/
+out/
+next-env.d.ts.bak
+
+# Architecture Decision Records local work
+docs/adr/.scratch/
+

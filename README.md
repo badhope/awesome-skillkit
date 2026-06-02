@@ -1,18 +1,55 @@
 # AI-SKILL
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
-  <img src="https://img.shields.io/github/stars/badhope/AI-SKILL?style=social" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/issues-pr/badhope/AI-SKILL" alt="Pull Requests">
-  <img src="https://img.shields.io/github/actions/workflow/status/badhope/AI-SKILL/ci.yml?branch=main" alt="Build Status">
-  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" alt="Version">
-  <img src="https://img.shields.io/badge/skills-9400%2B-orange" alt="Skills Count">
-  <img src="https://img.shields.io/badge/python-3.12+-blue" alt="Python">
-  <img src="https://img.shields.io/badge/typescript-5.9+-3178C6" alt="TypeScript">
+  <strong>An open-source universal agent skill library</strong> — a self-hostable
+  platform for cataloging, discovering, and composing AI agent skills across any
+  domain.
 </p>
 
 <p align="center">
-  <strong>The largest universal agent skill library</strong> — 9,400+ production-ready skills across 50+ categories, supporting 13+ platforms.
+  <a href="https://github.com/badhope/AI-SKILL/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/badhope/AI-SKILL" alt="License">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/stargazers">
+    <img src="https://img.shields.io/github/stars/badhope/AI-SKILL?style=social" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/network/members">
+    <img src="https://img.shields.io/github/forks/badhope/AI-SKILL?style=social" alt="GitHub Forks">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/watchers">
+    <img src="https://img.shields.io/github/watchers/badhope/AI-SKILL?style=social" alt="GitHub Watchers">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/badhope/AI-SKILL/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/badhope/AI-SKILL/ci.yml?branch=main&label=build" alt="Build Status">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/releases">
+    <img src="https://img.shields.io/github/v/release/badhope/AI-SKILL?include_prereleases" alt="Release">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/pkgs/container/AI-SKILL%2Fbackend">
+    <img src="https://ghcr.io/badhope/AI-SKILL/backend/badge" alt="Backend Image">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/pkgs/container/AI-SKILL%2Ffrontend">
+    <img src="https://ghcr.io/badhope/AI-SKILL/frontend/badge" alt="Frontend Image">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/issues">
+    <img src="https://img.shields.io/github/issues/badhope/AI-SKILL" alt="Issues">
+  </a>
+  <a href="https://github.com/badhope/AI-SKILL/pulls">
+    <img src="https://img.shields.io/github/issues-pr/badhope/AI-SKILL" alt="PRs">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#-one-click-deploy">Deploy</a> ·
+  <a href="#-quick-start">Quick start</a> ·
+  <a href="docs/architecture.md">Architecture</a> ·
+  <a href="docs/deployment.md">Deployment</a> ·
+  <a href="FAQ.md">FAQ</a> ·
+  <a href="TROUBLESHOOTING.md">Troubleshooting</a> ·
+  <a href="ROADMAP.md">Roadmap</a>
 </p>
 
 ---
@@ -36,7 +73,16 @@
 
 ## 🚀 Quick Start
 
-### Docker (Recommended)
+### ☁️ One-click deploy
+
+| Platform | One-click | Notes |
+|---|---|---|
+| Local (Docker) | `make dev` | Recommended for development |
+| Render | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Blueprint deploy |
+| Fly.io | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Global edge |
+| Vercel (frontend only) | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Needs a hosted backend |
+
+### 🐳 Docker (Recommended for self-hosting)
 
 ```bash
 git clone https://github.com/badhope/AI-SKILL.git
@@ -94,12 +140,25 @@ Open **http://localhost:3000**.
 
 | Resource | Link |
 |----------|------|
-| API Reference | http://localhost:8000/docs |
-| Python SDK Docs | [sdk/python/README.md](sdk/python/README.md) |
-| TypeScript SDK Docs | [sdk/typescript/](sdk/typescript/) |
-| Contributing Guide | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| Security Policy | [SECURITY.md](SECURITY.md) |
+| Live API Reference (Swagger) | <http://localhost:8000/docs> |
+| Live API Reference (ReDoc) | <http://localhost:8000/redoc> |
+| Architecture overview | [docs/architecture.md](docs/architecture.md) |
+| Deployment guide | [docs/deployment.md](docs/deployment.md) |
+| Development guide | [docs/development.md](docs/development.md) |
+| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
+| Contributing | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Security policy | [SECURITY.md](SECURITY.md) |
+| Code of conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) |
+| Roadmap | [ROADMAP.md](ROADMAP.md) |
+| FAQ | [FAQ.md](FAQ.md) |
+| Python SDK docs | [sdk/python/README.md](sdk/python/README.md) |
+| TypeScript SDK docs | [sdk/typescript/README.md](sdk/typescript/README.md) |
+| REST examples (curl / .http) | [examples/rest/](examples/rest/) |
+| Python examples | [examples/python/](examples/python/) |
+| TypeScript examples | [examples/typescript/](examples/typescript/) |
+| Postman collection | [examples/postman/](examples/postman/) |
+| Cite this project | [CITATION.cff](CITATION.cff) |
 
 ---
 
@@ -275,6 +334,27 @@ Install via npm:
 ```bash
 npm install @ai-skill/sdk
 ```
+
+---
+
+## 📂 Repository layout
+
+```
+AI-SKILL/
+├── backend/              FastAPI 0.115 service
+├── frontend/             Next.js 15 PWA
+├── sdk/
+│   ├── python/           Python client
+│   └── typescript/       TypeScript client
+├── docs/                 architecture.md, deployment.md, development.md, troubleshooting.md
+├── examples/             REST / Python / TypeScript / Postman samples
+├── scripts/              Operational scripts
+├── .github/              Issue templates, PR template, CI, CODEOWNERS, dependabot
+├── Makefile              make help
+└── .editorconfig + .pre-commit-config.yaml
+```
+
+See [`docs/architecture.md`](docs/architecture.md) for the in-depth breakdown.
 
 ---
 

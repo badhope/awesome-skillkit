@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AI-SKILL Discussions
+    url: https://github.com/badhope/AI-SKILL/discussions
+    about: General questions, ideas, and show-and-tell
+  - name: Security advisories (private)
+    url: https://github.com/badhope/AI-SKILL/security/advisories/new
+    about: For sensitive security issues. See SECURITY.md.

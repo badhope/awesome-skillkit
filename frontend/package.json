@@ -5,9 +5,9 @@
   "description": "AI-SKILL frontend — universal agent skill library browser",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ai-skill/ai-skill"
+    "url": "https://github.com/badhope/AI-SKILL.git"
   },
-  "homepage": "https://ai-skill.dev",
+  "homepage": "https://github.com/badhope/AI-SKILL",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

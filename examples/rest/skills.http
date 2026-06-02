@@ -1,0 +1,54 @@
+### ─── Skills ──────────────────────────────────────────────────────────
+
+### List skills (paginated)
+GET {{baseUrl}}/skills?page=1&size=20
+Authorization: Bearer {{token}}
+
+### Get a skill by slug
+GET {{baseUrl}}/skills/react-usememo-deep-dive
+Authorization: Bearer {{token}}
+
+### Featured skills
+GET {{baseUrl}}/skills/featured
+Authorization: Bearer {{token}}
+
+### Semantic search
+POST {{baseUrl}}/skills/search
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "query": "React performance optimization hooks",
+  "limit": 10,
+  "min_score": 0.6
+}
+
+### Create a skill
+POST {{baseUrl}}/skills
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "React useMemo deep-dive",
+  "slug": "react-usememo-deep-dive",
+  "description": "A practical guide to React useMemo with examples",
+  "content": "# React useMemo\n\n...",
+  "category_id": "00000000-0000-0000-0000-000000000000",
+  "tags": ["react", "performance"],
+  "version": "1.0.0",
+  "is_public": true
+}
+
+### Update a skill
+PUT {{baseUrl}}/skills/react-usememo-deep-dive
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "description": "Updated description",
+  "is_featured": true
+}
+
+### Delete a skill
+DELETE {{baseUrl}}/skills/react-usememo-deep-dive
+Authorization: Bearer {{token}}

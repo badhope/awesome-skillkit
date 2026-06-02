@@ -1,0 +1,36 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# This file enforces consistent coding styles across editors and IDEs.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{py,pyi}]
+indent_size = 4
+max_line_length = 100
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_size = 2
+quote_type = single
+
+[*.go]
+indent_style = tab
+indent_size = 4
+
+[*.{rs,toml}]
+indent_size = 4

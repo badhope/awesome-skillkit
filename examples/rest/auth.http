@@ -1,0 +1,42 @@
+### ─── Auth ────────────────────────────────────────────────────────────
+
+### Register a new user
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "you@example.com",
+  "username": "you",
+  "password": "SuperSecret123!",
+  "full_name": "Your Name"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "you@example.com",
+  "password": "SuperSecret123!"
+}
+
+###
+@token = {{login.response.body.access_token}}
+@refresh = {{login.response.body.refresh_token}}
+
+### Get the current user
+GET {{baseUrl}}/users/me
+Authorization: Bearer {{token}}
+
+### Refresh the access token
+POST {{baseUrl}}/auth/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "{{refresh}}"
+}
+
+### Logout
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{token}}

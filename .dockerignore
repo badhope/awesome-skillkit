@@ -82,9 +82,18 @@ Dockerfile
 docker-compose*.yml
 
 # Documentation
-*.md
 !README.md
-docs/
+!LICENSE
+!CONTRIBUTING.md
+!CHANGELOG.md
+!SECURITY.md
+!CODE_OF_CONDUCT.md
+!FAQ.md
+!ROADMAP.md
+!TROUBLESHOOTING.md
+!docs/
+!docs/**/*.md
+!docs/**/*.svg
 
 # Logs
 *.log

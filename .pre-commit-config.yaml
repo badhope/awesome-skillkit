@@ -1,0 +1,124 @@
+# Pre-commit hooks — keeps the working tree clean and the CI happy.
+#
+# Install once with:
+#   pip install pre-commit
+#   pre-commit install
+# Run on demand (e.g. in CI as a fallback) with:
+#   pre-commit run --all-files
+
+repos:
+  # ─────────── Generic hygiene ───────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^.*\.(md|markdown|lock|svg)$
+      - id: end-of-file-fixer
+        exclude: ^.*\.(md|markdown|svg|min\.js)$
+      - id: check-yaml
+        args: [--allow-multiple-documents, --unsafe]
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=512]
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: detect-private-key
+        exclude: ^sdk/(python|typescript)/tests/fixtures/.*$
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: no-commit-to-branch
+        args: [--branch=main, --branch=develop]
+
+  # ─────────── Python (ruff) ───────────
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.4
+    hooks:
+      - id: ruff
+        name: ruff (backend)
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^backend/
+      - id: ruff-format
+        name: ruff-format (backend)
+        files: ^backend/
+      - id: ruff
+        name: ruff (python sdk)
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^sdk/python/
+      - id: ruff-format
+        name: ruff-format (python sdk)
+        files: ^sdk/python/
+
+  # ─────────── Python (mypy) ───────────
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.12.0
+    hooks:
+      - id: mypy
+        name: mypy (backend)
+        files: ^backend/app/
+        args: [--ignore-missing-imports, --no-strict-optional]
+        additional_dependencies:
+          - types-requests
+          - pydantic>=2.9
+      - id: mypy
+        name: mypy (python sdk)
+        files: ^sdk/python/skill_sdk/
+        args: [--ignore-missing-imports]
+        additional_dependencies:
+          - types-requests
+
+  # ─────────── Frontend / TypeScript ───────────
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.13.0
+    hooks:
+      - id: eslint
+        name: eslint (frontend)
+        files: ^frontend/src/.*\.(ts|tsx|js|jsx)$
+        args: [--fix, --max-warnings=0]
+        additional_dependencies:
+          - eslint@8.57.0
+          - eslint-config-next@15.0.0
+          - typescript@5.9.3
+      - id: eslint
+        name: eslint (typescript sdk)
+        files: ^sdk/typescript/src/.*\.(ts|tsx)$
+        additional_dependencies:
+          - eslint@8.57.0
+          - typescript@5.9.3
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.4
+    hooks:
+      - id: prettier
+        name: prettier (frontend)
+        files: ^frontend/src/.*\.(ts|tsx|js|jsx|json|css|md)$
+        args: [--single-quote, --trailing-comma=all, --print-width=100]
+      - id: prettier
+        name: prettier (typescript sdk)
+        files: ^sdk/typescript/src/.*\.(ts|tsx|json|md)$
+
+  # ─────────── Shell safety ───────────
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        name: shellcheck
+        files: ^.*\.(sh|bash)$
+
+  # ─────────── Markdown & docs ───────────
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args: [--fix, --disable=MD013, --disable=MD033, --disable=MD041]
+        files: \.(md|markdown)$
+
+  # ─────────── Conventional commits ───────────
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.6.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: []

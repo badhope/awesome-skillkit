@@ -1,0 +1,125 @@
+{
+  "info": {
+    "name": "AI-SKILL",
+    "_postman_id": "00000000-0000-0000-0000-000000000001",
+    "description": "AI-SKILL REST API — base collection.\n\nSet the `baseUrl` and `token` collection variables before running the requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/register", "host": ["{{baseUrl}}"], "path": ["auth", "register"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"you@example.com\",\n  \"username\": \"you\",\n  \"password\": \"SuperSecret123!\",\n  \"full_name\": \"Your Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const data = pm.response.json();",
+                  "pm.collectionVariables.set('token', data.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"you@example.com\",\n  \"password\": \"SuperSecret123!\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get me",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/users/me", "host": ["{{baseUrl}}"], "path": ["users", "me"] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/auth/logout", "host": ["{{baseUrl}}"], "path": ["auth", "logout"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "item": [
+        {
+          "name": "List skills",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/skills?page=1&size=20", "host": ["{{baseUrl}}"], "path": ["skills"] }
+          }
+        },
+        {
+          "name": "Search skills",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/skills/search", "host": ["{{baseUrl}}"], "path": ["skills", "search"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"React performance optimization hooks\",\n  \"limit\": 10\n}"
+            }
+          }
+        },
+        {
+          "name": "Get a skill",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/skills/react-usememo-deep-dive", "host": ["{{baseUrl}}"], "path": ["skills", "react-usememo-deep-dive"] }
+          }
+        },
+        {
+          "name": "Create a skill",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": { "raw": "{{baseUrl}}/skills", "host": ["{{baseUrl}}"], "path": ["skills"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"React useMemo deep-dive\",\n  \"slug\": \"react-usememo-deep-dive\",\n  \"description\": \"A practical guide to React useMemo with examples\",\n  \"content\": \"# React useMemo\\n\\nuseMemo lets you cache...\",\n  \"category_id\": \"00000000-0000-0000-0000-000000000000\",\n  \"tags\": [\"react\", \"performance\"],\n  \"version\": \"1.0.0\",\n  \"is_public\": true\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
