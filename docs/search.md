@@ -45,7 +45,7 @@ The model is configurable via `EMBEDDING_MODEL`. To swap:
 1. Stop the backend.
 2. Set `EMBEDDING_MODEL=BAAI/bge-large-en-v1.5` in `.env`.
 3. Restart.
-4. Reindex: `python -m app.scripts.reindex`.
+4. Reindex: `poetry run python -m app.cli index rebuild --yes`.
 5. Restart again so the new index is hot.
 
 ## Step 2 — Vector search (Qdrant)

@@ -108,14 +108,16 @@ docker compose exec backend poetry run alembic upgrade head
 
 The API is unreachable from the browser. Open
 <http://localhost:8000/health> in a tab — if that loads, the backend
-is fine and the issue is CORS or `VITE_API_BASE_URL`.
+is fine and the issue is CORS or `NEXT_PUBLIC_API_URL`.
 
 Check that the env var in `frontend/.env.local` matches where the
 backend is actually serving:
 
 ```bash
-echo $VITE_API_BASE_URL
-# should be http://localhost:8000/api/v1 in dev
+# Print the value baked into the running frontend container
+docker compose exec frontend printenv NEXT_PUBLIC_API_URL
+# should be http://localhost:8000 in dev (no /api/v1 suffix;
+# the Next.js rewrite appends /api/* automatically)
 ```
 
 ### Pages are blank after `npm run build`
@@ -169,15 +171,29 @@ mismatch. Either:
 
 ### `QdrantException: Not found: Collection skills doesn't exist`
 
-The collection is missing. Force a recreate:
+The collection is missing. The simplest fix is to restart the
+backend — the `VectorSearchService` re-creates the collection
+in its `__init__` if it does not exist. If you have a custom
+deployment and the auto-create is disabled, recreate manually:
 
 ```bash
 docker compose exec backend python -c "
 import asyncio
-from app.services.vector_search import get_qdrant
+from app.core.config import get_settings
+from qdrant_client import QdrantClient
+
 async def main():
-    q = await get_qdrant()
-    await q.recreate_collection('skills', vectors_count=768)
+    s = get_settings()
+    q = QdrantClient(url=s.QDRANT_URL, api_key=s.QDRANT_API_KEY)
+    if not q.collection_exists('skills'):
+        q.create_collection(
+            collection_name='skills',
+            vectors_config={'size': s.EMBEDDING_DIMENSION, 'distance': 'Cosine'},
+        )
+        print('Created collection: skills')
+    else:
+        print('Collection already exists')
+
 asyncio.run(main())
 "
 ```

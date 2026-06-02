@@ -5,12 +5,13 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "skill-sdk"
 version = "1.0.0"
-description = "Python SDK for Modern Skill Library API"
-authors = ["AI Engineering Team"]
+description = "Python SDK for the AI-SKILL platform"
+authors = ["AI-SKILL <noreply@badhope.io>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/your-org/modern-skill-system"
-keywords = ["skill", "library", "sdk", "api-client"]
+repository = "https://github.com/badhope/AI-SKILL"
+homepage = "https://github.com/badhope/AI-SKILL"
+keywords = ["ai", "skill", "llm", "agent", "api-client"]
 
 [tool.poetry.dependencies]
 python = "^3.10"

@@ -5,7 +5,7 @@ the local workflow, conventions, and how to test your changes before
 opening a pull request.
 
 If you are new to the project, also read
-[Contributing](community/contributing.md) and the
+[Contributing](../community/contributing/) and the
 [architecture document](architecture.md).
 
 ---
@@ -267,11 +267,12 @@ Before opening a PR, walk through:
 
 1. `make dev` boots cleanly
 2. Frontend renders without console errors
-3. `POST /auth/register` works
-4. `POST /auth/login` returns a token
-5. `GET /skills` returns the seeded list
-6. `GET /skills/search?q=react` returns relevant results
-7. `GET /health/ready` returns 200
+3. `POST /api/v1/auth/register` works (returns 201)
+4. `POST /api/v1/auth/login` returns a token pair
+5. `GET /api/v1/skills` returns the seeded list
+6. `GET /api/v1/skills/search?q=react` returns relevant results
+7. `GET /health` returns 200 (liveness)
+8. `make health-check` reports 4/4 services healthy
 
 ---
 

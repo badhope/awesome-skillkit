@@ -68,8 +68,12 @@ poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 ```bash
 cd frontend
+# Env vars exposed to the browser MUST be prefixed with NEXT_PUBLIC_.
+# The value is the backend root (no /api/v1 suffix) because the
+# Next.js rewrite in next.config.ts appends /api/* for you.
 cp .env.example .env.local
-# Set VITE_API_BASE_URL=http://localhost:8000/api/v1
+echo 'NEXT_PUBLIC_API_URL="http://localhost:8000"' >> .env.local
+echo 'NEXT_PUBLIC_APP_NAME="AI-SKILL"'                >> .env.local
 npm install
 npm run build
 npm start
@@ -94,7 +98,7 @@ curl -sf http://localhost:8000/health
 # Frontend renders
 curl -sfI http://localhost:3000
 
-# API docs are auto-generated
+# API docs (only when DEBUG=true on the backend)
 open http://localhost:8000/docs
 ```
 
@@ -111,5 +115,4 @@ with the credentials you provided.
 
 - [Quick start](quickstart.md) — your first skill in 5 minutes
 - [Configuration](configuration.md) — every env var documented
-- [Deployment](../operations/../deployment.md) — production
-  topologies
+- [Deployment](../deployment.md) — production topologies

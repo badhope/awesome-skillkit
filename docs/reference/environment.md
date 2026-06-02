@@ -8,10 +8,14 @@ default, type, and a short description.
 | Variable       | Type    | Default       | Description                                          |
 |----------------|---------|---------------|------------------------------------------------------|
 | `APP_NAME`     | `str`   | `AI-SKILL`    | Display name; used in the OpenAPI title             |
-| `APP_VERSION`  | `str`   | (from code)   | Display version; surfaced by `GET /health`          |
-| `DEBUG`        | `bool`  | `false`       | `true` = permissive startup, verbose logging, etc.  |
+| `APP_VERSION`  | `str`   | `1.0.0`       | Display version; surfaced by `GET /health` and Sentry `release` |
+| `DEBUG`        | `bool`  | `false`       | `true` = permissive startup, verbose logging, ephemeral JWT key |
 | `API_PREFIX`   | `str`   | `/api/v1`     | Mount prefix for all API routes                     |
-| `ENVIRONMENT`  | `str`   | `production`  | Free-form label for the deployment                  |
+
+> There is **no** separate `ENVIRONMENT` variable — the backend
+> switches behaviour based on `DEBUG` (`true` → development,
+> `false` → production). If you need an environment label for
+> Sentry or your log shipper, derive it client-side from `DEBUG`.
 
 ## Database
 

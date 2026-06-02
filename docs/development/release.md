@@ -18,12 +18,8 @@ When in doubt, ship a minor.
 1. **All CI green** on `main`
 2. **CHANGELOG.md** is updated — the unreleased section is moved
    under a dated heading
-3. **OpenAPI schema** is regenerated and committed (the
-   `scripts/generate_openapi.py` script handles this in CI on
-   `main`)
-4. **Translations** are in sync (`make i18n-check`)
-5. **No security advisories** open against the codebase
-6. **Docker images** built and pushed (CI does this on tag)
+3. **No security advisories** open against the codebase
+4. **Docker images** built and pushed (CI does this on tag)
 
 ## Cutting the release
 
@@ -118,6 +114,6 @@ beta testers can pull from the same tag.
 
 ## Where to go from here
 
-- [Roadmap](../community/roadmap.md) — what is planned
-- [Changelog](../community/changelog.md) — what has shipped
-- [Deployment](../deployment.md) — promoting a build to production
+- [Roadmap](../../community/roadmap/) — what is planned
+- [Changelog](../../community/changelog/) — what has shipped
+- [Deployment](../../deployment/) — promoting a build to production

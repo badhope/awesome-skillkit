@@ -1,7 +1,7 @@
 {
   "name": "@skill-library/sdk",
   "version": "1.0.0",
-  "description": "TypeScript SDK for Modern Skill Library API",
+  "description": "TypeScript SDK for the AI-SKILL platform",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -26,18 +26,20 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
+    "ai",
     "skill",
-    "library",
-    "sdk",
+    "llm",
+    "agent",
     "api-client",
     "typescript"
   ],
-  "author": "AI Engineering Team",
+  "author": "AI-SKILL <noreply@badhope.io>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/modern-skill-system"
+    "url": "https://github.com/badhope/AI-SKILL"
   },
+  "homepage": "https://github.com/badhope/AI-SKILL",
   "devDependencies": {
     "@types/node": "^20.0.0",
     "eslint": "^8.0.0",

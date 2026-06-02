@@ -33,7 +33,7 @@ backend is Python, the frontend and TypeScript SDK are JavaScript.
 
 - CI uses `poetry install --no-interaction` and `npm ci`.
 - Contributors need Poetry and npm installed; both are documented in
-  [Contributing](../community/contributing.md).
+  [Contributing](../../community/contributing/).
 - `pyproject.toml` includes `[tool.ruff]` and `[tool.mypy]` config
   so a single file is enough for linting, type-checking, and
   packaging.

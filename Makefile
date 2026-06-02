@@ -166,7 +166,7 @@ seed:  ## Seed categories + tags (idempotent)
 	cd $(BACKEND_DIR) && $(POETRY) run python -m app.core.seed
 
 health-check:  ## Probe the running backend
-	cd $(BACKEND_DIR) && $(POETRY) run python scripts/health_check.py
+	cd $(BACKEND_DIR) && $(POETRY) run python $(CURDIR)/scripts/health_check.py
 
 # ---- Build & publish ---------------------------------------------------------
 .PHONY: build build-backend build-frontend publish

@@ -22,8 +22,8 @@ Both SDKs:
 
 The full per-language reference is in each SDK's README.
 
-- [Python SDK reference](python.md)
-- [TypeScript SDK reference](typescript.md)
+- [Python SDK reference](../sdks/python/)
+- [TypeScript SDK reference](../sdks/typescript/)
 
 A short overview of the common methods:
 
@@ -137,7 +137,7 @@ version.
 
 ## Where to go from here
 
-- [Python SDK](python.md)
-- [TypeScript SDK](typescript.md)
-- [REST examples](../examples/rest.md) — for everything the
+- [Python SDK](../sdks/python/)
+- [TypeScript SDK](../sdks/typescript/)
+- [REST examples](../examples/rest/) — for everything the
   SDK does not (yet) expose

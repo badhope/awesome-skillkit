@@ -97,8 +97,13 @@ poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 ```bash
 cd frontend
-cp .env.example .env.local
-# Set VITE_API_BASE_URL=https://api.your-domain.com/api/v1
+# Env vars exposed to the browser MUST be prefixed with NEXT_PUBLIC_.
+# The frontend proxies /api/* to ${NEXT_PUBLIC_API_URL}/api/* (see
+# frontend/next.config.ts), so the value is the backend root (no
+# /api/v1 suffix).
+cp .env.example ../.env.local  # or create a .env.local manually
+echo 'NEXT_PUBLIC_API_URL="http://localhost:8000"' >> .env.local
+echo 'NEXT_PUBLIC_APP_NAME="AI-SKILL"'                >> .env.local
 npm install
 npm run build
 npm start
@@ -222,8 +227,9 @@ curl -fI https://your-domain.com/health
 ```bash
 cd frontend
 vercel link
-vercel env add VITE_API_BASE_URL production
-# Paste: https://api.your-domain.com/api/v1
+vercel env add NEXT_PUBLIC_API_URL production
+# Paste: https://api.your-domain.com (no /api/v1 suffix — Next.js
+# rewrites /api/* to ${NEXT_PUBLIC_API_URL}/api/* automatically)
 vercel --prod
 ```
 
@@ -293,7 +299,9 @@ git pull --ff-only
 docker compose pull
 docker compose up -d --remove-orphans
 docker compose exec backend poetry run alembic upgrade head
-docker compose exec backend python scripts/health_check.py
+# Probe the new build from the host (scripts/health_check.py is at
+# the repo root, not inside the backend container).
+make health-check
 ```
 
 ### 5.2 Roll back to the previous version
@@ -330,13 +338,19 @@ gunzip -c backup-20260601T000000Z.sql.gz | \
     docker compose exec -T postgres psql -U skill_user skill_db
 ```
 
-Automate with cron:
+Automate with cron. The actual script is intentionally not
+checked in (each operator's backup target, retention window, and
+S3 bucket differ), so a minimal example looks like:
 
-```cron
+```bash
 # /etc/cron.d/skill-system-backup
 0 3 * * * cd /opt/skill-system && \
-  ./scripts/backup.sh >> /var/log/skill-backup.log 2>&1
+  /opt/skill-system/scripts/backup.sh >> /var/log/skill-backup.log 2>&1
 ```
+
+A reference `scripts/backup.sh` is kept in the operator's runbook
+(not in this repository) and typically wraps the `pg_dump` and
+`qdrant snapshots` calls shown above with rotation and S3 sync.
 
 ### 6.2 Qdrant
 
@@ -349,8 +363,9 @@ curl -X POST 'http://localhost:6333/collections/skills/snapshots'
 
 ### 6.3 Object storage
 
-If you use S3, enable bucket versioning and lifecycle policies. The
-`scripts/backup.sh` template includes an S3 sync step.
+If you use S3, enable bucket versioning and lifecycle policies.
+Your backup script (see §6.1) should also `aws s3 sync` the
+`*.sql.gz` and Qdrant snapshot files to a versioned bucket.
 
 ---
 
@@ -375,5 +390,5 @@ Run through this list before opening your deployment to the public.
 - [ ] Dependabot alerts enabled
 - [ ] `git log --oneline` shows no hardcoded secrets
 
-See [Security policy](operations/security.md) for the full policy and
+See [Security policy](../operations/security/) for the full policy and
 disclosure process.

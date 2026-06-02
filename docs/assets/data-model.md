@@ -88,42 +88,90 @@ Free-form labels for skills.
 | `color`      | `varchar` | Hex                            |
 | `description`| `text`    |                                |
 
-### `skill_tags`
+### `skill_tag_association`
 
-Many-to-many join.
+Many-to-many join. Lives in its own table (not auto-managed
+by SQLAlchemy) so the composite primary key can be enforced.
 
 | Column    | Type  | Notes                          |
 |-----------|-------|--------------------------------|
 | `skill_id`| `uuid`| FK → `skills.id`               |
 | `tag_id`  | `uuid`| FK → `tags.id`                 |
 
-### `compositions`
+### `skill_dependencies`
 
-A directed graph of skills that can be executed together.
+Directed graph of "skill A depends on skill B (at version ≥ N)".
 
-| Column      | Type      | Notes                              |
-|-------------|-----------|------------------------------------|
-| `id`        | `uuid`    | Primary key                        |
-| `slug`      | `varchar` | Unique                             |
-| `name`      | `varchar` |                                    |
-| `description`| `text`   |                                    |
-| `items`     | `jsonb`   | Ordered list of skill refs + args  |
-| `is_public` | `bool`    |                                    |
-| `owner_id`  | `uuid`    | FK → `users.id`                    |
-| `created_at`| `timestamptz`|                                |
+| Column               | Type      | Notes                                              |
+|----------------------|-----------|----------------------------------------------------|
+| `id`                 | `uuid`    | Primary key                                        |
+| `skill_id`           | `uuid`    | FK → `skills.id`                                   |
+| `depends_on_skill_id`| `uuid`    | FK → `skills.id`                                   |
+| `version_constraint` | `varchar` | SemVer constraint, e.g. `>=1.2.0,<2.0.0`           |
+| `is_required`        | `bool`    | `false` = soft (preferred) dependency               |
+| `created_at`         | `timestamptz`|                                                  |
 
-### `analytics_events`
+### `skill_ratings`
 
-Append-only event log for the dashboard.
+One row per (user, skill). Updated in place when the user
+re-rates.
 
-| Column    | Type         | Notes                       |
-|-----------|--------------|-----------------------------|
-| `id`      | `uuid`       | Primary key                 |
-| `event_type` | `varchar`  | `skill.view`, `skill.search`, `audit.auth.login`, … |
-| `skill_id`| `uuid`       | FK → `skills.id` (nullable) |
-| `user_id` | `uuid`       | FK → `users.id` (nullable)  |
-| `metadata`| `jsonb`      | Event-specific payload      |
-| `ts`      | `timestamptz`|                             |
+| Column      | Type         | Notes                            |
+|-------------|--------------|----------------------------------|
+| `id`        | `uuid`       | Primary key                      |
+| `skill_id`  | `uuid`       | FK → `skills.id`                 |
+| `user_id`   | `uuid`       | FK → `users.id`                  |
+| `rating`    | `int`        | 1–5                              |
+| `comment`   | `text`       | Optional, max 2 000 chars        |
+| `created_at`| `timestamptz`|                                  |
+| `updated_at`| `timestamptz`|                                  |
+
+### `skill_usage_logs`
+
+Append-only log of "user X did Y to skill Z" events. Powers
+the analytics dashboard. Not a replacement for the
+`analytics_events` table described in early drafts — that
+table was never materialised; the audit log via
+`app.core.audit.log_event` is the only event sink today.
+
+| Column       | Type         | Notes                                            |
+|--------------|--------------|--------------------------------------------------|
+| `id`         | `uuid`       | Primary key                                      |
+| `skill_id`   | `uuid`       | FK → `skills.id`                                 |
+| `user_id`    | `uuid`       | FK → `users.id` (nullable for anonymous events)  |
+| `action`     | `varchar`    | `view` · `download` · `use` · `rate` · `share`   |
+| `ip_address` | `varchar`    | Hashed before persistence                        |
+| `user_agent` | `varchar`    |                                                  |
+| `created_at` | `timestamptz`|                                                  |
+
+### `skill_compositions`
+
+The composition itself — a named, versioned group of skills.
+
+| Column       | Type         | Notes                              |
+|--------------|--------------|------------------------------------|
+| `id`         | `uuid`       | Primary key                        |
+| `slug`       | `varchar`    | Unique                             |
+| `name`       | `varchar`    |                                    |
+| `description`| `text`       |                                    |
+| `is_public`  | `bool`       |                                    |
+| `owner_id`   | `uuid`       | FK → `users.id`                    |
+| `created_at` | `timestamptz`|                                    |
+| `updated_at` | `timestamptz`|                                    |
+
+### `skill_composition_items`
+
+Ordered list of skills inside a composition. The items are
+relational (not a JSONB column on the parent) so they can be
+re-ordered, indexed, and FK-validated.
+
+| Column          | Type  | Notes                            |
+|-----------------|-------|----------------------------------|
+| `id`            | `uuid`| Primary key                      |
+| `composition_id`| `uuid`| FK → `skill_compositions.id`     |
+| `skill_id`      | `uuid`| FK → `skills.id`                 |
+| `sort_order`    | `int` | Display order inside composition |
+| `notes`         | `text`| Free-form per-item comment       |
 
 ## Indexes
 

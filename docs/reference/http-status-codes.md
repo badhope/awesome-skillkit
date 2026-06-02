@@ -35,21 +35,34 @@ called out below.
 
 ## Error response shape
 
-All error responses share the same shape:
+There are two response shapes, depending on where the error
+originated:
+
+**Uncaught exceptions (status 500)** — produced by
+`ErrorHandlerMiddleware`:
 
 ```json
 {
-  "detail": "Skill not found: react-usememo-deep-dive",
-  "error_code": "skill_not_found",
-  "request_id": "f3a4…"
+  "detail": "An internal server error occurred.",
+  "request_id": "f3a4…",
+  "error_type": "ValueError"
 }
 ```
 
 | Field        | Type   | Notes |
 |--------------|--------|-------|
 | `detail`     | `str`  | Human-readable message |
-| `error_code` | `str`  | Machine-readable code (stable across releases) |
 | `request_id` | `str`  | UUID of the request — quote it when reporting bugs |
+| `error_type` | `str`  | Python exception class name (no module prefix) |
+
+**Handled errors (4xx, also from FastAPI's `HTTPException`)** —
+the standard `{"detail": "..."}` body. The same `request_id`
+is always set in the `X-Request-ID` response header, so you can
+still correlate a client-side report with a server-side log
+line.
+
+> A unified `error_code` field is planned but **not yet
+> implemented**. Track progress in the issue tracker.
 
 ## Validation errors (422)
 
@@ -97,12 +110,15 @@ array (not 404).
 
 ## Idempotency
 
-`PUT` and `DELETE` are idempotent. `POST` is not, except for the
-explicit `Idempotency-Key` header, which when present makes the
-request safely retryable within a 24-hour window.
+`PUT` and `DELETE` are idempotent. `POST` is **not** idempotent
+in general — a retried `POST /skills` will create a second skill
+with a new id. An explicit `Idempotency-Key` header is **planned
+but not yet implemented**; do not rely on it for now. To make a
+write safe to retry, use a deterministic `slug` (UQ on
+`skills`) or check the response of the first attempt.
 
 ## Where to go from here
 
-- [OpenAPI schema](https://github.com/badhope/AI-SKILL/blob/main/backend/app/api/openapi.py) — full contract
-- [Swagger UI](http://localhost:8000/docs) — interactive playground
-- [Examples](../examples/rest.md) — sample requests and responses
+- [OpenAPI schema](https://badhope.github.io/AI-SKILL/api/v1/openapi.json) — full contract (live)
+- [Swagger UI](http://localhost:8000/docs) — interactive playground (only when the backend is started with `DEBUG=true`)
+- [Examples](../../examples/rest/) — sample requests and responses

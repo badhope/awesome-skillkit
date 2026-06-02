@@ -11,8 +11,12 @@ parameters. Both are user-authored and have an evolving shape.
 
 ## Decision
 
-Store both as **Postgres JSONB** and validate the shape with
-Pydantic v2 on read and write.
+Store `skills.content` as **Postgres JSONB** and validate the
+shape with Pydantic v2 on read and write. The composition items
+live in a dedicated `skill_composition_items` table (FK to
+`skill_compositions` plus `skill_id`, `sort_order`, `notes`)
+rather than a JSONB column — the relational form is a better fit
+because items are queried, ordered, and re-ordered by hand.
 
 ## Alternatives considered
 
@@ -24,10 +28,13 @@ Pydantic v2 on read and write.
 
 ## Consequences
 
-- New skill fields are added in Pydantic without a database
-  migration.
+- New skill `content` fields are added in Pydantic without a
+  database migration.
 - We get GIN indexing on JSONB for cheap "where the JSON contains X"
   queries.
-- Pydantic v2 stays the single source of truth for the schema.
+- Pydantic v2 stays the single source of truth for the content
+  schema.
+- Adding / removing / re-ordering items in a composition is a
+  normal SQL UPDATE — no JSON rewrite.
 - Trade-off: any code that bypasses Pydantic (raw SQL, ad-hoc
   reports) needs to re-implement validation.

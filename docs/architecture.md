@@ -4,7 +4,7 @@ This document describes the runtime architecture, data flow, and
 deployment topology of AI-SKILL. It is intended for operators and
 contributors who need to understand the system before extending it.
 
-For a high-level overview, see [the diagram in the home page](index.md#-architecture).
+For a high-level overview, see [the diagram in the home page](index.md#architecture).
 For deployment specifics, see [docs/deployment.md](deployment.md).
 
 ---
@@ -51,13 +51,15 @@ through a typed contract.
 backend/app/
 ├── main.py                  # FastAPI app factory, middleware wiring, lifespan
 ├── api/v1/                  # HTTP routers, one per resource
-│   ├── auth.py              # /register · /login · /refresh · /logout
-│   ├── users.py             # /me · /me/skills
-│   ├── skills.py            # CRUD + /search (vector) + /featured
-│   ├── categories.py        # Category tree
-│   ├── tags.py              # Tag index
-│   ├── compositions.py      # Composed workflows (graph of skills)
-│   └── analytics.py         # Aggregations for the dashboard
+│   ├── auth.py              # /register · /login · /refresh · /logout · /me · /me/password
+│   ├── users.py             # /users · /users/{username} · /users/{username}/skills
+│   ├── skills.py            # CRUD + /search (vector) + /featured + /popular + /trending
+│   │                        # + /{slug}/versions · /dependencies · /similar · /rate · /use
+│   ├── categories.py        # Flat list + /tree (nested) + CRUD
+│   ├── tags.py              # Tag CRUD + /popular
+│   ├── compositions.py      # Composition CRUD + /{slug}/items
+│   └── analytics.py         # /dashboard · /skills/usage · /skills/popular
+│                            # · /categories/distribution · /tags/trending
 │
 ├── core/                    # Cross-cutting concerns
 │   ├── config.py            # pydantic-settings, secret validation
@@ -66,12 +68,12 @@ backend/app/
 │   ├── logging.py           # structlog configuration
 │   ├── pagination.py        # Generic Page[T] + PaginationParams
 │   ├── audit.py             # Append-only audit log
-│   ├── seed.py              # Idempotent categories + admin bootstrap
-│   └── pagination.py        # Generic Page[T]
+│   └── seed.py              # Idempotent categories + admin bootstrap
 │
 ├── models/                  # SQLAlchemy 2.0 ORM models
 │   └── skill.py             # User · Skill · Category · Tag · SkillVersion
-│                            # SkillDependency · Composition · AnalyticsEvent
+│                            # SkillDependency · SkillRating · SkillUsageLog
+│                            # SkillComposition · SkillCompositionItem
 │
 ├── schemas/                 # Pydantic v2 request / response models
 ├── services/                # Domain logic (no HTTP coupling)
@@ -92,7 +94,7 @@ backend/app/
 │   └── create_admin.py      # Bootstrap a superuser
 │
 ├── cli/                     # In-process Typer app
-└── db/session.py            # async engine, session factory
+└──db/session.py            # async engine, session factory
 ```
 
 ### 2.1 Request Lifecycle
@@ -119,43 +121,48 @@ client
 
 ```
 register     POST /auth/register
-             bcrypt-hash the password, persist User, return tokens
+             validate password strength, bcrypt-hash, persist User,
+             return UserResponse (no tokens — clients call /login
+             immediately after)
 
-login        POST /auth/login
-             verify bcrypt, issue access (15 min) + refresh (7 d)
+login        POST /auth/login        (form: username + password)
+             verify bcrypt, issue access (30 min) + refresh (7 d)
 
-refresh      POST /auth/refresh
+refresh      POST /auth/refresh      (form: refresh_token)
              verify refresh, rotate, return new pair
 
-logout       POST /auth/logout
-             (server-side) record a token JTI in the Redis denylist
+logout       POST /auth/logout       (requires valid access token)
+             record a logout audit event via the audit log
 ```
 
 ---
 
 ## 3. Data Model
 
-| Table           | Key columns                                                                | Indexes                          |
-|-----------------|----------------------------------------------------------------------------|----------------------------------|
-| `users`         | `id` · `email` (UQ) · `username` (UQ) · `hashed_password` · `is_active`    | `email` · `username` · `created_at` |
-| `skills`        | `id` · `slug` (UQ) · `name` · `content` · `category_id` · `is_public`     | `slug` · `category_id` · `author_id` · GIN on `name`/`description` |
-| `skill_versions`| `id` · `skill_id` · `version` · `content` · `changelog`                   | `(skill_id, version)` (UQ)       |
-| `categories`    | `id` · `slug` (UQ) · `name` · `parent_id` · `sort_order`                  | `slug` · `parent_id`             |
-| `tags`          | `id` · `name` (UQ) · `color`                                               | `name`                           |
-| `skill_tags`    | `skill_id` · `tag_id`                                                      | composite (skill_id, tag_id)     |
-| `skill_deps`    | `parent_skill_id` · `child_skill_id` · `version_constraint`               | composite (parent, child)        |
-| `compositions`  | `id` · `slug` (UQ) · `name` · `items` (JSONB) · `is_public`                | `slug` · `is_public`             |
-| `analytics_events` | `id` · `event_type` · `skill_id` · `user_id` · `ts` · `metadata` (JSONB) | `(event_type, ts)` · `skill_id`  |
+| Table                       | Key columns                                                                | Indexes                          |
+|-----------------------------|----------------------------------------------------------------------------|----------------------------------|
+| `users`                     | `id` · `email` (UQ) · `username` (UQ) · `hashed_password` · `is_active`    | `email` · `username` · `created_at` |
+| `skills`                    | `id` · `slug` (UQ) · `name` · `content` (JSONB) · `category_id` · `is_public` | `slug` · `category_id` · `author_id` · `is_featured` · `status` · `complexity` |
+| `skill_versions`            | `id` · `skill_id` · `version` · `content` (JSONB) · `changelog`           | `(skill_id, version)` (UQ)       |
+| `categories`                | `id` · `slug` (UQ) · `name` · `parent_id` · `sort_order`                  | `slug` · `parent_id`             |
+| `tags`                      | `id` · `name` (UQ) · `color` · `description` · `usage_count`             | `name`                           |
+| `skill_tag_association`     | `skill_id` · `tag_id`                                                      | `skill_id` · `tag_id`            |
+| `skill_dependencies`        | `skill_id` · `depends_on_skill_id` · `version_constraint`                 | `(skill_id, depends_on_skill_id)` (UQ) |
+| `skill_ratings`             | `skill_id` · `user_id` · `rating` (1-5) · `comment`                        | `(skill_id, user_id)` (UQ)       |
+| `skill_usage_logs`          | `skill_id` · `user_id` · `action` · `ip_address`                          | `skill_id` · `user_id` · `created_at` |
+| `skill_compositions`        | `id` · `slug` (UQ) · `name` · `owner_id` · `is_public`                    | `slug` · `owner_id`              |
+| `skill_composition_items`   | `composition_id` · `skill_id` · `sort_order` · `notes`                    | `(composition_id, skill_id)` (UQ) |
 
 ### 3.1 JSONB columns
 
 - `skills.content` — the skill body (markdown, code, references)
-- `compositions.items` — the ordered list of skill refs and parameters
-- `analytics_events.metadata` — event-specific free-form payload
-
-We deliberately keep these as JSONB so that operators can extend the
-schema without a migration. The Pydantic schemas enforce shape on
-read/write.
+- `skill_compositions` is composed of `skill_composition_items` rows
+  (no separate JSONB `items` column on the composition itself)
+- Audit events flow through the `app.core.audit.log_event` helper,
+  which currently ships them to the structured log (no separate
+  `analytics_events` table is persisted at the moment — see
+  [ADR 004](adr/004-jsonb-flexible-content.md) for the
+  reasoning).
 
 ---
 
@@ -287,7 +294,10 @@ See [docs/deployment.md](deployment.md) for step-by-step recipes.
 
 ## 8. Security Model
 
-- **Authentication**: JWT (HS256), 15-min access + 7-day refresh.
+- **Authentication**: JWT (HS256), 30-min access + 7-day refresh.
+  (Driven by `ACCESS_TOKEN_EXPIRE_MINUTES` and
+  `REFRESH_TOKEN_EXPIRE_DAYS` in `Settings` — change there to
+  override.)
 - **Authorization**: RBAC — `is_superuser` for now; role table planned for v1.1.
 - **Transport**: TLS at the edge; HSTS enforced in production.
 - **Input**: Pydantic v2 strict mode on all endpoints.
@@ -308,9 +318,12 @@ See [docs/deployment.md](deployment.md) for step-by-step recipes.
 - **Metrics**: OpenTelemetry `OTLP` exporter to your collector.
 - **Traces**: OTel auto-instrumentation for FastAPI and SQLAlchemy.
 - **Errors**: Sentry SDK (DSN via `SENTRY_DSN`).
-- **Health check**: `GET /health` returns 200 if the app is alive;
-  `GET /health/ready` returns 200 only if Postgres, Redis, and
-  Qdrant are reachable.
+- **Health check**: `GET /health` returns 200 with `{status,
+  app_name, version}` as long as the process is up. The Alembic
+  migration version and Qdrant collection existence are NOT
+  checked by `/health`; they are checked by
+  `scripts/health_check.py` and by the backend's `lifespan`
+  startup probe (which fails-fast if Postgres is unreachable).
 
 ---
 

@@ -108,13 +108,21 @@ SENTRY_PROFILES_SAMPLE_RATE=0.1 # 10% of profiles
 
 | Endpoint             | What it checks                              |
 |----------------------|---------------------------------------------|
-| `GET /health`        | App is alive (always 200 if the process is up) |
-| `GET /health/ready`  | Postgres + Redis + Qdrant are all reachable |
-| `GET /health/live`   | Liveness probe (always 200)                 |
+| `GET /health`        | App is alive (returns 200 with `{status, app_name, version}` whenever the process is up) |
+| `GET /`              | Same JSON as `/health` plus `api_prefix` and `docs` URL |
 
-Wire `/health/ready` to your load balancer's readiness check and
-`/health/live` to the liveness check. A failing `/health/ready`
-removes the pod from rotation; a failing `/health/live` restarts it.
+Deep readiness checks (Alembic head, Qdrant collection, etc.) are
+**not** exposed over HTTP yet. They are run by
+[`scripts/health_check.py`](https://github.com/badhope/AI-SKILL/blob/main/scripts/health_check.py)
+against the running backend:
+
+```bash
+make health-check          # alias for: poetry run python scripts/health_check.py
+```
+
+Wire `/health` to both your load balancer's liveness and
+readiness probes. A failing `/health` removes the pod from
+rotation and restarts it.
 
 ## Where to go from here
 
