@@ -55,18 +55,36 @@ Critical vulnerabilities will be prioritized accordingly.
    ```bash
    openssl rand -hex 32
    ```
+   The application **refuses to start in production** (`DEBUG=false`) if `JWT_SECRET_KEY`
+   is missing, shorter than 32 characters, or matches a known-weak default. In
+   `DEBUG=true` mode an ephemeral random key is generated per-process and a warning
+   is logged, which keeps development frictionless but is **not** safe for
+   production.
 
-2. **Use TLS** — Always run behind a reverse proxy (Nginx, Traefik, Caddy) with TLS termination enabled
+2. **Bootstrap the first admin securely** — Set `ADMIN_PASSWORD` (≥ 12 chars) in
+   your `.env` before the first start so `app.core.seed` can create the initial
+   superuser, or run the dedicated CLI:
+   ```bash
+   ADMIN_PASSWORD="$(openssl rand -base64 18)" \\
+   ADMIN_EMAIL="ops@yourdomain.com" \\
+   ADMIN_USERNAME="ops" \\
+   python -m app.scripts.create_admin
+   ```
+   If neither path is taken, the application logs a CRITICAL line on startup
+   and **skips** admin seeding — every fresh database therefore requires an
+   explicit operator action to enable admin login.
 
-3. **Restrict CORS origins** — Set `BACKEND_CORS_ORIGINS` to only your actual frontend domains
+3. **Use TLS** — Always run behind a reverse proxy (Nginx, Traefik, Caddy) with TLS termination enabled
 
-4. **Enable rate limiting** — Configure `RATE_LIMIT_DEFAULT` and `RATE_LIMIT_WINDOW` appropriately
+4. **Restrict CORS origins** — Set `BACKEND_CORS_ORIGINS` to only your actual frontend domains. Wildcard origins are not supported because the API sets `allow_credentials=true`.
 
-5. **Regular updates** — Keep dependencies updated with `poetry update` and `npm update`
+5. **Enable rate limiting** — Configure `RATE_LIMIT_DEFAULT` and `RATE_LIMIT_WINDOW` appropriately
 
-6. **Database security** — Use strong passwords, restrict network access, enable SSL connections
+6. **Regular updates** — Keep dependencies updated with `poetry update` and `npm update`
 
-7. **Environment isolation** — Use separate `.env` files for development, staging, and production
+7. **Database security** — Use strong passwords, restrict network access, enable SSL connections. The `POSTGRES_PASSWORD` value in `docker-compose.yml` is sourced from `.env` and is intentionally left empty if not set so the container fails fast rather than starting with a known weak default.
+
+8. **Environment isolation** — Use separate `.env` files for development, staging, and production
 
 ### For Contributors
 
@@ -103,6 +121,15 @@ AI-SKILL implements several security measures:
 - **Rate Limiting**: Configurable per-endpoint and global rate limits
 - **CORS**: Configurable cross-origin resource sharing policies
 - **Password Hashing**: bcrypt with appropriate work factor
+- **Password Policy**: minimum 8 chars with upper, lower, and digit; weak-password denylist
+- **Security Headers**: `SecurityHeadersMiddleware` adds HSTS (production only),
+  `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
+  `Permissions-Policy`, strict `Content-Security-Policy`, and the
+  `Cross-Origin-*` isolation headers. The `Server` and `X-Powered-By` headers
+  are also sanitized to avoid fingerprinting.
+- **Startup Secret Validation**: production refuses to start without a
+  32+ char `JWT_SECRET_KEY` that is not on a weak-default denylist. The
+  same policy applies to `ADMIN_PASSWORD` in production seeding.
 - **HTTPS**: Recommended TLS termination at reverse proxy level
 - **Audit Logging**: All authentication and modification events are logged
 - **Dependency Scanning**: Automated vulnerability scanning in CI pipeline

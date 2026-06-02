@@ -1,4 +1,7 @@
+import os
+import secrets
 from typing import Optional
+
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -18,9 +21,44 @@ INITIAL_CATEGORIES = [
     {"name": "Database", "slug": "database", "description": "数据库相关技能", "icon": "database", "sort_order": 6},
 ]
 
-ADMIN_EMAIL = "admin@ai-skill.local"
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "Admin1234"
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@ai-skill.local")
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+
+
+def _ensure_admin_password() -> Optional[str]:
+    """
+    Resolve the admin password from environment.
+
+    Security policy:
+      - The admin password MUST be supplied via the ``ADMIN_PASSWORD`` env var.
+      - In development mode (DEBUG=true), if no password is supplied we generate
+        a strong random one and log it once so the developer can use it.
+      - In production mode (DEBUG=false), if no password is supplied we skip
+        admin seeding entirely and emit a CRITICAL log line. The operator must
+        run ``python -m app.scripts.create_admin`` to bootstrap the first admin.
+    """
+    if ADMIN_PASSWORD:
+        return ADMIN_PASSWORD
+
+    from app.core.config import settings
+
+    if settings.DEBUG:
+        generated = secrets.token_urlsafe(24)
+        logger.warning(
+            "ADMIN_PASSWORD not set; generated a one-time random password for development. "
+            "Set ADMIN_PASSWORD env var explicitly to control the value.",
+            admin_email=ADMIN_EMAIL,
+            admin_username=ADMIN_USERNAME,
+        )
+        return generated
+
+    logger.critical(
+        "ADMIN_PASSWORD environment variable is not set. "
+        "Skipping admin user seeding. "
+        "Create the first admin via: python -m app.scripts.create_admin"
+    )
+    return None
 
 
 async def _seed_categories(db: AsyncSession) -> None:
@@ -50,11 +88,15 @@ async def _seed_admin_user(db: AsyncSession) -> None:
         logger.info("Users already exist, skipping admin user seeding")
         return
 
+    password = _ensure_admin_password()
+    if password is None:
+        return
+
     admin_user = User(
         email=ADMIN_EMAIL,
         username=ADMIN_USERNAME,
         full_name="System Administrator",
-        hashed_password=pwd_context.hash(ADMIN_PASSWORD),
+        hashed_password=pwd_context.hash(password),
         is_active=True,
         is_superuser=True,
     )

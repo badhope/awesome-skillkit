@@ -17,6 +17,7 @@ from app.core.seed import seed_initial_data
 from app.db.session import async_session_factory, engine
 from app.middleware.error_handler import ErrorHandlerMiddleware
 from app.middleware.rate_limit import RateLimitMiddleware
+from app.middleware.security_headers import SecurityHeadersMiddleware
 
 settings = get_settings()
 logger = get_logger(__name__)
@@ -88,6 +89,7 @@ if settings.BACKEND_CORS_ORIGINS:
     )
 
 app.add_middleware(ErrorHandlerMiddleware)
+app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(RateLimitMiddleware)
 
 FastAPIInstrumentor.instrument_app(app)

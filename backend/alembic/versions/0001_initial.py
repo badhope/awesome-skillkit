@@ -105,13 +105,12 @@ SEED_SKILLS = [
     },
 ]
 
-SEED_ADMIN = {
-    "email": "admin@skill-lib.com",
-    "username": "admin",
-    "password": "admin123",
-    "full_name": "System Administrator",
-    "is_superuser": True,
-}
+# NOTE: admin user bootstrap is intentionally NOT included in this migration.
+# Migrations are immutable and shipping a default admin password would be a
+# security regression on every fresh database. Create the first admin with:
+#   ADMIN_PASSWORD=<strong> ADMIN_EMAIL=... python -m app.scripts.create_admin
+# or rely on the application-level seed in app.core.seed which honors the
+# ADMIN_PASSWORD env var (and refuses to run in production without it).
 
 
 def upgrade() -> None:
@@ -300,39 +299,11 @@ def downgrade() -> None:
 
 
 def _insert_seed_data() -> None:
-    from passlib.context import CryptContext
-
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+    # Admin user seeding has been moved out of the migration to avoid baking a
+    # default password into immutable migration history. Categories and tags
+    # below are still safe to seed from migrations because they contain no
+    # secret material.
     import uuid as _uuid
-
-    admin_id = str(_uuid.uuid4())
-    hashed_pw = pwd_context.hash(SEED_ADMIN["password"])
-
-    users_table = table(
-        USERS_TABLE,
-        column("id", UUID(as_uuid=True)),
-        column("email", sa.String),
-        column("username", sa.String),
-        column("hashed_password", sa.String),
-        column("full_name", sa.String),
-        column("is_active", sa.Boolean),
-        column("is_superuser", sa.Boolean),
-    )
-    op.bulk_insert(
-        users_table,
-        [
-            {
-                "id": admin_id,
-                "email": SEED_ADMIN["email"],
-                "username": SEED_ADMIN["username"],
-                "hashed_password": hashed_pw,
-                "full_name": SEED_ADMIN["full_name"],
-                "is_active": True,
-                "is_superuser": SEED_ADMIN["is_superuser"],
-            }
-        ],
-    )
 
     category_ids: dict[str, str] = {}
     categories_table = table(
@@ -421,7 +392,7 @@ def _insert_seed_data() -> None:
             "category_id": category_ids.get("frontend" if "react" in skill_data["slug"]
                 else "backend" if "python" in skill_data["slug"]
                 else "devops"),
-            "author_id": admin_id,
+            "author_id": None,
             "complexity": skill_data["complexity"],
             "status": "published",
             "license": skill_data["license"],
