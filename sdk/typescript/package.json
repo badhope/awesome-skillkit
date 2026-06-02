@@ -42,7 +42,7 @@
   "homepage": "https://github.com/badhope/AI-SKILL",
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "eslint": "^8.0.0",
+    "eslint": "^10.4.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "tsup": "^8.0.0",
