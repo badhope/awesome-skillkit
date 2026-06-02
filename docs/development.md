@@ -5,7 +5,7 @@ the local workflow, conventions, and how to test your changes before
 opening a pull request.
 
 If you are new to the project, also read
-[CONTRIBUTING.md](../CONTRIBUTING.md) and the
+[Contributing](community/contributing.md) and the
 [architecture document](architecture.md).
 
 ---
@@ -277,7 +277,7 @@ Before opening a PR, walk through:
 
 ## 9. Pull request checklist
 
-See [`.github/PULL_REQUEST_TEMPLATE.md`](../.github/PULL_REQUEST_TEMPLATE.md).
+See [`.github/PULL_REQUEST_TEMPLATE.md`](https://github.com/badhope/AI-SKILL/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 The short version:
 
 - [ ] Tests added or updated

@@ -2,7 +2,7 @@
 
 If you are stuck, scan this page first. If it does not help, open a
 [Q&A discussion](https://github.com/badhope/AI-SKILL/discussions) or
-a [bug report](../.github/ISSUE_TEMPLATE/bug_report.md).
+a [bug report](https://github.com/badhope/AI-SKILL/issues/new?template=bug_report.md).
 
 ---
 
@@ -323,5 +323,5 @@ Then `docker compose restart backend`.
 
 1. Search [existing issues](https://github.com/badhope/AI-SKILL/issues)
 2. Search [Discussions / Q&A](https://github.com/badhope/AI-SKILL/discussions/categories/q-a)
-3. Open a [new issue](../.github/ISSUE_TEMPLATE/bug_report.md) with
+3. Open a [new issue](https://github.com/badhope/AI-SKILL/issues/new?template=bug_report.md) with
    the output of `make health-check` and `docker compose logs backend`

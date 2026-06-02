@@ -40,7 +40,7 @@ Traceback (most recent call last):
 
 | Item | Value |
 |------|-------|
-| AI-SKILL version | `v1.0.0` (or commit SHA) |
+| AI-SKILL release | `latest` (or commit SHA) |
 | Deployment | docker-compose / manual / k8s |
 | OS | `Ubuntu 22.04`, `macOS 15`, … |
 | Backend | `python 3.12.4`, image tag, … |

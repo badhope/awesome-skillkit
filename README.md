@@ -45,6 +45,7 @@
 <p align="center">
   <a href="#-one-click-deploy">Deploy</a> ·
   <a href="#-quick-start">Quick start</a> ·
+  <a href="https://badhope.github.io/AI-SKILL/">📖 Documentation site</a> ·
   <a href="docs/architecture.md">Architecture</a> ·
   <a href="docs/deployment.md">Deployment</a> ·
   <a href="FAQ.md">FAQ</a> ·
@@ -137,6 +138,9 @@ Open **http://localhost:3000**.
 ---
 
 ## 📚 Documentation
+
+> 🌐 **Full documentation site:** <https://badhope.github.io/AI-SKILL/>
+> Browse it for guides, references, ADRs, SDK docs, and examples — every link below also lives there with search, versioned revisions, and a dark-mode reader.
 
 | Resource | Link |
 |----------|------|

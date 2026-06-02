@@ -22,7 +22,7 @@ assignees: []
 
 ## Affected Versions
 
-`v1.0.0`, `main`, commit `…`
+`latest` release, `main` branch, or commit `…`
 
 ## Attack Vector
 

@@ -92,3 +92,9 @@ next-env.d.ts.bak
 # Architecture Decision Records local work
 docs/adr/.scratch/
 
+# MkDocs build output
+/site/
+
+# MkDocs cache
+/.cache/
+

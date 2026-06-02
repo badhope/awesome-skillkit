@@ -73,7 +73,7 @@ lower, but the stack is simpler to operate.
 
 ## Is the platform production-ready?
 
-The 1.0.0 release is **feature-complete for the documented scope**
+The current release is **feature-complete for the documented scope**
 and ships with:
 
 - Input validation

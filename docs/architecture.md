@@ -4,7 +4,7 @@ This document describes the runtime architecture, data flow, and
 deployment topology of AI-SKILL. It is intended for operators and
 contributors who need to understand the system before extending it.
 
-For a high-level overview, see [the diagram in README](../README.md#-architecture).
+For a high-level overview, see [the diagram in the home page](index.md#-architecture).
 For deployment specifics, see [docs/deployment.md](deployment.md).
 
 ---

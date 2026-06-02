@@ -7,7 +7,7 @@ Last updated: 2026-06-02
 
 ---
 
-## Released in 1.0.0
+## Released
 
 - [x] Self-hostable FastAPI backend with OpenAPI-generated docs
 - [x] Next.js 15 mobile-first frontend with English / Chinese i18n

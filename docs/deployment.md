@@ -375,5 +375,5 @@ Run through this list before opening your deployment to the public.
 - [ ] Dependabot alerts enabled
 - [ ] `git log --oneline` shows no hardcoded secrets
 
-See [SECURITY.md](../SECURITY.md) for the full policy and
+See [Security policy](operations/security.md) for the full policy and
 disclosure process.
