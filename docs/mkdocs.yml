@@ -165,6 +165,7 @@ nav:
       - "009 — OWASP security headers middleware": adr/009-owasp-headers.md
       - "010 — Pre-commit hooks + conventional commits": adr/010-pre-commit-and-commits.md
   - Operations:
+    - Overview: operations/index.md
     - Deployment: deployment.md
     - Troubleshooting: troubleshooting.md
     - Security: operations/security.md
@@ -193,6 +194,7 @@ nav:
     - TypeScript: examples/typescript.md
     - Postman: examples/postman.md
   - Community:
+    - Overview: community/index.md
     - Contributing: community/contributing.md
     - Code of conduct: community/code-of-conduct.md
     - FAQ: community/faq.md
