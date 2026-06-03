@@ -6,10 +6,12 @@ Create Date: 2026-06-01 00:00:00.000000
 """
 from typing import Sequence, Union
 
-from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
-from sqlalchemy.sql import table, column
+from sqlalchemy.sql import column, table
+
+from alembic import op
 
 revision: str = "0001"
 down_revision: Union[str, None] = None
@@ -195,8 +197,9 @@ def upgrade() -> None:
         sa.Column("skill_id", UUID(as_uuid=True), sa.ForeignKey("skills.id", ondelete="CASCADE"), primary_key=True),
         sa.Column("tag_id", UUID(as_uuid=True), sa.ForeignKey("tags.id", ondelete="CASCADE"), primary_key=True),
     )
-    op.create_index("ix_skill_tag_skill_id", SKILL_TAG_ASSOCIATION_TABLE, ["skill_id"])
-    op.create_index("ix_skill_tag_tag_id", SKILL_TAG_ASSOCIATION_TABLE, ["tag_id"])
+    # 故意不创建 `ix_skill_tag_skill_id` / `ix_skill_tag_tag_id`：
+    # (skill_id, tag_id) 复合主键本身就为两列各建了一棵 BTree,
+    # 再额外加两个单列索引是冗余的, 只会让写放大.
 
     op.create_table(
         SKILL_VERSIONS_TABLE,
@@ -424,10 +427,18 @@ def _insert_seed_data() -> None:
     if assoc_rows:
         op.bulk_insert(skill_tag_assoc_table, assoc_rows)
 
+    # 累计每个 tag 的引用次数, 用一次 UPDATE 批量 +N, 而不是每个 (skill, tag) 一条 UPDATE.
+    # 之前是 f-string 直接拼 tag_id 字符串, 既不安全 (SQL 注入) 又慢 (N 条 round-trip).
+    tag_usage_counter: dict[str, int] = {}
     for skill_data in SEED_SKILLS:
         for tag_name in skill_data["tags"]:
             tag_id = tag_ids.get(tag_name)
             if tag_id:
-                op.execute(
-                    f"UPDATE {TAGS_TABLE} SET usage_count = usage_count + 1 WHERE id = '{tag_id}'"
-                )
+                tag_usage_counter[tag_id] = tag_usage_counter.get(tag_id, 0) + 1
+    for tag_id, count in tag_usage_counter.items():
+        op.execute(
+            text(
+                "UPDATE tags SET usage_count = usage_count + :inc WHERE id = :tid"
+            ),
+            {"inc": count, "tid": tag_id},
+        )

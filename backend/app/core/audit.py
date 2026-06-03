@@ -1,5 +1,5 @@
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 audit_logger = logging.getLogger("audit")
@@ -10,6 +10,6 @@ def log_event(event: str, user_id: Optional[str] = None, ip: Optional[str] = Non
         "event": event,
         "user_id": user_id,
         "ip": ip,
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         **details,
     })

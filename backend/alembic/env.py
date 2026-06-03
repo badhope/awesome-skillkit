@@ -1,15 +1,12 @@
 import asyncio
-import os
 from logging.config import fileConfig
-from typing import Any
 
-from alembic import context
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
+from alembic import context
 from app.core.config import get_settings
-from app.db.session import engine as app_engine
 from app.models import Base
 
 settings = get_settings()
@@ -19,6 +16,8 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
+# Pull the URL from settings, not alembic.ini — the .ini is convenient for
+# local dev but we don't want to ship different URLs across environments.
 config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
 target_metadata = Base.metadata

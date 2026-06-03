@@ -41,12 +41,38 @@ DEFAULT_SECURITY_HEADERS: dict[str, str] = {
     "Cross-Origin-Embedder-Policy": "require-corp",
 }
 
+# Paths that serve HTML/JS the user interacts with (Swagger, ReDoc). The
+# default CSP is `default-src 'none'` because the API only serves JSON,
+# but that policy would also block the Swagger UI scripts. We relax it
+# for these paths so the docs page actually renders.
+_HTML_DOC_PATHS: frozenset[str] = frozenset({"/docs", "/redoc", "/openapi.json"})
+
+# A CSP that lets the Swagger UI and ReDoc bundles load. Still safe for
+# an internal API: no `unsafe-inline` for scripts (Swagger's JS is
+# externally hosted via the CDN script tag) and no remote frames.
+_HTML_DOC_CSP: str = (
+    "default-src 'self'; "
+    "img-src 'self' data:; "
+    "style-src 'self' 'unsafe-inline'; "
+    "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+    "frame-ancestors 'none'"
+)
+
 
 class SecurityHeadersMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next: Callable) -> Response:
         response = await call_next(request)
+        path = request.url.path
+        is_doc_path = path in _HTML_DOC_PATHS or path.startswith("/docs") or path.startswith("/redoc")
+
         for header, value in DEFAULT_SECURITY_HEADERS.items():
-            response.headers.setdefault(header, value)
+            # Don't stamp the strict JSON-only CSP onto the interactive
+            # docs pages — it blocks their JS. Use the relaxed policy
+            # there. `setdefault` still respects any value the route set.
+            if header == "Content-Security-Policy" and is_doc_path:
+                response.headers.setdefault(header, _HTML_DOC_CSP)
+            else:
+                response.headers.setdefault(header, value)
 
         if not settings.DEBUG:
             response.headers.setdefault(

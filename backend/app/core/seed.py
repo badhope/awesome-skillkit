@@ -107,9 +107,13 @@ async def _seed_admin_user(db: AsyncSession) -> None:
 
 
 async def seed_initial_data(db: AsyncSession) -> None:
+    # Idempotent — categories and admin are only created on a truly empty
+    # database. If you want to re-seed you have to wipe it.
     try:
         await _seed_categories(db)
         await _seed_admin_user(db)
     except Exception as e:
+        # Caller (lifespan) logs and decides whether to keep booting.
+        # We still re-raise so the original traceback survives.
         logger.error("Failed to seed initial data", error=str(e))
         raise

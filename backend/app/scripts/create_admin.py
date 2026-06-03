@@ -24,10 +24,17 @@ from sqlalchemy import select
 from app.core.config import settings
 from app.core.logging import get_logger
 from app.core.security import get_password_hash
-from app.db.session import async_session_factory
+from app.db import async_session_factory
 from app.models.skill import User
 
 logger = get_logger(__name__)
+
+# Import the canonical weak-password list from the auth router. Keeping
+# two copies (here and in `app.api.v1.auth`) meant the two drifted —
+# #15 added 5 new entries to the auth list and this script silently
+# kept the old set, so an admin could still bootstrap a weak
+# password that the API would later refuse to accept.
+from app.api.v1.auth import WEAK_PASSWORDS as _AUTH_WEAK_PASSWORDS  # noqa: E402
 
 
 def _prompt_password_if_missing() -> str:
@@ -50,7 +57,7 @@ def _prompt_password_if_missing() -> str:
         if len(pw1) < 12:
             print("Password must be at least 12 characters.")
             continue
-        if pw1.lower() in {"admin1234", "password", "changeme", "admin"}:
+        if pw1.lower() in _AUTH_WEAK_PASSWORDS:
             print("Password is too common; pick a stronger one.")
             continue
         return pw1

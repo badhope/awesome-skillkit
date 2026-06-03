@@ -1,9 +1,9 @@
 import secrets
-from typing import List, Optional
+from functools import lru_cache
+from typing import Annotated, List, Optional
 
 from pydantic import field_validator, model_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
-from functools import lru_cache
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379/0"
     REDIS_POOL_SIZE: int = 50
 
-    QDRANT_URL: str = "http://localhost:6333"
+    QDRANT_URL: str = "http://localhost:6333"  # default; in prod, set in .env so we don't silently connect to local
     QDRANT_API_KEY: Optional[str] = None
 
     JWT_SECRET_KEY: Optional[str] = None
@@ -36,7 +36,13 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
-    BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000"]
+    # `NoDecode` keeps pydantic-settings from pre-parsing the value as
+    # JSON. The `BACKEND_CORS_ORIGINS` and `SUPPORTED_LOCALES` fields are
+    # documented in `.env.example` as CSV strings (e.g.
+    # `http://a.com,http://b.com`); without `NoDecode` pydantic-settings
+    # raises a SettingsError on the first non-JSON parse and the
+    # field-level `mode="before"` validator never even runs.
+    BACKEND_CORS_ORIGINS: Annotated[List[str], NoDecode] = ["http://localhost:3000"]
 
     @field_validator("BACKEND_CORS_ORIGINS", mode="before")
     @classmethod
@@ -67,6 +73,21 @@ class Settings(BaseSettings):
 
     SENTRY_TRACES_SAMPLE_RATE: float = 0.1
     SENTRY_PROFILES_SAMPLE_RATE: float = 0.1
+
+    # Internationalization (i18n). The first entry of SUPPORTED_LOCALES
+    # is used as the default when the client doesn't send a usable
+    # Accept-Language / X-Locale / ?lang= hint. See app.core.i18n.
+    DEFAULT_LOCALE: str = "en"
+    SUPPORTED_LOCALES: Annotated[List[str], NoDecode] = ["en", "zh"]
+
+    @field_validator("SUPPORTED_LOCALES", mode="before")
+    @classmethod
+    def parse_supported_locales(cls, v: object) -> List[str]:
+        if isinstance(v, str):
+            return [locale.strip() for locale in v.split(",") if locale.strip()]
+        if isinstance(v, list):
+            return v
+        raise ValueError(f"Invalid SUPPORTED_LOCALES format: {v}")
 
     @model_validator(mode="after")
     def enforce_jwt_secret_in_production(self) -> "Settings":
