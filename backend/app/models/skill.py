@@ -4,21 +4,21 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 from sqlalchemy import (
+    JSON,
     Boolean,
     Column,
     DateTime,
     Enum,
     Float,
     ForeignKey,
+    Index,
     Integer,
     String,
     Table,
     Text,
     UniqueConstraint,
-    Index,
     Uuid,
     func,
-    JSON,
 )
 from sqlalchemy.ext.asyncio import AsyncAttrs
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
@@ -47,8 +47,7 @@ skill_tag_association = Table(
     Base.metadata,
     Column("skill_id", Uuid, ForeignKey("skills.id", ondelete="CASCADE"), primary_key=True),
     Column("tag_id", Uuid, ForeignKey("tags.id", ondelete="CASCADE"), primary_key=True),
-    Index("ix_skill_tag_skill_id", "skill_id"),
-    Index("ix_skill_tag_tag_id", "tag_id"),
+    # 复合主键已覆盖 skill_id / tag_id 的查询, 不再加冗余单列索引.
 )
 
 

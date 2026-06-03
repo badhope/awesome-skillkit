@@ -60,22 +60,25 @@ class SkillValidator:
     def validate_skill_structure(self, content: str) -> ValidationResult:
         result = ValidationResult(is_valid=True)
 
-        frontmatter, body = self._parse_yaml_frontmatter(content)
+        frontmatter, body, parse_error = self.parse_with_frontmatter(content)
 
+        if parse_error == "missing":
+            result.is_valid = False
+            result.errors.append("Missing or invalid YAML frontmatter")
+            return result
+        if parse_error == "not_dict":
+            result.is_valid = False
+            result.errors.append("YAML frontmatter must be a dictionary")
+            return result
         if frontmatter is None:
             result.is_valid = False
             result.errors.append("Missing or invalid YAML frontmatter")
             return result
 
-        if not isinstance(frontmatter, dict):
-            result.is_valid = False
-            result.errors.append("YAML frontmatter must be a dictionary")
-            return result
-
-        for field in self.REQUIRED_FIELDS:
-            if field not in frontmatter or not frontmatter[field]:
+        for key in self.REQUIRED_FIELDS:
+            if key not in frontmatter or not frontmatter[key]:
                 result.is_valid = False
-                result.errors.append(f"Missing required field: {field}")
+                result.errors.append(f"Missing required field: {key}")
 
         if "name" in frontmatter:
             name = str(frontmatter["name"])
@@ -181,14 +184,14 @@ class SkillValidator:
     def validate_skill_completeness(self, skill: Dict[str, Any]) -> ValidationResult:
         result = ValidationResult(is_valid=True)
 
-        for field in self.REQUIRED_FIELDS:
-            if field not in skill or not skill[field]:
+        for key in self.REQUIRED_FIELDS:
+            if key not in skill or not skill[key]:
                 result.is_valid = False
-                result.errors.append(f"Missing required field: {field}")
+                result.errors.append(f"Missing required field: {key}")
 
-        for field in self.RECOMMENDED_FIELDS:
-            if field not in skill or not skill[field]:
-                result.warnings.append(f"Missing recommended field: {field}")
+        for key in self.RECOMMENDED_FIELDS:
+            if key not in skill or not skill[key]:
+                result.warnings.append(f"Missing recommended field: {key}")
 
         if "tags" in skill and isinstance(skill["tags"], list):
             if len(skill["tags"]) == 0:
@@ -249,12 +252,13 @@ class SkillValidator:
         markdown_score = max(0, self.QUALITY_WEIGHTS["markdown_quality"] - markdown_penalty)
         total_score += markdown_score
 
-        if not skill.get("content", "").startswith("---"):
+        # Frontmatter validity: parse the content's YAML once and reuse the
+        # result. The previous implementation called `validate_skill_structure`
+        # which re-parsed the same content, doubling the work and giving
+        # callers two different ValidationResult objects to reconcile.
+        frontmatter, _body, fm_error = self.parse_with_frontmatter(content)
+        if not fm_error and frontmatter is not None:
             total_score += self.QUALITY_WEIGHTS["frontmatter_valid"]
-        else:
-            frontmatter_valid = self.validate_skill_structure(content).is_valid
-            if frontmatter_valid:
-                total_score += self.QUALITY_WEIGHTS["frontmatter_valid"]
 
         normalized_score = round((total_score / max_score) * 100, 1)
         result.quality_score = min(normalized_score, 100.0)
@@ -294,6 +298,10 @@ class SkillValidator:
         return False
 
     def lint_skill_markdown(self, content: str) -> LintResult:
+        # Hand-rolled subset of commonmark rules. Not trying to be a real
+        # markdownlint — we only flag the things that actually trip us up
+        # during skill review. Add rules sparingly; every false positive
+        # here is a PR we don't want to take.
         issues: List[Dict[str, Any]] = []
 
         fenced_blocks = re.findall(r"```", content)
@@ -373,16 +381,26 @@ class SkillValidator:
     def _estimate_line(self, content: str, pos: int) -> int:
         return content[:pos].count("\n") + 1
 
-    def _parse_yaml_frontmatter(self, content: str) -> Tuple[Optional[Any], str]:
+    def parse_with_frontmatter(
+        self, content: str
+    ) -> Tuple[Optional[Any], str, str]:
+        """Single source of truth for frontmatter parsing.
+
+        Returns (frontmatter, body, parse_error) where parse_error is one
+        of:
+          - "" on success (frontmatter is a dict, body is the markdown)
+          - "missing" if the `---` fence is absent or unterminated
+          - "not_dict" if the YAML is valid but not a mapping
+        """
         content = content.strip()
 
         if not content.startswith("---"):
-            return None, content
+            return None, content, "missing"
 
         rest = content[3:]
         end_idx = rest.find("---")
         if end_idx == -1:
-            return None, content
+            return None, content, "missing"
 
         frontmatter_str = rest[:end_idx].strip()
         body = rest[end_idx + 3:].strip()
@@ -390,6 +408,9 @@ class SkillValidator:
         try:
             frontmatter = yaml.safe_load(frontmatter_str)
         except yaml.YAMLError:
-            return None, content
+            return None, content, "missing"
 
-        return frontmatter, body
+        if not isinstance(frontmatter, dict):
+            return frontmatter, body, "not_dict"
+
+        return frontmatter, body, ""

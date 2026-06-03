@@ -1,8 +1,17 @@
+import re
 import uuid
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, computed_field
+
+
+def _slugify_tag(value: str) -> str:
+    """Derive a stable slug from a tag name. We don't store a `slug` column
+    on the Tag model — the name is unique already — so the slug is computed
+    on the way out to satisfy the frontend's `Tag.slug` field."""
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", value.strip().lower()).strip("-")
+    return slug or "tag"
 
 
 class TagBase(BaseModel):
@@ -47,6 +56,11 @@ class TagResponse(TagBase):
         ...,
         description="创建时间",
     )
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def slug(self) -> str:
+        return _slugify_tag(self.name)
 
     model_config = {"from_attributes": True}
 

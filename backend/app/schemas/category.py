@@ -131,6 +131,13 @@ class CategoryTreeResponse(CategoryResponse):
         default_factory=list,
         description="子分类列表（递归结构）",
     )
+    # Aggregated count of skills directly under this category. The
+    # endpoint rolls up child skill_counts into the parent at response
+    # time, so a root's value is the total for the whole subtree.
+    skill_count: int = Field(
+        default=0,
+        description="分类下的技能数量",
+    )
 
 
 class CategoryWithSkillCount(CategoryResponse):

@@ -43,6 +43,12 @@ class UserCreate(UserBase):
         description="用户密码",
         examples=["SecureP@ssw0rd!"],
     )
+    full_name: Optional[str] = Field(
+        default=None,
+        max_length=255,
+        description="显示名（可选）",
+        examples=["Alice Wang"],
+    )
 
     @field_validator("password")
     @classmethod
@@ -61,6 +67,17 @@ class UserCreate(UserBase):
 
 
 class UserUpdate(BaseModel):
+    """Admin-facing full user update. Unlike `UserUpdateMe` (which is
+    limited to display fields), this schema lets a superuser flip
+    `is_active` / `is_superuser` and edit the profile too.
+
+    NOTE: the `metadata` field that used to live here was removed
+    — the `User` SQLAlchemy model has no `metadata` column, so the
+    request would be accepted silently and the value dropped on the
+    floor. Use a dedicated `user_metadata` column if we ever need
+    one; the alias below would just shadow the internal
+    `Base.metadata` registry and not persist anything.
+    """
     email: Optional[EmailStr] = Field(
         None,
         description="用户邮箱地址",
@@ -72,6 +89,22 @@ class UserUpdate(BaseModel):
         pattern=r"^[a-zA-Z0-9_-]+$",
         description="用户名",
     )
+    full_name: Optional[str] = Field(
+        None,
+        min_length=1,
+        max_length=255,
+        description="显示名",
+    )
+    avatar_url: Optional[str] = Field(
+        None,
+        max_length=500,
+        description="头像 URL",
+    )
+    bio: Optional[str] = Field(
+        None,
+        max_length=2000,
+        description="个人简介",
+    )
     is_active: Optional[bool] = Field(
         None,
         description="账户是否激活",
@@ -79,11 +112,6 @@ class UserUpdate(BaseModel):
     is_superuser: Optional[bool] = Field(
         None,
         description="是否为超级用户",
-    )
-    metadata_: Optional[Dict[str, Any]] = Field(
-        None,
-        alias="metadata",
-        description="用户额外元数据",
     )
 
 
@@ -109,11 +137,33 @@ class UserResponse(BaseModel):
         ...,
         description="是否为超级用户",
     )
-    metadata_: Optional[Dict[str, Any]] = Field(
-        default_factory=dict,
-        alias="metadata",
-        description="用户额外元数据",
+    role: str = Field(
+        default="user",
+        description="角色：user / moderator / admin",
     )
+    is_verified: bool = Field(
+        default=False,
+        description="邮箱是否已验证",
+    )
+    full_name: Optional[str] = Field(
+        default=None,
+        description="显示名",
+    )
+    avatar_url: Optional[str] = Field(
+        default=None,
+        description="头像 URL",
+    )
+    bio: Optional[str] = Field(
+        default=None,
+        description="个人简介",
+    )
+    # NOTE: UserResponse intentionally omits the `metadata` field. The
+    # SQLAlchemy `User` model does not have a `metadata` column; the
+    # `metadata` attribute on a SQLAlchemy `DeclarativeBase` subclass
+    # resolves to the internal `MetaData()` registry, which pydantic
+    # cannot coerce to dict. If we ever need a JSON metadata column on
+    # users, add it explicitly as `user_metadata` (mapped_column with
+    # column name `user_metadata`) and expose it here under that name.
     created_at: datetime = Field(
         ...,
         description="注册时间",

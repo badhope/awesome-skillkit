@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 from math import ceil
-from typing import ClassVar, Generic, List, Literal, Optional, TypeVar
+from typing import Generic, List, Literal, Optional, TypeVar
 
-from fastapi import Depends
 from pydantic import BaseModel, Field, computed_field
 
 T = TypeVar("T")
@@ -14,8 +13,6 @@ class PaginationParams(BaseModel):
     page_size: int = Field(default=20, ge=1, le=100, description="每页数量，1-100")
     sort: Optional[str] = Field(default=None, description="排序字段")
     order: Literal["asc", "desc"] = Field(default="desc", description="排序方向")
-
-    Depends: ClassVar = Depends()
 
 
 class Page(BaseModel, Generic[T]):

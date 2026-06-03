@@ -1,15 +1,15 @@
 from app.models.skill import (
     Base,
-    User,
     Category,
-    Tag,
     Skill,
-    SkillVersion,
+    SkillComposition,
+    SkillCompositionItem,
     SkillDependency,
     SkillRating,
     SkillUsageLog,
-    SkillComposition,
-    SkillCompositionItem,
+    SkillVersion,
+    Tag,
+    User,
 )
 
 __all__ = [

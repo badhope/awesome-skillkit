@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
@@ -32,9 +32,10 @@ async def list_compositions(
     query = select(SkillComposition).where(SkillComposition.is_public == True)
 
     if search:
+        pattern = f"%{escape_like(search)}%"
         query = query.where(
-            SkillComposition.name.ilike(f"%{search}%")
-            | SkillComposition.description.ilike(f"%{search}%")
+            SkillComposition.name.ilike(pattern, escape="\\")
+            | SkillComposition.description.ilike(pattern, escape="\\")
         )
 
     count_query = select(func.count()).select_from(query.subquery())
@@ -97,8 +98,20 @@ async def create_composition(
             detail="Composition with this slug already exists",
         )
 
+    # `CompositionCreate` / `CompositionUpdate` use `metadata` as the
+    # user-facing field name (matching the API contract), but the
+    # SQLAlchemy `SkillComposition` model stores it under the Python
+    # attribute `extra_metadata` (column name on disk is `metadata`).
+    # If we naively splat `model_dump()` into `SkillComposition(**...)`
+    # or `setattr(composition, "metadata", value)`, SQLAlchemy silently
+    # drops the value because `metadata` collides with the inherited
+    # `Base.metadata` registry and the Python attribute on the model
+    # is `extra_metadata`. Map it explicitly here.
+    comp_dict = comp_in.model_dump()
+    comp_dict["extra_metadata"] = comp_dict.pop("metadata", {})
+
     composition = SkillComposition(
-        **comp_in.model_dump(),
+        **comp_dict,
         owner_id=current_user.id,
     )
     db.add(composition)
@@ -134,7 +147,11 @@ async def update_composition(
             detail="Not enough permissions",
         )
 
+    # See the comment on the create endpoint for why we remap
+    # `metadata` → `extra_metadata` before touching the model.
     update_data = comp_in.model_dump(exclude_unset=True)
+    if "metadata" in update_data:
+        composition.extra_metadata = update_data.pop("metadata")
     for field, value in update_data.items():
         setattr(composition, field, value)
 

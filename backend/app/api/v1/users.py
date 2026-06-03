@@ -5,9 +5,9 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.core.deps import get_current_superuser, get_current_active_user
+from app.core.deps import get_current_superuser
 from app.db import get_db
-from app.models.skill import User, Skill
+from app.models.skill import Skill, User
 from app.schemas.skill import (
     SkillResponse,
     UserListResponse,
@@ -30,7 +30,8 @@ async def list_users(
 
     if search:
         query = query.where(
-            User.username.ilike(f"%{search}%") | User.email.ilike(f"%{search}%")
+            User.username.ilike(f"%{escape_like(search)}%", escape="\\")
+            | User.email.ilike(f"%{escape_like(search)}%", escape="\\")
         )
 
     count_query = select(func.count()).select_from(query.subquery())
@@ -100,7 +101,14 @@ async def update_user(
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
+    # The `User` SQLAlchemy model has no `metadata` / `metadata_`
+    # column, and the `metadata` attribute on a DeclarativeBase class
+    # resolves to the internal `MetaData()` registry. Drop the field
+    # silently if a caller sent it — there's nothing to persist and
+    # setting it on the instance would shadow the registry for no
+    # reason.
     update_data = user_in.model_dump(exclude_unset=True)
+    update_data.pop("metadata_", None)
 
     if "email" in update_data:
         existing = await db.execute(
