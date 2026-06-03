@@ -38,7 +38,7 @@ docker compose logs -f backend     # backend only
 
 ## Still stuck?
 
-1. Check [docs/troubleshooting.md](docs/troubleshooting.md)
+1. Check [docs/en/troubleshooting.md](docs/en/troubleshooting.md)
 2. Search [existing issues](https://github.com/badhope/AI-SKILL/issues)
-3. Open a [new bug report](../../.github/ISSUE_TEMPLATE/bug_report.md)
+3. Open a [new bug report](.github/ISSUE_TEMPLATE/bug_report.md)
    with the output of `make health-check` and `docker compose logs`

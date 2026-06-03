@@ -230,6 +230,73 @@ Examples: `feat/semantic-search`, `fix/skill-slug-encoding`, `docs/api-reference
 
 ---
 
+## 翻译贡献
+
+AI-SKILL 是一个多语言项目：后端错误信息、前端界面、文档、API 注释消息都按 locale 拆分。我们欢迎任何语言的翻译贡献。
+
+项目分四个 i18n 维度，各自的工作流与评审者略有不同：
+
+| 维度 | 源文件 | 输出 | 工作流 |
+|------|--------|------|--------|
+| 后端错误信息 | `backend/app/locales/<lang>/LC_MESSAGES/messages.po` | `messages.mo`（自动编译） | 编辑 `.po` → `make i18n-compile` |
+| 前端界面 | `frontend/src/lib/i18n/index.tsx` 内的 `en` / `zh` 字典 | 运行时上下文 | 直接改两个字典 |
+| 文档站 | `docs/<lang>/...` | mkdocs 多语言站 | 复制 `docs/zh/` 树为新 locale |
+| 仓库元文件 | `README.md`, `FAQ.md`, `ROADMAP.md` 等 | `<file>.<lang>.md` | 复制英文 + 全量翻译 |
+
+### 通用约定
+
+- **保留不译**：所有英文代码块、CLI 命令、URL、徽章图片链接、文件名、品牌名（"AI-SKILL"、"Qdrant"、"PostgreSQL"）、技术术语（"JWT"、"OAuth2"、"SDK"、"PWA"、"RBAC"）保持原样。
+- **首次贡献请认领**：在 Discussions 里搜 "translation" 找没有 maintainer 的语言；新语言请开一个 Discussion 自我介绍 + 计划，避免重复劳动。
+- **每条 PR 只译一个页面或一个文件**，避免巨型 PR。
+- **保持对称**：`en` 与新 locale 的 `messages.po` 必须**键完全一致**。CI 会跑 `make i18n-check` 校验。
+- **术语表**：参见下文的 [术语约定](#术语约定)。
+
+### 后端 `.po` 文件工作流
+
+```bash
+# 1. 复制英语源作为起手模板
+cp backend/app/locales/en/LC_MESSAGES/messages.po \
+   backend/app/locales/<lang>/LC_MESSAGES/messages.po
+
+# 2. 翻译每条 msgstr。msgid 是英语原文，不要改。
+
+# 3. 编译 + 校验
+make i18n-compile
+make i18n-check      # 校验所有 locale 包含全部键
+```
+
+`make i18n-check` 在 CI 中是 required check —— 任何 locale 缺键都会让 PR 失败。
+
+### 术语约定
+
+| 英文 | 中文 | 备注 |
+|------|------|------|
+| skill | 技能 | 主领域实体，不要译为"技能项"或"技能卡" |
+| composition | 组合 | 多个 skill 的编排结果 |
+| category | 分类 | |
+| tag | 标签 | |
+| locale | 语言区域 | 保留英文有时更清晰 |
+| content | 内容 | 指 `Skill.content` JSONB |
+| semantic search | 语义搜索 | |
+| vector search | 向量搜索 | |
+| skill rating | 评分 | |
+| usage | 使用 / 使用量 | 视上下文 |
+| view | 浏览 | 区别于"阅读" |
+| download | 下载 | |
+| featured | 精选 | |
+| trending | 热门 | |
+| slug | slug | 保留英文 |
+
+### 评审
+
+翻译类 PR 需要：
+
+- 至少一位母语 / 高级水平的 reviewer 批准。
+- 术语表中所列的词保持一致。
+- 跑通 `make i18n-check` 与 `mkdocs build -f docs/mkdocs.yml`。
+
+---
+
 ## Pull Request Process
 
 1. Ensure all tests pass and linting is clean

@@ -77,4 +77,4 @@ These are things we are **explicitly not** building:
 
 1. Open a [Feature Request](../../issues/new?template=feature_request.md).
 2. Or start a thread in [Discussions / Ideas](../../discussions/categories/ideas).
-3. Or send a PR — see [CONTRIBUTING.md](../CONTRIBUTING.md).
+3. Or send a PR — see [CONTRIBUTING.md](CONTRIBUTING.md).

@@ -1,7 +1,7 @@
 # AI-SKILL — Frequently Asked Questions
 
 General questions live here. For a structured troubleshooting page,
-see [docs/troubleshooting.md](docs/troubleshooting.md).
+see [docs/en/troubleshooting.md](docs/en/troubleshooting.md).
 
 ---
 
@@ -90,11 +90,11 @@ you find a bottleneck, open an issue.
 
 ## What license?
 
-[MIT](../LICENSE). Use it, fork it, sell it, no strings attached.
+[MIT](LICENSE). Use it, fork it, sell it, no strings attached.
 
 ## How do I contribute?
 
-Read [CONTRIBUTING.md](../CONTRIBUTING.md). The short version:
+Read [CONTRIBUTING.md](CONTRIBUTING.md). The short version:
 
 1. Fork + branch
 2. Make your change with tests
@@ -104,7 +104,7 @@ Read [CONTRIBUTING.md](../CONTRIBUTING.md). The short version:
 ## I found a security issue. What now?
 
 **Do not open a public issue.** Follow
-[SECURITY.md](../SECURITY.md) — email the security contact or use
+[SECURITY.md](SECURITY.md) — email the security contact or use
 GitHub's [private advisory](../../security/advisories/new) form.
 
 ## How do I get help?

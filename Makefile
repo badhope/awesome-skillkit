@@ -168,6 +168,12 @@ seed:  ## Seed categories + tags (idempotent)
 health-check:  ## Probe the running backend
 	cd $(BACKEND_DIR) && $(POETRY) run python $(CURDIR)/scripts/health_check.py
 
+i18n-compile:  ## Compile all .po catalogs into .mo files (server-side i18n)
+	cd $(BACKEND_DIR) && $(PYTHON) -m app.core.i18n compile
+
+i18n-check: i18n-compile  ## Recompile and verify every key is present in every locale
+	cd $(BACKEND_DIR) && $(PYTHON) -m app.core.i18n check
+
 # ---- Build & publish ---------------------------------------------------------
 .PHONY: build build-backend build-frontend publish
 build: build-backend build-frontend  ## Build both Docker images

@@ -1,392 +1,210 @@
 # AI-SKILL
 
-<p align="center">
-  <strong>An open-source universal agent skill library</strong> — a self-hostable
-  platform for cataloging, discovering, and composing AI agent skills across any
-  domain.
-</p>
+> A self-hostable library for AI agent skills — prompts, tool definitions,
+> and small reusable workflows that you can search, version, and compose.
+>
+> We built it because we kept rewriting the same prompt glue on every project.
+> We're sharing it so you don't have to.
 
-<p align="center">
-  <a href="https://github.com/badhope/AI-SKILL/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/badhope/AI-SKILL" alt="License">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/stargazers">
-    <img src="https://img.shields.io/github/stars/badhope/AI-SKILL?style=social" alt="GitHub Stars">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/network/members">
-    <img src="https://img.shields.io/github/forks/badhope/AI-SKILL?style=social" alt="GitHub Forks">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/watchers">
-    <img src="https://img.shields.io/github/watchers/badhope/AI-SKILL?style=social" alt="GitHub Watchers">
-  </a>
-</p>
+[![License: MIT](https://img.shields.io/github/license/badhope/AI-SKILL)](https://github.com/badhope/AI-SKILL/blob/main/LICENSE)
+[![Build](https://img.shields.io/github/actions/workflow/status/badhope/AI-SKILL/ci.yml?branch=main&label=build)](https://github.com/badhope/AI-SKILL/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/badhope/AI-SKILL?include_prereleases)](https://github.com/badhope/AI-SKILL/releases)
+[![Issues](https://img.shields.io/github/issues/badhope/AI-SKILL)](https://github.com/badhope/AI-SKILL/issues)
+[![PRs](https://img.shields.io/github/issues-pr/badhope/AI-SKILL)](https://github.com/badhope/AI-SKILL/pulls)
+[📖 Docs](https://badhope.github.io/AI-SKILL/) ·
+[🚀 Quick start](#quick-start) ·
+[🧱 Architecture](docs/en/architecture.md) ·
+[📦 Deployment](docs/en/deployment.md) ·
+[❓ FAQ](FAQ.md) ·
+[🛠️ Troubleshooting](TROUBLESHOOTING.md) ·
+[🗺️ Roadmap](ROADMAP.md)
 
-<p align="center">
-  <a href="https://github.com/badhope/AI-SKILL/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/badhope/AI-SKILL/ci.yml?branch=main&label=build" alt="Build Status">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/releases">
-    <img src="https://img.shields.io/github/v/release/badhope/AI-SKILL?include_prereleases" alt="Release">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/pkgs/container/AI-SKILL%2Fbackend">
-    <img src="https://ghcr.io/badhope/AI-SKILL/backend/badge" alt="Backend Image">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/pkgs/container/AI-SKILL%2Ffrontend">
-    <img src="https://ghcr.io/badhope/AI-SKILL/frontend/badge" alt="Frontend Image">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/issues">
-    <img src="https://img.shields.io/github/issues/badhope/AI-SKILL" alt="Issues">
-  </a>
-  <a href="https://github.com/badhope/AI-SKILL/pulls">
-    <img src="https://img.shields.io/github/issues-pr/badhope/AI-SKILL" alt="PRs">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#-one-click-deploy">Deploy</a> ·
-  <a href="#-quick-start">Quick start</a> ·
-  <a href="https://badhope.github.io/AI-SKILL/">📖 Documentation site</a> ·
-  <a href="docs/architecture.md">Architecture</a> ·
-  <a href="docs/deployment.md">Deployment</a> ·
-  <a href="FAQ.md">FAQ</a> ·
-  <a href="TROUBLESHOOTING.md">Troubleshooting</a> ·
-  <a href="ROADMAP.md">Roadmap</a>
-</p>
+[English](./README.md) · [简体中文](./README.zh.md)
 
 ---
 
-## ✨ Features
+## What is this?
 
-- 🔍 **Semantic Search** — Powered by Qdrant vector database with Sentence-BERT embeddings for intelligent, context-aware skill discovery
-- 📱 **Mobile-First Responsive Design** — Optimized Progressive Web App experience across desktop, tablet, and mobile devices
-- 🌐 **English/Chinese i18n** — Full internationalization support with runtime locale switching
-- 🧠 **Vector Search** — Hybrid BM25 + dense vector search for maximum recall and precision
-- 🔄 **Version Control** — Semantic versioning with complete skill change history and rollback support
-- 🔗 **Dependency Management** — Declare skill dependencies with version constraints and cycle detection
-- ⭐ **Quality Assessment** — User ratings, usage analytics, and automated quality scoring
-- 📊 **Analytics Dashboard** — Real-time usage statistics, popularity trends, and engagement metrics
-- 🔌 **REST API** — Fully documented FastAPI backend with auto-generated OpenAPI schema
-- 📦 **Python & TypeScript SDKs** — First-class client libraries for seamless integration
-- 🛡️ **Security** — JWT authentication, RBAC authorization, rate limiting, and audit logging
-- 🐳 **Docker Support** — One-command deployment with Docker Compose
+AI-SKILL is a small web service + UI for storing **skills** — pieces of
+prompt text, tool schemas, instructions for an agent — in a searchable
+library. Think of it as a private Hugging Face for your team's prompt
+toolbox.
 
+A skill is just a Markdown file with YAML frontmatter:
+
+```yaml
+---
+name: Summarize a URL
+description: Fetches a URL and returns a 3-bullet summary.
+tags: [summarization, web]
 ---
 
-## 🚀 Quick Start
+# Summarize a URL
+…
+```
 
-### ☁️ One-click deploy
+You can publish it to the library, version it, tag it, declare dependencies
+on other skills, and let your agents find it through a search bar or the
+HTTP API.
 
-| Platform | One-click | Notes |
-|---|---|---|
-| Local (Docker) | `make dev` | Recommended for development |
-| Render | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Blueprint deploy |
-| Fly.io | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Global edge |
-| Vercel (frontend only) | _see [`docs/deployment.md`](docs/deployment.md#4-managed-cloud-deployment)_ | Needs a hosted backend |
+## Why does it exist?
 
-### 🐳 Docker (Recommended for self-hosting)
+Most teams we know end up with the same problem: a Notion page of
+"approved prompts" that no one updates, half of which are copy-pasted into
+the wrong project. AI-SKILL is the boring version of that — git-tracked,
+versioned, searchable, with a real API.
+
+We're not trying to replace your agent framework. We're providing the
+**shared library** part that most agent stacks are missing.
+
+## Who is it for?
+
+- **Individual developers** who want a single place to keep prompts they
+  reuse across projects.
+- **Small teams** that need a shared "approved" library of agent skills
+  with a UI that non-engineers can browse.
+- **Tool builders** who want a typed Python / TypeScript SDK for talking
+  to a skill service instead of hand-rolling REST calls.
+
+If you're a large enterprise looking for a commercial-grade prompt
+management platform, this probably isn't it — there are vendors for that
+(we list a few in [the FAQ](FAQ.md#alternatives)).
+
+## What you get
+
+A self-hostable stack with a web UI, a REST API, and SDKs. Nothing more
+than what's listed in [docs/en/architecture.md](docs/en/architecture.md).
+
+- A web UI for browsing, searching, and rating skills.
+- A REST API (OpenAPI-documented) for creating, versioning, and pulling
+  skills programmatically.
+- Hybrid search: vector (Sentence-BERT over Qdrant) + BM25 keyword, with
+  weights you can tune per request.
+- Semantic versioning per skill, with an audit trail of who changed what.
+- Skill dependencies with cycle detection and semver constraints.
+- A typed Python SDK and a typed TypeScript SDK.
+- JWT auth, role-based access, per-IP rate limiting, and an audit log.
+- A Docker Compose setup that boots the whole stack on one machine.
+
+## Quick start
+
+The fastest path is Docker:
 
 ```bash
 git clone https://github.com/badhope/AI-SKILL.git
 cd AI-SKILL
 cp .env.example .env
-docker-compose up -d
+docker compose up -d
 ```
 
-Then open **http://localhost:3000** in your browser.
+Then:
 
-| Service | URL |
-|---------|-----|
-| Frontend | http://localhost:3000 |
-| Backend API | http://localhost:8000 |
-| API Documentation (Swagger) | http://localhost:8000/docs |
-| API Documentation (ReDoc) | http://localhost:8000/redoc |
+| What          | Where                                    |
+|---------------|------------------------------------------|
+| Web UI        | http://localhost:3000                    |
+| Backend API   | http://localhost:8000                    |
+| API docs      | http://localhost:8000/docs               |
+| ReDoc         | http://localhost:8000/redoc              |
 
-### Manual Setup
+The first user you create becomes the admin. See
+[docs/en/deployment.md → first admin](docs/en/deployment.md#first-admin) for the
+CLI bootstrap if you'd rather not click through the signup form.
 
-#### Prerequisites
+If you want to run it without Docker, the manual setup is in
+[docs/en/development.md → manual install](docs/en/development.md#manual-install).
+You need Python 3.12+, Node 20+, PostgreSQL 16+, and Redis 7+. Qdrant is
+optional for local dev — there's an in-memory fallback.
 
-- Python 3.12+
-- Node.js 20+
-- PostgreSQL 16+
-- Redis 7+
-- Qdrant (optional, defaults to local)
+## 5-minute tour
 
-#### Backend
-
-```bash
-cd backend
-cp .env.example .env
-# Edit .env with your database credentials
-
-pip install poetry
-poetry install
-poetry run alembic upgrade head
-poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-#### Frontend
-
-```bash
-cd frontend
-cp .env.example .env.local
-npm install
-npm run dev
-```
-
-Open **http://localhost:3000**.
-
----
-
-## 📚 Documentation
-
-> 🌐 **Full documentation site:** <https://badhope.github.io/AI-SKILL/>
-> Browse it for guides, references, ADRs, SDK docs, and examples — every link below also lives there with search, versioned revisions, and a dark-mode reader.
-
-| Resource | Link |
-|----------|------|
-| Live API Reference (Swagger) | <http://localhost:8000/docs> |
-| Live API Reference (ReDoc) | <http://localhost:8000/redoc> |
-| Architecture overview | [docs/architecture.md](docs/architecture.md) |
-| Deployment guide | [docs/deployment.md](docs/deployment.md) |
-| Development guide | [docs/development.md](docs/development.md) |
-| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
-| Contributing | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| Security policy | [SECURITY.md](SECURITY.md) |
-| Code of conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
-| Changelog | [CHANGELOG.md](CHANGELOG.md) |
-| Roadmap | [ROADMAP.md](ROADMAP.md) |
-| FAQ | [FAQ.md](FAQ.md) |
-| Python SDK docs | [sdk/python/README.md](sdk/python/README.md) |
-| TypeScript SDK docs | [sdk/typescript/README.md](sdk/typescript/README.md) |
-| REST examples (curl / .http) | [examples/rest/](examples/rest/) |
-| Python examples | [examples/python/](examples/python/) |
-| TypeScript examples | [examples/typescript/](examples/typescript/) |
-| Postman collection | [examples/postman/](examples/postman/) |
-| Cite this project | [CITATION.cff](CITATION.cff) |
-
----
-
-## 🏗️ Architecture
-
-```
-                         ┌──────────────────────────┐
-                         │       Client Layer        │
-                         │   Browser  │  Mobile App  │
-                         │   Python SDK │   TS SDK   │
-                         └────────────┬─────────────┘
-                                      │ HTTP/REST
-                         ┌────────────▼─────────────┐
-                         │    Nginx / Load Balancer  │
-                         └────────────┬─────────────┘
-                                      │
-              ┌───────────────────────┼───────────────────────┐
-              │                       │                       │
-    ┌─────────▼─────────┐   ┌────────▼────────┐   ┌──────────▼──────────┐
-    │    Frontend        │   │    Backend       │   │    Vector Search    │
-    │   Next.js 15       │   │   FastAPI 0.115  │   │    Qdrant 1.9+      │
-    │   Port 3000        │   │   Port 8000      │   │    Port 6333        │
-    └───────────────────┘   └────────┬─────────┘   └─────────────────────┘
-                                     │
-                     ┌───────────────┼───────────────┐
-                     │               │               │
-           ┌─────────▼─────┐  ┌──────▼──────┐  ┌─────▼──────┐
-           │  PostgreSQL 16 │  │   Redis 7   │  │  Storage   │
-           │  Port 5432    │  │  Port 6379  │  │ Local / S3 │
-           └───────────────┘  └─────────────┘  └────────────┘
-```
-
----
-
-## 📊 Tech Stack
-
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Frontend Framework | Next.js (App Router) | 15.x |
-| Frontend Language | TypeScript | 5.9+ |
-| Styling | Tailwind CSS | 3.4+ |
-| UI Components | shadcn/ui + Radix UI | Latest |
-| Data Fetching | TanStack Query | 5.x |
-| Charts | Recharts | 3.x |
-| Backend Framework | FastAPI | 0.115+ |
-| Backend Language | Python | 3.12+ |
-| ORM | SQLAlchemy (async) | 2.0+ |
-| Data Validation | Pydantic | 2.9+ |
-| Primary Database | PostgreSQL | 16 |
-| Vector Database | Qdrant | 1.9+ |
-| Cache | Redis | 7 |
-| Task Queue | Celery | 5.x |
-| Observability | OpenTelemetry + Sentry | Latest |
-| Containerization | Docker + Docker Compose | Latest |
-| CI/CD | GitHub Actions | Latest |
-
----
-
-## 🔌 API Overview
-
-### Authentication
-
-```http
-POST   /api/v1/auth/register         # Register new user
-POST   /api/v1/auth/login            # Login, get JWT tokens
-POST   /api/v1/auth/refresh          # Refresh access token
-```
-
-### Skills
-
-```http
-GET    /api/v1/skills                # List skills (paginated, filterable)
-GET    /api/v1/skills/search         # Semantic vector search
-GET    /api/v1/skills/featured       # Featured/popular skills
-GET    /api/v1/skills/{slug}         # Get skill details
-POST   /api/v1/skills                # Create a new skill
-PUT    /api/v1/skills/{slug}         # Update a skill
-DELETE /api/v1/skills/{slug}         # Delete a skill
-```
-
-### Categories
-
-```http
-GET    /api/v1/categories            # Category tree
-GET    /api/v1/categories/{slug}     # Category with children
-```
-
-### Tags
-
-```http
-GET    /api/v1/tags                  # List all tags
-GET    /api/v1/tags/{name}           # Skills by tag
-```
-
-### Analytics
-
-```http
-GET    /api/v1/analytics/overview    # Dashboard overview stats
-GET    /api/v1/analytics/skills      # Per-skill analytics
-GET    /api/v1/analytics/usage       # Usage trends
-```
-
----
-
-## 📦 SDK
-
-### Python SDK
+Once the stack is up, the shortest useful loop looks like this:
 
 ```python
+# Python SDK
 from skill_sdk import SkillClient
 
-client = SkillClient(
-    base_url="http://localhost:8000",
-    api_key="your-api-key"
-)
+client = SkillClient(base_url="http://localhost:8000")
+client.login(email="you@example.com", password="hunter2")
 
-# Semantic search
-results = client.search_skills(
-    query="React performance optimization hooks",
-    limit=10,
-    category="frontend/react"
-)
-
-# Get skill detail
-skill = client.get_skill("react-use-memo-guide")
-
-# List skills with filters
-skills = client.list_skills(
-    category="ai/llms",
-    tags=["prompt-engineering"],
-    page=1,
-    size=20
-)
+# Find skills by meaning, not just by exact name
+results = client.skills.search(q="summarize a long article", limit=5)
+for r in results:
+    print(f"{r.score:.2f}  {r.skill.name}")
 ```
-
-Install via pip:
-
-```bash
-pip install skill-sdk
-```
-
-### TypeScript SDK
 
 ```typescript
-import { SkillClient } from '@ai-skill/sdk';
+// TypeScript SDK
+import { SkillClient } from "@skill-library/sdk";
 
-const client = new SkillClient({
-  baseUrl: 'http://localhost:8000',
-  apiKey: 'your-api-key',
-});
+const client = new SkillClient({ baseUrl: "http://localhost:8000" });
+await client.login({ email: "you@example.com", password: "hunter2" });
 
-// Semantic search
-const results = await client.searchSkills({
-  query: 'React performance optimization hooks',
-  limit: 10,
-  category: 'frontend/react',
-});
-
-// Get skill detail
-const skill = await client.getSkill('react-use-memo-guide');
-
-// List skills
-const { items, total } = await client.listSkills({
-  category: 'ai/llms',
-  tags: ['prompt-engineering'],
-  page: 1,
-  size: 20,
-});
+const results = await client.skills.search({ q: "summarize a long article", limit: 5 });
+for (const r of results) {
+  console.log(`${r.score.toFixed(2)}  ${r.skill.name}`);
+}
 ```
 
-Install via npm:
+The same loop with raw HTTP is in
+[examples/rest/skills.http](examples/rest/skills.http). A Postman
+collection is at [examples/postman/](examples/postman/).
 
-```bash
-npm install @ai-skill/sdk
-```
+## What works, what doesn't
 
----
+We try to keep this honest in [the roadmap](ROADMAP.md), but the short
+version:
 
-## 📂 Repository layout
+**Works well in 1.0.0**
 
-```
-AI-SKILL/
-├── backend/              FastAPI 0.115 service
-├── frontend/             Next.js 15 PWA
-├── sdk/
-│   ├── python/           Python client
-│   └── typescript/       TypeScript client
-├── docs/                 architecture.md, deployment.md, development.md, troubleshooting.md
-├── examples/             REST / Python / TypeScript / Postman samples
-├── scripts/              Operational scripts
-├── .github/              Issue templates, PR template, CI, CODEOWNERS, dependabot
-├── Makefile              make help
-└── .editorconfig + .pre-commit-config.yaml
-```
+- Skill CRUD, versioning, dependencies, ratings.
+- Hybrid search on catalogs up to a few thousand skills.
+- Per-IP rate limiting with Redis (degrades gracefully if Redis is down).
+- Per-request locale resolution and localized error messages (en / zh).
+- Docker Compose for a single-host install.
 
-See [`docs/architecture.md`](docs/architecture.md) for the in-depth breakdown.
+**Still rough**
 
----
+- The analytics dashboard is in-memory and per-process. Run more than one
+  backend replica and the numbers will be inconsistent. See
+  [ROADMAP § 1.1.0](ROADMAP.md#110).
+- No SSO, no team-level isolation. If you need either, see the alternatives
+  in the [FAQ](FAQ.md#alternatives).
+- The TypeScript SDK's types are hand-rolled, not generated from the
+  OpenAPI schema. There's a [tracking issue](https://github.com/badhope/AI-SKILL/issues)
+  for switching to a generated client.
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+Contributions are welcome. Please skim
+[CONTRIBUTING.md](CONTRIBUTING.md) first — it's short and covers the
+branch naming, commit style, and the test commands we expect to be green
+before a PR.
 
-- Fork the repository
-- Create a feature branch (`feat/amazing-feature`)
-- Write tests and ensure they pass
-- Submit a Pull Request
+Good places to start:
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed workflow, commit conventions, and code style guidelines.
+- [`good first issue`](https://github.com/badhope/AI-SKILL/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) —
+  small, well-scoped, and someone will review fast.
+- Translations. The docs and the UI are bilingual (en / zh). Adding a new
+  language is mostly a `docs/<locale>/` copy and a one-line change to
+  `docs/mkdocs.yml`. See [CONTRIBUTING → translation](CONTRIBUTING.md#translation).
+- Issues tagged
+  [`help wanted`](https://github.com/badhope/AI-SKILL/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+  for things we'd love a second pair of eyes on.
 
----
+## License
 
-## 📄 License
+MIT — see [LICENSE](LICENSE).
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+## Acknowledgements
 
----
+- The search stack leans heavily on [Qdrant](https://qdrant.tech/) and
+  [Sentence-Transformers](https://www.sbert.net/). Both have been a joy to
+  integrate.
+- The web UI is built on [Next.js](https://nextjs.org/) and
+  [shadcn/ui](https://ui.shadcn.com/).
+- The backend is on [FastAPI](https://fastapi.tiangolo.com/) and
+  [SQLAlchemy 2](https://www.sqlalchemy.org/).
 
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=badhope/AI-SKILL&type=Date)](https://star-history.com/#badhope/AI-SKILL&Date)
-
----
-
-<p align="center">
-  Built with ❤️ by the AI-SKILL community
-</p>
+If you ship something with this, we'd love to hear about it. Open a
+[Show and Tell discussion](https://github.com/badhope/AI-SKILL/discussions/categories/show-and-tell)
+or a PR adding your project to the wiki.
