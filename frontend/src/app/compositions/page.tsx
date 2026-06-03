@@ -34,7 +34,7 @@ const sortOptions = [
 ];
 
 export default function CompositionsPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [searchQuery, setSearchQuery] = useState("");
   const [sort, setSort] = useState("newest");
   const [page, setPage] = useState(1);
@@ -234,7 +234,7 @@ export default function CompositionsPage() {
                           </>
                         )}
                       </div>
-                      <span>{formatDate(composition.updated_at, "relative")}</span>
+                      <span>{formatDate(composition.updated_at, "relative", locale)}</span>
                     </div>
                   </CardContent>
                 </Card>

@@ -34,8 +34,14 @@ const DragHandle = () => (
 
 const DialogContent = React.forwardRef<
   HTMLDivElement,
-  { showDragHandle?: boolean; className?: string; children?: React.ReactNode; open?: boolean } & Omit<React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>, "className" | "children">
->(({ className, children, showDragHandle = true, ...props }, ref) => {
+  {
+    showDragHandle?: boolean;
+    className?: string;
+    children?: React.ReactNode;
+    open?: boolean;
+    closeLabel?: string;
+  } & Omit<React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>, "className" | "children">
+>(({ className, children, showDragHandle = true, closeLabel = "Close", ...props }, ref) => {
   const [isMobile, setIsMobile] = React.useState(false);
   useBodyLock(props.open ?? false);
 
@@ -71,7 +77,7 @@ const DialogContent = React.forwardRef<
           )}
         >
           <X className="h-5 w-5" />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{closeLabel}</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
     </DialogPortal>

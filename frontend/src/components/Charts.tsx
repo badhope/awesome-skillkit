@@ -18,6 +18,7 @@ import {
   Area,
 } from "recharts";
 import type { PieLabelRenderProps } from "recharts";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { UsageTrend, CategoryDistribution, PopularSkill } from "@/types";
 
@@ -81,16 +82,17 @@ interface UsageTrendChartProps {
 }
 
 export function UsageTrendChart({ data }: UsageTrendChartProps) {
+  const { t, locale } = useI18n();
   const formattedData = data.map((item) => ({
     ...item,
-    date: new Date(item.date).toLocaleDateString("en-US", {
+    date: new Date(item.date).toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US", {
       month: "short",
       day: "numeric",
     }),
   }));
 
   return (
-    <ChartContainer title="Usage Trends" subtitle="Daily usage over time">
+    <ChartContainer title={t("charts.usageTrends")} subtitle={t("charts.usageTrendsSubtitle")}>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={formattedData} margin={{ top: 5, right: 5, left: 0, bottom: 5 }}>
           <defs>
@@ -125,7 +127,7 @@ export function UsageTrendChart({ data }: UsageTrendChartProps) {
             stroke={CHART_COLORS[0]}
             fill="url(#colorDownloads)"
             strokeWidth={2}
-            name="Downloads"
+            name={t("charts.downloads")}
           />
           <Area
             type="monotone"
@@ -133,7 +135,7 @@ export function UsageTrendChart({ data }: UsageTrendChartProps) {
             stroke={CHART_COLORS[1]}
             fill="url(#colorViews)"
             strokeWidth={2}
-            name="Views"
+            name={t("charts.views")}
           />
         </AreaChart>
       </ResponsiveContainer>
@@ -146,6 +148,7 @@ interface PopularSkillsChartProps {
 }
 
 export function PopularSkillsChart({ data }: PopularSkillsChartProps) {
+  const { t } = useI18n();
   const chartData = data.slice(0, 8).map((item) => ({
     name: item.skill.name.length > 15 ? item.skill.name.slice(0, 15) + "..." : item.skill.name,
     uses: item.use_count,
@@ -153,7 +156,7 @@ export function PopularSkillsChart({ data }: PopularSkillsChartProps) {
   }));
 
   return (
-    <ChartContainer title="Popular Skills" subtitle="Most used skills">
+    <ChartContainer title={t("charts.popularSkills")} subtitle={t("charts.popularSkillsSubtitle")}>
       <ResponsiveContainer width="100%" height="100%">
         <RechartsBarChart
           data={chartData}
@@ -178,7 +181,7 @@ export function PopularSkillsChart({ data }: PopularSkillsChartProps) {
             width={120}
           />
           <Tooltip content={<CustomTooltip />} />
-          <Bar dataKey="uses" fill={CHART_COLORS[2]} radius={[0, 4, 4, 0]} name="Uses" />
+          <Bar dataKey="uses" fill={CHART_COLORS[2]} radius={[0, 4, 4, 0]} name={t("charts.uses")} />
         </RechartsBarChart>
       </ResponsiveContainer>
     </ChartContainer>
@@ -190,6 +193,7 @@ interface CategoryDistributionChartProps {
 }
 
 export function CategoryDistributionChart({ data }: CategoryDistributionChartProps) {
+  const { t } = useI18n();
   const chartData = data.map((item) => ({
     name: item.category_name,
     value: item.skill_count,
@@ -225,7 +229,7 @@ export function CategoryDistributionChart({ data }: CategoryDistributionChartPro
   };
 
   return (
-    <ChartContainer title="Category Distribution" subtitle="Skills per category">
+    <ChartContainer title={t("charts.categoryDistribution")} subtitle={t("charts.categoryDistributionSubtitle")}>
       <ResponsiveContainer width="100%" height="100%">
         <RechartsPieChart>
           <Pie
@@ -279,15 +283,16 @@ export function StatsOverviewChart({
   totalUsers,
   totalDownloads,
 }: StatsOverviewChartProps) {
+  const { t } = useI18n();
   const chartData = [
-    { name: "Skills", value: totalSkills },
-    { name: "Compositions", value: totalCompositions },
-    { name: "Users", value: totalUsers },
-    { name: "Downloads", value: totalDownloads },
+    { name: t("charts.skills"), value: totalSkills },
+    { name: t("charts.compositions"), value: totalCompositions },
+    { name: t("charts.users"), value: totalUsers },
+    { name: t("charts.downloads"), value: totalDownloads },
   ];
 
   return (
-    <ChartContainer title="Platform Overview" subtitle="Key metrics at a glance">
+    <ChartContainer title={t("charts.platformOverview")} subtitle={t("charts.platformOverviewSubtitle")}>
       <ResponsiveContainer width="100%" height="100%">
         <RechartsBarChart data={chartData} margin={{ top: 20, right: 20, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />

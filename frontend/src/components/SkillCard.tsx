@@ -91,7 +91,7 @@ function ComplexityIndicator({ complexity }: { complexity: string }) {
 }
 
 function StatusBadge({ status }: { status: string }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const statusConfig: Record<
     string,
@@ -113,7 +113,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export function SkillCard({ skill, variant = "default", featured, className }: SkillCardProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const resolvedVariant = featured ? "featured" : variant;
   const isCompact = resolvedVariant === "compact";
   const isFeatured = resolvedVariant === "featured";
@@ -312,11 +312,11 @@ export function SkillCard({ skill, variant = "default", featured, className }: S
               </div>
               <div className="flex items-center gap-1 shrink-0 text-xs text-muted-foreground">
                 <Download className="h-3.5 w-3.5" />
-                <span className="tabular-nums">{formatNumber(skill.metrics.downloads_count)}</span>
+                <span className="tabular-nums">{formatNumber(skill.metrics.downloads_count, locale)}</span>
               </div>
               <div className="flex items-center gap-1 shrink-0 text-xs text-muted-foreground">
                 <Eye className="h-3.5 w-3.5" />
-                <span className="tabular-nums">{formatNumber(skill.metrics.views_count)}</span>
+                <span className="tabular-nums">{formatNumber(skill.metrics.views_count, locale)}</span>
               </div>
               <div className="flex items-center gap-1 shrink-0 text-xs text-muted-foreground ml-auto">
                 <Clock className="h-3 w-3" />

@@ -4,6 +4,7 @@ import * as React from "react";
 import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "cmdk";
 import { Search, BookOpen, FolderOpen, Navigation, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 import { useBodyLock } from "@/hooks/useBodyLock";
 
 interface CommandItemData {
@@ -39,6 +40,7 @@ function CommandMenu({
   isLoading = false,
 }: CommandMenuProps) {
   const [search, setSearch] = React.useState("");
+  const { t } = useI18n();
   const [isMobile, setIsMobile] = React.useState(false);
 
   useBodyLock(open);
@@ -216,19 +218,19 @@ function CommandMenu({
               <kbd className="inline-flex h-5 items-center rounded border bg-muted px-1.5 font-mono text-[10px]">
                 ↑↓
               </kbd>
-              <span>Navigate</span>
+              <span>{t("commandMenu.navigate")}</span>
             </div>
             <div className="flex items-center gap-1 hidden sm:flex">
               <kbd className="inline-flex h-5 items-center rounded border bg-muted px-1.5 font-mono text-[10px]">
                 ↵
               </kbd>
-              <span>Select</span>
+              <span>{t("commandMenu.select")}</span>
             </div>
             <div className="flex items-center gap-1">
               <kbd className="inline-flex h-5 items-center rounded border bg-muted px-1.5 font-mono text-[10px]">
                 ⌘K
               </kbd>
-              <span>Open</span>
+              <span>{t("commandMenu.open")}</span>
             </div>
           </div>
         </Command>

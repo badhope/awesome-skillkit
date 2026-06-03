@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Sparkles,
@@ -10,11 +10,8 @@ import {
   TrendingUp,
   Activity,
   Star,
-  ArrowUp,
-  ArrowDown,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   UsageTrendChart,
@@ -34,17 +31,45 @@ import { useI18n } from "@/lib/i18n";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { t } = useI18n();
-  const { data: stats, isLoading: statsLoading } = useDashboardStats();
-  const { data: trends, isLoading: trendsLoading } = useUsageTrends(30);
-  const { data: distribution, isLoading: distributionLoading } = useCategoryDistribution();
-  const { data: popularSkills, isLoading: popularLoading } = usePopularSkills(10);
-
+  const { t, locale } = useI18n();
+  // Render only after we've checked auth on the client. The first paint
+  // happens during hydration with whatever localStorage says; without
+  // this guard the dashboard would briefly mount and immediately
+  // redirect to /auth/login on every reload of an authenticated user.
+  const [authReady, setAuthReady] = useState(false);
   useEffect(() => {
     if (!isAuthenticated()) {
-      router.push("/auth/login");
+      router.replace("/auth/login");
+      return;
     }
+    setAuthReady(true);
   }, [router]);
+
+  const statsQuery = useDashboardStats();
+  const trendsQuery = useUsageTrends(30);
+  const distributionQuery = useCategoryDistribution();
+  const popularSkillsQuery = usePopularSkills(10);
+
+  if (!authReady) {
+    return (
+      <div className="container mx-auto px-4 py-6 sm:py-8">
+        <div className="mb-6 sm:mb-8">
+          <Skeleton className="h-8 w-48 mb-2" />
+          <Skeleton className="h-4 w-72" />
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-24 sm:h-28 rounded-xl" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  const stats = statsQuery.data;
+  const trends = trendsQuery.data;
+  const distribution = distributionQuery.data;
+  const popularSkills = popularSkillsQuery.data;
 
   const statCards = [
     {
@@ -53,8 +78,6 @@ export default function DashboardPage() {
       icon: Sparkles,
       color: "text-violet-500",
       bg: "bg-violet-500/10",
-      change: "+12%",
-      positive: true,
     },
     {
       label: t("dashboard.totalCompositions"),
@@ -62,8 +85,6 @@ export default function DashboardPage() {
       icon: GitBranch,
       color: "text-emerald-500",
       bg: "bg-emerald-500/10",
-      change: "+8%",
-      positive: true,
     },
     {
       label: t("dashboard.totalUsers"),
@@ -71,8 +92,6 @@ export default function DashboardPage() {
       icon: Users,
       color: "text-sky-500",
       bg: "bg-sky-500/10",
-      change: "+25%",
-      positive: true,
     },
     {
       label: t("dashboard.totalDownloads"),
@@ -80,8 +99,6 @@ export default function DashboardPage() {
       icon: Download,
       color: "text-amber-500",
       bg: "bg-amber-500/10",
-      change: "+18%",
-      positive: true,
     },
   ];
 
@@ -104,24 +121,12 @@ export default function DashboardPage() {
                 <div className={cn("flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl", stat.bg)}>
                   <stat.icon className={cn("h-4 w-4 sm:h-5 sm:w-5", stat.color)} />
                 </div>
-                <Badge
-                  variant={stat.positive ? "success" : "destructive"}
-                  className="text-[10px] xs:text-xs"
-                >
-                  {stat.positive ? (
-                    <ArrowUp className="h-2.5 w-2.5 mr-0.5" />
-                  ) : (
-                    <ArrowDown className="h-2.5 w-2.5 mr-0.5" />
-                  )}
-                  <span className="hidden xs:inline">{stat.change}</span>
-                  <span className="xs:hidden">{stat.change}</span>
-                </Badge>
               </div>
               <div className="text-lg sm:text-2xl font-bold">
-                {statsLoading ? (
+                {statsQuery.isLoading ? (
                   <Skeleton className="h-7 w-16 sm:h-8 sm:w-20" />
                 ) : (
-                  formatNumber(stat.value)
+                  formatNumber(stat.value, locale)
                 )}
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground leading-tight mt-0.5">
@@ -134,14 +139,14 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div>
-          {trendsLoading ? (
+          {trendsQuery.isLoading ? (
             <Skeleton className="h-[280px] sm:h-[320px] md:h-[380px] rounded-xl" />
           ) : trends ? (
             <UsageTrendChart data={trends} />
           ) : null}
         </div>
         <div>
-          {popularLoading ? (
+          {popularSkillsQuery.isLoading ? (
             <Skeleton className="h-[280px] sm:h-[320px] md:h-[380px] rounded-xl" />
           ) : popularSkills ? (
             <PopularSkillsChart data={popularSkills} />
@@ -151,7 +156,7 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div>
-          {distributionLoading ? (
+          {distributionQuery.isLoading ? (
             <Skeleton className="h-[280px] sm:h-[320px] md:h-[380px] rounded-xl" />
           ) : distribution ? (
             <CategoryDistributionChart data={distribution} />

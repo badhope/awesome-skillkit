@@ -49,7 +49,7 @@ import type { SkillReview } from "@/types";
 
 export default function SkillDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { data: skill, isLoading } = useSkill(slug);
   const { data: versions } = useSkillVersions(slug);
   const { data: dependencies } = useSkillDependencies(slug);
@@ -167,17 +167,17 @@ export default function SkillDetailPage() {
                       </span>
                       <span className="flex items-center gap-1">
                         <Download className="h-3.5 w-3.5" />
-                        {formatNumber(skill.metrics.downloads_count)}
+                        {formatNumber(skill.metrics.downloads_count, locale)}
                       </span>
                       <span className="flex items-center gap-1 hidden sm:inline-flex">
                         <Eye className="h-3.5 w-3.5" />
-                        {formatNumber(skill.metrics.views_count)}
+                        {formatNumber(skill.metrics.views_count, locale)}
                       </span>
                     </>
                   )}
                   <span className="flex items-center gap-1">
                     <Clock className="h-3.5 w-3.5" />
-                    {formatDate(skill.updated_at, "relative")}
+                    {formatDate(skill.updated_at, "relative", locale)}
                   </span>
                 </div>
               </div>
@@ -409,7 +409,7 @@ export default function SkillDetailPage() {
                               {version.changelog}
                             </p>
                             <p className="text-xs text-muted-foreground">
-                              {formatDate(version.created_at, "short")}
+                              {formatDate(version.created_at, "short", locale)}
                             </p>
                           </div>
                         </div>
@@ -465,7 +465,7 @@ export default function SkillDetailPage() {
                                   {review.user?.full_name || review.user?.username || "Anonymous"}
                                 </p>
                                 <p className="text-xs text-muted-foreground">
-                                  {formatDate(review.created_at, "relative")}
+                                  {formatDate(review.created_at, "relative", locale)}
                                 </p>
                               </div>
                             </div>
@@ -528,21 +528,21 @@ export default function SkillDetailPage() {
                       <Download className="h-3.5 w-3.5" />
                       {t("skillDetail.downloads")}
                     </span>
-                    <span className="font-medium">{formatNumber(skill.metrics.downloads_count)}</span>
+                    <span className="font-medium">{formatNumber(skill.metrics.downloads_count, locale)}</span>
                   </div>
                   <div className="flex items-center justify-between text-xs sm:text-sm">
                     <span className="text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                       <Eye className="h-3.5 w-3.5" />
                       {t("skillDetail.views")}
                     </span>
-                    <span className="font-medium">{formatNumber(skill.metrics.views_count)}</span>
+                    <span className="font-medium">{formatNumber(skill.metrics.views_count, locale)}</span>
                   </div>
                   <div className="flex items-center justify-between text-xs sm:text-sm">
                     <span className="text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                       <Heart className="h-3.5 w-3.5 fill-none" />
                       {t("skillDetail.likes")}
                     </span>
-                    <span className="font-medium">{formatNumber(skill.metrics.likes_count)}</span>
+                    <span className="font-medium">{formatNumber(skill.metrics.likes_count, locale)}</span>
                   </div>
                 </>
               )}
@@ -551,11 +551,11 @@ export default function SkillDetailPage() {
                   <Calendar className="h-3.5 w-3.5" />
                   {t("skillDetail.created")}
                 </span>
-                <span className="font-medium">{formatDate(skill.created_at, "short")}</span>
+                <span className="font-medium">{formatDate(skill.created_at, "short", locale)}</span>
               </div>
               {skill.license && (
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-muted-foreground">License</span>
+                  <span className="text-muted-foreground">{t("skillDetail.license")}</span>
                   <span className="font-medium">{skill.license}</span>
                 </div>
               )}

@@ -24,113 +24,55 @@ import type {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
 
+// HttpOnly cookies carry the auth now. We MUST include credentials on
+// every request or the browser will drop the cookies. The old code
+// stored tokens in `localStorage` and forwarded them as `Authorization:
+// Bearer` headers, which is XSS-vulnerable.
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true,
   timeout: 15000,
 });
 
-let isRefreshing = false;
-let failedQueue: Array<{
-  resolve: (token: string) => void;
-  reject: (error: unknown) => void;
-}> = [];
-
-function processQueue(error: unknown, token: string | null = null) {
-  failedQueue.forEach((prom) => {
-    if (error) {
-      prom.reject(error);
-    } else {
-      prom.resolve(token!);
-    }
-  });
-  failedQueue = [];
-}
-
-apiClient.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("access_token");
-      if (token && config.headers) {
-        config.headers.Authorization = `Bearer ${token}`;
-      }
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
 apiClient.interceptors.response.use(
   (response) => response,
-  async (error: AxiosError<{ message: string; code: string }>) => {
-    const originalRequest = error.config as InternalAxiosRequestConfig & {
-      _retry?: boolean;
-    };
-
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      if (isRefreshing) {
-        return new Promise<typeof originalRequest>((resolve, reject) => {
-          failedQueue.push({
-            resolve: (token: string) => {
-              if (originalRequest.headers) {
-                originalRequest.headers.Authorization = `Bearer ${token}`;
-              }
-              resolve(apiClient(originalRequest));
-            },
-            reject,
-          });
-        });
-      }
-
-      originalRequest._retry = true;
-      isRefreshing = true;
-
-      const refreshToken = localStorage.getItem("refresh_token");
-
-      if (!refreshToken) {
-        localStorage.removeItem("access_token");
-        localStorage.removeItem("refresh_token");
-        localStorage.removeItem("user");
-        if (typeof window !== "undefined") {
-          window.location.href = "/auth/login";
-        }
+  async (error: AxiosError<{ detail?: string; message?: string; code?: string }>) => {
+    // The server is now the source of truth for cookie lifetime; when
+    // a 401 comes back, we hard-logout (the access cookie is gone or
+    // rejected) and bounce to the login page. No more client-side
+    // refresh-token queue — the server sets a new pair on every
+    // successful 200 from /auth/refresh.
+    if (error.response?.status === 401 && typeof window !== "undefined") {
+      // Avoid infinite loops if /auth/login itself 401s.
+      const url = error.config?.url ?? "";
+      if (url.includes("/auth/")) {
         return Promise.reject(error);
       }
-
+      // Make sure any cached user state is gone — the cookie is the
+      // source of truth now.
       try {
-        const response = await axios.post<ApiResponse<{ access_token: string; refresh_token: string }>>(
-          `${API_BASE_URL}/v1/auth/refresh`,
-          { refresh_token: refreshToken }
-        );
-
-        const { access_token, refresh_token: newRefreshToken } = response.data.data;
-        localStorage.setItem("access_token", access_token);
-        localStorage.setItem("refresh_token", newRefreshToken);
-
-        processQueue(null, access_token);
-
-        if (originalRequest.headers) {
-          originalRequest.headers.Authorization = `Bearer ${access_token}`;
-        }
-        return apiClient(originalRequest);
-      } catch (refreshError) {
-        processQueue(refreshError, null);
-        localStorage.removeItem("access_token");
-        localStorage.removeItem("refresh_token");
         localStorage.removeItem("user");
-        if (typeof window !== "undefined") {
-          window.location.href = "/auth/login";
-        }
-        return Promise.reject(refreshError);
-      } finally {
-        isRefreshing = false;
+      } catch {
+        // localStorage may be disabled (private mode); ignore.
+      }
+      if (window.location.pathname !== "/auth/login") {
+        const next = encodeURIComponent(window.location.pathname + window.location.search);
+        window.location.href = `/auth/login?next=${next}`;
       }
     }
 
     const message =
-      error.response?.data?.message || error.message || "An unexpected error occurred";
+      // FastAPI's HTTPException serializes to `{ "detail": "..." }` (and our
+      // `localized_http_exception` follows the same shape). The legacy
+      // `message` field is kept as a fallback for handlers that opt into
+      // the `ApiResponse` envelope.
+      error.response?.data?.detail ||
+      error.response?.data?.message ||
+      error.message ||
+      "An unexpected error occurred";
     return Promise.reject(new Error(message));
   }
 );
@@ -146,17 +88,19 @@ export const api = {
       return response.data.data;
     },
     logout: async (): Promise<void> => {
-      const refreshToken = localStorage.getItem("refresh_token");
-      await apiClient.post("/v1/auth/logout", { refresh_token: refreshToken });
+      await apiClient.post("/v1/auth/logout");
     },
     me: async () => {
       const response = await apiClient.get<ApiResponse<{ user: import("@/types").User }>>("/v1/auth/me");
       return response.data.data;
     },
-    refreshToken: async (refreshToken: string) => {
-      const response = await apiClient.post<ApiResponse<AuthResponse["tokens"]>>("/v1/auth/refresh", {
-        refresh_token: refreshToken,
-      });
+    refreshToken: async () => {
+      // The refresh cookie is HttpOnly and gets sent automatically.
+      // Just hit the endpoint; on success the server sets a new pair.
+      const response = await apiClient.post<ApiResponse<AuthResponse["tokens"]>>(
+        "/v1/auth/refresh",
+        {}
+      );
       return response.data.data;
     },
   },

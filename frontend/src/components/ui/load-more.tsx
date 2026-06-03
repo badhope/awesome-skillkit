@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 import { Loader2 } from "lucide-react";
 
 interface LoadMoreProps {
@@ -21,6 +22,7 @@ function LoadMore({
   loadedCount,
   className,
 }: LoadMoreProps) {
+  const { t } = useI18n();
   if (!hasMore && loadedCount !== undefined && loadedCount > 0) {
     return (
       <div
@@ -31,10 +33,10 @@ function LoadMore({
       >
         {totalCount !== undefined ? (
           <span>
-            Showing all {loadedCount} of {totalCount} items
+            {t("loadMore.showingAll", { loaded: loadedCount, total: totalCount })}
           </span>
         ) : (
-          <span>No more items</span>
+          <span>{t("loadMore.noMoreItems")}</span>
         )}
       </div>
     );
@@ -58,7 +60,7 @@ function LoadMore({
         )}
       >
         {isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
-        {isLoading ? "Loading..." : "Load More"}
+        {isLoading ? t("loadMore.loading") : t("loadMore.loadMore")}
       </button>
     </div>
   );

@@ -7,7 +7,6 @@ import {
   login as authLogin,
   register as authRegister,
   logout as authLogout,
-  isAuthenticated,
   getStoredUser,
   fetchCurrentUser,
 } from "@/lib/auth";
@@ -20,25 +19,23 @@ export function useAuth() {
   const router = useRouter();
 
   const loadUser = useCallback(async () => {
-    if (!isAuthenticated()) {
-      setUser(null);
-      setLoading(false);
-      return;
-    }
-
+    // Render the cached user first (no flicker), then let the server
+    // re-validate via the HttpOnly cookie. If the cookie is gone,
+    // fetchCurrentUser clears the cache and returns null.
     const storedUser = getStoredUser();
     if (storedUser) {
       setUser(storedUser);
-      setLoading(false);
     }
-
     try {
       const freshUser = await fetchCurrentUser();
       if (freshUser) {
         setUser(freshUser);
+      } else {
+        setUser(null);
       }
     } catch {
-      // Ignore fetch errors
+      // Network blip — keep showing the cached user rather than
+      // logging them out for an unrelated reason.
     } finally {
       setLoading(false);
     }

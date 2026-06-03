@@ -28,12 +28,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useComposition } from "@/hooks/useSkills";
+import { useI18n } from "@/lib/i18n";
 import { formatDate, formatNumber, getInitials, cn } from "@/lib/utils";
 import type { CompositionNode } from "@/types";
 
 export default function CompositionDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const { data: composition, isLoading } = useComposition(slug);
+  const { t } = useI18n();
 
   if (isLoading) {
     return (
@@ -49,12 +51,12 @@ export default function CompositionDetailPage() {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <AlertTriangle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-        <h2 className="text-2xl font-bold mb-2">Composition Not Found</h2>
+        <h2 className="text-2xl font-bold mb-2">{t("compositionDetail.notFoundTitle")}</h2>
         <p className="text-muted-foreground mb-4">
-          The composition you are looking for does not exist or has been removed.
+          {t("compositionDetail.notFoundDescription")}
         </p>
         <Link href="/compositions">
-          <Button>Browse Compositions</Button>
+          <Button>{t("compositionDetail.browseCompositions")}</Button>
         </Link>
       </div>
     );
@@ -68,7 +70,7 @@ export default function CompositionDetailPage() {
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
         <Link href="/compositions" className="hover:text-foreground transition-colors">
-          Compositions
+          {t("compositionDetail.breadcrumb")}
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
         <span className="text-foreground font-medium truncate">{composition.name}</span>
@@ -85,7 +87,7 @@ export default function CompositionDetailPage() {
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <h1 className="text-2xl sm:text-3xl font-bold">{composition.name}</h1>
                 <Badge className={composition.is_public ? "bg-emerald-500/10 text-emerald-500" : "bg-muted text-muted-foreground"}>
-                  {composition.is_public ? "Public" : "Private"}
+                  {composition.is_public ? t("compositionDetail.public") : t("compositionDetail.private")}
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-3">{composition.description}</p>
@@ -105,7 +107,7 @@ export default function CompositionDetailPage() {
                 )}
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  Updated {formatDate(composition.updated_at, "relative")}
+                  {t("compositionDetail.updatedRelative", { time: formatDate(composition.updated_at, "relative") })}
                 </span>
               </div>
             </div>
@@ -114,11 +116,11 @@ export default function CompositionDetailPage() {
           <div className="flex flex-wrap items-center gap-2 mb-6">
             <Button variant="gradient">
               <Play className="mr-2 h-4 w-4" />
-              Run Composition
+              {t("compositionDetail.runComposition")}
             </Button>
             <Button variant="outline">
               <Download className="mr-2 h-4 w-4" />
-              Export
+              {t("compositionDetail.export")}
             </Button>
             <Button variant="ghost" size="icon">
               <Heart className="h-4 w-4" />
@@ -130,9 +132,9 @@ export default function CompositionDetailPage() {
 
           <Tabs defaultValue="workflow" className="mt-6">
             <TabsList>
-              <TabsTrigger value="workflow">Workflow</TabsTrigger>
-              <TabsTrigger value="schema">Schema</TabsTrigger>
-              <TabsTrigger value="details">Details</TabsTrigger>
+              <TabsTrigger value="workflow">{t("compositionDetail.workflowTab")}</TabsTrigger>
+              <TabsTrigger value="schema">{t("compositionDetail.schemaTab")}</TabsTrigger>
+              <TabsTrigger value="details">{t("compositionDetail.detailsTab")}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="workflow" className="mt-4">
@@ -140,7 +142,7 @@ export default function CompositionDetailPage() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <GitBranch className="h-4 w-4" />
-                    Workflow Visualization
+                    {t("compositionDetail.workflowVisualization")}
                   </h3>
 
                   <div className="relative bg-muted/50 rounded-xl p-8 min-h-[400px] overflow-auto">
@@ -156,10 +158,10 @@ export default function CompositionDetailPage() {
                             </div>
                             <div className="min-w-0 flex-1">
                               <p className="font-medium text-sm truncate">
-                                {node.skill?.name || "Unknown Skill"}
+                                {node.skill?.name || t("compositionDetail.unknownSkill")}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                Step {node.sort_order + 1}
+                                {t("compositionDetail.step", { n: node.sort_order + 1 })}
                               </p>
                             </div>
                             <ArrowUpRight className="h-4 w-4 text-muted-foreground shrink-0" />
@@ -190,12 +192,12 @@ export default function CompositionDetailPage() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <Settings className="h-4 w-4" />
-                    Input/Output Schema
+                    {t("compositionDetail.inputOutputSchema")}
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                    <h4 className="text-sm font-semibold mb-3">Metadata</h4>
+                    <h4 className="text-sm font-semibold mb-3">{t("compositionDetail.metadata")}</h4>
                     <div className="bg-muted rounded-lg p-4">
                       {composition.metadata && Object.keys(composition.metadata).length > 0 ? (
                         <pre className="text-xs overflow-x-auto">
@@ -203,7 +205,7 @@ export default function CompositionDetailPage() {
                         </pre>
                       ) : (
                         <p className="text-sm text-muted-foreground">
-                          No metadata defined
+                          {t("compositionDetail.noMetadata")}
                         </p>
                       )}
                     </div>
@@ -218,22 +220,22 @@ export default function CompositionDetailPage() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <Layers className="h-4 w-4" />
-                    Node Details
+                    {t("compositionDetail.nodeDetails")}
                   </h3>
                   <div className="space-y-4">
                     {composition.items.map((node: CompositionNode) => (
                       <div key={node.id} className="p-4 rounded-lg border">
                         <div className="flex items-center gap-2 mb-2">
                           <Badge variant="purple" className="text-xs">
-                            Step {node.sort_order + 1}
+                            {t("compositionDetail.step", { n: node.sort_order + 1 })}
                           </Badge>
                           <span className="font-medium text-sm">
-                            {node.skill?.name || "Unknown Skill"}
+                            {node.skill?.name || t("compositionDetail.unknownSkill")}
                           </span>
                         </div>
                         {node.notes && (
                           <div>
-                            <p className="text-xs text-muted-foreground mb-1">Notes</p>
+                            <p className="text-xs text-muted-foreground mb-1">{t("compositionDetail.notes")}</p>
                             <p className="text-sm">{node.notes}</p>
                           </div>
                         )}
@@ -250,7 +252,7 @@ export default function CompositionDetailPage() {
           {composition.owner && (
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Author</CardTitle>
+                <CardTitle className="text-sm">{t("common.author")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-3">
@@ -275,19 +277,19 @@ export default function CompositionDetailPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-sm">Stats</CardTitle>
+              <CardTitle className="text-sm">{t("compositionDetail.stats")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Items</span>
+                <span className="text-muted-foreground">{t("compositionDetail.items")}</span>
                 <span className="font-medium">{composition.items.length}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Created</span>
+                <span className="text-muted-foreground">{t("compositionDetail.created")}</span>
                 <span className="font-medium">{formatDate(composition.created_at, "short")}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Updated</span>
+                <span className="text-muted-foreground">{t("compositionDetail.updated")}</span>
                 <span className="font-medium">{formatDate(composition.updated_at, "short")}</span>
               </div>
             </CardContent>
