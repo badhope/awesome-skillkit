@@ -1,15 +1,18 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import List, Optional
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlalchemy import and_, func, or_, select
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from sqlalchemy import and_, func, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.core.deps import get_current_active_user, get_optional_user
+from app.core.content_i18n import ALL_LOCALES, escape_like, pick_translation
+from app.core.deps import get_current_active_user
+from app.core.i18n import localized_http_exception
 from app.core.pagination import PaginationParams
 from app.db import get_db
+from app.middleware.locale import get_request_locale
 from app.models.skill import (
     Category,
     Skill,
@@ -49,6 +52,7 @@ def _get_vector_service() -> VectorSearchService:
 
 @router.get("", response_model=SkillListResponse)
 async def list_skills(
+    request: Request,
     category_slug: Optional[str] = Query(None, description="分类slug"),
     tag: Optional[str] = Query(None, description="标签名"),
     search: Optional[str] = Query(None, description="搜索关键词"),
@@ -56,6 +60,14 @@ async def list_skills(
     status: Optional[str] = Query("published", description="状态"),
     sort_by: str = Query("updated_at", description="排序字段"),
     sort_order: str = Query("desc", description="排序方向"),
+    locale: str = Query(
+        None,
+        description=(
+            "Locale for slicing `content` (e.g. `en`, `zh`). "
+            "Defaults to the request's resolved locale. Use `all` to "
+            "return the full translations map."
+        ),
+    ),
     pagination: PaginationParams = Depends(),
     db: AsyncSession = Depends(get_db),
 ) -> SkillListResponse:
@@ -70,14 +82,27 @@ async def list_skills(
     if complexity:
         query = query.where(Skill.complexity == complexity)
     if search:
+        pattern = f"%{escape_like(search)}%"
         query = query.where(
             or_(
-                Skill.name.ilike(f"%{search}%"),
-                Skill.description.ilike(f"%{search}%"),
+                Skill.name.ilike(pattern, escape="\\"),
+                Skill.description.ilike(pattern, escape="\\"),
             )
         )
 
-    sort_column = getattr(Skill, sort_by, Skill.updated_at)
+    # Whitelist sort fields — never pass the user-supplied `sort_by` straight
+    # to getattr(), which would let callers order by any column (incl. ones
+    # we don't want exposed like `author_id`).
+    sort_whitelist = {
+        "updated_at": Skill.updated_at,
+        "created_at": Skill.created_at,
+        "name": Skill.name,
+        "rating_avg": Skill.rating_avg,
+        "download_count": Skill.download_count,
+        "usage_count": Skill.usage_count,
+        "view_count": Skill.view_count,
+    }
+    sort_column = sort_whitelist.get(sort_by, Skill.updated_at)
     if pagination.order == "asc" or sort_order == "asc":
         query = query.order_by(sort_column.asc())
     else:
@@ -96,8 +121,20 @@ async def list_skills(
     result = await db.execute(query)
     skills = result.scalars().all()
 
+    # If the caller asked for a specific locale (or the request's
+    # resolved locale differs from the default), slice each skill's
+    # i18n-shaped `content` down to that locale. `ALL_LOCALES` passes
+    # the content through unchanged for editing UIs.
+    effective_locale = locale or get_request_locale(request)
+    items = []
+    for s in skills:
+        resp = SkillResponse.model_validate(s)
+        if effective_locale != ALL_LOCALES:
+            resp.content = pick_translation(resp.content, effective_locale)
+        items.append(resp)
+
     return SkillListResponse(
-        items=[SkillResponse.model_validate(s) for s in skills],
+        items=items,
         total=total,
         page=pagination.page,
         page_size=pagination.page_size,
@@ -111,10 +148,19 @@ async def search_skills(
     category_id: Optional[UUID] = Query(None),
     vector_service: VectorSearchService = Depends(_get_vector_service),
 ) -> List[SkillSearchResult]:
-    results = await vector_service.search_skills(
+    # Use the hybrid path. Vector + BM25 both fire from the same
+    # Skill → index_skill call (see `create`/`update` handlers below),
+    # and the seed script also goes through `index_skill` so the BM25
+    # side is populated in every realistic flow. The pure-vector
+    # `search_skills` is kept available for callers that explicitly
+    # want embedding-only (e.g. semantic-similarity experiments).
+    results = await vector_service.ahybrid_search(
         query=q,
         limit=limit,
-        category_id=str(category_id) if category_id else None,
+        filters={
+            "only_public": True,
+            "category_id": str(category_id) if category_id else None,
+        },
     )
     return [SkillSearchResult(**r) for r in results]
 
@@ -158,7 +204,9 @@ async def get_trending_skills(
     limit: int = Query(10, ge=1, le=50),
     db: AsyncSession = Depends(get_db),
 ) -> List[SkillResponse]:
-    recent_threshold = datetime.utcnow() - timedelta(days=30)
+    # TODO: pull the recency window from a setting (TRENDING_WINDOW_DAYS)
+    # so we can A/B test 7d vs 30d without a redeploy.
+    recent_threshold = datetime.now(timezone.utc) - timedelta(days=30)
     usage_subq = (
         select(
             SkillUsageLog.skill_id,
@@ -190,6 +238,15 @@ async def get_trending_skills(
 @router.get("/{slug}", response_model=SkillDetailResponse)
 async def get_skill(
     slug: str,
+    request: Request,
+    locale: str = Query(
+        None,
+        description=(
+            "Locale for slicing `content`. Defaults to the request's "
+            "resolved locale. Use `all` to return the full translations "
+            "map (for editing UIs)."
+        ),
+    ),
     db: AsyncSession = Depends(get_db),
 ) -> SkillDetailResponse:
     query = (
@@ -207,13 +264,105 @@ async def get_skill(
     skill = result.scalar_one_or_none()
 
     if not skill:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Skill not found")
+        raise localized_http_exception(
+            request, status.HTTP_404_NOT_FOUND, "Skill not found."
+        )
 
-    skill.view_count += 1
+    # Increment view_count with a single atomic UPDATE so concurrent
+    # GETs can't lose updates (the old `+= 1` + commit pattern had a
+    # classic lost-update race).
+    await db.execute(
+        update(Skill)
+        .where(Skill.id == skill.id)
+        .values(view_count=Skill.view_count + 1)
+    )
     await db.commit()
     await db.refresh(skill)
+    skill.view_count += 1
 
-    return SkillDetailResponse.model_validate(skill)
+    detail = SkillDetailResponse.model_validate(skill)
+    effective_locale = locale or get_request_locale(request)
+    if effective_locale != ALL_LOCALES:
+        detail.content = pick_translation(detail.content, effective_locale)
+    return detail
+
+
+async def _update_tag_usage_counts(
+    db: AsyncSession,
+    old_tag_names: set[str],
+    new_tag_names: set[str],
+) -> None:
+    """
+    只更新 tags.usage_count, 不动关联表。
+    用在 create (old=∅, new=传入) / update (差集) / delete (old=当前, new=∅) 三种场景。
+    关联表由 CASCADE 或上层 _replace_tag_associations 负责, 不会重复删除。
+    """
+    to_remove = old_tag_names - new_tag_names
+    to_add = new_tag_names - old_tag_names
+    if not to_remove and not to_add:
+        return
+
+    relevant = to_remove | to_add
+    rows = await db.execute(select(Tag).where(Tag.name.in_(relevant)))
+    tags_by_name = {t.name: t for t in rows.scalars().all()}
+
+    for tag_name in to_remove:
+        tag = tags_by_name.get(tag_name)
+        if tag is None:
+            continue
+        if tag.usage_count > 0:
+            tag.usage_count -= 1
+
+    for tag_name in to_add:
+        tag = tags_by_name.get(tag_name)
+        if tag is None:
+            tag = Tag(name=tag_name)
+            db.add(tag)
+            await db.flush()
+            tags_by_name[tag_name] = tag
+        tag.usage_count += 1
+
+
+async def _replace_tag_associations(
+    db: AsyncSession,
+    skill_id: "UUID",
+    old_tag_names: set[str],
+    new_tag_names: set[str],
+) -> None:
+    """
+    重写 skill_tag_association 中的多对多关联行: 删掉 (old-new) 集合, 插入 (new-old) 集合。
+    使用前应该先调用 _update_tag_usage_counts, 让两边对得上。
+    不会去碰 skill 行本身 (skill 已在调用方 add 进去了)。
+    """
+    from app.models.skill import skill_tag_association
+
+    to_remove = old_tag_names - new_tag_names
+    to_add = new_tag_names - old_tag_names
+    if not to_remove and not to_add:
+        return
+
+    relevant = to_remove | to_add
+    rows = await db.execute(select(Tag).where(Tag.name.in_(relevant)))
+    tags_by_name = {t.name: t for t in rows.scalars().all()}
+
+    if to_remove:
+        remove_ids = [tags_by_name[n].id for n in to_remove if n in tags_by_name]
+        if remove_ids:
+            await db.execute(
+                skill_tag_association.delete().where(
+                    (skill_tag_association.c.skill_id == skill_id)
+                    & (skill_tag_association.c.tag_id.in_(remove_ids))
+                )
+            )
+    if to_add:
+        await db.execute(
+            skill_tag_association.insert(),
+            [
+                {"skill_id": skill_id, "tag_id": tags_by_name[n].id}
+                for n in to_add
+                if n in tags_by_name
+            ],
+        )
 
 
 @router.post("", response_model=SkillResponse, status_code=status.HTTP_201_CREATED)
@@ -247,22 +396,16 @@ async def create_skill(
     db.add(skill)
     await db.flush()
 
-    if skill_in.tags:
-        from app.models.skill import skill_tag_association
-        for tag_name in skill_in.tags:
-            tag_result = await db.execute(select(Tag).where(Tag.name == tag_name))
-            tag = tag_result.scalar_one_or_none()
-            if not tag:
-                tag = Tag(name=tag_name)
-                db.add(tag)
-                await db.flush()
-            else:
-                tag.usage_count += 1
-            await db.execute(
-                skill_tag_association.insert().values(
-                    skill_id=skill.id, tag_id=tag.id
-                )
-            )
+    # 1) 先把 tags.usage_count 的差集算上
+    # 2) 再重写 skill_tag_association 行
+    # 之前的实现漏了新建 tag 的 +1, 改成统一 +1
+    new_tag_names = set(skill_in.tags or [])
+    await _update_tag_usage_counts(
+        db, old_tag_names=set(), new_tag_names=new_tag_names
+    )
+    await _replace_tag_associations(
+        db, skill.id, old_tag_names=set(), new_tag_names=new_tag_names
+    )
 
     await db.commit()
 
@@ -277,7 +420,7 @@ async def create_skill(
     )
     skill = result.scalar_one()
 
-    await vector_service.index_skill(_skill_to_dict(skill))
+    await vector_service.aindex_skill(_skill_to_dict(skill))
 
     return SkillResponse.model_validate(skill)
 
@@ -302,26 +445,19 @@ async def update_skill(
     update_data = skill_in.model_dump(exclude_unset=True)
     for field, value in update_data.items():
         if field == "tags":
-            from app.models.skill import skill_tag_association
-            await db.execute(
-                skill_tag_association.delete().where(
-                    skill_tag_association.c.skill_id == skill.id
-                )
+            # 重新走 _update_tag_usage_counts + _replace_tag_associations,
+            # 让 old/new 差集驱动 +1/-1, 关联表精准重写.
+            # 之前的实现是先 delete-all-association 再无脑 +1, 会持续递增, 必然失真.
+            current_tag_names = {t.name for t in (skill.tags or [])}
+            new_tag_names = set(value or [])
+            await _update_tag_usage_counts(
+                db, old_tag_names=current_tag_names, new_tag_names=new_tag_names
             )
-            for tag_name in value:
-                tag_result = await db.execute(select(Tag).where(Tag.name == tag_name))
-                tag = tag_result.scalar_one_or_none()
-                if not tag:
-                    tag = Tag(name=tag_name)
-                    db.add(tag)
-                    await db.flush()
-                else:
-                    tag.usage_count += 1
-                await db.execute(
-                    skill_tag_association.insert().values(
-                        skill_id=skill.id, tag_id=tag.id
-                    )
-                )
+            await _replace_tag_associations(
+                db, skill.id,
+                old_tag_names=current_tag_names,
+                new_tag_names=new_tag_names,
+            )
         elif field == "category_slug":
             if value:
                 cat_result = await db.execute(select(Category).where(Category.slug == value))
@@ -345,7 +481,7 @@ async def update_skill(
     )
     skill = result.scalar_one()
 
-    await vector_service.index_skill(_skill_to_dict(skill))
+    await vector_service.aindex_skill(_skill_to_dict(skill))
 
     return SkillResponse.model_validate(skill)
 
@@ -367,10 +503,19 @@ async def delete_skill(
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not enough permissions")
 
     skill_id_str = str(skill.id)
+
+    # 删之前先把 tag 名字记下来, 只走 _update_tag_usage_counts 把每个 tag -1.
+    # 关联表交给外键 ON DELETE CASCADE, 不要自己再删一次, 否则会触发 StaleDataError
+    # (之前的实现漏掉了 -1, counter 永远不会下降)
+    current_tag_names = {t.name for t in (skill.tags or [])}
+    await _update_tag_usage_counts(
+        db, old_tag_names=current_tag_names, new_tag_names=set()
+    )
+
     await db.delete(skill)
     await db.commit()
 
-    await vector_service.delete_skill_index(skill_id_str)
+    await vector_service.adelete_skill_index(skill_id_str)
 
 
 @router.get("/{slug}/versions", response_model=List[SkillVersionResponse])
@@ -548,7 +693,7 @@ async def find_similar_skills(
     if not skill:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Skill not found")
 
-    similar = await vector_service.find_similar_skills(str(skill.id), limit=limit)
+    similar = await vector_service.afind_similar_skills(str(skill.id), limit=limit)
     return [SkillSimilarResponse(**s) for s in similar]
 
 
@@ -625,9 +770,23 @@ async def log_skill_usage(
     )
     db.add(usage_log)
 
-    skill.usage_count += 1
+    # Atomic increment — avoids the load/+1/commit race when two
+    # requests land at the same time.
     if usage_in.action == "download":
-        skill.download_count += 1
+        await db.execute(
+            update(Skill)
+            .where(Skill.id == skill.id)
+            .values(
+                usage_count=Skill.usage_count + 1,
+                download_count=Skill.download_count + 1,
+            )
+        )
+    else:
+        await db.execute(
+            update(Skill)
+            .where(Skill.id == skill.id)
+            .values(usage_count=Skill.usage_count + 1)
+        )
 
     await db.commit()
     await db.refresh(usage_log)
@@ -636,18 +795,30 @@ async def log_skill_usage(
 
 
 def _skill_to_dict(skill: Skill) -> dict:
+    # The vector indexer concatenates `name + description + tags +
+    # category + content` into a single embedding input. We want the
+    # `prompt_template` to drive the embedding (it's the most semantically
+    # rich field). `str(skill.content)` was previously used here but that
+    # turned the dict into Python repr ("{'prompt_template': '...'}"),
+    # which is noisy and only loosely correlated with skill meaning.
+    content = skill.content
+    if isinstance(content, dict):
+        content_text = content.get("prompt_template") or content.get("description") or ""
+    else:
+        content_text = str(content or "")
     return {
         "id": str(skill.id),
         "name": skill.name,
         "description": skill.description or "",
         "category_id": str(skill.category_id) if skill.category_id else "",
+        "category": skill.category.name if skill.category else "",
         "tags": [t.name for t in skill.tags] if skill.tags else [],
         "is_public": skill.is_public,
         "version": skill.version,
         "author": skill.author.username if skill.author else "",
         "usage_count": skill.usage_count,
         "rating": skill.rating_avg,
-        "content": str(skill.content) if skill.content else "",
+        "content": content_text,
         "created_at": skill.created_at.isoformat() if skill.created_at else "",
         "updated_at": skill.updated_at.isoformat() if skill.updated_at else "",
     }

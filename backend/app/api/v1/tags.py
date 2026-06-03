@@ -8,7 +8,7 @@ from sqlalchemy.orm import selectinload
 from app.core.deps import get_current_active_user, get_current_superuser
 from app.core.pagination import PaginationParams
 from app.db import get_db
-from app.models.skill import Skill, Tag
+from app.models.skill import Tag
 from app.schemas.skill import (
     SkillBriefResponse,
     TagCreate,
@@ -32,7 +32,13 @@ async def list_tags(
     if search:
         query = query.where(Tag.name.ilike(f"%{search}%"))
 
-    sort_column = getattr(Tag, sort_by, Tag.usage_count)
+    # Whitelist sort fields (see skills.py for the same rationale)
+    sort_whitelist = {
+        "name": Tag.name,
+        "usage_count": Tag.usage_count,
+        "created_at": Tag.created_at,
+    }
+    sort_column = sort_whitelist.get(sort_by, Tag.usage_count)
     query = query.order_by(sort_column.desc())
 
     count_query = select(func.count()).select_from(query.subquery())
@@ -61,6 +67,24 @@ async def get_popular_tags(
         .limit(limit)
     )
     result = await db.execute(query)
+    tags = result.scalars().all()
+    return [TagResponse.model_validate(t) for t in tags]
+
+
+@router.get("/search", response_model=List[TagResponse])
+async def search_tags(
+    q: str = Query(..., min_length=1, max_length=50, description="搜索关键字"),
+    limit: int = Query(20, ge=1, le=50),
+    db: AsyncSession = Depends(get_db),
+) -> List[TagResponse]:
+    """Prefix/substring match on tag name. Registered before `/{name}` so
+    FastAPI doesn't route `q=python` into the by-name handler."""
+    result = await db.execute(
+        select(Tag)
+        .where(Tag.name.ilike(f"%{escape_like(q)}%", escape="\\"))
+        .order_by(Tag.usage_count.desc())
+        .limit(limit)
+    )
     tags = result.scalars().all()
     return [TagResponse.model_validate(t) for t in tags]
 

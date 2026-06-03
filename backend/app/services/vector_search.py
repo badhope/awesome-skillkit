@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+import asyncio
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 import numpy as np
@@ -14,7 +15,9 @@ from app.core.config import settings
 
 
 class BM25Scorer:
-
+    # Pure-Python BM25 — fine for a few thousand docs. Once we cross ~10k
+    # skills we'll want to swap this for a real inverted index (tantivy
+    # or a Postgres GIN column) since doc_freqs gets ugly fast.
     def __init__(self, k1: float = 1.5, b: float = 0.75):
         self.k1 = k1
         self.b = b
@@ -95,18 +98,26 @@ class BM25Scorer:
 
 
 class VectorSearchService:
+    # QDRANT_URL is read from settings but the import is local so the
+    # rest of the app can boot without qdrant_client installed (used in
+    # unit tests that mock the search service entirely).
 
     def __init__(
         self,
         qdrant_url: Optional[str] = None,
         qdrant_api_key: Optional[str] = None,
         collection_name: str = "skills",
-        embedding_model: str = "all-MiniLM-L6-v2",
-        vector_size: int = 384,
+        embedding_model: Optional[str] = None,
+        vector_size: Optional[int] = None,
     ):
+        # Pull defaults from settings so the index, the search service,
+        # and any external scripts (`rebuild-index`, `semantic` CLI) all
+        # agree on the same embedding model + vector dimension. Hard-coding
+        # these caused a long-running bug where indexed vectors had a
+        # different shape from the ones used at query time.
         self.collection_name = collection_name
-        self.vector_size = vector_size
-        self.embedding_model_name = embedding_model
+        self.embedding_model_name = embedding_model or settings.EMBEDDING_MODEL
+        self.vector_size = vector_size or settings.EMBEDDING_DIMENSION
 
         qdrant_url = qdrant_url or getattr(settings, "QDRANT_URL", "http://localhost:6333")
         qdrant_api_key = qdrant_api_key or getattr(settings, "QDRANT_API_KEY", None)
@@ -116,15 +127,49 @@ class VectorSearchService:
         else:
             self.client = QdrantClient(url=qdrant_url)
 
-        self.encoder = SentenceTransformer(embedding_model, device="cpu")
+        self.encoder = SentenceTransformer(self.embedding_model_name, device="cpu")
         self._ensure_collection()
 
         self.bm25 = BM25Scorer()
 
+    # ---- async wrappers -------------------------------------------------
+    # qdrant_client.QdrantClient is sync, and sentence_transformers.encode
+    # can be 50-300ms per call. Running them straight from an async route
+    # would block the event loop and stall every other request. We
+    # push them to a thread pool via asyncio.to_thread; the sync methods
+    # are kept for CLI commands that don't care.
+
+    async def asearch_skills(self, *args, **kwargs):
+        return await asyncio.to_thread(self.search_skills, *args, **kwargs)
+
+    async def afind_similar_skills(self, *args, **kwargs):
+        return await asyncio.to_thread(self.find_similar_skills, *args, **kwargs)
+
+    async def aindex_skill(self, *args, **kwargs):
+        return await asyncio.to_thread(self.index_skill, *args, **kwargs)
+
+    async def aindex_skills_batch(self, *args, **kwargs):
+        return await asyncio.to_thread(self.index_skills_batch, *args, **kwargs)
+
+    async def adelete_skill_index(self, *args, **kwargs):
+        return await asyncio.to_thread(self.delete_skill_index, *args, **kwargs)
+
+    async def arebuild_index(self, *args, **kwargs):
+        return await asyncio.to_thread(self.rebuild_index, *args, **kwargs)
+
+    async def ahybrid_search(self, *args, **kwargs):
+        return await asyncio.to_thread(self.hybrid_search, *args, **kwargs)
+
+    async def aget_search_suggestions(self, *args, **kwargs):
+        return await asyncio.to_thread(self.get_search_suggestions, *args, **kwargs)
+
+    async def aget_collection_info(self, *args, **kwargs):
+        return await asyncio.to_thread(self.get_collection_info, *args, **kwargs)
+
     def _ensure_collection(self) -> None:
         try:
             self.client.get_collection(self.collection_name)
-        except (UnexpectedResponse, Exception):
+        except UnexpectedResponse:
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=qdrant_models.VectorParams(
@@ -185,8 +230,8 @@ class VectorSearchService:
             "author": skill.get("author", ""),
             "usage_count": skill.get("usage_count", 0),
             "rating": skill.get("rating", 0.0),
-            "created_at": skill.get("created_at", datetime.utcnow().isoformat()),
-            "updated_at": skill.get("updated_at", datetime.utcnow().isoformat()),
+            "created_at": skill.get("created_at", datetime.now(timezone.utc).isoformat()),
+            "updated_at": skill.get("updated_at", datetime.now(timezone.utc).isoformat()),
         }
 
     def index_skill(self, skill: Dict[str, Any]) -> str:
@@ -195,11 +240,16 @@ class VectorSearchService:
         vector = self._generate_embedding(text)
         payload = self._build_payload(skill)
 
+        # Use the skill_id as the point id so re-indexing is idempotent
+        # (the old `uuid.uuid4()` produced a new id every time → Qdrant
+        # accumulated duplicate points for the same skill). Qdrant
+        # accepts both UUID and integer ids; a string skill_id is fine
+        # and matches what `delete_skill_index` queries by.
         self.client.upsert(
             collection_name=self.collection_name,
             points=[
                 qdrant_models.PointStruct(
-                    id=str(uuid.uuid4()),
+                    id=skill_id,
                     vector=vector,
                     payload=payload,
                 )
@@ -221,7 +271,7 @@ class VectorSearchService:
 
             points.append(
                 qdrant_models.PointStruct(
-                    id=str(uuid.uuid4()),
+                    id=skill_id,
                     vector=vector,
                     payload=payload,
                 )
@@ -420,26 +470,77 @@ class VectorSearchService:
         return ranked[:limit]
 
     def get_search_suggestions(self, prefix: str, limit: int = 10) -> List[str]:
+        # 设计要点:
+        # 1) `name` 字段是 TEXT 索引 (在 _ensure_collection 里建的), 用 MatchText
+        #    做全文本 token 匹配, 比全表 scroll 强几个数量级, 且没有 1000 截断.
+        # 2) `tags` 字段是 KEYWORD 索引, Qdrant 不支持前缀过滤, 只能 scroll 拉.
+        #    用分页 + 早停 (凑够 limit 就返回), 且给一个 max_pages 安全上限.
+        # 3) tag 本身在生产里数量级有限 (几百个), 但和 skill 文档数线性挂钩;
+        #    旧实现一次 scroll 1000 在数据多的时候会漏, 切到分页是必须.
+        if not prefix:
+            return []
+
         prefix_lower = prefix.lower()
-
-        all_points, _ = self.client.scroll(
-            collection_name=self.collection_name,
-            limit=1000,
-            with_payload=True,
-        )
-
         candidates: set = set()
-        for point in all_points:
-            name = str(point.payload.get("name", "")).lower()
-            if name.startswith(prefix_lower) or prefix_lower in name:
-                candidates.add(point.payload.get("name", ""))
-            for tag in point.payload.get("tags", []):
-                tag_lower = str(tag).lower()
-                if tag_lower.startswith(prefix_lower):
-                    candidates.add(f"tag:{tag}")
 
-        suggestions = sorted(candidates)[:limit]
-        return suggestions
+        # ---- name: 用 TEXT 索引的 MatchText 走索引 ----
+        name_filter = qdrant_models.Filter(
+            must=[
+                qdrant_models.FieldCondition(
+                    key="name",
+                    match=qdrant_models.MatchText(text=prefix_lower),
+                )
+            ]
+        )
+        try:
+            name_hits, _ = self.client.scroll(
+                collection_name=self.collection_name,
+                scroll_filter=name_filter,
+                limit=max(limit * 2, 50),
+                with_payload=["name"],
+            )
+        except UnexpectedResponse:
+            name_hits = []
+        for hit in name_hits:
+            name = hit.payload.get("name", "")
+            if name and name.lower().startswith(prefix_lower):
+                candidates.add(name)
+
+        # ---- tags: 分页 scroll, 凑够 limit 早停 ----
+        tag_suggestions: set = set()
+        seen_tags: set = set()
+        next_offset = None
+        page_size = 200
+        max_pages = 20  # 20 * 200 = 4000 文档, 远超典型 tag 集合
+
+        for _ in range(max_pages):
+            try:
+                points, next_offset = self.client.scroll(
+                    collection_name=self.collection_name,
+                    limit=page_size,
+                    offset=next_offset,
+                    with_payload=["tags"],
+                )
+            except UnexpectedResponse:
+                break
+            if not points:
+                break
+            for point in points:
+                for tag in point.payload.get("tags", []):
+                    if tag in seen_tags:
+                        continue
+                    if str(tag).lower().startswith(prefix_lower):
+                        seen_tags.add(tag)
+                        tag_suggestions.add(f"tag:{tag}")
+                        if len(tag_suggestions) >= limit:
+                            break
+                if len(tag_suggestions) >= limit:
+                    break
+            if next_offset is None:
+                break
+
+        candidates.update(tag_suggestions)
+        return sorted(candidates)[:limit]
 
     def get_collection_info(self) -> Dict[str, Any]:
         info = self.client.get_collection(self.collection_name)

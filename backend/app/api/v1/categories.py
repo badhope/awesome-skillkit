@@ -2,7 +2,7 @@ from typing import List, Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
@@ -12,7 +12,6 @@ from app.models.skill import Category, Skill
 from app.schemas.skill import (
     CategoryCreate,
     CategoryDetailResponse,
-    CategoryListResponse,
     CategoryResponse,
     CategoryTreeNode,
     CategoryUpdate,
@@ -61,31 +60,42 @@ async def get_category_tree(
     for row in count_result:
         category_skill_counts[str(row[0])] = row[1]
 
-    def build_tree(parent_id: Optional[UUID] = None) -> List[CategoryTreeNode]:
-        nodes = []
-        for cat in all_categories:
-            if cat.parent_id == parent_id or (parent_id is None and cat.parent_id is None):
-                cat_id_str = str(cat.id)
-                node = CategoryTreeNode(
-                    id=cat.id,
-                    name=cat.name,
-                    slug=cat.slug,
-                    description=cat.description,
-                    icon=cat.icon,
-                    sort_order=cat.sort_order,
-                    is_active=cat.is_active,
-                    parent_id=cat.parent_id,
-                    skill_count=category_skill_counts.get(cat_id_str, 0),
-                    children=[],
-                )
-                children = build_tree(cat.id)
-                node.children = children
-                for child in children:
-                    node.skill_count += child.skill_count
-                nodes.append(node)
-        return nodes
-
-    return build_tree()
+    # O(N) instead of O(N²): build a parent_id -> [node] index in one
+    # pass, then attach children to their parents.
+    nodes_by_id: dict[UUID, CategoryTreeNode] = {}
+    for cat in all_categories:
+        nodes_by_id[cat.id] = CategoryTreeNode(
+            id=cat.id,
+            name=cat.name,
+            slug=cat.slug,
+            description=cat.description,
+            icon=cat.icon,
+            sort_order=cat.sort_order,
+            is_active=cat.is_active,
+            parent_id=cat.parent_id,
+            created_at=cat.created_at,
+            updated_at=cat.updated_at,
+            skill_count=category_skill_counts.get(str(cat.id), 0),
+            children=[],
+        )
+    roots: List[CategoryTreeNode] = []
+    for cat in all_categories:
+        node = nodes_by_id[cat.id]
+        if cat.parent_id is None:
+            roots.append(node)
+        else:
+            parent = nodes_by_id.get(cat.parent_id)
+            if parent is not None:
+                parent.children.append(node)
+            else:
+                # Orphan (parent filtered out / deleted) — surface as a root
+                # so the UI doesn't silently lose the subtree.
+                roots.append(node)
+    # Roll up skill_count from descendants (post-order to keep one pass).
+    for node in list(nodes_by_id.values())[::-1]:
+        if node.children:
+            node.skill_count += sum(c.skill_count for c in node.children)
+    return roots
 
 
 @router.get("/{slug}", response_model=CategoryDetailResponse)
@@ -187,15 +197,16 @@ async def delete_category(
     if not category:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Category not found")
 
-    skill_count = await db.execute(
-        select(func.count(Skill.id)).where(Skill.category_id == category.id)
+    # Null out any skills that point at this category (the FK uses
+    # `ON DELETE SET NULL`, so this is a belt-and-braces step that
+    # keeps the in-memory relationship state consistent with the DB
+    # before SQLAlchemy fires the cascade on the next refresh).
+    # The previous version did a `SELECT count + SELECT skills + UPDATE`
+    # triple — the SELECTs were dead code; the UPDATE alone is enough
+    # to know the work was done (rowcount is logged by SQLAlchemy).
+    await db.execute(
+        update(Skill).where(Skill.category_id == category.id).values(category_id=None)
     )
-    if skill_count.scalar() > 0:
-        await db.execute(
-            select(Skill).where(Skill.category_id == category.id)
-        )
-        from sqlalchemy import update
-        await db.execute(update(Skill).where(Skill.category_id == category.id).values(category_id=None))
 
     child_result = await db.execute(
         select(Category).where(Category.parent_id == category.id)

@@ -1,11 +1,21 @@
 from __future__ import annotations
 
 import json
-import pickle
-from datetime import timedelta
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from redis import asyncio as aioredis
+# Use the modern import path. `from redis import asyncio as aioredis`
+# still works in redis 7 but the official home for the async client is
+# `redis.asyncio`. The compat alias is kept for downstream code that
+# might import `CacheService._redis` and expect the old name.
+try:
+    from redis.asyncio import Redis as AsyncRedis
+    from redis.asyncio import from_url as aioredis_from_url
+except ImportError:  # pragma: no cover — fallback for old redis-py builds
+    from redis import asyncio as aioredis  # type: ignore[no-redef]
+
+    AsyncRedis = aioredis.Redis  # type: ignore[assignment,misc]
+    aioredis_from_url = aioredis.from_url  # type: ignore[assignment]
 
 
 class CacheService:
@@ -24,15 +34,25 @@ class CacheService:
         self.redis_url = redis_url
         self.key_prefix = key_prefix
         self.default_ttl = default_ttl
-        self._redis: Optional[aioredis.Redis] = None
+        self._redis: Optional[AsyncRedis] = None
         self._connected = False
 
-    async def _get_redis(self) -> aioredis.Redis:
+    async def _get_redis(self) -> AsyncRedis:
         if self._redis is None or not self._connected:
-            self._redis = aioredis.from_url(
+            # `decode_responses=True` is now safe because we no longer
+            # use pickle — values come back as plain strings and `json`
+            # turns them into Python objects. The previous combo
+            # (pickle + decode_responses=False) required us to call
+            # `pickle.loads` on raw bytes, which is the entire reason
+            # we were carrying an RCE-shaped dependency in the cache
+            # layer. Migrate with care: any pre-existing keys written
+            # under the old format will raise on the next read and
+            # the `except Exception` swallow in `get` will treat them
+            # as cache misses.
+            self._redis = aioredis_from_url(
                 self.redis_url,
                 encoding="utf-8",
-                decode_responses=False,
+                decode_responses=True,
             )
             self._connected = True
         return self._redis
@@ -50,24 +70,42 @@ class CacheService:
     def _make_key(self, *parts: str) -> str:
         return f"{self.key_prefix}:{':'.join(parts)}"
 
+    @staticmethod
+    def _dumps(value: Any) -> str:
+        # The cache is exclusively used for skill dicts, search
+        # results, and category lists — all plain JSON. Using `str`
+        # for the default makes the contract explicit and avoids
+        # silently dropping unknown objects.
+        return json.dumps(value, ensure_ascii=False, default=str)
+
+    @staticmethod
+    def _loads(raw: str) -> Any:
+        return json.loads(raw)
+
     async def get(self, key: str) -> Optional[Any]:
         redis = await self._get_redis()
         try:
             raw = await redis.get(key)
             if raw is None:
                 return None
-            return pickle.loads(raw)
-        except (pickle.PickleError, Exception):
+            return self._loads(raw)
+        except Exception:
+            # Cache misses shouldn't blow up the request path. We log
+            # nothing here because Sentry captures the underlying
+            # connection error (e.g. Redis down) at the source.
+            # A deserialize error from a stale pickle entry also
+            # falls through to a cache miss — exactly the right
+            # behavior while we migrate off the old format.
             return None
 
     async def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
         redis = await self._get_redis()
         try:
-            serialized = pickle.dumps(value)
+            serialized = self._dumps(value)
             ttl = ttl if ttl is not None else self.default_ttl
             await redis.set(key, serialized, ex=ttl)
             return True
-        except (pickle.PickleError, Exception):
+        except Exception:
             return False
 
     async def delete(self, key: str) -> bool:
@@ -149,11 +187,103 @@ class CacheService:
 
         return count
 
-    async def _cache_dashboard_stats(self) -> None:
-        pass
+    async def _cache_dashboard_stats(self) -> int:
+        """Compute the dashboard rollup once and write it to Redis with a
+        short TTL. Returns the number of cache keys written (0 if Redis
+        is down — the dashboard endpoint falls back to the DB)."""
+        from app.db import async_session_factory
+        from app.models.skill import (
+            Category,
+            Skill,
+            SkillComposition,
+            SkillRating,
+            SkillUsageLog,
+            User,
+        )
+        from sqlalchemy import func, select
 
-    async def _cache_category_index(self) -> None:
-        pass
+        try:
+            async with async_session_factory() as db:
+                # NOTE: `total_users` and `total_ratings` MUST be scalar
+                # subqueries, not joins. Joining User into the Skill
+                # outer-join (the natural way to roll everything up in
+                # one query) silently turns `count(User.id)` into
+                # "users that have at least one usage log" and the
+                # same trap applies to `count(SkillRating.id)`. Keep
+                # them as independent scalar counts so the cached
+                # numbers actually mean "all users" / "all ratings".
+                total_users_subq = select(func.count(User.id)).scalar_subquery()
+                total_ratings_subq = select(func.count(SkillRating.id)).scalar_subquery()
+                total_compositions_subq = select(func.count(SkillComposition.id)).scalar_subquery()
+                # Compute "today" in Python so the SQL stays portable
+                # between PostgreSQL (prod) and SQLite (tests).
+                one_day_ago = datetime.now(timezone.utc) - timedelta(days=1)
+                skills_today_subq = (
+                    select(func.count(Skill.id))
+                    .where(Skill.created_at >= one_day_ago)
+                    .scalar_subquery()
+                )
+                row = (
+                    await db.execute(
+                        select(
+                            func.count(Skill.id),
+                            total_users_subq,
+                            func.count(SkillUsageLog.id),
+                            func.coalesce(func.sum(Skill.download_count), 0),
+                            total_ratings_subq,
+                            total_compositions_subq,
+                            skills_today_subq,
+                        )
+                        .select_from(Skill)
+                        .outerjoin(SkillUsageLog, SkillUsageLog.skill_id == Skill.id)
+                        .outerjoin(SkillRating, SkillRating.skill_id == Skill.id)
+                    )
+                ).one()
+                stats = {
+                    "total_skills": row[0] or 0,
+                    "total_users": row[1] or 0,
+                    "total_usage": row[2] or 0,
+                    "total_downloads": int(row[3] or 0),
+                    "total_ratings": row[4] or 0,
+                    "total_compositions": row[5] or 0,
+                    "skills_added_today": row[6] or 0,
+                    "computed_at": datetime.now(timezone.utc).isoformat(),
+                }
+            key = self._make_key("dashboard", "stats")
+            await self.set(key, stats, ttl=self.SEARCH_TTL)
+            return 1
+        except Exception:
+            return 0
+
+    async def _cache_category_index(self) -> int:
+        """Cache the active category list. TTL is hours since categories
+        change very rarely (admin-only CRUD)."""
+        from app.db import async_session_factory
+        from app.models.skill import Category
+        from sqlalchemy import select
+
+        try:
+            async with async_session_factory() as db:
+                rows = (
+                    await db.execute(
+                        select(Category).where(Category.is_active == True).order_by(Category.sort_order)
+                    )
+                ).scalars().all()
+                cats = [
+                    {
+                        "id": str(c.id),
+                        "name": c.name,
+                        "slug": c.slug,
+                        "parent_id": str(c.parent_id) if c.parent_id else None,
+                        "sort_order": c.sort_order,
+                    }
+                    for c in rows
+                ]
+            key = self._make_key("categories", "active")
+            await self.set(key, cats, ttl=self.DEFAULT_TTL)
+            return 1
+        except Exception:
+            return 0
 
     async def cache_categories(self, categories: List[Dict[str, Any]]) -> bool:
         key = self._make_key("categories")
