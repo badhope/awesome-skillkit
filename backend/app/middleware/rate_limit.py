@@ -1,3 +1,12 @@
+"""Per-IP rate limiting backed by Redis.
+
+Default limit/window come from settings. Per-route overrides live in
+ENDPOINT_RATE_LIMITS. The middleware also stamps a few X-RateLimit-*
+headers on successful responses, and on a 429 it translates the body
+for the request's locale.
+"""
+
+import json
 import time
 from typing import Callable, Dict, Optional, Tuple
 
@@ -13,6 +22,8 @@ settings = get_settings()
 DEFAULT_RATE_LIMIT = settings.RATE_LIMIT_DEFAULT
 DEFAULT_RATE_WINDOW = settings.RATE_LIMIT_WINDOW
 
+# (limit, window_seconds) per route. Matched on the registered route pattern,
+# not the raw URL, so /api/v1/skills/{slug} shares limits with /api/v1/skills.
 ENDPOINT_RATE_LIMITS: Dict[str, Tuple[int, int]] = {
     "POST /api/v1/auth/login": (5, 60),
     "POST /api/v1/auth/register": (3, 60),
@@ -45,6 +56,8 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                 decode_responses=True,
             )
         except Exception:
+            # Redis is down — degrade to no rate limiting rather than 500
+            # every request. Sentry will catch the connection error.
             self._redis = None
         return self._redis
 
@@ -52,6 +65,8 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         method = request.method
         path = request.url.path
 
+        # Resolve the path back to its registered template so e.g.
+        # /api/v1/skills/foo and /api/v1/skills/bar share the same bucket.
         for route in request.app.routes:
             if hasattr(route, "path_regex") and route.path_regex.match(path):
                 path = route.path
@@ -87,6 +102,8 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         return True
 
     def _get_client_key(self, request: Request) -> str:
+        # Trust X-Forwarded-For only when behind a known proxy. Without that
+        # we use the peer IP — see deployment docs for how to set TRUSTED_PROXIES.
         forwarded = request.headers.get("X-Forwarded-For")
         if forwarded:
             client_ip = forwarded.split(",")[0].strip()
@@ -106,17 +123,37 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             now = int(time.time())
             window_start = now - window
 
-            pipe = redis.pipeline()
-            pipe.zremrangebyscore(rate_key, 0, window_start)
-            pipe.zcard(rate_key)
-            pipe.zadd(rate_key, {str(now): now})
-            pipe.expire(rate_key, window + 1)
-            _, current_count, _, _ = await pipe.execute()
+            try:
+                pipe = redis.pipeline()
+                pipe.zremrangebyscore(rate_key, 0, window_start)
+                pipe.zcard(rate_key)
+                pipe.zadd(rate_key, {str(now): now})
+                pipe.expire(rate_key, window + 1)
+                _, current_count, _, _ = await pipe.execute()
+            except Exception:
+                # Redis pipeline failed mid-flight (network blip, server
+                # failover, etc.). Fall through to the un-rate-limited
+                # path rather than 500 the request. Sentry captures the
+                # underlying connection error.
+                current_count = 0
 
             if current_count and current_count >= limit:
                 retry_after = window - (now - window_start)
+                # Translate the body for the request's locale. The outer
+                # LocaleMiddleware also sets Content-Language, but we set
+                # it here too in case a client reads the body before
+                # middlewares finalize headers.
+                locale = getattr(request.state, "locale", "en")
+                body = json.dumps(
+                    {
+                        "detail": _(
+                            "Too many requests, please try again later.",
+                            locale,
+                        )
+                    }
+                )
                 return Response(
-                    content='{"detail":"Too many requests, please try again later."}',
+                    content=body,
                     status_code=HTTP_429_TOO_MANY_REQUESTS,
                     media_type="application/json",
                     headers={
@@ -124,6 +161,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                         "X-RateLimit-Limit": str(limit),
                         "X-RateLimit-Remaining": "0",
                         "X-RateLimit-Reset": str(now + window),
+                        "Content-Language": locale,
                     },
                 )
 

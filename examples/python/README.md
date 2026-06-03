@@ -1,5 +1,14 @@
 # AI-SKILL — Python SDK examples
 
+Runnable scripts that show how to drive the AI-SKILL REST API from
+Python. Each file is self-contained — pick the one closest to what
+you're trying to do and copy the bits you need.
+
+## Before you start
+
+Make sure the backend is running locally (or point `SKILL_BASE_URL`
+at a deployed instance). The default is `http://localhost:8000`.
+
 ## Install
 
 ```bash

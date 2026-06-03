@@ -1,7 +1,12 @@
 # AI-SKILL — API Examples
 
-Runnable code samples showing how to call the AI-SKILL REST API and
-the Python / TypeScript SDKs.
+Runnable code showing how to call the AI-SKILL REST API and the
+Python / TypeScript SDKs. Pick the language you're using and head
+into the matching folder.
+
+The examples are kept minimal on purpose — no fake domain logic,
+no clever abstractions, just the shortest path to a working call.
+Copy the bits you need.
 
 ## Files
 

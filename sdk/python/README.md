@@ -1,164 +1,159 @@
-# Python SDK for Modern Skill Library
+# @skill-library/python-sdk
 
-Python SDK provides a clean, typed interface to interact with the Modern Skill Library API.
+> A typed Python client for the AI-SKILL REST API.
+>
+> Wraps every endpoint in the [OpenAPI spec](https://github.com/badhope/AI-SKILL/blob/main/openapi.json),
+> gives you sessions, retry, and an `async`/`sync` pair.
 
-## Installation
+[![PyPI](https://img.shields.io/pypi/v/skill-sdk)](https://pypi.org/project/skill-sdk/)
+[![Python](https://img.shields.io/pypi/pyversions/skill-sdk)](https://pypi.org/project/skill-sdk/)
+[![License: MIT](https://img.shields.io/github/license/badhope/AI-SKILL)](https://github.com/badhope/AI-SKILL/blob/main/LICENSE)
+
+[📖 API reference](https://badhope.github.io/AI-SKILL/sdks/python/)
+[🐛 Issues](https://github.com/badhope/AI-SKILL/issues)
+[💬 Discussions](https://github.com/badhope/AI-SKILL/discussions)
+
+---
+
+## What is this?
+
+This is the official Python client for [AI-SKILL](https://github.com/badhope/AI-SKILL).
+If you find yourself writing `requests.post(API + "/v1/skills/search", json=...)`
+over and over, this package is for you. It exposes:
+
+- A sync `SkillClient` and an async `AsyncSkillClient`.
+- Typed responses (Pydantic v2 models, mirroring the OpenAPI schema).
+- Token refresh, exponential backoff, and idempotency-key support.
+- A `SkillLocal` mode that loads skills from a local directory — useful for
+  tests and CI without spinning up the backend.
+
+## Install
 
 ```bash
 pip install skill-sdk
-# or with poetry
-poetry add skill-sdk
 ```
 
-## Quick Start
+The package has only two runtime dependencies: `httpx` and `pydantic`. We
+pin them loosely; any recent 0.x of httpx and 2.x of pydantic should work.
+
+If you want the `async` client, `httpx` is already a dependency, so no
+extras are needed.
+
+## Quick start
 
 ```python
 from skill_sdk import SkillClient
 
-# Initialize client
-client = SkillClient(
-    base_url="https://api.skills.example.com",
-    api_key="your-api-key",
-    timeout=30.0,
-)
+with SkillClient(base_url="http://localhost:8000") as client:
+    client.login(email="you@example.com", password="hunter2")
 
-# Authentication
-token = client.auth.login(username="user", password="pass")
-# Or set token directly
-client.set_token("your-jwt-token")
+    skills = client.skills.list(category="code_generation", limit=10)
+    for s in skills:
+        print(f"{s.name}  v{s.version}  ({s.rating:.1f}★)")
 
-# List skills
-result = client.skills.list(
-    category_slug="programming",
-    search="python",
-    page=1,
-    page_size=20,
-)
-print(f"Found {result.total} skills")
-for skill in result.items:
-    print(f"  - {skill.name} (v{skill.version})")
-
-# Search with vector similarity
-results = client.skills.search(q="machine learning", limit=10)
-for r in results:
-    print(f"  - {r.name} (score: {r.score:.2f})")
-
-# Get a single skill
-skill = client.skills.get("my-awesome-skill")
-print(f"{skill.name}: {skill.description}")
-
-# Create a skill
-new_skill = client.skills.create({
-    "name": "My New Skill",
-    "slug": "my-new-skill",
-    "description": "A powerful new skill",
-    "version": "1.0.0",
-    "category_slug": "programming",
-    "tags": ["python", "ai"],
-    "content": {"prompt": "You are a helpful assistant..."},
-})
-
-# Update a skill
-client.skills.update("my-new-skill", {
-    "description": "Updated description",
-    "version": "1.1.0",
-})
-
-# Get featured/popular/trending
-featured = client.skills.get_featured(limit=5)
-popular = client.skills.get_popular(limit=5)
-trending = client.skills.get_trending(limit=5)
-
-# Version management
-versions = client.skills.get_versions("my-skill")
-client.skills.create_version("my-skill", {
-    "version": "1.2.0",
-    "content": {"prompt": "Updated prompt"},
-    "changelog": "Improved accuracy by 20%",
-})
-
-# Dependency management
-deps = client.skills.get_dependencies("my-skill")
-client.skills.add_dependency("my-skill", {
-    "depends_on_skill_slug": "base-skill",
-    "version_constraint": ">=1.0",
-})
-client.skills.remove_dependency("my-skill", dep_id="...")
-
-# Find similar skills
-similar = client.skills.get_similar("my-skill", limit=5)
-
-# Rate a skill
-client.skills.rate("my-skill", rating=4, comment="Great skill!")
-
-# Usage tracking
-client.skills.log_usage("my-skill", action="download")
-
-# Categories
-categories = client.categories.list()
-tree = client.categories.tree()
-
-# Tags
-tags = client.tags.popular(limit=20)
-
-# Analytics
-dashboard = client.analytics.dashboard()
-trends = client.analytics.skill_usage(days=30)
-
-# Compositions
-compositions = client.compositions.list()
-composition = client.compositions.create({
-    "name": "My Workflow",
-    "slug": "my-workflow",
-    "description": "A composed workflow",
-})
-
-# Delete
-client.skills.delete("my-new-skill")
-
-# Close connection
-client.close()
-
-# Or use as context manager
-with SkillClient(base_url="https://api.skills.example.com") as client:
-    skills = client.skills.list(page_size=5)
+    # Hybrid search — weights default to 0.7 vector / 0.3 keyword,
+    # override per-request if you need to A/B.
+    hits = client.skills.search(q="summarize a long article", limit=5)
+    for h in hits:
+        print(f"{h.score:.2f}  {h.skill.name}")
 ```
 
-## Error Handling
+`SkillClient` is a context manager — it'll close the underlying
+connection pool on exit. For long-lived services, just instantiate it
+once and reuse it.
+
+### Async usage
 
 ```python
-from skill_sdk import (
-    SkillClient,
-    SkillNotFoundError,
-    AuthenticationError,
-    RateLimitError,
-    ValidationError,
-    APIError,
-    ConnectionError,
-)
+import asyncio
+from skill_sdk import AsyncSkillClient
 
-client = SkillClient(base_url="https://api.skills.example.com")
+async def main():
+    async with AsyncSkillClient(base_url="http://localhost:8000") as client:
+        await client.login(email="you@example.com", password="hunter2")
+        skills = await client.skills.list(limit=10)
+        print(skills)
 
-try:
-    skill = client.skills.get("non-existent-skill")
-except SkillNotFoundError as e:
-    print(f"Skill not found: {e}")
-except AuthenticationError as e:
-    print(f"Auth failed: {e}")
-except RateLimitError as e:
-    print(f"Rate limited, retry after {e.retry_after}s")
-except ValidationError as e:
-    print(f"Invalid data: {e}")
-except ConnectionError as e:
-    print(f"Connection failed: {e}")
-except APIError as e:
-    print(f"API error ({e.status_code}): {e}")
+asyncio.run(main())
 ```
+
+The async client is built on `httpx.AsyncClient`; you can share a single
+instance across many concurrent tasks.
+
+## Local mode (no backend)
+
+For tests, agents running offline, or quick local exploration, you can
+load skills straight from a folder:
+
+```python
+from skill_sdk import SkillLocal
+
+lib = SkillLocal("./skills")  # each .md file is a skill
+for skill in lib.list():
+    print(skill.name, skill.version)
+print(lib.search("summarize"))
+```
+
+`SkillLocal` reads the same frontmatter the backend validates, so what
+you ship locally matches what the server stores. This is also the path
+we use for our own CI; the SDK's test suite is mostly `SkillLocal` plus
+recorded HTTP cassettes.
 
 ## Configuration
 
-- `base_url`: Base URL of the Skill Library API (default: http://localhost:8000)
-- `api_key`: API key for authentication
-- `timeout`: Request timeout in seconds (default: 30.0)
-- `max_retries`: Maximum retry attempts for failed requests (default: 3)
-- `retry_delay`: Initial delay between retries in seconds (default: 1.0, uses exponential backoff)
+You can configure the client via env vars (handy in CI) or constructor
+arguments (handy in tests):
+
+| Env var                | Argument         | Default                |
+|------------------------|------------------|------------------------|
+| `SKILL_BASE_URL`       | `base_url`       | `http://localhost:8000`|
+| `SKILL_API_KEY`        | `api_key`        | _(none)_               |
+| `SKILL_TIMEOUT`        | `timeout`        | `30` (seconds)         |
+| `SKILL_MAX_RETRIES`    | `max_retries`    | `3`                    |
+| `SKILL_USER_AGENT`     | `user_agent`     | `skill-sdk/<version>`  |
+
+Precedence is: argument > env var > default. `api_key`, if set, is
+sent as a `Bearer` token and skips the email/password login.
+
+## Common errors
+
+- `SkillAuthError` — bad credentials or expired refresh token. Catch and
+  re-prompt the user; do not retry blindly.
+- `SkillNotFoundError` — usually a typo in the skill slug. The error
+  includes a list of similar slugs from the server side.
+- `SkillRateLimitError` — server-side rate limit hit. The exception
+  carries a `retry_after` (seconds); the SDK will not auto-retry those.
+- `SkillValidationError` — your request payload is rejected (missing
+  field, bad enum, etc.). The exception has a `.details` list.
+
+The full error hierarchy is in
+[`skill_sdk.exceptions`](src/skill_sdk/exceptions.py).
+
+## Compatibility
+
+| AI-SKILL | skill-sdk |
+|----------|-----------|
+| 1.0.x    | 1.0.x     |
+| 0.9.x    | 0.9.x     |
+
+We follow the server's SemVer. The 1.x line of the SDK targets 1.x of
+the server; the 0.9 line targets 0.9. Don't mix.
+
+## Contributing
+
+The SDK lives in the same monorepo as the server:
+[badhope/AI-SKILL/sdk/python](https://github.com/badhope/AI-SKILL/tree/main/sdk/python).
+Pull requests should:
+
+1. Pass `make test` (pytest, including the HTTP-cassette suite).
+2. Pass `make lint` (ruff + mypy strict).
+3. Include a CHANGELOG entry under
+   [sdk/python/CHANGELOG.md](CHANGELOG.md).
+
+The OpenAPI schema is the source of truth: if you add an endpoint on
+the server, regenerate the Pydantic models with `make codegen` before
+opening the PR.
+
+## License
+
+MIT — see [LICENSE](https://github.com/badhope/AI-SKILL/blob/main/LICENSE).

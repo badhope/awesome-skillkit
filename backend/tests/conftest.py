@@ -1,10 +1,9 @@
-import asyncio
+import sys
 import uuid as uuid_lib
-from datetime import datetime, timedelta, timezone
-from typing import Any, AsyncGenerator, Dict, Optional, Generator
-from unittest.mock import AsyncMock, MagicMock, patch
+from datetime import timedelta
+from typing import AsyncGenerator, Generator
+from unittest.mock import AsyncMock, MagicMock
 
-import numpy
 import pytest
 import pytest_asyncio
 from fastapi import FastAPI
@@ -12,9 +11,6 @@ from httpx import ASGITransport, AsyncClient
 from sqlalchemy import create_engine, event
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import Session, sessionmaker
-from sqlalchemy.pool import StaticPool
-
-import sys
 
 mock_vs = MagicMock()
 mock_vs_module = MagicMock()
@@ -30,14 +26,25 @@ mock_vs.get_search_suggestions = AsyncMock(return_value=[])
 mock_vs.get_collection_info = AsyncMock(return_value={
     "name": "skills", "vectors_count": 0, "vector_size": 384, "distance": "Cosine"
 })
+# Async wrappers added by the recent refactor (asyncio.to_thread
+# passthroughs) — same mock return values are fine.
+mock_vs.aindex_skill = AsyncMock(return_value="mock-index-id")
+mock_vs.aindex_skills_batch = AsyncMock(return_value=["mock-id-1"])
+mock_vs.asearch_skills = AsyncMock(return_value=[])
+mock_vs.afind_similar_skills = AsyncMock(return_value=[])
+mock_vs.adelete_skill_index = AsyncMock(return_value=True)
+mock_vs.arebuild_index = AsyncMock(return_value=None)
+mock_vs.ahybrid_search = AsyncMock(return_value=[])
+mock_vs.aget_search_suggestions = AsyncMock(return_value=[])
+mock_vs.aget_collection_info = AsyncMock(return_value={
+    "name": "skills", "vectors_count": 0, "vector_size": 384, "distance": "Cosine"
+})
 
 sys.modules["sentence_transformers"] = MagicMock()
 sys.modules["app.services.vector_search"] = mock_vs_module
 
 from app.api.v1.router import api_router
-
-from app.core.config import Settings, get_settings
-from app.core.deps import get_current_active_user, get_current_superuser, get_db
+from app.core.deps import get_db
 from app.core.security import create_access_token, get_password_hash
 from app.models.skill import Base, Category, Skill, Tag, User
 
@@ -747,6 +754,19 @@ def _mock_vector_service():
     mock.get_collection_info = AsyncMock(return_value={
         "name": "skills", "vectors_count": 0, "vector_size": 384, "distance": "Cosine"
     })
+    # Async wrappers (asyncio.to_thread passthroughs) added by the
+    # recent refactor — same mock return values are fine.
+    mock.aindex_skill = AsyncMock(return_value="mock-index-id")
+    mock.aindex_skills_batch = AsyncMock(return_value=["mock-id-1", "mock-id-2"])
+    mock.asearch_skills = AsyncMock(return_value=[])
+    mock.afind_similar_skills = AsyncMock(return_value=[])
+    mock.adelete_skill_index = AsyncMock(return_value=True)
+    mock.arebuild_index = AsyncMock(return_value=None)
+    mock.ahybrid_search = AsyncMock(return_value=[])
+    mock.aget_search_suggestions = AsyncMock(return_value=[])
+    mock.aget_collection_info = AsyncMock(return_value={
+        "name": "skills", "vectors_count": 0, "vector_size": 384, "distance": "Cosine"
+    })
     return mock
 
 
@@ -756,7 +776,6 @@ def _mock_get_vector_service():
 
 @pytest_asyncio.fixture(scope="function")
 async def test_app(test_db: AsyncSession) -> FastAPI:
-    from app.core import deps as core_deps
     from app.api.v1 import skills as skills_module
 
     app = FastAPI()

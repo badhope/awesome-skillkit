@@ -4,17 +4,17 @@ from urllib.parse import urljoin
 
 import httpx
 
-from skill_sdk.exceptions import APIError, ConnectionError, ERROR_MAP, RateLimitError, SkillNotFoundError, SkillSDKError
+from skill_sdk.exceptions import ERROR_MAP, APIError, ConnectionError, RateLimitError, SkillSDKError
 from skill_sdk.types import (
     AnalyticsDashboardDict,
     CategoryDict,
     CompositionDict,
     PaginatedResult,
+    SkillDependencyDict,
     SkillDict,
     SkillSearchResultDict,
     SkillUsageTrendDict,
     SkillVersionDict,
-    SkillDependencyDict,
     TagDict,
     TokenDict,
     UserDict,

@@ -1,6 +1,5 @@
-import pytest
 
-from app.services.skill_validator import SkillValidator, ValidationResult, LintResult
+from app.services.skill_validator import SkillValidator
 
 
 class TestSkillValidator:

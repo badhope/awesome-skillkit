@@ -1,0 +1,138 @@
+name: i18n
+
+# Verifies the i18n integrity of the project end-to-end:
+#   1. Backend gettext catalogs (PO + MO) are in sync and every locale
+#      has every key (`make i18n-compile` and `make i18n-check`).
+#   2. The mkdocs site builds successfully across all configured
+#      languages and the multi-locale output is actually populated.
+#
+# The docs build is intentionally lightweight here (no autorefs /
+# git-revision-date) so the check stays under 60s on cold cache.
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/locales/**"
+      - "backend/app/core/i18n.py"
+      - "frontend/src/lib/i18n/**"
+      - "docs/**"
+      - "docs/mkdocs.yml"
+      - "Makefile"
+      - ".github/workflows/i18n.yml"
+      - "scripts/sync-docs.sh"
+  push:
+    branches: [main]
+    paths:
+      - "backend/app/locales/**"
+      - "backend/app/core/i18n.py"
+      - "frontend/src/lib/i18n/**"
+      - "docs/**"
+      - "docs/mkdocs.yml"
+      - "Makefile"
+      - "scripts/sync-docs.sh"
+
+permissions:
+  contents: read
+
+jobs:
+  # ---------------------------------------------------------------------
+  # Backend gettext catalogs
+  # ---------------------------------------------------------------------
+  backend-catalogs:
+    name: Backend gettext catalogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gettext (msgfmt)
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile PO catalogs
+        run: make i18n-compile
+
+      - name: Verify all locales are complete
+        run: make i18n-check
+
+      - name: Fail on untranslated keys (signal, not enforce)
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          import sys
+
+          missing: list[tuple[str, str]] = []
+          for po in Path("backend/app/locales").rglob("messages.po"):
+              locale = po.parts[-3]
+              if locale == "en":
+                  continue  # source of truth, not subject to completeness check
+              with po.open(encoding="utf-8") as f:
+                  text = f.read()
+              # PO conventions: msgstr == msgid means untranslated
+              for m in re.finditer(r'^msgid "(.+?)"\nmsgstr "(.+?)"', text, re.MULTILINE):
+                  msgid, msgstr = m.group(1), m.group(2)
+                  if msgid and msgstr == msgid:
+                      missing.append((locale, msgid))
+          if missing:
+              print(f"::warning::Found {len(missing)} untranslated keys (msgid == msgstr) in non-English locales:")
+              for locale, msgid in missing[:20]:
+                  print(f"  {locale}: {msgid}")
+              if len(missing) > 20:
+                  print(f"  ... and {len(missing) - 20} more")
+              # Don't fail the build — it's a signal, not a hard block.
+              # Maintainers can convert this to a hard error when ready.
+          else:
+              print("All non-English locales are fully translated.")
+          PY
+
+  # ---------------------------------------------------------------------
+  # Documentation site multi-locale build
+  # ---------------------------------------------------------------------
+  docs-multilang:
+    name: Docs i18n build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync project-root docs into docs/en/
+        run: bash scripts/sync-docs.sh
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install mkdocs + i18n plugin
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            mkdocs==1.6.* \
+            mkdocs-material==9.5.* \
+            mkdocs-static-i18n==1.2.* \
+            mkdocs-minify-plugin==0.8.* \
+            mkdocs-autorefs==1.0.* \
+            pymdown-extensions==10.7.* \
+            pygments==2.18.*
+
+      - name: Build multi-locale docs
+        run: cd docs && mkdocs build -f mkdocs.yml --strict
+
+      - name: Assert each language has its own entry
+        run: |
+          set -e
+          # English is at the root
+          test -f site/index.html
+          echo "  en OK ($(wc -c < site/index.html) bytes)"
+          # Chinese is at /zh/
+          test -f site/zh/index.html
+          echo "  zh OK ($(wc -c < site/zh/index.html) bytes)"
+          # The English HTML must not appear under site/zh/
+          if grep -q 'open-source universal' site/zh/index.html; then
+            echo "::error::site/zh/index.html contains English content (i18n plugin misconfigured)"
+            exit 1
+          fi
+          echo "  locale routing OK"

@@ -7,7 +7,6 @@ Creates a comprehensive hierarchical category structure for organizing skills.
 
 import asyncio
 import os
-import sys
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 

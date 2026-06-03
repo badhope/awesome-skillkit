@@ -34,7 +34,7 @@ mkdir -p \
 # ---------------------------------------------------------------------------
 copy_readme() {
   local src="${SRC}/README.md"
-  local dst="${DEST}/index.md"
+  local dst="${DEST}/en/index.md"
 
   python3 - "$src" "$dst" <<'PY'
 import re, sys
@@ -332,28 +332,28 @@ PY
 }
 
 # Community
-copy_one "${SRC}/CONTRIBUTING.md"    "${DEST}/community/contributing.md"            "community"
-copy_one "${SRC}/CODE_OF_CONDUCT.md" "${DEST}/community/code-of-conduct.md"         "community"
-copy_one "${SRC}/FAQ.md"             "${DEST}/community/faq.md"                     "community"
-copy_one "${SRC}/ROADMAP.md"         "${DEST}/community/roadmap.md"                 "community"
-copy_one "${SRC}/CHANGELOG.md"       "${DEST}/community/changelog.md"               "community"
-copy_one "${SRC}/TROUBLESHOOTING.md" "${DEST}/community/troubleshooting-short.md"   "community"
+copy_one "${SRC}/CONTRIBUTING.md"    "${DEST}/en/community/contributing.md"            "community"
+copy_one "${SRC}/CODE_OF_CONDUCT.md" "${DEST}/en/community/code-of-conduct.md"         "community"
+copy_one "${SRC}/FAQ.md"             "${DEST}/en/community/faq.md"                     "community"
+copy_one "${SRC}/ROADMAP.md"         "${DEST}/en/community/roadmap.md"                 "community"
+copy_one "${SRC}/CHANGELOG.md"       "${DEST}/en/community/changelog.md"               "community"
+copy_one "${SRC}/TROUBLESHOOTING.md" "${DEST}/en/community/troubleshooting-short.md"   "community"
 
 # Operations
-copy_one "${SRC}/SECURITY.md"        "${DEST}/operations/security.md"               "operations"
+copy_one "${SRC}/SECURITY.md"        "${DEST}/en/operations/security.md"               "operations"
 
 # SDKs
-copy_one "${SRC}/sdk/python/README.md"     "${DEST}/sdks/python.md"                 "sdks"
-copy_one "${SRC}/sdk/typescript/README.md"  "${DEST}/sdks/typescript.md"             "sdks"
+copy_one "${SRC}/sdk/python/README.md"     "${DEST}/en/sdks/python.md"                 "sdks"
+copy_one "${SRC}/sdk/typescript/README.md"  "${DEST}/en/sdks/typescript.md"             "sdks"
 
 # Examples
-copy_one "${SRC}/examples/README.md"        "${DEST}/examples/index.md"              "examples"
-copy_one "${SRC}/examples/rest/README.md"   "${DEST}/examples/rest.md"               "examples"
-copy_one "${SRC}/examples/python/README.md" "${DEST}/examples/python.md"             "examples"
-copy_one "${SRC}/examples/typescript/README.md" "${DEST}/examples/typescript.md"     "examples"
-copy_one "${SRC}/examples/postman/README.md"    "${DEST}/examples/postman.md"         "examples"
+copy_one "${SRC}/examples/README.md"        "${DEST}/en/examples/index.md"              "examples"
+copy_one "${SRC}/examples/rest/README.md"   "${DEST}/en/examples/rest.md"               "examples"
+copy_one "${SRC}/examples/python/README.md" "${DEST}/en/examples/python.md"             "examples"
+copy_one "${SRC}/examples/typescript/README.md" "${DEST}/en/examples/typescript.md"     "examples"
+copy_one "${SRC}/examples/postman/README.md"    "${DEST}/en/examples/postman.md"         "examples"
 
 # Home page (the project README is the docs home).
 copy_readme
 
-echo "Synced $(find "${DEST}/community" "${DEST}/sdks" "${DEST}/examples" "${DEST}/operations" -name '*.md' 2>/dev/null | wc -l | tr -d ' ') synced files into ${DEST}"
+echo "Synced $(find "${DEST}/en/community" "${DEST}/en/sdks" "${DEST}/en/examples" "${DEST}/en/operations" -name '*.md' 2>/dev/null | wc -l | tr -d ' ') synced files into ${DEST}/en"

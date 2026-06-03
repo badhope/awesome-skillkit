@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.core.security import get_password_hash
 from app.models.skill import (
-    Base,
     Category,
     ComplexityEnum,
     Skill,

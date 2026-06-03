@@ -130,20 +130,21 @@ class TestJWTTokenVerification:
         expired_delta = timedelta(seconds=-1)
         token = create_access_token(subject=subject, expires_delta=expired_delta)
 
-        from fastapi import HTTPException
+        # `decode_token` is now a thin wrapper around jose.jwt.decode —
+        # the router layer is responsible for turning this into a
+        # 401 HTTPException. So the raw exception surfaces here.
+        from jose import ExpiredSignatureError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(ExpiredSignatureError):
             decode_token(token)
-        assert exc_info.value.status_code == 401
 
     def test_invalid_token_raises_error(self) -> None:
         invalid_token = "this.is.not.a.valid.jwt.token"
 
-        from fastapi import HTTPException
+        from jose import JWTError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(JWTError):
             decode_token(invalid_token)
-        assert exc_info.value.status_code == 401
 
     def test_tampered_token_raises_error(self) -> None:
         subject = "a0000000-0000-0000-0000-000000000001"
@@ -151,11 +152,10 @@ class TestJWTTokenVerification:
         parts = token.split(".")
         tampered = parts[0] + "." + parts[1] + ".tampered_signature"
 
-        from fastapi import HTTPException
+        from jose import JWTError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(JWTError):
             decode_token(tampered)
-        assert exc_info.value.status_code == 401
 
     def test_token_with_wrong_secret(self) -> None:
         subject = "a0000000-0000-0000-0000-000000000001"
@@ -165,11 +165,10 @@ class TestJWTTokenVerification:
             algorithm=settings.JWT_ALGORITHM,
         )
 
-        from fastapi import HTTPException
+        from jose import JWTError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(JWTError):
             decode_token(wrong_settings_token)
-        assert exc_info.value.status_code == 401
 
     def test_token_with_wrong_algorithm(self) -> None:
         subject = "a0000000-0000-0000-0000-000000000001"
@@ -182,18 +181,16 @@ class TestJWTTokenVerification:
         except Exception:
             pytest.skip("HS512 not supported by jose")
 
-        from fastapi import HTTPException
+        from jose import JWTError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(JWTError):
             decode_token(token)
-        assert exc_info.value.status_code == 401
 
     def test_empty_token(self) -> None:
-        from fastapi import HTTPException
+        from jose import JWTError
 
-        with pytest.raises(HTTPException) as exc_info:
+        with pytest.raises(JWTError):
             decode_token("")
-        assert exc_info.value.status_code == 401
 
     def test_token_without_subject(self) -> None:
         token = jwt.encode(

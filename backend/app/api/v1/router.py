@@ -1,6 +1,9 @@
 from fastapi import APIRouter
 
-from app.api.v1 import auth, categories, compositions, skills, tags, users, analytics
+# /v1 is fixed in the URL prefix (see main.py). When we eventually cut
+# v2 we should either version-by-header (Accept: application/vnd...v2+json)
+# or keep stacking include_router calls with explicit prefix overrides.
+from app.api.v1 import analytics, auth, categories, compositions, dashboard, skills, tags, users
 
 api_router = APIRouter()
 
@@ -44,4 +47,10 @@ api_router.include_router(
     compositions.router,
     prefix="/compositions",
     tags=["compositions"],
+)
+
+api_router.include_router(
+    dashboard.router,
+    prefix="/dashboard",
+    tags=["dashboard"],
 )

@@ -1,7 +1,12 @@
 # Postman / Insomnia / Bruno collection
 
-This folder contains a Postman-compatible collection that exercises
-the AI-SKILL REST API.
+A Postman-compatible collection that exercises the AI-SKILL REST API.
+Same flows as `examples/rest/`, but in a format you can import and
+run from a GUI client.
+
+If you prefer a CLI / file-based client, head over to
+[`examples/rest/`](../rest/) or
+[`examples/python/`](../python/).
 
 ## Postman
 

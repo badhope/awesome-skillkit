@@ -1,8 +1,16 @@
 # AI-SKILL — REST examples (curl + HTTP files)
 
-You can hit the API with plain HTTP. The `*.http` files are
+Plain-HTTP recipes for talking to the API. No SDK required.
+
+The `*.http` files are
 [VS Code REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-compatible; the `*.sh` files are plain bash.
+compatible; the curl snippets in this README work in any shell.
+
+## Before you start
+
+Make sure the backend is running. The default base URL is
+`http://localhost:8000`. If you're hitting a deployed instance, set
+the `API` variable accordingly.
 
 ## Prerequisites
 

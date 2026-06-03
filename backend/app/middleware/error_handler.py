@@ -1,11 +1,11 @@
-import traceback
 import uuid
-from typing import Callable, Union
+from typing import Callable
 
 from fastapi import Request, Response
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 
+from app.core.i18n import _
 from app.core.logging import get_logger
 
 logger = get_logger(__name__)
@@ -21,6 +21,7 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
             response.headers["X-Request-ID"] = request_id
             return response
         except Exception as exc:
+            locale = getattr(request.state, "locale", "en")
             logger.exception(
                 "Unhandled exception",
                 request_id=request_id,
@@ -31,9 +32,12 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=500,
                 content={
-                    "detail": "An internal server error occurred.",
+                    "detail": _("An internal server error occurred.", locale),
                     "request_id": request_id,
                     "error_type": type(exc).__name__,
                 },
-                headers={"X-Request-ID": request_id},
+                headers={
+                    "X-Request-ID": request_id,
+                    "Content-Language": locale,
+                },
             )

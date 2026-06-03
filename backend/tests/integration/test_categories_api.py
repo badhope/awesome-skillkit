@@ -193,15 +193,9 @@ class TestCategoriesDeleteAPI:
     async def test_delete_category_with_skills(
         self, test_client_superuser: AsyncClient, test_skill: dict
     ) -> None:
-        slug = test_skill.get("slug", "")
-        import uuid as uuid_lib
-        from sqlalchemy import select
-        from app.models.skill import Skill, Category
 
-        from sqlalchemy.ext.asyncio import AsyncSession
-        from app.db import get_db
 
         response = await test_client_superuser.delete(
-            f"/api/v1/categories/code-generation"
+            "/api/v1/categories/code-generation"
         )
         assert response.status_code == 204

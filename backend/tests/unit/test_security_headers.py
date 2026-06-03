@@ -8,11 +8,12 @@ from httpx import ASGITransport, AsyncClient
 @pytest.mark.asyncio
 async def test_security_headers_attached_to_responses():
     """Every response gets the OWASP-recommended security headers."""
+    from fastapi import FastAPI
+
     from app.middleware.security_headers import (
         DEFAULT_SECURITY_HEADERS,
         SecurityHeadersMiddleware,
     )
-    from fastapi import FastAPI
 
     app = FastAPI()
     app.add_middleware(SecurityHeadersMiddleware)
@@ -36,8 +37,9 @@ async def test_security_headers_attached_to_responses():
 @pytest.mark.asyncio
 async def test_security_headers_strip_x_powered_by():
     """X-Powered-By is removed to avoid fingerprinting."""
-    from app.middleware.security_headers import SecurityHeadersMiddleware
     from fastapi import FastAPI
+
+    from app.middleware.security_headers import SecurityHeadersMiddleware
 
     app = FastAPI()
     app.add_middleware(SecurityHeadersMiddleware)
@@ -57,8 +59,9 @@ async def test_security_headers_strip_x_powered_by():
 @pytest.mark.asyncio
 async def test_security_headers_preserve_existing_headers():
     """If a downstream handler already set a header, we don't overwrite it."""
-    from app.middleware.security_headers import SecurityHeadersMiddleware
     from fastapi import FastAPI
+
+    from app.middleware.security_headers import SecurityHeadersMiddleware
 
     app = FastAPI()
     app.add_middleware(SecurityHeadersMiddleware)

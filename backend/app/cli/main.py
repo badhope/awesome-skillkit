@@ -3,14 +3,14 @@ from __future__ import annotations
 import typer
 
 from app.cli.commands import (
-    skills_app,
-    categories_app,
-    tags_app,
-    search_app,
-    import_app,
-    export_app,
-    index_app,
     cache_app,
+    categories_app,
+    export_app,
+    import_app,
+    index_app,
+    search_app,
+    skills_app,
+    tags_app,
 )
 
 cli = typer.Typer(

@@ -2,32 +2,24 @@ from __future__ import annotations
 
 import asyncio
 import json
-import os
-import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 import typer
 from rich.console import Console
-from rich.panel import Panel
 from rich.table import Table
 from rich.tree import Tree
-from sqlalchemy import select, func, desc
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.config import get_settings
-from app.db.session import engine, async_session_factory
+from app.core.content_i18n import escape_like
+from app.db import async_session_factory
 from app.models import (
     Category,
     Skill,
-    SkillVersion,
-    SkillRating,
-    SkillUsageLog,
-    SkillComposition,
-    SkillCompositionItem,
     Tag,
-    User,
 )
 from app.services.cache import CacheService
 from app.services.import_export import ImportExportService
@@ -158,7 +150,7 @@ def search_skills(
     async def _run():
         db = await _get_db()
         try:
-            search_pattern = f"%{query}%"
+            search_pattern = f"%{escape_like(query)}%"
             stmt = (
                 select(Skill)
                 .options(
@@ -166,9 +158,9 @@ def search_skills(
                     selectinload(Skill.tags),
                 )
                 .where(
-                    (Skill.name.ilike(search_pattern))
-                    | (Skill.description.ilike(search_pattern))
-                    | (Skill.slug.ilike(search_pattern))
+                    (Skill.name.ilike(search_pattern, escape="\\"))
+                    | (Skill.description.ilike(search_pattern, escape="\\"))
+                    | (Skill.slug.ilike(search_pattern, escape="\\"))
                 )
                 .order_by(Skill.rating_avg.desc())
                 .limit(limit)
@@ -244,8 +236,14 @@ def create_skill(
                 tag_result = await db.execute(select(Tag).where(Tag.name == tag_name))
                 tag_obj = tag_result.scalar_one_or_none()
                 if tag_obj:
+                    # 已存在: skill 关联后 +1 (新建走 INSERT 关联会建立新一行, 所以 +1)
                     tag_obj.usage_count += 1
                     tag_objects.append(tag_obj)
+                else:
+                    # 之前漏掉了新建 tag 的 +1, 改成统一 +1
+                    new_tag = Tag(name=tag_name, usage_count=1)
+                    db.add(new_tag)
+                    tag_objects.append(new_tag)
 
             skill = Skill(
                 name=name,
@@ -258,7 +256,7 @@ def create_skill(
                 is_public=is_public,
                 is_featured=is_featured,
                 content=json.loads(content_json),
-                metadata=json.loads(metadata_json),
+                extra_metadata=json.loads(metadata_json),
                 tags=tag_objects,
             )
             db.add(skill)
@@ -291,6 +289,16 @@ def delete_skill(
                 if not confirm:
                     console.print("[yellow]Cancelled.[/yellow]")
                     return
+
+            # 删除前先把关联的 tag 各 -1 (之前是漏掉的)
+            current_tag_names = {t.name for t in (skill.tags or [])}
+            if current_tag_names:
+                tag_rows = await db.execute(
+                    select(Tag).where(Tag.name.in_(current_tag_names))
+                )
+                for tag in tag_rows.scalars().all():
+                    if tag.usage_count > 0:
+                        tag.usage_count -= 1
 
             await db.delete(skill)
             await db.commit()
@@ -434,7 +442,6 @@ def categories_tree():
             )
             categories = result.scalars().all()
 
-            category_map: dict[str, Any] = {str(c.id): c for c in categories}
             root_cats = [c for c in categories if c.parent_id is None]
 
             def build_tree(cat, tree: Tree):
@@ -542,8 +549,6 @@ def semantic_search(
             vector_service = VectorSearchService(
                 qdrant_url=settings.QDRANT_URL,
                 qdrant_api_key=settings.QDRANT_API_KEY,
-                embedding_model="all-MiniLM-L6-v2",
-                vector_size=384,
             )
 
             results = vector_service.search_skills(
@@ -654,54 +659,47 @@ def import_from_dir(
     async def _run():
         db = await _get_db()
         try:
-            import_service = ImportExportService(export_dir="/tmp/skill_exports")
+            import_service = ImportExportService(db, export_dir="/tmp/skill_exports")
 
             dir_path = Path(directory)
             if not dir_path.exists():
                 err_console.print(f"[red]Directory not found: {directory}[/red]")
                 raise typer.Exit(code=1)
 
-            md_files = list(dir_path.rglob("*.md")) if recursive else list(dir_path.glob("*.md"))
-            skill_md_files = [f for f in md_files if f.name.lower() in ("skill.md", "readme.md")]
-            other_md_files = [f for f in md_files if f not in skill_md_files]
+            skill_data_list = import_service.batch_import_from_directory(str(dir_path))
+            console.print(f"[bold]Importing skills from: {directory}[/bold]")
+            console.print(f"  Parsed {len(skill_data_list)} candidate markdown files\n")
 
             imported_count = 0
             error_count = 0
+            skipped_count = 0
 
-            console.print(f"[bold]Importing skills from: {directory}[/bold]")
-            console.print(f"  Found {len(skill_md_files)} SKILL.md/readme.md files")
-            console.print(f"  Found {len(other_md_files)} other markdown files\n")
-
-            all_files = skill_md_files + other_md_files
-
-            for md_file in all_files:
+            for skill_data in skill_data_list:
                 try:
-                    skill_data = import_service.import_from_markdown(str(md_file))
-
-                    slug = skill_data.get("name", "").lower().replace(" ", "-")
-                    existing = await db.execute(select(Skill).where(Skill.slug == slug))
-                    if existing.scalar_one_or_none():
-                        console.print(f"  [yellow]Skipped (exists): {md_file.name} -> {skill_data.get('name')}[/yellow]")
+                    persisted = await import_service.persist_skill(skill_data)
+                    if persisted is None:
+                        skipped_count += 1
+                        console.print(
+                            f"  [yellow]Skipped (exists or empty): "
+                            f"{skill_data.get('source_file', '?')} -> {skill_data.get('name')}[/yellow]"
+                        )
                         continue
-
-                    db_skill = Skill(
-                        name=skill_data.get("name", md_file.stem),
-                        slug=slug,
-                        description=skill_data.get("description", ""),
-                        version=skill_data.get("version", "1.0.0"),
-                        license=skill_data.get("license"),
-                        content=skill_data.get("content", {}),
-                        metadata=skill_data.get("metadata", {}),
-                    )
-                    db.add(db_skill)
                     imported_count += 1
-                    console.print(f"  [green]Imported: {md_file.name} -> {skill_data.get('name')}[/green]")
+                    console.print(
+                        f"  [green]Imported: {skill_data.get('source_file', '?')} -> "
+                        f"{persisted.name}[/green]"
+                    )
                 except Exception as e:
                     error_count += 1
-                    err_console.print(f"  [red]Error: {md_file.name} - {e}[/red]")
+                    err_console.print(
+                        f"  [red]Error: {skill_data.get('source_file', '?')} - {e}[/red]"
+                    )
 
             await db.commit()
-            console.print(f"\n[bold green]Import complete: {imported_count} imported, {error_count} errors[/bold green]")
+            console.print(
+                f"\n[bold green]Import complete: {imported_count} imported, "
+                f"{skipped_count} skipped, {error_count} errors[/bold green]"
+            )
         finally:
             await db.close()
 
@@ -723,33 +721,18 @@ def export_skill(
                 err_console.print(f"[red]Skill '{slug}' not found[/red]")
                 raise typer.Exit(code=1)
 
-            skill_dict = {
-                "id": str(skill.id),
-                "name": skill.name,
-                "description": skill.description,
-                "version": skill.version,
-                "category": skill.category.name if skill.category else None,
-                "tags": [t.name for t in (skill.tags or [])],
-                "license": skill.license,
-                "content": skill.content,
-                "metadata": skill.metadata,
-                "created_at": skill.created_at.isoformat() if skill.created_at else None,
-                "updated_at": skill.updated_at.isoformat() if skill.updated_at else None,
-            }
-
-            import_service = ImportExportService()
-            import_service.skills_db[str(skill.id)] = skill_dict
+            import_service = ImportExportService(db)
 
             if format == "json":
-                content = import_service.export_skill_as_json(str(skill.id), output_path=output)
+                content = await import_service.export_skill_as_json(str(skill.id), output_path=output)
                 if not output:
                     console.print_json(content)
             elif format == "yaml":
-                content = import_service.export_skill_as_yaml(str(skill.id), output_path=output)
+                content = await import_service.export_skill_as_yaml(str(skill.id), output_path=output)
                 if not output:
                     console.print(content)
             else:
-                content = import_service.export_to_markdown(str(skill.id), output_path=output)
+                content = await import_service.export_to_markdown(str(skill.id), output_path=output)
                 if not output:
                     console.print(content)
 
@@ -805,8 +788,6 @@ def rebuild_index(
             vector_service = VectorSearchService(
                 qdrant_url=settings.QDRANT_URL,
                 qdrant_api_key=settings.QDRANT_API_KEY,
-                embedding_model="all-MiniLM-L6-v2",
-                vector_size=384,
             )
 
             vector_service.rebuild_index(skill_dicts)

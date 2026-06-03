@@ -12,7 +12,7 @@ Checks:
 import os
 import sys
 import time
-from typing import Dict, Any, Tuple
+from typing import Dict, Tuple
 
 import httpx
 
@@ -28,8 +28,9 @@ RETRY_DELAY = 2.0
 
 def check_postgres() -> Tuple[bool, str]:
     try:
-        import asyncpg
         import asyncio
+
+        import asyncpg
 
         dsn = DB_URL.replace("postgresql+asyncpg://", "postgresql://")
 

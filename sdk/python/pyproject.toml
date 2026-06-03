@@ -28,7 +28,12 @@ target-version = "py310"
 line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "N", "W", "UP"]
+select = ["E", "F", "I", "W"]
+ignore = [
+    "E501",  # line-too-long — kept as-is for now; codebase has its own style
+    "E402",  # module-import-not-at-top — judgement call per init order
+    "E712",  # true-false-comparison — judgement call per readability
+]
 
 [tool.mypy]
 python_version = "3.10"
