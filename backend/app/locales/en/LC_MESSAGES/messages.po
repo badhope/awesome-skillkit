@@ -1,0 +1,124 @@
+# English (en) translation catalog for the AI-SKILL backend.
+# Each `msgid` is the source string in code; `msgstr` is the translation
+# for this locale. Translators should keep the placeholders (e.g. {name})
+# intact as they are substituted at runtime.
+#
+# After editing this file, recompile to .mo with:
+#     poetry run python -m app.core.i18n compile
+#
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# --- error_handler.py ----------------------------------------------------
+msgid "An internal server error occurred."
+msgstr "An internal server error occurred."
+
+msgid "Service temporarily unavailable. Please retry."
+msgstr "Service temporarily unavailable. Please retry."
+
+# --- auth / security -----------------------------------------------------
+msgid "Invalid credentials."
+msgstr "Invalid credentials."
+
+msgid "Token has expired."
+msgstr "Token has expired."
+
+msgid "Token is invalid or has been revoked."
+msgstr "Token is invalid or has been revoked."
+
+msgid "Account is locked. Try again in {minutes} minutes."
+msgstr "Account is locked. Try again in {minutes} minutes."
+
+# --- generic resource errors ---------------------------------------------
+msgid "{resource} not found."
+msgstr "{resource} not found."
+
+msgid "{resource} already exists."
+msgstr "{resource} already exists."
+
+msgid "You do not have permission to {action} this {resource}."
+msgstr "You do not have permission to {action} this {resource}."
+
+msgid "Rate limit exceeded. Try again in {seconds} seconds."
+msgstr "Rate limit exceeded. Try again in {seconds} seconds."
+
+# --- validation ----------------------------------------------------------
+msgid "Field '{field}' is required."
+msgstr "Field '{field}' is required."
+
+msgid "Field '{field}' must be at most {max} characters long."
+msgstr "Field '{field}' must be at most {max} characters long."
+
+msgid "Field '{field}' must be at least {min} characters long."
+msgstr "Field '{field}' must be at least {min} characters long."
+
+msgid "The value provided for '{field}' is not a valid {type}."
+msgstr "The value provided for '{field}' is not a valid {type}."
+
+# --- skills / search -----------------------------------------------------
+msgid "Skill not found."
+msgstr "Skill not found."
+
+msgid "Skill '{slug}' is not published."
+msgstr "Skill '{slug}' is not published."
+
+msgid "No skills match the search query."
+msgstr "No skills match the search query."
+
+msgid "You must be authenticated to perform this action."
+msgstr "You must be authenticated to perform this action."
+
+# --- auth endpoints (api/v1/auth.py) ------------------------------------
+msgid "Email already registered."
+msgstr "Email already registered."
+
+msgid "Username already taken."
+msgstr "Username already taken."
+
+msgid "Password too weak. Must be at least 8 characters with uppercase, lowercase, and digit."
+msgstr "Password too weak. Must be at least 8 characters with uppercase, lowercase, and digit."
+
+msgid "Invalid username or password."
+msgstr "Invalid username or password."
+
+msgid "User not found or inactive."
+msgstr "User not found or inactive."
+
+msgid "Email already in use."
+msgstr "Email already in use."
+
+msgid "Current password is incorrect."
+msgstr "Current password is incorrect."
+
+msgid "Password changed successfully."
+msgstr "Password changed successfully."
+
+msgid "Successfully logged out."
+msgstr "Successfully logged out."
+
+# --- deps / security (auth dependencies) ---------------------------------
+msgid "Not authenticated."
+msgstr "Not authenticated."
+
+msgid "Invalid authentication credentials."
+msgstr "Invalid authentication credentials."
+
+msgid "User not found."
+msgstr "User not found."
+
+msgid "Inactive user."
+msgstr "Inactive user."
+
+msgid "Not enough permissions."
+msgstr "Not enough permissions."
+
+msgid "Could not validate credentials."
+msgstr "Could not validate credentials."
+
+msgid "Invalid token type, expected access token."
+msgstr "Invalid token type, expected access token."
+
+# --- rate_limit middleware -----------------------------------------------
+msgid "Too many requests, please try again later."
+msgstr "Too many requests, please try again later."

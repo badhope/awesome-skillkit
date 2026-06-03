@@ -1,0 +1,124 @@
+# Chinese (zh) translation catalog for the AI-SKILL backend.
+# Each `msgid` is the source string in code; `msgstr` is the translation
+# for this locale. Translators should keep the placeholders (e.g. {name})
+# intact as they are substituted at runtime.
+#
+# After editing this file, recompile to .mo with:
+#     poetry run python -m app.core.i18n compile
+#
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# --- error_handler.py ----------------------------------------------------
+msgid "An internal server error occurred."
+msgstr "服务器内部错误。"
+
+msgid "Service temporarily unavailable. Please retry."
+msgstr "服务暂时不可用，请稍后重试。"
+
+# --- auth / security -----------------------------------------------------
+msgid "Invalid credentials."
+msgstr "凭证无效。"
+
+msgid "Token has expired."
+msgstr "登录已过期。"
+
+msgid "Token is invalid or has been revoked."
+msgstr "令牌无效或已被吊销。"
+
+msgid "Account is locked. Try again in {minutes} minutes."
+msgstr "账户已锁定，请于 {minutes} 分钟后重试。"
+
+# --- generic resource errors ---------------------------------------------
+msgid "{resource} not found."
+msgstr "未找到 {resource}。"
+
+msgid "{resource} already exists."
+msgstr "{resource} 已存在。"
+
+msgid "You do not have permission to {action} this {resource}."
+msgstr "您没有权限{action}该{resource}。"
+
+msgid "Rate limit exceeded. Try again in {seconds} seconds."
+msgstr "请求过于频繁，请于 {seconds} 秒后重试。"
+
+# --- validation ----------------------------------------------------------
+msgid "Field '{field}' is required."
+msgstr "字段「{field}」为必填项。"
+
+msgid "Field '{field}' must be at most {max} characters long."
+msgstr "字段「{field}」长度不能超过 {max} 个字符。"
+
+msgid "Field '{field}' must be at least {min} characters long."
+msgstr "字段「{field}」长度至少为 {min} 个字符。"
+
+msgid "The value provided for '{field}' is not a valid {type}."
+msgstr "字段「{field}」的值不是有效的 {type}。"
+
+# --- skills / search -----------------------------------------------------
+msgid "Skill not found."
+msgstr "未找到该技能。"
+
+msgid "Skill '{slug}' is not published."
+msgstr "技能「{slug}」尚未发布。"
+
+msgid "No skills match the search query."
+msgstr "没有与查询匹配的技能。"
+
+msgid "You must be authenticated to perform this action."
+msgstr "请先登录后再进行此操作。"
+
+# --- auth endpoints (api/v1/auth.py) ------------------------------------
+msgid "Email already registered."
+msgstr "该邮箱已注册。"
+
+msgid "Username already taken."
+msgstr "该用户名已被占用。"
+
+msgid "Password too weak. Must be at least 8 characters with uppercase, lowercase, and digit."
+msgstr "密码强度不足，必须至少 8 位字符，且同时包含大写字母、小写字母和数字。"
+
+msgid "Invalid username or password."
+msgstr "用户名或密码错误。"
+
+msgid "User not found or inactive."
+msgstr "用户不存在或未激活。"
+
+msgid "Email already in use."
+msgstr "该邮箱已被使用。"
+
+msgid "Current password is incorrect."
+msgstr "当前密码错误。"
+
+msgid "Password changed successfully."
+msgstr "密码修改成功。"
+
+msgid "Successfully logged out."
+msgstr "已成功登出。"
+
+# --- deps / security (auth dependencies) ---------------------------------
+msgid "Not authenticated."
+msgstr "未登录。"
+
+msgid "Invalid authentication credentials."
+msgstr "身份验证凭据无效。"
+
+msgid "User not found."
+msgstr "用户不存在。"
+
+msgid "Inactive user."
+msgstr "账户未激活。"
+
+msgid "Not enough permissions."
+msgstr "权限不足。"
+
+msgid "Could not validate credentials."
+msgstr "无法验证身份。"
+
+msgid "Invalid token type, expected access token."
+msgstr "令牌类型错误，需要 access 令牌。"
+
+# --- rate_limit middleware -----------------------------------------------
+msgid "Too many requests, please try again later."
+msgstr "请求过于频繁，请稍后再试。"
