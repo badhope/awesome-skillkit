@@ -1,0 +1,162 @@
+/* Custom CSS for the AI-SKILL documentation site */
+
+:root {
+  --md-admonition-icon--ai-skill: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L9.5 8.5 2 12l7.5 3.5L12 22l2.5-6.5L22 12l-7.5-3.5L12 2z"/></svg>');
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.2em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+}
+
+.md-typeset pre > code {
+  border-radius: 8px;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+}
+
+/* Custom admonition variant */
+.md-typeset .admonition.ai-skill,
+.md-typeset details.ai-skill {
+  border-color: rgb(124, 77, 255);
+}
+.md-typeset .ai-skill > .admonition-title,
+.md-typeset .ai-skill > summary {
+  background-color: rgba(124, 77, 255, 0.1);
+}
+.md-typeset .ai-skill > .admonition-title::before,
+.md-typeset .ai-skill > summary::before {
+  background-color: rgb(124, 77, 255);
+  -webkit-mask-image: var(--md-admonition-icon--ai-skill);
+  mask-image: var(--md-admonition-icon--ai-skill);
+}
+
+/* Architecture diagram container */
+.md-typeset .architecture-svg {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  display: block;
+  margin: 1.5rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tab labels look better in this project */
+.md-typeset .tabbed-labels > label {
+  font-weight: 600;
+}
+
+/* Make inline code in headers slightly less obtrusive */
+.md-typeset h2 code,
+.md-typeset h3 code,
+.md-typeset h4 code {
+  font-size: 0.85em;
+  padding: 0.15em 0.4em;
+}
+
+/* Hero section on the home page */
+.md-typeset .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.md-typeset .hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+
+.md-typeset .hero p {
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 42rem;
+  margin: 0.5rem auto;
+}
+
+.md-typeset .hero .badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.md-typeset .hero .badges img {
+  height: 20px;
+}
+
+.md-typeset .hero .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.md-typeset .hero .buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 6px;
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.md-typeset .hero .buttons a:hover {
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+}
+
+/* Feature grid for the home page */
+.md-typeset .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset .feature-grid .card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .feature-grid .card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.md-typeset .feature-grid .card p {
+  margin-bottom: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95rem;
+}
+
+/* Make the data-model SVG full-width and easy to read */
+.md-typeset svg[role="img"] {
+  max-width: 100%;
+  height: auto;
+}

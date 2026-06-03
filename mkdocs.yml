@@ -1,0 +1,278 @@
+site_name: AI-SKILL
+site_description: An open-source universal agent skill library
+site_author: AI-SKILL Contributors
+site_url: https://badhope.github.io/AI-SKILL/
+copyright: Copyright © 2026 AI-SKILL Contributors · MIT License
+
+repo_name: badhope/AI-SKILL
+repo_url: https://github.com/badhope/AI-SKILL
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/badhope/AI-SKILL
+      name: AI-SKILL on GitHub
+    - icon: fontawesome/solid/globe
+      link: https://github.com/badhope/AI-SKILL
+      name: Source repository
+  generator: false
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: 简体中文
+      link: /zh/
+      lang: zh
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/star-four-points
+  favicon: assets/favicon.svg
+  features:
+    # Navigation
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.prune
+    - navigation.footer
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    # TOC
+    - toc.follow
+    - toc.collapse
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    # Footer
+    - content.action.view
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+  # i18n: each language's pages live in `<docs_dir>/<lang>/...`
+  # (e.g. `docs/en/index.md`, `docs/zh/index.md`). The English
+  # (default) pages live under `docs/en/`; Chinese under `docs/zh/`.
+  # See https://github.com/ultrabug/mkdocs-static-i18n for options.
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+          site_name: AI-SKILL
+        - locale: zh
+          name: 简体中文
+          build: true
+          site_name: AI-SKILL
+          nav_translations:
+            Home: 首页
+            Getting started: 入门
+            Installation: 安装
+            "Quick start": 快速开始
+            Configuration: 配置
+            Architecture: 架构
+            Overview: 概述
+            "Data model": 数据模型
+            "Search pipeline": 搜索流水线
+            Operations: 运维
+            Development: 开发
+            Reference: 参考
+            SDKs: SDK
+            Examples: 示例
+            Community: 社区
+            Contributing: 贡献指南
+            "Code of conduct": 行为准则
+            FAQ: 常见问题
+            Roadmap: 路线图
+            Changelog: 更新日志
+            Troubleshooting: 故障排查
+            Setup: 环境搭建
+            Deployment: 部署
+            Security: 安全
+            Backup: 备份与恢复
+            Observability: 可观测性
+            Testing: 测试
+            Migrations: 数据库迁移
+            "Adding an API endpoint": 新增 API 端点
+            "Adding a frontend page": 新增前端页面
+            "Release process": 发布流程
+            "Configuration reference": 配置参考
+            CLI: 命令行
+            "Environment variables": 环境变量
+            "HTTP status codes": HTTP 状态码
+            Python: Python
+            TypeScript: TypeScript
+            Postman: Postman
+            ADRs: 架构决策记录
+            "Translation coverage": 翻译覆盖率
+  - autorefs
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Permanent link to this section
+      toc_depth: 4
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      normalize_issue_symbols: true
+
+nav:
+  - Home: en/index.md
+  - Getting started:
+    - Installation: en/getting-started/installation.md
+    - Quick start: en/getting-started/quickstart.md
+    - Configuration: en/getting-started/configuration.md
+  - Architecture:
+    - Overview: en/architecture.md
+    - Data model: en/assets/data-model.md
+    - Search pipeline: en/search.md
+    - ADRs:
+      - Overview: en/adr/README.md
+      - "001 — Pydantic v2 + ClassVar Depends": en/adr/001-pydantic-v2-and-classvar-depends.md
+      - "002 — Qdrant for vector search": en/adr/002-qdrant-vector-search.md
+      - "003 — JWT (HS256) over RS256": en/adr/003-jwt-hs256.md
+      - "004 — JSONB for skills.content and compositions.items": en/adr/004-jsonb-flexible-content.md
+      - "005 — Poetry for backend, npm for frontend": en/adr/005-polyglob-packaging.md
+      - "006 — Next.js 15 App Router": en/adr/006-nextjs-app-router.md
+      - "007 — Single-tenant v1, multi-tenant v1.2": en/adr/007-tenancy-model.md
+      - "008 — Failure-fast secret validation": en/adr/008-fail-fast-secrets.md
+      - "009 — OWASP security headers middleware": en/adr/009-owasp-headers.md
+      - "010 — Pre-commit hooks + conventional commits": en/adr/010-pre-commit-and-commits.md
+  - Operations:
+    - Overview: en/operations/index.md
+    - Deployment: en/deployment.md
+    - Troubleshooting: en/troubleshooting.md
+    - Security: en/operations/security.md
+    - Backup & restore: en/operations/backup.md
+    - Observability: en/operations/observability.md
+  - Development:
+    - Setup: en/development.md
+    - Adding an API endpoint: en/development/adding-endpoint.md
+    - Adding a frontend page: en/development/adding-page.md
+    - Database migrations: en/development/migrations.md
+    - Testing: en/development/testing.md
+    - Release process: en/development/release.md
+  - Reference:
+    - Configuration reference: en/reference/configuration.md
+    - CLI: en/reference/cli.md
+    - Environment variables: en/reference/environment.md
+    - HTTP status codes: en/reference/http-status-codes.md
+  - SDKs:
+    - Overview: en/sdks/README.md
+    - Python: en/sdks/python.md
+    - TypeScript: en/sdks/typescript.md
+  - Examples:
+    - Overview: en/examples/index.md
+    - REST (curl + .http): en/examples/rest.md
+    - Python: en/examples/python.md
+    - TypeScript: en/examples/typescript.md
+    - Postman: en/examples/postman.md
+  - Community:
+    - Overview: en/community/index.md
+    - Contributing: en/community/contributing.md
+    - Code of conduct: en/community/code-of-conduct.md
+    - FAQ: en/community/faq.md
+    - Roadmap: en/community/roadmap.md
+    - Changelog: en/community/changelog.md
+    - Troubleshooting (short): en/community/troubleshooting-short.md
+
+validation:
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: ignore
+  nav:
+    omitted_files: ignore
+    not_found: warn
+    absolute_links: ignore
