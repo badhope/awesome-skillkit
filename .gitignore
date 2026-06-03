@@ -10,12 +10,22 @@ dist/
 build/
 
 # Environment variables
+# .env in any directory is local-only; only .env.example (the template)
+# ever leaves the repo. The double-star form catches the backend's
+# `backend/.env` which the bare `.env` pattern would miss.
 .env
+**/.env
 .env.local
+**/.env.local
 .env.development.local
 .env.test.local
 .env.production.local
 .env.*.local
+**.env
+.env.example
+!.env.example
+**/.env.example
+!**/.env.example
 
 # Secrets and credentials - NEVER commit
 *.pem
