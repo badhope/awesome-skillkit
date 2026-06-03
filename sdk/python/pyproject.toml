@@ -15,7 +15,7 @@ keywords = ["ai", "skill", "llm", "agent", "api-client"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-httpx = "^0.27.0"
+httpx = ">=0.27,<0.29"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.0"
