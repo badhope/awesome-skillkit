@@ -328,7 +328,7 @@ skills:
       understanding, structured output, and the closest thing to canonical 
       Claude patterns.
     summary_zh: Anthropic 官方 notebook 合集：工具调用、PDF 理解、结构化输出，最接近"Claude 官方范式"。
-    stars: 45131
+    stars: 45159
     license: MIT
     added: 2026-06-04
     subgroup: us-frontier-labs
@@ -347,7 +347,7 @@ skills:
     summary: "OpenAI's official examples: structured outputs, function calling, RAG,
       evals, embeddings. The reference for OpenAI-specific patterns."
     summary_zh: OpenAI 官方示例：结构化输出、函数调用、RAG、评估、embedding。OpenAI 范式的参考。
-    stars: 74073
+    stars: 74084
     license: MIT
     added: 2026-06-04
     subgroup: us-frontier-labs
@@ -367,11 +367,11 @@ skills:
       embeddings, RAG, agent examples."
     summary_zh: Google 官方 Gemini / PaLM on Vertex AI 
       示例：图像生成、embedding、RAG、agent。
-    stars: 17001
+    stars: 17003
     license: Apache-2.0
     added: 2026-06-04
     subgroup: us-frontier-labs
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: awesome-chatgpt-prompts
     title: Awesome ChatGPT Prompts
     title_zh: Awesome ChatGPT Prompt
@@ -385,10 +385,10 @@ skills:
     summary: A curated collection of high-quality prompts for ChatGPT — the 
       original prompt collection.
     summary_zh: ChatGPT 高质量 prompt 精选集——最早的 prompt 集合。
-    stars: 163451
+    stars: 163456
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: system-prompts-leaks
     title: System Prompts Leaks
     title_zh: 系统 Prompt 泄露
@@ -402,10 +402,10 @@ skills:
     summary: A collection of leaked system prompts for ChatGPT, Claude, Gemini, 
       and other production LLM apps.
     summary_zh: ChatGPT、Claude、Gemini 等生产 LLM 应用的系统 prompt 泄露集合。
-    stars: 41426
+    stars: 41454
     license: CC0-1.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: langchain
     title: LangChain
     title_zh: LangChain
@@ -421,11 +421,11 @@ skills:
     summary: The most widely adopted LLM application framework. Chains, agents, 
       RAG, tool use, integrations. Both Python and TypeScript.
     summary_zh: 采用最广的 LLM 应用框架。Chain、agent、RAG、工具调用、集成；Python 和 TypeScript 双版本。
-    stars: 138833
+    stars: 138861
     license: MIT
     added: 2026-06-04
     subgroup: general-purpose
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: langgraph
     title: LangGraph
     title_zh: LangGraph
@@ -439,7 +439,7 @@ skills:
     summary: LangChain's graph-based agent orchestration — stateful, cyclic, 
       controllable.
     summary_zh: LangChain 的图式 agent 编排——有状态、循环、可控。
-    stars: 34187
+    stars: 34246
     license: MIT
     added: '2026-06-06'
     subgroup: lightweight
@@ -456,7 +456,7 @@ skills:
       - agents
     summary: Microsoft AutoGen — multi-agent framework with tools.
     summary_zh: Microsoft AutoGen——带工具的多 agent 框架。
-    stars: 58777
+    stars: 58798
     license: CC-BY-4.0
     added: '2026-06-06'
     subgroup: multi-agent
@@ -472,11 +472,11 @@ skills:
       - agents
     summary: CrewAI — multi-agent orchestration with tool use.
     summary_zh: CrewAI——带工具的多 agent 编排。
-    stars: 53074
+    stars: 53126
     license: MIT
     added: '2026-06-06'
     subgroup: multi-agent
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: smolagents
     title: smolagents
     title_zh: smolagents
@@ -506,11 +506,11 @@ skills:
     summary: Agno (formerly Phidata) — fast multi-agent framework, 
       model-agnostic.
     summary_zh: Agno（前身 Phidata）——快速多 agent 框架，模型无关。
-    stars: 40587
+    stars: 40602
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: general-purpose
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: llama-index
     title: LlamaIndex
     title_zh: LlamaIndex
@@ -525,7 +525,7 @@ skills:
     summary: A data framework for LLM applications. Strong on ingestion, 
       indexing, and querying private data. The RAG-first toolkit.
     summary_zh: LLM 应用的数据框架。专注 ingestion、indexing、查询私有数据。RAG 优先的工具集。
-    stars: 50006
+    stars: 50028
     license: MIT
     added: 2026-06-04
     subgroup: rag-frameworks
@@ -543,11 +543,11 @@ skills:
     summary: Qdrant — Rust-based vector database with rich filtering + payload 
       indexing.
     summary_zh: Qdrant——Rust 写的向量数据库，含丰富过滤与 payload 索引。
-    stars: 31925
+    stars: 31959
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vector-stores
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: chroma
     title: Chroma
     title_zh: Chroma
@@ -560,11 +560,11 @@ skills:
       - embedding
     summary: Chroma — the AI-native open-source embedding database.
     summary_zh: Chroma——AI 原生的开源 embedding 数据库。
-    stars: 28285
+    stars: 28313
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vector-stores
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: weaviate
     title: Weaviate
     title_zh: Weaviate
@@ -578,7 +578,7 @@ skills:
     summary: Weaviate — the AI-native vector database with modules and 
       operators.
     summary_zh: Weaviate——AI 原生向量库，含模块与算子。
-    stars: 16294
+    stars: 16302
     license: BSD-3-Clause
     added: '2026-06-06'
     subgroup: vector-stores
@@ -595,7 +595,7 @@ skills:
       - embeddings
     summary: txtai — semantic search + RAG + workflows. Built on embeddings.
     summary_zh: txtai——语义搜索 + RAG + 工作流。基于 embedding。
-    stars: 12640
+    stars: 12642
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: rag-frameworks
@@ -611,11 +611,11 @@ skills:
       - eval
     summary: Promptfoo — prompt eval + testing.
     summary_zh: Promptfoo——prompt 评估 + 测试。
-    stars: 22018
+    stars: 22034
     license: MIT
     added: '2026-06-06'
     subgroup: eval-frameworks
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: langfuse
     title: Langfuse
     title_zh: Langfuse
@@ -627,11 +627,11 @@ skills:
       - tracing
     summary: Langfuse — LLM observability.
     summary_zh: Langfuse——LLM 可观测性。
-    stars: 28689
+    stars: 28746
     license: MIT
     added: '2026-06-06'
     subgroup: observability-and-tracking
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: deepeval
     title: DeepEval
     title_zh: DeepEval
@@ -643,11 +643,11 @@ skills:
       - eval
     summary: DeepEval — LLM evaluation framework.
     summary_zh: DeepEval——LLM 评估框架。
-    stars: 15999
+    stars: 16034
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: eval-frameworks
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: braintrust
     title: Braintrust (autoevals)
     title_zh: Braintrust（autoevals）
@@ -680,7 +680,7 @@ skills:
     summary: Instructor — the most popular structured-output library for LLMs. 
       Pydantic + retries + validation.
     summary_zh: Instructor——最流行的 LLM 结构化输出库。Pydantic + 重试 + 校验。
-    stars: 13122
+    stars: 13128
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -695,7 +695,7 @@ skills:
       - structured
     summary: Outlines — structured generation + tool calling.
     summary_zh: Outlines——结构化生成 + 工具调用。
-    stars: 13944
+    stars: 13946
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -710,7 +710,7 @@ skills:
       - structured
     summary: Guidance — control LLM output + tool calls.
     summary_zh: Guidance——控制 LLM 输出 + 工具调用。
-    stars: 21487
+    stars: 21489
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-21'
@@ -727,7 +727,7 @@ skills:
     summary: DSPy — Stanford NLP's framework for compiling declarative LLM 
       pipelines (automatic prompt optimization).
     summary_zh: DSPy——斯坦福 NLP 框架，把声明式 LLM pipeline 编译为自动 prompt 优化。
-    stars: 34918
+    stars: 34942
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -747,7 +747,7 @@ skills:
       scripts, and example notebooks for the 671B (37B active) model.
     summary_zh: DeepSeek 官方 V3 发布仓库。包含 MoE 权重、推理脚本，以及 671B（激活 37B）模型的示例 
       notebook。
-    stars: 103718
+    stars: 103722
     license: MIT
     added: 2026-06-04
     subgroup: chinese-labs
@@ -768,7 +768,7 @@ skills:
       with a built-in thinking/non-thinking hybrid mode. Apache-2.0.
     summary_zh: 阿里 Qwen3 系列。从 0.6B 到 235B 的 dense 与 MoE 变体；内置 thinking / 
       non-thinking 混合推理模式；Apache-2.0。
-    stars: 27290
+    stars: 27292
     license: Apache-2.0
     added: 2026-06-04
     subgroup: chinese-labs
@@ -789,7 +789,7 @@ skills:
       code interpreter, RAG, Chrome extension — and example apps.
     summary_zh: 阿里 Qwen 团队官方 agent 框架。function calling、MCP、code 
       interpreter、RAG、Chrome 扩展；带示例应用。
-    stars: 16494
+    stars: 16497
     license: Apache-2.0
     added: 2026-06-04
     subgroup: chinese-labs
@@ -810,7 +810,7 @@ skills:
       function calling, and 26-language support out of the box.
     summary_zh: 智谱 AI 的 GLM-4 开源权重（9B base + chat）。支持 1M 长上下文、function 
       calling、26 种语言。
-    stars: 7067
+    stars: 7066
     license: Apache-2.0
     added: 2026-06-04
     subgroup: chinese-labs
@@ -830,7 +830,7 @@ skills:
     summary: "Moonshot's K2 release: long-context, tool-using models with code & agent
       training. Sibling to the consumer Kimi chat app."
     summary_zh: 月之暗面 K2 发布。长上下文、工具调用、专为 code & agent 训练。与消费版 Kimi 同源。
-    stars: 10838
+    stars: 10842
     license: Modified-MIT
     added: 2026-06-04
     subgroup: chinese-labs
@@ -850,7 +850,7 @@ skills:
       use, with xtuner / lmdeploy companion repos.
     summary_zh: 上海 AI Lab 的 InternLM 系列（7B / 20B）。长上下文、工具调用；带 xtuner / lmdeploy 
       配套仓库。
-    stars: 7217
+    stars: 7218
     license: Apache-2.0
     added: 2026-06-04
     subgroup: chinese-labs
@@ -924,7 +924,7 @@ skills:
     summary: "xAI's open-weights Grok-1: a 314B MoE model with 86B active params.
       The first major release from xAI on GitHub."
     summary_zh: xAI 开源的 Grok-1：314B MoE（86B 激活）。xAI 在 GitHub 上的首次重大发布。
-    stars: 51680
+    stars: 51681
     license: Apache-2.0
     added: 2026-06-04
     subgroup: open-source-models
@@ -985,7 +985,7 @@ skills:
     summary: The most-cited prompt engineering guide. Theory + patterns + papers
       + notebooks. Treat as the canonical reference.
     summary_zh: 引用最多的 prompt engineering 指南。理论 + 模式 + 论文 + notebook。权威参考。
-    stars: 75413
+    stars: 75446
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-11'
@@ -1035,7 +1035,7 @@ skills:
       - microsoft
     summary: Semantic Kernel — tool orchestration SDK.
     summary_zh: Semantic Kernel——工具编排 SDK。
-    stars: 28079
+    stars: 28083
     license: MIT
     added: '2026-06-06'
     subgroup: general-purpose
@@ -1051,11 +1051,11 @@ skills:
       - deepset
     summary: Haystack — pipelines with tool-using components.
     summary_zh: Haystack——含工具组件的 pipeline。
-    stars: 25496
+    stars: 25502
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: general-purpose
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pydantic-ai
     title: PydanticAI
     title_zh: PydanticAI
@@ -1069,11 +1069,11 @@ skills:
     summary: PydanticAI — Python agent framework with Pydantic validation 
       throughout.
     summary_zh: PydanticAI——贯穿 Pydantic 校验的 Python agent 框架。
-    stars: 17619
+    stars: 17644
     license: MIT
     added: '2026-06-06'
     subgroup: general-purpose
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: letta
     title: Letta
     title_zh: Letta
@@ -1086,7 +1086,7 @@ skills:
       - agents
     summary: Letta (formerly MemGPT) — agents with stateful, long-term memory.
     summary_zh: Letta（前身 MemGPT）——带状态、长期记忆的 agent。
-    stars: 23215
+    stars: 23225
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: general-purpose
@@ -1102,11 +1102,11 @@ skills:
       - agent
     summary: Open Interpreter — code execution agent.
     summary_zh: Open Interpreter——代码执行 agent。
-    stars: 63853
+    stars: 63845
     license: AGPL-3.0
     added: '2026-06-06'
     subgroup: code-and-browser
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-08'
   - slug: aider
     title: Aider
     title_zh: Aider
@@ -1118,7 +1118,7 @@ skills:
       - cli
     summary: Aider — AI pair programming in terminal.
     summary_zh: Aider——终端中的 AI 配对编程。
-    stars: 45900
+    stars: 45914
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: code-and-browser
@@ -1134,11 +1134,11 @@ skills:
       - tools
     summary: AutoGPT — autonomous tool-using agent.
     summary_zh: AutoGPT——带工具的自主 agent。
-    stars: 184854
+    stars: 184857
     license: MIT
     added: '2026-06-06'
     subgroup: code-and-browser
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: metagpt
     title: MetaGPT
     title_zh: MetaGPT
@@ -1152,7 +1152,7 @@ skills:
     summary: MetaGPT — multi-agent framework encoding SOPs (Standard Operating 
       Procedures).
     summary_zh: MetaGPT——将 SOP（标准操作流程）编码为多 agent 框架。
-    stars: 68642
+    stars: 68661
     license: MIT
     added: '2026-06-06'
     subgroup: multi-agent
@@ -1170,11 +1170,11 @@ skills:
     summary: Milvus — the most popular open-source vector database. Built for 
       scale.
     summary_zh: Milvus——最流行的开源向量库。为规模而生。
-    stars: 44682
+    stars: 44696
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vector-stores
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: faiss
     title: Faiss
     title_zh: Faiss
@@ -1188,11 +1188,11 @@ skills:
     summary: Faiss — Meta's library for efficient similarity search and 
       clustering of dense vectors.
     summary_zh: Faiss——Meta 高效的稠密向量相似度搜索与聚类库。
-    stars: 40233
+    stars: 40235
     license: MIT
     added: '2026-06-06'
     subgroup: vector-stores
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pgvector
     title: pgvector
     title_zh: pgvector
@@ -1205,7 +1205,7 @@ skills:
       - vector
     summary: pgvector — open-source vector similarity search for Postgres.
     summary_zh: pgvector——Postgres 的开源向量相似度搜索。
-    stars: 21661
+    stars: 21670
     license: PostgreSQL
     added: '2026-06-06'
     subgroup: vector-stores
@@ -1223,11 +1223,11 @@ skills:
     summary: LanceDB — serverless, columnar vector database. Disk-based, 
       multi-modal.
     summary_zh: LanceDB——无服务器、列式向量数据库。基于磁盘、多模态。
-    stars: 10537
+    stars: 10547
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vector-stores
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pinecone
     title: Pinecone (Py)
     title_zh: Pinecone（Py）
@@ -1240,7 +1240,7 @@ skills:
       - vector
     summary: Pinecone's Python client — fully managed vector database.
     summary_zh: Pinecone Python 客户端——全托管向量数据库。
-    stars: 445
+    stars: 446
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vector-stores
@@ -1256,7 +1256,7 @@ skills:
       - eval
     summary: Ragas — RAG evaluation.
     summary_zh: Ragas——RAG 评估。
-    stars: 14287
+    stars: 14299
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: eval-frameworks
@@ -1275,7 +1275,7 @@ skills:
     summary: Evaluation & instrumentation for LLM apps. Feedback functions plug 
       into chains; comes with RAG-specific metrics.
     summary_zh: LLM 应用的评估与插桩。feedback function 接到 chain 里；带 RAG 专用的指标。
-    stars: 3364
+    stars: 3365
     license: MIT
     added: 2026-06-04
     subgroup: observability-and-tracking
@@ -1295,11 +1295,11 @@ skills:
       drift & relevance analysis. OpenTelemetry-native.
     summary_zh: Arize 的开源 LLM observability。tracing、评估、漂移 & 相关性分析。原生支持 
       OpenTelemetry。
-    stars: 10038
+    stars: 10052
     license: Apache-2.0
     added: 2026-06-04
     subgroup: observability-and-tracking
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mlflow
     title: MLflow
     title_zh: MLflow
@@ -1311,11 +1311,11 @@ skills:
       - tracking
     summary: MLflow — training tracking.
     summary_zh: MLflow——训练跟踪。
-    stars: 26359
+    stars: 26374
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: observability-and-tracking
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: inspect-ai
     title: Inspect AI
     title_zh: Inspect AI
@@ -1327,7 +1327,7 @@ skills:
       - uk
     summary: UK AISI Inspect — agent/eval framework.
     summary_zh: 英国 AISI Inspect——agent 与评估框架。
-    stars: 2174
+    stars: 2176
     license: MIT
     added: '2026-06-06'
     subgroup: eval-frameworks
@@ -1343,7 +1343,7 @@ skills:
       - eleuther
     summary: The EleutherAI eval harness — the standard for LLM evals.
     summary_zh: EleutherAI 评估 harness——LLM 评估标准。
-    stars: 12876
+    stars: 12885
     license: MIT
     added: '2026-06-06'
     subgroup: llm-benchmarks
@@ -1360,10 +1360,10 @@ skills:
       - cuda
     summary: SGLang — fast LLM serving framework.
     summary_zh: SGLang——快速 LLM serving 框架。
-    stars: 28892
+    stars: 28898
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: vllm
     title: vLLM
     title_zh: vLLM
@@ -1376,10 +1376,10 @@ skills:
       - cuda
     summary: vLLM — high-throughput LLM inference engine.
     summary_zh: vLLM——高吞吐 LLM 推理引擎。
-    stars: 82242
+    stars: 82304
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tensorrt-llm
     title: TensorRT-LLM
     title_zh: TensorRT-LLM
@@ -1392,10 +1392,10 @@ skills:
       - inference
     summary: NVIDIA TensorRT-LLM — production LLM inference.
     summary_zh: NVIDIA TensorRT-LLM——生产级 LLM 推理。
-    stars: 13828
+    stars: 13835
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: triton-inference-server
     title: Triton Inference Server
     title_zh: Triton 推理服务
@@ -1408,10 +1408,10 @@ skills:
       - inference
     summary: NVIDIA Triton Inference Server.
     summary_zh: NVIDIA Triton 推理服务。
-    stars: 10737
+    stars: 10738
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: llama-cpp
     title: llama.cpp
     title_zh: llama.cpp
@@ -1426,10 +1426,10 @@ skills:
     summary: The reference C++ implementation for running LLMs locally. GGUF, 
       quantization, Apple Silicon, no GPU required.
     summary_zh: 本地跑 LLM 的参考 C++ 实现。GGUF、量化、Apple Silicon，不需要 GPU。
-    stars: 115608
+    stars: 115705
     license: MIT
     added: 2026-06-04
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: ollama
     title: Ollama
     title_zh: Ollama
@@ -1442,10 +1442,10 @@ skills:
       - inference
     summary: Ollama — local LLM runner.
     summary_zh: Ollama——本地 LLM 运行器。
-    stars: 173602
+    stars: 173661
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: lmdeploy
     title: LMDeploy
     title_zh: LMDeploy
@@ -1457,10 +1457,10 @@ skills:
       - internlm
     summary: LMDeploy — InternLM LLM serving toolkit.
     summary_zh: LMDeploy——InternLM LLM serving 工具。
-    stars: 7885
+    stars: 7889
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: lit-llama
     title: lit-llama
     title_zh: lit-llama
@@ -1488,7 +1488,7 @@ skills:
       - dpo
     summary: LLaMA-Factory — easy LLM fine-tuning.
     summary_zh: LLaMA-Factory——易用 LLM 微调。
-    stars: 71996
+    stars: 72025
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -1504,10 +1504,10 @@ skills:
       - dpo
     summary: Axolotl — LLM fine-tuning framework.
     summary_zh: Axolotl——LLM 微调框架。
-    stars: 12024
+    stars: 12027
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: unsloth
     title: Unsloth
     title_zh: Unsloth
@@ -1520,10 +1520,10 @@ skills:
       - sft
     summary: Unsloth — 2x faster LLM fine-tuning.
     summary_zh: Unsloth——2 倍速 LLM 微调。
-    stars: 66058
+    stars: 66101
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: ms-swift
     title: MS-Swift
     title_zh: MS-Swift
@@ -1539,10 +1539,10 @@ skills:
       full SFT/DPO/RLHF pipeline. Multimodal fine-tuning supported.
     summary_zh: ModelScope 训练框架。300+ 模型、100+ 数据集格式，完整 SFT/DPO/RLHF 
       pipeline；支持多模态微调。
-    stars: 14437
+    stars: 14445
     license: Apache-2.0
     added: 2026-06-04
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: trl
     title: TRL
     title_zh: TRL
@@ -1554,10 +1554,10 @@ skills:
       - rlhf
     summary: HuggingFace TRL — RLHF/DPO for alignment.
     summary_zh: HuggingFace TRL——对齐用 RLHF/DPO。
-    stars: 18577
+    stars: 18584
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: peft
     title: PEFT
     title_zh: PEFT
@@ -1570,7 +1570,7 @@ skills:
       - huggingface
     summary: HuggingFace PEFT — parameter-efficient fine-tuning.
     summary_zh: HuggingFace PEFT——参数高效微调。
-    stars: 21248
+    stars: 21253
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -1585,10 +1585,10 @@ skills:
       - nvidia
     summary: NVIDIA NeMo Guardrails.
     summary_zh: NVIDIA NeMo Guardrails。
-    stars: 6379
+    stars: 6387
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: guardrails-ai
     title: Guardrails AI
     title_zh: Guardrails AI
@@ -1600,7 +1600,7 @@ skills:
       - validation
     summary: Guardrails AI — output validation framework.
     summary_zh: Guardrails AI——输出验证框架。
-    stars: 6980
+    stars: 6983
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -1634,7 +1634,7 @@ skills:
       - servers
     summary: Reference MCP server implementations.
     summary_zh: MCP 参考 server 实现。
-    stars: 86905
+    stars: 86946
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -1656,7 +1656,7 @@ skills:
     stars: 9235
     license: Apache-2.0
     added: 2026-06-04
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-09'
   - slug: composio
     title: Composio
     title_zh: Composio
@@ -1672,10 +1672,10 @@ skills:
       Slack, Notion, Linear) via a unified MCP-style API.
     summary_zh: 给 AI agent 用的集成平台。100+ SaaS 应用（GitHub、Slack、Notion、Linear）走统一的 
       MCP 风格 API。
-    stars: 28689
+    stars: 28699
     license: MIT
     added: 2026-06-04
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: langflow
     title: Langflow
     title_zh: Langflow
@@ -1687,10 +1687,10 @@ skills:
       - llm-app
     summary: Langflow — flow UI for LLM.
     summary_zh: Langflow——LLM 流程 UI。
-    stars: 149413
+    stars: 149438
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: e2b
     title: E2B
     title_zh: E2B
@@ -1704,10 +1704,10 @@ skills:
     summary: E2B — open-source secure sandboxed cloud environments for AI 
       agents.
     summary_zh: E2B——为 AI agent 提供安全的开源沙盒云环境。
-    stars: 12514
+    stars: 12509
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: dify
     title: Dify
     title_zh: Dify
@@ -1719,11 +1719,11 @@ skills:
       - llm-app
     summary: Dify — LLM app platform.
     summary_zh: Dify——LLM 应用平台。
-    stars: 144435
+    stars: 144524
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: low-code-platforms
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fastgpt
     title: FastGPT
     title_zh: FastGPT
@@ -1738,11 +1738,11 @@ skills:
     summary: Knowledge-base Q&A platform built on RAG. Visual pipeline, dataset 
       mgmt, agent workflows. Production-deployed in many CN companies.
     summary_zh: 基于 RAG 的知识库问答平台。可视化 pipeline、数据集管理、agent workflow；许多国内公司生产部署。
-    stars: 28313
+    stars: 28320
     license: Apache-2.0
     added: 2026-06-04
     subgroup: low-code-platforms
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: coze-studio
     title: Coze Studio
     title_zh: Coze Studio
@@ -1757,7 +1757,7 @@ skills:
     summary: ByteDance's open-source agent platform. Visual builder, plugin 
       marketplace, multi-channel deploy (Web, Feishu, Douyin).
     summary_zh: 字节跳动开源的 agent 平台。可视化构建、插件市场、多渠道部署（Web、飞书、抖音）。
-    stars: 20948
+    stars: 20954
     license: Apache-2.0
     added: 2026-06-04
     subgroup: low-code-platforms
@@ -1773,11 +1773,11 @@ skills:
       - llm-app
     summary: Flowise — UI for LLM.
     summary_zh: Flowise——LLM UI。
-    stars: 53431
+    stars: 53427
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: low-code-platforms
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: n8n
     title: n8n
     title_zh: n8n
@@ -1789,11 +1789,11 @@ skills:
       - workflow
     summary: n8n — workflow automation.
     summary_zh: n8n——工作流自动化。
-    stars: 191616
+    stars: 191702
     license: Sustainable-Use
     added: '2026-06-06'
     subgroup: low-code-platforms
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: lobe-chat
     title: Lobe Chat
     title_zh: Lobe Chat
@@ -1805,11 +1805,11 @@ skills:
       - ui
     summary: Lobe Chat — LLM frontend.
     summary_zh: Lobe Chat——LLM 前端。
-    stars: 78358
+    stars: 78393
     license: MIT
     added: '2026-06-06'
     subgroup: chat-uis
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: open-webui
     title: Open WebUI
     title_zh: Open WebUI
@@ -1821,11 +1821,11 @@ skills:
       - frontend
     summary: Open WebUI — Ollama UI.
     summary_zh: Open WebUI——Ollama UI。
-    stars: 140646
+    stars: 140759
     license: BSD-3-Clause
     added: '2026-06-06'
     subgroup: chat-uis
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-08'
   - slug: librechat
     title: LibreChat
     title_zh: LibreChat
@@ -1837,11 +1837,11 @@ skills:
       - ui
     summary: LibreChat.
     summary_zh: LibreChat。
-    stars: 38654
+    stars: 38724
     license: MIT
     added: '2026-06-06'
     subgroup: chat-uis
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cherry-studio
     title: Cherry Studio
     title_zh: Cherry Studio
@@ -1856,11 +1856,11 @@ skills:
     summary: A polished desktop chat client for LLMs. Multi-provider, agent 
       workflows, RAG, knowledge bases. Native Chinese UX.
     summary_zh: 精致的 LLM 桌面聊天客户端。多供应商、agent workflow、RAG、知识库；中文体验原生。
-    stars: 47067
+    stars: 47113
     license: AGPL-3.0
     added: 2026-06-04
     subgroup: chat-uis
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: vercel-ai-sdk
     title: Vercel AI SDK
     title_zh: Vercel AI SDK
@@ -1876,10 +1876,10 @@ skills:
       agents, RSC. Works with Next.js, SvelteKit, Nuxt, etc.
     summary_zh: TS 优先的 AI 应用 
       SDK。streaming、tools、agents、RSC；Next.js、SvelteKit、Nuxt 等都能用。
-    stars: 24733
+    stars: 24748
     license: Apache-2.0
     added: 2026-06-04
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: continue
     title: Continue
     title_zh: Continue
@@ -1891,10 +1891,10 @@ skills:
       - ide
     summary: Continue — open-source AI code assistant.
     summary_zh: Continue——开源 AI 代码助手。
-    stars: 33609
+    stars: 33623
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cline
     title: Cline
     title_zh: Cline
@@ -1906,10 +1906,10 @@ skills:
       - vscode
     summary: Cline — VSCode AI agent.
     summary_zh: Cline——VSCode AI agent。
-    stars: 62926
+    stars: 62954
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tabby
     title: Tabby
     title_zh: Tabby
@@ -1922,7 +1922,7 @@ skills:
       - tools
     summary: Tabby — AI coding assistant with tools.
     summary_zh: Tabby——带工具的 AI 编程助手。
-    stars: 33573
+    stars: 33578
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-02'
@@ -1937,11 +1937,11 @@ skills:
       - ui
     summary: ComfyUI — node-based SD UI.
     summary_zh: ComfyUI——节点式 SD UI。
-    stars: 116213
+    stars: 116294
     license: GPL-3.0
     added: '2026-06-06'
     subgroup: image-generation
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: stable-diffusion-webui
     title: Stable Diffusion WebUI
     title_zh: Stable Diffusion WebUI
@@ -1956,7 +1956,7 @@ skills:
     summary: The classic WebUI for Stable Diffusion. Huge extension ecosystem, 
       well-documented. Still the community default.
     summary_zh: Stable Diffusion 经典 WebUI。庞大的扩展生态、文档齐全；仍是社区默认。
-    stars: 163551
+    stars: 163565
     license: AGPL-3.0
     added: 2026-06-04
     subgroup: image-generation
@@ -1972,7 +1972,7 @@ skills:
       - vlm
     summary: LLaVA — visual instruction tuning.
     summary_zh: LLaVA——视觉指令微调。
-    stars: 24864
+    stars: 24866
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vision-language
@@ -2003,7 +2003,7 @@ skills:
       - qwen2-vl
     summary: Qwen2-VL.
     summary_zh: Qwen2-VL。
-    stars: 19335
+    stars: 19340
     license: Apache-2.0
     added: '2026-06-06'
     subgroup: vision-language
@@ -2036,7 +2036,7 @@ skills:
       - asr
     summary: OpenAI Whisper — ASR.
     summary_zh: OpenAI Whisper——语音识别。
-    stars: 102196
+    stars: 102260
     license: MIT
     added: '2026-06-06'
     subgroup: speech-asr
@@ -2051,7 +2051,7 @@ skills:
       - faster-whisper
     summary: Faster-Whisper — CTranslate2.
     summary_zh: Faster-Whisper——CTranslate2。
-    stars: 23476
+    stars: 23497
     license: MIT
     added: '2026-06-06'
     subgroup: speech-asr
@@ -2070,11 +2070,11 @@ skills:
     summary: Alibaba DAMO Academy's speech recognition toolkit. Strong on 
       Chinese, Mandarin dialects, industrial deployment.
     summary_zh: 阿里达摩院语音识别工具包。中文、方言、工业部署都很强。
-    stars: 17463
+    stars: 17517
     license: MIT
     added: 2026-06-04
     subgroup: speech-asr
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: helicone
     title: Helicone
     title_zh: Helicone
@@ -2086,7 +2086,7 @@ skills:
       - tracing
     summary: Helicone — LLM observability.
     summary_zh: Helicone——LLM 可观测性。
-    stars: 5791
+    stars: 5796
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -2116,10 +2116,10 @@ skills:
       - tracing
     summary: OpenLLMetry — OpenTelemetry for LLMs.
     summary_zh: OpenLLMetry——LLM 的 OpenTelemetry。
-    stars: 7180
+    stars: 7183
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-08'
   - slug: openlit
     title: OpenLIT
     title_zh: OpenLIT
@@ -2134,10 +2134,10 @@ skills:
     summary: OpenTelemetry-native observability for AI stacks. GPU monitoring, 
       prompt security, and cost analytics.
     summary_zh: AI 技术栈的 OpenTelemetry 原生可观测性。GPU 监控、prompt 安全、成本分析。
-    stars: 2507
+    stars: 2509
     license: Apache-2.0
     added: 2026-06-04
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mem0
     title: Mem0
     title_zh: Mem0
@@ -2149,10 +2149,10 @@ skills:
       - memory
     summary: Mem0 — universal memory layer.
     summary_zh: Mem0——通用记忆层。
-    stars: 58062
+    stars: 58137
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: zep
     title: Zep
     title_zh: Zep
@@ -2164,7 +2164,7 @@ skills:
       - memory
     summary: Zep — long-term memory for assistants.
     summary_zh: Zep——助手长期记忆。
-    stars: 4652
+    stars: 4654
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-09'
@@ -2182,7 +2182,7 @@ skills:
     summary: A massive, well-organized list of LLM papers, courses, tools, 
       datasets. The 'read everything' list.
     summary_zh: 一份海量、组织得很好的 LLM 论文、课程、工具、数据集清单。"读完它"清单。
-    stars: 26913
+    stars: 26918
     license: CC0-1.0
     added: 2026-06-04
     pushed_at: '2025-07-31'
@@ -2200,7 +2200,7 @@ skills:
     summary: 'The community-curated list of LangChain resources: tools, integrations,
       examples, courses, papers.'
     summary_zh: 社区维护的 LangChain 资源清单：工具、集成、示例、课程、论文。
-    stars: 9393
+    stars: 9395
     license: CC0-1.0
     added: 2026-06-04
     pushed_at: '2026-04-26'
@@ -2218,7 +2218,7 @@ skills:
     summary: A curated list of 100+ AI agents. Sorted by use case (coding, 
       research, customer support, ...).
     summary_zh: 100+ AI agent 精选清单。按用例分类（coding、research、客服 ...）。
-    stars: 28212
+    stars: 28222
     license: MIT
     added: 2026-06-04
     pushed_at: '2025-02-26'
@@ -2236,7 +2236,7 @@ skills:
     summary: Curated papers + tools + courses + tutorials for prompt 
       engineering. A learning path more than a reference.
     summary_zh: prompt engineering 的精选论文 + 工具 + 课程 + 教程。学习路径大于参考手册。
-    stars: 6015
+    stars: 6016
     license: Apache-2.0
     added: 2026-06-04
     pushed_at: '2026-06-08'
@@ -2254,7 +2254,7 @@ skills:
     summary: A Python framework to build production chat UIs. Async-first, 
       observability hooks, custom actions.
     summary_zh: 用于构建生产聊天 UI 的 Python 框架。async 优先、可观测性 hook、自定义 action。
-    stars: 12188
+    stars: 12192
     license: Apache-2.0
     added: 2026-06-04
     subgroup: ui-frameworks
@@ -2274,11 +2274,11 @@ skills:
       Now LLM-native with chat & tool UIs.
     summary_zh: 最简单的 ML 模型 demo 方式。3 行 Python 转 web UI；现在原生支持 LLM chat & tool 
       UI。
-    stars: 42848
+    stars: 42860
     license: Apache-2.0
     added: 2026-06-04
     subgroup: ui-frameworks
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: streamlit
     title: Streamlit
     title_zh: Streamlit
@@ -2293,11 +2293,11 @@ skills:
     summary: Turn Python scripts into shareable web apps. The default for 
       data-app demos. LLM-chat components included.
     summary_zh: 把 Python 脚本变成可分享的 web app。数据 app demo 的默认；带 LLM chat 组件。
-    stars: 44879
+    stars: 44893
     license: Apache-2.0
     added: 2026-06-04
     subgroup: ui-frameworks
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: browser-use
     title: browser-use
     title_zh: browser-use
@@ -2309,7 +2309,7 @@ skills:
       - agent
     summary: browser-use — AI browser agent.
     summary_zh: browser-use——AI 浏览器 agent。
-    stars: 97775
+    stars: 97886
     license: MIT
     added: '2026-06-06'
     subgroup: code-and-browser
@@ -2327,7 +2327,7 @@ skills:
     summary: Microsoft's library for typed structured output from LLMs 
       (TypeScript-first).
     summary_zh: 微软从 LLM 获取 TypeScript 类型化结构化输出的库。
-    stars: 8663
+    stars: 8664
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -2345,7 +2345,7 @@ skills:
     summary: A self-instruct dataset + training pipeline for instruction tuning.
       Open-source GPT-3.5-style data.
     summary_zh: 自指令数据集 + 训练 pipeline，用于指令微调；开源的 GPT-3.5 风格数据。
-    stars: 1052
+    stars: 1051
     license: Apache-2.0
     added: 2026-06-04
     pushed_at: '2024-03-07'
@@ -2363,7 +2363,7 @@ skills:
     summary: "Datawhale's open-source tutorial: how to fine-tune & deploy 30+ open
       LLMs. The best CN community entry point."
     summary_zh: Datawhale 开源教程：30+ 开源 LLM 的微调与部署。中文社区最佳入门。
-    stars: 30795
+    stars: 30805
     license: Apache-2.0
     added: 2026-06-04
     subgroup: chinese-labs
@@ -2382,7 +2382,7 @@ skills:
     summary: 'A Chinese open-source project: talk to your database in natural language.
       SQL agents + knowledge base + RAG.'
     summary_zh: 国内开源项目：用自然语言与数据库对话。SQL agent + 知识库 + RAG。
-    stars: 18938
+    stars: 18949
     license: MIT
     added: 2026-06-04
     subgroup: low-code-platforms
@@ -2401,11 +2401,11 @@ skills:
     summary: "A Chinese community project: a structured methodology for writing 'good'
       prompts and role cards."
     summary_zh: 中文社区项目：写"好"prompt 和角色卡的结构化方法论。
-    stars: 12185
+    stars: 12189
     license: Apache-2.0
     added: 2026-06-04
     subgroup: lightweight
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: anthropic-sdk-python
     title: Anthropic SDK (Python)
     title_zh: Anthropic SDK（Python）
@@ -2421,7 +2421,7 @@ skills:
     summary: The official Python SDK for Claude. Use it for tool use, vision, 
       and the Messages API. Maintained by Anthropic.
     summary_zh: Anthropic 官方 Python SDK。工具调用、视觉、Messages API 都用它。Anthropic 自己维护。
-    stars: 3594
+    stars: 3600
     license: MIT
     added: '2026-06-05'
     pushed_at: '2026-06-07'
@@ -2441,10 +2441,10 @@ skills:
     summary: Anthropic's official SDK for building Claude-powered agents. The 
       reference architecture behind Claude Code.
     summary_zh: Anthropic 官方 Claude agent SDK。Claude Code 的参考实现。
-    stars: 7225
+    stars: 7233
     license: MIT
     added: '2026-06-05'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-08'
   - slug: gemini-cookbook
     title: Gemini Cookbook
     title_zh: Gemini Cookbook
@@ -2461,10 +2461,10 @@ skills:
       function calling, RAG, and the canonical Gemini patterns.
     summary_zh: Google 官方 Gemini API cookbook：多模态、function calling、RAG，最接近 
       Gemini 官方范式。
-    stars: 17387
+    stars: 17390
     license: Apache-2.0
     added: '2026-06-05'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: google-adk
     title: Google ADK (Python)
     title_zh: Google ADK（Python）
@@ -2479,10 +2479,10 @@ skills:
     summary: Google's Agent Development Kit — Python library for building ADK 
       agents.
     summary_zh: Google Agent Development Kit——构建 ADK agent 的 Python 库。
-    stars: 20027
+    stars: 20035
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: agent-starter-pack
     title: Agent Starter Pack (GCP)
     title_zh: Agent Starter Pack（GCP）
@@ -2499,10 +2499,10 @@ skills:
       Engine. One-command deploy from a notebook.
     summary_zh: Google Cloud 在 Vertex AI Agent Engine 上的生产级 agent 模板。Notebook 
       一行命令即可部署。
-    stars: 6456
+    stars: 6458
     license: Apache-2.0
     added: '2026-06-05'
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-09'
   - slug: generative-ai-python
     title: Google Generative AI Python SDK
     title_zh: Google 生成式 AI Python SDK
@@ -2538,7 +2538,7 @@ skills:
       AI Foundry, Semantic Kernel, and AutoGen.
     summary_zh: 微软 12 节课的 AI agent 教程：覆盖 Azure AI Foundry、Semantic 
       Kernel、AutoGen。
-    stars: 66721
+    stars: 66788
     license: MIT
     added: '2026-06-05'
     pushed_at: '2026-05-25'
@@ -2555,7 +2555,7 @@ skills:
       - graph
     summary: Microsoft GraphRAG.
     summary_zh: Microsoft GraphRAG。
-    stars: 33563
+    stars: 33586
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -2590,7 +2590,7 @@ skills:
       - hf
     summary: HuggingFace Datasets.
     summary_zh: HuggingFace 数据集。
-    stars: 21600
+    stars: 21604
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -2608,7 +2608,7 @@ skills:
     summary: Hugging Face's production LLM serving stack — used to power HF 
       Inference Endpoints.
     summary_zh: Hugging Face 生产级 LLM 推理栈——HF Inference Endpoints 的底层。
-    stars: 10860
+    stars: 10861
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-03-21'
@@ -2625,7 +2625,7 @@ skills:
       - code
     summary: DeepSeek-Coder.
     summary_zh: DeepSeek-Coder。
-    stars: 23640
+    stars: 23650
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-11-11'
@@ -2663,7 +2663,7 @@ skills:
     summary: Qwen2.5 — Alibaba's flagship open LLM family (0.5B to 72B), with 
       strong coding and math.
     summary_zh: Qwen2.5——阿里旗舰开源 LLM 系列（0.5B 到 72B），代码和数学强。
-    stars: 27290
+    stars: 27292
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-01-09'
@@ -2705,7 +2705,7 @@ skills:
     stars: 7648
     license: Apache-2.0
     added: '2026-06-05'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-08'
   - slug: amazon-q-developer-cli
     title: Amazon Q Developer CLI
     title_zh: Amazon Q Developer CLI
@@ -2720,7 +2720,7 @@ skills:
     summary: AWS's open-source agentic CLI for developers — code Q&A, 
       refactoring, and shell automation powered by Amazon Q.
     summary_zh: AWS 开源开发者 agentic CLI——代码问答、重构、shell 自动化，背后是 Amazon Q。
-    stars: 1965
+    stars: 1964
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-04-30'
@@ -2735,10 +2735,10 @@ skills:
       - nvidia
     summary: NVIDIA NeMo — distributed training framework.
     summary_zh: NVIDIA NeMo——分布式训练框架。
-    stars: 17324
+    stars: 17328
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: generative-ai-examples-nvidia
     title: Generative AI Examples (NVIDIA)
     title_zh: 生成式 AI 示例（NVIDIA）
@@ -2754,7 +2754,7 @@ skills:
     summary: NVIDIA's reference apps and notebooks for NeMo, TensorRT-LLM, and 
       NIM microservices.
     summary_zh: NVIDIA NeMo、TensorRT-LLM、NIM 微服务的参考应用与 notebook。
-    stars: 4057
+    stars: 4064
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-05-29'
@@ -2773,7 +2773,7 @@ skills:
       autodiff and GPU acceleration. From Apple's ML research team.
     summary_zh: Apple ML 框架，Apple Silicon 专用——类 NumPy API，自动微分 + GPU 加速。出自 Apple
       ML 研究团队。
-    stars: 26651
+    stars: 26707
     license: MIT
     added: '2026-06-05'
     pushed_at: '2026-06-08'
@@ -2792,7 +2792,7 @@ skills:
       Diffusion, and other reference apps for Apple Silicon.
     summary_zh: Apple 官方 MLX 示例——在 Apple Silicon 上微调 Llama、跑 Stable Diffusion 
       等参考实现。
-    stars: 8681
+    stars: 8687
     license: MIT
     added: '2026-06-05'
     subgroup: image-generation
@@ -2831,7 +2831,7 @@ skills:
     summary: Baidu's PaddleNLP — open-source LLM library with ERNIE models, used
       widely in Chinese industry. Trains, fine-tunes, and serves.
     summary_zh: 百度 PaddleNLP——开源 LLM 库，含 ERNIE 模型，中文工业界广泛使用。训练、微调、推理一体。
-    stars: 12952
+    stars: 12951
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-05-23'
@@ -2846,7 +2846,7 @@ skills:
       - tencent
     summary: Tencent HunyuanVideo.
     summary_zh: 腾讯 HunyuanVideo。
-    stars: 12181
+    stars: 12182
     license: TENCENT-OPEN-LICENSE
     added: '2026-06-06'
     subgroup: video-generation
@@ -2904,7 +2904,7 @@ skills:
     summary: ByteDance's native GUI agent model — drives desktop and web UIs 
       end-to-end, with a permissive open release.
     summary_zh: 字节原生 GUI agent 模型——端到端驱动桌面和 Web UI，开源版本许可证宽松。
-    stars: 10875
+    stars: 10890
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-01-27'
@@ -2923,10 +2923,10 @@ skills:
     summary: ByteDance's open deep-research agent — LangGraph under the hood, 
       with MCP and sandboxed execution.
     summary_zh: 字节开源深度研究 agent——基于 LangGraph，内置 MCP 和沙箱执行。
-    stars: 70755
+    stars: 70795
     license: MIT
     added: '2026-06-05'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: moonlight
     title: Moonlight (Moonshot)
     title_zh: Moonlight（月之暗面）
@@ -2942,7 +2942,7 @@ skills:
     summary: Moonshot AI's open training code and data for the Moonlight model —
       research-grade recipe for training a 16B-parameter MoE from scratch.
     summary_zh: 月之暗面开源 Moonlight 模型训练代码与数据——从零训练 16B MoE 的研究级方案。
-    stars: 1490
+    stars: 1491
     license: MIT
     added: '2026-06-05'
     pushed_at: '2025-08-03'
@@ -2990,7 +2990,7 @@ skills:
     summary: Mistral's reference inference implementation — minimal-dependency 
       Python code for running Mistral models.
     summary_zh: Mistral 官方参考推理实现——零依赖 Python 代码跑 Mistral 模型。
-    stars: 10813
+    stars: 10812
     license: Apache-2.0
     added: '2026-06-05'
     pushed_at: '2026-04-20'
@@ -3045,10 +3045,10 @@ skills:
     summary: BAML — a domain-specific language for structured LLM output. 
       Jinja-like, types-first, multi-model.
     summary_zh: BAML——结构化 LLM 输出的 DSL。类 Jinja、类型优先、多模型。
-    stars: 8342
+    stars: 8345
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: litellm
     title: LiteLLM
     title_zh: LiteLLM
@@ -3062,10 +3062,10 @@ skills:
     summary: LiteLLM — call 100+ LLM APIs with the OpenAI format. LLM gateway / 
       proxy.
     summary_zh: LiteLLM——用 OpenAI 格式调用 100+ LLM API。LLM 网关 / 代理。
-    stars: 49670
+    stars: 49749
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cognee
     title: Cognee
     title_zh: Cognee
@@ -3078,10 +3078,10 @@ skills:
       - graph
     summary: Cognee — graph memory for LLMs.
     summary_zh: Cognee——LLM 的图记忆。
-    stars: 17726
+    stars: 17737
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: roo-code
     title: Roo Code
     title_zh: Roo Code
@@ -3095,7 +3095,7 @@ skills:
     summary: Roo Code (formerly Roo Cline) — a fork/fork of Cline focused on 
       multi-mode.
     summary_zh: Roo Code（前身 Roo Cline）——Cline 的 fork，专注多模式。
-    stars: 24216
+    stars: 24221
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-15'
@@ -3113,7 +3113,7 @@ skills:
       - perplexity-alternative
     summary: Perplexica — an open-source Perplexity-style AI search engine.
     summary_zh: Perplexica——开源类 Perplexity 的 AI 搜索引擎。
-    stars: 35214
+    stars: 35221
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-11'
@@ -3129,7 +3129,7 @@ skills:
       - assistant
     summary: Khoj — personal AI.
     summary_zh: Khoj——个人 AI。
-    stars: 35003
+    stars: 35025
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-03-26'
@@ -3145,7 +3145,7 @@ skills:
       - ui
     summary: Fooocus — SD XL UI.
     summary_zh: Fooocus——SD XL UI。
-    stars: 49884
+    stars: 49925
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2025-12-01'
@@ -3163,7 +3163,7 @@ skills:
     summary: ByteDance's LatentSync — audio-driven lip-sync for video, 
       end-to-end and open. Used in production by CapCut.
     summary_zh: 字节 LatentSync——音频驱动的视频对口型，端到端开源。CapCut 生产用。
-    stars: 5747
+    stars: 5751
     license: Apache-2.0
     added: '2026-06-05'
     subgroup: video-generation
@@ -3182,7 +3182,7 @@ skills:
     summary: MyShell.ai's MeloTTS — high-quality multilingual TTS. English, 
       Spanish, French, Chinese, Japanese, Korean. Open.
     summary_zh: MyShell.ai 的 MeloTTS——高质量多语种 TTS。英、西、法、中、日、韩都有，开源。
-    stars: 7472
+    stars: 7474
     license: MIT
     added: '2026-06-05'
     subgroup: speech-tts
@@ -3199,10 +3199,10 @@ skills:
       - ui
     summary: InvokeAI — creative AI.
     summary_zh: InvokeAI——创意 AI。
-    stars: 27390
+    stars: 27396
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-08'
   - slug: swe-bench
     title: SWE-bench
     title_zh: SWE-bench
@@ -3215,7 +3215,7 @@ skills:
       - software
     summary: SWE-bench — GitHub issue resolution benchmark.
     summary_zh: SWE-bench——GitHub issue 解决基准。
-    stars: 5110
+    stars: 5113
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-01'
@@ -3272,10 +3272,10 @@ skills:
     summary: Google's 'Agents Companion' whitepaper — the architecture, memory, 
       tools, and operational concerns of production agent systems on Gemini.
     summary_zh: Google《Agents Companion》白皮书——Gemini 生产 agent 系统的架构、记忆、工具与运维。
-    stars: 1392
+    stars: 1394
     license: Apache-2.0
     added: '2026-06-05'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-08'
   - slug: case-annotated-transformer
     title: The Annotated Transformer
     title_zh: 注释版 Transformer
@@ -3551,7 +3551,7 @@ skills:
       mobile-first.
     summary_zh: NextChat（前身 ChatGPT-Next-Web）——部署量最大的自托管 ChatGPT 克隆。Vercel 
       一键部署，多 provider，移动优先。
-    stars: 88202
+    stars: 88203
     license: MIT
     added: '2026-06-05'
     pushed_at: '2026-05-15'
@@ -3570,10 +3570,10 @@ skills:
       serving.
     summary_zh: llama.cpp 的 Python 绑定——本地量化 LLM 的事实标准，CPU/苹果芯片/消费 GPU 
       都能跑。本地推理的基石。
-    stars: 10380
+    stars: 10381
     license: MIT
     added: '2026-06-05'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: transformers
     title: Transformers
     title_zh: Transformers
@@ -3586,10 +3586,10 @@ skills:
       - inference
     summary: HuggingFace Transformers — LLM serving library.
     summary_zh: HuggingFace Transformers——LLM serving 库。
-    stars: 161431
+    stars: 161436
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openrouter
     title: OpenRouter
     title_zh: OpenRouter
@@ -3602,7 +3602,7 @@ skills:
       - agents
     summary: OpenRouter — unified API for 100+ LLMs. Routing + fallback + cost.
     summary_zh: OpenRouter——100+ LLM 统一 API。路由 + 回退 + 成本。
-    stars: 1240
+    stars: 1241
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-09-06'
@@ -3622,10 +3622,10 @@ skills:
       and chat with any GGUF model on your machine. The most user-friendly local
       LLM app.
     summary_zh: LM Studio——本地 LLM 桌面应用。发现、下载、对话本机 GGUF 模型。最用户友好的本地 LLM 应用。
-    stars: 4931
+    stars: 4933
     license: MIT
     added: '2026-06-05'
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-08'
   - slug: prompttools
     title: PromptTools
     title_zh: PromptTools
@@ -3652,7 +3652,7 @@ skills:
       - awesome-mcp-servers
     summary: Awesome MCP servers list.
     summary_zh: MCP server 列表。
-    stars: 5592
+    stars: 5590
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-06'
@@ -3687,7 +3687,7 @@ skills:
     summary: Python bindings for OpenAI's fast BPE tokenizer — used to count 
       tokens before API calls.
     summary_zh: OpenAI 快速 BPE 分词器的 Python 绑定——API 调用前用于计 token。
-    stars: 18440
+    stars: 18449
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-24'
@@ -3704,7 +3704,7 @@ skills:
     summary: OpenAI's original evals framework — the predecessor of structured 
       outputs / eval recipes.
     summary_zh: OpenAI 原版 evals 框架——结构化输出 / eval 食谱的前身。
-    stars: 18633
+    stars: 18641
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-14'
@@ -3721,7 +3721,7 @@ skills:
     summary: OpenAI's CLIP — the contrastive image-text pretraining model that 
       started the VLM revolution.
     summary_zh: OpenAI CLIP——开启 VLM 革命的对比图文预训练模型。
-    stars: 33715
+    stars: 33726
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-25'
@@ -3844,7 +3844,7 @@ skills:
       - baselines
     summary: OpenAI's reference RL baselines (DDPG, PPO, ACKTR, TRPO, GAE, A2C).
     summary_zh: OpenAI 参考 RL 基线（DDPG、PPO、ACKTR、TRPO、GAE、A2C）。
-    stars: 16726
+    stars: 16727
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-08-01'
@@ -3861,7 +3861,7 @@ skills:
     summary: OpenAI Spinning Up in Deep RL — an educational resource for RL 
       (PPO, SAC, TD3, VPG).
     summary_zh: OpenAI Spinning Up in Deep RL——RL 教育资源（PPO、SAC、TD3、VPG）。
-    stars: 11801
+    stars: 11804
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-08-05'
@@ -3878,7 +3878,7 @@ skills:
     summary: OpenAI MLE-bench — agent benchmark using 75 Kaggle ML engineering 
       competitions.
     summary_zh: OpenAI MLE-bench——用 75 个 Kaggle ML 工程竞赛评测 agent。
-    stars: 1569
+    stars: 1571
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-24'
@@ -3896,10 +3896,10 @@ skills:
     summary: OpenAI Triton — a Python-like GPU kernel language and compiler. Now
       widely used for LLM kernels.
     summary_zh: OpenAI Triton——类 Python 的 GPU kernel 语言与编译器。LLM kernel 广泛使用。
-    stars: 19394
+    stars: 19398
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openai-triton-3
     title: Triton (community)
     title_zh: Triton（社区）
@@ -3914,10 +3914,10 @@ skills:
     summary: Community fork of Triton (now an open-source project) — adds MLIR 
       backend, AMD support, etc.
     summary_zh: Triton 社区 fork（现为开源项目）——增加 MLIR 后端、AMD 支持等。
-    stars: 19394
+    stars: 19398
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openai-infoGAN
     title: InfoGAN
     title_zh: InfoGAN
@@ -4003,7 +4003,7 @@ skills:
     summary: Enforce a JSON schema / regex on the output tokens of an LLM via 
       logits processors.
     summary_zh: 通过 logits 处理器在 LLM 输出 token 上强制 JSON schema / regex。
-    stars: 2015
+    stars: 2016
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-04'
@@ -4020,7 +4020,7 @@ skills:
     summary: jsonformer — fill-in-the-blanks structured JSON generation that 
       never breaks the schema.
     summary_zh: jsonformer——填空式结构化 JSON 生成，绝不破坏 schema。
-    stars: 4925
+    stars: 4924
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-02-24'
@@ -4054,7 +4054,7 @@ skills:
     summary: Marvin — a lightweight AI engineering library from Prefect. 
       Structured output + function calls + extraction.
     summary_zh: Marvin——Prefect 出品的轻量 AI 工程库。结构化输出 + 函数调用 + 抽取。
-    stars: 6167
+    stars: 6168
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-12'
@@ -4157,7 +4157,7 @@ skills:
     summary: Nir Diamant's prompt engineering course — practical guide + 
       tutorials + advanced techniques.
     summary_zh: Nir Diamant 的 prompt 课程——实战指南 + 教程 + 进阶技巧。
-    stars: 7577
+    stars: 7576
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -4174,10 +4174,10 @@ skills:
     summary: Civitai — the model + image prompt community for Stable Diffusion, 
       SDXL, Flux, etc.
     summary_zh: Civitai——SD/SDXL/Flux 等的模型 + 图像 prompt 社区。
-    stars: 7139
+    stars: 7140
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: gpt-prompt-engineer
     title: GPT Prompt Engineer
     title_zh: GPT Prompt 工程师
@@ -4207,7 +4207,7 @@ skills:
     summary: Teknium's GPTeacher — synthetic prompt + response dataset for 
       general LLM training.
     summary_zh: Teknium 的 GPTeacher——通用 LLM 训练用的合成 prompt + response 数据集。
-    stars: 1659
+    stars: 1660
     license: MIT
     added: '2026-06-06'
     pushed_at: '2023-09-15'
@@ -4241,7 +4241,7 @@ skills:
     summary: FLAN — Google's instruction-tuning dataset and models. The 
       reference for instruction tuning.
     summary_zh: FLAN——谷歌 instruction tuning 数据集与模型。instruction tuning 参考。
-    stars: 1564
+    stars: 1565
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-19'
@@ -4309,7 +4309,7 @@ skills:
       - synthetic
     summary: Magicoder — synthetic code instruction data via OSS-Instruct.
     summary_zh: Magicoder——通过 OSS-Instruct 合成代码指令数据。
-    stars: 2094
+    stars: 2095
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-11-01'
@@ -4326,7 +4326,7 @@ skills:
     summary: doccano — open-source text annotation tool (NER, sentiment, 
       sequence labeling, prompt-response labeling).
     summary_zh: doccano——开源文本标注工具（NER、情感、序列标注、prompt-response 标注）。
-    stars: 10670
+    stars: 10671
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-14'
@@ -4343,10 +4343,10 @@ skills:
     summary: Label Studio — multi-purpose data labeling + annotation platform. 
       Supports LLM eval grading.
     summary_zh: Label Studio——多用途数据标注平台。支持 LLM 评估评分。
-    stars: 27544
+    stars: 27550
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: scale-ai-prompts
     title: Scale LLM Engine
     title_zh: Scale LLM Engine
@@ -4360,7 +4360,7 @@ skills:
     summary: Scale AI's open LLM engine — eval, fine-tuning, prompt 
       experimentation.
     summary_zh: Scale AI 开源 LLM 引擎——评估、微调、prompt 实验。
-    stars: 829
+    stars: 830
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-01'
@@ -4429,7 +4429,7 @@ skills:
     summary: Reference example crews (trip planner, stock analysis, etc.) for 
       CrewAI.
     summary_zh: CrewAI 的参考示例（旅行规划、股票分析等）。
-    stars: 6016
+    stars: 6021
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-20'
@@ -4446,10 +4446,10 @@ skills:
       - legacy
     summary: Phidata — original repo before being renamed to Agno.
     summary_zh: Phidata——改名为 Agno 前的原始仓库。
-    stars: 40587
+    stars: 40602
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: smolagents-examples
     title: smolagents Examples
     title_zh: smolagents 示例
@@ -4462,7 +4462,7 @@ skills:
       - tutorial
     summary: Curated examples for smolagents — browsing, RAG, multi-step tools.
     summary_zh: smolagents 精选示例——浏览、RAG、多步工具。
-    stars: 27756
+    stars: 27765
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -4479,10 +4479,10 @@ skills:
     summary: OpenAI's official Agents SDK in Python — handoffs, tools, sessions,
       traces.
     summary_zh: OpenAI 官方 Python Agents SDK——handoff、tool、session、trace。
-    stars: 27000
+    stars: 27017
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: openai-agents-js
     title: OpenAI Agents SDK (JS)
     title_zh: OpenAI Agents SDK（JS）
@@ -4495,10 +4495,10 @@ skills:
       - javascript
     summary: OpenAI's official Agents SDK in JavaScript / TypeScript.
     summary_zh: OpenAI 官方 JavaScript/TypeScript Agents SDK。
-    stars: 3185
+    stars: 3187
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: openai-swarm
     title: OpenAI Swarm
     title_zh: OpenAI Swarm
@@ -4512,7 +4512,7 @@ skills:
     summary: OpenAI Swarm — the experimental handoffs framework that became the 
       Agents SDK.
     summary_zh: OpenAI Swarm——成为 Agents SDK 前的实验性 handoff 框架。
-    stars: 21591
+    stars: 21601
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-15'
@@ -4528,10 +4528,10 @@ skills:
       - go
     summary: Google's Agent Development Kit for the Go language.
     summary_zh: Google 面向 Go 语言的 Agent Development Kit。
-    stars: 8112
+    stars: 8115
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: google-adk-samples
     title: Google ADK Samples
     title_zh: Google ADK 示例
@@ -4544,7 +4544,7 @@ skills:
       - samples
     summary: Reference sample agents built with the Google ADK.
     summary_zh: Google ADK 的参考示例 agent。
-    stars: 9609
+    stars: 9613
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -4564,7 +4564,7 @@ skills:
     stars: 1084
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-03'
+    pushed_at: '2026-06-08'
   - slug: openhands
     title: OpenHands
     title_zh: OpenHands
@@ -4576,7 +4576,7 @@ skills:
       - agent
     summary: OpenHands — autonomous code agent.
     summary_zh: OpenHands——自主代码 agent。
-    stars: 76259
+    stars: 76293
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -4593,7 +4593,7 @@ skills:
     summary: Princeton's SWE-agent — autonomous GitHub issue resolution via LLM 
       agent.
     summary_zh: 普林斯顿 SWE-agent——通过 LLM agent 自主解决 GitHub issue。
-    stars: 19455
+    stars: 19462
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -4608,7 +4608,7 @@ skills:
       - agent
     summary: GPT-Engineer — code from spec.
     summary_zh: GPT-Engineer——按规格写代码。
-    stars: 55202
+    stars: 55200
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-05-14'
@@ -4624,10 +4624,10 @@ skills:
       - agent
     summary: Claude Code — Anthropic CLI agent.
     summary_zh: Claude Code——Anthropic CLI agent。
-    stars: 131089
+    stars: 131219
     license: Proprietary
     added: '2026-06-06'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-09'
   - slug: gpt-researcher
     title: GPT Researcher
     title_zh: GPT Researcher
@@ -4639,7 +4639,7 @@ skills:
       - research
     summary: GPT Researcher — research agent with tools.
     summary_zh: GPT Researcher——带工具的研究 agent。
-    stars: 27568
+    stars: 27578
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-28'
@@ -4656,7 +4656,7 @@ skills:
     summary: STORM — Stanford's research writing agent (outline + perspectives +
       citations).
     summary_zh: STORM——斯坦福研究写作 agent（大纲 + 视角 + 引用）。
-    stars: 28334
+    stars: 28337
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-09-30'
@@ -4672,7 +4672,7 @@ skills:
       - multi-agent
     summary: CAMEL — Communicative Agents for Mind Exploration of LLMs.
     summary_zh: CAMEL——LLM 思维探索的通信 agent 框架。
-    stars: 17140
+    stars: 17144
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -4689,7 +4689,7 @@ skills:
     summary: ChatDev — simulate a software company with multi-agent 
       collaboration.
     summary_zh: ChatDev——用多 agent 协作模拟一家软件公司。
-    stars: 33353
+    stars: 33357
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-27'
@@ -4706,7 +4706,7 @@ skills:
     summary: AgentVerse — multi-agent framework + benchmark for collective 
       behavior.
     summary_zh: AgentVerse——多 agent 框架 + 集体行为基准。
-    stars: 5047
+    stars: 5050
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2024-09-09'
@@ -4721,7 +4721,7 @@ skills:
       - tool
     summary: tau-bench — tool-agent conversational benchmark.
     summary_zh: tau-bench——工具 agent 对话基准。
-    stars: 1266
+    stars: 1267
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-18'
@@ -4736,7 +4736,7 @@ skills:
       - thudm
     summary: AgentBench — multi-domain LLM agent evaluation.
     summary_zh: AgentBench——多域 LLM agent 评估。
-    stars: 3475
+    stars: 3478
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-02-08'
@@ -4753,10 +4753,10 @@ skills:
     summary: LangChain's deep agents reference implementation — todo + planning 
       + sub-agents.
     summary_zh: LangChain deep agent 参考实现——todo + 规划 + 子 agent。
-    stars: 24194
+    stars: 24253
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: logfire
     title: Logfire
     title_zh: Logfire
@@ -4770,7 +4770,7 @@ skills:
     summary: Pydantic's Logfire — observability for Python apps (incl. LLM 
       traces).
     summary_zh: Pydantic Logfire——面向 Python 应用的 observability（含 LLM trace）。
-    stars: 4287
+    stars: 4288
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -4854,7 +4854,7 @@ skills:
     stars: 217
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-03'
+    pushed_at: '2026-06-08'
   - slug: firecrawl
     title: Firecrawl
     title_zh: Firecrawl
@@ -4866,10 +4866,10 @@ skills:
       - crawl
     summary: Firecrawl — web crawler for LLMs.
     summary_zh: Firecrawl——面向 LLM 的爬虫。
-    stars: 130199
+    stars: 130499
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: firecrawl-py
     title: Firecrawl (Py)
     title_zh: Firecrawl（Py）
@@ -4899,7 +4899,7 @@ skills:
     summary: Jina Reader — turn any URL into LLM-friendly markdown. Free public 
       API.
     summary_zh: Jina Reader——把任意 URL 变成 LLM 友好的 markdown。免费公开 API。
-    stars: 11119
+    stars: 11131
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-22'
@@ -4914,10 +4914,10 @@ skills:
       - agent
     summary: Skyvern — browser agent.
     summary_zh: Skyvern——浏览器 agent。
-    stars: 21855
+    stars: 21862
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: steel
     title: Steel
     title_zh: Steel
@@ -4946,7 +4946,7 @@ skills:
       - browser
     summary: Steel — open browser API.
     summary_zh: Steel——开放浏览器 API。
-    stars: 7140
+    stars: 7142
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -4963,7 +4963,7 @@ skills:
     summary: AGENTS.md — the open standard for giving coding agents repo-level 
       context.
     summary_zh: AGENTS.md——给编码 agent 仓库级上下文的开放标准。
-    stars: 22076
+    stars: 22101
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-12'
@@ -4998,7 +4998,7 @@ skills:
     stars: 477
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: daytona
     title: Daytona
     title_zh: Daytona
@@ -5011,10 +5011,10 @@ skills:
       - dev-env
     summary: Daytona — secure, elastic dev environments for AI-generated code.
     summary_zh: Daytona——为 AI 生成代码提供的安全、弹性开发环境。
-    stars: 72456
+    stars: 72446
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: replicate-agent
     title: Replicate (Py)
     title_zh: Replicate（Py）
@@ -5060,10 +5060,10 @@ skills:
       - agents
     summary: Track, log, and visualize LLM agent experiments with W&B.
     summary_zh: 用 W&B 跟踪、记录、可视化 LLM agent 实验。
-    stars: 11111
+    stars: 11113
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: langsmith
     title: LangSmith
     title_zh: LangSmith
@@ -5075,7 +5075,7 @@ skills:
       - tracing
     summary: LangSmith — LLM tracing + eval.
     summary_zh: LangSmith——LLM 追踪 + 评估。
-    stars: 922
+    stars: 923
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -5090,7 +5090,7 @@ skills:
       - rag
     summary: Quivr — RAG chat.
     summary_zh: Quivr——RAG 聊天。
-    stars: 39172
+    stars: 39155
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-07-09'
@@ -5107,10 +5107,10 @@ skills:
     summary: Danswer — internal Q&A over your company's docs. Slack-integrated 
       RAG.
     summary_zh: Danswer——公司内部文档问答。集成 Slack 的 RAG。
-    stars: 30080
+    stars: 30112
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: kotaemon
     title: Kotaemon
     title_zh: Kotaemon
@@ -5124,7 +5124,7 @@ skills:
     summary: Kotaemon — open-source RAG chat over your documents. Customizable 
       UI.
     summary_zh: Kotaemon——开源文档 RAG 聊天。可定制 UI。
-    stars: 25439
+    stars: 25444
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -5141,10 +5141,10 @@ skills:
     summary: RAGFlow — open-source RAG engine with deep doc understanding + 
       GraphRAG.
     summary_zh: RAGFlow——开源 RAG 引擎，深度文档理解 + GraphRAG。
-    stars: 82213
+    stars: 82280
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: verba
     title: Verba
     title_zh: Verba
@@ -5174,10 +5174,10 @@ skills:
     summary: AnythingLLM — the all-in-one desktop AI app. RAG, agents, 
       multi-user.
     summary_zh: AnythingLLM——一体式桌面 AI 应用。RAG、agent、多用户。
-    stars: 61256
+    stars: 61291
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: paper-qa
     title: PaperQA
     title_zh: PaperQA
@@ -5190,7 +5190,7 @@ skills:
       - rag
     summary: PaperQA — LLM agent for answering questions from scientific papers.
     summary_zh: PaperQA——从科学论文回答问题的 LLM agent。
-    stars: 8652
+    stars: 8655
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -5207,7 +5207,7 @@ skills:
     summary: LLMWare — enterprise RAG framework with 50+ small specialized 
       models.
     summary_zh: LLMWare——企业 RAG 框架，50+ 专用小模型。
-    stars: 14848
+    stars: 14849
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-17'
@@ -5241,7 +5241,7 @@ skills:
     summary: Self-RAG — learnable, self-reflective retrieval-augmented 
       generation.
     summary_zh: Self-RAG——可学习、自反思的检索增强生成。
-    stars: 2393
+    stars: 2394
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-05-25'
@@ -5257,7 +5257,7 @@ skills:
       - rag
     summary: CRAG — Corrective Retrieval Augmented Generation.
     summary_zh: CRAG——纠正式检索增强生成。
-    stars: 460
+    stars: 461
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-10-08'
@@ -5274,7 +5274,7 @@ skills:
     summary: DocArray — the data structure for multimodal data. Foundation of 
       Jina v2.
     summary_zh: DocArray——多模态数据结构。Jina v2 的基础。
-    stars: 3120
+    stars: 3121
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-27'
@@ -5324,7 +5324,7 @@ skills:
     summary: Neo4j Labs' LLM Graph Builder — turn unstructured text into a 
       knowledge graph.
     summary_zh: Neo4j Labs 的 LLM 图谱构建器——把非结构化文本变成知识图谱。
-    stars: 4744
+    stars: 4750
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -5340,7 +5340,7 @@ skills:
       - graph
     summary: Neo4j's built-in vector search + graph traversal hybrid queries.
     summary_zh: Neo4j 内置向量搜索 + 图遍历混合查询。
-    stars: 16679
+    stars: 16681
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -5355,10 +5355,10 @@ skills:
       - graph
     summary: Memgraph — in-memory graph DB.
     summary_zh: Memgraph——内存图数据库。
-    stars: 4131
+    stars: 4133
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: lantern
     title: Lantern
     title_zh: Lantern
@@ -5387,7 +5387,7 @@ skills:
       - vector
     summary: pgvectorscale — Timescale's extension adding SOTA ANN to pgvector.
     summary_zh: pgvectorscale——Timescale 为 pgvector 增加 SOTA ANN 的扩展。
-    stars: 3039
+    stars: 3041
     license: PostgreSQL
     added: '2026-06-06'
     pushed_at: '2026-04-30'
@@ -5404,10 +5404,10 @@ skills:
     summary: Vespa — the big-data serving engine. Vector + lexical + ML in one 
       query.
     summary_zh: Vespa——大数据 serving 引擎。向量 + 词法 + ML 一次查询搞定。
-    stars: 6951
+    stars: 6953
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: marqo-rag
     title: Marqo
     title_zh: Marqo
@@ -5420,10 +5420,10 @@ skills:
       - tensor
     summary: Marqo — tensor search engine. End-to-end RAG with built-in models.
     summary_zh: Marqo——tensor 搜索引擎。内置模型的端到端 RAG。
-    stars: 5022
+    stars: 5021
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-04-10'
+    pushed_at: '2026-06-09'
   - slug: vald-rag
     title: Vald
     title_zh: Vald
@@ -5453,7 +5453,7 @@ skills:
     summary: LlamaParse — LlamaIndex's document parsing service. Tables, 
       figures, etc.
     summary_zh: LlamaParse——LlamaIndex 文档解析服务。表格、图等。
-    stars: 4249
+    stars: 4250
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -5469,10 +5469,10 @@ skills:
       - doc
     summary: Unstructured.io — document ETL.
     summary_zh: Unstructured.io——文档 ETL。
-    stars: 14857
+    stars: 14862
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: unstructured-inference
     title: Unstructured Inference
     title_zh: Unstructured 推理
@@ -5489,7 +5489,7 @@ skills:
     stars: 209
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-04-29'
+    pushed_at: '2026-06-09'
   - slug: docling
     title: Docling
     title_zh: Docling
@@ -5502,10 +5502,10 @@ skills:
       - etl
     summary: Docling — PDF/document ETL to markdown.
     summary_zh: Docling——PDF/文档 ETL 转 markdown。
-    stars: 61194
+    stars: 61237
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: docling-core
     title: Docling Core
     title_zh: Docling 核心
@@ -5521,7 +5521,7 @@ skills:
     stars: 259
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: docling-parse
     title: Docling Parse
     title_zh: Docling 解析
@@ -5534,7 +5534,7 @@ skills:
       - fast
     summary: Docling's fast PDF parser (no ML), used as a backend by Docling.
     summary_zh: Docling 的快速 PDF 解析器（无 ML），作为 Docling 后端。
-    stars: 292
+    stars: 301
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-01'
@@ -5549,7 +5549,7 @@ skills:
       - pdf
     summary: Marker — fast PDF to markdown.
     summary_zh: Marker——快速 PDF 转 markdown。
-    stars: 35876
+    stars: 35904
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -5565,7 +5565,7 @@ skills:
       - ocr
     summary: Nougat — Meta's neural OCR for scientific PDFs.
     summary_zh: Nougat——Meta 面向科学 PDF 的神经 OCR。
-    stars: 10006
+    stars: 10007
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-02-21'
@@ -5581,10 +5581,10 @@ skills:
       - crawl
     summary: Use Firecrawl to feed clean markdown into your RAG pipeline.
     summary_zh: 用 Firecrawl 给 RAG 流水线喂入干净 markdown。
-    stars: 130199
+    stars: 130499
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mongodb-rag
     title: MongoDB GenAI Showcase
     title_zh: MongoDB GenAI 示例
@@ -5597,7 +5597,7 @@ skills:
       - genai
     summary: MongoDB's GenAI showcase — RAG + agents + Atlas Vector Search.
     summary_zh: MongoDB GenAI 示例——RAG + agent + Atlas Vector Search。
-    stars: 4231
+    stars: 4230
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-22'
@@ -5616,7 +5616,7 @@ skills:
     stars: 771
     license: Other
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: rag-papers
     title: Awesome RAG
     title_zh: Awesome RAG
@@ -5662,7 +5662,7 @@ skills:
     summary: BAAI's BGE reranker models + code (multi-lingual, 
       MTEB-leaderboard).
     summary_zh: BAAI BGE 重排模型 + 代码（多语种、MTEB 榜单）。
-    stars: 11795
+    stars: 11797
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-22'
@@ -5907,7 +5907,7 @@ skills:
     stars: 89
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: meilisearch
     title: Meilisearch
     title_zh: Meilisearch
@@ -5921,10 +5921,10 @@ skills:
     summary: Meilisearch — a lightning-fast search engine, now with vector 
       search.
     summary_zh: Meilisearch——闪电般快速的搜索引擎，现已支持向量搜索。
-    stars: 58021
+    stars: 58015
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: meilisearch-py
     title: Meilisearch (Py)
     title_zh: Meilisearch（Py）
@@ -5940,7 +5940,7 @@ skills:
     stars: 598
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-05-25'
+    pushed_at: '2026-06-09'
   - slug: meilisearch-js
     title: Meilisearch (JS)
     title_zh: Meilisearch（JS）
@@ -5956,7 +5956,7 @@ skills:
     stars: 863
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: typesense
     title: Typesense
     title_zh: Typesense
@@ -5970,7 +5970,7 @@ skills:
     summary: Typesense — a fast, typo-tolerant search engine. Now with vector 
       search.
     summary_zh: Typesense——快速、容错拼写的搜索引擎。现已支持向量搜索。
-    stars: 25960
+    stars: 25963
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -6002,10 +6002,10 @@ skills:
       - search
     summary: OpenSearch's k-NN plugin — vector search inside the search engine.
     summary_zh: OpenSearch k-NN 插件——搜索引擎内的向量搜索。
-    stars: 13122
+    stars: 13128
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: elasticsearch
     title: Elasticsearch
     title_zh: Elasticsearch
@@ -6019,10 +6019,10 @@ skills:
     summary: Elasticsearch — with vector search (dense_vector) and ELSER sparse 
       model.
     summary_zh: Elasticsearch——含向量搜索（dense_vector）与 ELSER 稀疏模型。
-    stars: 76899
+    stars: 76904
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: elasticsearch-py
     title: Elasticsearch (Py)
     title_zh: Elasticsearch（Py）
@@ -6035,7 +6035,7 @@ skills:
       - client
     summary: Elasticsearch's official Python client.
     summary_zh: Elasticsearch 官方 Python 客户端。
-    stars: 4374
+    stars: 4375
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -6068,7 +6068,7 @@ skills:
     summary: Deep Lake — a data lake for AI. Vector + tensor storage + version 
       control.
     summary_zh: Deep Lake——AI 的数据湖。向量 + tensor 存储 + 版本控制。
-    stars: 9163
+    stars: 9166
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-21'
@@ -6102,7 +6102,7 @@ skills:
     summary: Annoy — Spotify's approximate nearest neighbors. C++ with Python 
       bindings.
     summary_zh: Annoy——Spotify 近似最近邻。带 Python 绑定的 C++。
-    stars: 14250
+    stars: 14251
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-10-29'
@@ -6118,7 +6118,7 @@ skills:
       - ann
     summary: Google's ScaNN — efficient vector similarity search at scale.
     summary_zh: 谷歌 ScaNN——高效的规模化向量相似度搜索。
-    stars: 38091
+    stars: 38102
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -6137,7 +6137,7 @@ skills:
     stars: 1838
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: turbopuffer-py
     title: Turbopuffer (Py)
     title_zh: Turbopuffer（Py）
@@ -6183,10 +6183,10 @@ skills:
       - search
     summary: Redis's vector search (RediSearch) — ANN inside Redis.
     summary_zh: Redis 向量搜索（RediSearch）——Redis 内的 ANN。
-    stars: 74753
+    stars: 74756
     license: RSALv2
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: redis-py
     title: Redis (Py)
     title_zh: Redis（Py）
@@ -6199,10 +6199,10 @@ skills:
       - client
     summary: Redis's official Python client with vector support.
     summary_zh: Redis 官方 Python 客户端，含向量支持。
-    stars: 13560
+    stars: 13561
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mongo-vector
     title: MongoDB Vector
     title_zh: MongoDB 向量
@@ -6215,10 +6215,10 @@ skills:
       - atlas
     summary: MongoDB's native vector search type (Atlas Vector Search).
     summary_zh: MongoDB 原生向量搜索类型（Atlas Vector Search）。
-    stars: 28348
+    stars: 28351
     license: SSPL
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tigris-vector
     title: Tigris Vector
     title_zh: Tigris 向量
@@ -6248,7 +6248,7 @@ skills:
       - multi-model
     summary: SurrealDB — a multi-model DB with vector + graph + document.
     summary_zh: SurrealDB——多模型数据库，含向量 + 图 + 文档。
-    stars: 32351
+    stars: 32340
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -6296,10 +6296,10 @@ skills:
       - distributed
     summary: YugabyteDB's vector search (PostgreSQL-compatible).
     summary_zh: YugabyteDB 向量搜索（PostgreSQL 兼容）。
-    stars: 10328
+    stars: 10329
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cockroach-vector
     title: CockroachDB Vector
     title_zh: CockroachDB 向量
@@ -6315,7 +6315,7 @@ skills:
     stars: 32195
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tidb-vector
     title: TiDB Vector
     title_zh: TiDB 向量
@@ -6328,10 +6328,10 @@ skills:
       - mysql
     summary: TiDB's vector search add-on — MySQL-compatible with vector type.
     summary_zh: TiDB 向量搜索附加——MySQL 兼容，带 vector 类型。
-    stars: 40144
+    stars: 40146
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: oceanbase-vector
     title: OceanBase Vector
     title_zh: OceanBase 向量
@@ -6347,7 +6347,7 @@ skills:
     stars: 10146
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-09'
   - slug: gaussdb-vector
     title: openGauss Vector
     title_zh: openGauss 向量
@@ -6377,10 +6377,10 @@ skills:
       - olap
     summary: StarRocks' vector search — OLAP + vector in one engine.
     summary_zh: StarRocks 向量搜索——OLAP + 向量统一引擎。
-    stars: 11768
+    stars: 11770
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: doris-vector
     title: Apache Doris Vector
     title_zh: Apache Doris 向量
@@ -6393,10 +6393,10 @@ skills:
       - olap
     summary: Apache Doris's vector index — OLAP DB with vector search.
     summary_zh: Apache Doris 的向量索引——OLAP 数据库带向量搜索。
-    stars: 15447
+    stars: 15451
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: duckdb-vector
     title: DuckDB Vector
     title_zh: DuckDB 向量
@@ -6410,10 +6410,10 @@ skills:
     summary: DuckDB's VSS extension — vector search inside the in-process OLAP 
       DB.
     summary_zh: DuckDB VSS 扩展——进程内 OLAP 数据库的向量搜索。
-    stars: 38689
+    stars: 38703
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: duckdb-vss
     title: DuckDB VSS
     title_zh: DuckDB VSS
@@ -6459,7 +6459,7 @@ skills:
       - rust
     summary: sqlite-vec — a successor to sqlite-vss, written in pure C/Rust.
     summary_zh: sqlite-vec——sqlite-vss 的继任者，纯 C/Rust 写就。
-    stars: 7707
+    stars: 7710
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -6476,7 +6476,7 @@ skills:
     summary: libSQL — Turso's fork of SQLite. Supports vector search (libSQL 
       Vector).
     summary_zh: libSQL——Turso 的 SQLite fork。支持向量搜索（libSQL Vector）。
-    stars: 16829
+    stars: 16830
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -6508,7 +6508,7 @@ skills:
       - 3-large
     summary: OpenAI text-embedding-3-large / -small — production embedding APIs.
     summary_zh: OpenAI text-embedding-3-large / -small——生产 embedding API。
-    stars: 30943
+    stars: 30941
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -6557,7 +6557,7 @@ skills:
       - serving
     summary: TEI — HuggingFace high-throughput text embeddings inference server.
     summary_zh: TEI——HuggingFace 高吞吐文本 embedding 推理服务。
-    stars: 4855
+    stars: 4857
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-26'
@@ -6574,7 +6574,7 @@ skills:
     summary: The reference library for sentence / text embeddings (SBERT). 100+ 
       pretrained models.
     summary_zh: 句子/文本 embedding 的参考库（SBERT）。100+ 预训练模型。
-    stars: 18788
+    stars: 18793
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -6691,7 +6691,7 @@ skills:
       - embedding
     summary: MTEB — Massive Text Embedding Benchmark. The standard leaderboard.
     summary_zh: MTEB——大规模文本 embedding 基准。embedding 标准排行榜。
-    stars: 3294
+    stars: 3295
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -6708,7 +6708,7 @@ skills:
     summary: ColPali — ColBERT-style retrieval over document page images 
       (VLM-based).
     summary_zh: ColPali——基于 VLM 的 ColBERT 风格文档页图像检索。
-    stars: 2658
+    stars: 2659
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -6724,7 +6724,7 @@ skills:
       - open
     summary: OpenCLIP — open-source CLIP reproduction. 50+ pretrained models.
     summary_zh: OpenCLIP——开源 CLIP 复刻。50+ 预训练模型。
-    stars: 13897
+    stars: 13902
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -6758,7 +6758,7 @@ skills:
       - retrieval
     summary: REALM — Google retrieval-augmented language model pre-training.
     summary_zh: REALM——谷歌检索增强语言模型预训练。
-    stars: 1779
+    stars: 1780
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-19'
@@ -6851,10 +6851,10 @@ skills:
       - huggingface
     summary: HuggingFace Lighteval — lightweight LLM evaluation suite.
     summary_zh: HuggingFace Lighteval——轻量 LLM 评估套件。
-    stars: 2437
+    stars: 2439
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-05-29'
+    pushed_at: '2026-06-09'
   - slug: alpaca-eval
     title: AlpacaEval
     title_zh: AlpacaEval
@@ -6865,7 +6865,7 @@ skills:
       - alpaca-eval
     summary: AlpacaEval — LLM-as-judge.
     summary_zh: AlpacaEval——LLM-as-judge。
-    stars: 1993
+    stars: 1994
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-08-09'
@@ -6880,10 +6880,10 @@ skills:
       - contamination
     summary: LiveBench — contamination-free benchmark.
     summary_zh: LiveBench——无污染的基准。
-    stars: 1190
+    stars: 1191
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: simple-evals
     title: Simple Evals
     title_zh: Simple Evals
@@ -6985,7 +6985,7 @@ skills:
       - agent
     summary: WebArena — realistic web agent benchmark.
     summary_zh: WebArena——真实环境 web agent 基准。
-    stars: 1499
+    stars: 1500
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-11-26'
@@ -7000,7 +7000,7 @@ skills:
       - code
     summary: InterCode — interactive code agent benchmark.
     summary_zh: InterCode——交互式代码 agent 基准。
-    stars: 248
+    stars: 249
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-05-05'
@@ -7015,7 +7015,7 @@ skills:
       - openbmb
     summary: ToolBench — tool learning benchmark.
     summary_zh: ToolBench——工具学习基准。
-    stars: 5660
+    stars: 5661
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-05-21'
@@ -7120,7 +7120,7 @@ skills:
       - code
     summary: OpenAI HumanEval — function synthesis eval.
     summary_zh: OpenAI HumanEval——函数合成评估。
-    stars: 3252
+    stars: 3253
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-01-17'
@@ -7290,7 +7290,7 @@ skills:
       - dialogue
     summary: MultiWOZ — multi-domain task-oriented dialogue.
     summary_zh: MultiWOZ——多域任务型对话。
-    stars: 949
+    stars: 950
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-18'
@@ -7305,10 +7305,10 @@ skills:
       - rl
     summary: Gymnasium RL API.
     summary_zh: Gymnasium RL API。
-    stars: 12016
+    stars: 12024
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-03'
+    pushed_at: '2026-06-09'
   - slug: realtoxicity
     title: Real Toxicity
     title_zh: Real Toxicity
@@ -7396,7 +7396,7 @@ skills:
       - emotion
     summary: MELD — multimodal emotion lines dialogue.
     summary_zh: MELD——多模态情感对话。
-    stars: 1056
+    stars: 1057
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-17'
@@ -7441,7 +7441,7 @@ skills:
       - embodied
     summary: AI2-THOR — embodied AI simulation.
     summary_zh: AI2-THOR——具身 AI 仿真。
-    stars: 1736
+    stars: 1737
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-11-04'
@@ -7456,7 +7456,7 @@ skills:
       - embodied
     summary: Habitat — embodied agent benchmark.
     summary_zh: Habitat——具身 agent 基准。
-    stars: 3007
+    stars: 3009
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-07'
@@ -7471,7 +7471,7 @@ skills:
       - robot
     summary: CALVIN — long-horizon language-conditioned robotics.
     summary_zh: CALVIN——长视野语言条件机器人。
-    stars: 932
+    stars: 933
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-09-08'
@@ -7531,7 +7531,7 @@ skills:
       - agent
     summary: Smol Developer — minimal code agent.
     summary_zh: Smol Developer——极简代码 agent。
-    stars: 12189
+    stars: 12190
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-04-07'
@@ -7546,7 +7546,7 @@ skills:
       - tools
     summary: AgentGPT — autonomous agent with tools.
     summary_zh: AgentGPT——带工具的自主 agent。
-    stars: 36168
+    stars: 36173
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2025-04-29'
@@ -7577,7 +7577,7 @@ skills:
       - code
     summary: GPT Pilot — dev agent with tools.
     summary_zh: GPT Pilot——带工具的开发 agent。
-    stars: 33746
+    stars: 33745
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7593,7 +7593,7 @@ skills:
       - tools
     summary: SillyTavern — chat frontend with tool calls.
     summary_zh: SillyTavern——带工具调用的聊天前端。
-    stars: 29072
+    stars: 29105
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-20'
@@ -7611,7 +7611,7 @@ skills:
     stars: 10752
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: gpt4all
     title: GPT4All
     title_zh: GPT4All
@@ -7624,7 +7624,7 @@ skills:
       - synthetic
     summary: Nomic GPT4All — curated SFT data.
     summary_zh: Nomic GPT4All——精选 SFT 数据。
-    stars: 77353
+    stars: 77354
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-05-27'
@@ -7640,7 +7640,7 @@ skills:
       - serving
     summary: Jan — local LLM serving + chat.
     summary_zh: Jan——本地 LLM serving + 聊天。
-    stars: 42941
+    stars: 42949
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -7658,7 +7658,7 @@ skills:
     stars: 2811
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: bentoml
     title: BentoML
     title_zh: BentoML
@@ -7671,7 +7671,7 @@ skills:
       - inference
     summary: BentoML — model serving framework.
     summary_zh: BentoML——模型服务框架。
-    stars: 8671
+    stars: 8670
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -7687,10 +7687,10 @@ skills:
       - serve
     summary: Ray Serve — model serving + tools.
     summary_zh: Ray Serve——模型服务 + 工具。
-    stars: 42808
+    stars: 42819
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: beam
     title: Beam
     title_zh: Beam
@@ -7717,10 +7717,10 @@ skills:
       - ide
     summary: Cline — IDE tool-use coding agent. LTS build.
     summary_zh: Cline——IDE 工具调用编程 agent。 LTS build。
-    stars: 62926
+    stars: 62954
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: chatbot-ui-docker
     title: Chatbot UI Docker image
     title_zh: Chatbot UI Docker image
@@ -7762,7 +7762,7 @@ skills:
       - spec
     summary: Model Context Protocol specification.
     summary_zh: Model Context Protocol 规范。
-    stars: 8349
+    stars: 8353
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7778,10 +7778,10 @@ skills:
       - sdk
     summary: Python SDK for MCP.
     summary_zh: MCP 的 Python SDK。
-    stars: 23267
+    stars: 23273
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mcp-typescript-sdk
     title: MCP TypeScript SDK
     title_zh: MCP TypeScript SDK
@@ -7794,10 +7794,10 @@ skills:
       - sdk
     summary: TypeScript SDK for MCP.
     summary_zh: MCP 的 TypeScript SDK。
-    stars: 12629
+    stars: 12632
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mcp-go-sdk
     title: MCP Go SDK
     title_zh: MCP Go SDK
@@ -7810,7 +7810,7 @@ skills:
       - sdk
     summary: Go SDK for MCP.
     summary_zh: MCP 的 Go SDK。
-    stars: 8784
+    stars: 8785
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -7826,10 +7826,10 @@ skills:
       - sdk
     summary: Rust SDK for MCP.
     summary_zh: MCP 的 Rust SDK。
-    stars: 3499
+    stars: 3500
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-09'
   - slug: mcp-java-sdk
     title: MCP Java SDK
     title_zh: MCP Java SDK
@@ -7842,7 +7842,7 @@ skills:
       - sdk
     summary: Java SDK for MCP.
     summary_zh: MCP 的 Java SDK。
-    stars: 3459
+    stars: 3463
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -7858,7 +7858,7 @@ skills:
       - sdk
     summary: Kotlin SDK for MCP.
     summary_zh: MCP 的 Kotlin SDK。
-    stars: 1384
+    stars: 1385
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7890,7 +7890,7 @@ skills:
       - sdk
     summary: C# SDK for MCP.
     summary_zh: MCP 的 C# SDK。
-    stars: 4316
+    stars: 4317
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7922,7 +7922,7 @@ skills:
       - sdk
     summary: PHP SDK for MCP.
     summary_zh: MCP 的 PHP SDK。
-    stars: 1532
+    stars: 1533
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -7937,7 +7937,7 @@ skills:
       - cli
     summary: CLI for interacting with MCP servers.
     summary_zh: MCP server 交互 CLI。
-    stars: 437
+    stars: 438
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7952,7 +7952,7 @@ skills:
       - inspector
     summary: Inspector UI for MCP debugging.
     summary_zh: MCP 调试 UI 工具。
-    stars: 10025
+    stars: 10032
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -7982,7 +7982,7 @@ skills:
       - registry
     summary: MCP server registry.
     summary_zh: MCP server 注册表。
-    stars: 6908
+    stars: 6912
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -7998,7 +7998,7 @@ skills:
       - fast
     summary: FastMCP — high-level Python MCP framework.
     summary_zh: FastMCP——高级 Python MCP 框架。
-    stars: 25542
+    stars: 25551
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -8028,7 +8028,7 @@ skills:
       - auth
     summary: MCP auth specification.
     summary_zh: MCP 认证规范。
-    stars: 8349
+    stars: 8353
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8043,7 +8043,7 @@ skills:
       - mcp
     summary: Curated list of MCP servers. C binding.
     summary_zh: MCP server 精选列表。 C binding。
-    stars: 4143
+    stars: 4144
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -8059,10 +8059,10 @@ skills:
       - inference
     summary: llama.cpp — LLM inference in C/C++.
     summary_zh: llama.cpp——C/C++ LLM 推理。
-    stars: 115608
+    stars: 115705
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: xinference
     title: Xinference
     title_zh: Xinference
@@ -8074,10 +8074,10 @@ skills:
       - xorbits
     summary: Xinference — distributed LLM serving.
     summary_zh: Xinference——分布式 LLM serving。
-    stars: 9349
+    stars: 9350
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: aphrodite
     title: Aphrodite
     title_zh: Aphrodite
@@ -8090,7 +8090,7 @@ skills:
       - cuda
     summary: Aphrodite Engine — large-scale LLM inference.
     summary_zh: Aphrodite Engine——大规模 LLM 推理。
-    stars: 1763
+    stars: 1765
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-08'
@@ -8105,7 +8105,7 @@ skills:
       - exl2
     summary: ExLlamaV2 — fast quantized inference.
     summary_zh: ExLlamaV2——快速量化推理。
-    stars: 4545
+    stars: 4547
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-04'
@@ -8121,7 +8121,7 @@ skills:
       - inference
     summary: MLC-LLM — universal LLM deployment.
     summary_zh: MLC-LLM——通用 LLM 部署。
-    stars: 22774
+    stars: 22779
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-11'
@@ -8185,7 +8185,7 @@ skills:
       - serving
     summary: KServe — K8s-native model serving.
     summary_zh: KServe——K8s 原生模型服务。
-    stars: 5554
+    stars: 5558
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8232,10 +8232,10 @@ skills:
       - serving
     summary: KoboldCpp — local LLM serving UI.
     summary_zh: KoboldCpp——本地 LLM serving UI。
-    stars: 10729
+    stars: 10736
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: oobabooga
     title: text-generation-webui
     title_zh: text-generation-webui
@@ -8248,7 +8248,7 @@ skills:
       - serving
     summary: oobabooga text-generation-webui — LLM serving UI.
     summary_zh: oobabooga text-generation-webui——LLM serving UI。
-    stars: 47284
+    stars: 47281
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -8264,7 +8264,7 @@ skills:
       - serving
     summary: FastChat — distributed LLM serving.
     summary_zh: FastChat——分布式 LLM serving。
-    stars: 39471
+    stars: 39470
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-01'
@@ -8296,7 +8296,7 @@ skills:
       - serving
     summary: Qwen — Alibaba LLM serving.
     summary_zh: Qwen——阿里 LLM serving。
-    stars: 21255
+    stars: 21259
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-05'
@@ -8341,7 +8341,7 @@ skills:
       - lightning
     summary: lit-gpt — hackable GPT fine-tuning.
     summary_zh: lit-gpt——可改写的 GPT 微调。
-    stars: 13413
+    stars: 13414
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8356,7 +8356,7 @@ skills:
       - karpathy
     summary: nanoGPT — minimal GPT.
     summary_zh: nanoGPT——极简 GPT。
-    stars: 59360
+    stars: 59384
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-11-12'
@@ -8371,7 +8371,7 @@ skills:
       - karpathy
     summary: minbpe — minimal BPE tokenizer.
     summary_zh: minbpe——极简 BPE tokenizer。
-    stars: 10538
+    stars: 10552
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-07-01'
@@ -8386,7 +8386,7 @@ skills:
       - lora
     summary: QLoRA — quantized LoRA fine-tuning.
     summary_zh: QLoRA——量化 LoRA 微调。
-    stars: 10925
+    stars: 10924
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-06-10'
@@ -8416,10 +8416,10 @@ skills:
       - reinforcement
     summary: OpenRLHF — high-performance RLHF framework.
     summary_zh: OpenRLHF——高性能 RLHF 框架。
-    stars: 9612
+    stars: 9614
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: accelerate
     title: Accelerate
     title_zh: Accelerate
@@ -8431,7 +8431,7 @@ skills:
       - huggingface
     summary: HuggingFace Accelerate — distributed training.
     summary_zh: HuggingFace Accelerate——分布式训练。
-    stars: 9717
+    stars: 9720
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -8449,7 +8449,7 @@ skills:
     stars: 8262
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-08'
   - slug: liger-kernel
     title: Liger Kernel
     title_zh: Liger Kernel
@@ -8464,7 +8464,7 @@ skills:
     stars: 6421
     license: BSD-2-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: xformers
     title: xFormers
     title_zh: xFormers
@@ -8491,10 +8491,10 @@ skills:
       - cuda
     summary: Flash Attention — fast transformer attention.
     summary_zh: Flash Attention——快速 Transformer attention。
-    stars: 24085
+    stars: 24099
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-06'
+    pushed_at: '2026-06-09'
   - slug: llm-course
     title: LLM Course
     title_zh: LLM 课程
@@ -8506,7 +8506,7 @@ skills:
       - course
     summary: MLabonne LLM course.
     summary_zh: MLabonne LLM 课程。
-    stars: 79957
+    stars: 79959
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-02-05'
@@ -8521,7 +8521,7 @@ skills:
       - course
     summary: LLM Zoomcamp — fine-tuning course.
     summary_zh: LLM Zoomcamp——微调课程。
-    stars: 5970
+    stars: 6059
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8536,7 +8536,7 @@ skills:
       - rlhf
     summary: HuggingFace Alignment Handbook.
     summary_zh: HuggingFace Alignment Handbook。
-    stars: 5608
+    stars: 5607
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-26'
@@ -8552,7 +8552,7 @@ skills:
       - sft
     summary: AllenAI Open-Instruct — instruction tuning data generation.
     summary_zh: AllenAI Open-Instruct——指令微调数据生成。
-    stars: 3745
+    stars: 3746
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8599,7 +8599,7 @@ skills:
       - fsdp
     summary: Microsoft DeepSpeed — distributed training.
     summary_zh: Microsoft DeepSpeed——分布式训练。
-    stars: 42481
+    stars: 42485
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8614,10 +8614,10 @@ skills:
       - pytorch
     summary: PyTorch FSDP — fully sharded data parallel.
     summary_zh: PyTorch FSDP——全分片数据并行。
-    stars: 100614
+    stars: 100612
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: megatron-lm
     title: Megatron-LM
     title_zh: Megatron-LM
@@ -8629,10 +8629,10 @@ skills:
       - nvidia
     summary: NVIDIA Megatron-LM — large model training.
     summary_zh: NVIDIA Megatron-LM——大模型训练。
-    stars: 16629
+    stars: 16636
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fairscale
     title: FairScale
     title_zh: FairScale
@@ -8660,10 +8660,10 @@ skills:
       - pytorch
     summary: PyTorch Lightning — distributed training framework.
     summary_zh: PyTorch Lightning——分布式训练框架。
-    stars: 31176
+    stars: 31177
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: torchtitan
     title: TorchTitan
     title_zh: TorchTitan
@@ -8675,10 +8675,10 @@ skills:
       - pytorch
     summary: TorchTitan — PyTorch native distributed training.
     summary_zh: TorchTitan——PyTorch 原生分布式训练。
-    stars: 5420
+    stars: 5422
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: torchtune
     title: TorchTune
     title_zh: TorchTune
@@ -8690,7 +8690,7 @@ skills:
       - pytorch
     summary: TorchTune — PyTorch LLM fine-tuning.
     summary_zh: TorchTune——PyTorch LLM 微调。
-    stars: 5768
+    stars: 5769
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8705,7 +8705,7 @@ skills:
       - hpc
     summary: ColossalAI — large-scale distributed training.
     summary_zh: ColossalAI——大规模分布式训练。
-    stars: 41393
+    stars: 41396
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-25'
@@ -8735,10 +8735,10 @@ skills:
       - nvidia
     summary: NVIDIA Apex — mixed precision training.
     summary_zh: NVIDIA Apex——混合精度训练。
-    stars: 8972
+    stars: 8971
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-01'
+    pushed_at: '2026-06-08'
   - slug: megatron-deepspeed
     title: Megatron-DeepSpeed
     title_zh: Megatron-DeepSpeed
@@ -8798,7 +8798,7 @@ skills:
     stars: 2311
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openllm
     title: OpenLLM
     title_zh: OpenLLM
@@ -8810,7 +8810,7 @@ skills:
       - bentoml
     summary: OpenLLM — distributed LLM serving.
     summary_zh: OpenLLM——分布式 LLM serving。
-    stars: 12351
+    stars: 12352
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -8856,7 +8856,7 @@ skills:
       - graph
     summary: Deep Graph Library — distributed training.
     summary_zh: DGL——分布式训练。
-    stars: 14273
+    stars: 14274
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-07-31'
@@ -8932,7 +8932,7 @@ skills:
       - int4
     summary: GPTQ — accurate post-training quantization.
     summary_zh: GPTQ——精确训练后量化。
-    stars: 2317
+    stars: 2318
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2024-03-27'
@@ -8947,7 +8947,7 @@ skills:
       - int8
     summary: SmoothQuant — int8 quantization.
     summary_zh: SmoothQuant——int8 量化。
-    stars: 1658
+    stars: 1659
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-07-12'
@@ -8962,10 +8962,10 @@ skills:
       - vllm
     summary: vLLM LLM Compressor — quantization toolkit.
     summary_zh: vLLM LLM Compressor——量化工具包。
-    stars: 3367
+    stars: 3371
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: llm-int8
     title: LLM.int8()
     title_zh: LLM.int8()
@@ -8980,7 +8980,7 @@ skills:
     stars: 8262
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-08'
   - slug: llm-qat
     title: LLM-QAT
     title_zh: LLM-QAT
@@ -9007,7 +9007,7 @@ skills:
       - int4
     summary: AutoGPTQ — easy GPTQ.
     summary_zh: AutoGPTQ——易用 GPTQ。
-    stars: 5068
+    stars: 5067
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-04-11'
@@ -9023,7 +9023,7 @@ skills:
       - awq
     summary: AutoAWQ — easy AWQ.
     summary_zh: AutoAWQ——易用 AWQ。
-    stars: 2342
+    stars: 2341
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-05-11'
@@ -9055,7 +9055,7 @@ skills:
       - moe
     summary: ArceeAI MergeKit — model merging toolkit.
     summary_zh: ArceeAI MergeKit——模型融合工具包。
-    stars: 7124
+    stars: 7126
     license: LGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-06'
@@ -9161,7 +9161,7 @@ skills:
       - gemma
     summary: Google ShieldGemma — safety model.
     summary_zh: Google ShieldGemma——安全模型。
-    stars: 5366
+    stars: 5371
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -9179,7 +9179,7 @@ skills:
     stars: 5548
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: detoxify
     title: Detoxify
     title_zh: Detoxify
@@ -9221,7 +9221,7 @@ skills:
       - pii
     summary: Microsoft Presidio — PII detection.
     summary_zh: Microsoft Presidio——PII 检测。
-    stars: 8499
+    stars: 8509
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -9267,7 +9267,7 @@ skills:
       - protectai
     summary: Protect AI LLM Guard.
     summary_zh: Protect AI LLM Guard。
-    stars: 3051
+    stars: 3057
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-12-15'
@@ -9297,7 +9297,7 @@ skills:
       - redteam
     summary: Confident AI DeepTeam — LLM red-teaming.
     summary_zh: Confident AI DeepTeam——LLM 红队。
-    stars: 1866
+    stars: 1872
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -9312,7 +9312,7 @@ skills:
       - redteam
     summary: Garak — LLM vulnerability scanner.
     summary_zh: Garak——LLM 漏洞扫描。
-    stars: 8058
+    stars: 8061
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -9327,7 +9327,7 @@ skills:
       - azure
     summary: Azure PyRIT — Python Risk Identification Tool.
     summary_zh: Azure PyRIT——Python 风险识别工具。
-    stars: 57
+    stars: 59
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-25'
@@ -9388,7 +9388,7 @@ skills:
       - safety
     summary: Center for AI Safety HarmBench.
     summary_zh: AI 安全中心 HarmBench。
-    stars: 977
+    stars: 979
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-08-16'
@@ -9450,10 +9450,10 @@ skills:
       - fl
     summary: Flower — federated learning framework.
     summary_zh: Flower——联邦学习框架。
-    stars: 6931
+    stars: 6933
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: federated-learning
     title: TensorFlow Federated
     title_zh: TensorFlow Federated
@@ -9570,7 +9570,7 @@ skills:
       - spdz
     summary: MP-SPDZ — secure multi-party computation.
     summary_zh: MP-SPDZ——安全多方计算。
-    stars: 1155
+    stars: 1156
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -9615,7 +9615,7 @@ skills:
       - tracing
     summary: AgentOps — agent observability.
     summary_zh: AgentOps——agent 可观测性。
-    stars: 5610
+    stars: 5613
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-19'
@@ -9630,7 +9630,7 @@ skills:
       - arize
     summary: OpenInference — LLM observability.
     summary_zh: OpenInference——LLM 可观测性。
-    stars: 1012
+    stars: 1014
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -9645,7 +9645,7 @@ skills:
       - prompt
     summary: Pezzo — prompt management + observability.
     summary_zh: Pezzo——prompt 管理 + 可观测性。
-    stars: 3239
+    stars: 3242
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-31'
@@ -9675,7 +9675,7 @@ skills:
       - tracing
     summary: Instructor — structured output + observability.
     summary_zh: Instructor——结构化输出 + 可观测性。
-    stars: 13122
+    stars: 13128
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -9722,7 +9722,7 @@ skills:
       - bench
     summary: LongMemEval — long-memory benchmark.
     summary_zh: LongMemEval——长记忆基准。
-    stars: 843
+    stars: 848
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-11'
@@ -9737,7 +9737,7 @@ skills:
       - compression
     summary: LLMLingua — prompt compression.
     summary_zh: LLMLingua——prompt 压缩。
-    stars: 6262
+    stars: 6264
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-08'
@@ -9752,7 +9752,7 @@ skills:
       - compression
     summary: LongLLMLingua — long prompt compression.
     summary_zh: LongLLMLingua——长 prompt 压缩。
-    stars: 6262
+    stars: 6264
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-08'
@@ -9767,7 +9767,7 @@ skills:
       - graph
     summary: NetworkX — graph library.
     summary_zh: NetworkX——图库。
-    stars: 16985
+    stars: 16988
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -9797,10 +9797,10 @@ skills:
       - rag
     summary: HKUDS LightRAG — simple RAG with graphs.
     summary_zh: HKUDS LightRAG——带图的简单 RAG。
-    stars: 36304
+    stars: 36332
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fast-graphrag
     title: fast-graphrag
     title_zh: fast-graphrag
@@ -9812,7 +9812,7 @@ skills:
       - rag
     summary: fast-graphrag — fast GraphRAG.
     summary_zh: fast-graphrag——快速 GraphRAG。
-    stars: 3799
+    stars: 3798
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-11-01'
@@ -9873,10 +9873,10 @@ skills:
       - graph
     summary: ArangoDB — multi-model graph DB.
     summary_zh: ArangoDB——多模型图数据库。
-    stars: 14197
+    stars: 14198
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: janusgraph
     title: JanusGraph
     title_zh: JanusGraph
@@ -9903,7 +9903,7 @@ skills:
       - graph
     summary: Kuzu — embedded graph DB.
     summary_zh: Kuzu——嵌入式图数据库。
-    stars: 3956
+    stars: 3959
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-10-10'
@@ -9919,7 +9919,7 @@ skills:
       - graph
     summary: Nebula Graph — distributed graph DB.
     summary_zh: Nebula Graph——分布式图数据库。
-    stars: 12210
+    stars: 12211
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -9949,10 +9949,10 @@ skills:
       - graph
     summary: OrientDB — multi-model DB.
     summary_zh: OrientDB——多模型数据库。
-    stars: 4963
+    stars: 4962
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openlink-virtuoso
     title: Virtuoso
     title_zh: Virtuoso
@@ -10045,7 +10045,7 @@ skills:
       - synthetic
     summary: THU UltraChat — multi-source chat data.
     summary_zh: THU UltraChat——多源聊天数据。
-    stars: 2860
+    stars: 2861
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-03-13'
@@ -10061,7 +10061,7 @@ skills:
       - synthetic
     summary: Databricks Dolly — human-written instruction data.
     summary_zh: Databricks Dolly——人工写的指令数据。
-    stars: 10790
+    stars: 10791
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2023-06-30'
@@ -10093,7 +10093,7 @@ skills:
       - data
     summary: Together RedPajama — Llama-2 pretraining replica.
     summary_zh: Together RedPajama——Llama-2 预训练数据复刻。
-    stars: 4947
+    stars: 4949
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -10140,7 +10140,7 @@ skills:
       - pdf
     summary: MinerU — multi-modal PDF extraction.
     summary_zh: MinerU——多模态 PDF 抽取。
-    stars: 66884
+    stars: 66970
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10155,7 +10155,7 @@ skills:
       - ocr
     summary: Surya — multilingual OCR.
     summary_zh: Surya——多语种 OCR。
-    stars: 20724
+    stars: 20735
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -10170,7 +10170,7 @@ skills:
       - ocr
     summary: Tesseract OCR.
     summary_zh: Tesseract OCR。
-    stars: 74573
+    stars: 74568
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -10185,7 +10185,7 @@ skills:
       - ocr
     summary: EasyOCR — ready-to-use OCR.
     summary_zh: EasyOCR——开箱即用 OCR。
-    stars: 29575
+    stars: 29578
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-12-05'
@@ -10200,10 +10200,10 @@ skills:
       - ocr
     summary: PaddleOCR — multilingual OCR.
     summary_zh: PaddleOCR——多语种 OCR。
-    stars: 81468
+    stars: 81557
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-08'
   - slug: layoutparser
     title: LayoutParser
     title_zh: LayoutParser
@@ -10230,7 +10230,7 @@ skills:
       - markdown
     summary: Microsoft Markitdown — any file to markdown.
     summary_zh: Microsoft Markitdown——任意文件转 markdown。
-    stars: 148251
+    stars: 148867
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-26'
@@ -10245,7 +10245,7 @@ skills:
       - crawl
     summary: Crawl4AI — LLM-friendly crawler.
     summary_zh: Crawl4AI——LLM 友好爬虫。
-    stars: 68086
+    stars: 68111
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -10260,7 +10260,7 @@ skills:
       - crawl
     summary: Scrapy — web crawling framework.
     summary_zh: Scrapy——爬虫框架。
-    stars: 62158
+    stars: 62168
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10275,10 +10275,10 @@ skills:
       - crawl
     summary: Playwright-based crawler.
     summary_zh: Playwright 爬虫。
-    stars: 90525
+    stars: 90567
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: beautifulsoup
     title: BeautifulSoup
     title_zh: BeautifulSoup
@@ -10305,7 +10305,7 @@ skills:
       - extract
     summary: Trafilatura — web text extraction.
     summary_zh: Trafilatura——网页文本抽取。
-    stars: 6072
+    stars: 6083
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -10335,10 +10335,10 @@ skills:
       - sql
     summary: dbt — data transformation.
     summary_zh: dbt——数据转换。
-    stars: 12954
+    stars: 12958
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: airflow
     title: Airflow
     title_zh: Airflow
@@ -10350,10 +10350,10 @@ skills:
       - etl
     summary: Apache Airflow — workflow orchestration.
     summary_zh: Apache Airflow——工作流编排。
-    stars: 45738
+    stars: 45749
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: prefect
     title: Prefect
     title_zh: Prefect
@@ -10368,7 +10368,7 @@ skills:
     stars: 22570
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: dagster
     title: Dagster
     title_zh: Dagster
@@ -10383,7 +10383,7 @@ skills:
     stars: 15647
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: kafka
     title: Kafka
     title_zh: Kafka
@@ -10398,7 +10398,7 @@ skills:
     stars: 32740
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pyspark
     title: PySpark
     title_zh: PySpark
@@ -10410,10 +10410,10 @@ skills:
       - etl
     summary: PySpark — distributed data processing.
     summary_zh: PySpark——分布式数据处理。
-    stars: 43429
+    stars: 43433
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: polars
     title: Polars
     title_zh: Polars
@@ -10425,10 +10425,10 @@ skills:
       - dataframe
     summary: Polars — fast DataFrames.
     summary_zh: Polars——高速 DataFrame。
-    stars: 38707
+    stars: 38709
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pandas
     title: Pandas
     title_zh: Pandas
@@ -10440,7 +10440,7 @@ skills:
       - dataframe
     summary: Pandas — DataFrames in Python.
     summary_zh: Pandas——Python DataFrame。
-    stars: 48930
+    stars: 48935
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10455,7 +10455,7 @@ skills:
       - ide
     summary: Cursor — AI code editor.
     summary_zh: Cursor——AI 代码编辑器。
-    stars: 32940
+    stars: 32942
     license: Proprietary
     added: '2026-06-06'
     pushed_at: '2026-05-12'
@@ -10470,7 +10470,7 @@ skills:
       - github
     summary: GitHub Copilot — AI pair programmer.
     summary_zh: GitHub Copilot——AI 配对程序员。
-    stars: 11627
+    stars: 11628
     license: Proprietary
     added: '2026-06-06'
     pushed_at: '2026-01-09'
@@ -10500,7 +10500,7 @@ skills:
       - windsurf
     summary: Codeium/Windsurf — free AI coding.
     summary_zh: Codeium/Windsurf——免费 AI 编码。
-    stars: 279
+    stars: 280
     license: Proprietary
     added: '2026-06-06'
     pushed_at: '2026-01-26'
@@ -10515,10 +10515,10 @@ skills:
       - editor
     summary: Zed — fast AI editor.
     summary_zh: Zed——快速 AI 编辑器。
-    stars: 84789
+    stars: 84824
     license: GPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: void
     title: Void
     title_zh: Void
@@ -10530,7 +10530,7 @@ skills:
       - editor
     summary: Void — open-source AI code editor.
     summary_zh: Void——开源 AI 代码编辑器。
-    stars: 28814
+    stars: 28819
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -10561,7 +10561,7 @@ skills:
       - neovim
     summary: Avante — Neovim AI plugin.
     summary_zh: Avante——Neovim AI 插件。
-    stars: 17948
+    stars: 17950
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10591,7 +10591,7 @@ skills:
       - neovim
     summary: ChatGPT in Neovim.
     summary_zh: Neovim 中的 ChatGPT。
-    stars: 4004
+    stars: 4006
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-01-13'
@@ -10651,7 +10651,7 @@ skills:
       - meta
     summary: Meta Code Llama.
     summary_zh: Meta Code Llama。
-    stars: 16313
+    stars: 16312
     license: LLAMA-2
     added: '2026-06-06'
     pushed_at: '2024-08-12'
@@ -10666,7 +10666,7 @@ skills:
       - deepseek-coder-v2
     summary: DeepSeek-Coder-V2.
     summary_zh: DeepSeek-Coder-V2。
-    stars: 6828
+    stars: 6827
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-11-11'
@@ -10681,7 +10681,7 @@ skills:
       - qwen
     summary: Qwen2.5-Coder.
     summary_zh: Qwen2.5-Coder。
-    stars: 16601
+    stars: 16603
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-24'
@@ -10711,7 +10711,7 @@ skills:
       - meta
     summary: Meta Llama 3.
     summary_zh: Meta Llama 3。
-    stars: 29286
+    stars: 29285
     license: LLAMA-3
     added: '2026-06-06'
     pushed_at: '2025-01-26'
@@ -10727,7 +10727,7 @@ skills:
       - meta
     summary: Meta Llama 3.1.
     summary_zh: Meta Llama 3.1。
-    stars: 59455
+    stars: 59453
     license: LLAMA-3.1
     added: '2026-06-06'
     pushed_at: '2025-01-26'
@@ -10742,7 +10742,7 @@ skills:
       - qwen
     summary: Qwen2 base.
     summary_zh: Qwen2 基座。
-    stars: 27290
+    stars: 27292
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-01-09'
@@ -10832,10 +10832,10 @@ skills:
       - terminal
     summary: Warp — AI terminal.
     summary_zh: Warp——AI 终端。
-    stars: 61266
+    stars: 61317
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fig
     title: Fig
     title_zh: Fig
@@ -10847,7 +10847,7 @@ skills:
       - completion
     summary: Fig — terminal autocomplete.
     summary_zh: Fig——终端自动补全。
-    stars: 25190
+    stars: 25191
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-05-05'
@@ -10862,7 +10862,7 @@ skills:
       - terminal
     summary: Ghostty — fast terminal.
     summary_zh: Ghostty——快速终端。
-    stars: 56136
+    stars: 56171
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10877,10 +10877,10 @@ skills:
       - terminal
     summary: Kitty — GPU terminal.
     summary_zh: Kitty——GPU 终端。
-    stars: 33353
+    stars: 33362
     license: GPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: iterm2
     title: iTerm2
     title_zh: iTerm2
@@ -10892,7 +10892,7 @@ skills:
       - macos
     summary: iTerm2 — Mac terminal.
     summary_zh: iTerm2——Mac 终端。
-    stars: 17659
+    stars: 17661
     license: GPL-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10907,7 +10907,7 @@ skills:
       - terminal
     summary: WezTerm — GPU terminal.
     summary_zh: WezTerm——GPU 终端。
-    stars: 26505
+    stars: 26513
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -10922,7 +10922,7 @@ skills:
       - terminal
     summary: Alacritty — GPU terminal.
     summary_zh: Alacritty——GPU 终端。
-    stars: 64525
+    stars: 64543
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -10937,10 +10937,10 @@ skills:
       - terminal
     summary: tmux — terminal multiplexer.
     summary_zh: tmux——终端复用。
-    stars: 46388
+    stars: 46404
     license: ISC
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: zsh
     title: Zsh
     title_zh: Zsh
@@ -10952,10 +10952,10 @@ skills:
       - shell
     summary: Zsh shell.
     summary_zh: Zsh shell。
-    stars: 4220
+    stars: 4222
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fish
     title: Fish
     title_zh: Fish
@@ -10967,7 +10967,7 @@ skills:
       - shell
     summary: Fish shell.
     summary_zh: Fish shell。
-    stars: 33625
+    stars: 33632
     license: GPL-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -10982,7 +10982,7 @@ skills:
       - prompt
     summary: Starship — shell prompt.
     summary_zh: Starship——shell prompt。
-    stars: 58157
+    stars: 58181
     license: ISC
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -11012,7 +11012,7 @@ skills:
       - zsh
     summary: Powerlevel10k — Zsh theme.
     summary_zh: Powerlevel10k——Zsh 主题。
-    stars: 54374
+    stars: 54385
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -11027,7 +11027,7 @@ skills:
       - fuzzy
     summary: fzf — fuzzy finder.
     summary_zh: fzf——模糊查找。
-    stars: 80942
+    stars: 80941
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -11042,7 +11042,7 @@ skills:
       - search
     summary: ripgrep — fast search.
     summary_zh: ripgrep——快速搜索。
-    stars: 64918
+    stars: 64949
     license: Unlicense
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -11057,7 +11057,7 @@ skills:
       - find
     summary: fd — simple find.
     summary_zh: fd——简单 find。
-    stars: 43277
+    stars: 43273
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -11072,7 +11072,7 @@ skills:
       - viewer
     summary: bat — cat clone.
     summary_zh: bat——cat 替代。
-    stars: 59282
+    stars: 59289
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-01'
@@ -11087,7 +11087,7 @@ skills:
       - ls
     summary: eza — modern ls.
     summary_zh: eza——现代 ls。
-    stars: 22211
+    stars: 22244
     license: EUPL-1.2
     added: '2026-06-06'
     pushed_at: '2026-05-31'
@@ -11102,7 +11102,7 @@ skills:
       - nav
     summary: zoxide — smarter cd.
     summary_zh: zoxide——更聪明的 cd。
-    stars: 37295
+    stars: 37338
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-21'
@@ -11117,7 +11117,7 @@ skills:
       - file-manager
     summary: Yazi — terminal file manager.
     summary_zh: Yazi——终端文件管理器。
-    stars: 39211
+    stars: 39221
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -11132,7 +11132,7 @@ skills:
       - tree
     summary: Broot — tree viewer.
     summary_zh: Broot——树形查看器。
-    stars: 12719
+    stars: 12720
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-01'
@@ -11162,7 +11162,7 @@ skills:
       - tui
     summary: Lazygit — git TUI.
     summary_zh: Lazygit——git TUI。
-    stars: 79130
+    stars: 79151
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -11177,7 +11177,7 @@ skills:
       - tui
     summary: Lazydocker — docker TUI.
     summary_zh: Lazydocker——docker TUI。
-    stars: 51286
+    stars: 51288
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-19'
@@ -11192,7 +11192,7 @@ skills:
       - monitor
     summary: btop — system monitor.
     summary_zh: btop——系统监控。
-    stars: 32730
+    stars: 32740
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -11207,7 +11207,7 @@ skills:
       - monitor
     summary: htop — process viewer.
     summary_zh: htop——进程查看器。
-    stars: 8115
+    stars: 8116
     license: GPL-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -11222,7 +11222,7 @@ skills:
       - cmd
     summary: Clink — Windows shell.
     summary_zh: Clink——Windows shell。
-    stars: 5276
+    stars: 5280
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -11237,10 +11237,10 @@ skills:
       - shell
     summary: Nushell — modern shell.
     summary_zh: Nushell——现代 shell。
-    stars: 39695
+    stars: 39699
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: xonsh
     title: Xonsh
     title_zh: Xonsh
@@ -11255,7 +11255,7 @@ skills:
     stars: 9507
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: puppeteer
     title: Puppeteer
     title_zh: Puppeteer
@@ -11268,10 +11268,10 @@ skills:
       - nodejs
     summary: Puppeteer — Chrome automation.
     summary_zh: Puppeteer——Chrome 自动化。
-    stars: 94491
+    stars: 94496
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: selenium
     title: Selenium
     title_zh: Selenium
@@ -11283,10 +11283,10 @@ skills:
       - automation
     summary: Selenium — browser automation.
     summary_zh: Selenium——浏览器自动化。
-    stars: 34169
+    stars: 34178
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cypress
     title: Cypress
     title_zh: Cypress
@@ -11298,10 +11298,10 @@ skills:
       - e2e
     summary: Cypress — e2e testing.
     summary_zh: Cypress——端到端测试。
-    stars: 49703
+    stars: 49706
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: webdriverio
     title: WebdriverIO
     title_zh: WebdriverIO
@@ -11313,7 +11313,7 @@ skills:
       - wdi
     summary: WebdriverIO — browser automation.
     summary_zh: WebdriverIO——浏览器自动化。
-    stars: 9808
+    stars: 9794
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -11328,10 +11328,10 @@ skills:
       - agent
     summary: Stagehand — AI browser framework.
     summary_zh: Stagehand——AI 浏览器框架。
-    stars: 23019
+    stars: 23035
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openbb-browser
     title: OpenBB
     title_zh: OpenBB
@@ -11344,10 +11344,10 @@ skills:
       - browser
     summary: OpenBB Terminal — finance browser.
     summary_zh: OpenBB Terminal——金融浏览器。
-    stars: 68790
+    stars: 68811
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-08'
   - slug: chromedp
     title: ChromeDP
     title_zh: ChromeDP
@@ -11359,7 +11359,7 @@ skills:
       - go
     summary: ChromeDP — Go Chrome automation.
     summary_zh: ChromeDP——Go Chrome 自动化。
-    stars: 13096
+    stars: 13098
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-23'
@@ -11374,7 +11374,7 @@ skills:
       - rust
     summary: Spider — Rust web crawler.
     summary_zh: Spider——Rust 爬虫。
-    stars: 2531
+    stars: 2534
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -11389,7 +11389,7 @@ skills:
       - scraping
     summary: Scrapling — web scraping.
     summary_zh: Scrapling——网页抓取。
-    stars: 62149
+    stars: 62344
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -11434,7 +11434,7 @@ skills:
       - crawler
     summary: Colly — Go scraping.
     summary_zh: Colly——Go 抓取。
-    stars: 25317
+    stars: 25321
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-25'
@@ -11467,7 +11467,7 @@ skills:
     stars: 5992
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-02'
+    pushed_at: '2026-06-08'
   - slug: apify
     title: Apify
     title_zh: Apify
@@ -11509,7 +11509,7 @@ skills:
       - claude
     summary: Anthropic computer use.
     summary_zh: Anthropic 桌面使用。
-    stars: 16955
+    stars: 16959
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-28'
@@ -11524,7 +11524,7 @@ skills:
       - gui
     summary: SeeClick — GUI grounding.
     summary_zh: SeeClick——GUI 定位。
-    stars: 483
+    stars: 484
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-07-13'
@@ -11539,7 +11539,7 @@ skills:
       - gui
     summary: ShowUI — vision-language GUI agent.
     summary_zh: ShowUI——视觉 GUI agent。
-    stars: 1851
+    stars: 1853
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-24'
@@ -11584,7 +11584,7 @@ skills:
       - remote
     summary: KasmVNC — web VNC.
     summary_zh: KasmVNC——web VNC。
-    stars: 5025
+    stars: 5029
     license: GPL-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -11629,7 +11629,7 @@ skills:
       - automation
     summary: PyAutoGUI — desktop automation.
     summary_zh: PyAutoGUI——桌面自动化。
-    stars: 12549
+    stars: 12551
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2024-08-20'
@@ -11644,7 +11644,7 @@ skills:
       - automation
     summary: pynput — input automation.
     summary_zh: pynput——输入自动化。
-    stars: 2151
+    stars: 2149
     license: LGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-12'
@@ -11659,7 +11659,7 @@ skills:
       - browser
     summary: Automa — browser automation.
     summary_zh: Automa——浏览器自动化。
-    stars: 21383
+    stars: 21385
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-02'
@@ -11719,7 +11719,7 @@ skills:
       - rpa
     summary: UiPath — enterprise RPA.
     summary_zh: UiPath——企业 RPA。
-    stars: 1174
+    stars: 1175
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-18'
@@ -11734,7 +11734,7 @@ skills:
       - vlm
     summary: LLaVA-NeXT.
     summary_zh: LLaVA-NeXT。
-    stars: 4689
+    stars: 4688
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-15'
@@ -11779,7 +11779,7 @@ skills:
       - deepseek
     summary: DeepSeek-VL.
     summary_zh: DeepSeek-VL。
-    stars: 4122
+    stars: 4123
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-04-24'
@@ -11809,7 +11809,7 @@ skills:
       - microsoft
     summary: KOSMOS — multimodal LM.
     summary_zh: KOSMOS——多模态 LM。
-    stars: 22145
+    stars: 22147
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-01-23'
@@ -11840,7 +11840,7 @@ skills:
       - compvis
     summary: Stable Diffusion — text-to-image.
     summary_zh: Stable Diffusion——文生图。
-    stars: 73087
+    stars: 73089
     license: CreativeML-Open-RAIL-M
     added: '2026-06-06'
     pushed_at: '2024-06-18'
@@ -11855,7 +11855,7 @@ skills:
       - sdxl
     summary: SDXL ControlNet.
     summary_zh: SDXL ControlNet。
-    stars: 33921
+    stars: 33926
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2024-02-25'
@@ -11870,10 +11870,10 @@ skills:
       - hf
     summary: HuggingFace Diffusers.
     summary_zh: HuggingFace Diffusers。
-    stars: 33803
+    stars: 33810
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: kandinsky
     title: Kandinsky
     title_zh: Kandinsky
@@ -11918,7 +11918,7 @@ skills:
     stars: 920
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-09'
   - slug: together
     title: Together
     title_zh: Together
@@ -11945,10 +11945,10 @@ skills:
       - gen
     summary: Pollinations — open gen.
     summary_zh: Pollinations——开放生成。
-    stars: 4630
+    stars: 4639
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: prodia
     title: Prodia
     title_zh: Prodia
@@ -11991,7 +11991,7 @@ skills:
       - hpc
     summary: Open-Sora.
     summary_zh: Open-Sora。
-    stars: 29078
+    stars: 29081
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-09'
@@ -12051,10 +12051,10 @@ skills:
       - cpp
     summary: Whisper in C++.
     summary_zh: Whisper C++ 版。
-    stars: 50565
+    stars: 50583
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: whisperx
     title: WhisperX
     title_zh: WhisperX
@@ -12066,7 +12066,7 @@ skills:
       - asr
     summary: WhisperX — word-level ASR.
     summary_zh: WhisperX——词级 ASR。
-    stars: 22335
+    stars: 22351
     license: BSD-2-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -12081,7 +12081,7 @@ skills:
       - hf
     summary: Distilled Whisper.
     summary_zh: 蒸馏版 Whisper。
-    stars: 4079
+    stars: 4080
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-01-08'
@@ -12127,7 +12127,7 @@ skills:
       - tts
     summary: Tortoise TTS — voice cloning.
     summary_zh: Tortoise TTS——声音克隆。
-    stars: 14856
+    stars: 14857
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2024-11-19'
@@ -12142,7 +12142,7 @@ skills:
       - clone
     summary: OpenVoice — voice cloning.
     summary_zh: OpenVoice——声音克隆。
-    stars: 36642
+    stars: 36645
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-04-19'
@@ -12157,7 +12157,7 @@ skills:
       - tts
     summary: StyleTTS 2.
     summary_zh: StyleTTS 2。
-    stars: 6284
+    stars: 6286
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-08-10'
@@ -12172,7 +12172,7 @@ skills:
       - suno
     summary: Suno Bark TTS.
     summary_zh: Suno Bark TTS。
-    stars: 39150
+    stars: 39151
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-08-19'
@@ -12187,7 +12187,7 @@ skills:
       - tts
     summary: Coqui TTS library.
     summary_zh: Coqui TTS 库。
-    stars: 45512
+    stars: 45517
     license: MPL-2.0
     added: '2026-06-06'
     pushed_at: '2024-08-16'
@@ -12202,7 +12202,7 @@ skills:
       - tts
     summary: Piper — fast TTS.
     summary_zh: Piper——快速 TTS。
-    stars: 11064
+    stars: 11067
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-08-26'
@@ -12218,7 +12218,7 @@ skills:
       - tts
     summary: Kokoro TTS.
     summary_zh: Kokoro TTS。
-    stars: 7381
+    stars: 7395
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-08-06'
@@ -12233,7 +12233,7 @@ skills:
       - tts
     summary: ChatTTS — natural TTS.
     summary_zh: ChatTTS——自然 TTS。
-    stars: 39407
+    stars: 39418
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-04-10'
@@ -12248,7 +12248,7 @@ skills:
       - tts
     summary: F5-TTS.
     summary_zh: F5-TTS。
-    stars: 14696
+    stars: 14703
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -12263,7 +12263,7 @@ skills:
       - tts
     summary: CosyVoice — Alibaba TTS.
     summary_zh: CosyVoice——阿里 TTS。
-    stars: 21523
+    stars: 21536
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-25'
@@ -12293,7 +12293,7 @@ skills:
       - tts
     summary: Dia — dialogue TTS.
     summary_zh: Dia——对话 TTS。
-    stars: 19305
+    stars: 19306
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2025-11-19'
@@ -12308,7 +12308,7 @@ skills:
       - robot
     summary: Octo — robot foundation policy.
     summary_zh: Octo——机器人基础策略。
-    stars: 1667
+    stars: 1668
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-07-31'
@@ -12323,7 +12323,7 @@ skills:
       - vla
     summary: OpenVLA — open VLA model.
     summary_zh: OpenVLA——开放 VLA 模型。
-    stars: 6385
+    stars: 6395
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-03-23'
@@ -12338,7 +12338,7 @@ skills:
       - thu-ml
     summary: Robotics Diffusion Transformer.
     summary_zh: 机器人扩散 Transformer。
-    stars: 1719
+    stars: 1720
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-01-21'
@@ -12384,10 +12384,10 @@ skills:
       - google
     summary: MuJoCo physics.
     summary_zh: MuJoCo 物理仿真。
-    stars: 13797
+    stars: 13807
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mujoco-py
     title: MuJoCo Py
     title_zh: MuJoCo Py
@@ -12415,7 +12415,7 @@ skills:
       - google
     summary: MuJoCo MPC.
     summary_zh: MuJoCo MPC。
-    stars: 1660
+    stars: 1661
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-20'
@@ -12430,7 +12430,7 @@ skills:
       - physics
     summary: PyBullet physics.
     summary_zh: PyBullet 物理。
-    stars: 14523
+    stars: 14526
     license: Zlib
     added: '2026-06-06'
     pushed_at: '2025-10-22'
@@ -12464,7 +12464,7 @@ skills:
     stars: 4072
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: pinocchio
     title: Pinocchio
     title_zh: Pinocchio
@@ -12509,7 +12509,7 @@ skills:
     stars: 1369
     license: BSD-2-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-09'
   - slug: ros
     title: ROS
     title_zh: ROS
@@ -12537,7 +12537,7 @@ skills:
       - robotics
     summary: ROS 2.
     summary_zh: ROS 2。
-    stars: 5600
+    stars: 5602
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -12555,7 +12555,7 @@ skills:
     stars: 2056
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-05-27'
+    pushed_at: '2026-06-08'
   - slug: deepseek-r1
     title: DeepSeek-R1
     title_zh: DeepSeek-R1
@@ -12567,7 +12567,7 @@ skills:
       - deepseek
     summary: DeepSeek-R1 reasoning.
     summary_zh: DeepSeek-R1 推理。
-    stars: 92016
+    stars: 92010
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-06-27'
@@ -12597,7 +12597,7 @@ skills:
       - reasoning
     summary: ReAct — reason + act.
     summary_zh: ReAct——推理 + 行动。
-    stars: 3968
+    stars: 3970
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-02-06'
@@ -12627,7 +12627,7 @@ skills:
       - code
     summary: Program-aided LM.
     summary_zh: 程序辅助 LM。
-    stars: 521
+    stars: 522
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2023-06-30'
@@ -12690,7 +12690,7 @@ skills:
     stars: 520
     license: Proprietary
     added: '2026-06-06'
-    pushed_at: '2026-06-01'
+    pushed_at: '2026-06-08'
   - slug: noco
     title: NocoDB
     title_zh: NocoDB
@@ -12702,10 +12702,10 @@ skills:
       - airtable
     summary: NocoDB — Airtable alternative.
     summary_zh: NocoDB——Airtable 替代。
-    stars: 63327
+    stars: 63342
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: appsmith
     title: Appsmith
     title_zh: Appsmith
@@ -12720,7 +12720,7 @@ skills:
     stars: 40011
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tooljet
     title: ToolJet
     title_zh: ToolJet
@@ -12732,10 +12732,10 @@ skills:
       - internal
     summary: ToolJet — internal tools.
     summary_zh: ToolJet——内部工具。
-    stars: 37996
+    stars: 38006
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: budibase
     title: Budibase
     title_zh: Budibase
@@ -12747,10 +12747,10 @@ skills:
       - internal
     summary: Budibase — internal tools.
     summary_zh: Budibase——内部工具。
-    stars: 27994
+    stars: 27998
     license: GPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: relevanceai
     title: RelevanceAI
     title_zh: RelevanceAI
@@ -12792,7 +12792,7 @@ skills:
       - chatbot
     summary: Rasa chatbot.
     summary_zh: Rasa 聊天机器人。
-    stars: 21201
+    stars: 21202
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-22'
@@ -12823,10 +12823,10 @@ skills:
       - support
     summary: Chatwoot — customer support.
     summary_zh: Chatwoot——客户支持。
-    stars: 30025
+    stars: 30044
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: papercups
     title: Papercups
     title_zh: Papercups
@@ -12853,10 +12853,10 @@ skills:
       - chat
     summary: Rocket.Chat.
     summary_zh: Rocket.Chat。
-    stars: 45428
+    stars: 45431
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: element
     title: Element
     title_zh: Element
@@ -12868,10 +12868,10 @@ skills:
       - chat
     summary: Element chat.
     summary_zh: Element 聊天。
-    stars: 13183
+    stars: 13186
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: matrix-synapse
     title: Synapse
     title_zh: Synapse
@@ -12883,10 +12883,10 @@ skills:
       - chat
     summary: Matrix Synapse.
     summary_zh: Matrix Synapse。
-    stars: 4274
+    stars: 4275
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mattermost
     title: Mattermost
     title_zh: Mattermost
@@ -12898,10 +12898,10 @@ skills:
       - chat
     summary: Mattermost.
     summary_zh: Mattermost。
-    stars: 37041
+    stars: 37054
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: zulip
     title: Zulip
     title_zh: Zulip
@@ -12913,7 +12913,7 @@ skills:
       - chat
     summary: Zulip team chat.
     summary_zh: Zulip 团队聊天。
-    stars: 25328
+    stars: 25330
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -12928,10 +12928,10 @@ skills:
       - project
     summary: Plane project management.
     summary_zh: Plane 项目管理。
-    stars: 50520
+    stars: 50551
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-08'
   - slug: leantime
     title: Leantime
     title_zh: Leantime
@@ -12943,7 +12943,7 @@ skills:
       - project
     summary: Leantime — PM.
     summary_zh: Leantime——项目管理。
-    stars: 9999
+    stars: 10002
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -12958,10 +12958,10 @@ skills:
       - scheduling
     summary: Cal.com scheduling.
     summary_zh: Cal.com 排程。
-    stars: 45257
+    stars: 45286
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: formbricks
     title: Formbricks
     title_zh: Formbricks
@@ -12973,10 +12973,10 @@ skills:
       - survey
     summary: Formbricks surveys.
     summary_zh: Formbricks 调查。
-    stars: 12363
+    stars: 12365
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: assistant-ui
     title: Assistant UI
     title_zh: Assistant UI
@@ -12988,10 +12988,10 @@ skills:
       - react
     summary: Assistant-UI — copilot UI.
     summary_zh: Assistant-UI——copilot UI。
-    stars: 10508
+    stars: 10517
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: copilotkit
     title: CopilotKit
     title_zh: CopilotKit
@@ -13003,10 +13003,10 @@ skills:
       - react
     summary: CopilotKit — copilot UI.
     summary_zh: CopilotKit——copilot UI。
-    stars: 34021
+    stars: 34359
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: nlux
     title: NLUX
     title_zh: NLUX
@@ -13048,7 +13048,7 @@ skills:
       - ui
     summary: TypingMind.
     summary_zh: TypingMind。
-    stars: 918
+    stars: 919
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-14'
@@ -13063,7 +13063,7 @@ skills:
       - vercel
     summary: Vercel AI Chatbot.
     summary_zh: Vercel AI 聊天机器人。
-    stars: 20458
+    stars: 20465
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-18'
@@ -13078,7 +13078,7 @@ skills:
       - ui
     summary: NextChat — ChatGPT UI.
     summary_zh: NextChat——ChatGPT UI。
-    stars: 88202
+    stars: 88203
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-15'
@@ -13093,10 +13093,10 @@ skills:
       - ui
     summary: PrivateGPT.
     summary_zh: PrivateGPT。
-    stars: 57210
+    stars: 57216
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: big-agi
     title: Big-AGI
     title_zh: Big-AGI
@@ -13108,10 +13108,10 @@ skills:
       - ui
     summary: Big-AGI.
     summary_zh: Big-AGI。
-    stars: 6988
+    stars: 6989
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-04'
+    pushed_at: '2026-06-09'
   - slug: docusaurus
     title: Docusaurus
     title_zh: Docusaurus
@@ -13123,7 +13123,7 @@ skills:
       - docs
     summary: Docusaurus docs site.
     summary_zh: Docusaurus 文档站。
-    stars: 65142
+    stars: 65140
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -13138,7 +13138,7 @@ skills:
       - docs
     summary: MkDocs — static docs.
     summary_zh: MkDocs——静态文档。
-    stars: 22151
+    stars: 22152
     license: BSD-2-Clause
     added: '2026-06-06'
     pushed_at: '2025-10-20'
@@ -13156,7 +13156,7 @@ skills:
     stars: 7866
     license: BSD-2-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-09'
   - slug: readthedocs
     title: Read the Docs
     title_zh: Read the Docs
@@ -13183,10 +13183,10 @@ skills:
       - docs
     summary: GitBook.
     summary_zh: GitBook。
-    stars: 28889
+    stars: 28892
     license: GPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: docsify
     title: Docsify
     title_zh: Docsify
@@ -13198,7 +13198,7 @@ skills:
       - docs
     summary: Docsify — magic docs.
     summary_zh: Docsify——魔法文档。
-    stars: 31266
+    stars: 31270
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-06'
@@ -13228,10 +13228,10 @@ skills:
       - static
     summary: Hugo — static site.
     summary_zh: Hugo——静态站点。
-    stars: 88466
+    stars: 88480
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: jekyll
     title: Jekyll
     title_zh: Jekyll
@@ -13243,7 +13243,7 @@ skills:
       - static
     summary: Jekyll static site.
     summary_zh: Jekyll 静态站点。
-    stars: 51477
+    stars: 51479
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-04-22'
@@ -13273,7 +13273,7 @@ skills:
       - docs
     summary: Astro web framework.
     summary_zh: Astro Web 框架。
-    stars: 59941
+    stars: 59951
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -13288,10 +13288,10 @@ skills:
       - docs
     summary: Nextra — Next.js docs.
     summary_zh: Nextra——Next.js 文档。
-    stars: 13824
+    stars: 13828
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-02'
+    pushed_at: '2026-06-08'
   - slug: mdx
     title: MDX
     title_zh: MDX
@@ -13303,7 +13303,7 @@ skills:
       - md
     summary: MDX — Markdown + JSX.
     summary_zh: MDX——Markdown + JSX。
-    stars: 19567
+    stars: 19571
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -13318,7 +13318,7 @@ skills:
       - md
     summary: Remark — Markdown.
     summary_zh: Remark——Markdown。
-    stars: 8896
+    stars: 8898
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-02-24'
@@ -13333,7 +13333,7 @@ skills:
       - highlight
     summary: Shiki — syntax highlight.
     summary_zh: Shiki——语法高亮。
-    stars: 13448
+    stars: 13447
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -13363,7 +13363,7 @@ skills:
       - api-docs
     summary: Swagger UI.
     summary_zh: Swagger UI。
-    stars: 28835
+    stars: 28837
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -13378,7 +13378,7 @@ skills:
       - api-docs
     summary: Redoc — API docs.
     summary_zh: Redoc——API 文档。
-    stars: 25734
+    stars: 25738
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-29'
@@ -13393,10 +13393,10 @@ skills:
       - api-docs
     summary: Stoplight Elements.
     summary_zh: Stoplight Elements。
-    stars: 2427
+    stars: 2428
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: scalar
     title: Scalar
     title_zh: Scalar
@@ -13408,10 +13408,10 @@ skills:
       - api-docs
     summary: Scalar API docs.
     summary_zh: Scalar API 文档。
-    stars: 15204
+    stars: 15211
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: fern
     title: Fern
     title_zh: Fern
@@ -13423,10 +13423,10 @@ skills:
       - api-docs
     summary: Fern — API docs.
     summary_zh: Fern——API 文档。
-    stars: 3653
+    stars: 3657
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: speakeasy
     title: Speakeasy
     title_zh: Speakeasy
@@ -13438,10 +13438,10 @@ skills:
       - sdk-gen
     summary: Speakeasy — SDK gen.
     summary_zh: Speakeasy——SDK 生成。
-    stars: 417
+    stars: 419
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: openapi-tools
     title: OpenAPI Generator
     title_zh: OpenAPI Generator
@@ -13453,10 +13453,10 @@ skills:
       - sdk-gen
     summary: OpenAPI code gen.
     summary_zh: OpenAPI 代码生成。
-    stars: 26354
+    stars: 26365
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: readmeio
     title: ReadMe.io
     title_zh: ReadMe.io
@@ -13498,7 +13498,7 @@ skills:
       - wiki
     summary: Docmost — wiki & docs.
     summary_zh: Docmost——wiki & 文档。
-    stars: 20548
+    stars: 20557
     license: AGPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -13513,7 +13513,7 @@ skills:
       - sql
     summary: Vanna — text-to-SQL.
     summary_zh: Vanna——Text-to-SQL。
-    stars: 23577
+    stars: 23582
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-02-02'
@@ -13529,7 +13529,7 @@ skills:
       - sql
     summary: Chat2DB — AI SQL client.
     summary_zh: Chat2DB——AI SQL 客户端。
-    stars: 25743
+    stars: 25745
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-28'
@@ -13604,7 +13604,7 @@ skills:
       - data
     summary: PandasAI — pandas + LLM.
     summary_zh: PandasAI——pandas + LLM。
-    stars: 23577
+    stars: 23578
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-10-28'
@@ -13619,7 +13619,7 @@ skills:
       - dataframe
     summary: Daft — distributed DataFrame.
     summary_zh: Daft——分布式 DataFrame。
-    stars: 5554
+    stars: 5556
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -13634,10 +13634,10 @@ skills:
       - sql
     summary: WrenAI — GenBI.
     summary_zh: WrenAI——GenBI。
-    stars: 15485
+    stars: 15493
     license: AGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: prql
     title: PRQL
     title_zh: PRQL
@@ -13649,10 +13649,10 @@ skills:
       - sql
     summary: PRQL — modern SQL.
     summary_zh: PRQL——现代 SQL。
-    stars: 10856
+    stars: 10859
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: sqlfluff
     title: SQLFluff
     title_zh: SQLFluff
@@ -13739,7 +13739,7 @@ skills:
       - math
     summary: SymPy — math library.
     summary_zh: SymPy——数学库。
-    stars: 14670
+    stars: 14669
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-03'
@@ -13754,7 +13754,7 @@ skills:
       - math
     summary: Sage Math.
     summary_zh: Sage 数学。
-    stars: 2414
+    stars: 2417
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-05-29'
@@ -13769,7 +13769,7 @@ skills:
       - math
     summary: NumPy.
     summary_zh: NumPy。
-    stars: 32163
+    stars: 32166
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -13784,10 +13784,10 @@ skills:
       - math
     summary: SciPy.
     summary_zh: SciPy。
-    stars: 14739
+    stars: 14740
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: jupyter
     title: Jupyter
     title_zh: Jupyter
@@ -13799,7 +13799,7 @@ skills:
       - notebook
     summary: Jupyter notebook.
     summary_zh: Jupyter notebook。
-    stars: 13190
+    stars: 13191
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -13814,7 +13814,7 @@ skills:
       - notebook
     summary: Google Colab.
     summary_zh: Google Colab。
-    stars: 2549
+    stars: 2551
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -13829,10 +13829,10 @@ skills:
       - learn
     summary: Kaggle learn.
     summary_zh: Kaggle 学习。
-    stars: 7368
+    stars: 7370
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-08'
   - slug: fastai
     title: fastai
     title_zh: fastai
@@ -13844,7 +13844,7 @@ skills:
       - course
     summary: fastai course.
     summary_zh: fastai 课程。
-    stars: 28023
+    stars: 28024
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-20'
@@ -13889,7 +13889,7 @@ skills:
       - course
     summary: Microsoft AI for Beginners.
     summary_zh: 微软 AI 入门。
-    stars: 48015
+    stars: 48023
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-09'
@@ -13904,7 +13904,7 @@ skills:
       - book
     summary: Hands-On LLM book.
     summary_zh: Hands-On LLM 书。
-    stars: 26847
+    stars: 26862
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-24'
@@ -13919,7 +13919,7 @@ skills:
       - book
     summary: LLM from scratch.
     summary_zh: 从零构建 LLM。
-    stars: 96872
+    stars: 96897
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -13949,10 +13949,10 @@ skills:
       - notebook
     summary: Marimo — reactive notebook.
     summary_zh: Marimo——响应式 notebook。
-    stars: 21350
+    stars: 21357
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: alphafold
     title: AlphaFold
     title_zh: AlphaFold
@@ -13964,7 +13964,7 @@ skills:
       - protein
     summary: DeepMind AlphaFold.
     summary_zh: DeepMind AlphaFold。
-    stars: 14650
+    stars: 14652
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-04-22'
@@ -13979,10 +13979,10 @@ skills:
       - protein
     summary: AlphaFold 3.
     summary_zh: AlphaFold 3。
-    stars: 8153
+    stars: 8156
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-01'
+    pushed_at: '2026-06-09'
   - slug: esm
     title: ESM
     title_zh: ESM
@@ -13994,7 +13994,7 @@ skills:
       - protein
     summary: Meta ESM protein LMs.
     summary_zh: Meta ESM 蛋白 LM。
-    stars: 4111
+    stars: 4114
     license: MIT
     added: '2026-06-06'
     pushed_at: '2024-02-07'
@@ -14025,7 +14025,7 @@ skills:
       - protein
     summary: RFdiffusion.
     summary_zh: RFdiffusion。
-    stars: 2903
+    stars: 2904
     license: BSD-2-Clause
     added: '2026-06-06'
     pushed_at: '2026-04-24'
@@ -14055,7 +14055,7 @@ skills:
       - protein
     summary: Boltz-1.
     summary_zh: Boltz-1。
-    stars: 4019
+    stars: 4021
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-29'
@@ -14070,7 +14070,7 @@ skills:
       - protein
     summary: Protenix — protein.
     summary_zh: Protenix——蛋白。
-    stars: 1935
+    stars: 1936
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-05-06'
@@ -14088,7 +14088,7 @@ skills:
     stars: 6793
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-03-02'
+    pushed_at: '2026-06-09'
   - slug: chembl
     title: ChEMBL
     title_zh: ChEMBL
@@ -14134,7 +14134,7 @@ skills:
     stars: 394
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-02'
+    pushed_at: '2026-06-08'
   - slug: pyscf
     title: PySCF
     title_zh: PySCF
@@ -14149,7 +14149,7 @@ skills:
     stars: 1599
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-08'
   - slug: psi4
     title: Psi4
     title_zh: Psi4
@@ -14164,7 +14164,7 @@ skills:
     stars: 1179
     license: LGPL-3.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: quippy
     title: QUIP
     title_zh: QUIP
@@ -14191,7 +14191,7 @@ skills:
       - materials
     summary: MACE MLIPs.
     summary_zh: MACE ML 势能。
-    stars: 1226
+    stars: 1228
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -14206,10 +14206,10 @@ skills:
       - materials
     summary: FAIR-Chem.
     summary_zh: FAIR-Chem。
-    stars: 2134
+    stars: 2137
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: mat2vec
     title: Mat2Vec
     title_zh: Mat2Vec
@@ -14236,7 +14236,7 @@ skills:
       - weather
     summary: GraphCast weather.
     summary_zh: GraphCast 天气。
-    stars: 6668
+    stars: 6669
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-03-30'
@@ -14266,7 +14266,7 @@ skills:
       - weather
     summary: Microsoft Aurora.
     summary_zh: 微软 Aurora。
-    stars: 916
+    stars: 917
     license: MIT
     added: '2026-06-06'
     pushed_at: '2025-11-20'
@@ -14373,7 +14373,7 @@ skills:
       - ehr
     summary: PyHealth.
     summary_zh: PyHealth。
-    stars: 1605
+    stars: 1606
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-07'
@@ -14463,10 +14463,10 @@ skills:
       - data
     summary: OpenBB SDK.
     summary_zh: OpenBB SDK。
-    stars: 68790
+    stars: 68811
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-07'
+    pushed_at: '2026-06-08'
   - slug: quantconnect
     title: QuantConnect
     title_zh: QuantConnect
@@ -14478,7 +14478,7 @@ skills:
       - lean
     summary: QuantConnect LEAN.
     summary_zh: QuantConnect LEAN。
-    stars: 19773
+    stars: 19785
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -14493,7 +14493,7 @@ skills:
       - backtest
     summary: Zipline backtester.
     summary_zh: Zipline 回测。
-    stars: 19855
+    stars: 19856
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2024-02-13'
@@ -14508,7 +14508,7 @@ skills:
       - backtest
     summary: Backtrader.
     summary_zh: Backtrader。
-    stars: 21883
+    stars: 21888
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2024-08-19'
@@ -14523,7 +14523,7 @@ skills:
       - exchange
     summary: CCXT exchange API.
     summary_zh: CCXT 交易所 API。
-    stars: 42857
+    stars: 42851
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -14538,7 +14538,7 @@ skills:
       - yahoo
     summary: yfinance Yahoo.
     summary_zh: yfinance 雅虎财经。
-    stars: 24144
+    stars: 24155
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-05'
@@ -14553,10 +14553,10 @@ skills:
       - broker
     summary: Alpaca API.
     summary_zh: Alpaca API。
-    stars: 1363
+    stars: 1366
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-05-31'
+    pushed_at: '2026-06-09'
   - slug: shioaji
     title: Shioaji
     title_zh: Shioaji
@@ -14568,7 +14568,7 @@ skills:
       - brokerage
     summary: Shioaji Taiwan.
     summary_zh: Shioaji 台湾证券。
-    stars: 453
+    stars: 455
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -14583,7 +14583,7 @@ skills:
       - finance
     summary: FinGPT.
     summary_zh: FinGPT。
-    stars: 20439
+    stars: 20447
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-01'
@@ -14628,7 +14628,7 @@ skills:
       - data
     summary: Polygon data.
     summary_zh: Polygon 数据。
-    stars: 1457
+    stars: 1458
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-26'
@@ -14643,7 +14643,7 @@ skills:
       - portfolio
     summary: PyPortfolioOpt.
     summary_zh: PyPortfolioOpt。
-    stars: 5773
+    stars: 5774
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -14658,7 +14658,7 @@ skills:
       - benchmark
     summary: LegalBench.
     summary_zh: LegalBench。
-    stars: 591
+    stars: 592
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-03-30'
@@ -14688,7 +14688,7 @@ skills:
       - legal
     summary: Law LLM benchmark.
     summary_zh: 法律 LLM 基准。
-    stars: 432
+    stars: 433
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2023-11-13'
@@ -14703,7 +14703,7 @@ skills:
       - legal
     summary: CourtListener.
     summary_zh: CourtListener。
-    stars: 946
+    stars: 947
     license: GPL-3.0
     added: '2026-06-06'
     pushed_at: '2026-06-08'
@@ -14808,7 +14808,7 @@ skills:
       - tf
     summary: Tensor2Tensor.
     summary_zh: Tensor2Tensor。
-    stars: 17326
+    stars: 17328
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2023-06-02'
@@ -14873,7 +14873,7 @@ skills:
     stars: 714
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tower
     title: Tower
     title_zh: Tower
@@ -14900,10 +14900,10 @@ skills:
       - nvidia
     summary: NVIDIA CUTLASS.
     summary_zh: NVIDIA CUTLASS。
-    stars: 9858
+    stars: 9863
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: cudnn
     title: cuDNN
     title_zh: cuDNN
@@ -14915,10 +14915,10 @@ skills:
       - nvidia
     summary: NVIDIA cuDNN.
     summary_zh: NVIDIA cuDNN。
-    stars: 841
+    stars: 843
     license: MIT
     added: '2026-06-06'
-    pushed_at: '2026-06-05'
+    pushed_at: '2026-06-09'
   - slug: cublas
     title: cuBLAS
     title_zh: cuBLAS
@@ -14930,7 +14930,7 @@ skills:
       - nvidia
     summary: NVIDIA cuBLAS.
     summary_zh: NVIDIA cuBLAS。
-    stars: 2429
+    stars: 2431
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -14945,7 +14945,7 @@ skills:
       - nvidia
     summary: NVIDIA cuRobo.
     summary_zh: NVIDIA cuRobo。
-    stars: 1614
+    stars: 1618
     license: Apache-2.0
     added: '2026-06-06'
     pushed_at: '2026-06-04'
@@ -14960,10 +14960,10 @@ skills:
       - kernel
     summary: FlashInfer kernel.
     summary_zh: FlashInfer 内核。
-    stars: 5764
+    stars: 5767
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: tvm
     title: TVM
     title_zh: TVM
@@ -14975,10 +14975,10 @@ skills:
       - compiler
     summary: Apache TVM.
     summary_zh: Apache TVM。
-    stars: 13440
+    stars: 13443
     license: Apache-2.0
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: cuda-toolkit
     title: CUDA Toolkit
     title_zh: CUDA 工具包
@@ -14990,7 +14990,7 @@ skills:
       - nvidia
     summary: CUDA samples.
     summary_zh: CUDA 示例。
-    stars: 9271
+    stars: 9272
     license: BSD-3-Clause
     added: '2026-06-06'
     pushed_at: '2026-05-27'
@@ -15005,10 +15005,10 @@ skills:
       - nvidia
     summary: Thrust CUDA.
     summary_zh: Thrust CUDA。
-    stars: 2371
+    stars: 2373
     license: BSD-3-Clause
     added: '2026-06-06'
-    pushed_at: '2026-06-08'
+    pushed_at: '2026-06-09'
   - slug: rocblas
     title: rocBLAS
     title_zh: rocBLAS
@@ -15050,7 +15050,7 @@ skills:
       - rocm
     summary: AMD HIP.
     summary_zh: AMD HIP。
-    stars: 4343
+    stars: 4344
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-06-02'
@@ -15078,7 +15078,7 @@ skills:
       - awesome-llm-chinese
     summary: Awesome Chinese LLM list.
     summary_zh: 中文 LLM 列表。
-    stars: 22599
+    stars: 22603
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-10'
