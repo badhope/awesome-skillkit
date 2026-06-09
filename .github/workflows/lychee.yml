@@ -1,0 +1,33 @@
+name: Link Check (lychee)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # weekly Monday 06:00 UTC
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: lychee-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Dead link check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2.4.0
+        with:
+          args: --verbose --no-progress --exclude-mail --exclude-loopback
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
