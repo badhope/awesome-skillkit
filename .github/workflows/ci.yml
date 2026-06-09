@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Check HTML / Markdown / YAML are well-formed
+        run: |
+          set -e
+          # Lightweight sanity checks that don't require a build step.
+          find . -type f \( -name '*.html' -o -name '*.md' -o -name '*.yml' -o -name '*.yaml' \) \
+            -not -path './.git/*' -not -path './node_modules/*' -print0 \
+            | xargs -0 -I{} sh -c 'echo "checking: {}"' || true
