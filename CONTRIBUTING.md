@@ -1,40 +1,46 @@
-# Contributing to AI-SKILL
+# Contributing
 
-Thanks for helping improve the catalog. This repo is one YAML file
-plus two helper scripts — contributions are straightforward.
+Want to send a PR? Cool. Here's the flow.
 
-## Adding an external skill
+## Before you start
 
-1. Fork the repo.
-2. Append a new entry under `skills:` in `catalog/skills.yaml`.
-3. Follow the entry schema (see README).
-4. Open a PR.
+- **Open an issue first** if the change is non-trivial. I don't want you
+  to spend a weekend on something I'd have asked you to do differently.
+- Read the code that's already there. I try to keep it boring and
+  consistent. If you're adding a new pattern, it should fit.
+- Look at the README for how to install / run / test. Use the lockfile
+  that's checked in; don't regenerate it.
 
-Rules:
+## Local checks
 
-- `slug` must be unique (kebab-case).
-- `source_url` must return 2xx (the link-check CI will verify).
-- `category` must be one of the 49 defined categories.
-- `summary` and `summary_zh` each one line.
-- Don't add `stars`, `license`, `pushed_at`, or `archived` manually —
-  the sync workflow fills those within a day after merge.
+Run whatever the project has: `pnpm test`, `pytest`, `cargo test`, etc.
+If linter / formatter configs are checked in, run them too. CI will
+catch what you missed, but a green push is faster than a red one.
 
-## Reporting a dead link
+## Commit messages
 
-Open an issue with the slug and the current `source_url`. We'll fix
-or remove the entry.
+I don't enforce Conventional Commits. Subject, blank line, body, done.
+If a commit fixes an issue, mention the issue number. Don't bother with
+emoji or "WIP" prefixes.
 
-## Suggesting a new category
+## Pull requests
 
-Open an issue first. New categories need a reason — most entries fit
-an existing one.
+- Fill the PR template. One paragraph in the body is fine; screenshots
+  help for UI.
+- Keep the diff small. Squash before merging unless the history matters.
+- I'll review roughly in order of arrival. If CI is green and the change
+  does what the description says, I'll merge. I might push back on
+  architecture; that's not personal.
+- Don't commit secrets, generated build output, large binaries, or
+  someone else's code without a license.
 
-## Publishing your own skill
+## What I won't merge
 
-See `skills/README.md` for the in-repo skill format.
+- Drive-by refactors that don't fix a real problem.
+- New dependencies for trivial reasons.
+- Anything that breaks the existing API without a heads-up first.
 
-## PR process
+## License
 
-- Squash merge only.
-- One entry per PR is preferred (easier to review).
-- The CI workflows run automatically; wait for green before merging.
+By contributing, you agree your contribution is licensed under the same
+license as the rest of the project. See [`LICENSE`](./LICENSE).

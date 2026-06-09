@@ -1,11 +1,27 @@
-## What this PR does
+## What
 
-<!-- Brief description: new entry, fix dead link, update metadata, etc. -->
+<!-- One line: what this PR does -->
+
+## Why
+
+<!-- The reason. What problem does this fix / what value does it add? -->
+
+## How
+
+<!-- Approach, breaking changes, anything weird you did -->
+
+## Tested
+
+<!-- How you tested. If you didn't, say so and tell me why -->
 
 ## Checklist
 
-- [ ] `slug` is unique and kebab-case
-- [ ] `source_url` returns 2xx
-- [ ] `category` is one of the 49 defined categories
-- [ ] `summary` and `summary_zh` are each one line
-- [ ] I did NOT manually add `stars` / `license` / `pushed_at` / `archived` (sync workflow handles those)
+- [ ] I have read [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- [ ] Tests pass locally (and CI is green)
+- [ ] I didn't add any new linter / typecheck warnings
+- [ ] I didn't commit any secrets, build output, or large binaries
+- [ ] I added a `CHANGELOG.md` entry under "Unreleased" if it matters
+
+## Screenshots / Logs
+
+<!-- Drag in images for UI changes. Paste (redacted) logs for runtime changes. -->
