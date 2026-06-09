@@ -7,7 +7,6 @@ authors:
   - family-names: badhope
     given-names: badhope
     alias: badhope
-    orcid: https://orcid.org/0000-0000-0000-0000
 identifiers:
   - type: url
     value: https://github.com/badhope/AI-SKILL
@@ -16,6 +15,15 @@ type: software
 url: https://github.com/badhope/AI-SKILL
 repository-code: https://github.com/badhope/AI-SKILL
 keywords:
-  - open-source, software
+  - agent
+  - llm
+  - prompt-engineering
+  - ai-skills
+  - catalog
+  - index
+  - awesome-list
+  - mcp
+  - rag
+  - ai
 abstract: >-
-  A curated index of 900+ agent skills across 49 categories — repos, cookbooks, MCP servers, and case studies. One YAML file, bilingual, hand-maintained.
+  Hand-curated index of 900+ agent skills (repos, cookbooks, MCP servers, case studies) across 49 categories. One YAML file, bilingual, no library, no tutorial site — just a list you can grep and vendor.
