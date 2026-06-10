@@ -15082,3 +15082,20 @@ skills:
     license: MIT
     added: '2026-06-06'
     pushed_at: '2026-05-10'
+  - slug: xquik-x-data-api
+    title: Xquik X Data API
+    title_zh: Xquik X 数据 API
+    source: Xquik-dev/x-twitter-scraper
+    source_url: https://github.com/Xquik-dev/x-twitter-scraper
+    category: mcp-protocol
+    tags:
+      - x
+      - social-data
+      - mcp
+      - api
+    summary: Xquik's TypeScript SDK and MCP server for X data extraction and automation.
+    summary_zh: Xquik 的 TypeScript SDK 和 MCP 服务器，用于 X 数据提取与自动化。
+    stars: 112
+    license: MIT
+    added: '2026-06-10'
+    pushed_at: '2026-06-08'
