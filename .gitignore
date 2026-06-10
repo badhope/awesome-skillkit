@@ -22,3 +22,15 @@ Thumbs.db
 !.env.example
 *.pem
 *.key
+
+# Build output
+node_modules/
+dist/
+*.tsbuildinfo
+vite.log
+
+# Bundle artefacts — these are zip exports, regenerated on demand
+# by scripts/bundle-skill.py. Keep the dir tracked (with .gitkeep) so
+# contributors see where bundles go, but never commit the zips.
+bundles/*.zip
+!bundles/.gitkeep

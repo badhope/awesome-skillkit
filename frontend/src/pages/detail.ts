@@ -1,0 +1,331 @@
+// Detail page: render one SKILL.md as HTML.
+// - Frontmatter rendered as a small meta block
+// - Body: tiny markdown renderer (no library) for the shapes
+//   our skills actually use: H1/H2, paragraphs, code fences,
+//   tables, ordered/unordered lists, inline code, bold.
+// We deliberately don't pull in a markdown library — the
+// section set is small, and adding marked.js would blow the
+// 50 KB JS budget.
+
+import type { Skill } from "../types";
+
+export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
+  // Compute once, used both in the template (to disable the
+  // button when the prompt section is missing) and in the click
+  // handler below.
+  const promptText = extractPromptText(s);
+  root.innerHTML = `
+    <div class="container-read detail">
+      <a class="back-link" href="#/" data-link>← back to list</a>
+      <h1>${escHtml(s.name)}</h1>
+      <p class="meta-row">
+        <strong>${escHtml(s.slug)}</strong>
+        <span>·</span>
+        <span>v${escHtml(s.version)}</span>
+        <span>·</span>
+        <span>${escHtml(s.license)}</span>
+        <span>·</span>
+        <span>${escHtml(s.category)}</span>
+        ${platformChips(s.platforms)}
+      </p>
+      <p>${escHtml(s.description)}</p>
+      ${zhBlock(s)}
+      <h2 id="when-to-use">When to use</h2>
+      <div id="wtu-body"></div>
+      ${inputsTable(s)}
+      ${outputBlock(s)}
+      <h2 id="prompt">Prompt</h2>
+      ${promptBlock(s)}
+      <div class="actions">
+        <button class="btn btn--primary" id="copy-prompt" type="button"${promptText ? "" : " disabled"}>Copy prompt</button>
+        <button class="btn" id="dl-md" type="button">Download .md</button>
+      </div>
+      <h2 id="when-not-to-use">When NOT to use</h2>
+      <div id="wnot-body"></div>
+      <h2 id="example">Example</h2>
+      <div id="example-body"></div>
+    </div>
+  `;
+  // Wire actions
+  if (promptText) {
+    root.querySelector<HTMLButtonElement>("#copy-prompt")!.addEventListener("click", (ev) => {
+      copyAndPulse(ev.currentTarget as HTMLButtonElement, promptText, "Copied");
+    });
+  }
+  root.querySelector<HTMLButtonElement>("#dl-md")!.addEventListener("click", () => downloadSkill(s));
+  // Body sections that come AFTER the frontmatter schema
+  root.querySelector<HTMLDivElement>("#wtu-body")!.innerHTML = renderH1Section(s.body, "When to use");
+  root.querySelector<HTMLDivElement>("#wnot-body")!.innerHTML = renderH1Section(s.body, "When NOT to use");
+  root.querySelector<HTMLDivElement>("#example-body")!.innerHTML = renderH1Section(s.body, "Example");
+}
+
+function platformChips(p: string[]): string {
+  if (p.length === 0) {
+    return `<span class="chip chip--all" title="Vendor-neutral — works on any agent">any</span>`;
+  }
+  return p.map(x => `<span class="chip chip--${escAttr(x)}">${escHtml(x)}</span>`).join(" ");
+}
+
+function zhBlock(s: Skill): string {
+  if (!s.name_zh && !s.description_zh) return "";
+  return `
+    <details>
+      <summary>中文</summary>
+      ${s.name_zh ? `<p><strong>${escHtml(s.name_zh)}</strong></p>` : ""}
+      ${s.description_zh ? `<p>${escHtml(s.description_zh)}</p>` : ""}
+    </details>
+  `;
+}
+
+function inputsTable(s: Skill): string {
+  if (s.inputs.length === 0) return "";
+  const rows = s.inputs.map(i => `
+    <tr>
+      <td><code>${escHtml(i.name)}</code></td>
+      <td><code>${escHtml(i.type)}</code></td>
+      <td>${i.required ? "required" : (i.default !== undefined ? `default: <code>${escHtml(String(i.default))}</code>` : "optional")}</td>
+      <td>${escHtml(i.description ?? "")}${i.values ? `<br/><small>values: ${i.values.map(escHtml).join(", ")}</small>` : ""}${i.constraints ? (i.constraints.min !== undefined || i.constraints.max !== undefined ? `<br/><small>range: ${i.constraints.min ?? "−∞"} … ${i.constraints.max ?? "+∞"}</small>` : "") : ""}</td>
+    </tr>
+  `).join("");
+  return `
+    <h2 id="inputs">Inputs</h2>
+    <table>
+      <thead><tr><th>name</th><th>type</th><th>required</th><th>description</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+function outputBlock(s: Skill): string {
+  return `
+    <h2 id="output">Output</h2>
+    <p><code>format: ${escHtml(s.output.format)}</code>${s.output.description ? ` — ${escHtml(s.output.description)}` : ""}</p>
+  `;
+}
+
+function promptBlock(s: Skill): string {
+  // Prompt section body is in s.body between "# Prompt" and the next H1
+  const text = extractPromptText(s);
+  return `
+    <pre><code>${escHtml(text)}</code></pre>
+  `;
+}
+
+function extractPromptText(s: Skill): string {
+  // Find the "Prompt" H1 and return everything until the next H1
+  const lines = s.body.split("\n");
+  const start = lines.findIndex(l => /^#\s+Prompt\s*$/.test(l));
+  if (start === -1) return "";
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (/^#\s+/.test(lines[i]!)) { end = i; break; }
+  }
+  // Strip leading/trailing blank lines; the source prompt is
+  // already inside a fenced block which we render as <pre><code>.
+  return lines.slice(start + 1, end).join("\n").replace(/^\n+|\n+$/g, "");
+}
+
+function renderH1Section(body: string, h1: string): string {
+  const lines = body.split("\n");
+  const start = lines.findIndex(l => l.trim() === `# ${h1}`);
+  if (start === -1) return "";
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (/^#\s+/.test(lines[i]!)) { end = i; break; }
+  }
+  const sectionBody = lines.slice(start + 1, end).join("\n");
+  return mdToHtml(sectionBody);
+}
+
+// Tiny markdown subset: H1, H2, p, ul/ol, code fences, tables, inline code/bold.
+function mdToHtml(src: string): string {
+  const lines = src.split("\n");
+  let out = "";
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i]!;
+    if (line.startsWith("```")) {
+      const lang = line.slice(3).trim();
+      const buf: string[] = [];
+      i++;
+      while (i < lines.length && !lines[i]!.startsWith("```")) {
+        buf.push(lines[i]!);
+        i++;
+      }
+      i++; // skip closer
+      out += `<pre><code data-lang="${escAttr(lang)}">${escHtml(buf.join("\n"))}</code></pre>`;
+      continue;
+    }
+    if (/^#{1,6}\s+/.test(line)) {
+      const raw = line.match(/^#+/)?.[0].length ?? 1;
+      const level = Math.min(raw, 6);
+      const text = line.replace(/^#+\s+/, "");
+      out += `<h${level + 2}>${inlineMd(text)}</h${level + 2}>`; // +2 because H1 is page title
+      i++;
+      continue;
+    }
+    if (/^\s*\|/.test(line) && i + 1 < lines.length && /^\s*\|[\s\-:|]+\|\s*$/.test(lines[i + 1]!)) {
+      // Table
+      const head = lines[i]!.split("|").slice(1, -1).map(c => c.trim());
+      i += 2;
+      const rows: string[][] = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i]!)) {
+        rows.push(lines[i]!.split("|").slice(1, -1).map(c => c.trim()));
+        i++;
+      }
+      out += `<table><thead><tr>${head.map(h => `<th>${inlineMd(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${inlineMd(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+      continue;
+    }
+    if (/^[-*]\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^[-*]\s+/.test(lines[i]!)) {
+        items.push(lines[i]!.replace(/^[-*]\s+/, ""));
+        i++;
+      }
+      out += `<ul>${items.map(it => `<li>${inlineMd(it)}</li>`).join("")}</ul>`;
+      continue;
+    }
+    if (/^\d+\.\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i]!)) {
+        items.push(lines[i]!.replace(/^\d+\.\s+/, ""));
+        i++;
+      }
+      out += `<ol>${items.map(it => `<li>${inlineMd(it)}</li>`).join("")}</ol>`;
+      continue;
+    }
+    if (line.trim() === "") {
+      i++;
+      continue;
+    }
+    // Paragraph: collect until blank
+    const buf: string[] = [line];
+    i++;
+    while (i < lines.length && lines[i]!.trim() !== "" && !/^([-*]\s|\d+\.\s|```|#|\|)/.test(lines[i]!)) {
+      buf.push(lines[i]!);
+      i++;
+    }
+    out += `<p>${inlineMd(buf.join(" "))}</p>`;
+  }
+  return out;
+}
+
+function inlineMd(s: string): string {
+  return s
+    .replace(/`([^`]+)`/g, (_, x) => `<code>${escHtml(x)}</code>`)
+    .replace(/\*\*([^*]+)\*\*/g, (_, x) => `<strong>${escHtml(x)}</strong>`)
+    .replace(/\*([^*]+)\*/g, (_, x) => `<em>${escHtml(x)}</em>`);
+}
+
+async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: string): Promise<void> {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    // Fallback: select-and-execCommand
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } finally { document.body.removeChild(ta); }
+  }
+  const old = btn.textContent;
+  btn.textContent = successLabel;
+  btn.classList.add("btn--pulse");
+  setTimeout(() => {
+    btn.textContent = old;
+    btn.classList.remove("btn--pulse");
+  }, 1500);
+}
+
+function downloadSkill(s: Skill): void {
+  // We re-emit frontmatter + body. We don't have the original
+  // yaml text on the client, so we re-construct it from the
+  // typed Skill fields. Good enough for a download.
+  const fm = yamlDump(s);
+  const blob = new Blob([fm, "\n", s.body], { type: "text/markdown" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${s.slug}.md`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function yamlDump(s: Skill): string {
+  // Re-emit the SKILL.md frontmatter as YAML. We could ask the
+  // server for the raw frontmatter string, but this dumper is
+  // small and avoids a round-trip. It supports the Skill type
+  // (typed inputs, nested constraints) and produces text that
+  // round-trips through validate-skill.py.
+  const lines: string[] = ["---"];
+  const set = (k: string, v: unknown, indent = 0) => {
+    const pad = " ".repeat(indent);
+    if (v === undefined || v === null) return;
+    if (Array.isArray(v)) {
+      if (v.length === 0) { lines.push(`${pad}${k}: []`); return; }
+      lines.push(`${pad}${k}:`);
+      for (const x of v) {
+        if (x !== null && typeof x === "object" && !Array.isArray(x)) {
+          // Render a list of mappings as `- key: val` with one
+          // level deeper indent. We can't perfectly preserve
+          // order across all object shapes, so this is best-effort.
+          lines.push(`${pad}  -`);
+          for (const [kk, vv] of Object.entries(x)) {
+            set(kk, vv, indent + 4);
+          }
+        } else {
+          lines.push(`${pad}  - ${formatScalar(x)}`);
+        }
+      }
+      return;
+    }
+    if (typeof v === "object") {
+      lines.push(`${pad}${k}:`);
+      for (const [kk, vv] of Object.entries(v)) {
+        if (vv === undefined) continue;
+        set(kk, vv, indent + 2);
+      }
+      return;
+    }
+    lines.push(`${pad}${k}: ${formatScalar(v)}`);
+  };
+  set("slug", s.slug);
+  set("name", s.name);
+  set("name_zh", s.name_zh);
+  set("version", s.version);
+  set("description", s.description);
+  set("description_zh", s.description_zh);
+  set("category", s.category);
+  set("tags", s.tags);
+  set("platforms", s.platforms);
+  set("inputs", s.inputs);
+  set("output", s.output);
+  set("author", s.author);
+  set("license", s.license);
+  set("created", s.created);
+  set("updated", s.updated);
+  set("needs_review", s.needs_review);
+  return lines.join("\n") + "\n---\n";
+}
+
+function formatScalar(v: unknown): string {
+  if (typeof v === "string") {
+    // Always quote strings — Skill fields may contain colons,
+    // leading `#`, etc., and unquoted YAML is fragile.
+    return JSON.stringify(v);
+  }
+  if (typeof v === "number" || typeof v === "boolean") return String(v);
+  return JSON.stringify(v);
+}
+
+function escHtml(s: string): string {
+  return s.replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;",
+  }[c]!));
+}
+function escAttr(s: string): string {
+  return escHtml(s);
+}

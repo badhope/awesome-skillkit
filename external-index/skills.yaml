@@ -330,7 +330,7 @@ skills:
     summary_zh: Anthropic 官方 notebook 合集：工具调用、PDF 理解、结构化输出，最接近"Claude 官方范式"。
     stars: 45159
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: us-frontier-labs
     pushed_at: '2026-05-30'
   - slug: openai-cookbook
@@ -349,7 +349,7 @@ skills:
     summary_zh: OpenAI 官方示例：结构化输出、函数调用、RAG、评估、embedding。OpenAI 范式的参考。
     stars: 74084
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: us-frontier-labs
     pushed_at: '2026-06-08'
   - slug: google-palm-cookbook
@@ -369,7 +369,7 @@ skills:
       示例：图像生成、embedding、RAG、agent。
     stars: 17003
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: us-frontier-labs
     pushed_at: '2026-06-09'
   - slug: awesome-chatgpt-prompts
@@ -423,7 +423,7 @@ skills:
     summary_zh: 采用最广的 LLM 应用框架。Chain、agent、RAG、工具调用、集成；Python 和 TypeScript 双版本。
     stars: 138861
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: general-purpose
     pushed_at: '2026-06-09'
   - slug: langgraph
@@ -527,7 +527,7 @@ skills:
     summary_zh: LLM 应用的数据框架。专注 ingestion、indexing、查询私有数据。RAG 优先的工具集。
     stars: 50028
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: rag-frameworks
     pushed_at: '2026-06-04'
   - slug: qdrant
@@ -664,7 +664,7 @@ skills:
     summary_zh: Braintrust 开源的评估库。LLM-as-judge 评分器、正则匹配器、用于构建回归数据集的小型 harness。
     stars: 913
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: eval-frameworks
     pushed_at: '2026-06-08'
   - slug: instructor
@@ -749,7 +749,7 @@ skills:
       notebook。
     stars: 103722
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2025-08-28'
   - slug: qwen3
@@ -770,7 +770,7 @@ skills:
       non-thinking 混合推理模式；Apache-2.0。
     stars: 27292
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2026-01-09'
   - slug: qwen-agent
@@ -791,7 +791,7 @@ skills:
       interpreter、RAG、Chrome 扩展；带示例应用。
     stars: 16497
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2026-03-04'
   - slug: glm-4
@@ -812,7 +812,7 @@ skills:
       calling、26 种语言。
     stars: 7066
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2025-07-04'
   - slug: kimi-k2
@@ -832,7 +832,7 @@ skills:
     summary_zh: 月之暗面 K2 发布。长上下文、工具调用、专为 code & agent 训练。与消费版 Kimi 同源。
     stars: 10842
     license: Modified-MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2026-01-21'
   - slug: internlm
@@ -852,7 +852,7 @@ skills:
       配套仓库。
     stars: 7218
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2025-10-30'
   - slug: yi-01-ai
@@ -871,7 +871,7 @@ skills:
     summary_zh: 零一万物 Yi 系列：6B 到 34B 的双语开源权重。中文强，英文对标 Llama。
     stars: 7821
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2024-11-27'
   - slug: mistral-cookbook
@@ -891,7 +891,7 @@ skills:
       Mistral Small / Medium / Large 调优。
     stars: 2261
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: open-source-models
     pushed_at: '2026-06-04'
   - slug: llama-recipes
@@ -926,7 +926,7 @@ skills:
     summary_zh: xAI 开源的 Grok-1：314B MoE（86B 激活）。xAI 在 GitHub 上的首次重大发布。
     stars: 51681
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: open-source-models
     pushed_at: '2024-08-30'
   - slug: amazon-bedrock-samples
@@ -947,7 +947,7 @@ skills:
       Titan。RAG、agent、知识库、微调。
     stars: 1440
     license: MIT-0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: cloud-platforms
     pushed_at: '2026-06-01'
   - slug: azure-search-openai-demo
@@ -968,7 +968,7 @@ skills:
       Search + Functions。生产级范式。
     stars: 7681
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: cloud-platforms
     pushed_at: '2026-06-04'
   - slug: dair-ai-prompt-engineering
@@ -1022,7 +1022,7 @@ skills:
     summary_zh: 一门开源、多语言的 prompt engineering 课程。给初学者的最佳入口。
     stars: 4707
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2025-01-14'
   - slug: semantic-kernel
     title: Semantic Kernel
@@ -1277,7 +1277,7 @@ skills:
     summary_zh: LLM 应用的评估与插桩。feedback function 接到 chain 里；带 RAG 专用的指标。
     stars: 3365
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: observability-and-tracking
     pushed_at: '2026-06-05'
   - slug: phoenix-arize
@@ -1297,7 +1297,7 @@ skills:
       OpenTelemetry。
     stars: 10052
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: observability-and-tracking
     pushed_at: '2026-06-09'
   - slug: mlflow
@@ -1428,7 +1428,7 @@ skills:
     summary_zh: 本地跑 LLM 的参考 C++ 实现。GGUF、量化、Apple Silicon，不需要 GPU。
     stars: 115705
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: ollama
     title: Ollama
@@ -1541,7 +1541,7 @@ skills:
       pipeline；支持多模态微调。
     stars: 14445
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: trl
     title: TRL
@@ -1621,7 +1621,7 @@ skills:
     summary_zh: Meta 开源的安全工具包。Llama Guard（输入/输出分类器）、Code Shield、CyberSecEval 基准。
     stars: 4211
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-03'
   - slug: mcp-servers
     title: MCP Servers
@@ -1655,7 +1655,7 @@ skills:
       Explorer、Documentation、CloudFormation ... — AWS 一方。
     stars: 9235
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: composio
     title: Composio
@@ -1674,7 +1674,7 @@ skills:
       MCP 风格 API。
     stars: 28699
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: langflow
     title: Langflow
@@ -1740,7 +1740,7 @@ skills:
     summary_zh: 基于 RAG 的知识库问答平台。可视化 pipeline、数据集管理、agent workflow；许多国内公司生产部署。
     stars: 28320
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: low-code-platforms
     pushed_at: '2026-06-09'
   - slug: coze-studio
@@ -1759,7 +1759,7 @@ skills:
     summary_zh: 字节跳动开源的 agent 平台。可视化构建、插件市场、多渠道部署（Web、飞书、抖音）。
     stars: 20954
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: low-code-platforms
     pushed_at: '2026-04-20'
   - slug: flowise
@@ -1858,7 +1858,7 @@ skills:
     summary_zh: 精致的 LLM 桌面聊天客户端。多供应商、agent workflow、RAG、知识库；中文体验原生。
     stars: 47113
     license: AGPL-3.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chat-uis
     pushed_at: '2026-06-09'
   - slug: vercel-ai-sdk
@@ -1878,7 +1878,7 @@ skills:
       SDK。streaming、tools、agents、RSC；Next.js、SvelteKit、Nuxt 等都能用。
     stars: 24748
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: continue
     title: Continue
@@ -1958,7 +1958,7 @@ skills:
     summary_zh: Stable Diffusion 经典 WebUI。庞大的扩展生态、文档齐全；仍是社区默认。
     stars: 163565
     license: AGPL-3.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: image-generation
     pushed_at: '2026-03-02'
   - slug: llava
@@ -2072,7 +2072,7 @@ skills:
     summary_zh: 阿里达摩院语音识别工具包。中文、方言、工业部署都很强。
     stars: 17517
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: speech-asr
     pushed_at: '2026-06-09'
   - slug: helicone
@@ -2136,7 +2136,7 @@ skills:
     summary_zh: AI 技术栈的 OpenTelemetry 原生可观测性。GPU 监控、prompt 安全、成本分析。
     stars: 2509
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-09'
   - slug: mem0
     title: Mem0
@@ -2184,7 +2184,7 @@ skills:
     summary_zh: 一份海量、组织得很好的 LLM 论文、课程、工具、数据集清单。"读完它"清单。
     stars: 26918
     license: CC0-1.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2025-07-31'
   - slug: awesome-langchain
     title: Awesome LangChain
@@ -2202,7 +2202,7 @@ skills:
     summary_zh: 社区维护的 LangChain 资源清单：工具、集成、示例、课程、论文。
     stars: 9395
     license: CC0-1.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-04-26'
   - slug: awesome-ai-agents
     title: Awesome AI Agents
@@ -2220,7 +2220,7 @@ skills:
     summary_zh: 100+ AI agent 精选清单。按用例分类（coding、research、客服 ...）。
     stars: 28222
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2025-02-26'
   - slug: awesome-prompt-engineering-list
     title: Awesome Prompt Engineering
@@ -2238,7 +2238,7 @@ skills:
     summary_zh: prompt engineering 的精选论文 + 工具 + 课程 + 教程。学习路径大于参考手册。
     stars: 6016
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2026-06-08'
   - slug: chainlit
     title: Chainlit
@@ -2256,7 +2256,7 @@ skills:
     summary_zh: 用于构建生产聊天 UI 的 Python 框架。async 优先、可观测性 hook、自定义 action。
     stars: 12192
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: ui-frameworks
     pushed_at: '2026-05-26'
   - slug: gradio
@@ -2276,7 +2276,7 @@ skills:
       UI。
     stars: 42860
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: ui-frameworks
     pushed_at: '2026-06-09'
   - slug: streamlit
@@ -2295,7 +2295,7 @@ skills:
     summary_zh: 把 Python 脚本变成可分享的 web app。数据 app demo 的默认；带 LLM chat 组件。
     stars: 44893
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: ui-frameworks
     pushed_at: '2026-06-09'
   - slug: browser-use
@@ -2347,7 +2347,7 @@ skills:
     summary_zh: 自指令数据集 + 训练 pipeline，用于指令微调；开源的 GPT-3.5 风格数据。
     stars: 1051
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     pushed_at: '2024-03-07'
   - slug: datawhale-self-llm
     title: self-llm (Datawhale)
@@ -2365,7 +2365,7 @@ skills:
     summary_zh: Datawhale 开源教程：30+ 开源 LLM 的微调与部署。中文社区最佳入门。
     stars: 30805
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: chinese-labs
     pushed_at: '2026-06-03'
   - slug: db-gpt
@@ -2384,7 +2384,7 @@ skills:
     summary_zh: 国内开源项目：用自然语言与数据库对话。SQL agent + 知识库 + RAG。
     stars: 18949
     license: MIT
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: low-code-platforms
     pushed_at: '2026-06-08'
   - slug: langgpt
@@ -2403,7 +2403,7 @@ skills:
     summary_zh: 中文社区项目：写"好"prompt 和角色卡的结构化方法论。
     stars: 12189
     license: Apache-2.0
-    added: 2026-06-04
+    added: '2026-06-04'
     subgroup: lightweight
     pushed_at: '2026-06-09'
   - slug: anthropic-sdk-python

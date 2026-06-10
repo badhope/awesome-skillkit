@@ -1,12 +1,12 @@
 name: Dead link
-description: Report a source_url that no longer works
+description: Report a source_url in external-index/skills.yaml that no longer works
 labels: ["dead-link"]
 body:
   - type: input
     id: slug
     attributes:
       label: Slug
-      description: The entry's slug in catalog/skills.yaml
+      description: The entry's slug in external-index/skills.yaml
       placeholder: e.g. langchain
     validations:
       required: true

@@ -3,12 +3,12 @@
   "by_group": {
     "client_error": 0,
     "error": 0,
-    "ok": 927,
+    "ok": 928,
     "redirect": 0,
     "server_error": 0
   },
-  "checked_at": "2026-06-08T17:56:08+00:00",
-  "elapsed_s": 75.93,
+  "checked_at": "2026-06-10T18:03:31+00:00",
+  "elapsed_s": 142.17,
   "results": {
     "acados": {
       "code": 206,
@@ -3914,7 +3914,7 @@
       "code": 206,
       "group": "ok",
       "status": "ok",
-      "url": "https://github.com/Nvidia/NeMo-Curator"
+      "url": "https://github.com/NVIDIA-NeMo/Curator"
     },
     "pinecone": {
       "code": 206,
@@ -5494,6 +5494,12 @@
       "status": "ok",
       "url": "https://github.com/xonsh/xonsh"
     },
+    "xquik-x-data-api": {
+      "code": 206,
+      "group": "ok",
+      "status": "ok",
+      "url": "https://github.com/Xquik-dev/x-twitter-scraper"
+    },
     "yazi": {
       "code": 206,
       "group": "ok",
@@ -5573,5 +5579,5 @@
       "url": "https://github.com/zulip/zulip"
     }
   },
-  "total": 927
+  "total": 928
 }

@@ -17,7 +17,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.3
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
       - name: Detect changes
         id: diff
         run: |
-          if git diff --quiet catalog/skills.yaml; then
+          if git diff --quiet external-index/skills.yaml; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -52,4 +52,4 @@ jobs:
           branch: chore/sync-github-metadata
           delete-branch: true
           add-paths: |
-            catalog/skills.yaml
+            external-index/skills.yaml

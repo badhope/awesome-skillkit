@@ -19,11 +19,15 @@ keywords:
   - llm
   - prompt-engineering
   - ai-skills
-  - catalog
-  - index
-  - awesome-list
+  - skill-vault
   - mcp
   - rag
+  - claude-skills
+  - codex-skills
   - ai
 abstract: >-
-  Hand-curated index of 900+ agent skills (repos, cookbooks, MCP servers, case studies) across 49 categories. One YAML file, bilingual, no library, no tutorial site — just a list you can grep and vendor.
+  A vendor-neutral vault of agent skills. Each skill is a local
+  SKILL.md file under skills/ — frontmatter, prompt, example, and a
+  "When NOT to use" section. Drop into Claude, Codex, Cursor, Continue,
+  or any Markdown-reading agent. The external-index/ directory keeps a
+  discovery list of upstream repos for skills we have not yet mirrored.

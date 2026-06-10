@@ -1,87 +1,87 @@
 # skills/
 
-Drop-in folder for skills we author and publish in this repo —
-**not** the ones we link to from the catalog. The catalog points at
-upstream projects; this folder is our own work.
+每个技能是一个目录，里头至少有一份 `SKILL.md`。
 
-Currently empty. When ready, a skill lives here as a single `.md`
-file: YAML frontmatter (metadata) + a Markdown body (the prompt,
-inputs/outputs, and a worked example).
+不是 awesome-list（那个在 `external-index/`）。是**真东西**——
+clone 下来就能用，不需要再访问任何外部仓库。
 
-The on-repo skills are indexed in `catalog/own_skills.yaml` so the
-catalog can find them. Two files per skill, one PR.
+## 怎么加一条技能
 
-## Adding a skill
+1. 复制 `skills/_TEMPLATE.md` 到 `skills/<your-slug>/SKILL.md`
+2. 写 frontmatter，参考 `docs/schema.md`
+3. 写正文（4 段 + 例子）
+4. `python scripts/validate-skill.py` 跑一遍
+5. 开 PR
 
-1. Copy `skills/_TEMPLATE.md` to `skills/<your-slug>.md`.
-   Slug is kebab-case, lowercased, no spaces — e.g.
-   `url-summarizer`, `pdf-extractor-v2`.
-2. Add a row to `catalog/own_skills.yaml` with at least a `path`
-   field pointing back to your file (e.g. `path:
-   skills/url-summarizer.md`). The other fields follow the same
-   schema as catalog/skills.yaml.
-3. Open a PR. The link-check and CI workflows will run; sync
-   doesn't touch own_skills (it only refreshes external GitHub
-   metadata).
+CI 会校验：frontmatter 字段齐全、`path` 跟 `slug` 一致、
+body 段顺序对。
 
-That's it. No review queue, no formal sign-off.
+## 一个技能长什么样
 
-## Layout of a skill
+```
+skills/
+  pdf-summarizer/
+    SKILL.md              # 必填
+    assets/               # 可选，例子里引用的图、JSON、prompt 片段
+      example-input.pdf
+```
 
-A skill's `.md` body is just Markdown. The convention is four
-sections:
+文件名**固定**叫 `SKILL.md`，不是 `skill.md` 也不是 `README.md`。
+原因：`install-skill.py` 按这个名字找，rename 之后下游 install
+就找不到。
 
-1. **When to use** — one paragraph describing the situation that
-   calls for this skill. Be specific. "When you have a research
-   paper and need a 5-bullet summary" is better than "for
-   summarization."
-2. **Inputs** — a table of fields the user (or upstream code) must
-   supply. Type, whether it's required, any constraints.
-3. **Output** — describe the shape the model should return. If the
-   model must produce a fixed structure, list it here and reference
-   the prompt body that enforces it.
-4. **Prompt** — the actual prompt, in a fenced `prompt` code block.
-   Inside the prompt use Markdown headings (`## Section A`) to
-   structure the model's response.
+## frontmatter 字段
 
-Plus a worked **Example** at the bottom showing the full input →
-output flow. Real, complete examples. Don't truncate.
+完整列表看 `docs/schema.md`。必填的几个：
 
-## Frontmatter
-
-| Field | Required | Notes |
+| 字段 | 类型 | 例子 |
 |---|---|---|
-| `slug` | yes | kebab-case, unique across `skills/` |
-| `title` | yes | short, sentence case |
-| `title_zh` | no | Chinese title |
-| `summary` | yes | one sentence — what it does, for whom |
-| `summary_zh` | no | Chinese summary, one sentence |
-| `tags` | yes | 2-5 lowercase tags |
-| `category` | yes | one of the 49 slugs in `catalog/skills.yaml` |
-| `version` | yes | semver, e.g. `0.1.0` |
-| `author` | yes | GitHub handle, or `Name <email>` |
-| `license` | yes | typically `MIT` |
-| `created` | yes | `YYYY-MM-DD` |
-| `updated` | yes | `YYYY-MM-DD` |
+| `slug` | kebab-case | `pdf-summarizer` |
+| `name` | 句子大小写 | `PDF Summarizer` |
+| `version` | semver | `0.1.0` |
+| `description` | 一句话 | `5-bullet summary of a long PDF, per audience.` |
+| `category` | 49 个之一 | `document-processing` |
+| `tags` | 2-5 个 | `[pdf, summarization]` |
+| `inputs` | object[] | 看 schema |
+| `output` | object | 看 schema |
+| `author` | string | GitHub handle |
+| `license` | SPDX id | `MIT` |
+| `created` / `updated` | date | `2026-06-10` |
 
-## Why frontmatter + Markdown
+## 正文 4 段 + 1 段
 
-- Frontmatter is machine-readable: a future script can render
-  these as a static site, generate a README index, or push them to
-  a prompt registry. Don't put the prompt body in frontmatter.
-- Markdown is portable. Renders correctly on GitHub, in
-  `grip`-previewed locally, and in any tool that does
-  `markdown → HTML` or `markdown → plain text`. Don't lock the
-  prompt inside a JSON file.
-- One file per skill. No nested folders, no shared "prompts/"
-  directory. The convention is enforceable with a single grep:
-  `find skills -name '*.md' ! -name '_*'`.
+1. `# When to use` —— 场景，写具体
+2. `# Inputs` —— 给人看的版本
+3. `# Output` —— 模型要返回什么
+4. `# Prompt` —— 实际 prompt
+5. `# When NOT to use`（**强烈建议**）—— 边界
 
-## Versioning
+外加 `# Example` —— 完整 input → output，**别截断**。
 
-- Bump `version` on the frontmatter (semver) every time the body
-  changes meaningfully — i.e. the prompt produces different output.
-- Cosmetic prose changes don't need a version bump; do update
-  `updated` though.
-- Breaking changes (different input/output shape) deserve a
-  major version bump and a note in the PR description.
+## 一些原则
+
+- **默认平台中立**。只有某段真的需要 vendor SDK 才标
+  `platforms: [claude]`，并在那段开头加 `> **Claude-only**`
+- **不动 prompt 文字**。哪怕是 typo，源怎么写就怎么写
+- **不手动改** `stars` / `license` / `pushed_at`。sync
+  脚本会刷，但只刷 `external-index/`，不刷 `skills/`
+- **不合并两个技能**。哪怕看起来很像，留两份
+- **example 一定给完整**。下游 agent 靠这个对齐输出
+
+## 检查
+
+本地：
+
+```bash
+python scripts/validate-skill.py
+```
+
+CI 跑同一条命令，过不去就红。
+
+## 删除一条技能
+
+1. `git rm -r skills/<slug>`
+2. 从 `skills/_index.yaml` 里删对应行（如果有）
+3. 提 PR
+
+不要留空目录。

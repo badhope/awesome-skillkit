@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Health check: ping every source_url in catalog/skills.yaml.
+"""Health check: ping every source_url in external-index/skills.yaml.
 
 Reports 4xx/5xx, timeouts, and DNS failures. Writes a summary to
-data/health.json for trend tracking.
+external-index/health.json for trend tracking.
+
+This only checks the external link index, not the local skill
+vault. Local skills don't have remote URLs to ping.
 """
 from __future__ import annotations
 
@@ -17,10 +20,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-CATALOG = REPO / "catalog" / "skills.yaml"
-HEALTH_JSON = REPO / "data" / "health.json"
+INDEX_YAML = REPO / "external-index" / "skills.yaml"
+HEALTH_JSON = REPO / "external-index" / "health.json"
 
-UA = "ai-skill-catalog-link-checker/1.0"
+UA = "ai-skill-link-checker/1.0"
 TIMEOUT_S = 8
 WORKERS = 8
 RETRY_BACKOFF_S = (1.0, 3.0)
@@ -73,7 +76,7 @@ def head_or_get(url: str) -> tuple[str, int, str]:
     return _err(last_exc) if last_exc else ("error: unknown", 0, "error")
 
 
-def load_catalog(path: Path) -> list[dict]:
+def load_index(path: Path) -> list[dict]:
     import yaml
     with path.open() as f:
         data = yaml.safe_load(f)
@@ -97,13 +100,15 @@ def scan(pairs: list[tuple[str, str]]) -> dict[str, dict]:
 
 
 def main() -> int:
-    p = argparse.ArgumentParser()
+    p = argparse.ArgumentParser(
+        description="Health check: ping every source_url in external-index/skills.yaml.",
+    )
     p.add_argument("--fail", action="store_true", help="exit 1 on any broken link")
     p.add_argument("--workers", type=int, default=WORKERS)
     args = p.parse_args()
 
-    if not CATALOG.exists():
-        print(f"catalog not found at {CATALOG}", file=sys.stderr)
+    if not INDEX_YAML.exists():
+        print(f"index not found at {INDEX_YAML}", file=sys.stderr)
         return 1
 
     try:
@@ -112,9 +117,9 @@ def main() -> int:
         print("PyYAML is required: pip install pyyaml", file=sys.stderr)
         return 2
 
-    skills = load_catalog(CATALOG)
+    skills = load_index(INDEX_YAML)
     pairs = collect_urls(skills)
-    print(f"Checking {len(pairs)} URLs from {CATALOG.relative_to(REPO)} …")
+    print(f"Checking {len(pairs)} URLs from {INDEX_YAML.relative_to(REPO)} …")
     started = time.time()
     results = scan(pairs)
     elapsed = time.time() - started

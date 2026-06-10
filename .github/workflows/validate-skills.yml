@@ -1,0 +1,30 @@
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --quiet ruamel.yaml pyyaml
+
+      - name: Validate all skills
+        # --strict makes warnings fail. We use this in CI so that
+        # `needs_review: true` can't sneak into main.
+        run: python scripts/validate-skill.py --strict

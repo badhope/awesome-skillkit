@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+*.log
+*.tsbuildinfo
+
+# Local data dumps (built by scripts/validate-skill.py).
+# The frontend reads these at runtime; CI regenerates them on
+# every push. Don't pollute git diffs with 5+ identical-looking
+# JSON files.
+public/skills.json
+public/skills/
+public/index.json

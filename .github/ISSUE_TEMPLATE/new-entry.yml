@@ -1,5 +1,5 @@
 name: New entry suggestion
-description: Suggest a skill to add to the catalog
+description: Suggest a skill to add to the external index
 labels: ["new-entry"]
 body:
   - type: input
@@ -14,7 +14,7 @@ body:
     id: category
     attributes:
       label: Category
-      description: One of the 49 categories (see catalog/skills.yaml)
+      description: One of the categories listed in external-index/skills.yaml
       placeholder: e.g. agent-frameworks
     validations:
       required: true

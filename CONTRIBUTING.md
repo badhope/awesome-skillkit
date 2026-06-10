@@ -1,47 +1,63 @@
-# Contributing to AI-SKILL
+# Contributing
 
-Thanks for helping improve the catalog. This repo is one YAML file
-plus two helper scripts — contributions are straightforward.
+Two ways to help:
 
-## Adding an external skill
+1. **Add a local skill** under `skills/<slug>/SKILL.md`. This is the main
+   product. Most PRs should be this.
+2. **Add an external link** to `external-index/skills.yaml`. Discovery
+   only. The skill itself has to be fetched separately.
 
-1. Fork the repo.
-2. Append a new entry under `skills:` in `catalog/skills.yaml`.
-3. Follow the entry schema (see README).
-4. Open a PR.
+## Adding a local skill
+
+```bash
+cp skills/_TEMPLATE.md skills/<your-slug>/SKILL.md
+# edit it
+python scripts/validate-skill.py skills/<your-slug>/SKILL.md
+```
+
+If the file is from upstream, also fill in the `source` block (URL,
+commit SHA, license). See `SOURCE.md` for the rules.
+
+If `extend-skill.py` flagged your file with `needs_review: true`,
+explain in the PR body what you guessed. Don't silently ship a guess.
+
+## Adding an external link
+
+Append to `external-index/skills.yaml`. Its current schema
+(`summary` / `summary_zh`) is the only schema for that file — the
+local skill vault (`skills/`) uses a different schema (`description`
+/ `description_zh` per `docs/schema.md`), and we don't plan to
+migrate one to the other. Keeping them apart avoids re-writing
+the sync workflow.
 
 Rules:
 
-- `slug` must be unique (kebab-case).
-- `source_url` must return 2xx (the link-check CI will verify).
-- `category` must be one of the 49 defined categories.
-- `summary` and `summary_zh` each one line.
-- Don't add `stars`, `license`, `pushed_at`, or `archived` manually —
-  the sync workflow fills those within a day after merge.
+- `slug` is unique and kebab-case
+- `source_url` returns 2xx
+- `category` matches an existing entry in the same file
+- Don't add `stars` / `license` / `pushed_at` / `archived` — the sync
+  workflow fills those
 
 ## Reporting a dead link
 
-Open an issue with the slug and the current `source_url`. We'll fix
-or remove the entry.
+Open an issue, use the **Dead link** template. Slug + broken URL +
+a sentence of context (renamed? moved? private?).
 
 ## Suggesting a new category
 
-Open an issue first. New categories need a reason — most entries fit
-an existing one.
+Open an issue first. Most entries fit an existing one. New category
+needs a reason.
 
-## Publishing your own skill
+## PR hygiene
 
-See `skills/README.md` for the in-repo skill format.
-
-## PR process
-
-- Squash merge only.
-- One entry per PR is preferred (easier to review).
-- The CI workflows run automatically; wait for green before merging.
-- Don't commit secrets, generated build output, large binaries, or
-  someone else's code without a license.
+- **One skill per PR.** Easier to review, easier to revert.
+- **Squash merge.**
+- **Don't** commit secrets, tokens, generated bundles, large
+  binaries, or somebody else's code without a license.
+- Wait for CI green. `validate-skills.yml` runs on every push;
+  `check-links.yml` runs on a weekly cron and on manual dispatch.
 
 ## License
 
-By contributing, you agree your contribution is licensed under the same
-license as the rest of the project. See [LICENSE](./LICENSE).
+By contributing, you agree your contribution is licensed under
+MIT, the same as the rest of the project. See [LICENSE](./LICENSE).

@@ -1,61 +1,94 @@
 ---
-slug: my-skill
-title: My Skill
-title_zh: 我的技能
-summary: One sentence — what it does, for whom.
-summary_zh: 一句话 — 干什么、为谁。
-tags: [tag1, tag2, tag3]
-category: official-cookbooks
-version: 0.1.0
+# Required fields — see docs/schema.md for full reference.
+
+slug: my-skill                       # kebab-case, matches directory name
+name: My Skill                       # display title, sentence case
+name_zh: 我的技能                      # optional Chinese title
+version: 0.1.0                       # semver
+description: One sentence — what it does, for whom.
+description_zh: 一句话，干什么、为谁。    # optional Chinese
+
+category: official-cookbooks         # one of the 49 categories in external-index/
+tags: [tag1, tag2, tag3]             # 2-5 lowercase tags
+# platforms: [claude]                # omit for platform-neutral
+
+inputs:
+  - name: pdf_path
+    type: path
+    required: true
+    description: local path to the PDF
+  - name: audience
+    type: enum
+    required: false
+    values: [engineer, pm, exec]
+    default: pm
+    description: who is reading the summary
+  - name: length
+    type: integer
+    required: false
+    default: 5
+    constraints:
+      min: 3
+      max: 10
+    description: number of bullets in the summary
+
+output:
+  format: markdown
+  description: |
+    `## Summary` with N bullets, then a `## Tags:` line.
+
 author: your-github-handle
 license: MIT
-created: 2026-06-08
-updated: 2026-06-08
+created: 2026-06-10
+updated: 2026-06-10
+
+# For skills fetched from an upstream repo, also include:
+# source:
+#   url: https://github.com/owner/repo/tree/main/skills/...
+#   fetched_at: 2026-06-10
+#   commit: a1b2c3d4
+#   license: MIT
+#   original_path: skills/foo/SKILL.md
+
+# needs_review: true                # only if extend-skill.py guessed
 ---
 
 # When to use
 
-Describe the situation that calls for this skill. Be specific.
-"Given a long PDF and an audience, produce a 5-bullet executive
-summary" is better than "for PDF summarization."
+A reader wants a 5-bullet summary of a long PDF, written for a
+specific audience. Be specific here — "for PDF summarization" is
+too vague, "for a 50-page report that an exec needs in 30
+seconds" is what we want.
 
 # Inputs
 
-| Field | Type | Required | Notes |
-|---|---|---|---|
-| `pdf_path` | path | yes | local path to the PDF, ≤ 50 pages |
-| `audience` | enum | no | one of: `engineer`, `pm`, `exec` (default: `pm`) |
-| `length` | int | no | target bullet count, 3-10 (default: 5) |
+The path to a PDF on disk, the audience, the bullet count. The
+audience controls register and vocabulary; the bullet count
+controls length.
 
 # Output
 
-The model returns Markdown with exactly `length` bullets under
-`## Summary`, in the requested `audience` voice, then a one-line
-`## Tags:` line.
-
-Don't deviate from this structure — downstream code parses it.
+Markdown with exactly `length` bullets under `## Summary`, then
+a single `## Tags:` line.
 
 # Prompt
 
 ```prompt
 You are a senior analyst writing for the requested audience.
-Read the PDF at the given path and produce a summary.
 
-Voice: adapt register and vocabulary to the audience.
+Voice:
 - engineer: precise, technical, uses domain terms
 - pm: outcomes-first, no jargon, quantifies where possible
 - exec: 1-2 sentences per bullet, decisions and risks only
 
-Length: produce exactly the requested number of bullets.
-
 Process:
-1. Read the PDF cover, abstract, intro, conclusion, and any
-   tables/figures.
-2. Identify the 1-3 findings the audience needs to act on.
-3. Distill to the requested number of bullets.
-4. Order by importance, not by appearance in the document.
+1. Read the PDF cover, abstract, intro, conclusion, key tables/figures
+2. Identify the 1-3 findings the audience needs to act on
+3. Distill to exactly N bullets
+4. Order by importance, not by appearance
 
-Output format:
+Output:
+
 ## Summary
 1. <bullet>
 2. <bullet>
@@ -64,6 +97,12 @@ Output format:
 ## Tags
 comma, separated, keywords
 ```
+
+# When NOT to use
+
+- The PDF is under 2 pages — read it directly.
+- The reader needs the full text — use `pdf-extractor`.
+- The reader needs exact quotes — this skill summarises.
 
 # Example
 

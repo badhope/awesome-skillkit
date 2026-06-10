@@ -5,6 +5,11 @@ For each skill with a `source` of the form `owner/repo`, GET
 /repos/{owner}/{repo} and update the corresponding fields. Non-GitHub
 sources are skipped.
 
+The skills.yaml this writes to is the external link index
+(`external-index/skills.yaml`), not the local skill vault
+(`skills/`). Local skills live under `skills/<slug>/SKILL.md`
+and are out of scope for this script.
+
 Rate limits: 60 req/h unauthenticated, 5000/h with GITHUB_TOKEN.
 """
 from __future__ import annotations
@@ -27,7 +32,7 @@ except ImportError:
     sys.exit(1)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SKILLS_YAML = REPO_ROOT / "catalog" / "skills.yaml"
+SKILLS_YAML = REPO_ROOT / "external-index" / "skills.yaml"
 API_BASE = "https://api.github.com"
 
 DEFAULT_WORKERS_AUTH = 12
@@ -183,7 +188,7 @@ def main() -> int:
         return 0
 
     if changes:
-        with open(SKILLS_YAML, "w") as f:
+        with open(SKILLS_YAML, "w", encoding="utf-8") as f:
             yaml.dump(data, f)
         print(f"\nWrote updates to {SKILLS_YAML.relative_to(REPO_ROOT)}")
     else:

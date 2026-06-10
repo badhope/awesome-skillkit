@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "_about": "Batch fetch manifest for scripts/fetch-skill.py.",
+    "_note": "Each entry is a SINGLE FILE (not a directory). 'path' is the file path inside the upstream repo. 'out' is the LOCAL output path, relative to the repo root. Files that already exist are skipped unless --overwrite is set. Entries with 'skip: true' are still listed for audit but won't be fetched.",
+    "_status": "draft",
+    "_status_detail": "The 18 README.md targets below were tried on 2026-06-10. None of them are SKILL.md-shaped (they're project READMEs with badges, TOCs, install steps), so none of them landed. The right next step is to find the actual skills/<name>/SKILL.md path inside each repo and replace these entries. Don't re-run the batch until then."
+  },
+  "items": [
+    {
+      "source": "anthropics/anthropic-cookbook",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/anthropic-cookbook-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md; need to find skills/*/SKILL.md inside the repo"
+    },
+    {
+      "source": "openai/openai-cookbook",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/openai-cookbook-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/awesome-chatgpt-prompts-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md; the actual content is in /prompts/*.yaml"
+    },
+    {
+      "source": "langchain-ai/langchain",
+      "ref": "master",
+      "path": "README.md",
+      "out": "skills/langchain-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "microsoft/autogen",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/autogen-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "crewAIInc/crewAI",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/crewai-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "huggingface/smol-course",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/smol-course-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "agno-agi/agno",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/agno-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "run-llama/llama_index",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/llama-index-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "qdrant/qdrant",
+      "ref": "master",
+      "path": "README.md",
+      "out": "skills/qdrant-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "chroma-core/chroma",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/chroma-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "weaviate/weaviate",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/weaviate-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "neuml/txtai",
+      "ref": "master",
+      "path": "README.md",
+      "out": "skills/txtai-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/promptfoo-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/langfuse-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "confident-ai/deepeval",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/deepeval-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "milvus-io/milvus",
+      "ref": "master",
+      "path": "README.md",
+      "out": "skills/milvus-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "facebookresearch/faiss",
+      "ref": "main",
+      "path": "README.md",
+      "out": "skills/faiss-readme/SKILL.md",
+      "skip": true,
+      "skip_reason": "README is not a SKILL.md"
+    }
+  ]
+}

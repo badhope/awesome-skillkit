@@ -1,0 +1,76 @@
+# Local skill index — built by validate-skill.py.
+#
+# Do NOT edit by hand. Edit the corresponding
+# skills/<slug>/SKILL.md and re-run validate-skill.py.
+
+skills:
+  - slug: code-reviewer
+    name: Code Reviewer
+    name_zh: 代码审查员
+    description: Review a code diff for bugs, security issues, and style. 
+      Vendor-neutral, language-aware.
+    category: dev-tools
+    tags:
+      - code
+      - review
+      - security
+      - refactoring
+    platforms: []
+    needs_review: false
+    path: skills/code-reviewer/SKILL.md
+  - slug: commit-message-writer
+    name: Commit Message Writer
+    name_zh: 提交信息写手
+    description: Write a conventional-commit message from a diff. 
+      Vendor-neutral.
+    category: dev-tools
+    tags:
+      - git
+      - commit
+      - conventional-commits
+      - changelog
+    platforms: []
+    needs_review: false
+    path: skills/commit-message-writer/SKILL.md
+  - slug: pdf-summarizer
+    name: PDF Summarizer
+    name_zh: PDF 摘要器
+    description: Summarise a PDF into N bullets for a target audience. 
+      Vendor-neutral — works on any agent that can read PDFs.
+    category: official-cookbooks
+    tags:
+      - pdf
+      - summarization
+      - document
+      - reading
+    platforms: []
+    needs_review: false
+    path: skills/pdf-summarizer/SKILL.md
+  - slug: sql-query-helper
+    name: SQL Query Helper
+    name_zh: SQL 查询助手
+    description: Translate a natural-language question into a SQL query, given a
+      schema. Vendor-neutral, dialect-aware.
+    category: text-to-sql
+    tags:
+      - sql
+      - database
+      - query
+      - nlp
+    platforms: []
+    needs_review: false
+    path: skills/sql-query-helper/SKILL.md
+  - slug: test-generator
+    name: Unit Test Generator
+    name_zh: 单元测试生成器
+    description: Generate unit tests for a function or class. Vendor-neutral, 
+      framework-aware.
+    category: dev-tools
+    tags:
+      - testing
+      - tdd
+      - unit-tests
+      - qa
+    platforms: []
+    needs_review: false
+    path: skills/test-generator/SKILL.md

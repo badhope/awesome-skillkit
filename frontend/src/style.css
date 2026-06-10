@@ -1,0 +1,386 @@
+/* Design tokens — see docs/frontend-design.md.                */
+/* The light/dark split is automatic via prefers-color-scheme. */
+
+:root {
+  /* surface */
+  --bg:           #fafaf7;
+  --bg-elev:      #ffffff;
+  --bg-sunk:      #f1efe9;
+  --border:       #e5e2d8;
+  --border-strong:#2a2a2a;
+
+  /* text */
+  --ink:          #1a1a1a;
+  --ink-soft:     #4a4a48;
+  --ink-mute:     #6f6c66;
+
+  /* accent */
+  --accent:       #2a2a2a;
+  --accent-fg:    #fafaf7;
+
+  /* status (use sparingly) */
+  --ok:           #2d6a4f;
+  --warn:         #b45309;
+  --err:          #991b1b;
+  --info:         #1d4ed8;
+
+  /* platform chips — fixed by vendor */
+  --p-claude:     #c96442;
+  --p-codex:      #10a37f;
+  --p-cursor:     #000000;
+  --p-continue:   #5b6cff;
+
+  /* 8px grid */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+
+  /* type scale (only 6 sizes) */
+  --t-xs:  14px;
+  --t-sm:  16px;
+  --t-md:  18px;
+  --t-lg:  22px;
+  --t-xl:  28px;
+  --t-2xl: 40px;
+
+  /* font stacks (system fonts; no CDN) */
+  --font-ui:   -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Mono",
+               Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:           #131210;
+    --bg-elev:      #1c1b18;
+    --bg-sunk:      #0d0c0a;
+    --border:       #2a2925;
+    --border-strong:#fafaf7;
+
+    --ink:          #f1efe9;
+    --ink-soft:     #c8c5bb;
+    --ink-mute:     #9b9890;
+
+    --accent:       #f1efe9;
+    --accent-fg:    #131210;
+
+    --ok:           #6dba94;
+    --warn:         #f59e0b;
+    --err:          #ef4444;
+    --info:         #60a5fa;
+
+    --p-cursor:     #ffffff;
+  }
+}
+
+/* Reset — minimal, opinionated */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  font-family: var(--font-ui);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
+img, svg { display: block; max-width: 100%; }
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--s-3) var(--s-4);
+  background: var(--accent);
+  color: var(--accent-fg);
+  z-index: 100;
+}
+.skip-link:focus-visible { left: var(--s-4); top: var(--s-4); }
+
+/* Top bar — sticky, 56px, never a fixed nav */
+.topbar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--s-5);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar__brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: var(--t-md);
+}
+.topbar__nav {
+  display: flex;
+  gap: var(--s-4);
+  font-size: var(--t-sm);
+  color: var(--ink-soft);
+}
+.topbar__nav a:hover { color: var(--ink); text-decoration: none; }
+
+.main { padding: var(--s-5); }
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: var(--s-8);
+  padding: var(--s-5);
+  font-size: var(--t-xs);
+  color: var(--ink-mute);
+  display: flex;
+  gap: var(--s-2);
+  justify-content: center;
+}
+
+/* Containers */
+.container-wide  { max-width: 72rem; margin: 0 auto; }
+.container-read  { max-width: 56rem; margin: 0 auto; }
+
+/* Meta line (the “5 skills · 4 categories” bar) */
+.meta-line {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  font-size: var(--t-xs);
+  color: var(--ink-mute);
+  margin-bottom: var(--s-4);
+  flex-wrap: wrap;
+}
+.meta-line strong { color: var(--ink); font-weight: 600; }
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: var(--s-2);
+  margin-bottom: var(--s-5);
+  flex-wrap: wrap;
+}
+.filter-bar input[type="search"],
+.filter-bar select {
+  font: inherit;
+  font-size: var(--t-sm);
+  color: var(--ink);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: var(--s-2) var(--s-3);
+  min-height: 44px;
+  transition: border-color 120ms;
+}
+.filter-bar input[type="search"] { flex: 1 1 200px; }
+.filter-bar input[type="search"]:focus,
+.filter-bar select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Skill card — the list page’s only shape */
+.skill-card {
+  display: block;
+  padding: var(--s-4) var(--s-5);
+  background: var(--bg-elev);
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: var(--s-2);
+  transition: border-color 120ms, background-color 120ms;
+}
+.skill-card:hover { border-left-color: var(--accent); text-decoration: none; }
+.skill-card--alt { background: var(--bg-sunk); }
+.skill-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  justify-content: space-between;
+}
+.skill-card__slug {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--ink);
+  font-weight: 600;
+}
+.skill-card__name {
+  font-size: var(--t-sm);
+  color: var(--ink-soft);
+}
+.skill-card__desc {
+  margin-top: var(--s-2);
+  font-size: var(--t-sm);
+  color: var(--ink-soft);
+}
+.skill-card__meta {
+  margin-top: var(--s-3);
+  display: flex;
+  gap: var(--s-3);
+  font-size: var(--t-xs);
+  color: var(--ink-mute);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.skill-card__review-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--warn);
+  display: inline-block;
+}
+
+/* Platform chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #fff;
+  background: var(--ink-mute);
+  line-height: 1.4;
+}
+.chip--claude   { background: var(--p-claude); }
+.chip--codex    { background: var(--p-codex); }
+.chip--cursor   { background: var(--p-cursor); }
+.chip--continue { background: var(--p-continue); }
+.chip--all      { background: var(--ink-mute); }
+
+/* Detail page typography */
+.detail h1 { font-size: var(--t-2xl); line-height: 1.15; margin: 0 0 var(--s-2); letter-spacing: -0.02em; }
+.detail h2 { font-size: var(--t-lg); line-height: 1.25; margin: var(--s-6) 0 var(--s-3); letter-spacing: -0.01em; }
+.detail p  { margin: 0 0 var(--s-3); }
+.detail ul, .detail ol { margin: 0 0 var(--s-3); padding-left: var(--s-5); }
+.detail li { margin: 0 0 var(--s-1); }
+.detail pre {
+  background: var(--bg-sunk);
+  padding: var(--s-4);
+  border-radius: 4px;
+  overflow-x: auto;
+  line-height: 1.5;
+  font-size: 13.5px;
+  margin: 0 0 var(--s-3);
+  position: relative;
+}
+.detail code {
+  background: var(--bg-sunk);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.detail pre code { background: none; padding: 0; }
+.detail table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+  margin: 0 0 var(--s-3);
+}
+.detail th, .detail td {
+  text-align: left;
+  padding: var(--s-2) var(--s-3);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.detail th {
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: var(--t-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.detail .actions {
+  display: flex;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+  flex-wrap: wrap;
+}
+.detail .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  padding: var(--s-2) var(--s-4);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: var(--t-sm);
+  color: var(--ink);
+  min-height: 44px;
+  transition: background-color 120ms, border-color 120ms, transform 150ms;
+}
+.detail .btn:hover { background: var(--bg-sunk); border-color: var(--ink-mute); }
+.detail .btn--primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.detail .btn--primary:hover { background: var(--ink-soft); border-color: var(--ink-soft); }
+.detail .btn--pulse { animation: pulse 150ms ease-out; }
+@keyframes pulse { 50% { transform: scale(1.04); } }
+.detail .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+  margin-bottom: var(--s-4);
+}
+.detail .back-link:hover { color: var(--ink); }
+.detail .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  align-items: center;
+  font-size: var(--t-sm);
+  color: var(--ink-mute);
+  margin-bottom: var(--s-5);
+}
+.detail .meta-row strong { color: var(--ink); font-weight: 500; }
+
+/* Bundle page list */
+.bundle-list { list-style: none; padding: 0; margin: 0 0 var(--s-5); }
+.bundle-list li {
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  cursor: pointer;
+  min-height: 44px;
+}
+.bundle-list li:hover { background: var(--bg-sunk); }
+.bundle-list input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+.bundle-list__slug { font-family: var(--font-mono); flex: 1; font-size: var(--t-sm); }
+.bundle-list__cat { font-size: var(--t-xs); color: var(--ink-mute); }
+
+/* Empty state */
+.empty {
+  padding: var(--s-7) var(--s-4);
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: var(--t-sm);
+}
+
+/* Mobile: ≤ 768px single column, slightly tighter type */
+@media (max-width: 768px) {
+  .main { padding: var(--s-4); }
+  .topbar { padding: 0 var(--s-4); }
+  .skill-card { padding: var(--s-3) var(--s-4); }
+  .filter-bar input[type="search"] { flex: 1 1 100%; }
+  .filter-bar select { flex: 1 1 calc(50% - var(--s-2)); }
+}
+@media (max-width: 480px) {
+  body { font-size: 15px; }
+  .detail h1 { font-size: var(--t-xl); }
+  /* Hide the GitHub link on the smallest screens — the brand is
+     enough for context, and the bundle link is the only in-page
+     action worth keeping. (W7 from the prosecutor review.) */
+  .topbar__nav a[target="_blank"] { display: none; }
+}
