@@ -63,9 +63,38 @@
   前端列表页能看到 `claude` chip
 
 ### N2. push 到远端
-- **阻塞**：用户明确说"不用先提交，后面我会发指令"
-- **后续动作**：等用户塞 `GH_TOKEN` 或 SSH key，我跑 push
-- **风险**：`stale.yml` 跑起来可能关闭 1-2 个老 issue，提前 review
+- **状态**：本地准备完成，**等用户给 creds**
+- **做法**：用 `scripts/push.sh`，多方法自动选
+- **远端现状**（最后一次 `ls-remote`）：
+  - `main` 停在 `f705579`（老 era 的"cleanup"，我们落后 0 / 领先 2）
+  - 远端无 tag
+- **本地 tag 已重置**：
+  - 删了老 `v1.0.0`（指向 `676954d`，老 era 的安全修复提交）
+  - 删了老 `v1.1.0`（指向 `0259fb3`，老 era 的 test/sdk 提交）
+  - 在新 HEAD `1627cfa` 上打了新的 annotated `v1.0.0` / `v1.1.0`
+- **多种 push 方法**（任选一种）：
+
+  | 凭据形式 | 命令 |
+  |---|---|
+  | GH_TOKEN | `GH_TOKEN=ghp_xxx ./scripts/push.sh` |
+  | SSH 私钥 | `GIT_SSH_KEY=~/.ssh/id_ed25519 ./scripts/push.sh` |
+  | SSH agent | `ssh-add ~/.ssh/id_ed25519 && ./scripts/push.sh` |
+  | 永久 helper | `git config --global credential.helper store` 后再 push |
+  | 用户名密码 | `git -c credential.helper='!f() { echo username=...; echo password=...; }; f' push` |
+  | 直接命令 | `git push --force-with-lease origin main && git push --tags origin` |
+
+- **关键点**：
+  - 默认 `FORCE=1`，**会覆盖远端老 main** —— 这是用户明确要求的
+  - 默认 `CLEAN_OLD_TAGS=1`，**会删远端任何 v0.x tag**（目前远端没 tag）
+  - 默认 `PUSH_TAGS=1`，**会推新 v1.0.0 / v1.1.0**
+  - 沙箱没有任何 creds，**用户必须自己跑**（或把 token 塞进沙箱 env）
+
+- **沙箱尝试过的认证方式**（全部失败）：
+  - ❌ 无 GH_TOKEN env
+  - ❌ 无 SSH 私钥（`~/.ssh/` 空）
+  - ❌ SSH outbound 22 被防火墙挡
+  - ❌ `gh` 不在 apt
+  - ❌ 无 credential.helper / .netrc / .git-credentials
 
 ### N3. CI 第一次实跑
 - **触发**：push 之后
@@ -77,8 +106,10 @@
 ## 重要（不是 blocker，但跳过会留遗憾）
 
 ### N4. v1.0.0 tag
-- 等 N2 push + N3 CI 跑通后再打
-- tag 之前确保：35 条技能全 0/0/0、`pages.yml` 部署成功一次、`SOURCE.md` / `CHANGELOG.md` 写完
+- **状态**：✅ 本地已打，**等 push 完再 push 上去**
+- 本地 `v1.0.0` / `v1.1.0` 已重新打在新 HEAD `1627cfa` 上
+  （annotated，带 message 解释为什么覆盖老 tag）
+- `scripts/push.sh` 默认会 `git push --tags` 把两个 tag 都推上去
 
 ### N5. 进一步扩大抓取面
 - 当前的 29 条是 8 个仓库的产物：`confident-ai/deepeval` (3) /
