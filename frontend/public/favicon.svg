@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="AI-SKILL">
+  <title>AI-SKILL</title>
+  <!-- Background tile: matches the page's dark hero mark tone in
+       both light and dark mode. We pick a near-black that reads well
+       against the browser's light tab and the user's dark tab. -->
+  <rect width="64" height="64" rx="12" fill="#161514" />
+  <!-- Brand glyph: a thick vertical bar with the AI-SKILL wordmark.
+       The bar echoes the `▮` character used in the topbar; the
+       wordmark keeps the favicon distinguishable from any other
+       plain-rectangle tab icon. -->
+  <rect x="14" y="14" width="6" height="36" rx="1" fill="#ff5b1f" />
+  <text x="26" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#fafaf7" letter-spacing="0.5">SKILL</text>
+</svg>

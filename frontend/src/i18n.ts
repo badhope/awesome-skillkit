@@ -191,6 +191,40 @@ const STRINGS = {
   "input.values":      { en: "values: {v}",   zh: "取值：{v}" },
   "input.range":       { en: "range: {min} … {max}", zh: "范围：{min} … {max}" },
   "reviewDot.title":   { en: "needs_review",  zh: "待复审" },
+
+  // ----- platform chips -----
+  // We translate the *display* label but keep the slug
+  // (`chip--claude` etc.) untouched so the CSS color tokens
+  // still match. Tooltip is the localized name + " (vendor: …)".
+  "platform.claude":   { en: "Claude",                       zh: "Claude" },
+  "platform.codex":    { en: "Codex",                        zh: "Codex" },
+  "platform.cursor":   { en: "Cursor",                       zh: "Cursor" },
+  "platform.continue": { en: "Continue",                     zh: "Continue" },
+  "platform.tip":      { en: "platform: {p}",                zh: "平台：{p}" },
+
+  // ----- aria / accessibility / misc -----
+  "aria.vaultStats":   { en: "vault statistics",             zh: "技能库统计" },
+  "aria.related":      { en: "related skills",               zh: "相关技能" },
+  "aria.copyCode":     { en: "Copy code",                    zh: "复制代码" },
+  "aria.langToggle":   { en: "Switch language",              zh: "切换语言" },
+
+  // ----- version / license display -----
+  "meta.version":      { en: "v{n}",                         zh: "v{n}" },
+  "meta.license":      { en: "{l}",                          zh: "{l}" },
+  "meta.slug":         { en: "{s}",                          zh: "{s}" },
+  "meta.category":     { en: "{c}",                          zh: "{c}" },
+
+  // ----- footer brand / glyphs (no translation, but kept here for symmetry) -----
+  "brand.glyph":       { en: "▮ AI-SKILL",                   zh: "▮ AI-SKILL" },
+  "brand.markOnly":    { en: "▮",                            zh: "▮" },
+
+  // ----- accessibility & noscript fallback (used by index.html /
+  //       404.html static shell, applied by applyStaticTranslations) -----
+  "a11y.skip":         { en: "Skip to content",              zh: "跳到正文" },
+  "noscript.line1":    { en: "This page is a small JavaScript app — without JS you only get this notice.", zh: "本站是个小 JavaScript 应用 —— 关闭 JS 只会显示这条提示。" },
+  "noscript.line2":    { en: "Enable JavaScript, or",        zh: "请打开 JavaScript，或者" },
+  "noscript.link":     { en: "browse the source on GitHub",  zh: "去 GitHub 浏览源文件" },
+  "noscript.line3":    { en: "for plain SKILL.md files.",    zh: "拿原始的 SKILL.md。" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 type Key = keyof typeof STRINGS;
@@ -220,6 +254,9 @@ export function t(key: Key, vars?: Record<string, string | number>): string {
  * Run on subscribe() so the static parts of the shell (topbar
  * nav, footer) swap in place when the user toggles language.
  *
+ * Also handles `data-i18n-aria` and `data-i18n-title` for
+ * accessibility and tooltip strings on the same elements.
+ *
  * The element's existing text is left in place as a fallback
  * for the brief moment between the toggle and the next paint.
  */
@@ -227,6 +264,14 @@ export function applyStaticTranslations(): void {
   document.querySelectorAll<HTMLElement>("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n as Key | undefined;
     if (key) el.textContent = t(key);
+  });
+  document.querySelectorAll<HTMLElement>("[data-i18n-aria]").forEach(el => {
+    const key = el.dataset.i18nAria as Key | undefined;
+    if (key) el.setAttribute("aria-label", t(key));
+  });
+  document.querySelectorAll<HTMLElement>("[data-i18n-title]").forEach(el => {
+    const key = el.dataset.i18nTitle as Key | undefined;
+    if (key) el.setAttribute("title", t(key));
   });
   // Also reflect the language into <html lang="…"> for screen
   // readers and CSS hooks (e.g. `:lang(zh)` if we ever need it).
@@ -243,4 +288,16 @@ export function pickZh<T extends { name: string; name_zh?: string; description: 
     if (zh) return zh;
   }
   return obj[field];
+}
+
+/**
+ * Translate a platform slug (claude / codex / cursor / continue)
+ * to its display label. Falls back to the slug itself for any
+ * platform we don't have a translation for — that way a new
+ * platform added in the frontmatter still renders something.
+ */
+export function pickPlatform(platform: string): string {
+  const key = `platform.${platform}` as Key;
+  const entry = STRINGS[key] as Record<Locale, string> | undefined;
+  return entry?.[current] ?? entry?.en ?? platform;
 }

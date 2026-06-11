@@ -17,7 +17,7 @@
 // locale is Chinese and the zh fields are present.
 
 import type { SkillIndex, SkillIndexEntry } from "../types";
-import { t, pickZh, getLocale } from "../i18n";
+import { t, pickZh, pickPlatform, getLocale } from "../i18n";
 
 // Stable hash → hue. Categories are short labels, so a tiny string
 // hash is fine. We lock saturation/lightness so the bars feel like
@@ -92,7 +92,7 @@ export async function renderList(
       <div class="hero__mark-glyph" aria-hidden="true">▮ AI-SKILL</div>
     </section>
 
-    <div class="stats" aria-label="vault statistics">
+    <div class="stats" aria-label="${escAttr(t("aria.vaultStats"))}">
       <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.total.label"))}">
         <span class="stat__num">${totalSkills}<em>${escHtml(t("stat.total.suffix"))}</em></span>
         <span class="stat__label">${escHtml(t("stat.total.label"))}</span>
@@ -226,7 +226,10 @@ function match(s: SkillIndexEntry, q: string, cat: string, plat: string): boolea
 function cardHtml(s: SkillIndexEntry, i: number): string {
   const platChips = s.platforms.length === 0
     ? `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`
-    : s.platforms.map(p => `<span class="chip chip--${escAttr(p)}" title="${escAttr(p)}">${escAttr(p)}</span>`).join(" ");
+    : s.platforms.map(p => {
+        const label = pickPlatform(p);
+        return `<span class="chip chip--${escAttr(p)}" title="${escAttr(t("platform.tip", { p }))}">${escHtml(label)}</span>`;
+      }).join(" ");
   // The --i custom property drives the stagger animation defined
   // in style.css. Inline style is the only way to set a custom
   // property from a string template without a CSS per-card rule.

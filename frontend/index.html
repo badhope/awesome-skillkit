@@ -11,6 +11,7 @@
     <meta property="og:description" content="35 SKILL.md files. No tracking. No signup. Just markdown." />
     <meta property="og:type" content="website" />
     <title>AI-SKILL · vendor-neutral skill vault</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +22,7 @@
     <link rel="stylesheet" crossorigin href="/src/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
     <header class="topbar">
       <a class="topbar__brand" href="#/" data-link>
         <span class="topbar__mark" aria-hidden="true">▮</span>
@@ -29,7 +30,7 @@
       </a>
       <nav class="topbar__nav">
         <a href="#/bundle" data-link data-i18n="nav.bundle">Bundle</a>
-        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" title="Switch language">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-i18n-aria="aria.langToggle" data-i18n-title="aria.langToggle" title="Switch language">
           <span class="lang-toggle__opt" data-lang-opt="en">EN</span>
           <span class="lang-toggle__opt" data-lang-opt="zh">中</span>
         </button>
@@ -46,12 +47,10 @@
       <noscript>
         <div class="container-wide">
           <p class="empty">
-            This page is a small JavaScript app — without JS you only get
-            this notice. Enable JavaScript, or
-            <a href="https://github.com/badhope/AI-SKILL"
-              >browse the source on GitHub</a
-            >
-            for plain SKILL.md files.
+            <span data-i18n="noscript.line1">This page is a small JavaScript app — without JS you only get this notice.</span>
+            <span data-i18n="noscript.line2">Enable JavaScript, or</span>
+            <a href="https://github.com/badhope/AI-SKILL" data-i18n="noscript.link">browse the source on GitHub</a>
+            <span data-i18n="noscript.line3">for plain SKILL.md files.</span>
           </p>
         </div>
       </noscript>

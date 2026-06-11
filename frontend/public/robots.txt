@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Hash-routed SPA — the SPA renders /#/skill/<slug> from a single
+# /skills.json payload. Crawlers that don't run JS will only see
+# the static index.html (and 404.html, the deep-link fallback).
+# Pointing crawlers at the sitemap and the index is enough for a
+# vault this size; we don't have per-skill canonical URLs.
+
+Sitemap: https://badhope.github.io/AI-SKILL/sitemap.xml

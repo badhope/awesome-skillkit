@@ -12,7 +12,33 @@
 // English and the Chinese variant based on the current locale.
 
 import type { Skill, SkillIndex, SkillIndexEntry, SkillSource } from "../types";
-import { t, getLocale, pickZh } from "../i18n";
+import { t, getLocale, pickZh, pickPlatform } from "../i18n";
+
+// Map category slugs to a friendly localized label. The list page
+// has a more comprehensive version; this one only covers the
+// categories present in the 35 skills that ship with the vault.
+const CATEGORY_LABELS: Record<string, { en: string; zh: string }> = {
+  "applications":        { en: "Applications",        zh: "应用" },
+  "browser-automation":  { en: "Browser automation",  zh: "浏览器自动化" },
+  "code-assistants":     { en: "Code assistants",     zh: "代码助手" },
+  "data-pipelines":      { en: "Data pipelines",      zh: "数据流水线" },
+  "dev-tools":           { en: "Developer tools",     zh: "开发工具" },
+  "documentation":       { en: "Documentation",       zh: "文档" },
+  "embeddings":          { en: "Embeddings",          zh: "向量嵌入" },
+  "evaluation":          { en: "Evaluation",          zh: "评估" },
+  "guardrails":          { en: "Guardrails & safety", zh: "护栏与安全" },
+  "mcp-protocol":        { en: "MCP protocol",        zh: "MCP 协议" },
+  "observability":       { en: "Observability",       zh: "可观测性" },
+  "official-cookbooks":  { en: "Official cookbooks",  zh: "官方 Cookbook" },
+  "safety-alignment":    { en: "Safety & alignment",  zh: "安全与对齐" },
+  "terminal-cli":        { en: "Terminal & CLI",      zh: "终端与 CLI" },
+  "text-to-sql":         { en: "Text-to-SQL",         zh: "Text-to-SQL" },
+};
+function categoryLabel(cat: string): string {
+  const m = CATEGORY_LABELS[cat];
+  if (m) return getLocale() === "zh" ? m.zh : m.en;
+  return cat.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
 
 export async function renderDetail(
   root: HTMLElement,
@@ -37,7 +63,7 @@ export async function renderDetail(
         <span>·</span>
         <span>${escHtml(s.license)}</span>
         <span>·</span>
-        <span>${escHtml(s.category)}</span>
+        <span>${escHtml(categoryLabel(s.category))}</span>
         ${platformChips(s.platforms)}
       </p>
       <p class="detail__lead">${escHtml(lead)}</p>
@@ -124,7 +150,10 @@ function platformChips(p: string[]): string {
   if (p.length === 0) {
     return `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`;
   }
-  return p.map(x => `<span class="chip chip--${escAttr(x)}">${escHtml(x)}</span>`).join(" ");
+  return p.map(x => {
+    const label = pickPlatform(x);
+    return `<span class="chip chip--${escAttr(x)}" title="${escAttr(t("platform.tip", { p: x }))}">${escHtml(label)}</span>`;
+  }).join(" ");
 }
 
 // Bilingual block. We always render this when the skill has
@@ -229,7 +258,7 @@ function mdToHtml(src: string): string {
       // The handler is attached after innerHTML is set in
       // renderDetail(). N9: body code blocks had no copy affordance
       // (only the dedicated prompt block did).
-      out += `<div class="codeblock"><pre><code data-lang="${escAttr(lang)}">${escHtml(buf.join("\n"))}</code></pre><button class="codeblock__copy" type="button" aria-label="Copy code">Copy</button></div>`;
+      out += `<div class="codeblock"><pre><code data-lang="${escAttr(lang)}">${escHtml(buf.join("\n"))}</code></pre><button class="codeblock__copy" type="button" aria-label="${escAttr(t("aria.copyCode"))}">${escHtml(t("detail.copyCode"))}</button></div>`;
       continue;
     }
     if (/^#{1,6}\s+/.test(line)) {
@@ -509,7 +538,7 @@ function relatedBlock(related: SkillIndexEntry[]): string {
   `;
   }).join("");
   return `
-    <section class="related" aria-label="related skills">
+    <section class="related" aria-label="${escAttr(t("aria.related"))}">
       <h2 class="related__title">${escHtml(t("detail.related", { cat: related[0]!.category.replace(/-/g, " ") }))}</h2>
       <div class="related__grid">${cards}</div>
     </section>
