@@ -93,22 +93,22 @@ export async function renderList(
     </section>
 
     <div class="stats" aria-label="${escAttr(t("aria.vaultStats"))}">
-      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.total.label"))}">
+      <div class="stat" aria-label="${escAttr(t("stat.total.label"))}">
         <span class="stat__num">${totalSkills}<em>${escHtml(t("stat.total.suffix"))}</em></span>
         <span class="stat__label">${escHtml(t("stat.total.label"))}</span>
-      </a>
-      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.categories.label"))}">
+      </div>
+      <div class="stat" aria-label="${escAttr(t("stat.categories.label"))}">
         <span class="stat__num">${totalCategories}<em>${escHtml(t("stat.cat.suffix"))}</em></span>
         <span class="stat__label">${escHtml(t("stat.categories.label"))}</span>
-      </a>
-      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.neutral.label"))}">
+      </div>
+      <div class="stat" aria-label="${escAttr(t("stat.neutral.label"))}">
         <span class="stat__num">${vendorNeutral}<em>${escHtml(t("stat.neutral.suffix", { n: totalSkills }))}</em></span>
         <span class="stat__label">${escHtml(t("stat.neutral.label"))}</span>
-      </a>
-      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.review.label"))}">
+      </div>
+      <div class="stat" aria-label="${escAttr(t("stat.review.label"))}">
         <span class="stat__num">${toReview}<em>${escHtml(t("stat.review.suffix"))}</em></span>
         <span class="stat__label">${escHtml(t("stat.review.label"))}</span>
-      </a>
+      </div>
     </div>
 
     <div class="container-wide">

@@ -327,14 +327,15 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   border: 1px solid var(--border);
   border-radius: var(--radius-2);
   padding: var(--s-4) var(--s-5);
-  transition: transform var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out),
+  /* Stats are decorative numbers — not buttons. No transform on
+     hover, no cursor: pointer, just a subtle background shift to
+     acknowledge the cursor passing over. */
+  transition: background-color var(--dur-fast) var(--ease-out),
               border-color var(--dur-fast) var(--ease-out);
 }
 .stat:hover {
-  transform: translateY(-1px);
+  background: var(--bg-elev-2);
   border-color: var(--border-strong);
-  box-shadow: var(--shadow-1);
 }
 .stat__num {
   font-family: var(--font-disp);
@@ -599,10 +600,16 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
 .chip--continue{ color: #1f6f4a; }
 
 @media (prefers-color-scheme: dark) {
-  .chip--claude  { color: #ff9a73; }
-  .chip--codex   { color: #a487ff; }
-  .chip--cursor  { color: #6bb5ff; }
-  .chip--continue{ color: #7ed491; }
+  /* Dark-mode chip palette. The previous set (#ff9a73 / #a487ff /
+     #6bb5ff / #7ed491) was overly bright — they vibrated against
+     the warm #1f1d1b background and pulled attention away from
+     the actual content. These four are the light-mode hues shifted
+     lighter for contrast, with the saturation dropped ~25% so they
+     sit calmly alongside the orange accent. */
+  .chip--claude  { color: #d68768; }  /* terracotta */
+  .chip--codex   { color: #8e7ab8; }  /* muted purple */
+  .chip--cursor  { color: #5990bd; }  /* steel blue   */
+  .chip--continue{ color: #6ba882; }  /* sage green   */
 }
 
 /* ============================ detail page ============================ */
@@ -778,14 +785,21 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   border: 1px solid var(--border);
   border-radius: var(--radius-1);
   color: var(--ink-soft);
-  opacity: 0;
+  /* Always slightly visible. Going from 0 → 1 on hover was bad
+     discoverability (touch / keyboard users never see the button).
+     Now we sit at ~0.4 by default, full opacity on hover or
+     focus-visible. The background also gives a hint that the
+     corner is interactive. */
+  opacity: 0.45;
   transition: opacity var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out);
+              border-color var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out);
   min-height: 26px;
   cursor: pointer;
 }
 .codeblock:hover .codeblock__copy,
+.codeblock__copy:hover,
 .codeblock__copy:focus-visible { opacity: 1; }
 .codeblock__copy:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -917,8 +931,11 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   background: var(--bg-elev);
   border: 1px solid var(--border);
   border-radius: var(--radius-2);
-  max-height: 480px;
-  overflow-y: auto;
+  /* No max-height. We used to cap at 480px with inner scroll, but
+     that hid 30+ of 35 skills below the fold, broke the browser's
+     back/forward scroll position, and made the footer feel
+     unreachable. Letting the page itself scroll keeps the
+     natural reading flow. */
 }
 .bundle-list li {
   display: flex;
@@ -938,7 +955,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
 
 .footer {
   margin-top: var(--s-9);
-  padding: var(--s-5);
+  padding: var(--s-6) var(--s-5);
   border-top: 1px solid var(--border);
   font-size: var(--t-xs);
   color: var(--ink-mute);
@@ -949,11 +966,29 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   gap: var(--s-2) var(--s-3);
   align-items: center;
   max-width: 1180px;
-  margin: 0 auto var(--s-2);
-  justify-content: center;
-  text-align: center;
+  margin: 0 auto var(--s-3);
 }
 .footer__row:last-child { margin-bottom: 0; }
+
+/* Top row: brand on the left, tagline on the right. Gives the
+   page a clear "this is us / this is the project" anchor before
+   the link list. */
+.footer__row--top {
+  justify-content: space-between;
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Bottom row: links + meta, centered, lighter weight. */
+.footer__row--links {
+  justify-content: center;
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--ink-mute);
+}
+.footer__row--links a { color: var(--ink-soft); }
+.footer__row--links a:hover { color: var(--accent); }
+.footer__row--links .sep { color: var(--border-strong); user-select: none; }
 .footer__brand {
   display: inline-flex;
   align-items: center;
