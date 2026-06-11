@@ -8,11 +8,16 @@
 //   .cat-group     — one block per category with grouped cards.
 //
 // The category color bar on each card is `--cat-color`, set inline
-// from a stable category→hue map (CATEGORY_COLORS). Keeping the map
-// in JS — not CSS — means we don't have to maintain N parallel
-// .chip--<cat> rules and the colors are visible from one place.
+// from a stable category→hue map. Keeping the map in JS — not CSS
+// — means we don't have to maintain N parallel .chip--<cat> rules
+// and the colors are visible from one place.
+//
+// i18n: the page reads its strings via t() and shows the localized
+// name/description from each SkillIndexEntry when the current
+// locale is Chinese and the zh fields are present.
 
 import type { SkillIndex, SkillIndexEntry } from "../types";
+import { t, pickZh, getLocale } from "../i18n";
 
 // Stable hash → hue. Categories are short labels, so a tiny string
 // hash is fine. We lock saturation/lightness so the bars feel like
@@ -29,25 +34,27 @@ function categoryColor(cat: string): string {
 // Friendly display labels for the few categories whose raw slug
 // would be confusing in a heading. Anything not in the map falls
 // through to the slug, title-cased.
-const CATEGORY_LABELS: Record<string, string> = {
-  "applications": "Applications",
-  "browser-automation": "Browser automation",
-  "code-assistants": "Code assistants",
-  "data-pipelines": "Data pipelines",
-  "dev-tools": "Developer tools",
-  "documentation": "Documentation",
-  "embeddings": "Embeddings",
-  "evaluation": "Evaluation",
-  "guardrails": "Guardrails & safety",
-  "mcp-protocol": "MCP protocol",
-  "observability": "Observability",
-  "official-cookbooks": "Official cookbooks",
-  "safety-alignment": "Safety & alignment",
-  "terminal-cli": "Terminal & CLI",
-  "text-to-sql": "Text-to-SQL",
+const CATEGORY_LABELS: Record<string, { en: string; zh: string }> = {
+  "applications":        { en: "Applications",        zh: "应用" },
+  "browser-automation":  { en: "Browser automation",  zh: "浏览器自动化" },
+  "code-assistants":     { en: "Code assistants",     zh: "代码助手" },
+  "data-pipelines":      { en: "Data pipelines",      zh: "数据流水线" },
+  "dev-tools":           { en: "Developer tools",     zh: "开发工具" },
+  "documentation":       { en: "Documentation",       zh: "文档" },
+  "embeddings":          { en: "Embeddings",          zh: "向量嵌入" },
+  "evaluation":          { en: "Evaluation",          zh: "评估" },
+  "guardrails":          { en: "Guardrails & safety", zh: "护栏与安全" },
+  "mcp-protocol":        { en: "MCP protocol",        zh: "MCP 协议" },
+  "observability":       { en: "Observability",       zh: "可观测性" },
+  "official-cookbooks":  { en: "Official cookbooks",  zh: "官方 Cookbook" },
+  "safety-alignment":    { en: "Safety & alignment",  zh: "安全与对齐" },
+  "terminal-cli":        { en: "Terminal & CLI",      zh: "终端与 CLI" },
+  "text-to-sql":         { en: "Text-to-SQL",         zh: "Text-to-SQL" },
 };
 function categoryLabel(cat: string): string {
-  return CATEGORY_LABELS[cat] ?? cat.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const m = CATEGORY_LABELS[cat];
+  if (m) return getLocale() === "zh" ? m.zh : m.en;
+  return cat.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
 export async function renderList(
@@ -69,63 +76,58 @@ export async function renderList(
   root.innerHTML = `
     <section class="hero">
       <div class="hero__eyebrow">
-        <span>vendor-neutral skill vault</span>
+        <span>${escHtml(t("eyebrow.tag"))}</span>
         <span aria-hidden="true">·</span>
-        <span>v1.0.0</span>
+        <span>${escHtml(t("eyebrow.version"))}</span>
       </div>
       <h1 class="hero__title">
         ${totalSkills} <em>SKILL.md</em><br/>
-        files, ready to drop in.
+        ${escHtml(t("hero.title1"))}
       </h1>
-      <p class="hero__sub">
-        Markdown prompts for Claude, Codex, Cursor, Continue — and any
-        agent that reads a folder. Sourced from deepeval, promptfoo,
-        langfuse, OpenAI, Anthropic, Hugging Face, Letta, and a
-        handful of hand-written ones. No tracking. No signup.
-      </p>
+      <p class="hero__sub">${escHtml(t("hero.sub"))}</p>
       <div class="hero__cta">
-        <a class="btn btn--primary" href="#/bundle" data-link>Pick a bundle →</a>
-        <a class="btn" href="https://github.com/badhope/AI-SKILL" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+        <a class="btn btn--primary" href="#/bundle" data-link>${escHtml(t("hero.cta.bundle"))}</a>
+        <a class="btn" href="https://github.com/badhope/AI-SKILL" rel="noopener noreferrer" target="_blank">${escHtml(t("hero.cta.gh"))}</a>
       </div>
       <div class="hero__mark-glyph" aria-hidden="true">▮ AI-SKILL</div>
     </section>
 
     <div class="stats" aria-label="vault statistics">
-      <a class="stat" href="#/" data-link aria-label="Total skills">
-        <span class="stat__num">${totalSkills}<em>files</em></span>
-        <span class="stat__label">SKILL.md</span>
+      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.total.label"))}">
+        <span class="stat__num">${totalSkills}<em>${escHtml(t("stat.total.suffix"))}</em></span>
+        <span class="stat__label">${escHtml(t("stat.total.label"))}</span>
       </a>
-      <a class="stat" href="#/" data-link aria-label="Categories">
-        <span class="stat__num">${totalCategories}<em>groups</em></span>
-        <span class="stat__label">Categories</span>
+      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.categories.label"))}">
+        <span class="stat__num">${totalCategories}<em>${escHtml(t("stat.cat.suffix"))}</em></span>
+        <span class="stat__label">${escHtml(t("stat.categories.label"))}</span>
       </a>
-      <a class="stat" href="#/" data-link aria-label="Vendor-neutral skills">
-        <span class="stat__num">${vendorNeutral}<em>of ${totalSkills}</em></span>
-        <span class="stat__label">Vendor-neutral</span>
+      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.neutral.label"))}">
+        <span class="stat__num">${vendorNeutral}<em>${escHtml(t("stat.neutral.suffix", { n: totalSkills }))}</em></span>
+        <span class="stat__label">${escHtml(t("stat.neutral.label"))}</span>
       </a>
-      <a class="stat" href="#/" data-link aria-label="To review">
-        <span class="stat__num">${toReview}<em>flagged</em></span>
-        <span class="stat__label">Needs review</span>
+      <a class="stat" href="#/" data-link aria-label="${escAttr(t("stat.review.label"))}">
+        <span class="stat__num">${toReview}<em>${escHtml(t("stat.review.suffix"))}</em></span>
+        <span class="stat__label">${escHtml(t("stat.review.label"))}</span>
       </a>
     </div>
 
     <div class="container-wide">
       <div class="filter-bar">
-        <input type="search" id="filter-q" placeholder="Search by name, slug, tag, description…" value="${escAttr(initialQ)}" />
-        <select id="filter-cat" aria-label="Category">
-          <option value="">All categories</option>
+        <input type="search" id="filter-q" placeholder="${escAttr(t("filter.search.ph"))}" value="${escAttr(initialQ)}" />
+        <select id="filter-cat" aria-label="${escAttr(t("filter.cat.label"))}">
+          <option value="">${escHtml(t("filter.cat.all"))}</option>
         </select>
-        <select id="filter-plat" aria-label="Platform">
-          <option value="">All platforms</option>
-          <option value="all">Any (vendor-neutral)</option>
-          <option value="claude">Claude</option>
-          <option value="codex">Codex</option>
-          <option value="cursor">Cursor</option>
-          <option value="continue">Continue</option>
+        <select id="filter-plat" aria-label="${escAttr(t("filter.plat.label"))}">
+          <option value="">${escHtml(t("filter.plat.all"))}</option>
+          <option value="all">${escHtml(t("filter.plat.any"))}</option>
+          <option value="claude">${escHtml(t("filter.plat.claude"))}</option>
+          <option value="codex">${escHtml(t("filter.plat.codex"))}</option>
+          <option value="cursor">${escHtml(t("filter.plat.cursor"))}</option>
+          <option value="continue">${escHtml(t("filter.plat.continue"))}</option>
         </select>
-        <label class="group-toggle" title="Group cards by category">
+        <label class="group-toggle" title="${escAttr(t("filter.group"))}">
           <input type="checkbox" id="filter-group" ${initialGroup === "1" ? "checked" : ""} />
-          <span>group</span>
+          <span>${escHtml(t("filter.group"))}</span>
         </label>
       </div>
       <div id="cards"></div>
@@ -163,7 +165,7 @@ export async function renderList(
     history.replaceState(null, "", u.toString());
 
     if (filtered.length === 0) {
-      cards.innerHTML = `<div class="empty">No skills match. Try a different search or clear filters.</div>`;
+      cards.innerHTML = `<div class="empty">${escHtml(t("empty.noMatch"))}</div>`;
       return;
     }
     if (grouped && !cat) {
@@ -180,7 +182,7 @@ export async function renderList(
         <section class="cat-group">
           <header class="cat-group__head">
             <h2 class="cat-group__title">${escHtml(categoryLabel(c))}</h2>
-            <span class="cat-group__count">${list.length} ${list.length === 1 ? "skill" : "skills"}</span>
+            <span class="cat-group__count">${escHtml(t(list.length === 1 ? "categoryCount.one" : "categoryCount.other", { n: list.length }))}</span>
           </header>
           <div class="cards">
             ${list.map(s => cardHtml(s, i++)).join("")}
@@ -213,7 +215,9 @@ function match(s: SkillIndexEntry, q: string, cat: string, plat: string): boolea
     }
   }
   if (q) {
-    const blob = `${s.slug} ${s.name} ${s.tags.join(" ")} ${s.category} ${s.description}`.toLowerCase();
+    // Search the localized blob too — so a Chinese query like
+    // "浏览器" still finds browser-ml-in-js via its name_zh.
+    const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.tags.join(" ")} ${s.category} ${s.description} ${s.description_zh ?? ""}`.toLowerCase();
     if (!blob.includes(q)) return false;
   }
   return true;
@@ -221,18 +225,20 @@ function match(s: SkillIndexEntry, q: string, cat: string, plat: string): boolea
 
 function cardHtml(s: SkillIndexEntry, i: number): string {
   const platChips = s.platforms.length === 0
-    ? `<span class="chip chip--all" title="Vendor-neutral — works on any agent">any</span>`
+    ? `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`
     : s.platforms.map(p => `<span class="chip chip--${escAttr(p)}" title="${escAttr(p)}">${escAttr(p)}</span>`).join(" ");
   // The --i custom property drives the stagger animation defined
   // in style.css. Inline style is the only way to set a custom
   // property from a string template without a CSS per-card rule.
+  const name = pickZh(s, "name");
+  const desc = pickZh(s, "description");
   return `
     <a class="skill-card" style="--cat-color: ${escAttr(categoryColor(s.category))}; --i: ${i % 16};" href="#/skill/${escAttr(s.slug)}" data-link>
       <div class="skill-card__head">
-        <span class="skill-card__slug">${escHtml(s.slug)}${s.needs_review ? ` <span class="skill-card__review-dot" title="needs_review" aria-label="needs review"></span>` : ""}</span>
-        <span class="skill-card__name">${escHtml(s.name)}</span>
+        <span class="skill-card__slug">${escHtml(s.slug)}${s.needs_review ? ` <span class="skill-card__review-dot" title="${escAttr(t("reviewDot.title"))}" aria-label="${escAttr(t("reviewDot.title"))}"></span>` : ""}</span>
+        <span class="skill-card__name">${escHtml(name)}</span>
       </div>
-      <p class="skill-card__desc">${escHtml(s.description)}</p>
+      <p class="skill-card__desc">${escHtml(desc)}</p>
       <div class="skill-card__meta">
         <span>${escHtml(categoryLabel(s.category))}</span>
         ${platChips}

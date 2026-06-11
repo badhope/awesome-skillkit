@@ -6,6 +6,7 @@
 
 import JSZip from "jszip";
 import type { Skill, SkillIndex } from "../types";
+import { t } from "../i18n";
 
 export async function renderBundle(
   root: HTMLElement,
@@ -13,23 +14,21 @@ export async function renderBundle(
 ): Promise<void> {
   root.innerHTML = `
     <div class="container-wide">
-      <h2 style="font-size: var(--t-xl); line-height: 1.2; margin: 0 0 var(--s-2);">
-        Bundle — pick skills, get a zip
-      </h2>
+      <h2 class="bundle__title">${escHtml(t("bundle.title"))}</h2>
       <p class="meta-line">
-        <span>Tick the skills you want. The zip is built in your browser, nothing is uploaded.</span>
+        <span>${escHtml(t("bundle.intro"))}</span>
       </p>
       <div class="filter-bar">
-        <input type="search" id="b-q" placeholder="Filter skills…" />
+        <input type="search" id="b-q" placeholder="${escAttr(t("bundle.filter.ph"))}" />
       </div>
       <ul class="bundle-list" id="b-list"></ul>
       <div class="actions" style="display: flex; gap: var(--s-2); align-items: center; flex-wrap: wrap;">
-        <button class="btn" id="b-select-all" type="button">Select all</button>
-        <button class="btn" id="b-clear" type="button">Clear</button>
+        <button class="btn" id="b-select-all" type="button">${escHtml(t("bundle.selectAll"))}</button>
+        <button class="btn" id="b-clear" type="button">${escHtml(t("bundle.clear"))}</button>
         <span class="meta-line" style="margin: 0;">
-          <span>Selected: <strong id="b-count">0</strong></span>
+          <span>${escHtml(t("bundle.selected"))} <strong id="b-count">0</strong></span>
         </span>
-        <button class="btn btn--primary" id="b-download" type="button" disabled>Download .zip</button>
+        <button class="btn btn--primary" id="b-download" type="button" disabled>${escHtml(t("bundle.download"))}</button>
       </div>
     </div>
   `;
@@ -46,7 +45,7 @@ export async function renderBundle(
     const q = qInput.value.trim().toLowerCase();
     const filtered = index.skills.filter(s => {
       if (!q) return true;
-      const blob = `${s.slug} ${s.name} ${s.description} ${s.category} ${s.tags.join(" ")}`.toLowerCase();
+      const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.description} ${s.description_zh ?? ""} ${s.category} ${s.tags.join(" ")}`.toLowerCase();
       return blob.includes(q);
     });
     // Snapshot which slugs are checked before re-rendering, so a
@@ -62,7 +61,7 @@ export async function renderBundle(
         <input type="checkbox" data-slug="${escAttr(s.slug)}" id="chk-${escAttr(s.slug)}"${stillChecked.has(s.slug) ? " checked" : ""} />
         <label for="chk-${escAttr(s.slug)}" class="bundle-list__slug">${escHtml(s.slug)}</label>
         <span class="bundle-list__cat">${escHtml(s.category)}</span>
-        ${s.needs_review ? `<span class="skill-card__review-dot" title="needs_review"></span>` : ""}
+        ${s.needs_review ? `<span class="skill-card__review-dot" title="${escAttr(t("reviewDot.title"))}"></span>` : ""}
       </li>
     `).join("");
   }
@@ -90,7 +89,9 @@ export async function renderBundle(
       .map(c => c.dataset.slug!)
       .filter(Boolean);
     if (slugs.length === 0) return;
-    dlBtn.textContent = "Building…";
+    const buildingLabel = t("bundle.building");
+    const downloadLabel = t("bundle.download");
+    dlBtn.textContent = buildingLabel;
     dlBtn.setAttribute("disabled", "true");
     try {
       const zip = new JSZip();
@@ -117,10 +118,10 @@ export async function renderBundle(
       // in some embedded contexts. (W8)
       listEl.insertAdjacentHTML(
         "beforebegin",
-        `<div class="empty" role="alert" style="color: var(--err);">Bundle failed: ${escHtml(e instanceof Error ? e.message : String(e))}</div>`,
+        `<div class="empty" role="alert" style="color: var(--err);">${escHtml(t("bundle.failed", { msg: e instanceof Error ? e.message : String(e) }))}</div>`,
       );
     } finally {
-      dlBtn.textContent = "Download .zip";
+      dlBtn.textContent = downloadLabel;
       dlBtn.removeAttribute("disabled");
     }
   });

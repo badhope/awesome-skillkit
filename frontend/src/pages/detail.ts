@@ -6,8 +6,13 @@
 // We deliberately don't pull in a markdown library — the
 // section set is small, and adding marked.js would blow the
 // 50 KB JS budget.
+//
+// i18n: labels come from t(); the page title (h1), lead
+// paragraph, and the bilingual block all swap between the
+// English and the Chinese variant based on the current locale.
 
 import type { Skill, SkillIndex, SkillIndexEntry, SkillSource } from "../types";
+import { t, getLocale, pickZh } from "../i18n";
 
 export async function renderDetail(
   root: HTMLElement,
@@ -19,10 +24,12 @@ export async function renderDetail(
   // handler below.
   const promptText = extractPromptText(s);
   const related = pickRelated(s, index, 3);
+  const titleName = pickZh(s, "name");
+  const lead = pickZh(s, "description");
   root.innerHTML = `
     <div class="container-read detail">
-      <a class="back-link" href="#/" data-link>← back to list</a>
-      <h1>${escHtml(s.name)}</h1>
+      <a class="back-link" href="#/" data-link>${escHtml(t("detail.back"))}</a>
+      <h1>${escHtml(titleName)}</h1>
       <p class="meta-row">
         <strong>${escHtml(s.slug)}</strong>
         <span>·</span>
@@ -33,23 +40,23 @@ export async function renderDetail(
         <span>${escHtml(s.category)}</span>
         ${platformChips(s.platforms)}
       </p>
-      <p class="detail__lead">${escHtml(s.description)}</p>
+      <p class="detail__lead">${escHtml(lead)}</p>
       ${sourceBlock(s)}
       ${zhBlock(s)}
       ${tocBlock(s)}
-      <h2 id="when-to-use">When to use</h2>
+      <h2 id="when-to-use">${escHtml(t("detail.wtu"))}</h2>
       <div id="wtu-body"></div>
       ${inputsTable(s)}
       ${outputBlock(s)}
-      <h2 id="prompt">Prompt</h2>
+      <h2 id="prompt">${escHtml(t("detail.prompt"))}</h2>
       ${promptBlock(s)}
       <div class="actions">
-        <button class="btn btn--primary" id="copy-prompt" type="button"${promptText ? "" : " disabled"}>Copy prompt</button>
-        <button class="btn" id="dl-md" type="button">Download .md</button>
+        <button class="btn btn--primary" id="copy-prompt" type="button"${promptText ? "" : " disabled"}>${escHtml(t("detail.copy"))}</button>
+        <button class="btn" id="dl-md" type="button">${escHtml(t("detail.download"))}</button>
       </div>
-      <h2 id="when-not-to-use">When NOT to use</h2>
+      <h2 id="when-not-to-use">${escHtml(t("detail.wnot"))}</h2>
       <div id="wnot-body"></div>
-      <h2 id="example">Example</h2>
+      <h2 id="example">${escHtml(t("detail.example"))}</h2>
       <div id="example-body"></div>
       ${relatedBlock(related)}
     </div>
@@ -57,11 +64,13 @@ export async function renderDetail(
   // Wire actions
   if (promptText) {
     root.querySelector<HTMLButtonElement>("#copy-prompt")!.addEventListener("click", (ev) => {
-      copyAndPulse(ev.currentTarget as HTMLButtonElement, promptText, "Copied");
+      copyAndPulse(ev.currentTarget as HTMLButtonElement, promptText, t("detail.copied"));
     });
   }
   root.querySelector<HTMLButtonElement>("#dl-md")!.addEventListener("click", () => downloadSkill(s));
-  // Body sections that come AFTER the frontmatter schema
+  // Body sections that come AFTER the frontmatter schema.
+  // The H1 string we slice on is the canonical English one —
+  // the visible label is the localized one above.
   root.querySelector<HTMLDivElement>("#wtu-body")!.innerHTML = renderH1Section(s.body, "When to use");
   root.querySelector<HTMLDivElement>("#wnot-body")!.innerHTML = renderH1Section(s.body, "When NOT to use");
   root.querySelector<HTMLDivElement>("#example-body")!.innerHTML = renderH1Section(s.body, "Example");
@@ -69,10 +78,11 @@ export async function renderDetail(
   // block already has a top-level "Copy prompt" button, so we
   // skip the one inside the prompt H2). N9 from the prosecutor
   // review: body code blocks were missing copy affordance.
+  const copyLabel = t("detail.copyCode");
   root.querySelectorAll<HTMLButtonElement>(".codeblock__copy").forEach((btn) => {
     btn.addEventListener("click", () => {
       const code = btn.parentElement?.querySelector("code")?.textContent ?? "";
-      copyAndPulse(btn, code, "Copied");
+      copyAndPulse(btn, code, copyLabel);
     });
   });
 }
@@ -91,16 +101,16 @@ function tocBlock(s: Skill): string {
     example: hasH1Section(s.body, "Example"),
   };
   const items: { id: string; label: string }[] = [];
-  if (has.wtu)      items.push({ id: "when-to-use",      label: "When to use" });
-  if (has.inputs)   items.push({ id: "inputs",           label: "Inputs" });
-  if (has.output)   items.push({ id: "output",           label: "Output" });
-  if (has.prompt)   items.push({ id: "prompt",           label: "Prompt" });
-  if (has.wnot)     items.push({ id: "when-not-to-use",  label: "When NOT to use" });
-  if (has.example)  items.push({ id: "example",          label: "Example" });
+  if (has.wtu)      items.push({ id: "when-to-use",      label: t("detail.wtu") });
+  if (has.inputs)   items.push({ id: "inputs",           label: t("detail.inputs") });
+  if (has.output)   items.push({ id: "output",           label: t("detail.output") });
+  if (has.prompt)   items.push({ id: "prompt",           label: t("detail.prompt") });
+  if (has.wnot)     items.push({ id: "when-not-to-use",  label: t("detail.wnot") });
+  if (has.example)  items.push({ id: "example",          label: t("detail.example") });
   if (items.length <= 3) return "";  // not useful for very short pages
   return `
-    <nav class="toc" aria-label="On this page">
-      <strong>On this page</strong>
+    <nav class="toc" aria-label="${escAttr(t("detail.toc"))}">
+      <strong>${escHtml(t("detail.toc"))}</strong>
       <ol>${items.map(i => `<li><a href="#${i.id}" data-link>${escHtml(i.label)}</a></li>`).join("")}</ol>
     </nav>
   `;
@@ -112,16 +122,22 @@ function hasH1Section(body: string, h1: string): boolean {
 
 function platformChips(p: string[]): string {
   if (p.length === 0) {
-    return `<span class="chip chip--all" title="Vendor-neutral — works on any agent">any</span>`;
+    return `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`;
   }
   return p.map(x => `<span class="chip chip--${escAttr(x)}">${escHtml(x)}</span>`).join(" ");
 }
 
+// Bilingual block. We always render this when the skill has
+// *any* zh field, and we open it by default in Chinese mode
+// (otherwise a Chinese user sees a collapsed "中文" details
+// box they have to click — annoying). In English mode we keep
+// it collapsed as a "show original Chinese" reference.
 function zhBlock(s: Skill): string {
   if (!s.name_zh && !s.description_zh) return "";
+  const open = getLocale() === "zh";
   return `
-    <details>
-      <summary>中文</summary>
+    <details class="detail__zh"${open ? " open" : ""}>
+      <summary>${escHtml(t("detail.bilingual"))}</summary>
       ${s.name_zh ? `<p><strong>${escHtml(s.name_zh)}</strong></p>` : ""}
       ${s.description_zh ? `<p>${escHtml(s.description_zh)}</p>` : ""}
     </details>
@@ -130,18 +146,23 @@ function zhBlock(s: Skill): string {
 
 function inputsTable(s: Skill): string {
   if (s.inputs.length === 0) return "";
-  const rows = s.inputs.map(i => `
+  const rows = s.inputs.map(i => {
+    const reqText = i.required
+      ? t("input.required")
+      : (i.default !== undefined ? t("input.default", { v: String(i.default) }) : t("input.optional"));
+    return `
     <tr>
       <td><code>${escHtml(i.name)}</code></td>
       <td><code>${escHtml(i.type)}</code></td>
-      <td>${i.required ? "required" : (i.default !== undefined ? `default: <code>${escHtml(String(i.default))}</code>` : "optional")}</td>
-      <td>${escHtml(i.description ?? "")}${i.values ? `<br/><small>values: ${i.values.map(escHtml).join(", ")}</small>` : ""}${i.constraints ? (i.constraints.min !== undefined || i.constraints.max !== undefined ? `<br/><small>range: ${i.constraints.min ?? "−∞"} … ${i.constraints.max ?? "+∞"}</small>` : "") : ""}</td>
+      <td>${escHtml(reqText)}</td>
+      <td>${escHtml(i.description ?? "")}${i.values ? `<br/><small>${escHtml(t("input.values", { v: i.values.join(", ") }))}</small>` : ""}${i.constraints ? (i.constraints.min !== undefined || i.constraints.max !== undefined ? `<br/><small>${escHtml(t("input.range", { min: i.constraints.min ?? "−∞", max: i.constraints.max ?? "+∞" }))}</small>` : "") : ""}</td>
     </tr>
-  `).join("");
+  `;
+  }).join("");
   return `
-    <h2 id="inputs">Inputs</h2>
+    <h2 id="inputs">${escHtml(t("detail.inputs"))}</h2>
     <table>
-      <thead><tr><th>name</th><th>type</th><th>required</th><th>description</th></tr></thead>
+      <thead><tr><th>${escHtml(t("table.name"))}</th><th>${escHtml(t("table.type"))}</th><th>${escHtml(t("table.required"))}</th><th>${escHtml(t("table.description"))}</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   `;
@@ -149,8 +170,8 @@ function inputsTable(s: Skill): string {
 
 function outputBlock(s: Skill): string {
   return `
-    <h2 id="output">Output</h2>
-    <p><code>format: ${escHtml(s.output.format)}</code>${s.output.description ? ` — ${escHtml(s.output.description)}` : ""}</p>
+    <h2 id="output">${escHtml(t("detail.output"))}</h2>
+    <p><code>${escHtml(t("output.format", { f: s.output.format }))}</code>${s.output.description ? ` — ${escHtml(s.output.description)}` : ""}</p>
   `;
 }
 
@@ -400,9 +421,9 @@ function sourceBlock(s: Skill): string {
   if (!src) {
     return `
       <div class="source-block">
-        <span class="source-block__label">origin</span>
+        <span class="source-block__label">${escHtml(t("detail.origin"))}</span>
         <span class="source-block__author">${escHtml(s.author || "local")}</span>
-        <span class="source-block__commit">no upstream · hand-written</span>
+        <span class="source-block__commit">${escHtml(t("detail.local"))}</span>
       </div>
     `;
   }
@@ -413,14 +434,14 @@ function sourceBlock(s: Skill): string {
   // keeping the type checker happy without an extra non-null `!`.
   const commitLinkHtml = commit && shortCommit
     ? `<a class="source-block__commit" href="${escAttr(commitUrl(src))}" rel="noopener noreferrer" target="_blank" title="${escAttr(commit)}">${escHtml(shortCommit)}</a>`
-    : `<span class="source-block__commit">no commit</span>`;
+    : `<span class="source-block__commit">${escHtml(t("detail.noCommit"))}</span>`;
   return `
     <div class="source-block">
-      <span class="source-block__label">source</span>
+      <span class="source-block__label">${escHtml(t("detail.source"))}</span>
       <a class="source-block__author" href="${escAttr(src.url)}" rel="noopener noreferrer" target="_blank">${escHtml(host)}</a>
       ${commitLinkHtml}
       ${src.license ? `<span class="source-block__commit">${escHtml(src.license)}</span>` : ""}
-      ${src.fetched_at ? `<span class="source-block__commit">fetched ${escHtml(src.fetched_at)}</span>` : ""}
+      ${src.fetched_at ? `<span class="source-block__commit">${escHtml(t("detail.fetched", { d: src.fetched_at }))}</span>` : ""}
     </div>
   `;
 }
@@ -476,17 +497,20 @@ function pickRelated(s: Skill, index: SkillIndex, n: number): SkillIndexEntry[] 
 
 function relatedBlock(related: SkillIndexEntry[]): string {
   if (related.length === 0) return "";
-  const cards = related.map(e => `
+  const cards = related.map(e => {
+    const name = pickZh(e, "name");
+    return `
     <a class="skill-card skill-card--inline" href="#/skill/${escAttr(e.slug)}" data-link>
       <div class="skill-card__head">
         <span class="skill-card__slug">${escHtml(e.slug)}</span>
-        <span class="skill-card__name">${escHtml(e.name)}</span>
+        <span class="skill-card__name">${escHtml(name)}</span>
       </div>
     </a>
-  `).join("");
+  `;
+  }).join("");
   return `
     <section class="related" aria-label="related skills">
-      <h2 class="related__title">More from ${escHtml(related[0]!.category.replace(/-/g, " "))}</h2>
+      <h2 class="related__title">${escHtml(t("detail.related", { cat: related[0]!.category.replace(/-/g, " ") }))}</h2>
       <div class="related__grid">${cards}</div>
     </section>
   `;
@@ -504,19 +528,19 @@ export function renderNotFound(root: HTMLElement, slug: string, index: SkillInde
     ? ""
     : `
       <div class="notfound__suggest">
-        <span class="notfound__suggest-label">did you mean</span>
+        <span class="notfound__suggest-label">${escHtml(t("nf.suggest"))}</span>
         ${suggestions.map(s => `<a class="notfound__chip" href="#/skill/${escAttr(s.slug)}" data-link>${escHtml(s.slug)}</a>`).join(" ")}
       </div>
     `;
   root.innerHTML = `
     <div class="notfound">
-      <div class="notfound__code">404 · skill not found</div>
-      <h1 class="notfound__title">No skill called <code>${escHtml(slug)}</code></h1>
-      <p class="notfound__sub">It may have been renamed, or the link could be from an older version of the vault. Try the list, or check the spelling below.</p>
+      <div class="notfound__code">${escHtml(t("nf.code"))}</div>
+      <h1 class="notfound__title">${escHtml(t("nf.title", { slug }))}</h1>
+      <p class="notfound__sub">${escHtml(t("nf.sub"))}</p>
       ${sugHtml}
       <div class="actions" style="justify-content: center;">
-        <a class="btn btn--primary" href="#/" data-link>← back to the list</a>
-        <a class="btn" href="#/bundle" data-link>open the bundle picker</a>
+        <a class="btn btn--primary" href="#/" data-link>${escHtml(t("nf.back"))}</a>
+        <a class="btn" href="#/bundle" data-link>${escHtml(t("nf.bundle"))}</a>
       </div>
     </div>
   `;

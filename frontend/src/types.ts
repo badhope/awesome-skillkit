@@ -10,6 +10,7 @@ export interface SkillIndexEntry {
   name: string;
   name_zh?: string;
   description: string;
+  description_zh?: string;
   category: string;
   tags: string[];
   platforms: string[];

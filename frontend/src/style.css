@@ -12,9 +12,9 @@
  */
 
 :root {
-  --font-ui:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ui:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   --font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-  --font-disp:  "Fraunces", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+  --font-disp:  "Fraunces", "Iowan Old Style", "Apple Garamond", "Songti SC", "STSong", Georgia, serif;
 
   --s-1: 4px;
   --s-2: 8px;
@@ -182,6 +182,44 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
 }
 .topbar__nav a { color: var(--ink-soft); }
 .topbar__nav a:hover { color: var(--accent); text-decoration: none; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 28px;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.lang-toggle:hover { border-color: var(--border-strong); }
+.lang-toggle__opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  min-width: 32px;
+  color: var(--ink-mute);
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border);
+  transition: color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+  user-select: none;
+}
+.lang-toggle__opt:last-child { border-right: none; }
+.lang-toggle__opt[aria-pressed="true"] {
+  color: white;
+  background: var(--accent);
+}
 
 .main {
   flex: 1 1 auto;

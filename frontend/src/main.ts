@@ -9,6 +9,7 @@ import { renderList } from "./pages/list";
 import { renderDetail, renderNotFound } from "./pages/detail";
 import { renderBundle } from "./pages/bundle";
 import type { Skill, SkillIndex } from "./types";
+import { applyStaticTranslations, getLocale, setLocale, subscribe, t } from "./i18n";
 
 const main = () => document.querySelector<HTMLElement>("#main")!;
 let cachedIndex: SkillIndex | null = null;
@@ -43,7 +44,7 @@ async function route() {
   // index is already cached, this would flash for a single
   // microtask. (S2)
   if (cachedIndex === null) {
-    mainEl.innerHTML = `<div class="empty" role="status" aria-live="polite">Loading…</div>`;
+    mainEl.innerHTML = `<div class="empty" role="status" aria-live="polite">${escapeHtml(t("loading"))}</div>`;
   }
   try {
     const idx = await loadIndex();
@@ -51,27 +52,30 @@ async function route() {
       document.title = "AI-SKILL";
       await renderList(mainEl, idx);
     } else if (hash === "#/bundle") {
-      document.title = "Bundle — AI-SKILL";
+      document.title = `${t("bundle.title")} — AI-SKILL`;
       await renderBundle(mainEl, idx);
     } else if (hash.startsWith("#/skill/")) {
       const slug = decodeURIComponent(hash.slice("#/skill/".length));
       const skill = await loadSkill(slug);
       if (skill) {
-        document.title = `${skill.name} — AI-SKILL`;
+        // Use the localized name in the document title so the
+        // browser tab also reflects the language choice.
+        const titleName = getLocale() === "zh" && skill.name_zh ? skill.name_zh : skill.name;
+        document.title = `${titleName} — AI-SKILL`;
         await renderDetail(mainEl, skill, idx);
       } else {
-        document.title = "Not found — AI-SKILL";
+        document.title = `${t("nf.code")} — AI-SKILL`;
         renderNotFound(mainEl, slug, idx);
       }
     } else {
       document.title = "AI-SKILL";
-      mainEl.innerHTML = `<div class="empty">Unknown route. <a href="#/" data-link>Back to list</a>.</div>`;
+      mainEl.innerHTML = `<div class="empty">${escapeHtml(t("unknownRoute"))} <a href="#/" data-link>${escapeHtml(t("backToList"))}</a>.</div>`;
     }
     // Scroll to top on route change (unless the user is mid-click)
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   } catch (e) {
     document.title = "Error — AI-SKILL";
-    mainEl.innerHTML = `<div class="empty">Failed to load: ${escapeHtml(String(e))}</div>`;
+    mainEl.innerHTML = `<div class="empty">${escapeHtml(t("errorPrefix"))} ${escapeHtml(String(e))}</div>`;
     console.error(e);
   }
 }
@@ -83,9 +87,52 @@ function escapeHtml(s: string): string {
   }[c]!));
 }
 
-// (S1: removed the dead global click handler — the browser's
-// default hash navigation + the hashchange listener already do
-// the right thing.)
+// ============================ i18n wiring ============================
+//
+// The topbar's lang-toggle is declared in index.html with a
+// pair of <span data-lang-opt> children. We sync aria-pressed
+// to the current locale and bind a click handler that toggles
+// the language. The subscribe() callback re-runs the current
+// route — that's how a single toggle re-paints the list, the
+// detail, or the bundle page in place.
+
+function syncLangToggle() {
+  const cur = getLocale();
+  document.querySelectorAll<HTMLElement>("[data-lang-opt]").forEach(el => {
+    const opt = el.dataset.langOpt as "en" | "zh" | undefined;
+    el.setAttribute("aria-pressed", opt === cur ? "true" : "false");
+  });
+}
+
+function bindLangToggle() {
+  const btn = document.querySelector<HTMLButtonElement>("#lang-toggle");
+  if (!btn) return;
+  // Each pill inside the button is clickable; clicking either
+  // one sets the locale to that language (rather than toggling
+  // every time), which is what users expect from a segmented
+  // control.
+  btn.querySelectorAll<HTMLElement>("[data-lang-opt]").forEach(opt => {
+    opt.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      const target = (opt as HTMLElement).dataset.langOpt as "en" | "zh" | undefined;
+      if (target) setLocale(target);
+    });
+  });
+  syncLangToggle();
+}
+
+subscribe(() => {
+  applyStaticTranslations();
+  syncLangToggle();
+  // Re-run the current route. We don't need to clear the skill
+  // cache — the data is identical, only the rendering changes.
+  route();
+});
+
+bindLangToggle();
+// Translate the static topbar/footer before the first route
+// runs, so the shell is consistent with the page.
+applyStaticTranslations();
 
 window.addEventListener("hashchange", route);
 route();
