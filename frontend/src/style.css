@@ -281,6 +281,69 @@ img, svg { display: block; max-width: 100%; }
   font-size: 0.9em;
 }
 .detail pre code { background: none; padding: 0; }
+
+/* Body code block: per-block copy button (N9). The pre keeps its
+   own background; the wrapper is just a positioning context for
+   the floating copy button. Hover-revealed to keep the prose
+   clean; focus-revealed for keyboard users. */
+.codeblock { position: relative; }
+.codeblock pre { margin: 0 0 var(--s-3); }
+.codeblock:last-child pre { margin-bottom: 0; }
+.codeblock__copy {
+  position: absolute;
+  top: var(--s-2);
+  right: var(--s-2);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 2px 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity 120ms, color 120ms, border-color 120ms;
+  min-height: 28px;
+  cursor: pointer;
+}
+.codeblock:hover .codeblock__copy,
+.codeblock__copy:focus-visible { opacity: 1; }
+.codeblock__copy:hover { color: var(--ink); border-color: var(--ink-mute); }
+
+/* Inline TOC (N9). Shows the page's H2 anchors in a single row
+   so a reader can jump to Inputs / Prompt / When NOT to use /
+   Example without scrolling. Hidden when the page has 3 or
+   fewer H2 anchors (not useful for very short pages). */
+.detail .toc {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: var(--s-3) var(--s-4);
+  margin: 0 0 var(--s-5);
+  font-size: var(--t-sm);
+}
+.detail .toc strong {
+  display: block;
+  font-size: var(--t-xs);
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--s-2);
+  font-weight: 600;
+}
+.detail .toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-4);
+}
+.detail .toc li { margin: 0; }
+.detail .toc a { color: var(--ink-soft); }
+.detail .toc a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 480px) {
+  .detail .toc ol { gap: var(--s-1) var(--s-3); }
+}
 .detail table {
   width: 100%;
   border-collapse: collapse;

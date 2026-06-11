@@ -14,14 +14,40 @@
 
 不是 vendor-bound skill pack。Claude skills 只能在 Claude 用，
 Codex skills 只能在 Codex 用。这里默认所有技能**平台中立**，
-在能读 Markdown 的 agent 上都能跑。
+在能读 Markdown 的 agent 上都能跑。少数平台相关的技能会在
+`platforms:` 字段标 `claude` 之类的限定词，并在文档里写清
+`**Claude-only**` disclaimer。
+
+## Vault 里现在有什么
+
+`35 / 0 / 0` —— 35 条技能，全部通过 `validate-skill.py --strict` 验证。
+
+| 类别 | 数量 | 例子 |
+|---|---|---|
+| 手写 vendor-neutral | 5 | `pdf-summarizer`, `code-reviewer`, `test-generator`, `sql-query-helper`, `commit-message-writer` |
+| Claude-only 平台示例 | 1 | `pdf-vision-extractor` |
+| 抓取自大厂 + 通用化 | 29 | `mcp-builder`, `webapp-testing`, `skill-creator`, `doc-coauthoring`, `internal-comms`, `clickhouse-best-practices`, `turborepo`, `security-review`, `storybook`, `pnpm-upgrade-package`, `frontend-large-feature-architecture`, `code-review`, `deepeval-*`, `promptfoo-*`, `llm-pricing-file-update`, `realtime-eval-bootstrap`, `react-router-search-params`, `goal-definition`, `cli-builder`, `threat-modeling`, `secure-code-by-language`, `ownership-bus-factor`, `pr-yeet`, `frontend-visual-design`, `browser-ml-in-js`, `embedding-model-training` |
+
+抓取来源的 8 个仓库：`confident-ai/deepeval` (3) /
+`promptfoo/promptfoo` (3) / `langfuse/langfuse` (8) /
+`openai/openai-cookbook` (1) / `openai/skills` (6) /
+`letta-ai/skills` (1) / `huggingface/skills` (2) /
+`anthropics/skills` (5)。
+每条抓来的技能 frontmatter 都标了 `source:` 字段，
+`author` 写成 `"<Vendor> (downstream pack: badhope)"`。
+详见 `SOURCE.md`。
 
 ## 怎么用
 
 ### 浏览
 
 打开 [AI-SKILL Pages](https://badhope.github.io/AI-SKILL)，看
-列表、点详情、点下载。
+列表、点详情、点下载。站点是 hash 路由，**深链可直接分享**：
+
+```
+https://badhope.github.io/AI-SKILL/#/skill/pdf-summarizer
+https://badhope.github.io/AI-SKILL/#/bundle
+```
 
 或者直接看 `skills/` 目录 —— 它就是站点渲染的数据源。
 
@@ -75,13 +101,13 @@ bundles/                 bundle-skill.py 输出（gitignore）
 
 | 脚本 | 干啥 |
 |---|---|
-| `fetch-skill.py` | 从 GitHub 抓技能落到本地 |
+| `fetch-skill.py` | 从 GitHub 抓技能落到本地（v1 18 候选源全 skip，详见 `SOURCE.md`） |
 | `convert-skill.py` | 原始 .md → 标准 SKILL.md |
-| `extend-skill.py` | 把烂技能按 4 条规则改到能跑 |
-| `validate-skill.py` | CI 必跑，校验 frontmatter + body |
+| `extend-skill.py` | 把烂技能按 4 条规则改到能跑（看 `docs/extension-rules.md`） |
+| `validate-skill.py` | CI 必跑，校验 frontmatter + body + 写 frontend 用的 JSON |
 | `install-skill.py` | 装到 `~/.claude/skills` 等本地目录 |
-| `bundle-skill.py` | 打包 ZIP |
-| `sync-github.py` | 刷 `external-index/` 元数据 |
+| `bundle-skill.py` | 打包 ZIP（命令行版本；网页版走 `frontend/#/bundle`） |
+| `sync-github.py` | 刷 `external-index/` 元数据（stars / license / pushed_at） |
 | `check-links.py` | 检查 `external-index/` 死链 |
 
 ## 贡献

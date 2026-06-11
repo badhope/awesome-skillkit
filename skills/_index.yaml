@@ -4,6 +4,76 @@
 # skills/<slug>/SKILL.md and re-run validate-skill.py.
 
 skills:
+  - slug: browser-ml-in-js
+    name: Browser ML in JavaScript
+    name_zh: 浏览器端机器学习（JavaScript）
+    description: Run state-of-the-art ML models directly in JavaScript / 
+      TypeScript — text classification, translation, summarization, image 
+      classification, object detection, speech recognition, audio 
+      classification, multimodal. Works in browsers and server-side runtimes 
+      (Node, Bun, Deno) with WebGPU / WASM. No Python backend required.
+    category: applications
+    tags:
+      - javascript
+      - typescript
+      - ml
+      - browser
+      - onnx
+    platforms: []
+    needs_review: false
+    path: skills/browser-ml-in-js/SKILL.md
+  - slug: cli-builder
+    name: CLI Builder
+    name_zh: CLI 工具构造
+    description: Build a durable, composable CLI from an API spec, SDK, curl 
+      examples, or existing script — pick the right runtime, sketch the command 
+      surface before coding, default to JSON output, manage auth, and pair with 
+      an install command. For real tools you will run again, not throwaway 
+      scripts.
+    category: terminal-cli
+    tags:
+      - cli
+      - rust
+      - typescript
+      - python
+      - dx
+    platforms: []
+    needs_review: false
+    path: skills/cli-builder/SKILL.md
+  - slug: clickhouse-best-practices
+    name: ClickHouse Best Practices
+    name_zh: ClickHouse 最佳实践
+    description: 28 rules for ClickHouse schema, query, and insert strategy — 
+      referenced before answering any ClickHouse question. Filters to apply, 
+      trade-offs to know, anti-patterns to flag.
+    category: data-pipelines
+    tags:
+      - clickhouse
+      - database
+      - schema
+      - query
+      - optimization
+    platforms: []
+    needs_review: false
+    path: skills/clickhouse-best-practices/SKILL.md
+  - slug: code-review
+    name: Code Review Workflow
+    name_zh: 代码审查工作流
+    description: Code review workflow for any PR, branch, diff, or local change 
+      — start with a canonical review checklist, defer to specialised skills 
+      (security, ClickHouse, frontend) when the change touches those areas, 
+      output findings ordered by severity with file:line references. No findings
+      is a valid result.
+    category: code-assistants
+    tags:
+      - code-review
+      - pr
+      - quality
+      - security
+      - workflow
+    platforms: []
+    needs_review: false
+    path: skills/code-review/SKILL.md
   - slug: code-reviewer
     name: Code Reviewer
     name_zh: 代码审查员
@@ -32,6 +102,212 @@ skills:
     platforms: []
     needs_review: false
     path: skills/commit-message-writer/SKILL.md
+  - slug: deepeval-eval-suite
+    name: deepeval Pytest Eval Suite
+    name_zh: deepeval Pytest 评估套件
+    description: Build and run an end-to-end pytest eval suite for an AI app 
+      with DeepEval. Covers dataset reuse / generation, metric selection, 
+      `deepeval test run`, and failure-driven iteration. The counterpart to 
+      deepeval-tracing (instrumentation) and deepeval-otel (raw OTLP).
+    category: evaluation
+    tags:
+      - deepeval
+      - pytest
+      - evals
+      - agents
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/deepeval-eval-suite/SKILL.md
+  - slug: deepeval-otel
+    name: deepeval OTel Trace Export
+    name_zh: deepeval OTel Trace 导出
+    description: Send OpenTelemetry traces from any AI app to Confident AI's 
+      hosted Observatory. No deepeval Python package required — works with any 
+      OTLP-capable OpenTelemetry SDK in any language.
+    category: observability
+    tags:
+      - opentelemetry
+      - otlp
+      - tracing
+      - eval
+      - observability
+    platforms: []
+    needs_review: false
+    path: skills/deepeval-otel/SKILL.md
+  - slug: deepeval-tracing
+    name: deepeval SDK Tracing
+    name_zh: deepeval SDK 打点
+    description: Instrument a Python AI app with DeepEval's `@observe` decorator
+      and framework integrations so traces land in Confident AI's Observatory. 
+      The Python-only counterpart to the OTel-based deepeval-otel skill.
+    category: observability
+    tags:
+      - deepeval
+      - tracing
+      - observe
+      - python
+      - integrations
+    platforms: []
+    needs_review: false
+    path: skills/deepeval-tracing/SKILL.md
+  - slug: doc-coauthoring
+    name: Doc Co-Authoring Workflow
+    name_zh: 文档共写工作流
+    description: Structured three-stage workflow for co-authoring documentation 
+      — Context Gathering, Refinement & Structure, Reader Testing. Trigger when 
+      user mentions "write a doc", "draft a proposal", "create a spec". Skips 
+      the "I just want to dump and ship" trap.
+    category: documentation
+    tags:
+      - documentation
+      - writing
+      - workflow
+      - proposal
+      - spec
+    platforms: []
+    needs_review: false
+    path: skills/doc-coauthoring/SKILL.md
+  - slug: embedding-model-training
+    name: Embedding Model Training
+    name_zh: 嵌入模型训练
+    description: Train or fine-tune embedding models — bi-encoder (dense 
+      sentence embeddings for retrieval, similarity, clustering, dedup), 
+      cross-encoder (pair scoring, reranking, pair classification), and sparse 
+      encoder (SPLADE, learned-sparse retrieval). Covers loss selection, 
+      hard-negative mining, evaluator choice, Matryoshka / LoRA / distillation 
+      trade-offs, and the most common training-time traps.
+    category: embeddings
+    tags:
+      - embeddings
+      - sentence-transformers
+      - bi-encoder
+      - training
+      - fine-tuning
+    platforms: []
+    needs_review: false
+    path: skills/embedding-model-training/SKILL.md
+  - slug: frontend-large-feature-architecture
+    name: Frontend Large-Feature Architecture
+    name_zh: 前端大型功能架构
+    description: Plan a non-trivial frontend feature before coding — controller 
+      components, state location, list vs detail fetch, virtualization. Generic 
+      patterns, framework-aware but not framework-bound.
+    category: applications
+    tags:
+      - frontend
+      - react
+      - architecture
+      - state-management
+      - performance
+    platforms: []
+    needs_review: false
+    path: skills/frontend-large-feature-architecture/SKILL.md
+  - slug: frontend-visual-design
+    name: Frontend Visual Design Taste
+    name_zh: 前端视觉设计品味
+    description: Build interfaces that feel deliberate, premium, and current — 
+      restrained composition, image-led hierarchy, cohesive content, tasteful 
+      motion. Use for landing pages, marketing sites, demos, prototypes, game 
+      UIs where the quality depends on art direction, not component count. 
+      Avoids the generic-card / weak-branding / UI-clutter trap.
+    category: applications
+    tags:
+      - frontend
+      - design
+      - ui
+      - landing-page
+      - motion
+    platforms: []
+    needs_review: false
+    path: skills/frontend-visual-design/SKILL.md
+  - slug: goal-definition
+    name: Goal Definition
+    name_zh: 目标定义
+    description: Turn a fuzzy intention into a concrete, measurable objective 
+      before starting work — restate in concrete terms, prefer numeric evidence 
+      over decorative precision, reject pure activity goals, and only set the 
+      goal when it actually passes the bar.
+    category: code-assistants
+    tags:
+      - goal-setting
+      - planning
+      - okr
+      - scope
+      - workflow
+    platforms: []
+    needs_review: false
+    path: skills/goal-definition/SKILL.md
+  - slug: internal-comms
+    name: Internal Comms Authoring
+    name_zh: 内部沟通文档写作
+    description: Write the seven common internal communication types — 3P 
+      update, status report, leadership update, project update, incident report,
+      FAQ answer, company newsletter. Each has a structure, a tone, and a "what 
+      to gather first" list. Generic to any company.
+    category: documentation
+    tags:
+      - writing
+      - communication
+      - status-report
+      - incident
+      - faq
+    platforms: []
+    needs_review: false
+    path: skills/internal-comms/SKILL.md
+  - slug: llm-pricing-file-update
+    name: LLM Model Pricing File Update
+    name_zh: LLM 模型价目文件更新
+    description: Add or update an LLM model's entry in a per-token pricing JSON 
+      — matchPattern regex for cross-provider IDs, pricing tiers, cache pricing,
+      tokenizer alignment, and the schema validation that has to run before the 
+      change ships.
+    category: observability
+    tags:
+      - pricing
+      - llm
+      - cost
+      - monitoring
+      - ops
+    platforms: []
+    needs_review: false
+    path: skills/llm-pricing-file-update/SKILL.md
+  - slug: mcp-builder
+    name: MCP Server Builder
+    name_zh: MCP Server 构建指南
+    description: Author a high-quality MCP (Model Context Protocol) server in 
+      Python (FastMCP) or TypeScript (MCP SDK). Covers research, schema design, 
+      tool implementation, error handling, and the 10-question evaluation set 
+      any new server should ship with.
+    category: mcp-protocol
+    tags:
+      - mcp
+      - server
+      - tools
+      - protocol
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/mcp-builder/SKILL.md
+  - slug: ownership-bus-factor
+    name: Code Ownership & Bus Factor
+    name_zh: 代码所有权与巴士因子
+    description: Build a security-oriented ownership map of a git repo from 
+      history — who owns which file, who maintains sensitive code, what's the 
+      bus factor, where are the orphaned sensitive paths. Exports CSV / JSON for
+      graph databases (Neo4j, Gephi) and a co-change graph for clustering files 
+      that move together. Triggered by explicit AppSec / bus-factor requests, 
+      not general maintainer lists.
+    category: guardrails
+    tags:
+      - security
+      - ownership
+      - bus-factor
+      - git
+      - appsec
+    platforms: []
+    needs_review: false
+    path: skills/ownership-bus-factor/SKILL.md
   - slug: pdf-summarizer
     name: PDF Summarizer
     name_zh: PDF 摘要器
@@ -46,6 +322,177 @@ skills:
     platforms: []
     needs_review: false
     path: skills/pdf-summarizer/SKILL.md
+  - slug: pdf-vision-extractor
+    name: PDF Vision Extractor
+    name_zh: PDF 视觉抽取器
+    description: 从扫描版 / 图像版 PDF 抽取结构化字段，依赖 Claude 的 vision 能力。
+    category: dev-tools
+    tags:
+      - pdf
+      - ocr
+      - extraction
+      - vision
+      - claude-only
+    platforms:
+      - claude
+    needs_review: false
+    path: skills/pdf-vision-extractor/SKILL.md
+  - slug: pnpm-upgrade-package
+    name: PNPM Upgrade Package
+    name_zh: pnpm 升级依赖
+    description: "Upgrade pnpm workspace dependencies to target or latest version
+      — direct and transitive bumps, release-age checks, scoped overrides, lockfile
+      and dedupe verification. Covers the four 'do not' traps: manual lockfile edits,
+      permanent overrides, silent latest, dedupe churn."
+    category: dev-tools
+    tags:
+      - pnpm
+      - npm
+      - dependency-management
+      - monorepo
+    platforms: []
+    needs_review: false
+    path: skills/pnpm-upgrade-package/SKILL.md
+  - slug: pr-yeet
+    name: Single-Flow PR Yeet
+    name_zh: 一次性 PR 推送
+    description: Stage, commit, push, and open a GitHub pull request in one 
+      linear flow — pick the right branch name, write a terse conventional 
+      commit, resolve the PR template from the repo, fill the body, push, open 
+      via `gh`. Triggered only when the user explicitly asks to "yeet" or "ship"
+      a change as one PR.
+    category: dev-tools
+    tags:
+      - git
+      - github
+      - pr
+      - cli
+      - workflow
+    platforms: []
+    needs_review: false
+    path: skills/pr-yeet/SKILL.md
+  - slug: promptfoo-evals
+    name: promptfoo Eval Suite Author
+    name_zh: promptfoo 评估套件作者
+    description: Author, refine, and run promptfoo eval suites 
+      (`promptfooconfig.yaml` + `prompts/` + `tests/`). For regression, matrix, 
+      and coverage evals of any prompt, endpoint, or LLM-driven system. NOT for 
+      adversarial redteam setup — that's the `promptfoo-redteam` skill.
+    category: evaluation
+    tags:
+      - promptfoo
+      - evals
+      - regression
+      - llm
+      - yaml
+    platforms: []
+    needs_review: false
+    path: skills/promptfoo-evals/SKILL.md
+  - slug: promptfoo-redteam
+    name: promptfoo Redteam Plugin Author
+    name_zh: promptfoo Redteam 插件作者
+    description: Standards and templates for writing promptfoo redteam plugins 
+      and graders — adversarial attack generation, scoring rubrics, and the 
+      `UserQuery` / `purpose` / `Output` / `AllowedEntities` tag contract. The 
+      counterpart to `promptfoo-evals` (regression), focused on "can I break 
+      it?".
+    category: safety-alignment
+    tags:
+      - promptfoo
+      - redteam
+      - security
+      - adversarial
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/promptfoo-redteam/SKILL.md
+  - slug: react-router-search-params
+    name: React Router Search Param State
+    name_zh: React Router 搜索参数/哈希状态管理
+    description: Decide between `replace` and `push` for URL state changes in 
+      React Router — the
+    category: dev-tools
+    tags:
+      - react
+      - react-router
+      - url
+      - state
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/react-router-search-params/SKILL.md
+  - slug: realtime-eval-bootstrap
+    name: Realtime Eval Scaffold
+    name_zh: Realtime Eval 脚手架
+    description: Bootstrap a new realtime (audio / multi-turn) eval folder — 
+      pick the right harness (single-turn TTS, replay audio, multi-turn 
+      simulation), scaffold prompt / tools / data files, and run a smoke + full 
+      eval before returning. The input is a use case; the output is a runnable 
+      eval.
+    category: evaluation
+    tags:
+      - realtime
+      - evals
+      - audio
+      - harness
+      - agents
+    platforms: []
+    needs_review: false
+    path: skills/realtime-eval-bootstrap/SKILL.md
+  - slug: secure-code-by-language
+    name: Secure Code by Language
+    name_zh: 按语言的安全编码指南
+    description: Look up language- and framework-specific secure-by-default 
+      coding guidance before writing or reviewing code — pick the right 
+      reference file (Python, JavaScript / TypeScript, Go, frontend / backend 
+      split), apply it in the right mode (proactive, passive detect, full 
+      report). Triggers on explicit "secure by default", "security review", or 
+      "AppSec" requests, not general code review.
+    category: guardrails
+    tags:
+      - security
+      - appsec
+      - secure-defaults
+      - review
+      - language
+    platforms: []
+    needs_review: false
+    path: skills/secure-code-by-language/SKILL.md
+  - slug: security-review
+    name: Security Review Checklist
+    name_zh: 安全审查清单
+    description: Security review patterns for code review and design — SSRF and 
+      outbound URL validation, secrets and encryption-at-rest, cross-tenant 
+      data, file uploads, redirect handling, RBAC scope drift, signed URL 
+      scoping. Catches recurring security findings at design and review time, 
+      not after the CVE.
+    category: guardrails
+    tags:
+      - security
+      - ssrf
+      - secrets
+      - rbac
+      - review
+    platforms: []
+    needs_review: false
+    path: skills/security-review/SKILL.md
+  - slug: skill-creator
+    name: Skill Authoring Loop
+    name_zh: 技能编写迭代流程
+    description: Create a new skill from scratch or improve an existing one — 
+      draft, write test prompts, run qualitative + quantitative evaluation, 
+      iterate on description for trigger accuracy, expand test set, repeat. The 
+      loop is the skill.
+    category: code-assistants
+    tags:
+      - skill
+      - meta
+      - evaluation
+      - prompt
+      - iteration
+    platforms: []
+    needs_review: false
+    path: skills/skill-creator/SKILL.md
   - slug: sql-query-helper
     name: SQL Query Helper
     name_zh: SQL 查询助手
@@ -60,6 +507,23 @@ skills:
     platforms: []
     needs_review: false
     path: skills/sql-query-helper/SKILL.md
+  - slug: storybook
+    name: Storybook Component Stories
+    name_zh: Storybook 组件故事编写
+    description: Write or review Storybook stories (`.stories.tsx`) for React 
+      components — CSF Next, presentational component rule, typed metadata, 
+      story naming by state, no MSW. The rule of "one exported component per 
+      file" cuts both ways.
+    category: applications
+    tags:
+      - storybook
+      - react
+      - testing
+      - components
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/storybook/SKILL.md
   - slug: test-generator
     name: Unit Test Generator
     name_zh: 单元测试生成器
@@ -74,3 +538,55 @@ skills:
     platforms: []
     needs_review: false
     path: skills/test-generator/SKILL.md
+  - slug: threat-modeling
+    name: Repository Threat Model
+    name_zh: 仓库威胁建模
+    description: Build a repository-grounded threat model — scope the system, 
+      draw trust boundaries, list assets, enumerate abuse paths tied to assets, 
+      prioritize with explicit likelihood × impact reasoning, validate 
+      assumptions. Anchors every claim to evidence in the repo, not a generic 
+      checklist.
+    category: guardrails
+    tags:
+      - security
+      - threat-model
+      - appsec
+      - review
+      - architecture
+    platforms: []
+    needs_review: false
+    path: skills/threat-modeling/SKILL.md
+  - slug: turborepo
+    name: Turborepo Monorepo Authoring
+    name_zh: Turborepo Monorepo 编写
+    description: Turborepo monorepo build system guidance — package tasks vs 
+      root tasks, task pipelines, dependsOn, caching, remote cache, --filter, 
+      --affected, env variables, internal packages, boundaries. Covers the eight
+      anti-patterns that defeat Turborepo's parallelization.
+    category: dev-tools
+    tags:
+      - turborepo
+      - monorepo
+      - build
+      - ci
+      - dev-tools
+    platforms: []
+    needs_review: false
+    path: skills/turborepo/SKILL.md
+  - slug: webapp-testing
+    name: Webapp Testing Harness
+    name_zh: Web 应用 Playwright 测试脚手架
+    description: Test local web apps end-to-end with Playwright + Python. 
+      Black-box server lifecycle helper, reconnaissance-then-action DOM 
+      inspection, screenshot capture, and the "static HTML vs dynamic SPA" 
+      decision tree.
+    category: browser-automation
+    tags:
+      - playwright
+      - testing
+      - web
+      - e2e
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/webapp-testing/SKILL.md

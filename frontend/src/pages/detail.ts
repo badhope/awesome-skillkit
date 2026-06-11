@@ -30,6 +30,7 @@ export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
       </p>
       <p>${escHtml(s.description)}</p>
       ${zhBlock(s)}
+      ${tocBlock(s)}
       <h2 id="when-to-use">When to use</h2>
       <div id="wtu-body"></div>
       ${inputsTable(s)}
@@ -57,6 +58,49 @@ export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
   root.querySelector<HTMLDivElement>("#wtu-body")!.innerHTML = renderH1Section(s.body, "When to use");
   root.querySelector<HTMLDivElement>("#wnot-body")!.innerHTML = renderH1Section(s.body, "When NOT to use");
   root.querySelector<HTMLDivElement>("#example-body")!.innerHTML = renderH1Section(s.body, "Example");
+  // Attach a copy button to every body code block (the prompt
+  // block already has a top-level "Copy prompt" button, so we
+  // skip the one inside the prompt H2). N9 from the prosecutor
+  // review: body code blocks were missing copy affordance.
+  root.querySelectorAll<HTMLButtonElement>(".codeblock__copy").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const code = btn.parentElement?.querySelector("code")?.textContent ?? "";
+      copyAndPulse(btn, code, "Copied");
+    });
+  });
+}
+
+function tocBlock(s: Skill): string {
+  // Build a small table of contents. Skip a section if it
+  // wouldn't render anything (no inputs / no When-NOT-to-use /
+  // no Example body). Output is always present; When to use
+  // is required by the schema.
+  const has = {
+    wtu: true,
+    inputs: s.inputs.length > 0,
+    output: true,
+    prompt: extractPromptText(s).length > 0,
+    wnot: hasH1Section(s.body, "When NOT to use"),
+    example: hasH1Section(s.body, "Example"),
+  };
+  const items: { id: string; label: string }[] = [];
+  if (has.wtu)      items.push({ id: "when-to-use",      label: "When to use" });
+  if (has.inputs)   items.push({ id: "inputs",           label: "Inputs" });
+  if (has.output)   items.push({ id: "output",           label: "Output" });
+  if (has.prompt)   items.push({ id: "prompt",           label: "Prompt" });
+  if (has.wnot)     items.push({ id: "when-not-to-use",  label: "When NOT to use" });
+  if (has.example)  items.push({ id: "example",          label: "Example" });
+  if (items.length <= 3) return "";  // not useful for very short pages
+  return `
+    <nav class="toc" aria-label="On this page">
+      <strong>On this page</strong>
+      <ol>${items.map(i => `<li><a href="#${i.id}" data-link>${escHtml(i.label)}</a></li>`).join("")}</ol>
+    </nav>
+  `;
+}
+
+function hasH1Section(body: string, h1: string): boolean {
+  return body.split("\n").some(l => l.trim() === `# ${h1}`);
 }
 
 function platformChips(p: string[]): string {
@@ -153,7 +197,11 @@ function mdToHtml(src: string): string {
         i++;
       }
       i++; // skip closer
-      out += `<pre><code data-lang="${escAttr(lang)}">${escHtml(buf.join("\n"))}</code></pre>`;
+      // Wrap in a codeblock div with a per-block copy button.
+      // The handler is attached after innerHTML is set in
+      // renderDetail(). N9: body code blocks had no copy affordance
+      // (only the dedicated prompt block did).
+      out += `<div class="codeblock"><pre><code data-lang="${escAttr(lang)}">${escHtml(buf.join("\n"))}</code></pre><button class="codeblock__copy" type="button" aria-label="Copy code">Copy</button></div>`;
       continue;
     }
     if (/^#{1,6}\s+/.test(line)) {

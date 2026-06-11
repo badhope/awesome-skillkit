@@ -204,7 +204,11 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
     if platforms is not None and not isinstance(platforms, list):
         report.err(path, "platforms must be a list if set")
     elif isinstance(platforms, list) and platforms and not has_platform_disclaimer(body, platforms):
-        report.err(path, f"platforms={platforms} but body has no '**{platforms[0]}-only**' disclaimer in first 800 chars")
+        # Bug bait: don't say "**{platforms[0]}-only**" — the checker
+        # only requires ONE of the listed platforms to have the
+        # disclaimer, but the message should match the requirement,
+        # not pin a specific platform.
+        report.err(path, f"platforms={platforms} but body has no '**<one of {platforms}>-only**' disclaimer in first 800 chars")
 
     # source
     src = fm.get("source")

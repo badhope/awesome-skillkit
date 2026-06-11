@@ -194,8 +194,10 @@ agent 上都能跑。如果有部分内容只对 Claude 有效，
 9. ✅ build 前端：`index.html` 1.55 KB + `index.js` 114 KB
    (36 KB gzipped)
 10. ✅ 写新 README + 中文版
-11. ⏳ tag v1.0.0（v1.0 之前要确保至少一份带 `platforms:` 的技能，
-    验证平台标记流程端到端可用；目前 5 条全是 vendor-neutral）
+11. ⏳ tag v1.0.0（v1.0 之前要确保：35 条技能全 0/0/0、
+    `pages.yml` 部署成功一次、`SOURCE.md` 收齐 8 个上游仓库
+    的 29 条技能 / 91 条跳过原因。**阻塞**：等用户
+    `git push` 指令（commit `ba320ee` 之后没推））
 
 ## 怎么算做完了
 
