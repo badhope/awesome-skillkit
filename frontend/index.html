@@ -4,17 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <title>AI-SKILL</title>
-    <meta
-      name="description"
-      content="A vendor-neutral vault of agent skills. Drop into Claude, Codex, Cursor, or any Markdown-reading agent."
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161514" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="A vendor-neutral vault of agent skills. 35 SKILL.md files sourced from deepeval, promptfoo, langfuse, openai, letta, huggingface, anthropics, and hand-written. Drop into Claude, Codex, Cursor, or any Markdown-reading agent." />
+    <meta property="og:title" content="AI-SKILL · vendor-neutral skill vault" />
+    <meta property="og:description" content="35 SKILL.md files. No tracking. No signup. Just markdown." />
+    <meta property="og:type" content="website" />
+    <title>AI-SKILL · vendor-neutral skill vault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
     />
-    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" crossorigin src="/src/main.ts"></script>
+    <link rel="stylesheet" crossorigin href="/src/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="topbar">
-      <a class="topbar__brand" href="#/" data-link>AI-SKILL</a>
+      <a class="topbar__brand" href="#/" data-link>
+        <span class="topbar__mark" aria-hidden="true">▮</span>
+        <span>AI-SKILL</span>
+      </a>
       <nav class="topbar__nav">
         <a href="#/bundle" data-link>Bundle</a>
         <a
@@ -27,21 +39,41 @@
     </header>
     <main id="main" class="main">
       <noscript>
-        <p class="empty">
-          This page is a small JavaScript app — without JS you only get this
-          notice. Enable JavaScript, or
-          <a href="https://github.com/badhope/AI-SKILL">browse the source on
-          GitHub</a> for plain SKILL.md files.
-        </p>
+        <div class="container-wide">
+          <p class="empty">
+            This page is a small JavaScript app — without JS you only get
+            this notice. Enable JavaScript, or
+            <a href="https://github.com/badhope/AI-SKILL"
+              >browse the source on GitHub</a
+            >
+            for plain SKILL.md files.
+          </p>
+        </div>
       </noscript>
     </main>
     <footer class="footer">
-      <span>MIT</span>
-      <span>·</span>
-      <span>vendor-neutral</span>
-      <span>·</span>
-      <span>no tracking</span>
+      <div class="footer__row">
+        <span class="footer__brand">
+          <span class="footer__mark" aria-hidden="true">▮</span>
+          AI-SKILL
+        </span>
+        <span>MIT</span>
+        <span>·</span>
+        <span>vendor-neutral</span>
+        <span>·</span>
+        <span>no tracking</span>
+        <span>·</span>
+        <span>static site, no JS app-shell needed beyond the router</span>
+      </div>
+      <div class="footer__row">
+        <a href="https://github.com/badhope/AI-SKILL" rel="noopener noreferrer" target="_blank">Source on GitHub</a>
+        <span>·</span>
+        <a href="https://github.com/badhope/AI-SKILL/blob/main/SOURCE.md" rel="noopener noreferrer" target="_blank">SOURCE.md</a>
+        <span>·</span>
+        <a href="https://github.com/badhope/AI-SKILL/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contributing</a>
+        <span>·</span>
+        <a href="https://github.com/badhope/AI-SKILL/blob/main/CHANGELOG.md" rel="noopener noreferrer" target="_blank">Changelog</a>
+      </div>
     </footer>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

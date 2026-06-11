@@ -55,4 +55,17 @@ export interface Skill {
   updated: string;
   needs_review: boolean;
   body: string; // Markdown body (everything after the `---` closer)
+  // Provenance block. Every skill is expected to have one, but
+  // hand-written skills may leave the upstream `commit` as
+  // "n/a". Optional in the type so the UI can degrade gracefully.
+  source?: SkillSource;
+}
+
+export interface SkillSource {
+  url: string;
+  ref?: string;
+  commit?: string;
+  license?: string;
+  fetched_at?: string;
+  original_path?: string;
 }

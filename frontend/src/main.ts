@@ -6,7 +6,7 @@
 // site; clean URLs would need server rewrites.
 
 import { renderList } from "./pages/list";
-import { renderDetail } from "./pages/detail";
+import { renderDetail, renderNotFound } from "./pages/detail";
 import { renderBundle } from "./pages/bundle";
 import type { Skill, SkillIndex } from "./types";
 
@@ -58,10 +58,10 @@ async function route() {
       const skill = await loadSkill(slug);
       if (skill) {
         document.title = `${skill.name} — AI-SKILL`;
-        await renderDetail(mainEl, skill);
+        await renderDetail(mainEl, skill, idx);
       } else {
         document.title = "Not found — AI-SKILL";
-        mainEl.innerHTML = `<div class="empty">Skill <code>${escapeHtml(slug)}</code> not found. <a href="#/" data-link>Back to list</a>.</div>`;
+        renderNotFound(mainEl, slug, idx);
       }
     } else {
       document.title = "AI-SKILL";

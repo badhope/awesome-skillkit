@@ -7,13 +7,18 @@
 // section set is small, and adding marked.js would blow the
 // 50 KB JS budget.
 
-import type { Skill } from "../types";
+import type { Skill, SkillIndex, SkillIndexEntry, SkillSource } from "../types";
 
-export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
+export async function renderDetail(
+  root: HTMLElement,
+  s: Skill,
+  index: SkillIndex,
+): Promise<void> {
   // Compute once, used both in the template (to disable the
   // button when the prompt section is missing) and in the click
   // handler below.
   const promptText = extractPromptText(s);
+  const related = pickRelated(s, index, 3);
   root.innerHTML = `
     <div class="container-read detail">
       <a class="back-link" href="#/" data-link>← back to list</a>
@@ -28,7 +33,8 @@ export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
         <span>${escHtml(s.category)}</span>
         ${platformChips(s.platforms)}
       </p>
-      <p>${escHtml(s.description)}</p>
+      <p class="detail__lead">${escHtml(s.description)}</p>
+      ${sourceBlock(s)}
       ${zhBlock(s)}
       ${tocBlock(s)}
       <h2 id="when-to-use">When to use</h2>
@@ -45,6 +51,7 @@ export async function renderDetail(root: HTMLElement, s: Skill): Promise<void> {
       <div id="wnot-body"></div>
       <h2 id="example">Example</h2>
       <div id="example-body"></div>
+      ${relatedBlock(related)}
     </div>
   `;
   // Wire actions
@@ -376,4 +383,171 @@ function escHtml(s: string): string {
 }
 function escAttr(s: string): string {
   return escHtml(s);
+}
+
+// ============================ source block ============================
+//
+// Show the upstream provenance inline: vendor + commit + url + license.
+// This is the part that makes the vault trustworthy — every skill
+// can be traced back to a specific upstream commit.
+//
+// If `source` is missing entirely (hand-written skill, or older
+// skill that pre-dates the field), we render a quieter "origin:
+// local" block instead of nothing.
+
+function sourceBlock(s: Skill): string {
+  const src = s.source;
+  if (!src) {
+    return `
+      <div class="source-block">
+        <span class="source-block__label">origin</span>
+        <span class="source-block__author">${escHtml(s.author || "local")}</span>
+        <span class="source-block__commit">no upstream · hand-written</span>
+      </div>
+    `;
+  }
+  const host = sourceHost(src.url);
+  const commit = src.commit && src.commit !== "n/a" ? src.commit : null;
+  const shortCommit = commit ? commit.slice(0, 7) : null;
+  // commitLinkHtml uses the narrowed `commit` value directly,
+  // keeping the type checker happy without an extra non-null `!`.
+  const commitLinkHtml = commit && shortCommit
+    ? `<a class="source-block__commit" href="${escAttr(commitUrl(src))}" rel="noopener noreferrer" target="_blank" title="${escAttr(commit)}">${escHtml(shortCommit)}</a>`
+    : `<span class="source-block__commit">no commit</span>`;
+  return `
+    <div class="source-block">
+      <span class="source-block__label">source</span>
+      <a class="source-block__author" href="${escAttr(src.url)}" rel="noopener noreferrer" target="_blank">${escHtml(host)}</a>
+      ${commitLinkHtml}
+      ${src.license ? `<span class="source-block__commit">${escHtml(src.license)}</span>` : ""}
+      ${src.fetched_at ? `<span class="source-block__commit">fetched ${escHtml(src.fetched_at)}</span>` : ""}
+    </div>
+  `;
+}
+
+function sourceHost(url: string): string {
+  // Try to extract a clean host. e.g. "https://github.com/foo/bar/tree/main/..."
+  // → "github.com/foo/bar". Fall back to the raw url.
+  try {
+    const u = new URL(url);
+    const parts = u.pathname.split("/").filter(Boolean);
+    if (parts.length >= 2) return `${u.hostname}/${parts[0]}/${parts[1]}`;
+    return u.hostname;
+  } catch {
+    return url;
+  }
+}
+
+function commitUrl(src: SkillSource): string {
+  // We don't have a generic "blob at commit" URL — it depends on
+  // the host. For GitHub we know the pattern; for anything else
+  // we link the repo root. The original_path (if any) is captured
+  // in the frontmatter but we don't try to splice it in client-side
+  // — getting it wrong is worse than getting it absent.
+  const url = src.url;
+  if (!src.commit || src.commit === "n/a") return url;
+  if (url.includes("github.com")) {
+    // If the URL already has /tree/<ref>/, replace <ref> with the
+    // commit; otherwise append /tree/<commit>.
+    const m = url.match(/^(https?:\/\/github\.com\/[^/]+\/[^/]+)(\/.*)?$/);
+    if (m) {
+      return `${m[1]}/tree/${src.commit}${m[2] ?? ""}`;
+    }
+  }
+  return url;
+}
+
+// ============================ related skills ============================
+//
+// Pick up to N other skills in the same category, excluding the
+// current one. Sorted to keep the order stable across renders.
+// The point is "if you liked this, you'll probably want one of
+// these" — a light recommendation, not a heavy graph.
+
+function pickRelated(s: Skill, index: SkillIndex, n: number): SkillIndexEntry[] {
+  const out: SkillIndexEntry[] = [];
+  for (const e of index.skills) {
+    if (e.slug === s.slug) continue;
+    if (e.category !== s.category) continue;
+    out.push(e);
+  }
+  return out.slice(0, n);
+}
+
+function relatedBlock(related: SkillIndexEntry[]): string {
+  if (related.length === 0) return "";
+  const cards = related.map(e => `
+    <a class="skill-card skill-card--inline" href="#/skill/${escAttr(e.slug)}" data-link>
+      <div class="skill-card__head">
+        <span class="skill-card__slug">${escHtml(e.slug)}</span>
+        <span class="skill-card__name">${escHtml(e.name)}</span>
+      </div>
+    </a>
+  `).join("");
+  return `
+    <section class="related" aria-label="related skills">
+      <h2 class="related__title">More from ${escHtml(related[0]!.category.replace(/-/g, " "))}</h2>
+      <div class="related__grid">${cards}</div>
+    </section>
+  `;
+}
+
+// ============================ 404 / not-found ============================
+//
+// Rendered when the URL hash points at a skill slug that isn't
+// in skills.json. The page makes a best-effort to suggest
+// similar slugs so a typo doesn't dead-end the user.
+
+export function renderNotFound(root: HTMLElement, slug: string, index: SkillIndex): void {
+  const suggestions = suggestSlugs(slug, index.skills, 5);
+  const sugHtml = suggestions.length === 0
+    ? ""
+    : `
+      <div class="notfound__suggest">
+        <span class="notfound__suggest-label">did you mean</span>
+        ${suggestions.map(s => `<a class="notfound__chip" href="#/skill/${escAttr(s.slug)}" data-link>${escHtml(s.slug)}</a>`).join(" ")}
+      </div>
+    `;
+  root.innerHTML = `
+    <div class="notfound">
+      <div class="notfound__code">404 · skill not found</div>
+      <h1 class="notfound__title">No skill called <code>${escHtml(slug)}</code></h1>
+      <p class="notfound__sub">It may have been renamed, or the link could be from an older version of the vault. Try the list, or check the spelling below.</p>
+      ${sugHtml}
+      <div class="actions" style="justify-content: center;">
+        <a class="btn btn--primary" href="#/" data-link>← back to the list</a>
+        <a class="btn" href="#/bundle" data-link>open the bundle picker</a>
+      </div>
+    </div>
+  `;
+}
+
+function suggestSlugs(needle: string, haystack: SkillIndexEntry[], n: number): SkillIndexEntry[] {
+  const lower = needle.toLowerCase();
+  // Cheap two-pass: prefix matches first, then contains, then
+  // Levenshtein-ish via shared bigrams. We bail early at n.
+  const scored: { e: SkillIndexEntry; s: number }[] = [];
+  for (const e of haystack) {
+    const hay = e.slug.toLowerCase();
+    let s = 0;
+    if (hay === lower) s = 100;             // exact
+    else if (hay.startsWith(lower)) s = 50; // prefix
+    else if (hay.includes(lower)) s = 25;   // contains
+    else s = sharedBigrams(lower, hay);     // fuzzy
+    if (s > 0) scored.push({ e, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  return scored.slice(0, n).map(x => x.e);
+}
+
+function sharedBigrams(a: string, b: string): number {
+  // Count of two-character windows present in both. Bounded —
+  // 0 means "nothing in common", higher means closer. Used only
+  // for ordering, not for display.
+  if (a.length < 2 || b.length < 2) return 0;
+  const set = new Set<string>();
+  for (let i = 0; i < a.length - 1; i++) set.add(a.slice(i, i + 2));
+  let n = 0;
+  for (let i = 0; i < b.length - 1; i++) if (set.has(b.slice(i, i + 2))) n++;
+  return n;
 }
