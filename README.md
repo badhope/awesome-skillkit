@@ -51,6 +51,10 @@ https://badhope.github.io/AI-SKILL/#/bundle
 
 或者直接看 `skills/` 目录 —— 它就是站点渲染的数据源。
 
+**顶栏右上角可以切 EN / 中文**。除了 `SKILL.md` 正文本身
+不动之外，所有辅助 / 介绍文案都会换。语言选择存在
+`localStorage` 里，刷新也保留；URL 加 `?lang=zh` 也能强切。
+
 ### 装一个技能
 
 ```bash

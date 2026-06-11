@@ -149,6 +149,26 @@
 - 代码块"复制"小按钮（仅 prompt 块有，body 内的代码块没有）— 已加 ✅
 - 这些 v1 都有，README 可考虑补一句
 
+### N13. 站点 UI 国际化（i18n）
+- **状态**：✅ 完成
+- **做法**：
+  - `frontend/src/i18n.ts` 加 80+ 字符串 key，EN 是 source of truth，ZH 是第二份；缺中文时静默回退 EN
+  - `pickZh(obj, field)` / `pickPlatform(p)` 翻译辅助
+  - `applyStaticTranslations()` 自动扫描 `data-i18n` / `data-i18n-aria` / `data-i18n-title` 三种属性钩子
+  - URL `?lang=zh` 同步 + localStorage 持久化（粘性）
+  - 切换语言：订阅 `subscribe()` → 重新跑路由 → 列表 / 详情 / 合集页原地换语言
+- **覆盖范围**（除了 SKILL.md 正文本身不动）：
+  - 列表：hero / 4 个 stat / 搜索框 placeholder / 3 个 select option / 卡片 name+description+category+platform chip+tooltip
+  - 详情：meta-row 分类 / 平台 chip / TOC 标题 / 表格列头 / 各种 section 标题 / 代码块 copy 按钮 / 复制成功提示
+  - 合集：列表 category 列 / 5 个按钮
+  - 404：标题 / 副标题 / 搜索建议标签 / 返回按钮
+  - topbar / footer / noscript / skip-link / lang-toggle aria-label
+- **数据侧**：`scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index，35/35 技能非空
+- **不做的部分**：SKILL.md 正文、`hero.sub` 这种"原文是英文" 的描述字段、meta description、og:title/description（这些是 SEO 用，爬虫通常不跑 JS）
+- **验收**：
+  - `npm run build` 通过
+  - dist 总大小 +2.84 kB（i18n 新 key + pickPlatform）
+
 ### N10. 脚本小修
 - `validate-skill.py:207` 错误消息只说 `platforms[0]`，但循环检了所有平台 — 误导
 - `convert-skill.py:190` 无条件写 `fm["needs_review"] = needs_review`，但 convert 重复跑同一文件第二次应该是 idempotent 写 True — 实际没事
@@ -165,7 +185,6 @@
 ## 不做（明确放弃）
 
 - ❌ CI 矩阵（多 Python 版本、多 Node 版本）— 单一版本够用
-- ❌ 国际化（i18n）— 双语已通过 `name_zh` / `description_zh` 字段做，不必整个站点本地化
 - ❌ 暗色模式切换按钮 — 用 `prefers-color-scheme` 自动切，按钮是 UI noise
 - ❌ 任何运行时框架（React / Vue / Svelte）— vanilla TS 够用
 - ❌ 引入 markdown 库（marked.js）— 6 段自己渲染，5 KB 比 50 KB 香

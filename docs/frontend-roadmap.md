@@ -66,12 +66,43 @@ MIT · vendor-neutral · no tracking
 [GitHub repo] · [SOURCE.md] · [CONTRIBUTING] · [License]
 ```
 
+### F8. 站点 UI 国际化（i18n）
+- **目标**：除了 SKILL.md 正文以外，所有辅助 / 介绍文案都要 EN / 中文可切
+- **状态**：✅ 完成
+- **做法**：
+  - `frontend/src/i18n.ts` —— 80+ 字符串 key，EN 是 source of truth，ZH 是第二份；缺中文时静默回退 EN
+  - `applyStaticTranslations()` 扫 `data-i18n` / `data-i18n-aria` / `data-i18n-title` 三个属性钩子
+  - `pickZh(obj, "name"|"description")` —— 翻译 frontmatter 里的 `name_zh` / `description_zh`
+  - `pickPlatform(p)` —— 翻译平台 chip（claude / codex / cursor / continue）
+  - 列表 / 详情 / 合集三页都有本地化 `CATEGORY_LABELS` 映射（15 个分类，en/zh）
+  - URL `?lang=zh` 同步 + localStorage 持久化（粘性）
+  - 切换语言：`subscribe()` → 重新跑路由 → 当前页原地换语言
+- **覆盖范围**：
+  - 列表：hero / 4 个 stat / 搜索框 placeholder / 3 个 select option / 卡片 name+description+category+platform chip+tooltip
+  - 详情：meta-row 分类 / 平台 chip / TOC 标题 / 表格列头 / 各种 section 标题 / 代码块 copy 按钮 / 复制成功提示
+  - 合集：列表 category 列 / 5 个按钮
+  - 404：标题 / 副标题 / 搜索建议标签 / 返回按钮
+  - topbar / footer / noscript / skip-link / lang-toggle aria-label
+- **数据侧**：`scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index，35/35 技能非空
+- **不做的部分**：SKILL.md 正文、`hero.sub` 这种原本就是英文的描述字段、meta description / og:title / og:description（SEO 字段，爬虫通常不跑 JS）
+
+### F9. 404.html（GH Pages 深链 fallback）
+- **状态**：✅ 完成
+- **做法**：把 `index.html` 复制成 `public/404.html`，加一段内联 IIFE 检测当前 path，把 `/<repo>/skill/foo` 改写到 `/<repo>/#/skill/foo` 再 `location.replace()`
+
+### F10. favicon.svg
+- **状态**：✅ 完成
+- **做法**：`public/favicon.svg` —— 12 px 圆角深色 tile + 橙色 `▮` 品牌条 + `SKILL` 文字；`index.html` / `404.html` 都引用
+
+### F11. sitemap.xml + robots.txt
+- **状态**：✅ 完成
+- **做法**：静态 `public/sitemap.xml`（根 + `#/bundle`，`#/` 优先）+ `public/robots.txt`（全 allow + sitemap 指向）；hash 路由的 skill 详情页不进 sitemap（爬虫不跑 JS，列了也没用）
+
 ## 不做（避免 over-engineer）
 
 - ❌ 引入 React / Vue / 任何运行时框架 —— vanilla TS 够
 - ❌ 引入 marked.js 之类的 markdown 库 —— 自己渲染够用
 - ❌ 引入 Tailwind / PostCSS —— 12 KB CSS 手写就行
-- ❌ 国际化（i18n）—— 双语用 `name_zh` / `description_zh` 字段做
 - ❌ 暗色模式切换按钮 —— `prefers-color-scheme` 自动
 - ❌ 任何运行时数据获取（SSR / ISR）—— GitHub Pages 静态
 - ❌ CDN 自定义字体（用 Google Fonts CDN 即可）
