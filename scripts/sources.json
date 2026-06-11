@@ -2,8 +2,14 @@
   "_meta": {
     "_about": "Batch fetch manifest for scripts/fetch-skill.py.",
     "_note": "Each entry is a SINGLE FILE (not a directory). 'path' is the file path inside the upstream repo. 'out' is the LOCAL output path, relative to the repo root. Files that already exist are skipped unless --overwrite is set. Entries with 'skip: true' are still listed for audit but won't be fetched.",
-    "_status": "draft",
-    "_status_detail": "The 18 README.md targets below were tried on 2026-06-10. None of them are SKILL.md-shaped (they're project READMEs with badges, TOCs, install steps), so none of them landed. The right next step is to find the actual skills/<name>/SKILL.md path inside each repo and replace these entries. Don't re-run the batch until then."
+    "_status": "audit-extended",
+    "_status_detail": "Extended by extend-sources.py on the back of an audit-sources.py run. 32 new entries appended to the 18 original README placeholders. Run fetch-skill.py --all to pull them.",
+    "_audit_skipped": {
+      "denied": 12,
+      "local-clash": 14,
+      "override-skip": 1,
+      "dup-slug": 3
+    }
   },
   "items": [
     {
@@ -149,6 +155,294 @@
       "out": "skills/faiss-readme/SKILL.md",
       "skip": true,
       "skip_reason": "README is not a SKILL.md"
+    },
+    {
+      "source": "anthropics/anthropic-cookbook",
+      "ref": "main",
+      "path": "skills/custom_skills/analyzing-financial-statements/SKILL.md",
+      "out": "skills/analyzing-financial-statements/SKILL.md",
+      "slug": "analyzing-financial-statements",
+      "audit": true,
+      "note": "discovered by audit-sources.py from anthropics/anthropic-cookbook"
+    },
+    {
+      "source": "anthropics/anthropic-cookbook",
+      "ref": "main",
+      "path": "skills/custom_skills/applying-brand-guidelines/SKILL.md",
+      "out": "skills/applying-brand-guidelines/SKILL.md",
+      "slug": "applying-brand-guidelines",
+      "audit": true,
+      "note": "discovered by audit-sources.py from anthropics/anthropic-cookbook"
+    },
+    {
+      "source": "anthropics/anthropic-cookbook",
+      "ref": "main",
+      "path": "skills/custom_skills/creating-financial-models/SKILL.md",
+      "out": "skills/creating-financial-models/SKILL.md",
+      "slug": "creating-financial-models",
+      "audit": true,
+      "note": "discovered by audit-sources.py from anthropics/anthropic-cookbook"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "path": ".windsurf/skills/book-translation/SKILL.md",
+      "out": "skills/book-translation/SKILL.md",
+      "slug": "book-translation",
+      "audit": true,
+      "note": "discovered by audit-sources.py from f/awesome-chatgpt-prompts"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "path": ".windsurf/skills/widget-generator/SKILL.md",
+      "out": "skills/widget-generator/SKILL.md",
+      "slug": "widget-generator",
+      "audit": true,
+      "note": "discovered by audit-sources.py from f/awesome-chatgpt-prompts"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "path": "plugins/claude/prompts.chat/skills/prompt-lookup/SKILL.md",
+      "out": "skills/prompt-lookup/SKILL.md",
+      "slug": "prompt-lookup",
+      "audit": true,
+      "note": "discovered by audit-sources.py from f/awesome-chatgpt-prompts"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "path": "plugins/claude/prompts.chat/skills/skill-lookup/SKILL.md",
+      "out": "skills/skill-lookup/SKILL.md",
+      "slug": "skill-lookup",
+      "audit": true,
+      "note": "discovered by audit-sources.py from f/awesome-chatgpt-prompts"
+    },
+    {
+      "source": "agno-agi/agno",
+      "ref": "main",
+      "path": "cookbook/02_agents/16_skills/sample_skills/git-workflow/SKILL.md",
+      "out": "skills/git-workflow/SKILL.md",
+      "slug": "git-workflow",
+      "audit": true,
+      "note": "discovered by audit-sources.py from agno-agi/agno"
+    },
+    {
+      "source": "agno-agi/agno",
+      "ref": "main",
+      "path": "cookbook/05_agent_os/skills/sample_skills/system-info/SKILL.md",
+      "out": "skills/system-info/SKILL.md",
+      "slug": "system-info",
+      "audit": true,
+      "note": "discovered by audit-sources.py from agno-agi/agno"
+    },
+    {
+      "source": "agno-agi/agno",
+      "ref": "main",
+      "path": "cookbook/frameworks/antigravity/example_agent/skills/haiku/SKILL.md",
+      "out": "skills/haiku/SKILL.md",
+      "slug": "haiku",
+      "audit": true,
+      "note": "discovered by audit-sources.py from agno-agi/agno"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": ".agents/skills/redteam-plugin-development/SKILL.md",
+      "out": "skills/redteam-plugin-development/SKILL.md",
+      "slug": "redteam-plugin-development",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": ".agents/skills/search-params/SKILL.md",
+      "out": "skills/search-params/SKILL.md",
+      "slug": "search-params",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "examples/claude-agent-sdk/plugins/sample-plugin/skills/standards-check/SKILL.md",
+      "out": "skills/standards-check/SKILL.md",
+      "slug": "standards-check",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "examples/openai-agents/skills/discount-review/SKILL.md",
+      "out": "skills/discount-review/SKILL.md",
+      "slug": "discount-review",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "examples/openai-codex-sdk/skills/sample-project/.agents/skills/token-skill/SKILL.md",
+      "out": "skills/token-skill/SKILL.md",
+      "slug": "token-skill",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "plugins/promptfoo/skills/promptfoo-provider-setup/SKILL.md",
+      "out": "skills/promptfoo-provider-setup/SKILL.md",
+      "slug": "promptfoo-provider-setup",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "plugins/promptfoo/skills/promptfoo-redteam-run/SKILL.md",
+      "out": "skills/promptfoo-redteam-run/SKILL.md",
+      "slug": "promptfoo-redteam-run",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "path": "plugins/promptfoo/skills/promptfoo-redteam-setup/SKILL.md",
+      "out": "skills/promptfoo-redteam-setup/SKILL.md",
+      "slug": "promptfoo-redteam-setup",
+      "audit": true,
+      "note": "discovered by audit-sources.py from promptfoo/promptfoo"
+    },
+    {
+      "source": "confident-ai/deepeval",
+      "ref": "main",
+      "path": "skills/deepeval/SKILL.md",
+      "out": "skills/deepeval/SKILL.md",
+      "slug": "deepeval",
+      "audit": true,
+      "note": "discovered by audit-sources.py from confident-ai/deepeval"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/add-model-price/SKILL.md",
+      "out": "skills/add-model-price/SKILL.md",
+      "slug": "add-model-price",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/agent-setup-maintenance/SKILL.md",
+      "out": "skills/agent-setup-maintenance/SKILL.md",
+      "slug": "agent-setup-maintenance",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/analyze-cloud-costs/SKILL.md",
+      "out": "skills/analyze-cloud-costs/SKILL.md",
+      "slug": "analyze-cloud-costs",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/backend-dev-guidelines/SKILL.md",
+      "out": "skills/backend-dev-guidelines/SKILL.md",
+      "slug": "backend-dev-guidelines",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/changelog-writing/SKILL.md",
+      "out": "skills/changelog-writing/SKILL.md",
+      "slug": "changelog-writing",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/datadog-query-recipes/SKILL.md",
+      "out": "skills/datadog-query-recipes/SKILL.md",
+      "slug": "datadog-query-recipes",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/debug-issue-with-datadog/SKILL.md",
+      "out": "skills/debug-issue-with-datadog/SKILL.md",
+      "slug": "debug-issue-with-datadog",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/frontend-browser-review/SKILL.md",
+      "out": "skills/frontend-browser-review/SKILL.md",
+      "slug": "frontend-browser-review",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/linear-bug-triage/SKILL.md",
+      "out": "skills/linear-bug-triage/SKILL.md",
+      "slug": "linear-bug-triage",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/seed-test-data/SKILL.md",
+      "out": "skills/seed-test-data/SKILL.md",
+      "slug": "seed-test-data",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": ".agents/skills/weekly-production-review/SKILL.md",
+      "out": "skills/weekly-production-review/SKILL.md",
+      "slug": "weekly-production-review",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": "web/.agents/skills/vercel-composition-patterns/SKILL.md",
+      "out": "skills/vercel-composition-patterns/SKILL.md",
+      "slug": "vercel-composition-patterns",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "path": "web/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "out": "skills/vercel-react-best-practices/SKILL.md",
+      "slug": "vercel-react-best-practices",
+      "audit": true,
+      "note": "discovered by audit-sources.py from langfuse/langfuse"
     }
   ]
 }

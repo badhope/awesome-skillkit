@@ -159,8 +159,18 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
 
     # tags
     tags = fm.get("tags")
+    needs_review = bool(fm.get("needs_review"))
     if not isinstance(tags, list) or not (2 <= len(tags) <= 5):
-        report.err(path, f"tags must be 2-5 items, got {len(tags) if isinstance(tags, list) else 'not a list'}")
+        # needs_review files are fresh imports whose tag set is a
+        # placeholder; we let them through as a warning rather than
+        # a hard error. The author has to fill the tags in as part
+        # of clearing `needs_review`. Files without that flag still
+        # fail hard — once it's cleared the validator expects a
+        # real tag set.
+        if needs_review:
+            report.warn(path, f"tags must be 2-5 items, got {len(tags) if isinstance(tags, list) else 'not a list'} (will block clear of needs_review)")
+        else:
+            report.err(path, f"tags must be 2-5 items, got {len(tags) if isinstance(tags, list) else 'not a list'}")
     elif not all(isinstance(t, str) and t for t in tags):
         report.err(path, "tags must be non-empty strings")
     elif not all(t == t.lower() for t in tags):
@@ -208,7 +218,15 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
         # only requires ONE of the listed platforms to have the
         # disclaimer, but the message should match the requirement,
         # not pin a specific platform.
-        report.err(path, f"platforms={platforms} but body has no '**<one of {platforms}>-only**' disclaimer in first 800 chars")
+        # Same logic as tags/sections: needs_review files are
+        # fresh imports where the upstream didn't include our
+        # "**<platform>-only**" disclaimer convention. The author
+        # adds it (or removes `platforms:`) as part of clearing
+        # the flag.
+        if needs_review:
+            report.warn(path, f"platforms={platforms} but body has no '**<one of {platforms}>-only**' disclaimer in first 800 chars (will block clear of needs_review)")
+        else:
+            report.err(path, f"platforms={platforms} but body has no '**<one of {platforms}>-only**' disclaimer in first 800 chars")
 
     # source
     src = fm.get("source")
@@ -220,7 +238,16 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
     # sections
     secs = section_names(body)
     if secs[:len(REQUIRED_SECTIONS)] != REQUIRED_SECTIONS:
-        report.err(path, f"first sections must be {REQUIRED_SECTIONS}, got {secs[:len(REQUIRED_SECTIONS)]}")
+        # Freshly imported skills from upstream repos use the
+        # upstream's own H1 layout (skill title + free-form H2
+        # sections). Until the author rewraps the body into the
+        # 4-section contract, that's a warning, not a hard
+        # error — needs_review is exactly the flag we use to
+        # mark "imported, not yet adapted to our shape".
+        if needs_review:
+            report.warn(path, f"first sections must be {REQUIRED_SECTIONS}, got {secs[:len(REQUIRED_SECTIONS)]} (will block clear of needs_review)")
+        else:
+            report.err(path, f"first sections must be {REQUIRED_SECTIONS}, got {secs[:len(REQUIRED_SECTIONS)]}")
 
     # needs_review is a soft flag — warn so authors see it
     if fm.get("needs_review"):

@@ -4,6 +4,93 @@
 # skills/<slug>/SKILL.md and re-run validate-skill.py.
 
 skills:
+  - slug: add-model-price
+    name: add-model-price
+    name_zh:
+    description: Use when editing 
+      worker/src/constants/default-model-prices.json, 
+      packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
+      matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or 
+      Gemini model pricing.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/add-model-price/SKILL.md
+  - slug: agent-setup-maintenance
+    name: agent-setup-maintenance
+    name_zh:
+    description: "Shared workflow for editing Langfuse's repo-owned agent setup under
+      `.agents/`.\nUse when changing AGENTS files, shared skills, `.agents/config.json`,\n\
+      generated shim behavior, provider discovery paths, or install-time agent sync."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/agent-setup-maintenance/SKILL.md
+  - slug: analyze-cloud-costs
+    name: analyze-cloud-costs
+    name_zh:
+    description: "Analyze Langfuse Cloud infrastructure cost structure using Metabase
+      cost\nmarts. Use when asked about cloud spend, AWS versus ClickHouse cost splits,\n\
+      cost drivers by provider/service/usage type/account, daily cost per tracing\n\
+      event, infra cost dashboards, or cost regressions visible in Metabase."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/analyze-cloud-costs/SKILL.md
+  - slug: analyzing-financial-statements
+    name: analyzing-financial-statements
+    name_zh:
+    description: This skill calculates key financial ratios and metrics from 
+      financial statement data for investment analysis
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/analyzing-financial-statements/SKILL.md
+  - slug: applying-brand-guidelines
+    name: applying-brand-guidelines
+    name_zh:
+    description: This skill applies consistent corporate branding and styling to
+      all generated documents including colors, fonts, layouts, and messaging
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/applying-brand-guidelines/SKILL.md
+  - slug: backend-dev-guidelines
+    name: backend-dev-guidelines
+    name_zh:
+    description: Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and 
+      TypeScript monorepo. Use when creating or reviewing tRPC routers, public 
+      REST endpoints, BullMQ queue processors, backend services, middleware, 
+      Prisma or ClickHouse data access, OpenTelemetry instrumentation, Zod 
+      validation, env configuration, or backend tests across web, worker, or 
+      packages/shared.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/backend-dev-guidelines/SKILL.md
+  - slug: book-translation
+    name: book-translation
+    name_zh:
+    description: Translate "The Interactive Book of Prompting" chapters and UI 
+      strings to a new language
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/book-translation/SKILL.md
   - slug: browser-ml-in-js
     name: Browser ML in JavaScript
     name_zh: 浏览器端机器学习（JavaScript）
@@ -22,6 +109,18 @@ skills:
     platforms: []
     needs_review: false
     path: skills/browser-ml-in-js/SKILL.md
+  - slug: changelog-writing
+    name: changelog-writing
+    name_zh:
+    description: "Shared workflow for writing Langfuse changelog entries after a feature
+      is complete.\nUse when a branch is ready for merge and a changelog entry or
+      changelog draft is needed."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/changelog-writing/SKILL.md
   - slug: cli-builder
     name: CLI Builder
     name_zh: CLI 工具构造
@@ -102,6 +201,70 @@ skills:
     platforms: []
     needs_review: false
     path: skills/commit-message-writer/SKILL.md
+  - slug: creating-financial-models
+    name: creating-financial-models
+    name_zh:
+    description: This skill provides an advanced financial modeling suite with 
+      DCF analysis, sensitivity testing, Monte Carlo simulations, and scenario 
+      planning for investment decisions
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/creating-financial-models/SKILL.md
+  - slug: datadog-query-recipes
+    name: datadog-query-recipes
+    name_zh:
+    description: "Langfuse-specific Datadog query recipes for production telemetry
+      research.\nUse when asked to investigate tenant or project activity, public
+      API endpoint\nusage, queue consumer behavior, spans, logs, metrics, or ad hoc
+      production\nquestions across prod-us, prod-eu, prod-hipaa, and prod-jp. This
+      skill is for\nreusable query shapes and measured research; pair it with\ndebug-issue-with-datadog
+      when the task is an incident or root-cause analysis."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/datadog-query-recipes/SKILL.md
+  - slug: debug-issue-with-datadog
+    name: debug-issue-with-datadog
+    name_zh:
+    description: "Debug a user-reported issue, Linear ticket, or incident report by
+      combining\nDatadog (APM, logs, metrics) with the Langfuse repo to establish
+      a\nroot cause. Use when given a Linear issue URL/ID (e.g. LFE-XXXX), a GitHub\n\
+      issue, or a pasted error/report and asked to investigate, root-cause, or\ntriage.
+      Produces a structured analysis — error breakdown, hypothesis-by-class,\nsuggested
+      patches with code references."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/debug-issue-with-datadog/SKILL.md
+  - slug: deepeval
+    name: deepeval
+    name_zh:
+    description: "DeepEval evaluation workflow for AI agents and LLM applications.
+      TRIGGER when the user wants to evaluate or improve an AI agent, tool-using workflow,
+      multi-turn chatbot, RAG pipeline, or LLM app; add evals; generate datasets or
+      goldens; use deepeval generate; use deepeval test run; send results to Confident
+      AI; monitor production; run online evals; inspect traces; or iterate on prompts,
+      tools, retrieval, or agent behavior from eval failures. AI agents are the primary
+      use case. Covers Python SDK, pytest eval suites, CLI generation, traced evals,
+      Confident AI reporting, and agent-driven improvement loops. DO NOT TRIGGER for
+      unrelated generic pytest, non-AI test setup, or non-DeepEval observability work
+      unless the user asks to compare or migrate to DeepEval; for instrumenting an
+      app with DeepEval tracing, @observe, or framework integrations (use the `deepeval-tracing`
+      skill); or for raw OpenTelemetry / OTLP export without the deepeval package
+      (use the `deepeval-otel` skill).\n"
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/deepeval/SKILL.md
   - slug: deepeval-eval-suite
     name: deepeval Pytest Eval Suite
     name_zh: deepeval Pytest 评估套件
@@ -151,6 +314,17 @@ skills:
     platforms: []
     needs_review: false
     path: skills/deepeval-tracing/SKILL.md
+  - slug: discount-review
+    name: discount-review
+    name_zh:
+    description: Inspect the discount policy fixture with a repeatable review 
+      checklist and helper script.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/discount-review/SKILL.md
   - slug: doc-coauthoring
     name: Doc Co-Authoring Workflow
     name_zh: 文档共写工作流
@@ -187,6 +361,19 @@ skills:
     platforms: []
     needs_review: false
     path: skills/embedding-model-training/SKILL.md
+  - slug: frontend-browser-review
+    name: frontend-browser-review
+    name_zh:
+    description: "Shared workflow for browser-based review of user-visible frontend
+      changes in Langfuse.\nUse when a change affects UI behavior, layout, styling,
+      navigation, or browser-visible\nregressions and should be checked with the Playwright
+      MCP server before signoff."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/frontend-browser-review/SKILL.md
   - slug: frontend-large-feature-architecture
     name: Frontend Large-Feature Architecture
     name_zh: 前端大型功能架构
@@ -221,6 +408,16 @@ skills:
     platforms: []
     needs_review: false
     path: skills/frontend-visual-design/SKILL.md
+  - slug: git-workflow
+    name: git-workflow
+    name_zh:
+    description: Git workflow guidance for commits, branches, and pull requests
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/git-workflow/SKILL.md
   - slug: goal-definition
     name: Goal Definition
     name_zh: 目标定义
@@ -238,6 +435,16 @@ skills:
     platforms: []
     needs_review: false
     path: skills/goal-definition/SKILL.md
+  - slug: haiku
+    name: Haiku
+    name_zh:
+    description: 'TODO: write a one-line description'
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/haiku/SKILL.md
   - slug: internal-comms
     name: Internal Comms Authoring
     name_zh: 内部沟通文档写作
@@ -255,6 +462,22 @@ skills:
     platforms: []
     needs_review: false
     path: skills/internal-comms/SKILL.md
+  - slug: linear-bug-triage
+    name: linear-bug-triage
+    name_zh:
+    description: "Deduplicate measured bug or regression evidence against Linear,
+      then either\nadd evidence comments to related existing issues or create concise
+      Linear bug\nissues in Triage. Use when Codex has confirmed evidence from Datadog,\n\
+      benchmarks, traces, timings, flamegraphs, logs, or production measurements and\n\
+      needs Linear search, comments, labels, Datadog links, or bug ticket creation\n\
+      without fix suggestions, but only after a human has approved sharing the\nfindings
+      in Linear."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/linear-bug-triage/SKILL.md
   - slug: llm-pricing-file-update
     name: LLM Model Pricing File Update
     name_zh: LLM 模型价目文件更新
@@ -371,6 +594,18 @@ skills:
     platforms: []
     needs_review: false
     path: skills/pr-yeet/SKILL.md
+  - slug: prompt-lookup
+    name: prompt-lookup
+    name_zh:
+    description: Activates when the user asks about AI prompts, needs prompt 
+      templates, wants to search for prompts, or mentions prompts.chat. Use for 
+      discovering, retrieving, and improving prompts.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/prompt-lookup/SKILL.md
   - slug: promptfoo-evals
     name: promptfoo Eval Suite Author
     name_zh: promptfoo 评估套件作者
@@ -388,6 +623,22 @@ skills:
     platforms: []
     needs_review: false
     path: skills/promptfoo-evals/SKILL.md
+  - slug: promptfoo-provider-setup
+    name: promptfoo-provider-setup
+    name_zh:
+    description: Configure promptfoo providers or redteam targets for hosted 
+      models, live HTTP APIs, Python/JavaScript local scripts, agent SDKs, or 
+      multi-input systems. Use when connecting promptfoo to the system under 
+      test, mapping vars, auth env vars, request bodies, response transforms, or
+      static-code-derived provider wrappers. Do not use for choosing eval 
+      assertions or red team plugins unless a smoke test is needed to verify the
+      connection.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/promptfoo-provider-setup/SKILL.md
   - slug: promptfoo-redteam
     name: promptfoo Redteam Plugin Author
     name_zh: promptfoo Redteam 插件作者
@@ -406,6 +657,37 @@ skills:
     platforms: []
     needs_review: false
     path: skills/promptfoo-redteam/SKILL.md
+  - slug: promptfoo-redteam-run
+    name: promptfoo-redteam-run
+    name_zh:
+    description: Run, rerun, inspect, and QA promptfoo redteam scans from 
+      generated redteam YAML or an existing redteam setup config. Use when 
+      executing `promptfoo redteam eval` or `promptfoo redteam run`, exporting 
+      results, triaging attack success rate, grader failures, target errors, 
+      filter/rerun commands, reports, or CI gates. Do not use for initial 
+      provider wiring or for choosing plugins and strategies before generation.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/promptfoo-redteam-run/SKILL.md
+  - slug: promptfoo-redteam-setup
+    name: promptfoo-redteam-setup
+    name_zh:
+    description: 'Create or refine promptfoo redteam setup configs: purpose, targets,
+      plugins, strategies, frameworks, multi-input target inputs, policy text, grader
+      guidance, contexts, and static-code-derived target/threat mapping. Use when
+      preparing a red team scan plan from live probes, code evidence, or provider
+      configs, or when generating adversarial test cases for QA. Do not use for basic
+      provider wiring alone or for running/evaluating an already-generated redteam
+      scan.'
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/promptfoo-redteam-setup/SKILL.md
   - slug: react-router-search-params
     name: React Router Search Param State
     name_zh: React Router 搜索参数/哈希状态管理
@@ -439,6 +721,30 @@ skills:
     platforms: []
     needs_review: false
     path: skills/realtime-eval-bootstrap/SKILL.md
+  - slug: redteam-plugin-development
+    name: redteam-plugin-development
+    name_zh:
+    description: Standards for creating redteam plugins and graders. Use when 
+      creating new plugins, writing graders, or modifying attack templates.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/redteam-plugin-development/SKILL.md
+  - slug: search-params
+    name: search-params
+    name_zh:
+    description: URL search param and hash state management. Use when adding or 
+      modifying URL search params, working with useSearchParams, 
+      setSearchParams, useSearchParamState, or navigate() with query strings or 
+      hash fragments, or fixing browser back/forward button issues.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/search-params/SKILL.md
   - slug: secure-code-by-language
     name: Secure Code by Language
     name_zh: 按语言的安全编码指南
@@ -476,6 +782,21 @@ skills:
     platforms: []
     needs_review: false
     path: skills/security-review/SKILL.md
+  - slug: seed-test-data
+    name: seed-test-data
+    name_zh:
+    description: "Seed local Langfuse test data with one command: large/branching
+      observation\ntrees (v3 and v4 events), long sessions, bulk traces for list performance.\n\
+      Use whenever a task needs ClickHouse/Postgres test data — e.g. \"seed a\ncomplex
+      trace\", \"make a tough session\", \"fill the trace list\", \"test v4\nevents
+      UI\", or when debugging trace/session/list rendering or performance.\nNever
+      write ad-hoc seed scripts or raw ClickHouse inserts."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/seed-test-data/SKILL.md
   - slug: skill-creator
     name: Skill Authoring Loop
     name_zh: 技能编写迭代流程
@@ -493,6 +814,20 @@ skills:
     platforms: []
     needs_review: false
     path: skills/skill-creator/SKILL.md
+  - slug: skill-lookup
+    name: skill-lookup
+    name_zh:
+    description: "Search, retrieve, and install Agent Skills from the prompts.chat
+      registry using MCP tools. Use when the user asks to find skills, browse skill
+      catalogs, install a skill for Claude, or extend Claude's capabilities with reusable
+      AI agent components.\n"
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms:
+      - claude
+    needs_review: true
+    path: skills/skill-lookup/SKILL.md
   - slug: sql-query-helper
     name: SQL Query Helper
     name_zh: SQL 查询助手
@@ -507,6 +842,16 @@ skills:
     platforms: []
     needs_review: false
     path: skills/sql-query-helper/SKILL.md
+  - slug: standards-check
+    name: Standards Check
+    name_zh:
+    description: Checks that a project follows standard conventions
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/standards-check/SKILL.md
   - slug: storybook
     name: Storybook Component Stories
     name_zh: Storybook 组件故事编写
@@ -524,6 +869,16 @@ skills:
     platforms: []
     needs_review: false
     path: skills/storybook/SKILL.md
+  - slug: system-info
+    name: system-info
+    name_zh:
+    description: Get system information using executable scripts
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/system-info/SKILL.md
   - slug: test-generator
     name: Unit Test Generator
     name_zh: 单元测试生成器
@@ -556,6 +911,17 @@ skills:
     platforms: []
     needs_review: false
     path: skills/threat-modeling/SKILL.md
+  - slug: token-skill
+    name: token-skill
+    name_zh:
+    description: Use this skill when the user explicitly asks to use token-skill
+      and wants the special token.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/token-skill/SKILL.md
   - slug: turborepo
     name: Turborepo Monorepo Authoring
     name_zh: Turborepo Monorepo 编写
@@ -573,6 +939,34 @@ skills:
     platforms: []
     needs_review: false
     path: skills/turborepo/SKILL.md
+  - slug: vercel-composition-patterns
+    name: vercel-composition-patterns
+    name_zh:
+    description: React composition patterns that scale. Use when refactoring 
+      components with boolean prop proliferation, building flexible component 
+      libraries, or designing reusable APIs. Triggers on tasks involving 
+      compound components, render props, context providers, or component 
+      architecture. Includes React 19 API changes.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/vercel-composition-patterns/SKILL.md
+  - slug: vercel-react-best-practices
+    name: vercel-react-best-practices
+    name_zh:
+    description: React and Next.js performance optimization guidelines from 
+      Vercel Engineering. This skill should be used when writing, reviewing, or 
+      refactoring React/Next.js code to ensure optimal performance patterns. 
+      Triggers on tasks involving React components, Next.js pages, data 
+      fetching, bundle optimization, or performance improvements.
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/vercel-react-best-practices/SKILL.md
   - slug: webapp-testing
     name: Webapp Testing Harness
     name_zh: Web 应用 Playwright 测试脚手架
@@ -590,3 +984,29 @@ skills:
     platforms: []
     needs_review: false
     path: skills/webapp-testing/SKILL.md
+  - slug: weekly-production-review
+    name: weekly-production-review
+    name_zh:
+    description: "Prepare Langfuse weekly production reviews that explain what broke,
+      what was\nfixed, what remains open, and where alerting or tracking needs cleanup.
+      Use\nwhen asked for a production review, \"what broke last week\", fixed/open
+      bugs,\nDatadog alerted monitors/pages, status-page incidents, incident.io incidents,\n\
+      or an engineering-team overview that combines Linear, Datadog, and customer\n\
+      incident signals."
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/weekly-production-review/SKILL.md
+  - slug: widget-generator
+    name: widget-generator
+    name_zh:
+    description: Generate customizable widget plugins for the prompts.chat feed 
+      system
+    category: uncategorized
+    tags:
+      - needs-tagging
+    platforms: []
+    needs_review: true
+    path: skills/widget-generator/SKILL.md
