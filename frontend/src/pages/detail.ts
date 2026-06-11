@@ -563,6 +563,7 @@ export function renderNotFound(root: HTMLElement, slug: string, index: SkillInde
     `;
   root.innerHTML = `
     <div class="notfound">
+      <div class="notfound__glyph" aria-hidden="true">▮</div>
       <div class="notfound__code">${escHtml(t("nf.code"))}</div>
       <h1 class="notfound__title">${escHtml(t("nf.title", { slug }))}</h1>
       <p class="notfound__sub">${escHtml(t("nf.sub"))}</p>

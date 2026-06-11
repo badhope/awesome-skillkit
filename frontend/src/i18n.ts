@@ -225,6 +225,16 @@ const STRINGS = {
   "noscript.line2":    { en: "Enable JavaScript, or",        zh: "请打开 JavaScript，或者" },
   "noscript.link":     { en: "browse the source on GitHub",  zh: "去 GitHub 浏览源文件" },
   "noscript.line3":    { en: "for plain SKILL.md files.",    zh: "拿原始的 SKILL.md。" },
+
+  // ----- document-level metadata (mirrored to <title>,
+  //       <meta name="description">, and the og:* family
+  //       when the locale flips, so link previews, browser tabs,
+  //       and search-result snippets all match the user's
+  //       language) -----
+  "meta.title":        { en: "AI-SKILL · vendor-neutral skill vault",         zh: "AI-SKILL · 跨平台技能库" },
+  "meta.description":  { en: "A vendor-neutral vault of agent skills. 35 SKILL.md files sourced from deepeval, promptfoo, langfuse, openai, letta, huggingface, anthropics, and hand-written. Drop into Claude, Codex, Cursor, or any Markdown-reading agent.", zh: "一个中立的 agent 技能库，35 份 SKILL.md 收录自 deepeval / promptfoo / langfuse / openai / letta / huggingface / anthropics 以及自写。可直接放进 Claude / Codex / Cursor 或任何读 Markdown 的 agent。" },
+  "meta.ogTitle":      { en: "AI-SKILL · vendor-neutral skill vault",         zh: "AI-SKILL · 跨平台技能库" },
+  "meta.ogDescription":{ en: "35 SKILL.md files. No tracking. No signup. Just markdown.", zh: "35 份 SKILL.md，无追踪、无注册，就是 markdown。" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 type Key = keyof typeof STRINGS;
@@ -276,6 +286,20 @@ export function applyStaticTranslations(): void {
   // Also reflect the language into <html lang="…"> for screen
   // readers and CSS hooks (e.g. `:lang(zh)` if we ever need it).
   document.documentElement.lang = current;
+  // Update the <title> + <meta name="description"> + og:* fields
+  // so link previews / browser tab / search results match the
+  // current locale. These come from i18n keys so adding a new
+  // locale doesn't require touching this function.
+  const titleEl = document.querySelector<HTMLElement>("title[data-i18n]");
+  if (titleEl) titleEl.textContent = t(titleEl.dataset.i18n as Key);
+  const descEl = document.querySelector<HTMLMetaElement>('meta[name="description"][data-i18n]');
+  if (descEl) descEl.setAttribute("content", t(descEl.dataset.i18n as Key));
+  document
+    .querySelectorAll<HTMLMetaElement>('meta[property^="og:"][data-i18n]')
+    .forEach((el) => {
+      const key = el.dataset.i18n as Key | undefined;
+      if (key) el.setAttribute("content", t(key));
+    });
 }
 
 /** Pick the localized version of a skill name/description. */
