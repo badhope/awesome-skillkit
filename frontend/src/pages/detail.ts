@@ -146,8 +146,8 @@ function hasH1Section(body: string, h1: string): boolean {
   return body.split("\n").some(l => l.trim() === `# ${h1}`);
 }
 
-function platformChips(p: string[]): string {
-  if (p.length === 0) {
+function platformChips(p: string[] | undefined): string {
+  if (!p || p.length === 0) {
     return `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`;
   }
   return p.map(x => {
