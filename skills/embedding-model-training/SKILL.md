@@ -1,72 +1,22 @@
 ---
-slug: embedding-model-training
 name: Embedding Model Training
 name_zh: 嵌入模型训练
-version: 0.1.0
-description: Train or fine-tune embedding models — bi-encoder (dense sentence embeddings for retrieval, similarity, clustering, dedup), cross-encoder (pair scoring, reranking, pair classification), and sparse encoder (SPLADE, learned-sparse retrieval). Covers loss selection, hard-negative mining, evaluator choice, Matryoshka / LoRA / distillation trade-offs, and the most common training-time traps.
+description: "|"
 description_zh: 训练或微调嵌入模型 —— 双编码器（密集句向量，用于检索 / 相似度 / 聚类 / 去重）、交叉编码器（pair 评分、重排、二分类）、稀疏编码器（SPLADE、可学习的稀疏向量）。覆盖损失函数选择、难负样本挖掘、评估器选择、Matryoshka / LoRA / 蒸馏 的权衡，以及训练时最常见的坑。
-
-category: embeddings
-tags: [embeddings, sentence-transformers, bi-encoder, training, fine-tuning]
-platforms: []
-
-inputs:
-  - name: encoder_type
-    type: enum
-    required: true
-    values: [bi-encoder, cross-encoder, sparse-encoder]
-    description: |
-      Which model family to train. Drives loss
-      choices, evaluator choices, and the input
-      data shape.
-  - name: use_case
-    type: enum
-    required: true
-    values: [retrieval, similarity, clustering, classification, paraphrase-mining, dedup, reranking, pair-classification, learned-sparse-retrieval]
-    description: |
-      The end use case. Drives the
-      encoder-type / loss / evaluator
-      combination.
-  - name: data_shape
-    type: enum
-    required: true
-    values: [pairs, triples, labeled-similarity, classification-labels]
-    description: |
-      Shape of the training data:
-      `pairs` = (a, b, label), `triples` =
-      (anchor, positive, negative),
-      `labeled-similarity` = (a, b, score),
-      `classification-labels` = (text, label).
-  - name: training_scale
-    type: enum
-    required: false
-    values: [laptop, single-gpu, multi-gpu, hf-jobs]
-    default: single-gpu
-    description: |
-      Where the training will run. Drives
-      precision / batch / parallelization choices.
-
-output:
-  format: markdown
-  description: |
-    A `## Plan` block (encoder type → loss →
-    evaluator → base model), a `## Data shape`
-    block, a `## Training script skeleton` block,
-    a `## Footguns` block, and a `## Evaluate`
-    block listing the evaluators to run.
-
+category: ai
+tags: [ai, backend, documentation, evaluation, frontend]
+source: 
+license: "Apache-2.0"
+language: en
 author: "Hugging Face (downstream pack: badhope)"
-license: Apache-2.0
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/huggingface/skills/tree/main/skills/train-sentence-transformers
-  fetched_at: 2026-06-11
-  commit: d7223848c3895fbd447faf2aec73e0a6cdd7fdcd
-  license: Apache-2.0
-  original_path: skills/train-sentence-transformers/SKILL.md
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

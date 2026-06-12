@@ -1,23 +1,18 @@
 ---
-name: search-params
-description: URL search param and hash state management. Use when adding or 
-  modifying URL search params, working with useSearchParams, setSearchParams, 
-  useSearchParamState, or navigate() with query strings or hash fragments, or 
-  fixing browser back/forward button issues.
-slug: search-params
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
-license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+name: "search-params"
+name_zh: "search-params"
+description: "URL search param and hash state management. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash fragments, or fixing browser back/forward button issues."
+description_zh: "URL search param and hash state 管理. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash fragments, or fixing browser back/forward button issues."
+category: "dev-tools"
+tags: [ai, cli, evaluation, frontend, llm]
+source: 
+language: en
+needs_review: false
 ---
+
+
+
+
 # URL Search Param State Management
 
 ## Decision Framework
@@ -141,3 +136,19 @@ setTab(null);
 - `src/app/src/hooks/useSearchParamState.ts` - primary hook (uses replace internally)
 - `src/app/src/pages/eval/components/ResultsView.tsx` - example of correct `{ replace: true }` usage
 - `src/app/src/pages/redteam/setup/page.tsx` - example of intentional push for wizard steps
+
+# When to use
+
+Use this skill when you need guidance on search-params.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

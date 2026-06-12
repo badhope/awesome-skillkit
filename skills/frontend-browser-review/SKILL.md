@@ -1,23 +1,22 @@
 ---
-name: frontend-browser-review
-description: "Shared workflow for browser-based review of user-visible frontend changes
-  in Langfuse.\nUse when a change affects UI behavior, layout, styling, navigation,
-  or browser-visible\nregressions and should be checked with the Playwright MCP server
-  before signoff."
-slug: frontend-browser-review
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "frontend-browser-review"
+name_zh: 前端浏览器审查
+description: "Shared workflow for browser-based review of user-visible frontend changes"
+description_zh: 审查前端代码的浏览器兼容性、性能和可访问性。
+category: "dev-tools"
+tags: [ai, backend, cli, documentation, frontend]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Frontend Browser Review
 
 Use this skill when a change affects what users see or do in the browser.
@@ -86,3 +85,41 @@ Report:
 - For implementation details, stay in `web/AGENTS.md` and package-local skills.
 - Use this as the browser-signoff workflow, not as a generic frontend coding
   guide.
+
+# When to use
+
+Use this skill when you need guidance on frontend browser review.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```bash
+# 1. 启动开发服务器
+pnpm run dev:web
+
+# 2. 安装 Playwright（首次）
+pnpm run playwright:install
+
+# 3. 预填充测试数据
+pnpm run seed -- trace-tree --observations 5000 --v4
+pnpm run seed -- long-session --traces 300
+
+# 4. 使用 Playwright MCP 打开变更页面
+# 在 Playwright MCP 中导航到 seed CLI 输出的深链接
+# 检查响应式布局、加载状态、错误状态
+
+# 5. 检查视觉回归
+# - 布局/间距是否正确
+# - 窄屏下是否正常
+# - 加载/空/错误状态是否完整
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

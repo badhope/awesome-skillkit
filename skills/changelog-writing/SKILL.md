@@ -1,22 +1,22 @@
 ---
-name: changelog-writing
-description: "Shared workflow for writing Langfuse changelog entries after a feature
-  is complete.\nUse when a branch is ready for merge and a changelog entry or changelog
-  draft is needed."
-slug: changelog-writing
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "changelog-writing"
+name_zh: 编写变更日志
+description: Shared workflow for writing Langfuse changelog entries after a feature
+description_zh: 编写清晰、用户友好的变更日志，记录版本更新和改进。
+category: "dev-tools"
+tags: [ai, deployment, documentation, frontend, git]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Changelog Writing
 
 Use this skill when a completed feature branch needs a changelog entry.
@@ -58,3 +58,37 @@ Provide:
 - Changelog destination: `../langfuse-docs/pages/changelog`
 - Recent changelog examples: inspect 3-5 recent files in that directory
 - Existing docs: `../langfuse-docs/pages`
+
+# When to use
+
+Use this skill when you need guidance on changelog writing.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```bash
+# 1. 查看分支变更
+git diff main..HEAD --stat
+
+# 2. 查看最近的changelog格式
+ls ../langfuse-docs/pages/changelog/ | tail -5
+cat ../langfuse-docs/pages/changelog/2024-01-release.md
+
+# 3. 生成changelog草稿
+python scripts/generate-changelog.py \
+  --branch feature/new-dashboard \
+  --output changelog-draft.md
+
+# 4. 检查格式
+python scripts/validate-changelog.py changelog-draft.md
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

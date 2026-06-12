@@ -1,75 +1,23 @@
 ---
-slug: webapp-testing
 name: Webapp Testing Harness
 name_zh: Web 应用 Playwright 测试脚手架
-version: 0.1.0
-description: Test local web apps end-to-end with Playwright + Python. Black-box server lifecycle helper, reconnaissance-then-action DOM inspection, screenshot capture, and the "static HTML vs dynamic SPA" decision tree.
-description_zh: 用 Playwright + Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察-行动模式、截图捕获，以及"静态 HTML vs 动态 SPA"决策树。
-
-category: browser-automation
-tags: [playwright, testing, web, e2e, python]
-platforms: []
-
-inputs:
-  - name: target_url
-    type: string
-    required: true
-    description: |
-      URL the script should hit. `file:///abs/path/to/index.html` for
-      a static HTML file, or `http://localhost:5173` for a dev server.
-  - name: servers
-    type: array
-    required: false
-    items:
-      type: object
-      properties:
-        command: { type: string, description: "Shell command to start the server" }
-        port: { type: integer, description: "Port the server will listen on" }
-    description: |
-      List of servers to manage alongside the test. The helper starts
-      them in order, waits for the port to accept connections, runs
-      your script, then tears them down. Omit when the server is
-      already running or the target is a static file.
-  - name: headless
-    type: boolean
-    required: false
-    default: true
-    description: |
-      `true` for CI and unattended runs. Set `false` only when you
-      genuinely need to see the browser — usually you want
-      screenshots instead.
-  - name: selectors
-    type: array
-    required: false
-    items: { type: string }
-    description: |
-      Pre-known selectors (e.g. `text=Submit`,
-      `role=button[name="Save"]`). The script uses these directly.
-      Empty list triggers a reconnaissance pass first.
-
-output:
-  format: text
-  description: |
-    Plain-text summary of the test run: which selectors were
-    discovered (or supplied), the sequence of actions, screenshots
-    taken, and the pass/fail outcome. The harness is the deliverable.
-  schema:
-    type: object
-    properties:
-      script_path: { type: string }
-      screenshots: { type: array, items: { type: string } }
-      result: { type: string, enum: [pass, fail, error] }
-      failure_reason: { type: string }
-
-author: "Anthropic (downstream pack: badhope)"
+description: "|"
+description_zh: "用 Playwright + Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察-行动模式、截图捕获，以及"静态 HTML vs 动态 SPA"决策树。"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: Complete terms in LICENSE.txt
-source:
-  url: https://github.com/anthropics/skills/tree/main/skills/webapp-testing
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Anthropic (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

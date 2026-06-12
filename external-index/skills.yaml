@@ -1429,7 +1429,7 @@ skills:
     stars: 116174
     license: MIT
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: ollama
     title: Ollama
     title_zh: Ollama
@@ -1542,7 +1542,7 @@ skills:
     stars: 14479
     license: Apache-2.0
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: trl
     title: TRL
     title_zh: TRL
@@ -1622,7 +1622,7 @@ skills:
     stars: 4220
     license: MIT
     added: '2026-06-04'
-    pushed_at: '2026-06-09'
+    pushed_at: '2026-06-03'
   - slug: mcp-servers
     title: MCP Servers
     title_zh: MCP Servers
@@ -1656,7 +1656,7 @@ skills:
     stars: 9253
     license: Apache-2.0
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: composio
     title: Composio
     title_zh: Composio
@@ -1675,7 +1675,7 @@ skills:
     stars: 28735
     license: MIT
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: langflow
     title: Langflow
     title_zh: Langflow
@@ -1879,7 +1879,7 @@ skills:
     stars: 24820
     license: Apache-2.0
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: continue
     title: Continue
     title_zh: Continue
@@ -2137,7 +2137,7 @@ skills:
     stars: 2519
     license: Apache-2.0
     added: '2026-06-04'
-    pushed_at: '2026-06-12'
+    pushed_at: '2026-06-09'
   - slug: mem0
     title: Mem0
     title_zh: Mem0
@@ -2239,7 +2239,7 @@ skills:
     stars: 6026
     license: Apache-2.0
     added: '2026-06-04'
-    pushed_at: '2026-06-11'
+    pushed_at: '2026-06-08'
   - slug: chainlit
     title: Chainlit
     title_zh: Chainlit

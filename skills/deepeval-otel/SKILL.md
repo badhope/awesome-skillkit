@@ -1,73 +1,23 @@
 ---
-slug: deepeval-otel
 name: deepeval OTel Trace Export
-name_zh: deepeval OTel Trace 导出
-version: 0.1.0
-description: Send OpenTelemetry traces from any AI app to Confident AI's hosted Observatory. No deepeval Python package required — works with any OTLP-capable OpenTelemetry SDK in any language.
-description_zh: 用 OpenTelemetry 把 AI 应用的 trace 推到 Confident AI 托管的 Observatory。不依赖 deepeval 包，任何语言的 OTel SDK 都能用。
-
-category: observability
-tags: [opentelemetry, otlp, tracing, eval, observability]
-platforms: []
-
-inputs:
-  - name: otel_endpoint
-    type: string
-    required: true
-    description: |
-      Confident AI OTLP/HTTP endpoint. Pick the region matching the
-      API key prefix:
-        - US key prefix → https://otel.confident-ai.com
-        - EU key prefix → https://otel.eu.confident-ai.com
-      gRPC is NOT supported. Always use OTLP/HTTP.
-  - name: confident_api_key
-    type: string
-    required: true
-    description: |
-      `CONFIDENT_API_KEY` from the Confident AI dashboard. Sent in
-      the `x-confident-api-key` HTTP header on every span export.
-  - name: ai_components
-    type: array
-    required: true
-    items:
-      type: string
-      enum: [agent, llm, retriever, tool]
-    description: |
-      Which AI components to instrument. The skill only applies to
-      AI applications (LLM calls, agent loops, retrieval, tool
-      calls). Non-AI infrastructure (web servers, DB, cron) is
-      explicitly out of scope.
-  - name: app_language
-    type: string
-    required: true
-    description: |
-      Application language. Affects which OTel SDK + exporter to
-      pull in. The skill is language-agnostic; the attribute keys
-      are identical in every language.
-
-output:
-  format: text
-  description: |
-    Confirmation that spans are landing in Confident AI's
-    Observatory, with the trace URL and a per-component breakdown
-    (LLM calls, agent steps, retrievers, tools). No structured
-    payload — Confident AI is the system of record, not this skill.
-  schema:
-    type: object
-    properties:
-      trace_url: { type: string, description: Link to the trace in Confident AI }
-      span_counts: { type: object, description: Per-type span count (llm / agent / retriever / tool) }
-      next_steps:  { type: array, items: { type: string }, description: Suggested follow-up actions }
-
+name_zh: DeepEval OpenTelemetry
+description: "Suggested follow-up actions"
+description_zh: 使用 OpenTelemetry 集成 DeepEval 进行 LLM 应用的可观测性。
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
+license: "Apache-2.0"
+language: en
 author: "Confident AI (downstream pack: badhope)"
-license: Apache-2.0
-source:
-  url: https://github.com/confident-ai/deepeval/tree/main/skills/deepeval-otel
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

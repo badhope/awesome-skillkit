@@ -1,69 +1,23 @@
 ---
-slug: pnpm-upgrade-package
 name: PNPM Upgrade Package
 name_zh: pnpm 升级依赖
-version: 0.1.0
-description: "Upgrade pnpm workspace dependencies to target or latest version — direct and transitive bumps, release-age checks, scoped overrides, lockfile and dedupe verification. Covers the four 'do not' traps: manual lockfile edits, permanent overrides, silent latest, dedupe churn."
+description: "|"
 description_zh: 把 pnpm workspace 依赖升级到目标或最新版本 —— 直系与传递依赖 bump、发布时效检查、作用域 override、lockfile 与 dedupe 校验。覆盖四个"不要"陷阱：手编 lockfile、永久 override、静默升级 latest、dedupe 引入无关 churn。
-
-category: dev-tools
-tags: [pnpm, npm, dependency-management, monorepo]
-platforms: []
-
-inputs:
-  - name: package
-    type: string
-    required: true
-    description: |
-      Package name to upgrade (e.g. `next`, `zod`,
-      `@types/node`).
-  - name: target_version
-    type: string
-    required: false
-    description: |
-      Target version. If omitted, ask the user. Do not
-      silently upgrade to latest.
-  - name: workspace_filter
-    type: string
-    required: false
-    description: |
-      Optional pnpm filter (e.g. `--filter web`, `--filter
-      !docs`) to scope the bump. Default: root + all
-      workspaces that should move together.
-  - name: release_age_window_days
-    type: integer
-    required: false
-    description: |
-      Override the project's `minimumReleaseAge` window
-      (in days). Default: read from `pnpm-workspace.yaml`.
-
-output:
-  format: text
-  description: |
-    Step-by-step record of what was changed: which
-    workspace's manifest, which lockfile diff, the
-    release-age check result, the dedupe outcome, and
-    the final `pnpm why` confirmation. No JSON envelope
-    — the report is a recipe the next bump can follow.
-  schema:
-    type: object
-    properties:
-      steps_run: { type: array, items: { type: string } }
-      manifest_diffs: { type: array, items: { type: string } }
-      release_age_check: { type: string, enum: [pass, blocked, not-run] }
-      lockfile_diff_lines: { type: integer }
-      dedupe_outcome: { type: string, enum: [clean, churn-reverted, n/a] }
-      final_pnpm_why: { type: string, description: "Top-line of the final pnpm why output" }
-
-author: "Langfuse (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, cli, deployment, documentation]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/pnpm-upgrade-package
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

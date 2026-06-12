@@ -1,66 +1,23 @@
 ---
-slug: internal-comms
 name: Internal Comms Authoring
 name_zh: 内部沟通文档写作
-version: 0.1.0
-description: Write the seven common internal communication types — 3P update, status report, leadership update, project update, incident report, FAQ answer, company newsletter. Each has a structure, a tone, and a "what to gather first" list. Generic to any company.
+description: "|"
 description_zh: 写七种常见的内部沟通文档 —— 3P update、status report、领导汇报、项目进展、incident report、FAQ answer、公司 newsletter。每种有结构、语气、提前要收集的素材清单。通用，适用于任何公司。
-
-category: documentation
-tags: [writing, communication, status-report, incident, faq]
-platforms: []
-
-inputs:
-  - name: comm_type
-    type: enum
-    required: true
-    values: [3p-update, status-report, leadership-update, project-update, incident-report, faq-answer, company-newsletter, general-comms]
-    description: |
-      The type of internal communication. Drives the
-      structure, tone, and gather list.
-  - name: audience
-    type: enum
-    required: true
-    values: [team, leadership, company, cross-team, customers, external]
-    description: |
-      Who reads this. Drives depth, tone, and
-      what-not-to-include.
-  - name: period
-    type: string
-    required: false
-    description: |
-      Time window the comm covers (e.g. "week of
-      2026-06-08", "Q2 2026", "incident 2026-06-09").
-  - name: raw_inputs
-    type: array
-    required: false
-    items: { type: string }
-    description: |
-      Source material: standup notes, PR descriptions,
-      Linear issue summaries, Slack threads, metric
-      exports. The skill pulls structure from these.
-
-output:
-  format: text
-  description: |
-    The drafted comm, with a short "what I left out
-    and why" block at the end. No JSON envelope.
-  schema:
-    type: object
-    properties:
-      draft: { type: string, description: "The drafted comm, formatted in the comm type's template" }
-      gather_checklist: { type: array, items: { type: string } }
-      left_out: { type: array, items: { type: string }, description: "What the LLM chose not to include and why" }
-
-author: "Anthropic (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, deployment]
+source: 
+ref: main
 license: Complete terms in LICENSE.txt
-source:
-  url: https://github.com/anthropics/skills/tree/main/skills/internal-comms
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Anthropic (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

@@ -1,71 +1,22 @@
 ---
-slug: threat-modeling
 name: Repository Threat Model
 name_zh: 仓库威胁建模
-version: 0.1.0
-description: Build a repository-grounded threat model — scope the system, draw trust boundaries, list assets, enumerate abuse paths tied to assets, prioritize with explicit likelihood × impact reasoning, validate assumptions. Anchors every claim to evidence in the repo, not a generic checklist.
+description: "|"
 description_zh: 写一份基于仓库证据的威胁建模 —— 划定系统范围、画出信任边界、列出资产、枚举绑定到资产的滥用路径、用显式 likelihood × impact 推理排优先级、最后验证假设。每一句结论都要在仓库里找到证据，别写通用检查表。
-
-category: guardrails
-tags: [security, threat-model, appsec, review, architecture]
-platforms: []
-
-inputs:
-  - name: repo_path
-    type: path
-    required: true
-    description: |
-      Path to the repo (or a sub-path) to model.
-      Skill reads the tree, package manifests, and
-      entry points to anchor every claim.
-  - name: in_scope_paths
-    type: array
-    required: false
-    items:
-      type: path
-    description: |
-      Optional list of paths to include. When
-      omitted, the model uses the whole repo.
-  - name: deployment_model
-    type: enum
-    required: false
-    values: [unknown, server, cli, library, worker, saas, internal-tool]
-    default: unknown
-    description: |
-      How the system runs. Drives which trust
-      boundaries and entry points matter. Pick
-      `unknown` to infer from the repo.
-  - name: existing_assets
-    type: string
-    required: false
-    description: |
-      Optional free-form note of known crown-jewel
-      assets (PII, signing keys, integrity-critical
-      state). Helps the model avoid asking about
-      them.
-
-output:
-  format: markdown
-  description: |
-    A `## Threat Model` markdown report with these
-    sections, in order: Scope, System model,
-    Boundaries, Assets, Threats (each tied to
-    assets, prioritized), Mitigations, Assumptions
-    to confirm. Threat count is small but high
-    quality — not a 50-item checklist.
-
-author: "OpenAI (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model
-  fetched_at: 2026-06-11
-  commit: a8924c2a35cfa290458852c4fad17c9133054c2e
-  license: MIT
-  original_path: skills/.curated/security-threat-model/SKILL.md
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

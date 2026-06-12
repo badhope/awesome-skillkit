@@ -1,62 +1,23 @@
 ---
-slug: storybook
 name: Storybook Component Stories
 name_zh: Storybook 组件故事编写
-version: 0.1.0
-description: Write or review Storybook stories (`.stories.tsx`) for React components — CSF Next, presentational component rule, typed metadata, story naming by state, no MSW. The rule of "one exported component per file" cuts both ways.
+description: "|"
 description_zh: 为 React 组件编写或审查 Storybook 故事（.stories.tsx）—— CSF Next 格式、纯展示组件规则、类型化元数据、故事命名按状态、禁止 MSW。"一个文件一个导出组件"的规则是一把双刃剑。
-
-category: applications
-tags: [storybook, react, testing, components, frontend]
-platforms: []
-
-inputs:
-  - name: component_path
-    type: path
-    required: true
-    description: |
-      Path to the React component file. The skill
-      inspects the file to decide whether a story
-      should exist and how to write it.
-  - name: component_name
-    type: string
-    required: true
-    description: |
-      Component name (e.g. `Button`, `UserCard`).
-      Used for the `.stories.tsx` filename and the
-      default export `title`.
-  - name: review_mode
-    type: enum
-    required: false
-    values: [write, review]
-    default: write
-    description: |
-      `write` generates a new story. `review` reads
-      an existing one and flags anti-patterns.
-
-output:
-  format: text
-  description: |
-    Confirmation of the story file written (or
-    flagged issues on review). Lists the stories
-    that exist and which component states they
-    cover. No JSON envelope.
-  schema:
-    type: object
-    properties:
-      story_path: { type: string }
-      stories: { type: array, items: { type: string } }
-      review_findings: { type: array, items: { type: string } }
-
-author: "Langfuse (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/storybook
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

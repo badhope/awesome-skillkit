@@ -1,25 +1,22 @@
 ---
-name: datadog-query-recipes
-description: "Langfuse-specific Datadog query recipes for production telemetry research.\n\
-  Use when asked to investigate tenant or project activity, public API endpoint\n\
-  usage, queue consumer behavior, spans, logs, metrics, or ad hoc production\nquestions
-  across prod-us, prod-eu, prod-hipaa, and prod-jp. This skill is for\nreusable query
-  shapes and measured research; pair it with\ndebug-issue-with-datadog when the task
-  is an incident or root-cause analysis."
-slug: datadog-query-recipes
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "datadog-query-recipes"
+name_zh: Datadog 查询配方
+description: "Langfuse-specific Datadog query recipes for production telemetry research."
+description_zh: 使用 Datadog 查询语言分析和可视化监控数据。
+category: "dev-tools"
+tags: [ai, api, backend, cli, datadog]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Datadog Query Recipes
 
 Use this skill for Langfuse production telemetry research where the main work is
@@ -83,3 +80,45 @@ Summarize what was checked, including:
 - Core filters or metrics used.
 - Count, rate, latency, queue depth, trace sample, or "No measurements found".
 - Datadog links or trace IDs that let the human rerun the query.
+
+# When to use
+
+Use this skill when you need guidance on datadog query recipes.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```python
+# 查询API使用率（按租户分组）
+query = """
+@langfuse.project.id:* service:web-api
+| stats count() by @langfuse.project.id, status
+| filter status >= 400
+"""
+
+# 执行查询
+from datadog_client import query_spans
+
+results = query_spans(
+    query=query,
+    time_range="24h",
+    environments=["prod-us", "prod-eu"]
+)
+
+# 按环境分组统计
+for env in ["prod-us", "prod-eu"]:
+    env_data = results.filter(env=env)
+    print(f"{env}: {len(env_data)} errors")
+    for project_id, count in env_data.group_by("project_id"):
+        print(f"  Project {project_id}: {count} errors")
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

@@ -1,64 +1,23 @@
 ---
-slug: clickhouse-best-practices
 name: ClickHouse Best Practices
 name_zh: ClickHouse 最佳实践
-version: 0.1.0
-description: 28 rules for ClickHouse schema, query, and insert strategy — referenced before answering any ClickHouse question. Filters to apply, trade-offs to know, anti-patterns to flag.
+description: "|"
 description_zh: 28 条 ClickHouse schema / query / insert 规则 —— 回答任何 ClickHouse 问题前都要查的清单。规则过滤、权衡判断、反模式标记。
-
-category: data-pipelines
-tags: [clickhouse, database, schema, query, optimization]
-platforms: []
-
-inputs:
-  - name: review_type
-    type: enum
-    required: true
-    values: [schema, query, insert, debug-slow-query]
-    description: |
-      What you're reviewing or designing. Drives which rule
-      files load first.
-  - name: target_action
-    type: string
-    required: true
-    description: |
-      The specific thing under review. A CREATE TABLE
-      statement, an ALTER TABLE migration, a SELECT query,
-      a batch INSERT path, or a slow query log.
-  - name: rules_root
-    type: path
-    required: false
-    description: |
-      Path to the `rules/` directory containing the per-rule
-      files. Defaults to the skill's own rules subdir. Override
-      when a project maintains project-specific rule
-      overrides.
-
-output:
-  format: text
-  description: |
-    Findings list ordered by severity, with current-vs-required
-    diff, rule citation, and a fix recipe. Optional compliant
-    notes for what is correct. The deliverable is the review
-    report, not a config change.
-  schema:
-    type: object
-    properties:
-      rules_checked: { type: array, items: { type: string } }
-      violations: { type: array, items: { type: object } }
-      compliant: { type: array, items: { type: string } }
-      recommendations: { type: array, items: { type: string } }
-
+category: "dev-tools"
+tags: [ai, cli, database, documentation, evaluation]
+source: 
+ref: main
+license: "Apache-2.0"
+language: en
 author: "ClickHouse Inc + Langfuse (downstream pack: badhope)"
-license: Apache-2.0
-source:
-  url: https://github.com/ClickHouse/clickhouse-docs/tree/main/docs/best-practices
-  url_local: https://github.com/langfuse/langfuse/tree/main/.agents/skills/clickhouse-best-practices
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

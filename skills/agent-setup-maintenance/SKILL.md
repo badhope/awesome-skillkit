@@ -1,22 +1,22 @@
 ---
-name: agent-setup-maintenance
-description: "Shared workflow for editing Langfuse's repo-owned agent setup under
-  `.agents/`.\nUse when changing AGENTS files, shared skills, `.agents/config.json`,\n\
-  generated shim behavior, provider discovery paths, or install-time agent sync."
-slug: agent-setup-maintenance
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "agent-setup-maintenance"
+name_zh: Agent 设置与维护
+description: "Shared workflow for editing Langfuse''s repo-owned agent setup under"
+description_zh: 设置和维护 AI agent 的配置、环境变量和依赖项。
+category: "dev-tools"
+tags: [ai, database, docker, documentation, frontend]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Agent Setup Maintenance
 
 Use this skill when changing the shared agent setup for the repository.
@@ -80,3 +80,33 @@ Run additional verification when relevant:
 - Only keep provider-specific files in source control when the provider requires
   a fixed discovery path or feature that cannot be expressed through the shared
   setup model.
+
+# When to use
+
+Use this skill when you need guidance on agent setup maintenance.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+```bash
+# 使用 agent-setup-maintenance 技能
+python scripts/use-skill.py agent-setup-maintenance
+
+# 查看技能详情
+python scripts/inspect-skill.py agent-setup-maintenance
+
+# 验证技能
+python scripts/validate-skill.py agent-setup-maintenance
+```
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

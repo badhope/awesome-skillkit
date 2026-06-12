@@ -1,71 +1,23 @@
 ---
-slug: deepeval-tracing
 name: deepeval SDK Tracing
-name_zh: deepeval SDK 打点
-version: 0.1.0
-description: Instrument a Python AI app with DeepEval's `@observe` decorator and framework integrations so traces land in Confident AI's Observatory. The Python-only counterpart to the OTel-based deepeval-otel skill.
-description_zh: 用 DeepEval 的 `@observe` 装饰器和框架集成给 Python AI 应用打点，让 trace 进 Confident AI 的 Observatory。Python-only，跟 OTel 路径（deepeval-otel）互补。
-
-category: observability
-tags: [deepeval, tracing, observe, python, integrations]
-platforms: []
-
-inputs:
-  - name: framework
-    type: string
-    required: true
-    description: |
-      AI framework / SDK in use. Pick from: langgraph, langchain,
-      openai-agents, llamaindex, pydantic-ai, crewai, autogen,
-      haystack, semantickernel, vertex, bedrock — or `custom` if
-      none of these match. `custom` triggers manual `@observe`
-      instead of a native integration.
-  - name: model_provider
-    type: string
-    required: true
-    description: |
-      LLM provider actually called by the app: openai, anthropic,
-      google, bedrock, azure, cohere, mistral, ollama, vllm. The
-      deepeval integration may patch the provider's SDK to
-      auto-capture input/output tokens.
-  - name: vector_db
-    type: string
-    required: false
-    description: |
-      Vector store in use, if any. Supported: pinecone, qdrant,
-      weaviate, chroma, milvus, pgvector. Empty = no retrieval
-      component.
-  - name: confident_api_key
-    type: string
-    required: true
-    description: |
-      `CONFIDENT_API_KEY` from Confident AI. Or run `deepeval
-      login` once per machine, which writes the key to
-      `~/.deepeval/`. CI must export the env var.
-
-output:
-  format: text
-  description: |
-    Confirmation that traces are arriving in Confident AI's
-    Observatory. No structured payload — Confident AI is the
-    system of record. Typical return is a trace URL and a list of
-    detected span types.
-  schema:
-    type: object
-    properties:
-      trace_url: { type: string }
-      detected_spans: { type: array, items: { type: string } }
-      instrumented_files: { type: array, items: { type: string } }
-
+name_zh: DeepEval 追踪
+description: Confirmation that traces are arriving in Confident AI''s
+description_zh: 使用 DeepEval 追踪功能监控和分析 LLM 应用的性能。
+category: "dev-tools"
+tags: [ai, api, backend, database, deployment]
+source: 
+ref: main
+license: "Apache-2.0"
+language: en
 author: "Confident AI (downstream pack: badhope)"
-license: Apache-2.0
-source:
-  url: https://github.com/confident-ai/deepeval/tree/main/skills/deepeval-tracing
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

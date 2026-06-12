@@ -1,21 +1,22 @@
 ---
-name: redteam-plugin-development
-description: Standards for creating redteam plugins and graders. Use when 
-  creating new plugins, writing graders, or modifying attack templates.
-slug: redteam-plugin-development
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "redteam-plugin-development"
+name_zh: 红队插件开发
+description: Standards for creating redteam plugins and graders. Use when creating
+description_zh: 开发红队测试插件和评分器，扩展安全测试能力。
+category: ai
+tags: [ai, documentation, evaluation, frontend, llm]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Redteam Plugin Development Standards
 
 ## Critical Tag Standardization
@@ -197,3 +198,22 @@ When adding a new plugin:
 - Image dataset example: `src/redteam/plugins/vlsu.ts`
 - Base classes: `src/redteam/plugins/base.ts`, `src/redteam/plugins/imageDatasetPluginBase.ts`
 - Grading prompt: `src/prompts/grading.ts` (REDTEAM_GRADING_PROMPT)
+
+# When to use
+
+Use this skill when you need guidance on redteam plugin development.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

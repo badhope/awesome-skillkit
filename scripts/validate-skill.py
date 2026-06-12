@@ -391,6 +391,7 @@ def write_frontend_bundle(targets: list[Path], passed: list[dict]) -> None:
 
 def _json_default(o):
     """Fallback JSON encoder for ruamel.yaml-loaded objects.
+
     ruamel parses YYYY-MM-DD into `datetime.date`, which `json`
     refuses. Convert to ISO string. Anything else is a bug
     and we let it raise so it shows up in the warning.
@@ -399,23 +400,6 @@ def _json_default(o):
     if isinstance(o, (_dt.date, _dt.datetime)):
         return o.isoformat()
     raise TypeError(f"{type(o).__name__} is not JSON serialisable")
-
-
-def is_draft(path: Path) -> bool:
-    """True if the file carries `needs_review: true`.
-
-    Used to filter strict-mode warnings: a skill flagged as a
-    draft (freshly imported, not yet adapted to our shape) is
-    not yet held to the strict bar. The author has to clear
-    `needs_review` before any warning on that file starts
-    blocking CI.
-    """
-    try:
-        text = path.read_text(encoding="utf-8")
-    except OSError:
-        return False
-    fm, _, _ = split_frontmatter(text)
-    return bool(fm and fm.get("needs_review"))
 
 
 def main() -> int:
@@ -472,24 +456,9 @@ def main() -> int:
 
     if report.errors:
         return 1
-    # In strict mode, warnings become errors EXCEPT for warnings
-    # on a file that is still flagged needs_review. needs_review
-    # means "draft, not yet ready for the strict bar." Once the
-    # author clears it, the warnings on that file start blocking.
     if args.strict and report.warnings:
-        blocking = [(p, m) for p, m in report.warnings if not is_draft(p)]
-        if blocking:
-            print(f"strict mode: {len(blocking)} blocking warning(s) "
-                  f"(of {len(report.warnings)} total — "
-                  f"{len(report.warnings) - len(blocking)} suppressed as needs_review drafts)",
-                  file=sys.stderr)
-            for p, m in blocking[:20]:
-                print(f"  strict {_rel(p)}: {m}", file=sys.stderr)
-            if len(blocking) > 20:
-                print(f"  ... and {len(blocking) - 20} more", file=sys.stderr)
-            return 1
-        # No blocking warnings: drafts are allowed past strict.
-        # Fall through to write the index + frontend bundle.
+        print("strict mode: warnings are errors", file=sys.stderr)
+        return 1
     if not args.no_index:
         write_index(passed)
         write_frontend_bundle(targets, passed)

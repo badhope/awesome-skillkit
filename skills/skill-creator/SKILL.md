@@ -1,86 +1,23 @@
 ---
-slug: skill-creator
 name: Skill Authoring Loop
 name_zh: 技能编写迭代流程
-version: 0.1.0
-description: Create a new skill from scratch or improve an existing one — draft, write test prompts, run qualitative + quantitative evaluation, iterate on description for trigger accuracy, expand test set, repeat. The loop is the skill.
+description: "|"
 description_zh: 从零创建新技能或改进已有技能 —— 起草、写测试 prompt、跑定性 + 定量评估、迭代 description 以提升触发准确率、扩充测试集、再来一遍。这个循环就是技能本身。
-
-category: code-assistants
-tags: [skill, meta, evaluation, prompt, iteration]
-platforms: []
-
-inputs:
-  - name: stage
-    type: enum
-    required: true
-    values: [new-skill, draft, evaluate, iterate, expand]
-    description: |
-      Where the user is in the loop:
-        - `new-skill`   — they want to start from scratch,
-                          need help narrowing scope
-        - `draft`       — there's a draft, want a second
-                          pair of eyes
-        - `evaluate`    — there's a skill, want to run
-                          evals against it
-        - `iterate`     — the eval results are in, want
-                          to revise based on findings
-        - `expand`      — the skill is good at N test
-                          cases, want to scale to 30+
-  - name: skill_path
-    type: path
-    required: false
-    description: |
-      Path to the SKILL.md being worked on. Required
-      for `draft` / `evaluate` / `iterate` / `expand`.
-  - name: target_description_accuracy
-    type: number
-    required: false
-    description: |
-      Optional: target trigger accuracy (0-1) for the
-      description. Default 0.9 for a well-tuned skill.
-  - name: eval_method
-    type: enum
-    required: false
-    values: [qualitative, quantitative, both]
-    default: both
-    description: |
-      How to evaluate:
-        - `qualitative`   — run the skill against test
-                              prompts, eyeball the
-                              outputs, look for glaring
-                              misses
-        - `quantitative`  — metric-based (does the
-                              output contain the right
-                              fields, does the LLM
-                              trigger the skill for the
-                              right prompts)
-        - `both`          — both, in that order
-
-output:
-  format: text
-  description: |
-    The next iteration of the skill (or a structured
-    critique of the current one). Includes a list of
-    test cases, a qualitative summary, a quantitative
-    metric, and a list of proposed edits.
-  schema:
-    type: object
-    properties:
-      next_iteration_path: { type: string, description: "Path to the new SKILL.md if a revision was made" }
-      qualitative_findings: { type: array, items: { type: string } }
-      quantitative_metrics: { type: object, description: "{trigger_accuracy, output_completeness, etc.}" }
-      proposed_edits: { type: array, items: { type: string } }
-
-author: "Anthropic (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, backend, cli, database, documentation]
+source: 
+ref: main
 license: Complete terms in LICENSE.txt
-source:
-  url: https://github.com/anthropics/skills/tree/main/skills/skill-creator
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Anthropic (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

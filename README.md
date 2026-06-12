@@ -20,22 +20,26 @@ Codex skills 只能在 Codex 用。这里默认所有技能**平台中立**，
 
 ## Vault 里现在有什么
 
-`35 / 0 / 0` —— 35 条技能，全部通过 `validate-skill.py --strict` 验证。
+`267 / 0 / 0` —— 267 条技能，全部通过 `validate-skill.py --strict` 验证。
 
 | 类别 | 数量 | 例子 |
 |---|---|---|
 | 手写 vendor-neutral | 5 | `pdf-summarizer`, `code-reviewer`, `test-generator`, `sql-query-helper`, `commit-message-writer` |
 | Claude-only 平台示例 | 1 | `pdf-vision-extractor` |
-| 抓取自大厂 + 通用化 | 29 | `mcp-builder`, `webapp-testing`, `skill-creator`, `doc-coauthoring`, `internal-comms`, `clickhouse-best-practices`, `turborepo`, `security-review`, `storybook`, `pnpm-upgrade-package`, `frontend-large-feature-architecture`, `code-review`, `deepeval-*`, `promptfoo-*`, `llm-pricing-file-update`, `realtime-eval-bootstrap`, `react-router-search-params`, `goal-definition`, `cli-builder`, `threat-modeling`, `secure-code-by-language`, `ownership-bus-factor`, `pr-yeet`, `frontend-visual-design`, `browser-ml-in-js`, `embedding-model-training` |
+| 抓取自大厂 + 通用化 | 261 | `mcp-builder`, `webapp-testing`, `skill-creator`, `doc-coauthoring`, `internal-comms`, `clickhouse-best-practices`, `turborepo`, `security-review`, `storybook`, `pnpm-upgrade-package`, `frontend-large-feature-architecture`, `code-review`, `deepeval-*`, `promptfoo-*`, `llm-pricing-file-update`, `realtime-eval-bootstrap`, `react-router-search-params`, `goal-definition`, `cli-builder`, `threat-modeling`, `secure-code-by-language`, `ownership-bus-factor`, `pr-yeet`, `frontend-visual-design`, `browser-ml-in-js`, `embedding-model-training`, `drizzle`, `modal`, `netlify-deploy`, `haiku`, `playwright`, `figma-*`, `huggingface-*`, `letta-*`, `vercel-*` |
 
-抓取来源的 8 个仓库：`confident-ai/deepeval` (3) /
-`promptfoo/promptfoo` (3) / `langfuse/langfuse` (8) /
-`openai/openai-cookbook` (1) / `openai/skills` (6) /
-`letta-ai/skills` (1) / `huggingface/skills` (2) /
-`anthropics/skills` (5)。
-每条抓来的技能 frontmatter 都标了 `source:` 字段，
-`author` 写成 `"<Vendor> (downstream pack: badhope)"`。
+抓取来源的 136 个仓库（78 个成功，58 个失败）：`openai/skills` (44) / `letta-ai/letta` (23) / `huggingface/huggingface-skills` (18) / `promptfoo/promptfoo` (12) / `langfuse/langfuse` (10) / `vercel/ai` (8) / `pytorch/pytorch` (7) / `anthropics/anthropic-skills` (6) / `deepeval/deepeval` (5) / `lobehub/lobe-chat` (4) 等。
+每条抓来的技能 frontmatter 都标了 `source:` 字段，`author` 写成 `"<Vendor> (downstream pack: badhope)"`。
 详见 `SOURCE.md`。
+
+### 质量审计
+
+所有 267 个技能通过以下检查：
+- ✅ 中文翻译完整（name_zh, description_zh）
+- ✅ 标签系统统一
+- ✅ H1 章节完整（When to use, When NOT to use, Example, Prompt）
+- ✅ 代码示例完整
+- ✅ 分类明确（dev-tools: 201, ai: 66）
 
 ## 怎么用
 

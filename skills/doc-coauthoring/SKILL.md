@@ -1,64 +1,23 @@
 ---
-slug: doc-coauthoring
-name: Doc Co-Authoring Workflow
+name: "Doc Co-Authoring Workflow"
 name_zh: 文档共写工作流
-version: 0.1.0
-description: Structured three-stage workflow for co-authoring documentation — Context Gathering, Refinement & Structure, Reader Testing. Trigger when user mentions "write a doc", "draft a proposal", "create a spec". Skips the "I just want to dump and ship" trap.
-description_zh: 三阶段结构化文档共写工作流 —— Context Gathering / Refinement & Structure / Reader Testing。当用户提到"写文档 / 起草提案 / 创建 spec"时触发。跳出"写完即发"的陷阱。
-
-category: documentation
-tags: [documentation, writing, workflow, proposal, spec]
-platforms: []
-
-inputs:
-  - name: doc_type
-    type: enum
-    required: true
-    values: [rfc, design-doc, prd, decision-doc, runbook, tutorial, faq]
-    description: |
-      The type of doc. Drives the section template
-      suggested in stage 2.
-  - name: audience
-    type: string
-    required: true
-    description: |
-      Who will read this (e.g. "engineering team",
-      "exec leadership", "external partners"). Drives
-      the depth and the assumed context.
-  - name: current_stage
-    type: enum
-    required: false
-    values: [gather, refine, test, mixed]
-    default: mixed
-    description: |
-      Where the user is in the workflow. If omitted,
-      start at stage 1.
-
-output:
-  format: text
-  description: |
-    The next step in the workflow, with a short list of
-    clarifying questions, the section template for the
-    current stage, and a reminder of the test stage's
-    purpose. No JSON envelope — the doc itself is the
-    deliverable.
-  schema:
-    type: object
-    properties:
-      current_stage: { type: string, enum: [gather, refine, test] }
-      questions: { type: array, items: { type: string } }
-      section_template: { type: array, items: { type: string } }
-      next_action: { type: string }
-
-author: "Anthropic (downstream pack: badhope)"
+description: "|"
+description_zh: "三阶段结构化文档共写工作流 —— Context Gathering / Refinement & Structure / Reader Testing。当用户提到"写文档 / 起草提案 / 创建 spec"时触发。跳出"写完即发"的陷阱。"
+category: ai
+tags: [ai, documentation, frontend, llm, security]
+source: 
+ref: main
 license: Complete terms in LICENSE.txt
-source:
-  url: https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Anthropic (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

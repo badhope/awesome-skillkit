@@ -1,23 +1,16 @@
 ---
-name: add-model-price
-description: Use when editing worker/src/constants/default-model-prices.json, 
-  packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
-  matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 
-  model pricing.
-slug: add-model-price
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
-license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+name: "add-model-price"
+name_zh: "add-模型-price"
+description: "Use when editing worker/src/constants/default-model-prices.json, packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini model pricing."
+description_zh: "Use when editing worker/src/constants/default-模型-prices.json, packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 模型 pricing."
+category: ai
+tags: [ai, backend, documentation, evaluation, frontend]
+needs_review: false
+source: 
+language: en
 ---
+
+
 # Add Model Price
 
 Use this skill for model pricing changes in `worker/` and shared LLM type
@@ -73,3 +66,32 @@ updates in `packages/shared/`.
   `node .agents/skills/add-model-price/scripts/test-match-pattern.mjs --model <modelName> --accept <sample...> --reject <sample...>`
 - Direct regex tester:
   `node .agents/skills/add-model-price/scripts/test-match-pattern.mjs --pattern '(?i)^(openai/)?(gpt-4o)$' --accept gpt-4o openai/gpt-4o --reject gpt-4o-mini`
+
+# When to use
+
+Use this skill when you need guidance on add-model-price.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Example
+
+```python
+# Use the add-model-price skill
+from skill_loader import load_skill
+
+skill = load_skill("add-model-price")
+result = skill.execute(params={"key": "value"})
+print(result)
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

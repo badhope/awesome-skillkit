@@ -1,24 +1,22 @@
 ---
-name: debug-issue-with-datadog
-description: "Debug a user-reported issue, Linear ticket, or incident report by combining\n\
-  Datadog (APM, logs, metrics) with the Langfuse repo to establish a\nroot cause.
-  Use when given a Linear issue URL/ID (e.g. LFE-XXXX), a GitHub\nissue, or a pasted
-  error/report and asked to investigate, root-cause, or\ntriage. Produces a structured
-  analysis — error breakdown, hypothesis-by-class,\nsuggested patches with code references."
-slug: debug-issue-with-datadog
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "debug-issue-with-datadog"
+name_zh: 使用 Datadog 调试问题
+description: "Debug a user-reported issue, Linear ticket, or incident report by combining"
+description_zh: 使用 Datadog 监控和日志数据诊断和调试问题。
+category: "dev-tools"
+tags: [ai, api, backend, cli, datadog]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Debug Issue with Datadog
 
 Use this skill whenever the task is **investigative** rather than
@@ -129,3 +127,50 @@ do not invent root causes.
   [`clickhouse-best-practices`](../clickhouse-best-practices/SKILL.md)
 - Once a fix is identified and you switch to implementation, hand off to the
   package `AGENTS.md` for the affected directory.
+
+# When to use
+
+Use this skill when you need guidance on debug issue with datadog.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```bash
+# 1. 获取Linear issue详情
+curl -X POST https://api.linear.app/graphql \
+  -H "Authorization: Bearer $LINEAR_TOKEN" \
+  -d '{"query": "query { issue(id: \"LFE-1234\") { title description state { name } } }"}'
+
+# 2. 查询Datadog错误日志
+curl "https://api.datadoghq.eu/api/v2/logs/events" \
+  -H "DD-API-KEY: $DD_API_KEY" \
+  -d '{
+    "filter": {
+      "query": "service:worker env:prod-eu status:error @langfuse.project.id:cm1r6u*",
+      "from": "now-1h",
+      "to": "now"
+    }
+  }'
+
+# 3. 分析错误模式
+python scripts/analyze-errors.py \
+  --input errors.json \
+  --group-by "error.message,projectId" \
+  --output analysis.md
+
+# 4. 生成修复建议
+python scripts/suggest-fixes.py \
+  --analysis analysis.md \
+  --repo ../langfuse \
+  --output fixes.md
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

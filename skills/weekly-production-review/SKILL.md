@@ -1,25 +1,22 @@
 ---
-name: weekly-production-review
-description: "Prepare Langfuse weekly production reviews that explain what broke,
-  what was\nfixed, what remains open, and where alerting or tracking needs cleanup.
-  Use\nwhen asked for a production review, \"what broke last week\", fixed/open bugs,\n\
-  Datadog alerted monitors/pages, status-page incidents, incident.io incidents,\n\
-  or an engineering-team overview that combines Linear, Datadog, and customer\nincident
-  signals."
-slug: weekly-production-review
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "weekly-production-review"
+name_zh: 每周生产审查
+description: "Prepare Langfuse weekly production reviews that explain what broke,"
+description_zh: 进行每周生产环境审查，监控性能和可靠性。
+category: ai
+tags: [ai, datadog, frontend, llm, security]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Weekly Production Review
 
 Use this skill to produce a source-grounded, event-centric production review.
@@ -295,3 +292,22 @@ Return valid Markdown only.
   fences.
 - If a section would be fragile to format, prefer a plain paragraph over broken
   Markdown.
+
+# When to use
+
+Use this skill when you need guidance on weekly production review.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

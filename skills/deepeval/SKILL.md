@@ -1,39 +1,22 @@
 ---
 name: deepeval
-description: "DeepEval evaluation workflow for AI agents and LLM applications. TRIGGER
-  when the user wants to evaluate or improve an AI agent, tool-using workflow, multi-turn
-  chatbot, RAG pipeline, or LLM app; add evals; generate datasets or goldens; use
-  deepeval generate; use deepeval test run; send results to Confident AI; monitor
-  production; run online evals; inspect traces; or iterate on prompts, tools, retrieval,
-  or agent behavior from eval failures. AI agents are the primary use case. Covers
-  Python SDK, pytest eval suites, CLI generation, traced evals, Confident AI reporting,
-  and agent-driven improvement loops. DO NOT TRIGGER for unrelated generic pytest,
-  non-AI test setup, or non-DeepEval observability work unless the user asks to compare
-  or migrate to DeepEval; for instrumenting an app with DeepEval tracing, @observe,
-  or framework integrations (use the `deepeval-tracing` skill); or for raw OpenTelemetry
-  / OTLP export without the deepeval package (use the `deepeval-otel` skill).\n"
-license: Apache-2.0
-metadata:
-  author: Confident AI
-  version: 1.0.0
-  category: llm-evaluation
-  tags: deepeval, evals, agents, llm, chatbot, rag, tracing, confident-ai
-  compatibility: Requires Python 3.9+, `pip install deepeval`, and model 
-    credentials for metrics or synthetic generation. Confident AI reporting 
-    requires `deepeval login`.
-slug: deepeval
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
+name_zh: DeepEval 评估
+description: DeepEval evaluation workflow for AI agents and LLM applications. TRIGGER
+description_zh: 使用 DeepEval 框架评估 LLM 应用的性能和质量。
+category: "dev-tools"
+tags: [ai, cli, documentation, evaluation, frontend]
+source: 
+license: "Apache-2.0"
+language: en
 author: unknown
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # DeepEval
 
 Use this skill to add an end-to-end eval loop to AI applications:
@@ -186,3 +169,22 @@ deepeval view
 | Single-turn no tracing | `templates/test_single_turn_no_tracing.py` |
 | Multi-turn E2E | `templates/test_multi_turn_e2e.py` |
 | Shared metric lists | `templates/metrics.py` |
+
+# When to use
+
+Use this skill when you need guidance on deepeval.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

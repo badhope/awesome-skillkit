@@ -1,47 +1,22 @@
 ---
-slug: sql-query-helper
 name: SQL Query Helper
 name_zh: SQL 查询助手
-version: 1.0.0
-description: Translate a natural-language question into a SQL query, given a 
-  schema. Vendor-neutral, dialect-aware.
+description: SQL dialect
 description_zh: 给定 schema，把自然语言问题转成 SQL。无厂商依赖，支持多种方言。
-category: text-to-sql
-tags:
-  - sql
-  - database
-  - query
-  - nlp
-inputs:
-  - name: question
-    type: string
-    required: true
-    description: what the user wants to know
-  - name: schema
-    type: string
-    required: true
-    description: CREATE TABLE statements or a schema description
-  - name: dialect
-    type: enum
-    required: false
-    values:
-      - postgres
-      - mysql
-      - sqlite
-      - bigquery
-      - snowflake
-      - tsql
-      - auto
-    default: auto
-    description: SQL dialect
-output:
-  format: code
-author: badhope
+category: "dev-tools"
+tags: [ai, cli, database, documentation, llm]
+source: 
 license: MIT
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: badhope
+version: 1.0.0
 needs_review: false
 ---
+
+
+
+
+
 # When to use
 
 The user has a database (or a documented schema) and a question. They want SQL, not a chat about SQL. They will execute the query themselves; you're not connected to a DB.

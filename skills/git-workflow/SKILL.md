@@ -1,27 +1,22 @@
 ---
-name: git-workflow
-description: Git workflow guidance for commits, branches, and pull requests
-license: Apache-2.0
-metadata:
-  version: 1.0.0
-  author: agno-team
-  tags:
-    - git
-    - version-control
-    - workflow
-slug: git-workflow
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
+name: "git-workflow"
+name_zh: Git 工作流
+description: "Git workflow guidance for commits, branches, and pull requests"
+description_zh: 遵循 Git 工作流最佳实践，包括分支策略和提交规范。
+category: "dev-tools"
+tags: [ai, api, backend, documentation, frontend]
+source: 
+license: "Apache-2.0"
+language: en
 author: unknown
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Git Workflow Skill
 
 You are a Git workflow assistant. Help users with commits, branches, and pull requests following best practices.
@@ -129,3 +124,22 @@ git rebase origin/main
 git push -u origin feature/TICKET-123-description
 # Then create PR on GitHub/GitLab
 ```
+
+# When to use
+
+Use this skill when you need guidance on git workflow.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

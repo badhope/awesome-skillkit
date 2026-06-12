@@ -1,25 +1,22 @@
 ---
-name: promptfoo-redteam-run
-description: Run, rerun, inspect, and QA promptfoo redteam scans from generated 
-  redteam YAML or an existing redteam setup config. Use when executing 
-  `promptfoo redteam eval` or `promptfoo redteam run`, exporting results, 
-  triaging attack success rate, grader failures, target errors, filter/rerun 
-  commands, reports, or CI gates. Do not use for initial provider wiring or for 
-  choosing plugins and strategies before generation.
-slug: promptfoo-redteam-run
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "promptfoo-redteam-run"
+name_zh: 运行 Promptfoo 红队测试
+description: "Run, rerun, inspect, and QA promptfoo redteam scans from generated redteam"
+description_zh: 执行 Promptfoo 红队测试场景并分析结果。
+category: "dev-tools"
+tags: [ai, cli, evaluation, frontend, javascript]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Promptfoo Redteam Run
 
 Execute redteam probes reproducibly, inspect the output artifact, and rerun only
@@ -184,3 +181,22 @@ When done, state:
 - Commands run and whether any returned nonzero due to redteam failures
 - Success, failure, error counts and attack success rate
 - Highest-priority failing plugins/strategies and recommended next rerun or fix
+
+# When to use
+
+Use this skill when you need guidance on promptfoo redteam run.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

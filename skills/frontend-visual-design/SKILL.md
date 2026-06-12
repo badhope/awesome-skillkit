@@ -1,68 +1,22 @@
 ---
-slug: frontend-visual-design
 name: Frontend Visual Design Taste
 name_zh: 前端视觉设计品味
-version: 0.1.0
-description: Build interfaces that feel deliberate, premium, and current — restrained composition, image-led hierarchy, cohesive content, tasteful motion. Use for landing pages, marketing sites, demos, prototypes, game UIs where the quality depends on art direction, not component count. Avoids the generic-card / weak-branding / UI-clutter trap.
+description: "|"
 description_zh: 做出有主张、显品味、跟得上时代的界面 —— 克制构图、图像主导的层级、连贯的内容、走心的动效。用于 landing page、营销站、demo、原型、游戏 UI —— 凡是质量靠艺术指导而不是组件数量的场景。专门避开"通用卡片 / 弱品牌 / 杂乱 UI"三个坑。
-
-category: applications
-tags: [frontend, design, ui, landing-page, motion]
-platforms: []
-
-inputs:
-  - name: artifact_type
-    type: enum
-    required: true
-    values: [landing-page, marketing-site, app-shell, demo, prototype, game-ui, dashboard]
-    description: |
-      What you're building. Drives which "Beautiful
-      Defaults" section applies first.
-  - name: thesis
-    type: string
-    required: true
-    description: |
-      One sentence describing mood, material, and
-      energy (e.g. "soft brutalism with brutal
-      sans-serif, matte concrete texture, slow
-      fades"). Drives the design decisions.
-  - name: audience
-    type: string
-    required: false
-    description: |
-      Who this is for. Use the language, scale,
-      and imagery that matches.
-  - name: motion_budget
-    type: enum
-    required: false
-    values: [none, restrained, expressive]
-    default: restrained
-    description: |
-      How much motion is appropriate. "None" for
-      document-like surfaces; "expressive" for
-      marketing / hero moments.
-
-output:
-  format: markdown
-  description: |
-    A `## Working Model` block (visual thesis,
-    content plan, interaction thesis) followed by
-    section-by-section design notes, the
-    "Beautiful Defaults" applied, and a final
-    "Anti-patterns avoided" checklist.
-
-author: "Letta (downstream pack: badhope)"
+category: ai
+tags: [ai, api, backend, database, docker]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/letta-ai/skills/tree/main/tools/frontend-skill
-  fetched_at: 2026-06-11
-  commit: cb8a79f91a048ce8b189f564ebe94d74a6edb83e
-  license: MIT
-  original_path: tools/frontend-skill/SKILL.md
+language: en
+author: "Letta (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

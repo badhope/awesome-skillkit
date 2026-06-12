@@ -1,46 +1,22 @@
 ---
-slug: commit-message-writer
 name: Commit Message Writer
 name_zh: 提交信息写手
-version: 1.0.0
-description: Write a conventional-commit message from a diff. Vendor-neutral.
+description: max subject line length
 description_zh: 根据 diff 生成 conventional commit 信息。无厂商依赖。
-category: dev-tools
-tags:
-  - git
-  - commit
-  - conventional-commits
-  - changelog
-inputs:
-  - name: diff
-    type: string
-    required: true
-    description: the diff to describe
-  - name: scope_hint
-    type: string
-    required: false
-    description: hint for the scope (e.g. "auth", "api", "docs")
-  - name: breaking
-    type: boolean
-    required: false
-    default: false
-    description: whether this is a breaking change
-  - name: max_subject
-    type: integer
-    required: false
-    default: 72
-    constraints:
-      min: 50
-      max: 100
-    description: max subject line length
-output:
-  format: text
-author: badhope
+category: "dev-tools"
+tags: [ai, api, backend, deployment, documentation]
+source: 
 license: MIT
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: badhope
+version: 1.0.0
 needs_review: false
 ---
+
+
+
+
+
 # When to use
 
 The user staged a diff and wants a commit message. They will run `git commit -F <your message>` themselves. The diff is what's actually going in the commit; the message describes it, not the world.

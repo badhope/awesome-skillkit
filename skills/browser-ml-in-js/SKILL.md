@@ -1,70 +1,22 @@
 ---
-slug: browser-ml-in-js
 name: Browser ML in JavaScript
 name_zh: 浏览器端机器学习（JavaScript）
-version: 0.1.0
-description: Run state-of-the-art ML models directly in JavaScript / TypeScript — text classification, translation, summarization, image classification, object detection, speech recognition, audio classification, multimodal. Works in browsers and server-side runtimes (Node, Bun, Deno) with WebGPU / WASM. No Python backend required.
+description: "|"
 description_zh: 在 JavaScript / TypeScript 里直接跑 SOTA 机器学习模型 —— 文本分类、翻译、摘要、图像分类、目标检测、语音识别、音频分类、多模态。支持浏览器和 Node / Bun / Deno 服务端运行时，走 WebGPU / WASM。不需要 Python 后端。
-
-category: applications
-tags: [javascript, typescript, ml, browser, onnx]
-platforms: []
-
-inputs:
-  - name: task
-    type: enum
-    required: true
-    values: [text-classification, token-classification, translation, summarization, text-generation, fill-mask, question-answering, image-classification, object-detection, image-segmentation, zero-shot-classification, zero-shot-detection, automatic-speech-recognition, audio-classification, text-to-image, image-to-text, feature-extraction, sentence-similarity]
-    description: |
-      The ML task. Drives which pipeline to import
-      and which model family to use.
-  - name: runtime
-    type: enum
-    required: true
-    values: [browser, node, bun, deno, worker]
-    description: |
-      Where the code will execute. Drives the
-      import path, the device selection
-      (WebGPU vs WASM), and the dispose pattern.
-  - name: model_id
-    type: string
-    required: false
-    description: |
-      Optional explicit model id (org/name on the
-      Hub). If omitted, the pipeline picks a
-      sensible default for the task.
-  - name: device
-    type: enum
-    required: false
-    values: [auto, webgpu, wasm, cpu, cuda, dml]
-    default: auto
-    description: |
-      Compute device. `auto` picks the best
-      available for the runtime. In a browser,
-      that's WebGPU when supported, else WASM.
-
-output:
-  format: markdown
-  description: |
-    A `## Stack` block (runtime, pipeline,
-    recommended model, device), an `## Install`
-    block, a minimal `## Code` block using
-    `pipeline(...)` with the mandatory
-    `pipe.dispose()` cleanup, and a `## Footguns`
-    block listing the most common mistakes.
-
+category: "dev-tools"
+tags: [ai, api, backend, cli, frontend]
+source: 
+license: "Apache-2.0"
+language: en
 author: "Hugging Face (downstream pack: badhope)"
-license: Apache-2.0
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/huggingface/skills/tree/main/skills/transformers-js
-  fetched_at: 2026-06-11
-  commit: d7223848c3895fbd447faf2aec73e0a6cdd7fdcd
-  license: Apache-2.0
-  original_path: skills/transformers-js/SKILL.md
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

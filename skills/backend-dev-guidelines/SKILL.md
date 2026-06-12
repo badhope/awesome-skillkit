@@ -1,24 +1,22 @@
 ---
-name: backend-dev-guidelines
-description: Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and 
-  TypeScript monorepo. Use when creating or reviewing tRPC routers, public REST 
-  endpoints, BullMQ queue processors, backend services, middleware, Prisma or 
-  ClickHouse data access, OpenTelemetry instrumentation, Zod validation, env 
-  configuration, or backend tests across web, worker, or packages/shared.
-slug: backend-dev-guidelines
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "backend-dev-guidelines"
+name_zh: 后端开发指南
+description: "Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and TypeScript"
+description_zh: 遵循后端开发最佳实践，包括 API 设计、数据库操作和安全性。
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Backend Development Guidelines
 
 Use this skill for backend and API work across `web/`, `worker/`, and
@@ -130,3 +128,33 @@ Use this skill for backend and API work across `web/`, `worker/`, and
 | Database access                     | You are touching Prisma, ClickHouse, tenant filters, or query patterns   | [references/database-patterns.md](references/database-patterns.md)                 |
 | Configuration                       | You are adding env vars, startup config, or runtime toggles              | [references/configuration.md](references/configuration.md)                         |
 | Testing                             | You are adding or updating backend tests                                 | [references/testing-guide.md](references/testing-guide.md)                         |
+
+# When to use
+
+Use this skill when you need guidance on backend dev guidelines.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
+
+```bash
+# 使用 backend-dev-guidelines 技能
+python scripts/use-skill.py backend-dev-guidelines
+
+# 查看技能详情
+python scripts/inspect-skill.py backend-dev-guidelines
+
+# 验证技能
+python scripts/validate-skill.py backend-dev-guidelines
+```
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

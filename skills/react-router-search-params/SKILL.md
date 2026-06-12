@@ -1,78 +1,23 @@
 ---
-slug: react-router-search-params
 name: React Router Search Param State
 name_zh: React Router 搜索参数/哈希状态管理
-version: 0.1.0
-description: Decide between `replace` and `push` for URL state changes in React Router — the #1 cause of "back button is broken" bugs. Includes the `useSearchParamState` hook pattern, the `null`-to-clear convention, and the wizard-vs-filter decision table.
-description_zh: 在 React Router 里为 URL 状态变化选 `replace` 还是 `push` —— 这是"浏览器后退键坏了"的 #1 病因。包含 `useSearchParamState` hook 模式、`null` 清空约定，以及 wizard vs filter 的决策表。
-
-category: dev-tools
-tags: [react, react-router, url, state, frontend]
-platforms: []
-
-inputs:
-  - name: change_type
-    type: enum
-    required: true
-    values: [in-page-state, navigable-step, normalize-after-save]
-    description: |
-      What kind of URL change you're making:
-        - `in-page-state` — filter, sort, tab switch, search query,
-          pagination. The URL mirrors UI state.
-        - `navigable-step` — wizard step, multi-step form. The URL
-          represents a step the user traverses with the back button.
-        - `normalize-after-save` — the URL needs an ID added after
-          a create / save operation (no user-visible action).
-  - name: router_api
-    type: enum
-    required: true
-    values: [useSearchParamState, setSearchParams, navigate]
-    description: |
-      Which router API you'll use:
-        - `useSearchParamState` — preferred for a single validated
-          param.
-        - `setSearchParams` — for multiple params at once, or raw
-          access when validation is overkill.
-        - `navigate` — for hash-based navigation or full URL
-          replacement.
-  - name: param_count
-    type: enum
-    required: true
-    values: [single, multiple]
-    description: |
-      `single` = one param. Use the hook.
-      `multiple` = several params at once. Use setSearchParams.
-  - name: validation
-    type: enum
-    required: false
-    values: [none, zod, manual]
-    description: |
-      How to validate the param value. Default `zod` for typed
-      enums. `manual` for legacy / string-only. `none` when the
-      param is a free-form string (e.g. a search query).
-
-output:
-  format: text
-  description: |
-    A short summary of the pattern chosen, the code snippet to
-    apply, and a one-line reminder of the anti-patterns.
-  schema:
-    type: object
-    properties:
-      pattern: { type: string, description: "Pattern name, e.g. `useSearchParamState`" }
-      code_snippet: { type: string }
-      replace_vs_push: { type: string, enum: [replace, push] }
-      gotchas: { type: array, items: { type: string } }
-
-author: "Promptfoo (downstream pack: badhope)"
+description: "|"
+description_zh: "在 React Router 里为 URL 状态变化选 `replace` 还是 `push` —— 这是"浏览器后退键坏了"的 #1 病因。包含 `useSearchParamState` hook 模式、`null` 清空约定，以及 wizard vs filter 的决策表。"
+category: "dev-tools"
+tags: [ai, api, backend, cli, frontend]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/promptfoo/promptfoo/tree/main/.claude/skills/search-params
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Promptfoo (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 
