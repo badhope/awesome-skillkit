@@ -379,6 +379,9 @@ def write_frontend_bundle(targets: list[Path], passed: list[dict]) -> None:
             if fm is None:
                 continue
             skill = dict(fm)
+            # Ensure platforms is always present (frontend expects it)
+            if "platforms" not in skill:
+                skill["platforms"] = []
             skill["body"] = body
             skill["needs_review"] = bool(skill.get("needs_review"))
             (FRONTEND_SKILLS_DIR / f"{slug}.json").write_text(
