@@ -1,16 +1,52 @@
 ---
-name: "netlify-deploy"
-name_zh: "netlify-部署"
-description: "Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys."
-description_zh: "部署 web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the 用户 asks to 部署, host, publish, or link a site/repo on Netlify, including preview and production deploys."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: netlify-deploy
+name_zh: netlify-部署
+description: Deploy web projects to Netlify using the Netlify CLI (`npx 
+  netlify`). Use when the user asks to deploy, host, publish, or link a 
+  site/repo on Netlify, including preview and production deploys.
+description_zh: 部署 web projects to Netlify using the Netlify CLI (`npx 
+  netlify`). Use when the 用户 asks to 部署, host, publish, or link a site/repo on 
+  Netlify, including preview and production deploys.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: netlify-deploy
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on netlify-deploy.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Netlify Deployment Skill
 
@@ -387,14 +423,6 @@ export const handler: Handler = async (event, context) => {
 }
 ```
 
-# When to use
-
-Use this skill when you need guidance on netlify-deploy.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

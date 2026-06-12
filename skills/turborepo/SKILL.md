@@ -1,24 +1,35 @@
 ---
 name: Turborepo Monorepo Authoring
 name_zh: Turborepo Monorepo 编写
-description: "|"
-description_zh: "Turborepo monorepo 构建系统指南 —— 包任务与根任务、task 流水线、dependsOn、缓存、远程 cache、--filter、--affected、环境变量、内部包、边界。覆盖八个让 Turborepo 并行失效的反模式。"
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
-source: 
+description: '|'
+description_zh: Turborepo monorepo 构建系统指南 —— 包任务与根任务、task 流水线、dependsOn、缓存、远程 
+  cache、--filter、--affected、环境变量、内部包、边界。覆盖八个让 Turborepo 并行失效的反模式。
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
+source:
 ref: main
 license: MIT
 language: en
-author: "Langfuse (downstream pack: badhope)"
+author: 'Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: turborepo
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You have a **Turborepo monorepo** and you're doing one of

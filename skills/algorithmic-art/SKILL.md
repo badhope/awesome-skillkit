@@ -1,21 +1,35 @@
 ---
-name: "algorithmic-art"
-name_zh: "algorithmic-art"
-description: Creating algorithmic art using p5.js with seeded randomness and interactive
-description_zh: Creating algorithmic art using p5.js with seeded randomness and interactive
-category: ai
-tags: [ai, api, backend, database, docker]
-source: 
+name: algorithmic-art
+name_zh: algorithmic-art
+description: Creating algorithmic art using p5.js with seeded randomness and 
+  interactive
+description_zh: Creating algorithmic art using p5.js with seeded randomness and 
+  interactive
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - docker
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: algorithmic-art
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
-
-
-
-
-
-
 Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
 
 This happens in two steps:
@@ -420,6 +434,18 @@ This skill includes helpful templates and documentation:
 Use this skill when you need to work with algorithmic-art.
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -434,7 +460,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

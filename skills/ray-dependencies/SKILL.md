@@ -1,25 +1,41 @@
 ---
-name: "ray-dependencies"
-name_zh: "ray-dependencies"
-description: "Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, debug dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `python/requirements/**`, `python/deplocks/**`, and `ci/raydepsets/configs/*.depsets.yaml`."
-description_zh: "Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, 调试 dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `python/requirements/**`, `python/deplocks/**`, and `ci/raydepsets/configs/*.depsets.yaml`."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: ray-dependencies
+name_zh: ray-dependencies
+description: Manage Python dependencies in Ray — add/remove/upgrade packages, 
+  work with raydepsets lock files, debug dependency conflicts, and regenerate 
+  compiled requirements. Covers `python/requirements*`, 
+  `python/requirements/**`, `python/deplocks/**`, and 
+  `ci/raydepsets/configs/*.depsets.yaml`.
+description_zh: Manage Python dependencies in Ray — add/remove/upgrade packages,
+  work with raydepsets lock files, 调试 dependency conflicts, and regenerate 
+  compiled requirements. Covers `python/requirements*`, 
+  `python/requirements/**`, `python/deplocks/**`, and 
+  `ci/raydepsets/configs/*.depsets.yaml`.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: ray-dependencies
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-# Ray Dependencies
-
-Expert skill for managing Python dependencies across the Ray repository: the monorepo `requirements_compiled*.txt` lock files, the raydepsets DAG-based lock file manager, modular `python/requirements/**` source files, and Docker image dependency chains.
-
----
-
 # When to use
 
 Use this skill when managing Python dependencies in Ray.
@@ -93,6 +109,24 @@ The two compiled lock files are produced by two `bash` functions in `ci/ci.sh`:
 ### How to invoke
 
 ```bash
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# Ray Dependencies
+
+Expert skill for managing Python dependencies across the Ray repository: the monorepo `requirements_compiled*.txt` lock files, the raydepsets DAG-based lock file manager, modular `python/requirements/**` source files, and Docker image dependency chains.
+
+---
+
 # Default-Python lock (currently py3.10/3.11/3.12 generic)
 ci/ci.sh compile_pip_dependencies
 
@@ -450,7 +484,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,21 +1,50 @@
 ---
-name: "pr-review"
-name_zh: "pr-审查"
-description: "Review a PR for correctness, security, code quality, and testing issues."
-description_zh: "审查 a PR for correctness, 安全, 代码 quality, and 测试 issues."
-category: "dev-tools"
-tags: [ai, api, backend, database, frontend]
-source: 
+name: pr-review
+name_zh: pr-审查
+description: Review a PR for correctness, security, code quality, and testing 
+  issues.
+description_zh: 审查 a PR for correctness, 安全, 代码 quality, and 测试 issues.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - frontend
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 1.0.0
 needs_review: false
+slug: pr-review
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with pr-review.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # PR Review
 
@@ -94,11 +123,6 @@ gh api repos/Significant-Gravitas/AutoGPT/pulls/{N}/comments \
   -F line=<line number>
 ```
 
-# When to use
-
-Use this skill when you need to work with pr-review.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -113,7 +137,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

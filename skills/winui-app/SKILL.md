@@ -1,19 +1,51 @@
 ---
-name: "winui-app"
-name_zh: "winui-app"
-description: "Bootstrap, develop, and design modern WinUI 3 desktop applications with"
-description_zh: "Bootstrap, develop, and 设计 modern WinUI 3 desktop applications with"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: winui-app
+name_zh: winui-app
+description: Bootstrap, develop, and design modern WinUI 3 desktop applications 
+  with
+description_zh: Bootstrap, develop, and 设计 modern WinUI 3 desktop applications 
+  with
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: winui-app
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with winui-app.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # WinUI App
 
@@ -105,11 +137,6 @@ dotnet new list winui
 - Favor built-in WinUI controls and system styling hooks before adding CommunityToolkit dependencies, custom controls, or app-specific surface systems.
 - Put detailed control, theming, shell, scrolling, responsiveness, packaging, and recovery guidance in the matching reference files instead of duplicating those rules here.
 
-# When to use
-
-Use this skill when you need to work with winui-app.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -124,7 +151,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

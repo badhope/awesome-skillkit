@@ -1,19 +1,51 @@
 ---
-name: "agent-tracing"
-name_zh: "智能体-tracing"
-description: "Agent tracing CLI for execution snapshots. Use for agent-tracing, traces,"
-description_zh: "智能体 tracing CLI for execution snapshots. Use for 智能体-tracing, traces,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: agent-tracing
+name_zh: 智能体-tracing
+description: Agent tracing CLI for execution snapshots. Use for agent-tracing, 
+  traces,
+description_zh: 智能体 tracing CLI for execution snapshots. Use for 智能体-tracing, 
+  traces,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: agent-tracing
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with agent-tracing.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Agent Tracing CLI Guide
 
@@ -231,11 +263,6 @@ When using `--messages`, the output shows three sections (if context engine data
 - **Context engine capture**: `apps/server/src/modules/AgentRuntime/RuntimeExecutors.ts` — in `call_llm` executor, after `serverMessagesEngine()` returns, calls `ctx.tracingContextEngine(input, output)`. `AgentRuntimeService.executeStep` buffers it per step and passes it to `traceRecorder.appendStep` as the typed `contextEngine` field (kept off the `events` array to stay out of Redis state).
 - **Store**: `FileSnapshotStore` reads/writes to `.agent-tracing/` relative to `process.cwd()`
 
-# When to use
-
-Use this skill when you need to work with agent-tracing.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -250,7 +277,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

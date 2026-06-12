@@ -1,18 +1,54 @@
 ---
-name: "letta-configuration"
-name_zh: "letta-configuration"
-description: "Configure LLM models and providers for Letta agents and servers. Use when setting model handles, adjusting temperature/tokens, configuring provider-specific settings, setting up BYOK providers, or configuring self-hosted deployments with environment variables."
-description_zh: "Configure LLM models and providers for Letta agents and servers. Use when setting 模型 handles, adjusting temperature/tokens, configuring provider-specific settings, setting up BYOK providers, or configuring self-hosted deployments with environment variables."
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: letta-configuration
+name_zh: letta-configuration
+description: Configure LLM models and providers for Letta agents and servers. 
+  Use when setting model handles, adjusting temperature/tokens, configuring 
+  provider-specific settings, setting up BYOK providers, or configuring 
+  self-hosted deployments with environment variables.
+description_zh: Configure LLM models and providers for Letta agents and servers.
+  Use when setting 模型 handles, adjusting temperature/tokens, configuring 
+  provider-specific settings, setting up BYOK providers, or configuring 
+  self-hosted deployments with environment variables.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 license: MIT
 language: en
 needs_review: false
+slug: letta-configuration
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on letta-configuration.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Letta Configuration
 
@@ -163,10 +199,6 @@ Before configuring:
 - `scripts/validate_provider.py` - Check provider credentials
 - `scripts/generate_env.py` - Generate .env for Docker
 
-# When to use
-
-Use this skill when you need guidance on letta-configuration.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -174,7 +206,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

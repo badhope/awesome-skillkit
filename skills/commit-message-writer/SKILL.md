@@ -3,20 +3,31 @@ name: Commit Message Writer
 name_zh: 提交信息写手
 description: max subject line length
 description_zh: 根据 diff 生成 conventional commit 信息。无厂商依赖。
-category: "dev-tools"
-tags: [ai, api, backend, deployment, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - documentation
+source:
 license: MIT
 language: en
 author: badhope
 version: 1.0.0
 needs_review: false
+slug: commit-message-writer
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 # When to use
 
 The user staged a diff and wants a commit message. They will run `git commit -F <your message>` themselves. The diff is what's actually going in the commit; the message describes it, not the world.

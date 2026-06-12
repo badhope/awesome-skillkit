@@ -1,21 +1,50 @@
 ---
-name: "redteam-plugin-development"
+name: redteam-plugin-development
 name_zh: 红队插件开发
-description: Standards for creating redteam plugins and graders. Use when creating
+description: Standards for creating redteam plugins and graders. Use when 
+  creating
 description_zh: 开发红队测试插件和评分器，扩展安全测试能力。
-category: ai
-tags: [ai, documentation, evaluation, frontend, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - documentation
+  - evaluation
+  - frontend
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: redteam-plugin-development
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on redteam plugin development.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Redteam Plugin Development Standards
 
@@ -199,11 +228,6 @@ When adding a new plugin:
 - Base classes: `src/redteam/plugins/base.ts`, `src/redteam/plugins/imageDatasetPluginBase.ts`
 - Grading prompt: `src/prompts/grading.ts` (REDTEAM_GRADING_PROMPT)
 
-# When to use
-
-Use this skill when you need guidance on redteam plugin development.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -213,7 +237,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

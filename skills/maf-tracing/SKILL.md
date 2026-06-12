@@ -1,22 +1,60 @@
 ---
-name: "maf-tracing"
-name_zh: "maf-tracing"
-description: "Enable tracing and logging for Microsoft Agent Framework (MAF) workflows. Configures OpenTelemetry export to Azure Application Insights and/or a generic OTLP endpoint using environment variables. Adds required packages to requirements.txt. WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry, Application Insights for MAF, OTLP export, observe workflow, monitor agent workflow, trace agent framework, instrument MAF, add observability, trace workflow executions, debug workflow."
-description_zh: "Enable tracing and logging for Microsoft 智能体 Framework (MAF) workflows. Configures OpenTelemetry export to Azure Application Insights and/or a generic OTLP endpoint using environment variables. Adds required packages to requirements.txt. WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry, Application Insights for MAF, OTLP export, observe workflow, 监控 智能体 workflow, trace 智能体 framework, instrument MAF, add observability, trace workflow executions, 调试 workflow."
-category: ai
-tags: [ai, api, backend, frontend, llm]
-source: 
+name: maf-tracing
+name_zh: maf-tracing
+description: 'Enable tracing and logging for Microsoft Agent Framework (MAF) workflows.
+  Configures OpenTelemetry export to Azure Application Insights and/or a generic OTLP
+  endpoint using environment variables. Adds required packages to requirements.txt.
+  WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry,
+  Application Insights for MAF, OTLP export, observe workflow, monitor agent workflow,
+  trace agent framework, instrument MAF, add observability, trace workflow executions,
+  debug workflow.'
+description_zh: 'Enable tracing and logging for Microsoft 智能体 Framework (MAF) workflows.
+  Configures OpenTelemetry export to Azure Application Insights and/or a generic OTLP
+  endpoint using environment variables. Adds required packages to requirements.txt.
+  WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry,
+  Application Insights for MAF, OTLP export, observe workflow, 监控 智能体 workflow, trace
+  智能体 framework, instrument MAF, add observability, trace workflow executions, 调试
+  workflow.'
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - llm
+source:
 license: MIT
 language: en
 author: Team
 version: 1.0.0
 needs_review: false
+slug: maf-tracing
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
 
+Use this skill when enabling tracing and logging for MAF workflows.
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Enable Tracing & Logging for MAF Workflows
 
@@ -184,21 +222,6 @@ from agent_framework.observability import configure_otel_providers
 
 load_dotenv()
 
-# Step 1a: Configure Azure Monitor (sets up its own TracerProvider internally)
-configure_azure_monitor(
-    connection_string=os.environ["APPLICATIONINSIGHTS_CONNECTION_STRING"]
-)
-
-# Step 1b: Add OTLP exporter to the existing TracerProvider
-otlp_endpoint = (
-    os.environ.get("OTEL_EXPORTER_OTLP_TRACES_ENDPOINT")
-    or os.environ.get("OTEL_EXPORTER_OTLP_ENDPOINT")
-)
-if otlp_endpoint:
-    otlp_exporter = OTLPSpanExporter(endpoint=otlp_endpoint)
-    tracer_provider: TracerProvider = trace.get_tracer_provider()
-    tracer_provider.add_span_processor(BatchSpanProcessor(otlp_exporter))
-
 # Step 2: Enable MAF's built-in instrumentation
 configure_otel_providers()
 ```
@@ -219,6 +242,21 @@ import logging
 from opentelemetry.sdk._logs import LoggerProvider
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
 from opentelemetry._logs import set_logger_provider
+
+# Step 1a: Configure Azure Monitor (sets up its own TracerProvider internally)
+configure_azure_monitor(
+    connection_string=os.environ["APPLICATIONINSIGHTS_CONNECTION_STRING"]
+)
+
+# Step 1b: Add OTLP exporter to the existing TracerProvider
+otlp_endpoint = (
+    os.environ.get("OTEL_EXPORTER_OTLP_TRACES_ENDPOINT")
+    or os.environ.get("OTEL_EXPORTER_OTLP_ENDPOINT")
+)
+if otlp_endpoint:
+    otlp_exporter = OTLPSpanExporter(endpoint=otlp_endpoint)
+    tracer_provider: TracerProvider = trace.get_tracer_provider()
+    tracer_provider.add_span_processor(BatchSpanProcessor(otlp_exporter))
 
 # If using Application Insights, configure_azure_monitor() already handles log export.
 # If using OTLP only, set up the OTLP log exporter:
@@ -374,10 +412,6 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# When to use
-
-Use this skill when enabling tracing and logging for MAF workflows.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -385,7 +419,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the "Example: Complete Entry Point with Tracing" section above for a complete working example.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "security-threat-model"
-name_zh: "安全-threat-model"
-description: "Repository-grounded threat modeling that enumerates trust boundaries,"
-description_zh: "Repository-grounded threat modeling that enumerates trust boundaries,"
-category: "dev-tools"
-tags: [ai, backend, cli, database, deployment]
-source: 
+name: security-threat-model
+name_zh: 安全-threat-model
+description: Repository-grounded threat modeling that enumerates trust 
+  boundaries,
+description_zh: Repository-grounded threat modeling that enumerates trust 
+  boundaries,
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - deployment
+source:
 language: en
 needs_review: false
+slug: security-threat-model
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "security-threat-model".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Threat Model Source Code Repo
 
@@ -92,11 +124,6 @@ Deliver an actionable AppSec-grade threat model that is specific to the reposito
 
 Only load the reference files you need. Keep the final result concise, grounded, and reviewable.
 
-# When to use
-
-Use this skill when you need to work with "security-threat-model".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -111,7 +138,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

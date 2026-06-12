@@ -1,19 +1,49 @@
 ---
-name: "figma-use"
-name_zh: "figma-use"
-description: "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every"
-description_zh: "**MANDATORY prerequisite** — you MUST invoke this 技能 BEFORE every"
-category: "dev-tools"
-tags: [ai, api, backend, cli, docker]
-source: 
+name: figma-use
+name_zh: figma-use
+description: '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every'
+description_zh: '**MANDATORY prerequisite** — you MUST invoke this 技能 BEFORE every'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - docker
+source:
 language: en
 needs_review: false
+slug: figma-use
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma-use.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # use_figma — Figma Plugin API Skill
 
@@ -244,11 +274,6 @@ Load these as needed based on what your task involves:
 
 You will see snippets throughout documentation here. These snippets contain useful plugin API code that can be repurposed. Use them as is, or as starter code as you go. If there are key concepts that are best documented as generic snippets, call them out and write to disk so you can reuse in the future.
 
-# When to use
-
-Use this skill when you need to work with figma-use.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -263,7 +288,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,16 +1,45 @@
 ---
-name: "slack-gif-creator"
-name_zh: "slack-gif-creator"
-description: "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
-description_zh: "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
-category: ai
+name: slack-gif-creator
+name_zh: slack-gif-creator
+slug: slack-gif-creator
+description: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts.
+description_zh: 为 Slack 创建优化的动画 GIF 的知识和工具。提供约束、验证工具和动画概念。
+category: applications
 tags: [ai, api, frontend, python, typescript]
-license: Complete terms in LICENSE.txt
+license: MIT
 needs_review: false
-source: 
+source:
 language: en
+author: AI-SKILL
+version: 1.0.0
+created: 2026-06-12
+updated: 2026-06-12
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
+
+# When to use
+
+Use this skill when you need guidance on slack-gif-creator.
+
+# Inputs
+
+User request or task description related to creating animated GIFs for Slack.
+
+# Output
+
+Generated content based on the user request, including GIF creation code and optimization strategies.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Slack GIF Creator
 
@@ -261,10 +290,6 @@ Be creative! Combine concepts (bouncing + rotating, pulsing + sliding, etc.) and
 pip install pillow imageio numpy
 ```
 
-# When to use
-
-Use this skill when you need guidance on slack-gif-creator.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -272,7 +297,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

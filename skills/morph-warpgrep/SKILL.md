@@ -1,19 +1,50 @@
 ---
-name: "morph-warpgrep"
-name_zh: "morph-warpgrep"
-description: Integration guide for Morph's WarpGrep (fast agentic code search) and
+name: morph-warpgrep
+name_zh: morph-warpgrep
+description: Integration guide for Morph's WarpGrep (fast agentic code search) 
+  and
 description_zh: 集成 guide for Morph's WarpGrep (fast agentic 代码 search) and
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: morph-warpgrep
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with morph-warpgrep.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Morph WarpGrep & Fast Apply
 
@@ -42,6 +73,31 @@ npm install @morphllm/morphsdk
 4. Ensure `ripgrep` is installed (required for local search):
 
 ```bash
+# or
+npm install @morphllm/morphsdk@latest
+```
+
+---
+
+## Cost Considerations
+
+- WarpGrep uses **1-4 API calls** per search (typically 2-3)
+- Fast Apply uses **1 API call** per edit
+- Pricing: $0.80 per 1M tokens (input and output)
+- Monitor usage via [Morph Dashboard](https://www.morphllm.com/dashboard)
+- Use regular grep/ripgrep for simple exact-match searches (free)
+
+---
+
+## Resources
+
+- [Morph Documentation](https://docs.morphllm.com)
+- [WarpGrep Guide](https://docs.morphllm.com/sdk/components/warp-grep)
+- [WarpGrep Benchmarks](https://www.morphllm.com/benchmarks/warp-grep)
+- [Fast Apply Benchmarks](https://www.morphllm.com/benchmarks/fast-apply)
+- [Morph Dashboard](https://www.morphllm.com/dashboard)
+- [Morph Discord](https://discord.gg/AdXta4yxEK)
+
 # macOS
 brew install ripgrep
 
@@ -423,36 +479,6 @@ Ensure you're using the latest SDK:
 
 ```bash
 bun add @morphllm/morphsdk@latest
-# or
-npm install @morphllm/morphsdk@latest
-```
-
----
-
-## Cost Considerations
-
-- WarpGrep uses **1-4 API calls** per search (typically 2-3)
-- Fast Apply uses **1 API call** per edit
-- Pricing: $0.80 per 1M tokens (input and output)
-- Monitor usage via [Morph Dashboard](https://www.morphllm.com/dashboard)
-- Use regular grep/ripgrep for simple exact-match searches (free)
-
----
-
-## Resources
-
-- [Morph Documentation](https://docs.morphllm.com)
-- [WarpGrep Guide](https://docs.morphllm.com/sdk/components/warp-grep)
-- [WarpGrep Benchmarks](https://www.morphllm.com/benchmarks/warp-grep)
-- [Fast Apply Benchmarks](https://www.morphllm.com/benchmarks/fast-apply)
-- [Morph Dashboard](https://www.morphllm.com/dashboard)
-- [Morph Discord](https://discord.gg/AdXta4yxEK)
-
-# When to use
-
-Use this skill when you need to work with morph-warpgrep.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -467,7 +493,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

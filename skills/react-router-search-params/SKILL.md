@@ -1,17 +1,28 @@
 ---
 name: React Router Search Param State
-name_zh: React Router 搜索参数/哈希状态管理
-description: "|"
-description_zh: "在 React Router 里为 URL 状态变化选 `replace` 还是 `push` —— 这是"浏览器后退键坏了"的 #1 病因。包含 `useSearchParamState` hook 模式、`null` 清空约定，以及 wizard vs filter 的决策表。"
-category: "dev-tools"
+name_zh: React Router 搜索参数状态管理
+slug: react-router-search-params
+description: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 useSearchParamState hook 模式和决策表。
+description_zh: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 useSearchParamState hook 模式和决策表。
+category: dev-tools
 tags: [ai, api, backend, cli, frontend]
-source: 
+source:
 ref: main
 license: MIT
 language: en
-author: "Promptfoo (downstream pack: badhope)"
-version: 0.1.0
+author: AI-SKILL
+version: 1.0.0
+created: 2026-06-12
+updated: 2026-06-12
 needs_review: false
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
 

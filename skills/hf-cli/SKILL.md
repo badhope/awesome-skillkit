@@ -1,20 +1,35 @@
 ---
-name: "hf-cli"
-name_zh: "hf-cli"
-description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing"
-description_zh: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing"
-category: "dev-tools"
-tags: [ai, api, cli, database, deployment]
-source: 
+name: hf-cli
+name_zh: hf-cli
+description: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
+  managing
+description_zh: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
+  managing
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - deployment
+source:
 language: en
 needs_review: false
+slug: hf-cli
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
 
 The Hugging Face Hub CLI tool `hf` is available. IMPORTANT: The `hf` command replaces the deprecated `huggingface-cli` command.
@@ -234,6 +249,18 @@ Some command examples:
 Use this skill when you need to work with hf-cli.
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -248,7 +275,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

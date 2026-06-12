@@ -1,15 +1,52 @@
 ---
-name: "agent-runtime-hooks"
-name_zh: "智能体-runtime-hooks"
-description: "Agent runtime lifecycle hooks. Use for before/after tool or step hooks, tool mocks, human intervention, sub-agent calls, context compression, evals, tracing, callAgent, or lifecycle events."
-description_zh: "智能体 runtime lifecycle hooks. Use for before/after tool or step hooks, tool mocks, human intervention, sub-智能体 calls, context compression, evals, tracing, callAgent, or lifecycle events."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: agent-runtime-hooks
+name_zh: 智能体-runtime-hooks
+description: Agent runtime lifecycle hooks. Use for before/after tool or step 
+  hooks, tool mocks, human intervention, sub-agent calls, context compression, 
+  evals, tracing, callAgent, or lifecycle events.
+description_zh: 智能体 runtime lifecycle hooks. Use for before/after tool or step 
+  hooks, tool mocks, human intervention, sub-智能体 calls, context compression, 
+  evals, tracing, callAgent, or lifecycle events.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: agent-runtime-hooks
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on agent-runtime-hooks.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Agent Runtime Hooks
 
@@ -215,10 +252,6 @@ Note: CallAgent hooks require `parentOperationId` in `ExecSubAgentTaskParams`.
 
 See `devtools/agent-evals/helpers/runner.ts` — `createEvalHooks()` uses `afterStep`, `onComplete`, `afterToolCall`, and `beforeToolCall` (for mock).
 
-# When to use
-
-Use this skill when you need guidance on agent-runtime-hooks.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -226,7 +259,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

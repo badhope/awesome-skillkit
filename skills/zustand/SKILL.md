@@ -1,19 +1,51 @@
 ---
 name: zustand
 name_zh: zustand
-description: "LobeHub Zustand store conventions. Use when editing src/store, store"
-description_zh: "LobeHub Zustand store conventions. Use when editing src/store, store"
-category: ai
-tags: [ai, api, backend, frontend, llm]
-source: 
+description: LobeHub Zustand store conventions. Use when editing src/store, 
+  store
+description_zh: LobeHub Zustand store conventions. Use when editing src/store, 
+  store
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - llm
+source:
 language: en
 needs_review: false
+slug: zustand
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with zustand.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # LobeHub Zustand State Management
 
@@ -212,11 +244,6 @@ export class ToolActionImpl {
 - Don't add `setNamespace` for slices that don't write state.
 - Don't keep both old slice objects and class actions active at the same time during migration.
 
-# When to use
-
-Use this skill when you need to work with zustand.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -231,7 +258,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

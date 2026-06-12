@@ -3,15 +3,46 @@ name: lint
 name_zh: lint
 description: Run linting and formatting checks on Ray code
 description_zh: 运行 linting and formatting checks on Ray 代码
-category: "dev-tools"
-tags: [ai, api, documentation, frontend, git]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - documentation
+  - frontend
+  - git
+source:
 language: en
 needs_review: false
+slug: lint
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on lint.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Lint Modified Files
 
@@ -52,10 +83,6 @@ outside the PR scope untouched.
 - Ruff config: pyproject.toml (`[tool.ruff]` section)
 - Docs: doc/source/ray-contribute/development.rst ("Development tooling")
 
-# When to use
-
-Use this skill when you need guidance on lint.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -63,7 +90,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

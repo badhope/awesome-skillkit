@@ -1,15 +1,52 @@
 ---
 name: react
 name_zh: react
-description: "LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state."
-description_zh: "LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+description: LobeHub React component conventions. Use when editing TSX UI, 
+  choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, 
+  desktop variants, layouts, or component state.
+description_zh: LobeHub React component conventions. Use when editing TSX UI, 
+  choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, 
+  desktop variants, layouts, or component state.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: react
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on react.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # React Component Writing Guide
 
@@ -128,10 +165,6 @@ errorElement: <ErrorBoundary />;
 | Accessing zustand store without selector                           | Use selectors to access store data (see zustand skill)                      |
 | Text or icon-text actions built with `Flexbox`/`Text` + `onClick`  | Use `Button type={'text'} size={'small'}` with `icon` when needed           |
 
-# When to use
-
-Use this skill when you need guidance on react.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -139,7 +172,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

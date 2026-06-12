@@ -1,20 +1,35 @@
 ---
-name: "major-version-mode"
-name_zh: "major-版本-mode"
-description: Context for working on the next AI SDK major release. Only use when explicitly
-description_zh: Context for working on the next AI SDK major release. Only use when explicitly
-category: ai
-tags: [ai, deployment, documentation, frontend, javascript]
-source: 
+name: major-version-mode
+name_zh: major-版本-mode
+description: Context for working on the next AI SDK major release. Only use when
+  explicitly
+description_zh: Context for working on the next AI SDK major release. Only use 
+  when explicitly
+category: applications
+tags:
+  - ai
+  - deployment
+  - documentation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: major-version-mode
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 ## Context
 
 This task is part of the next AI SDK major release. Breaking changes are acceptable.
@@ -68,6 +83,18 @@ If the change requires consumers to update their code or migrate stored data, ad
 Use this skill when you need to work with major-version-mode.
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -82,7 +109,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

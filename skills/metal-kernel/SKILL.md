@@ -1,15 +1,54 @@
 ---
-name: "metal-kernel"
-name_zh: "metal-kernel"
-description: "Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side operators, and Metal kernel implementation."
-description_zh: "Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side operators, and Metal kernel implementation."
-category: ai
-tags: [ai, api, backend, frontend, python]
+name: metal-kernel
+name_zh: metal-kernel
+description: Write Metal/MPS kernels for PyTorch operators. Use when adding MPS 
+  device support to operators, implementing Metal shaders, or porting CUDA 
+  kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side 
+  operators, and Metal kernel implementation.
+description_zh: Write Metal/MPS kernels for PyTorch operators. Use when adding 
+  MPS device support to operators, implementing Metal shaders, or porting CUDA 
+  kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side 
+  operators, and Metal kernel implementation.
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - python
 needs_review: false
-source: 
+source:
 language: en
+slug: metal-kernel
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on metal-kernel.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Metal Kernel Writing Guide
 
@@ -561,10 +600,6 @@ are kept for debugging but the `AcceleratorError` carries `msg[0]`.
 - [ ] Removed expected failures from `torch/testing/_internal/common_mps.py`
 - [ ] Removed skip/xfail decorators from OpInfo (if applicable)
 
-# When to use
-
-Use this skill when you need guidance on metal-kernel.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -572,7 +607,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

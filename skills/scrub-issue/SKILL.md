@@ -1,19 +1,51 @@
 ---
-name: "scrub-issue"
-name_zh: "scrub-问题"
-description: "Fetch, analyze, reproduce, and minimize GitHub issue reproductions. Use"
-description_zh: "Fetch, 分析, reproduce, and minimize GitHub issue reproductions. Use"
-category: "dev-tools"
-tags: [ai, api, backend, cli, evaluation]
-source: 
+name: scrub-issue
+name_zh: scrub-问题
+description: Fetch, analyze, reproduce, and minimize GitHub issue reproductions.
+  Use
+description_zh: Fetch, 分析, reproduce, and minimize GitHub issue reproductions. 
+  Use
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - evaluation
+source:
 language: en
 needs_review: false
+slug: scrub-issue
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with scrub-issue.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Minimize Issue Reproduction
 
@@ -372,11 +404,6 @@ After the last GitHub modification, restore the notification subscription
 state (see "Preserving notification subscription state" above) — unless the
 issue was closed, in which case skip the restore.
 
-# When to use
-
-Use this skill when you need to work with scrub-issue.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -391,7 +418,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

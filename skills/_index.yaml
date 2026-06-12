@@ -4,701 +4,3012 @@
 # skills/<slug>/SKILL.md and re-run validate-skill.py.
 
 skills:
+  - slug: 1password
+    name: 1password
+    name_zh: 1password
+    description: Set up and use 1Password CLI (op). Use when installing the CLI,
+      enabling
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/1password/SKILL.md
+  - slug: add-function-examples
+    name: add-function-examples
+    name_zh: add-函数-examples
+    description: Guide for adding new AI function examples, for testing specific
+      features against the actual provider APIs.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/add-function-examples/SKILL.md
   - slug: add-model-price
     name: add-model-price
-    name_zh:
+    name_zh: add-模型-price
     description: Use when editing 
       worker/src/constants/default-model-prices.json, 
       packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
       matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or 
       Gemini model pricing.
-    category: uncategorized
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - backend
+      - documentation
+      - evaluation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/add-model-price/SKILL.md
+  - slug: add-or-fix-type-checking
+    name: add-or-fix-type-checking
+    name_zh: add-or-fix-type-checking
+    description: Fixes broken typing checks detected by ty, make typing, or make
+      check-repo. Use when typing errors appear in local runs, CI, or PR logs.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - docker
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/add-or-fix-type-checking/SKILL.md
+  - slug: add-provider-doc
+    name: add-provider-doc
+    name_zh: 添加-provider-doc
+    description: Add documentation for a new AI provider — usage docs, env vars,
+      Docker
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/add-provider-doc/SKILL.md
+  - slug: add-provider-package
+    name: add-provider-package
+    name_zh: 添加-provider-package
+    description: Guide for adding new AI provider packages to the AI SDK. Use 
+      when creating
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/add-provider-package/SKILL.md
+  - slug: add-setting-env
+    name: add-setting-env
+    name_zh: 添加-设置-env
+    description: Add server-side environment variables that control default 
+      values for
+    category: applications
+    tags:
+      - ai
+      - backend
+      - documentation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/add-setting-env/SKILL.md
+  - slug: add-uint-support
+    name: add-uint-support
+    name_zh: add-uint-support
+    description: Add unsigned integer (uint) type support to PyTorch operators 
+      by updating AT_DISPATCH macros. Use when adding support for uint16, 
+      uint32, uint64 types to operators, kernels, or when user mentions enabling
+      unsigned types, barebones unsigned types, or uint support.
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - python
+      - testing
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/add-uint-support/SKILL.md
+  - slug: adr-skill
+    name: adr-skill
+    name_zh: adr-技能
+    description: Create and maintain Architecture Decision Records (ADRs) 
+      optimized for agentic coding workflows. Use when you need to propose, 
+      write, update, accept/reject, deprecate, or supersede an ADR; bootstrap an
+      adr folder and index; consult existing ADRs before implementing changes; 
+      or enforce ADR conventions. This skill uses Socratic questioning to 
+      capture intent before drafting, and validates output against an 
+      agent-readiness checklist.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/adr-skill/SKILL.md
+  - slug: agent
+    name: Agent
+    name_zh: 智能体
+    description: 'Manage AI agents: create, edit, delete, list, run, and check status'
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/agent/SKILL.md
+  - slug: agent-development
+    name: letta-development-guide
+    name_zh: letta-development-guide
+    description: Comprehensive guide for developing Letta agents, including 
+      architecture
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/agent-development/SKILL.md
+  - slug: agent-runtime-hooks
+    name: agent-runtime-hooks
+    name_zh: 智能体-runtime-hooks
+    description: Agent runtime lifecycle hooks. Use for before/after tool or 
+      step hooks, tool mocks, human intervention, sub-agent calls, context 
+      compression, evals, tracing, callAgent, or lifecycle events.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/agent-runtime-hooks/SKILL.md
   - slug: agent-setup-maintenance
     name: agent-setup-maintenance
-    name_zh:
-    description: "Shared workflow for editing Langfuse's repo-owned agent setup under
-      `.agents/`.\nUse when changing AGENTS files, shared skills, `.agents/config.json`,\n\
-      generated shim behavior, provider discovery paths, or install-time agent sync."
-    category: uncategorized
+    name_zh: Agent 设置与维护
+    description: Shared workflow for editing Langfuse''s repo-owned agent setup 
+      under
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - database
+      - docker
+      - documentation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/agent-setup-maintenance/SKILL.md
+  - slug: agent-signal
+    name: agent-signal
+    name_zh: 智能体-signal
+    description: Build or extend LobeHub Agent Signal pipelines. Use for signal 
+      sources,
+    category: applications
+    tags:
+      - ai
+      - backend
+      - database
+      - evaluation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/agent-signal/SKILL.md
+  - slug: agent-tracing
+    name: agent-tracing
+    name_zh: 智能体-tracing
+    description: Agent tracing CLI for execution snapshots. Use for 
+      agent-tracing, traces,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/agent-tracing/SKILL.md
+  - slug: ai-news
+    name: ai-news
+    name_zh: ai-news
+    description: Fetch and summarize recent AI news from curated RSS feeds 
+      (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) 
+      and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, 
+      etc.). Also fetches full transcripts for specific YouTube videos. Use when
+      the user asks about recent AI news, what's happened in AI lately, 
+      summaries of AI research or product announcements, or wants a digest of 
+      what's going on in the AI space.
+    category: applications
+    tags:
+      - ai
+      - deployment
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/ai-news/SKILL.md
+  - slug: algorithmic-art
+    name: algorithmic-art
+    name_zh: algorithmic-art
+    description: Creating algorithmic art using p5.js with seeded randomness and
+      interactive
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/algorithmic-art/SKILL.md
   - slug: analyze-cloud-costs
     name: analyze-cloud-costs
-    name_zh:
-    description: "Analyze Langfuse Cloud infrastructure cost structure using Metabase
-      cost\nmarts. Use when asked about cloud spend, AWS versus ClickHouse cost splits,\n\
-      cost drivers by provider/service/usage type/account, daily cost per tracing\n\
-      event, infra cost dashboards, or cost regressions visible in Metabase."
-    category: uncategorized
+    name_zh: 分析云成本
+    description: Analyze Langfuse Cloud infrastructure cost structure using 
+      Metabase
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - cli
+      - frontend
+      - javascript
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/analyze-cloud-costs/SKILL.md
   - slug: analyzing-financial-statements
     name: analyzing-financial-statements
-    name_zh:
+    name_zh: 分析财务报表
     description: This skill calculates key financial ratios and metrics from 
-      financial statement data for investment analysis
-    category: uncategorized
+      financial
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - evaluation
+      - frontend
+      - javascript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/analyzing-financial-statements/SKILL.md
+  - slug: aoti-debug
+    name: aoti-debug
+    name_zh: aoti-调试
+    description: Debug AOTInductor (AOTI) errors and crashes. Use when 
+      encountering AOTI segfaults, device mismatch errors, constant loading 
+      failures, or runtime errors from aot_compile, aot_load, 
+      aoti_compile_and_package, or aoti_load_package.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - evaluation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/aoti-debug/SKILL.md
+  - slug: app
+    name: app
+    name_zh: app
+    description: Opinionated app components building on top of ./ui primitives
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - javascript
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/app/SKILL.md
   - slug: applying-brand-guidelines
     name: applying-brand-guidelines
-    name_zh:
+    name_zh: 应用品牌指南
     description: This skill applies consistent corporate branding and styling to
-      all generated documents including colors, fonts, layouts, and messaging
-    category: uncategorized
+      all generated
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/applying-brand-guidelines/SKILL.md
+  - slug: aspnet-core
+    name: aspnet-core
+    name_zh: aspnet-core
+    description: Build, review, refactor, or architect ASP.NET Core web 
+      applications using
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/aspnet-core/SKILL.md
+  - slug: at-dispatch-v2
+    name: at-dispatch-v2
+    name_zh: at-dispatch-v2
+    description: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in 
+      ATen C++
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/at-dispatch-v2/SKILL.md
   - slug: backend-dev-guidelines
     name: backend-dev-guidelines
-    name_zh:
+    name_zh: 后端开发指南
     description: Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and 
-      TypeScript monorepo. Use when creating or reviewing tRPC routers, public 
-      REST endpoints, BullMQ queue processors, backend services, middleware, 
-      Prisma or ClickHouse data access, OpenTelemetry instrumentation, Zod 
-      validation, env configuration, or backend tests across web, worker, or 
-      packages/shared.
-    category: uncategorized
+      TypeScript
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/backend-dev-guidelines/SKILL.md
   - slug: book-translation
     name: book-translation
-    name_zh:
+    name_zh: 书籍翻译
     description: Translate "The Interactive Book of Prompting" chapters and UI 
-      strings to a new language
-    category: uncategorized
+      strings
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - frontend
+      - javascript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/book-translation/SKILL.md
+  - slug: bootstrap-realtime-eval
+    name: bootstrap-realtime-eval
+    name_zh: bootstrap-realtime-eval
+    description: Bootstrap a new realtime eval folder inside this cookbook repo 
+      by choosing the right harness from examples/evals/realtime_evals, 
+      scaffolding prompt/tools/data files, generating a useful README, and 
+      validating it with smoke, full eval, and test runs. Use when a user wants 
+      to start a new crawl, walk, or run realtime eval in this repository.
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - documentation
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/bootstrap-realtime-eval/SKILL.md
+  - slug: brand-guidelines
+    name: brand-guidelines
+    name_zh: brand-guidelines
+    description: Applies Anthropic's official brand colors and typography to any
+      sort of artifact that may benefit from having Anthropic's look-and-feel. 
+      Use it when brand colors or style guidelines, visual formatting, or 
+      company design standards apply.
+    category: applications
+    tags:
+      - ai
+      - api
+      - frontend
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/brand-guidelines/SKILL.md
   - slug: browser-ml-in-js
     name: Browser ML in JavaScript
     name_zh: 浏览器端机器学习（JavaScript）
-    description: Run state-of-the-art ML models directly in JavaScript / 
-      TypeScript — text classification, translation, summarization, image 
-      classification, object detection, speech recognition, audio 
-      classification, multimodal. Works in browsers and server-side runtimes 
-      (Node, Bun, Deno) with WebGPU / WASM. No Python backend required.
-    category: applications
+    description: '|'
+    category: dev-tools
     tags:
-      - javascript
-      - typescript
-      - ml
-      - browser
-      - onnx
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
     platforms: []
     needs_review: false
     path: skills/browser-ml-in-js/SKILL.md
+  - slug: builtin-tool
+    name: builtin-tool
+    name_zh: builtin-tool
+    description: Build LobeHub builtin tool packages. Use when adding 
+      agent-callable tools,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/builtin-tool/SKILL.md
+  - slug: canvas-design
+    name: canvas-design
+    name_zh: canvas-设计
+    description: Create beautiful visual art in .png and .pdf documents using 
+      design philosophy. You should use this skill when the user asks to create 
+      a poster, piece of art, design, or other static piece. Create original 
+      visual designs, never copying existing artists' work to avoid copyright 
+      violations.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/canvas-design/SKILL.md
+  - slug: capture-api-response-test-fixture
+    name: capture-api-response-test-fixture
+    name_zh: capture-接口-response-测试-fixture
+    description: Capture API response test fixture.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/capture-api-response-test-fixture/SKILL.md
   - slug: changelog-writing
     name: changelog-writing
-    name_zh:
-    description: "Shared workflow for writing Langfuse changelog entries after a feature
-      is complete.\nUse when a branch is ready for merge and a changelog entry or
-      changelog draft is needed."
-    category: uncategorized
+    name_zh: 编写变更日志
+    description: Shared workflow for writing Langfuse changelog entries after a 
+      feature
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - deployment
+      - documentation
+      - frontend
+      - git
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/changelog-writing/SKILL.md
+  - slug: chat-sdk
+    name: chat-sdk
+    name_zh: chat-sdk
+    description: Build multi-platform chat bots with the chat SDK. Use for 
+      Slack, Teams,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/chat-sdk/SKILL.md
+  - slug: chatgpt-apps
+    name: chatgpt-apps
+    name_zh: chatgpt-apps
+    description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK 
+      applications
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/chatgpt-apps/SKILL.md
+  - slug: claude-api
+    name: claude-api
+    name_zh: claude-接口
+    description: Reference for the Claude API / Anthropic SDK — model ids, 
+      pricing, params,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/claude-api/SKILL.md
+  - slug: cli
+    name: cli
+    name_zh: cli
+    description: LobeHub CLI (@lobehub/cli) development guide — commands, 
+      subcommands,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/cli/SKILL.md
+  - slug: cli-backend-testing
+    name: cli-backend-testing
+    name_zh: cli-backend-testing
+    description: CLI + Backend integration testing workflow. Use when verifying 
+      backend
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/cli-backend-testing/SKILL.md
   - slug: cli-builder
     name: CLI Builder
     name_zh: CLI 工具构造
-    description: Build a durable, composable CLI from an API spec, SDK, curl 
-      examples, or existing script — pick the right runtime, sketch the command 
-      surface before coding, default to JSON output, manage auth, and pair with 
-      an install command. For real tools you will run again, not throwaway 
-      scripts.
-    category: terminal-cli
+    description: '|'
+    category: dev-tools
     tags:
+      - ai
+      - api
+      - backend
       - cli
-      - rust
-      - typescript
-      - python
-      - dx
+      - database
     platforms: []
     needs_review: false
     path: skills/cli-builder/SKILL.md
+  - slug: cli-creator
+    name: cli-creator
+    name_zh: cli-creator
+    description: Build a composable CLI for Codex from API docs, an OpenAPI 
+      spec, existing curl examples, an SDK, a web app, an admin tool, or a local
+      script. Use when the user wants Codex to create a command-line tool that 
+      can run from any repo, expose composable read/write commands, return 
+      stable JSON, manage auth, and pair with a companion skill.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/cli-creator/SKILL.md
   - slug: clickhouse-best-practices
     name: ClickHouse Best Practices
     name_zh: ClickHouse 最佳实践
-    description: 28 rules for ClickHouse schema, query, and insert strategy — 
-      referenced before answering any ClickHouse question. Filters to apply, 
-      trade-offs to know, anti-patterns to flag.
-    category: data-pipelines
+    description: '|'
+    category: dev-tools
     tags:
-      - clickhouse
+      - ai
+      - cli
       - database
-      - schema
-      - query
-      - optimization
+      - documentation
+      - evaluation
     platforms: []
     needs_review: false
     path: skills/clickhouse-best-practices/SKILL.md
+  - slug: cloudflare-deploy
+    name: cloudflare-deploy
+    name_zh: cloudflare-部署
+    description: Deploy applications and infrastructure to Cloudflare using 
+      Workers, Pages, and related platform services. Use when the user asks to 
+      deploy, host, publish, or set up a project on Cloudflare.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/cloudflare-deploy/SKILL.md
   - slug: code-review
     name: Code Review Workflow
     name_zh: 代码审查工作流
-    description: Code review workflow for any PR, branch, diff, or local change 
-      — start with a canonical review checklist, defer to specialised skills 
-      (security, ClickHouse, frontend) when the change touches those areas, 
-      output findings ordered by severity with file:line references. No findings
-      is a valid result.
-    category: code-assistants
+    description: '|'
+    category: dev-tools
     tags:
-      - code-review
-      - pr
-      - quality
-      - security
-      - workflow
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/code-review/SKILL.md
   - slug: code-reviewer
     name: Code Reviewer
     name_zh: 代码审查员
-    description: Review a code diff for bugs, security issues, and style. 
-      Vendor-neutral, language-aware.
-    category: dev-tools
+    description: minimum severity to report
+    category: applications
     tags:
-      - code
-      - review
-      - security
-      - refactoring
+      - ai
+      - api
+      - database
+      - frontend
+      - llm
     platforms: []
     needs_review: false
     path: skills/code-reviewer/SKILL.md
   - slug: commit-message-writer
     name: Commit Message Writer
     name_zh: 提交信息写手
-    description: Write a conventional-commit message from a diff. 
-      Vendor-neutral.
+    description: max subject line length
     category: dev-tools
     tags:
-      - git
-      - commit
-      - conventional-commits
-      - changelog
+      - ai
+      - api
+      - backend
+      - deployment
+      - documentation
     platforms: []
     needs_review: false
     path: skills/commit-message-writer/SKILL.md
+  - slug: compaction-prompts
+    name: compaction-prompts
+    name_zh: compaction-prompts
+    description: Configures Letta agent compaction settings and custom 
+      summarization prompts.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/compaction-prompts/SKILL.md
+  - slug: conversations
+    name: Letta Conversations API
+    name_zh: Letta Conversations 接口
+    description: Guide for using the Letta Conversations API to manage isolated 
+      message threads on agents. Use when building multi-user chat applications,
+      session management, or any scenario requiring separate conversation 
+      contexts on a single agent.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/conversations/SKILL.md
+  - slug: cookbook-audit
+    name: cookbook-audit
+    name_zh: cookbook-audit
+    description: Audit an Anthropic Cookbook notebook based on a rubric. Use 
+      whenever a notebook review or audit is requested.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/cookbook-audit/SKILL.md
   - slug: creating-financial-models
     name: creating-financial-models
-    name_zh:
+    name_zh: 创建财务模型
     description: This skill provides an advanced financial modeling suite with 
-      DCF analysis, sensitivity testing, Monte Carlo simulations, and scenario 
-      planning for investment decisions
-    category: uncategorized
+      DCF analysis,
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/creating-financial-models/SKILL.md
+  - slug: creating-letta-code-channels
+    name: creating-letta-code-channels
+    name_zh: creating-letta-代码-channels
+    description: Builds and debugs Letta Code channels, including first-party 
+      channel adapters and dynamic user channel plugins under ~/.letta/channels.
+      Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, or custom 
+      channel support; testing channel routing, pairing, MessageChannel, runtime
+      dependencies, or channel plugin manifests.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/creating-letta-code-channels/SKILL.md
+  - slug: data-fetching-architecture
+    name: data-fetching-architecture
+    name_zh: data-fetching-architecture
+    description: LobeHub data-fetching pipeline guide. Use for service layer, 
+      Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
+      migrating useEffect fetches.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/data-fetching-architecture/SKILL.md
+  - slug: datadog
+    name: datadog
+    name_zh: datadog
+    description: Query Datadog observability data (logs, metrics, monitors, 
+      dashboards,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - datadog
+    platforms: []
+    needs_review: false
+    path: skills/datadog/SKILL.md
   - slug: datadog-query-recipes
     name: datadog-query-recipes
-    name_zh:
-    description: "Langfuse-specific Datadog query recipes for production telemetry
-      research.\nUse when asked to investigate tenant or project activity, public
-      API endpoint\nusage, queue consumer behavior, spans, logs, metrics, or ad hoc
-      production\nquestions across prod-us, prod-eu, prod-hipaa, and prod-jp. This
-      skill is for\nreusable query shapes and measured research; pair it with\ndebug-issue-with-datadog
-      when the task is an incident or root-cause analysis."
-    category: uncategorized
+    name_zh: Datadog 查询配方
+    description: Langfuse-specific Datadog query recipes for production 
+      telemetry research.
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - datadog
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/datadog-query-recipes/SKILL.md
+  - slug: db-migrations
+    name: db-migrations
+    name_zh: db-migrations
+    description: 'Use for Drizzle migrations: schema/table/column changes, migration
+      generation'
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/db-migrations/SKILL.md
   - slug: debug-issue-with-datadog
     name: debug-issue-with-datadog
-    name_zh:
-    description: "Debug a user-reported issue, Linear ticket, or incident report by
-      combining\nDatadog (APM, logs, metrics) with the Langfuse repo to establish
-      a\nroot cause. Use when given a Linear issue URL/ID (e.g. LFE-XXXX), a GitHub\n\
-      issue, or a pasted error/report and asked to investigate, root-cause, or\ntriage.
-      Produces a structured analysis — error breakdown, hypothesis-by-class,\nsuggested
-      patches with code references."
-    category: uncategorized
+    name_zh: 使用 Datadog 调试问题
+    description: Debug a user-reported issue, Linear ticket, or incident report 
+      by combining
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - datadog
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/debug-issue-with-datadog/SKILL.md
+  - slug: debug-package
+    name: debug-package
+    name_zh: 调试-package
+    description: LobeHub debug package and log namespace guide. Use when adding 
+      debug() logging, choosing lobe-* namespaces, troubleshooting DEBUG output,
+      localStorage.debug, or log format specifiers.
+    category: dev-tools
+    tags:
+      - backend
+      - cli
+      - frontend
+      - javascript
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/debug-package/SKILL.md
   - slug: deepeval
     name: deepeval
-    name_zh:
-    description: "DeepEval evaluation workflow for AI agents and LLM applications.
-      TRIGGER when the user wants to evaluate or improve an AI agent, tool-using workflow,
-      multi-turn chatbot, RAG pipeline, or LLM app; add evals; generate datasets or
-      goldens; use deepeval generate; use deepeval test run; send results to Confident
-      AI; monitor production; run online evals; inspect traces; or iterate on prompts,
-      tools, retrieval, or agent behavior from eval failures. AI agents are the primary
-      use case. Covers Python SDK, pytest eval suites, CLI generation, traced evals,
-      Confident AI reporting, and agent-driven improvement loops. DO NOT TRIGGER for
-      unrelated generic pytest, non-AI test setup, or non-DeepEval observability work
-      unless the user asks to compare or migrate to DeepEval; for instrumenting an
-      app with DeepEval tracing, @observe, or framework integrations (use the `deepeval-tracing`
-      skill); or for raw OpenTelemetry / OTLP export without the deepeval package
-      (use the `deepeval-otel` skill).\n"
-    category: uncategorized
+    name_zh: DeepEval 评估
+    description: DeepEval evaluation workflow for AI agents and LLM 
+      applications. TRIGGER
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - cli
+      - documentation
+      - evaluation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/deepeval/SKILL.md
   - slug: deepeval-eval-suite
     name: deepeval Pytest Eval Suite
-    name_zh: deepeval Pytest 评估套件
-    description: Build and run an end-to-end pytest eval suite for an AI app 
-      with DeepEval. Covers dataset reuse / generation, metric selection, 
-      `deepeval test run`, and failure-driven iteration. The counterpart to 
-      deepeval-tracing (instrumentation) and deepeval-otel (raw OTLP).
-    category: evaluation
+    name_zh: DeepEval 评估套件
+    description: Targeted fix to attempt next round
+    category: dev-tools
     tags:
-      - deepeval
-      - pytest
-      - evals
-      - agents
-      - llm
+      - ai
+      - api
+      - backend
+      - cli
+      - evaluation
     platforms: []
     needs_review: false
     path: skills/deepeval-eval-suite/SKILL.md
   - slug: deepeval-otel
     name: deepeval OTel Trace Export
-    name_zh: deepeval OTel Trace 导出
-    description: Send OpenTelemetry traces from any AI app to Confident AI's 
-      hosted Observatory. No deepeval Python package required — works with any 
-      OTLP-capable OpenTelemetry SDK in any language.
-    category: observability
+    name_zh: DeepEval OpenTelemetry
+    description: Suggested follow-up actions
+    category: dev-tools
     tags:
-      - opentelemetry
-      - otlp
-      - tracing
-      - eval
-      - observability
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/deepeval-otel/SKILL.md
   - slug: deepeval-tracing
     name: deepeval SDK Tracing
-    name_zh: deepeval SDK 打点
-    description: Instrument a Python AI app with DeepEval's `@observe` decorator
-      and framework integrations so traces land in Confident AI's Observatory. 
-      The Python-only counterpart to the OTel-based deepeval-otel skill.
-    category: observability
+    name_zh: DeepEval 追踪
+    description: Confirmation that traces are arriving in Confident AI''s
+    category: dev-tools
     tags:
-      - deepeval
-      - tracing
-      - observe
-      - python
-      - integrations
+      - ai
+      - api
+      - backend
+      - database
+      - deployment
     platforms: []
     needs_review: false
     path: skills/deepeval-tracing/SKILL.md
+  - slug: define-goal
+    name: define-goal
+    name_zh: define-goal
+    description: Help the user define a concrete, measurable goal before 
+      starting work,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/define-goal/SKILL.md
+  - slug: desktop
+    name: desktop
+    name_zh: desktop
+    description: Electron desktop development guide — IPC handlers, controllers,
+      preload scripts, window/menu management.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/desktop/SKILL.md
+  - slug: develop-ai-functions-example
+    name: develop-ai-functions-example
+    name_zh: develop-ai-functions-example
+    description: Develop examples for AI SDK functions. Use when creating, 
+      running, or modifying examples under examples/ai-functions/src to validate
+      provider support, demonstrate features, or create test fixtures.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/develop-ai-functions-example/SKILL.md
+  - slug: discord
+    name: discord
+    name_zh: discord
+    description: Discord automation CLI — send/read/search messages, manage 
+      channels and
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/discord/SKILL.md
   - slug: discount-review
     name: discount-review
-    name_zh:
+    name_zh: discount-审查
     description: Inspect the discount policy fixture with a repeatable review 
-      checklist and helper script.
-    category: uncategorized
+      checklist
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/discount-review/SKILL.md
+  - slug: distributed-triage
+    name: distributed-triage
+    name_zh: distributed-triage
+    description: Sub-triages issues in the oncall:distributed queue by assigning
+      distributed
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/distributed-triage/SKILL.md
+  - slug: doc
+    name: doc
+    name_zh: doc
+    description: Use when the task involves reading, creating, or editing 
+      `.docx` documents,
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/doc/SKILL.md
   - slug: doc-coauthoring
     name: Doc Co-Authoring Workflow
     name_zh: 文档共写工作流
-    description: Structured three-stage workflow for co-authoring documentation 
-      — Context Gathering, Refinement & Structure, Reader Testing. Trigger when 
-      user mentions "write a doc", "draft a proposal", "create a spec". Skips 
-      the "I just want to dump and ship" trap.
+    description: 三阶段结构化文档共写工作流 - Context Gathering / Refinement & Structure / 
+      Reader Testing。当用户提到写文档、起草提案、创建 spec 时触发。跳出写完即发的陷阱。
     category: documentation
     tags:
+      - ai
       - documentation
-      - writing
-      - workflow
-      - proposal
-      - spec
+      - frontend
+      - llm
+      - security
     platforms: []
     needs_review: false
     path: skills/doc-coauthoring/SKILL.md
+  - slug: docs-changelog
+    name: docs-changelog
+    name_zh: docs-changelog
+    description: Write website changelog pages under docs/changelog/*.mdx. Use 
+      for EN/ZH
+    category: dev-tools
+    tags:
+      - ai
+      - deployment
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/docs-changelog/SKILL.md
+  - slug: docstring
+    name: docstring
+    name_zh: docstring
+    description: Write docstrings for PyTorch functions and methods following 
+      PyTorch
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/docstring/SKILL.md
+  - slug: document-public-apis
+    name: document-public-apis
+    name_zh: 文档-public-apis
+    description: Document undocumented public APIs in PyTorch by removing 
+      functions from
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/document-public-apis/SKILL.md
+  - slug: docx
+    name: docx
+    name_zh: docx
+    description: Use this skill whenever the user wants to create, read, edit, 
+      or manipulate
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/docx/SKILL.md
+  - slug: drizzle
+    name: drizzle
+    name_zh: drizzle
+    description: LobeHub Drizzle ORM schema and query style. Use for pgTable 
+      schemas, indexes, joins, inferred types, db.select/db.query, schema 
+      fields, foreign keys, junction tables, or postgres query patterns.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/drizzle/SKILL.md
   - slug: embedding-model-training
     name: Embedding Model Training
     name_zh: 嵌入模型训练
-    description: Train or fine-tune embedding models — bi-encoder (dense 
-      sentence embeddings for retrieval, similarity, clustering, dedup), 
-      cross-encoder (pair scoring, reranking, pair classification), and sparse 
-      encoder (SPLADE, learned-sparse retrieval). Covers loss selection, 
-      hard-negative mining, evaluator choice, Matryoshka / LoRA / distillation 
-      trade-offs, and the most common training-time traps.
-    category: embeddings
+    description: '|'
+    category: applications
     tags:
-      - embeddings
-      - sentence-transformers
-      - bi-encoder
-      - training
-      - fine-tuning
+      - ai
+      - backend
+      - documentation
+      - evaluation
+      - frontend
     platforms: []
     needs_review: false
     path: skills/embedding-model-training/SKILL.md
+  - slug: fetch-buildkite-logs
+    name: fetch-buildkite-logs
+    name_zh: fetch-buildkite-logs
+    description: Fetch and analyze Buildkite CI build logs for failures
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/fetch-buildkite-logs/SKILL.md
+  - slug: figma
+    name: figma
+    name_zh: figma
+    description: Use the Figma MCP server to fetch design context, screenshots, 
+      variables,
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - figma
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/figma/SKILL.md
+  - slug: figma-code-connect-components
+    name: figma-code-connect-components
+    name_zh: figma-代码-connect-components
+    description: Connects Figma design components to code components using Code 
+      Connect
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/figma-code-connect-components/SKILL.md
+  - slug: figma-create-design-system-rules
+    name: figma-create-design-system-rules
+    name_zh: figma-创建-design-system-rules
+    description: Generates custom design system rules for the user's codebase. 
+      Use when
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/figma-create-design-system-rules/SKILL.md
+  - slug: figma-create-new-file
+    name: figma-create-new-file
+    name_zh: figma-创建-new-文件
+    description: Create a new blank Figma file. Use when the user wants to 
+      create a new
+    category: applications
+    tags:
+      - ai
+      - figma
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/figma-create-new-file/SKILL.md
+  - slug: figma-generate-design
+    name: figma-generate-design
+    name_zh: figma-生成-design
+    description: Use this skill alongside figma-use when the task involves 
+      translating
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/figma-generate-design/SKILL.md
+  - slug: figma-generate-library
+    name: figma-generate-library
+    name_zh: figma-生成-library
+    description: Build or update a professional-grade design system in Figma 
+      from a codebase.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/figma-generate-library/SKILL.md
+  - slug: figma-implement-design
+    name: figma-implement-design
+    name_zh: figma-implement-design
+    description: Translates Figma designs into production-ready application code
+      with
+    category: applications
+    tags:
+      - ai
+      - backend
+      - documentation
+      - figma
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/figma-implement-design/SKILL.md
+  - slug: figma-use
+    name: figma-use
+    name_zh: figma-use
+    description: '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/figma-use/SKILL.md
+  - slug: fix-issue
+    name: fix-issue
+    name_zh: fix-问题
+    description: Fix bugs reported in PyTorch GitHub issues by reproducing, 
+      root-causing,
+    category: dev-tools
+    tags:
+      - ai
+      - database
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/fix-issue/SKILL.md
+  - slug: fleet-management
+    name: letta-fleet-management
+    name_zh: letta-fleet-管理
+    description: Manage Letta AI agent fleets declaratively with kubectl-style 
+      CLI. Use when creating, updating, or managing multiple Letta agents with 
+      shared configurations, memory blocks, tools, folders, canary deployments, 
+      multi-tenancy, and bulk operations.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/fleet-management/SKILL.md
   - slug: frontend-browser-review
     name: frontend-browser-review
-    name_zh:
-    description: "Shared workflow for browser-based review of user-visible frontend
-      changes in Langfuse.\nUse when a change affects UI behavior, layout, styling,
-      navigation, or browser-visible\nregressions and should be checked with the Playwright
-      MCP server before signoff."
-    category: uncategorized
+    name_zh: 前端浏览器审查
+    description: Shared workflow for browser-based review of user-visible 
+      frontend changes
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - backend
+      - cli
+      - documentation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/frontend-browser-review/SKILL.md
+  - slug: frontend-design
+    name: frontend-design
+    name_zh: frontend-design
+    description: Guidance for distinctive, intentional visual design when 
+      building new
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/frontend-design/SKILL.md
   - slug: frontend-large-feature-architecture
     name: Frontend Large-Feature Architecture
     name_zh: 前端大型功能架构
-    description: Plan a non-trivial frontend feature before coding — controller 
-      components, state location, list vs detail fetch, virtualization. Generic 
-      patterns, framework-aware but not framework-bound.
-    category: applications
+    description: '|'
+    category: dev-tools
     tags:
-      - frontend
-      - react
-      - architecture
-      - state-management
-      - performance
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/frontend-large-feature-architecture/SKILL.md
+  - slug: frontend-skill
+    name: frontend-skill
+    name_zh: 前端-技能
+    description: Use when the task asks for a visually strong landing page, 
+      website, app, prototype, demo, or game UI. This skill enforces restrained 
+      composition, image-led hierarchy, cohesive content structure, and tasteful
+      motion while avoiding generic cards, weak branding, and UI clutter.
+    category: applications
+    tags:
+      - ai
+      - api
+      - docker
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/frontend-skill/SKILL.md
   - slug: frontend-visual-design
     name: Frontend Visual Design Taste
     name_zh: 前端视觉设计品味
-    description: Build interfaces that feel deliberate, premium, and current — 
-      restrained composition, image-led hierarchy, cohesive content, tasteful 
-      motion. Use for landing pages, marketing sites, demos, prototypes, game 
-      UIs where the quality depends on art direction, not component count. 
-      Avoids the generic-card / weak-branding / UI-clutter trap.
+    description: '|'
     category: applications
     tags:
-      - frontend
-      - design
-      - ui
-      - landing-page
-      - motion
+      - ai
+      - api
+      - backend
+      - database
+      - docker
     platforms: []
     needs_review: false
     path: skills/frontend-visual-design/SKILL.md
+  - slug: gh-address-comments
+    name: gh-address-comments
+    name_zh: gh-address-comments
+    description: Help address review/issue comments on the open GitHub PR for 
+      the current branch using gh CLI; verify gh auth first and prompt the user 
+      to authenticate if not logged in.
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/gh-address-comments/SKILL.md
+  - slug: gh-fix-ci
+    name: gh-fix-ci
+    name_zh: gh-fix-ci
+    description: Use when a user asks to debug or fix failing GitHub PR checks 
+      that run in GitHub Actions; use `gh` to inspect checks and logs, summarize
+      failure context, draft a fix plan, and implement only after explicit 
+      approval. Treat external providers (for example Buildkite) as out of scope
+      and report only the details URL.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/gh-fix-ci/SKILL.md
   - slug: git-workflow
     name: git-workflow
-    name_zh:
+    name_zh: Git 工作流
     description: Git workflow guidance for commits, branches, and pull requests
-    category: uncategorized
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/git-workflow/SKILL.md
+  - slug: github
+    name: github
+    name_zh: github
+    description: 'GitHub operations via `gh` CLI: issues, PRs, CI runs, code review,
+      API queries. Use when: (1) checking PR status or CI, (2) creating/commenting
+      on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for:
+      complex web UI interactions requiring manual browser flows (use browser tooling
+      when available), bulk operations across many repos (script with gh api), or
+      when gh auth is not configured.'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/github/SKILL.md
+  - slug: github-pr-inline-reply
+    name: github-pr-inline-reply
+    name_zh: github-pr-inline-reply
+    description: Reply to inline PR review comments on GitHub pull requests 
+      using the GitHub API. Use this skill when you need to respond to 
+      individual review comments on a PR, acknowledge feedback, or mark comments
+      as resolved by posting direct replies to comment threads.
+    category: dev-tools
+    tags:
+      - api
+      - backend
+      - cli
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/github-pr-inline-reply/SKILL.md
   - slug: goal-definition
     name: Goal Definition
     name_zh: 目标定义
-    description: Turn a fuzzy intention into a concrete, measurable objective 
-      before starting work — restate in concrete terms, prefer numeric evidence 
-      over decorative precision, reject pure activity goals, and only set the 
-      goal when it actually passes the bar.
-    category: code-assistants
+    description: '|'
+    category: dev-tools
     tags:
-      - goal-setting
-      - planning
-      - okr
-      - scope
-      - workflow
+      - ai
+      - api
+      - backend
+      - database
+      - evaluation
     platforms: []
     needs_review: false
     path: skills/goal-definition/SKILL.md
+  - slug: gog
+    name: gog
+    name_zh: gog
+    description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, 
+      Sheets, and
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/gog/SKILL.md
+  - slug: guidelines
+    name: guidelines
+    name_zh: guidelines
+    description: Response formatting and communication guidelines for generating
+      clear, accurate, and well-structured replies.
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/guidelines/SKILL.md
   - slug: haiku
     name: Haiku
-    name_zh:
-    description: 'TODO: write a one-line description'
-    category: uncategorized
+    name_zh: 俳句
+    description: Write haiku poems following specific style conventions
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/haiku/SKILL.md
+  - slug: hatch-pet
+    name: hatch-pet
+    name_zh: hatch-pet
+    description: Create, repair, validate, visually QA, and package 
+      Codex-compatible animated pets and pet spritesheets from character art, 
+      generated images, company or prospect brand cues, or visual references. 
+      Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel
+      custom pet style, a prospect or company mascot pet, or a full 8x9 animated
+      pet atlas with transparent unused cells, QA contact sheets, and pet.json 
+      packaging. This skill composes the installed $imagegen system skill for 
+      visual generation and uses bundled scripts for deterministic spritesheet 
+      assembly.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/hatch-pet/SKILL.md
+  - slug: heterogeneous-agent
+    name: heterogeneous-agent
+    name_zh: heterogeneous-智能体
+    description: Implement or debug LobeHub heterogeneous agents. Use for Claude
+      Code/Codex adapters, external CLI agents, event mapping, IPC, persistence,
+      tool-call chains, sessions, traces, or adapter bugs.
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/heterogeneous-agent/SKILL.md
+  - slug: hf-cli
+    name: hf-cli
+    name_zh: hf-cli
+    description: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
+      managing
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/hf-cli/SKILL.md
+  - slug: hf-mcp
+    name: hf-mcp
+    name_zh: hf-mcp
+    description: Use Hugging Face Hub via MCP server tools. Search models, 
+      datasets, Spaces, papers. Get repo details, fetch documentation, run 
+      compute jobs, and use Gradio Spaces as AI tools. Available when connected 
+      to the HF MCP server.
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - database
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/hf-mcp/SKILL.md
+  - slug: hf-mem
+    name: hf-mem
+    name_zh: hf-mem
+    description: Hugging Face CLI to estimate the required memory to load 
+      Safetensors or GGUF model weights for inference from the Hugging Face Hub
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - huggingface
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/hf-mem/SKILL.md
+  - slug: hotkey
+    name: hotkey
+    name_zh: hotkey
+    description: Add or edit LobeHub keyboard shortcuts. Use for HotkeyEnum, 
+      HOTKEYS_REGISTRATION,
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/hotkey/SKILL.md
+  - slug: huggingface-best
+    name: huggingface-best
+    name_zh: huggingface-best
+    description: '>'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-best/SKILL.md
+  - slug: huggingface-community-evals
+    name: huggingface-community-evals
+    name_zh: huggingface-community-evals
+    description: Run evaluations for Hugging Face Hub models using inspect-ai 
+      and lighteval
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - documentation
+      - evaluation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-community-evals/SKILL.md
+  - slug: huggingface-datasets
+    name: huggingface-datasets
+    name_zh: huggingface-datasets
+    description: Use this skill for Hugging Face Dataset Viewer API workflows 
+      that fetch subset/split metadata, paginate rows, search text, apply 
+      filters, download parquet URLs, and read size or statistics.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-datasets/SKILL.md
+  - slug: huggingface-gradio
+    name: huggingface-gradio
+    name_zh: huggingface-gradio
+    description: Build Gradio web UIs and demos in Python. Use when creating or 
+      editing Gradio apps, components, event listeners, layouts, or chatbots.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-gradio/SKILL.md
+  - slug: huggingface-llm-trainer
+    name: huggingface-llm-trainer
+    name_zh: huggingface-大语言模型-trainer
+    description: Train or fine-tune language and vision models using TRL 
+      (Transformer
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - deployment
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-llm-trainer/SKILL.md
+  - slug: huggingface-local-models
+    name: huggingface-local-models
+    name_zh: huggingface-local-models
+    description: Use to select models to run locally with llama.cpp and GGUF on 
+      CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, 
+      running servers, exact GGUF file lookup, conversion, and OpenAI-compatible
+      local serving.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-local-models/SKILL.md
+  - slug: huggingface-lora-space-builder
+    name: huggingface-lora-space-builder
+    name_zh: huggingface-lora-space-builder
+    description: Build and publish a Gradio demo on Hugging Face Spaces for a 
+      user-provided LoRA. Use when someone asks to create, generate, ship, or 
+      publish a Space, demo, Gradio app, or playground for a LoRA — including 
+      LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or 
+      other diffusion base models. Also triggers when someone describes a LoRA 
+      they trained or hosts on the Hub and wants to share it. Covers picking the
+      right base pipeline and `diffusers` inference recipe, designing a UI 
+      tailored to the LoRA's task and inputs (Union/multi-task control, edit, 
+      video, image, etc.), respecting model-card recommendations (trigger words,
+      steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU 
+      hardware as a private Space by default.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-lora-space-builder/SKILL.md
+  - slug: huggingface-paper-publisher
+    name: huggingface-paper-publisher
+    name_zh: huggingface-paper-publisher
+    description: Publish and manage research papers on Hugging Face Hub. 
+      Supports creating paper pages, linking papers to models/datasets, claiming
+      authorship, and generating professional markdown-based research articles.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-paper-publisher/SKILL.md
+  - slug: huggingface-papers
+    name: huggingface-papers
+    name_zh: huggingface-papers
+    description: Look up and read Hugging Face paper pages in markdown, and use 
+      the papers
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-papers/SKILL.md
+  - slug: huggingface-spaces
+    name: huggingface-spaces
+    name_zh: huggingface-spaces
+    description: Build, deploy, and maintain applications on Hugging Face Spaces
+      — Gradio
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-spaces/SKILL.md
+  - slug: huggingface-tool-builder
+    name: huggingface-tool-builder
+    name_zh: huggingface-tool-builder
+    description: Use this skill when the user wants to build tool/scripts or 
+      achieve a task where using data from the Hugging Face API would help. This
+      is especially useful when chaining or combining API calls or the task will
+      be repeated/automated. This Skill creates a reusable script to fetch, 
+      enrich or process data.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-tool-builder/SKILL.md
+  - slug: huggingface-trackio
+    name: huggingface-trackio
+    name_zh: huggingface-trackio
+    description: Track and visualize ML training experiments with Trackio. Use 
+      when logging
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-trackio/SKILL.md
+  - slug: huggingface-vision-trainer
+    name: huggingface-vision-trainer
+    name_zh: huggingface-vision-trainer
+    description: Trains and fine-tunes vision models for object detection 
+      (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — 
+      MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers 
+      classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on 
+      Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, 
+      Albumentations augmentation, mAP/mAR evaluation, accuracy metrics, SAM 
+      segmentation with bbox/point prompts, DiceCE loss, hardware selection, 
+      cost estimation, Trackio monitoring, and Hub persistence. Use when users 
+      mention training object detection, image classification, SAM, SAM2, 
+      segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, 
+      ResNet, bounding box models, or fine-tuning vision models on Hugging Face 
+      Jobs.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-vision-trainer/SKILL.md
+  - slug: huggingface-zerogpu
+    name: huggingface-zerogpu
+    name_zh: huggingface-zerogpu
+    description: AI demos and GPU compute with Gradio Spaces and Hugging Face 
+      Spaces ZeroGPU.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/huggingface-zerogpu/SKILL.md
+  - slug: i18n
+    name: i18n
+    name_zh: i18n
+    description: LobeHub i18n with react-i18next. Use for user-facing strings, 
+      locale
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/i18n/SKILL.md
+  - slug: imagegen
+    name: imagegen
+    name_zh: imagegen
+    description: Generate or edit raster images when the task benefits from 
+      AI-created
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/imagegen/SKILL.md
+  - slug: importing-chatgpt-memory
+    name: importing-chatgpt-memory
+    name_zh: importing-chatgpt-内存
+    description: Clone ChatGPT saved memory into Letta, then optionally enrich 
+      it with
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/importing-chatgpt-memory/SKILL.md
+  - slug: imsg
+    name: imsg
+    name_zh: imsg
+    description: iMessage/SMS CLI for listing chats, history, and sending 
+      messages via
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/imsg/SKILL.md
   - slug: internal-comms
     name: Internal Comms Authoring
     name_zh: 内部沟通文档写作
-    description: Write the seven common internal communication types — 3P 
-      update, status report, leadership update, project update, incident report,
-      FAQ answer, company newsletter. Each has a structure, a tone, and a "what 
-      to gather first" list. Generic to any company.
-    category: documentation
+    description: '|'
+    category: dev-tools
     tags:
-      - writing
-      - communication
-      - status-report
-      - incident
-      - faq
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
     platforms: []
     needs_review: false
     path: skills/internal-comms/SKILL.md
+  - slug: invalid-name
+    name: Invalid--Name
+    name_zh: Invalid--Name
+    description: This skill has an invalid name.
+    category: applications
+    tags:
+      - frontend
+      - llm
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/invalid-name/SKILL.md
+  - slug: island-rescue
+    name: island-rescue
+    name_zh: island-rescue
+    description: How to be rescued from a lonely island
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/island-rescue/SKILL.md
+  - slug: jupyter-notebook
+    name: jupyter-notebook
+    name_zh: jupyter-notebook
+    description: Use when the user asks to create, scaffold, or edit Jupyter 
+      notebooks
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/jupyter-notebook/SKILL.md
+  - slug: karpathy-guidelines
+    name: karpathy-guidelines
+    name_zh: karpathy-guidelines
+    description: Behavioral guidelines to reduce common LLM coding mistakes. Use
+      when writing, reviewing, or refactoring code to avoid overcomplication, 
+      make surgical changes, surface assumptions, and define verifiable success 
+      criteria.
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - llm
+      - testing
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/karpathy-guidelines/SKILL.md
+  - slug: letta-api-client
+    name: letta-api-client
+    name_zh: letta-接口-客户端
+    description: Build applications with the Letta API — a model-agnostic, 
+      stateful API
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/letta-api-client/SKILL.md
+  - slug: letta-configuration
+    name: letta-configuration
+    name_zh: letta-configuration
+    description: Configure LLM models and providers for Letta agents and 
+      servers. Use when setting model handles, adjusting temperature/tokens, 
+      configuring provider-specific settings, setting up BYOK providers, or 
+      configuring self-hosted deployments with environment variables.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/letta-configuration/SKILL.md
+  - slug: letta-filesystem-to-memfs
+    name: letta-filesystem-to-memfs
+    name_zh: letta-filesystem-to-memfs
+    description: Migrates deprecated Letta Filesystem folders/files to MemFS 
+      using markdown
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/letta-filesystem-to-memfs/SKILL.md
+  - slug: linear
+    name: linear-cli
+    name_zh: linear-cli
+    description: Manage Linear issues from the command line using the linear 
+      cli. This
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/linear/SKILL.md
   - slug: linear-bug-triage
     name: linear-bug-triage
-    name_zh:
-    description: "Deduplicate measured bug or regression evidence against Linear,
-      then either\nadd evidence comments to related existing issues or create concise
-      Linear bug\nissues in Triage. Use when Codex has confirmed evidence from Datadog,\n\
-      benchmarks, traces, timings, flamegraphs, logs, or production measurements and\n\
-      needs Linear search, comments, labels, Datadog links, or bug ticket creation\n\
-      without fix suggestions, but only after a human has approved sharing the\nfindings
-      in Linear."
-    category: uncategorized
+    name_zh: Linear Bug 分类
+    description: Deduplicate measured bug or regression evidence against Linear,
+      then
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - datadog
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/linear-bug-triage/SKILL.md
+  - slug: lint
+    name: lint
+    name_zh: lint
+    description: Run linting and formatting checks on Ray code
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/lint/SKILL.md
+  - slug: list-npm-package-content
+    name: list-npm-package-content
+    name_zh: list-npm-package-content
+    description: List the contents of an npm package tarball before publishing. 
+      Use when the user wants to see what files are included in an npm bundle, 
+      verify package contents, or debug npm publish issues.
+    category: dev-tools
+    tags:
+      - ai
+      - documentation
+      - frontend
+      - git
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/list-npm-package-content/SKILL.md
+  - slug: llamactl-qa
+    name: llamactl-qa
+    name_zh: llamactl-qa
+    description: Plan and run a design-QA of llamactl changes against a real 
+      backend. Builds a matrix of cases, runs them, and writes a design-review 
+      report.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/llamactl-qa/SKILL.md
   - slug: llm-pricing-file-update
     name: LLM Model Pricing File Update
     name_zh: LLM 模型价目文件更新
-    description: Add or update an LLM model's entry in a per-token pricing JSON 
-      — matchPattern regex for cross-provider IDs, pricing tiers, cache pricing,
-      tokenizer alignment, and the schema validation that has to run before the 
-      change ships.
-    category: observability
+    description: '|'
+    category: dev-tools
     tags:
-      - pricing
-      - llm
-      - cost
-      - monitoring
-      - ops
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
     platforms: []
     needs_review: false
     path: skills/llm-pricing-file-update/SKILL.md
-  - slug: mcp-builder
-    name: MCP Server Builder
-    name_zh: MCP Server 构建指南
-    description: Author a high-quality MCP (Model Context Protocol) server in 
-      Python (FastMCP) or TypeScript (MCP SDK). Covers research, schema design, 
-      tool implementation, error handling, and the 10-question evaluation set 
-      any new server should ship with.
-    category: mcp-protocol
+  - slug: local-testing
+    name: local-testing
+    name_zh: local-测试
+    description: '>'
+    category: dev-tools
     tags:
-      - mcp
-      - server
-      - tools
-      - protocol
+      - ai
+      - api
+      - backend
+      - cli
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/local-testing/SKILL.md
+  - slug: maf-online-endpoint
+    name: maf-online-endpoint
+    name_zh: maf-online-endpoint
+    description: 'Deploy a Microsoft Agent Framework (MAF) workflow as a managed online
+      endpoint to an Azure ML workspace or an Azure AI Foundry hub-based project.
+      Wraps any workflow into an init()/run() scoring script, creates conda environment,
+      endpoint and deployment YAMLs, deploy script, and assigns RBAC. Supports managed
+      identity auth and Application Insights tracing. WHEN: deploy MAF workflow, deploy
+      agent-framework workflow, create online endpoint for MAF, deploy workflow to
+      AML, deploy workflow to Foundry project, managed online endpoint for agent workflow,
+      wrap workflow in scoring script, deploy agent as endpoint, realtime endpoint
+      in Foundry project.'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/maf-online-endpoint/SKILL.md
+  - slug: maf-prs-job
+    name: maf-prs-job
+    name_zh: maf-prs-job
+    description: "Convert an existing Prompt Flow Parallel Run Step (PRS) pipeline
+      submission into an Azure ML PRS pipeline that runs a Microsoft Agent Framework
+      (MAF) workflow. Wraps the MAF workflow into a PRS init()/run() entry script,
+      generates the parallel component YAML and conda environment, and rewrites the
+      pipeline submission script. Replaces what `load_component(flow.dag.yaml)` did
+      automatically for Prompt Flow — produces the hand-built equivalent so that downstream
+      pipeline code (`flow_node = flow_component(...)`, `flow_node.outputs.flow_outputs`,
+      `flow_node.outputs.debug_info`, `flow_node.mini_batch_size`, scheduler, batch
+      endpoint) stays unchanged. WHEN: convert promptflow PRS to MAF PRS, migrate
+      PRS pipeline to agent framework, wrap MAF workflow as parallel component, bulk
+      run MAF workflow, run agent framework as parallel run step, batch run MAF workflow
+      on AML, submit MAF workflow as pipeline component, replace flow.dag.yaml with
+      MAF workflow in pipeline, load_component equivalent for MAF workflow, MAF version
+      of flow_component, load MAF workflow as component, wrap MAF workflow as flow
+      component, MAF flow component, replace flow_node in pipeline with MAF workflow,
+      keep flow_outputs and debug_info ports with MAF, MAF parallel component with
+      connections={}, run MAF workflow as flow_node in AML pipeline, load_component('workflow.py')
+      doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf),
+      deploying as online endpoint (use maf-online-endpoint), enabling tracing only
+      (use maf-tracing)."
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/maf-prs-job/SKILL.md
+  - slug: maf-tracing
+    name: maf-tracing
+    name_zh: maf-tracing
+    description: 'Enable tracing and logging for Microsoft Agent Framework (MAF) workflows.
+      Configures OpenTelemetry export to Azure Application Insights and/or a generic
+      OTLP endpoint using environment variables. Adds required packages to requirements.txt.
+      WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry,
+      Application Insights for MAF, OTLP export, observe workflow, monitor agent workflow,
+      trace agent framework, instrument MAF, add observability, trace workflow executions,
+      debug workflow.'
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
       - llm
     platforms: []
     needs_review: false
+    path: skills/maf-tracing/SKILL.md
+  - slug: major-version-mode
+    name: major-version-mode
+    name_zh: major-版本-mode
+    description: Context for working on the next AI SDK major release. Only use 
+      when explicitly
+    category: applications
+    tags:
+      - ai
+      - deployment
+      - documentation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/major-version-mode/SKILL.md
+  - slug: mcp-builder
+    name: MCP Server Builder
+    name_zh: MCP Server 构建指南
+    description: '|'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
     path: skills/mcp-builder/SKILL.md
+  - slug: memfs-search
+    name: memfs-search
+    name_zh: memfs-搜索
+    description: Semantic search over agent memory files. Use when you need to 
+      find conceptually
+    category: dev-tools
+    tags:
+      - ai
+      - documentation
+      - evaluation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/memfs-search/SKILL.md
+  - slug: metal-kernel
+    name: metal-kernel
+    name_zh: metal-kernel
+    description: Write Metal/MPS kernels for PyTorch operators. Use when adding 
+      MPS device support to operators, implementing Metal shaders, or porting 
+      CUDA kernels to Apple Silicon. Covers native_functions.yaml dispatch, 
+      host-side operators, and Metal kernel implementation.
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/metal-kernel/SKILL.md
+  - slug: microcopy
+    name: microcopy
+    name_zh: microcopy
+    description: UI copy and microcopy guidelines. Use for user-facing copy, 
+      buttons,
+    category: applications
+    tags:
+      - ai
+      - api
+      - evaluation
+      - frontend
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/microcopy/SKILL.md
+  - slug: migrate-to-codex
+    name: migrate-to-codex
+    name_zh: 迁移-to-codex
+    description: Migrate supported instruction files, skills, agents, and MCP 
+      config into
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - database
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/migrate-to-codex/SKILL.md
+  - slug: minimal-skill
+    name: minimal-skill
+    name_zh: minimal-技能
+    description: A minimal skill with only required fields.
+    category: applications
+    tags:
+      - frontend
+      - llm
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/minimal-skill/SKILL.md
+  - slug: modal
+    name: modal
+    name_zh: modal
+    description: LobeHub imperative modal conventions. Use when creating or 
+      migrating modals, dialogs, popups, confirm flows, ModalHost wiring, 
+      createModal, confirmModal, useModalContext, or base-ui modal APIs.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/modal/SKILL.md
+  - slug: model-integration
+    name: integrating-models
+    name_zh: integrating-models
+    description: '>'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/model-integration/SKILL.md
+  - slug: morph-warpgrep
+    name: morph-warpgrep
+    name_zh: morph-warpgrep
+    description: Integration guide for Morph's WarpGrep (fast agentic code 
+      search) and
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/morph-warpgrep/SKILL.md
+  - slug: navigating-chatgpt-history
+    name: navigating-chatgpt-history
+    name_zh: navigating-chatgpt-history
+    description: Navigates archived ChatGPT or Claude-style conversation exports
+      and a MemFS reference archive on demand. Use when recalling what a past 
+      assistant knew, searching old conversations, rendering specific chats, 
+      seeding reference memory from export sidecars, or mining historical 
+      context without doing a full import.
+    category: applications
+    tags:
+      - ai
+      - evaluation
+      - javascript
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/navigating-chatgpt-history/SKILL.md
+  - slug: netlify-deploy
+    name: netlify-deploy
+    name_zh: netlify-部署
+    description: Deploy web projects to Netlify using the Netlify CLI (`npx 
+      netlify`). Use when the user asks to deploy, host, publish, or link a 
+      site/repo on Netlify, including preview and production deploys.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/netlify-deploy/SKILL.md
+  - slug: notion
+    name: notion
+    name_zh: notion
+    description: Notion API for creating and managing pages, databases, and 
+      blocks.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/notion/SKILL.md
+  - slug: notion-knowledge-capture
+    name: notion-knowledge-capture
+    name_zh: notion-knowledge-capture
+    description: Capture conversations and decisions into structured Notion 
+      pages; use
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/notion-knowledge-capture/SKILL.md
+  - slug: notion-meeting-intelligence
+    name: notion-meeting-intelligence
+    name_zh: notion-meeting-intelligence
+    description: Prepare meeting materials with Notion context and Codex 
+      research; use when gathering context, drafting agendas/pre-reads, and 
+      tailoring materials to attendees.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/notion-meeting-intelligence/SKILL.md
+  - slug: notion-research-documentation
+    name: notion-research-documentation
+    name_zh: notion-research-documentation
+    description: Research across Notion and synthesize into structured 
+      documentation;
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/notion-research-documentation/SKILL.md
+  - slug: notion-spec-to-implementation
+    name: notion-spec-to-implementation
+    name_zh: notion-spec-to-implementation
+    description: Turn Notion specs into implementation plans, tasks, and 
+      progress tracking; use when implementing PRDs/feature specs and creating 
+      Notion plans + tasks from them.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/notion-spec-to-implementation/SKILL.md
+  - slug: obsidian
+    name: obsidian
+    name_zh: obsidian
+    description: Work with Obsidian vaults (plain Markdown notes) and automate 
+      via obsidian-cli.
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/obsidian/SKILL.md
+  - slug: open-pr
+    name: open-pr
+    name_zh: open-pr
+    description: Open a pull request with proper PR template, test coverage, and
+      review
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - docker
+    platforms: []
+    needs_review: false
+    path: skills/open-pr/SKILL.md
+  - slug: openai-docs
+    name: openai-docs
+    name_zh: openai-docs
+    description: Use when the user asks how to build with OpenAI products or 
+      APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date
+      official documentation with citations, help choosing the latest model for 
+      a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs 
+      MCP tools for non-Codex docs questions, use the Codex manual helper first 
+      for broad Codex self-knowledge, and restrict fallback browsing to official
+      OpenAI domains.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/openai-docs/SKILL.md
+  - slug: orchestrate
+    name: orchestrate
+    name_zh: orchestrate
+    description: Meta-agent supervisor that manages a fleet of Claude Code 
+      agents running
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/orchestrate/SKILL.md
   - slug: ownership-bus-factor
     name: Code Ownership & Bus Factor
     name_zh: 代码所有权与巴士因子
-    description: Build a security-oriented ownership map of a git repo from 
-      history — who owns which file, who maintains sensitive code, what's the 
-      bus factor, where are the orphaned sensitive paths. Exports CSV / JSON for
-      graph databases (Neo4j, Gephi) and a co-change graph for clustering files 
-      that move together. Triggered by explicit AppSec / bus-factor requests, 
-      not general maintainer lists.
-    category: guardrails
+    description: '|'
+    category: dev-tools
     tags:
-      - security
-      - ownership
-      - bus-factor
+      - ai
+      - database
+      - frontend
       - git
-      - appsec
+      - javascript
     platforms: []
     needs_review: false
     path: skills/ownership-bus-factor/SKILL.md
+  - slug: parity-testing
+    name: testing-parity
+    name_zh: 测试-parity
+    description: '>'
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - evaluation
+      - frontend
+      - huggingface
+    platforms: []
+    needs_review: false
+    path: skills/parity-testing/SKILL.md
+  - slug: pdf
+    name: pdf
+    name_zh: pdf
+    description: Use when tasks involve reading, creating, or reviewing PDF 
+      files where rendering and layout matter; prefer visual checks by rendering
+      pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, 
+      and `pypdf` for generation and extraction.
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/pdf/SKILL.md
   - slug: pdf-summarizer
     name: PDF Summarizer
     name_zh: PDF 摘要器
-    description: Summarise a PDF into N bullets for a target audience. 
-      Vendor-neutral — works on any agent that can read PDFs.
-    category: official-cookbooks
+    description: number of bullets in the summary
+    category: applications
     tags:
-      - pdf
-      - summarization
-      - document
-      - reading
+      - ai
+      - api
+      - documentation
+      - frontend
+      - llm
     platforms: []
     needs_review: false
     path: skills/pdf-summarizer/SKILL.md
   - slug: pdf-vision-extractor
     name: PDF Vision Extractor
     name_zh: PDF 视觉抽取器
-    description: 从扫描版 / 图像版 PDF 抽取结构化字段，依赖 Claude 的 vision 能力。
-    category: dev-tools
+    description: '|'
+    category: applications
     tags:
-      - pdf
-      - ocr
-      - extraction
-      - vision
-      - claude-only
-    platforms:
-      - claude
+      - ai
+      - documentation
+      - javascript
+      - llm
+      - typescript
+    platforms: []
     needs_review: false
     path: skills/pdf-vision-extractor/SKILL.md
+  - slug: playwright
+    name: playwright
+    name_zh: playwright
+    description: Use when the task requires automating a real browser from the 
+      terminal
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - evaluation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/playwright/SKILL.md
+  - slug: playwright-interactive
+    name: playwright-interactive
+    name_zh: playwright-interactive
+    description: Persistent browser and Electron interaction through `js_repl` 
+      for fast iterative UI debugging.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/playwright-interactive/SKILL.md
+  - slug: plugin-creator
+    name: plugin-creator
+    name_zh: plugin-creator
+    description: Create and scaffold plugin directories for Codex with a 
+      required `.codex-plugin/plugin.json`, optional plugin folders/files, and 
+      baseline placeholders you can edit before publishing or testing. Use when 
+      Codex needs to create a new local plugin, add optional plugin structure, 
+      or generate or update repo-root `.agents/plugins/marketplace.json` entries
+      for plugin ordering and availability metadata.
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - javascript
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/plugin-creator/SKILL.md
   - slug: pnpm-upgrade-package
     name: PNPM Upgrade Package
     name_zh: pnpm 升级依赖
-    description: "Upgrade pnpm workspace dependencies to target or latest version
-      — direct and transitive bumps, release-age checks, scoped overrides, lockfile
-      and dedupe verification. Covers the four 'do not' traps: manual lockfile edits,
-      permanent overrides, silent latest, dedupe churn."
+    description: '|'
     category: dev-tools
     tags:
-      - pnpm
-      - npm
-      - dependency-management
-      - monorepo
+      - ai
+      - api
+      - cli
+      - deployment
+      - documentation
     platforms: []
     needs_review: false
     path: skills/pnpm-upgrade-package/SKILL.md
+  - slug: pptx
+    name: pptx
+    name_zh: pptx
+    description: 'Use this skill any time a .pptx file is involved in any way — as
+      input, output, or both. This includes: creating slide decks, pitch decks, or
+      presentations; reading, parsing, or extracting text from any .pptx file (even
+      if the extracted content will be used elsewhere, like in an email or summary);
+      editing, modifying, or updating existing presentations; combining or splitting
+      slide files; working with templates, layouts, speaker notes, or comments. Trigger
+      whenever the user mentions "deck," "slides," "presentation," or references a
+      .pptx filename, regardless of what they plan to do with the content afterward.
+      If a .pptx file needs to be opened, created, or touched, use this skill.'
+    category: applications
+    tags:
+      - ai
+      - api
+      - database
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/pptx/SKILL.md
+  - slug: pr
+    name: pr
+    name_zh: pr
+    description: Create a PR for the current branch (targets `canary` by 
+      default), including splitting one cross-layer branch into ordered stacked 
+      PRs so a lower layer (db / shared package / server TRPC) merges before its
+      callers (desktop / CLI / UI). Use when the user asks to create / submit a 
+      PR, or to split a branch because clients call a server contract that isn't
+      on the trunk yet. Triggers on 'pr', 'create pr', 'submit pr', 'open a PR',
+      'pull request', 'split this PR', 'stacked PR', 'backend should merge 
+      first', '提 PR', '提个 PR', '新建 PR', '拆 PR', '后端先合', '分层合并'.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/pr/SKILL.md
+  - slug: pr-address
+    name: pr-address
+    name_zh: pr-address
+    description: Address PR review comments and loop until CI green and all 
+      comments resolved.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/pr-address/SKILL.md
+  - slug: pr-polish
+    name: pr-polish
+    name_zh: pr-polish
+    description: Alternate /pr-review and /pr-address on a PR until the PR is 
+      truly mergeable — no new review findings, zero unresolved inline threads, 
+      zero unaddressed top-level reviews or issue comments, all CI checks green,
+      and two consecutive quiet polls after CI settles. Use when the user wants 
+      a PR polished to merge-ready without setting a fixed number of rounds.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/pr-polish/SKILL.md
+  - slug: pr-review
+    name: pr-review
+    name_zh: pr-审查
+    description: Review a PR for correctness, security, code quality, and 
+      testing issues.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/pr-review/SKILL.md
+  - slug: pr-test
+    name: pr-test
+    name_zh: pr-测试
+    description: E2E manual testing of PRs/branches using docker compose, 
+      agent-browser,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/pr-test/SKILL.md
   - slug: pr-yeet
     name: Single-Flow PR Yeet
     name_zh: 一次性 PR 推送
-    description: Stage, commit, push, and open a GitHub pull request in one 
-      linear flow — pick the right branch name, write a terse conventional 
-      commit, resolve the PR template from the repo, fill the body, push, open 
-      via `gh`. Triggered only when the user explicitly asks to "yeet" or "ship"
-      a change as one PR.
+    description: 在一个线性流程里完成 stage、commit、push、开 PR。仅在用户明确说 yeet 或 ship 时触发。
     category: dev-tools
     tags:
+      - ai
+      - api
+      - frontend
       - git
-      - github
-      - pr
-      - cli
-      - workflow
+      - llm
     platforms: []
     needs_review: false
     path: skills/pr-yeet/SKILL.md
+  - slug: project-overview
+    name: project-overview
+    name_zh: project-overview
+    description: LobeHub open-source monorepo architecture map. Use when 
+      locating code layers, understanding apps/packages/src layout, business 
+      stubs, project structure, or onboarding to the repository.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/project-overview/SKILL.md
+  - slug: prompt
+    name: Prompt
+    name_zh: 提示词
+    description: Create effective prompts for LLMs and AI agents
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/prompt/SKILL.md
   - slug: prompt-lookup
     name: prompt-lookup
-    name_zh:
+    name_zh: Prompt 查找
     description: Activates when the user asks about AI prompts, needs prompt 
-      templates, wants to search for prompts, or mentions prompts.chat. Use for 
-      discovering, retrieving, and improving prompts.
-    category: uncategorized
+      templates,
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - backend
+      - frontend
+      - javascript
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/prompt-lookup/SKILL.md
+  - slug: promptflow-to-maf
+    name: promptflow-to-maf
+    name_zh: promptflow-to-maf
+    description: 'Convert Prompt Flow flow definitions to Microsoft Agent Framework
+      (MAF) workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates
+      runnable Python code using agent-framework 1.0.x. WHEN: convert promptflow,
+      migrate promptflow, promptflow to MAF, promptflow to agent framework, convert
+      flow.dag.yaml, migrate flow to MAF, convert PF flow, PF to agent-framework,
+      convert DAG flow to workflow, migrate LLM flow. DO NOT USE FOR: writing new
+      MAF workflows from scratch (no source flow), deploying MAF workflows (use maf-online-endpoint),
+      enabling tracing (use maf-tracing), or general agent-framework Q&A.'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/promptflow-to-maf/SKILL.md
   - slug: promptfoo-evals
     name: promptfoo Eval Suite Author
-    name_zh: promptfoo 评估套件作者
-    description: Author, refine, and run promptfoo eval suites 
-      (`promptfooconfig.yaml` + `prompts/` + `tests/`). For regression, matrix, 
-      and coverage evals of any prompt, endpoint, or LLM-driven system. NOT for 
-      adversarial redteam setup — that's the `promptfoo-redteam` skill.
-    category: evaluation
+    name_zh: Promptfoo 评估
+    description: Confirmation of the suite path, the assertion mix, and the
+    category: dev-tools
     tags:
-      - promptfoo
-      - evals
-      - regression
-      - llm
-      - yaml
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
     platforms: []
     needs_review: false
     path: skills/promptfoo-evals/SKILL.md
   - slug: promptfoo-provider-setup
     name: promptfoo-provider-setup
-    name_zh:
+    name_zh: promptfoo-provider-设置
     description: Configure promptfoo providers or redteam targets for hosted 
-      models, live HTTP APIs, Python/JavaScript local scripts, agent SDKs, or 
-      multi-input systems. Use when connecting promptfoo to the system under 
-      test, mapping vars, auth env vars, request bodies, response transforms, or
-      static-code-derived provider wrappers. Do not use for choosing eval 
-      assertions or red team plugins unless a smoke test is needed to verify the
-      connection.
-    category: uncategorized
+      models,
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/promptfoo-provider-setup/SKILL.md
   - slug: promptfoo-redteam
     name: promptfoo Redteam Plugin Author
-    name_zh: promptfoo Redteam 插件作者
-    description: Standards and templates for writing promptfoo redteam plugins 
-      and graders — adversarial attack generation, scoring rubrics, and the 
-      `UserQuery` / `purpose` / `Output` / `AllowedEntities` tag contract. The 
-      counterpart to `promptfoo-evals` (regression), focused on "can I break 
-      it?".
-    category: safety-alignment
+    name_zh: Promptfoo 红队测试
+    description: How many fail conditions the rubric covers (self-check)
+    category: applications
     tags:
-      - promptfoo
-      - redteam
-      - security
-      - adversarial
-      - llm
+      - ai
+      - api
+      - backend
+      - evaluation
+      - frontend
     platforms: []
     needs_review: false
     path: skills/promptfoo-redteam/SKILL.md
   - slug: promptfoo-redteam-run
     name: promptfoo-redteam-run
-    name_zh:
+    name_zh: 运行 Promptfoo 红队测试
     description: Run, rerun, inspect, and QA promptfoo redteam scans from 
-      generated redteam YAML or an existing redteam setup config. Use when 
-      executing `promptfoo redteam eval` or `promptfoo redteam run`, exporting 
-      results, triaging attack success rate, grader failures, target errors, 
-      filter/rerun commands, reports, or CI gates. Do not use for initial 
-      provider wiring or for choosing plugins and strategies before generation.
-    category: uncategorized
+      generated redteam
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - cli
+      - evaluation
+      - frontend
+      - javascript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/promptfoo-redteam-run/SKILL.md
   - slug: promptfoo-redteam-setup
     name: promptfoo-redteam-setup
-    name_zh:
-    description: 'Create or refine promptfoo redteam setup configs: purpose, targets,
-      plugins, strategies, frameworks, multi-input target inputs, policy text, grader
-      guidance, contexts, and static-code-derived target/threat mapping. Use when
-      preparing a red team scan plan from live probes, code evidence, or provider
-      configs, or when generating adversarial test cases for QA. Do not use for basic
-      provider wiring alone or for running/evaluating an already-generated redteam
-      scan.'
-    category: uncategorized
-    tags:
-      - needs-tagging
-    platforms: []
-    needs_review: true
-    path: skills/promptfoo-redteam-setup/SKILL.md
-  - slug: react-router-search-params
-    name: React Router Search Param State
-    name_zh: React Router 搜索参数/哈希状态管理
-    description: Decide between `replace` and `push` for URL state changes in 
-      React Router — the
+    name_zh: 设置 Promptfoo 红队测试
+    description: 'Create or refine promptfoo redteam setup configs: purpose, targets,'
     category: dev-tools
     tags:
-      - react
-      - react-router
-      - url
-      - state
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/promptfoo-redteam-setup/SKILL.md
+  - slug: pt2-bug-basher
+    name: pt2-bug-basher
+    name_zh: pt2-缺陷-basher
+    description: Debug PyTorch 2 compiler stack failures including Dynamo graph 
+      breaks,
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/pt2-bug-basher/SKILL.md
+  - slug: pyrefly-type-coverage
+    name: pyrefly-type-coverage
+    name_zh: pyrefly-类型-coverage
+    description: Migrate a file to use stricter Pyrefly type checking with 
+      annotations
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - docker
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/pyrefly-type-coverage/SKILL.md
+  - slug: ray-dependencies
+    name: ray-dependencies
+    name_zh: ray-dependencies
+    description: Manage Python dependencies in Ray — add/remove/upgrade 
+      packages, work with raydepsets lock files, debug dependency conflicts, and
+      regenerate compiled requirements. Covers `python/requirements*`, 
+      `python/requirements/**`, `python/deplocks/**`, and 
+      `ci/raydepsets/configs/*.depsets.yaml`.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/ray-dependencies/SKILL.md
+  - slug: react
+    name: react
+    name_zh: react
+    description: LobeHub React component conventions. Use when editing TSX UI, 
+      choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing,
+      desktop variants, layouts, or component state.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/react/SKILL.md
+  - slug: react-router-search-params
+    name: React Router Search Param State
+    name_zh: React Router 搜索参数状态管理
+    description: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 
+      useSearchParamState hook 模式和决策表。
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
       - frontend
     platforms: []
     needs_review: false
@@ -706,307 +3017,1140 @@ skills:
   - slug: realtime-eval-bootstrap
     name: Realtime Eval Scaffold
     name_zh: Realtime Eval 脚手架
-    description: Bootstrap a new realtime (audio / multi-turn) eval folder — 
-      pick the right harness (single-turn TTS, replay audio, multi-turn 
-      simulation), scaffold prompt / tools / data files, and run a smoke + full 
-      eval before returning. The input is a use case; the output is a runnable 
-      eval.
-    category: evaluation
+    description: '|'
+    category: applications
     tags:
-      - realtime
-      - evals
-      - audio
-      - harness
-      - agents
+      - ai
+      - documentation
+      - evaluation
+      - frontend
+      - javascript
     platforms: []
     needs_review: false
     path: skills/realtime-eval-bootstrap/SKILL.md
+  - slug: rebuild
+    name: rebuild
+    name_zh: rebuild
+    description: Rebuild Ray from source — determines the right build mode based
+      on what changed
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/rebuild/SKILL.md
   - slug: redteam-plugin-development
     name: redteam-plugin-development
-    name_zh:
+    name_zh: 红队插件开发
     description: Standards for creating redteam plugins and graders. Use when 
-      creating new plugins, writing graders, or modifying attack templates.
-    category: uncategorized
+      creating
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - documentation
+      - evaluation
+      - frontend
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/redteam-plugin-development/SKILL.md
+  - slug: remotion
+    name: remotion-best-practices
+    name_zh: remotion-best-practices
+    description: Best practices for Remotion - Video creation in React
+    category: applications
+    tags:
+      - ai
+      - docker
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/remotion/SKILL.md
+  - slug: render-deploy
+    name: render-deploy
+    name_zh: render-部署
+    description: Deploy applications to Render by analyzing codebases, 
+      generating render.yaml
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/render-deploy/SKILL.md
+  - slug: response-compliance
+    name: response-compliance
+    name_zh: response-compliance
+    description: OpenResponses API compliance testing. Use for Response API 
+      endpoint tests, compliance runs, schema debugging, response api test, or 
+      openresponses test tasks.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/response-compliance/SKILL.md
+  - slug: review-checklist
+    name: review-checklist
+    name_zh: 审查-checklist
+    description: LobeHub code review checklist. Use when reviewing a PR, diff, 
+      or branch
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/review-checklist/SKILL.md
+  - slug: review-standards
+    name: review-standards
+    name_zh: 审查-standards
+    description: Use this skill when asked to review authentication code for 
+      security
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - llm
+      - python
+      - security
+    platforms: []
+    needs_review: false
+    path: skills/review-standards/SKILL.md
+  - slug: screenshot
+    name: screenshot
+    name_zh: screenshot
+    description: Use when the user explicitly asks for a desktop or system 
+      screenshot
+    category: dev-tools
+    tags:
+      - ai
+      - database
+      - figma
+      - frontend
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/screenshot/SKILL.md
+  - slug: scrub-issue
+    name: scrub-issue
+    name_zh: scrub-问题
+    description: Fetch, analyze, reproduce, and minimize GitHub issue 
+      reproductions. Use
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/scrub-issue/SKILL.md
   - slug: search-params
     name: search-params
-    name_zh:
+    name_zh: search-params
     description: URL search param and hash state management. Use when adding or 
       modifying URL search params, working with useSearchParams, 
       setSearchParams, useSearchParamState, or navigate() with query strings or 
       hash fragments, or fixing browser back/forward button issues.
-    category: uncategorized
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - cli
+      - evaluation
+      - frontend
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/search-params/SKILL.md
   - slug: secure-code-by-language
     name: Secure Code by Language
     name_zh: 按语言的安全编码指南
-    description: Look up language- and framework-specific secure-by-default 
-      coding guidance before writing or reviewing code — pick the right 
-      reference file (Python, JavaScript / TypeScript, Go, frontend / backend 
-      split), apply it in the right mode (proactive, passive detect, full 
-      report). Triggers on explicit "secure by default", "security review", or 
-      "AppSec" requests, not general code review.
-    category: guardrails
+    description: '|'
+    category: dev-tools
     tags:
-      - security
-      - appsec
-      - secure-defaults
-      - review
-      - language
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/secure-code-by-language/SKILL.md
+  - slug: security-best-practices
+    name: security-best-practices
+    name_zh: 安全-best-practices
+    description: Perform language and framework specific security best-practice 
+      reviews
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/security-best-practices/SKILL.md
+  - slug: security-ownership-map
+    name: security-ownership-map
+    name_zh: 安全-ownership-map
+    description: 'Analyze git repositories to build a security ownership topology
+      (people-to-file), compute bus factor and sensitive-code ownership, and export
+      CSV/JSON for graph databases and visualization. Trigger only when the user explicitly
+      wants a security-oriented ownership or bus-factor analysis grounded in git history
+      (for example: orphaned sensitive code, security maintainers, CODEOWNERS reality
+      checks for risk, sensitive hotspots, or ownership clusters). Do not trigger
+      for general maintainer lists or non-security ownership questions.'
+    category: dev-tools
+    tags:
+      - ai
+      - database
+      - frontend
+      - git
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/security-ownership-map/SKILL.md
   - slug: security-review
     name: Security Review Checklist
     name_zh: 安全审查清单
-    description: Security review patterns for code review and design — SSRF and 
-      outbound URL validation, secrets and encryption-at-rest, cross-tenant 
-      data, file uploads, redirect handling, RBAC scope drift, signed URL 
-      scoping. Catches recurring security findings at design and review time, 
-      not after the CVE.
-    category: guardrails
+    description: '|'
+    category: dev-tools
     tags:
-      - security
-      - ssrf
-      - secrets
-      - rbac
-      - review
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/security-review/SKILL.md
+  - slug: security-threat-model
+    name: security-threat-model
+    name_zh: 安全-threat-model
+    description: Repository-grounded threat modeling that enumerates trust 
+      boundaries,
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - database
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/security-threat-model/SKILL.md
   - slug: seed-test-data
     name: seed-test-data
-    name_zh:
-    description: "Seed local Langfuse test data with one command: large/branching
-      observation\ntrees (v3 and v4 events), long sessions, bulk traces for list performance.\n\
-      Use whenever a task needs ClickHouse/Postgres test data — e.g. \"seed a\ncomplex
-      trace\", \"make a tough session\", \"fill the trace list\", \"test v4\nevents
-      UI\", or when debugging trace/session/list rendering or performance.\nNever
-      write ad-hoc seed scripts or raw ClickHouse inserts."
-    category: uncategorized
+    name_zh: 种子测试数据
+    description: 'Seed local Langfuse test data with one command: large/branching
+      observation'
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - backend
+      - cli
+      - database
+      - docker
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/seed-test-data/SKILL.md
+  - slug: sentry
+    name: sentry
+    name_zh: sentry
+    description: Use when the user asks to inspect Sentry issues or events, 
+      summarize
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - deployment
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/sentry/SKILL.md
+  - slug: setup-repo
+    name: setup-repo
+    name_zh: 设置 repo
+    description: Initialize a worktree-based repo layout for parallel 
+      development. Creates main worktree, reviews worktree, and numbered work 
+      branches.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/setup-repo/SKILL.md
+  - slug: skill
+    name: Skill
+    name_zh: 技能
+    description: Setup tips and tricks for CMA as an MCP server
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/skill/SKILL.md
   - slug: skill-creator
     name: Skill Authoring Loop
     name_zh: 技能编写迭代流程
-    description: Create a new skill from scratch or improve an existing one — 
-      draft, write test prompts, run qualitative + quantitative evaluation, 
-      iterate on description for trigger accuracy, expand test set, repeat. The 
-      loop is the skill.
-    category: code-assistants
+    description: '|'
+    category: dev-tools
     tags:
-      - skill
-      - meta
-      - evaluation
-      - prompt
-      - iteration
+      - ai
+      - backend
+      - cli
+      - database
+      - documentation
     platforms: []
     needs_review: false
     path: skills/skill-creator/SKILL.md
+  - slug: skill-development
+    name: skill-development
+    name_zh: 技能-development
+    description: Create and contribute skills to the communal knowledge base. 
+      Use when
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/skill-development/SKILL.md
+  - slug: skill-installer
+    name: skill-installer
+    name_zh: 技能-installer
+    description: Install Codex skills into $CODEX_HOME/skills from a curated 
+      list or a GitHub repo path. Use when a user asks to list installable 
+      skills, install a curated skill, or install a skill from another repo 
+      (including private repos).
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/skill-installer/SKILL.md
   - slug: skill-lookup
     name: skill-lookup
-    name_zh:
-    description: "Search, retrieve, and install Agent Skills from the prompts.chat
-      registry using MCP tools. Use when the user asks to find skills, browse skill
-      catalogs, install a skill for Claude, or extend Claude's capabilities with reusable
-      AI agent components.\n"
-    category: uncategorized
+    name_zh: 技能查找
+    description: Search, retrieve, and install Agent Skills from the 
+      prompts.chat registry
+    category: applications
     tags:
-      - needs-tagging
-    platforms:
-      - claude
-    needs_review: true
+      - ai
+      - documentation
+      - frontend
+      - llm
+      - security
+    platforms: []
+    needs_review: false
     path: skills/skill-lookup/SKILL.md
+  - slug: skill-writer
+    name: skill-writer
+    name_zh: 技能-writer
+    description: Guide users through creating Agent Skills for Claude Code. Use 
+      when the user wants to create, write, author, or design a new Skill, or 
+      needs help with SKILL.md files, frontmatter, or skill structure.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/skill-writer/SKILL.md
+  - slug: skills-audit
+    name: skills-audit
+    name_zh: skills-audit
+    description: Audit .agents/skills SKILL.md files. Use for recurring checks 
+      of duplicate,
+    category: dev-tools
+    tags:
+      - ai
+      - backend
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/skills-audit/SKILL.md
+  - slug: slack
+    name: agent-slack
+    name_zh: 智能体-slack
+    description: Slack automation CLI — read/send/search messages, browse 
+      threads and
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/slack/SKILL.md
+  - slug: slack-gif-creator
+    name: slack-gif-creator
+    name_zh: slack-gif-creator
+    description: Knowledge and utilities for creating animated GIFs optimized 
+      for Slack. Provides constraints, validation tools, and animation concepts.
+    category: applications
+    tags:
+      - ai
+      - api
+      - frontend
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/slack-gif-creator/SKILL.md
+  - slug: slides
+    name: slides
+    name_zh: slides
+    description: Create and edit presentation slide decks (`.pptx`) with 
+      PptxGenJS, bundled
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/slides/SKILL.md
+  - slug: social-cli
+    name: social-cli
+    name_zh: social-cli
+    description: Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML
+      in, YAML out, exit codes for automation. Use when the task involves 
+      posting, replying, reading feeds, searching, annotating URLs, or running a
+      sync/check/dispatch agent loop across social platforms.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/social-cli/SKILL.md
+  - slug: spa-routes
+    name: spa-routes
+    name_zh: spa-routes
+    description: LobeHub SPA route architecture. Use when editing src/routes, 
+      src/features
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - git
+    platforms: []
+    needs_review: false
+    path: skills/spa-routes/SKILL.md
+  - slug: speech
+    name: speech
+    name_zh: speech
+    description: Use when the user asks for text-to-speech narration or 
+      voiceover, accessibility
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/speech/SKILL.md
+  - slug: spotify-player
+    name: spotify-player
+    name_zh: spotify-player
+    description: Terminal Spotify playback/search via spogo (preferred) or 
+      spotify_player.
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - frontend
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/spotify-player/SKILL.md
+  - slug: spreadsheet
+    name: spreadsheet
+    name_zh: spreadsheet
+    description: Use when tasks involve creating, editing, analyzing, or 
+      formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware 
+      workflows, cached recalculation, and visual review.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/spreadsheet/SKILL.md
   - slug: sql-query-helper
     name: SQL Query Helper
     name_zh: SQL 查询助手
-    description: Translate a natural-language question into a SQL query, given a
-      schema. Vendor-neutral, dialect-aware.
-    category: text-to-sql
+    description: SQL dialect
+    category: dev-tools
     tags:
-      - sql
+      - ai
+      - cli
       - database
-      - query
-      - nlp
+      - documentation
+      - llm
     platforms: []
     needs_review: false
     path: skills/sql-query-helper/SKILL.md
   - slug: standards-check
     name: Standards Check
-    name_zh:
+    name_zh: 标准检查
     description: Checks that a project follows standard conventions
-    category: uncategorized
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - documentation
+      - frontend
+      - git
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/standards-check/SKILL.md
+  - slug: store-data-structures
+    name: store-data-structures
+    name_zh: store-数据-structures
+    description: LobeHub Zustand store data-shape patterns. Use when designing 
+      store state,
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/store-data-structures/SKILL.md
   - slug: storybook
     name: Storybook Component Stories
     name_zh: Storybook 组件故事编写
-    description: Write or review Storybook stories (`.stories.tsx`) for React 
-      components — CSF Next, presentational component rule, typed metadata, 
-      story naming by state, no MSW. The rule of "one exported component per 
-      file" cuts both ways.
-    category: applications
+    description: '|'
+    category: dev-tools
     tags:
-      - storybook
-      - react
-      - testing
-      - components
-      - frontend
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/storybook/SKILL.md
   - slug: system-info
     name: system-info
-    name_zh:
+    name_zh: system-info
     description: Get system information using executable scripts
-    category: uncategorized
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - python
+      - typescript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/system-info/SKILL.md
+  - slug: task
+    name: Task
+    name_zh: 任务
+    description: Execute tasks within the LobeHub task system using the lh task 
+      CLI
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - documentation
+      - frontend
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/task/SKILL.md
+  - slug: template
+    name: template-skill
+    name_zh: template-技能
+    description: Replace with description of the skill and when Claude should 
+      use it.
+    category: applications
+    tags:
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/template/SKILL.md
   - slug: test-generator
     name: Unit Test Generator
     name_zh: 单元测试生成器
-    description: Generate unit tests for a function or class. Vendor-neutral, 
-      framework-aware.
-    category: dev-tools
+    description: whether to add edge case tests (None, empty, overflow)
+    category: applications
     tags:
-      - testing
-      - tdd
-      - unit-tests
-      - qa
+      - ai
+      - evaluation
+      - frontend
+      - llm
+      - python
     platforms: []
     needs_review: false
     path: skills/test-generator/SKILL.md
+  - slug: testing
+    name: testing
+    name_zh: 测试
+    description: Vitest testing guide. Use when writing or updating tests, 
+      fixing failing tests, improving coverage, debugging test issues, or 
+      setting up mocks.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/testing/SKILL.md
+  - slug: theme-factory
+    name: theme-factory
+    name_zh: theme-factory
+    description: Toolkit for styling artifacts with a theme. These artifacts can
+      be slides,
+    category: applications
+    tags:
+      - ai
+      - api
+      - frontend
+      - llm
+      - python
+    platforms: []
+    needs_review: false
+    path: skills/theme-factory/SKILL.md
   - slug: threat-modeling
     name: Repository Threat Model
     name_zh: 仓库威胁建模
-    description: Build a repository-grounded threat model — scope the system, 
-      draw trust boundaries, list assets, enumerate abuse paths tied to assets, 
-      prioritize with explicit likelihood × impact reasoning, validate 
-      assumptions. Anchors every claim to evidence in the repo, not a generic 
-      checklist.
-    category: guardrails
+    description: '|'
+    category: dev-tools
     tags:
-      - security
-      - threat-model
-      - appsec
-      - review
-      - architecture
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/threat-modeling/SKILL.md
   - slug: token-skill
     name: token-skill
-    name_zh:
+    name_zh: Token 技能
     description: Use this skill when the user explicitly asks to use token-skill
-      and wants the special token.
-    category: uncategorized
+      and wants
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - frontend
+      - llm
+      - python
+      - typescript
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/token-skill/SKILL.md
+  - slug: train-sentence-transformers
+    name: train-sentence-transformers
+    name_zh: train-sentence-transformers
+    description: Train or fine-tune sentence-transformers models across 
+      `SentenceTransformer` (bi-encoder; dense or static embedding model; for 
+      retrieval, similarity, clustering, classification, paraphrase mining, 
+      dedup, multimodal), `CrossEncoder` (reranker; pair scoring for two-stage 
+      retrieval / pair classification), and `SparseEncoder` (SPLADE, sparse 
+      embedding model; for learned-sparse retrieval). Covers loss selection, 
+      hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and 
+      Hugging Face Hub publishing. Use for any sentence-transformers training 
+      task.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/train-sentence-transformers/SKILL.md
+  - slug: transcribe
+    name: transcribe
+    name_zh: transcribe
+    description: Transcribe audio files to text with optional diarization and 
+      known-speaker
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/transcribe/SKILL.md
+  - slug: transformers-js
+    name: transformers-js
+    name_zh: transformers-js
+    description: Use Transformers.js to run state-of-the-art machine learning 
+      models directly
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/transformers-js/SKILL.md
+  - slug: triaging-issues
+    name: triaging-issues
+    name_zh: triaging-issues
+    description: Triages GitHub issues by routing to oncall teams, applying 
+      labels, and closing questions. Use when processing new PyTorch issues or 
+      when asked to triage an issue.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - deployment
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/triaging-issues/SKILL.md
+  - slug: trl-training
+    name: trl-training
+    name_zh: trl-training
+    description: Train and fine-tune transformer language models using TRL 
+      (Transformers
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - documentation
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/trl-training/SKILL.md
+  - slug: trpc-router
+    name: trpc-router
+    name_zh: trpc-router
+    description: TRPC router development guide. Use when creating or modifying 
+      apps/server/src/routers,
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/trpc-router/SKILL.md
   - slug: turborepo
     name: Turborepo Monorepo Authoring
     name_zh: Turborepo Monorepo 编写
-    description: Turborepo monorepo build system guidance — package tasks vs 
-      root tasks, task pipelines, dependsOn, caching, remote cache, --filter, 
-      --affected, env variables, internal packages, boundaries. Covers the eight
-      anti-patterns that defeat Turborepo's parallelization.
+    description: '|'
     category: dev-tools
     tags:
-      - turborepo
-      - monorepo
-      - build
-      - ci
-      - dev-tools
+      - ai
+      - api
+      - backend
+      - cli
+      - frontend
     platforms: []
     needs_review: false
     path: skills/turborepo/SKILL.md
+  - slug: typescript
+    name: typescript
+    name_zh: typescript
+    description: LobeHub TypeScript style and type-safety guide. Use when 
+      editing TS/TSX/MTS,
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/typescript/SKILL.md
+  - slug: update-provider-models
+    name: update-provider-models
+    name_zh: 更新-provider-models
+    description: Add new or remove obsolete model IDs for existing AI SDK 
+      providers. Use
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/update-provider-models/SKILL.md
+  - slug: upstash-workflow
+    name: upstash-workflow
+    name_zh: upstash-workflow
+    description: LobeHub Upstash Workflow and QStash guide. Use for async 
+      workflows, process/paginate/execute
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - deployment
+    platforms: []
+    needs_review: false
+    path: skills/upstash-workflow/SKILL.md
+  - slug: use-ai-sdk
+    name: ai-sdk
+    name_zh: ai-sdk
+    description: Answer questions about the AI SDK and help build AI-powered 
+      features. Use when developers ask about AI SDK functions, want to build AI
+      agents, or have questions about AI providers.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/use-ai-sdk/SKILL.md
+  - slug: valid-skill
+    name: valid-skill
+    name_zh: valid-技能
+    description: A complete test skill with all optional directories.
+    category: applications
+    tags:
+      - frontend
+      - llm
+      - python
+      - testing
+      - typescript
+    platforms: []
+    needs_review: false
+    path: skills/valid-skill/SKILL.md
   - slug: vercel-composition-patterns
     name: vercel-composition-patterns
-    name_zh:
+    name_zh: Vercel 组合模式
     description: React composition patterns that scale. Use when refactoring 
-      components with boolean prop proliferation, building flexible component 
-      libraries, or designing reusable APIs. Triggers on tasks involving 
-      compound components, render props, context providers, or component 
-      architecture. Includes React 19 API changes.
-    category: uncategorized
+      components
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - documentation
+      - frontend
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/vercel-composition-patterns/SKILL.md
+  - slug: vercel-deploy
+    name: vercel-deploy
+    name_zh: vercel-部署
+    description: Deploy applications and websites to Vercel. Use when the user 
+      requests
+    category: dev-tools
+    tags:
+      - ai
+      - cli
+      - database
+      - deployment
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/vercel-deploy/SKILL.md
   - slug: vercel-react-best-practices
     name: vercel-react-best-practices
-    name_zh:
+    name_zh: Vercel React 最佳实践
     description: React and Next.js performance optimization guidelines from 
-      Vercel Engineering. This skill should be used when writing, reviewing, or 
-      refactoring React/Next.js code to ensure optimal performance patterns. 
-      Triggers on tasks involving React components, Next.js pages, data 
-      fetching, bundle optimization, or performance improvements.
-    category: uncategorized
+      Vercel Engineering.
+    category: dev-tools
     tags:
-      - needs-tagging
+      - ai
+      - api
+      - backend
+      - cli
+      - documentation
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/vercel-react-best-practices/SKILL.md
+  - slug: version-release
+    name: version-release
+    name_zh: version-release
+    description: Version release workflow — release process and GitHub Release 
+      notes (not docs/changelog pages).
+    category: dev-tools
+    tags:
+      - ai
+      - database
+      - deployment
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/version-release/SKILL.md
+  - slug: visual-identity
+    name: visual-identity
+    name_zh: visual-identity
+    description: Build and maintain a persistent visual identity for your agent 
+      using Flux Kontext Pro. Use when the user asks the agent to generate 
+      selfies, avatars, character art, or any image that should look like the 
+      same person across generations.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/visual-identity/SKILL.md
+  - slug: web-artifacts-builder
+    name: web-artifacts-builder
+    name_zh: web-artifacts-builder
+    description: Suite of tools for creating elaborate, multi-component 
+      claude.ai HTML artifacts using modern frontend web technologies (React, 
+      Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state 
+      management, routing, or shadcn/ui components - not for simple single-file 
+      HTML/JSX artifacts.
+    category: applications
+    tags:
+      - ai
+      - documentation
+      - frontend
+      - javascript
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/web-artifacts-builder/SKILL.md
   - slug: webapp-testing
     name: Webapp Testing Harness
-    name_zh: Web 应用 Playwright 测试脚手架
-    description: Test local web apps end-to-end with Playwright + Python. 
-      Black-box server lifecycle helper, reconnaissance-then-action DOM 
-      inspection, screenshot capture, and the "static HTML vs dynamic SPA" 
-      decision tree.
-    category: browser-automation
+    name_zh: Web 应用测试脚手架
+    description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 
+      侦察行动模式、截图捕获。
+    category: dev-tools
     tags:
-      - playwright
-      - testing
-      - web
-      - e2e
-      - python
+      - ai
+      - api
+      - backend
+      - cli
+      - database
     platforms: []
     needs_review: false
     path: skills/webapp-testing/SKILL.md
   - slug: weekly-production-review
     name: weekly-production-review
-    name_zh:
-    description: "Prepare Langfuse weekly production reviews that explain what broke,
-      what was\nfixed, what remains open, and where alerting or tracking needs cleanup.
-      Use\nwhen asked for a production review, \"what broke last week\", fixed/open
-      bugs,\nDatadog alerted monitors/pages, status-page incidents, incident.io incidents,\n\
-      or an engineering-team overview that combines Linear, Datadog, and customer\n\
-      incident signals."
-    category: uncategorized
+    name_zh: 每周生产审查
+    description: Prepare Langfuse weekly production reviews that explain what 
+      broke,
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - datadog
+      - frontend
+      - llm
+      - security
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/weekly-production-review/SKILL.md
+  - slug: weekly-user-topics-digest
+    name: weekly-user-topics-digest
+    name_zh: weekly-用户-topics-digest
+    description: '>'
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/weekly-user-topics-digest/SKILL.md
   - slug: widget-generator
     name: widget-generator
-    name_zh:
+    name_zh: Widget 生成器
     description: Generate customizable widget plugins for the prompts.chat feed 
       system
-    category: uncategorized
+    category: applications
     tags:
-      - needs-tagging
+      - ai
+      - backend
+      - frontend
+      - javascript
+      - llm
     platforms: []
-    needs_review: true
+    needs_review: false
     path: skills/widget-generator/SKILL.md
+  - slug: winui-app
+    name: winui-app
+    name_zh: winui-app
+    description: Bootstrap, develop, and design modern WinUI 3 desktop 
+      applications with
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - database
+    platforms: []
+    needs_review: false
+    path: skills/winui-app/SKILL.md
+  - slug: worktree
+    name: worktree
+    name_zh: worktree
+    description: Set up a new git worktree for parallel development. Creates the
+      worktree, copies .env files, installs dependencies, and generates Prisma 
+      client. TRIGGER when user asks to set up a worktree, work on a branch in 
+      isolation, or needs a separate environment for a branch or PR.
+    category: dev-tools
+    tags:
+      - backend
+      - cli
+      - frontend
+      - git
+      - javascript
+    platforms: []
+    needs_review: false
+    path: skills/worktree/SKILL.md
+  - slug: write-frontend-tests
+    name: write-frontend-tests
+    name_zh: write-frontend-tests
+    description: Analyze the current branch diff against dev, plan integration 
+      tests for
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - database
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/write-frontend-tests/SKILL.md
+  - slug: xlsx
+    name: xlsx
+    name_zh: xlsx
+    description: Use this skill any time a spreadsheet file is the primary input
+      or output.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - database
+      - documentation
+    platforms: []
+    needs_review: false
+    path: skills/xlsx/SKILL.md
+  - slug: yeet
+    name: yeet
+    name_zh: yeet
+    description: Use only when the user explicitly asks to stage, commit, push, 
+      and open
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - cli
+      - documentation
+      - frontend
+    platforms: []
+    needs_review: false
+    path: skills/yeet/SKILL.md
+  - slug: yelp-search
+    name: yelp-search
+    name_zh: yelp-搜索
+    description: Search Yelp for local businesses, get contact info, ratings, 
+      and hours.
+    category: dev-tools
+    tags:
+      - ai
+      - api
+      - backend
+      - cli
+      - evaluation
+    platforms: []
+    needs_review: false
+    path: skills/yelp-search/SKILL.md
+  - slug: zustand
+    name: zustand
+    name_zh: zustand
+    description: LobeHub Zustand store conventions. Use when editing src/store, 
+      store
+    category: applications
+    tags:
+      - ai
+      - api
+      - backend
+      - frontend
+      - llm
+    platforms: []
+    needs_review: false
+    path: skills/zustand/SKILL.md

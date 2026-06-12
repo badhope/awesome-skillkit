@@ -1,19 +1,51 @@
 ---
 name: obsidian
 name_zh: obsidian
-description: "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
-description_zh: "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, javascript]
-source: 
+description: Work with Obsidian vaults (plain Markdown notes) and automate via 
+  obsidian-cli.
+description_zh: Work with Obsidian vaults (plain Markdown notes) and automate 
+  via obsidian-cli.
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: obsidian
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with obsidian.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Obsidian
 
@@ -73,11 +105,6 @@ Delete
 
 Prefer direct edits when appropriate: open the `.md` file and change it; Obsidian will pick it up.
 
-# When to use
-
-Use this skill when you need to work with obsidian.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -92,7 +119,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

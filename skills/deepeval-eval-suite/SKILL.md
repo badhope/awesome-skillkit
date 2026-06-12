@@ -3,22 +3,32 @@ name: deepeval Pytest Eval Suite
 name_zh: DeepEval 评估套件
 description: Targeted fix to attempt next round
 description_zh: 配置和运行 DeepEval 评估套件进行全面的 LLM 测试。
-category: "dev-tools"
-tags: [ai, api, backend, cli, evaluation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - evaluation
+source:
 ref: main
-license: "Apache-2.0"
+license: Apache-2.0
 language: en
-author: "Confident AI (downstream pack: badhope)"
+author: 'Confident AI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: deepeval-eval-suite
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're adding a **repeatable eval loop** to an AI application

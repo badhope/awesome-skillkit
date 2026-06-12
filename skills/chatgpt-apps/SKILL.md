@@ -1,19 +1,51 @@
 ---
-name: "chatgpt-apps"
-name_zh: "chatgpt-apps"
-description: "Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications"
-description_zh: "构建, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications"
-category: "dev-tools"
-tags: [ai, api, backend, deployment, documentation]
-source: 
+name: chatgpt-apps
+name_zh: chatgpt-apps
+description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK 
+  applications
+description_zh: 构建, scaffold, refactor, and troubleshoot ChatGPT Apps SDK 
+  applications
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - documentation
+source:
 language: en
 needs_review: false
+slug: chatgpt-apps
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with chatgpt-apps.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # ChatGPT Apps
 
@@ -331,11 +363,6 @@ When using this skill to scaffold code, produce output in this order unless the 
 - `references/window-openai-patterns.md` for ChatGPT-specific extensions, wrapper API translation, and React helper patterns
 - `scripts/scaffold_node_ext_apps.mjs` for a minimal Node + `@modelcontextprotocol/ext-apps` fallback starter scaffold
 
-# When to use
-
-Use this skill when you need to work with chatgpt-apps.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -350,7 +377,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,19 +1,51 @@
 ---
-name: "skills-audit"
-name_zh: "skills-audit"
-description: "Audit .agents/skills SKILL.md files. Use for recurring checks of duplicate,"
-description_zh: "Audit .agents/skills 技能.md files. Use for recurring checks of duplicate,"
-category: "dev-tools"
-tags: [ai, backend, cli, database, documentation]
-source: 
+name: skills-audit
+name_zh: skills-audit
+description: Audit .agents/skills SKILL.md files. Use for recurring checks of 
+  duplicate,
+description_zh: Audit .agents/skills 技能.md files. Use for recurring checks of 
+  duplicate,
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: skills-audit
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with skills-audit.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Skills Audit
 
@@ -151,11 +183,6 @@ End by asking the user which actions to apply — do NOT auto-apply unless the u
 
 - First audit: `chore/skills-audit` branch (2026-05-25) — deleted `source-command-dedupe`, renamed `data-fetching` → `data-fetching-architecture`, normalized 9 descriptions, created this skill.
 
-# When to use
-
-Use this skill when you need to work with skills-audit.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -170,7 +197,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

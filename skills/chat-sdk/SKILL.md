@@ -1,19 +1,51 @@
 ---
-name: "chat-sdk"
-name_zh: "chat-sdk"
-description: "Build multi-platform chat bots with the chat SDK. Use for Slack, Teams,"
-description_zh: "构建 multi-platform chat bots with the chat SDK. Use for Slack, Teams,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: chat-sdk
+name_zh: chat-sdk
+description: Build multi-platform chat bots with the chat SDK. Use for Slack, 
+  Teams,
+description_zh: 构建 multi-platform chat bots with the chat SDK. Use for Slack, 
+  Teams,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 language: en
 needs_review: false
+slug: chat-sdk
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with chat-sdk.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Chat SDK
 
@@ -157,11 +189,6 @@ This creates a file in `.changeset/` — commit it with the PR. When merged to `
 
 Each adapter exposes a webhook handler via `bot.webhooks.{platform}`. Wire these to your HTTP framework's routes (e.g. Next.js API routes, Hono, Express).
 
-# When to use
-
-Use this skill when you need to work with chat-sdk.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -176,7 +203,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

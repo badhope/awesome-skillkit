@@ -1,16 +1,54 @@
 ---
-name: "web-artifacts-builder"
-name_zh: "web-artifacts-builder"
-description: "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
-description_zh: "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern 前端 web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state 管理, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
-category: ai
-tags: [ai, documentation, frontend, javascript, llm]
+name: web-artifacts-builder
+name_zh: web-artifacts-builder
+description: Suite of tools for creating elaborate, multi-component claude.ai 
+  HTML artifacts using modern frontend web technologies (React, Tailwind CSS, 
+  shadcn/ui). Use for complex artifacts requiring state management, routing, or 
+  shadcn/ui components - not for simple single-file HTML/JSX artifacts.
+description_zh: Suite of tools for creating elaborate, multi-component claude.ai
+  HTML artifacts using modern 前端 web technologies (React, Tailwind CSS, 
+  shadcn/ui). Use for complex artifacts requiring state 管理, routing, or 
+  shadcn/ui components - not for simple single-file HTML/JSX artifacts.
+category: applications
+tags:
+  - ai
+  - documentation
+  - frontend
+  - javascript
+  - llm
 license: Complete terms in LICENSE.txt
 needs_review: false
-source: 
+source:
 language: en
+slug: web-artifacts-builder
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on web-artifacts-builder.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Web Artifacts Builder
 
@@ -80,10 +118,6 @@ To test/visualize the artifact, use available tools (including other Skills or b
 ## Reference
 
 - **shadcn/ui components**: https://ui.shadcn.com/docs/components
-# When to use
-
-Use this skill when you need guidance on web-artifacts-builder.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -91,7 +125,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

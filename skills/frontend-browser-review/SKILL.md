@@ -1,21 +1,50 @@
 ---
-name: "frontend-browser-review"
+name: frontend-browser-review
 name_zh: 前端浏览器审查
-description: "Shared workflow for browser-based review of user-visible frontend changes"
+description: Shared workflow for browser-based review of user-visible frontend 
+  changes
 description_zh: 审查前端代码的浏览器兼容性、性能和可访问性。
-category: "dev-tools"
-tags: [ai, backend, cli, documentation, frontend]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - documentation
+  - frontend
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: frontend-browser-review
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on frontend browser review.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Frontend Browser Review
 
@@ -86,11 +115,6 @@ Report:
 - Use this as the browser-signoff workflow, not as a generic frontend coding
   guide.
 
-# When to use
-
-Use this skill when you need guidance on frontend browser review.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -119,7 +143,3 @@ pnpm run seed -- long-session --traces 300
 # - 加载/空/错误状态是否完整
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,17 +1,52 @@
 ---
-name: "karpathy-guidelines"
-name_zh: "karpathy-guidelines"
-description: "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria."
-description_zh: "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring 代码 to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria."
-category: ai
-tags: [ai, frontend, llm, testing, typescript]
-source: 
+name: karpathy-guidelines
+name_zh: karpathy-guidelines
+description: Behavioral guidelines to reduce common LLM coding mistakes. Use 
+  when writing, reviewing, or refactoring code to avoid overcomplication, make 
+  surgical changes, surface assumptions, and define verifiable success criteria.
+description_zh: Behavioral guidelines to reduce common LLM coding mistakes. Use 
+  when writing, reviewing, or refactoring 代码 to avoid overcomplication, make 
+  surgical changes, surface assumptions, and define verifiable success criteria.
+category: applications
+tags:
+  - ai
+  - frontend
+  - llm
+  - testing
+  - typescript
+source:
 license: MIT
 language: en
 needs_review: false
+slug: karpathy-guidelines
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on karpathy-guidelines.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Karpathy Guidelines
 
@@ -80,10 +115,6 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-# When to use
-
-Use this skill when you need guidance on karpathy-guidelines.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -91,7 +122,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

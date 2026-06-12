@@ -1,15 +1,54 @@
 ---
-name: "social-cli"
-name_zh: "social-cli"
-description: "Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in, YAML out, exit codes for automation. Use when the task involves posting, replying, reading feeds, searching, annotating URLs, or running a sync/check/dispatch agent loop across social platforms."
-description_zh: "智能体-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in, YAML out, exit codes for 自动化. Use when the task involves posting, replying, reading feeds, searching, annotating URLs, or running a sync/检查/dispatch 智能体 loop across social platforms."
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
+name: social-cli
+name_zh: social-cli
+description: Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in,
+  YAML out, exit codes for automation. Use when the task involves posting, 
+  replying, reading feeds, searching, annotating URLs, or running a 
+  sync/check/dispatch agent loop across social platforms.
+description_zh: 智能体-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML 
+  in, YAML out, exit codes for 自动化. Use when the task involves posting, 
+  replying, reading feeds, searching, annotating URLs, or running a 
+  sync/检查/dispatch 智能体 loop across social platforms.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: social-cli
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on social-cli.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # social-cli
 
@@ -228,10 +267,6 @@ Everything is scoped to your current working directory, so you can run multiple 
 - `references/outbox-schema.md`: complete outbox YAML schema
 - `references/agent-loop.md`: patterns for cron/systemd automation loops
 
-# When to use
-
-Use this skill when you need guidance on social-cli.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -239,7 +274,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

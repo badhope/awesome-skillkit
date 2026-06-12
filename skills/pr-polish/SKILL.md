@@ -1,19 +1,65 @@
 ---
-name: "pr-polish"
-name_zh: "pr-polish"
-description: "Alternate /pr-review and /pr-address on a PR until the PR is truly mergeable — no new review findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI checks green, and two consecutive quiet polls after CI settles. Use when the user wants a PR polished to merge-ready without setting a fixed number of rounds."
-description_zh: "Alternate /pr-审查 and /pr-address on a PR until the PR is truly mergeable — no new 审查 findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI checks green, and two consecutive quiet polls after CI settles. Use when the 用户 wants a PR polished to merge-ready without setting a fixed number of rounds."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: pr-polish
+name_zh: pr-polish
+description: Alternate /pr-review and /pr-address on a PR until the PR is truly 
+  mergeable — no new review findings, zero unresolved inline threads, zero 
+  unaddressed top-level reviews or issue comments, all CI checks green, and two 
+  consecutive quiet polls after CI settles. Use when the user wants a PR 
+  polished to merge-ready without setting a fixed number of rounds.
+description_zh: Alternate /pr-审查 and /pr-address on a PR until the PR is truly 
+  mergeable — no new 审查 findings, zero unresolved inline threads, zero 
+  unaddressed top-level reviews or issue comments, all CI checks green, and two 
+  consecutive quiet polls after CI settles. Use when the 用户 wants a PR polished 
+  to merge-ready without setting a fixed number of rounds.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 1.0.0
 needs_review: false
+slug: pr-polish
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
 
+Use when the user says any of:
+- "polish this PR"
+- "keep reviewing and addressing until it's mergeable"
+- "loop /pr-review + /pr-address until done"
+- "make sure the PR is actually merge-ready"
 
+Do **not** use when:
+- User wants just one review pass (→ `/pr-review`).
+- User wants to address already-posted comments without further self-review (→ `/pr-address`).
+- A fixed round count is explicitly requested (e.g., "do 3 rounds") — honour the count instead of converging.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # PR Polish
 
@@ -268,19 +314,6 @@ PR #{N} polish stopped at {_MAX_ROUNDS} rounds — NOT merge-ready:
 Needs human review.
 ```
 
-# When to use
-
-Use when the user says any of:
-- "polish this PR"
-- "keep reviewing and addressing until it's mergeable"
-- "loop /pr-review + /pr-address until done"
-- "make sure the PR is actually merge-ready"
-
-Do **not** use when:
-- User wants just one review pass (→ `/pr-review`).
-- User wants to address already-posted comments without further self-review (→ `/pr-address`).
-- A fixed round count is explicitly requested (e.g., "do 3 rounds") — honour the count instead of converging.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -288,7 +321,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

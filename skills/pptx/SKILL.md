@@ -1,16 +1,64 @@
 ---
 name: pptx
 name_zh: pptx
-description: "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill."
-description_zh: "Use this 技能 any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the 用户 mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this 技能."
-category: ai
-tags: [ai, api, database, frontend, javascript]
+description: 'Use this skill any time a .pptx file is involved in any way — as input,
+  output, or both. This includes: creating slide decks, pitch decks, or presentations;
+  reading, parsing, or extracting text from any .pptx file (even if the extracted
+  content will be used elsewhere, like in an email or summary); editing, modifying,
+  or updating existing presentations; combining or splitting slide files; working
+  with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions
+  "deck," "slides," "presentation," or references a .pptx filename, regardless of
+  what they plan to do with the content afterward. If a .pptx file needs to be opened,
+  created, or touched, use this skill.'
+description_zh: 'Use this 技能 any time a .pptx file is involved in any way — as input,
+  output, or both. This includes: creating slide decks, pitch decks, or presentations;
+  reading, parsing, or extracting text from any .pptx file (even if the extracted
+  content will be used elsewhere, like in an email or summary); editing, modifying,
+  or updating existing presentations; combining or splitting slide files; working
+  with templates, layouts, speaker notes, or comments. Trigger whenever the 用户 mentions
+  "deck," "slides," "presentation," or references a .pptx filename, regardless of
+  what they plan to do with the content afterward. If a .pptx file needs to be opened,
+  created, or touched, use this 技能.'
+category: applications
+tags:
+  - ai
+  - api
+  - database
+  - frontend
+  - javascript
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
-source: 
+source:
 language: en
+slug: pptx
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on pptx.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # PPTX Skill
 
@@ -239,10 +287,6 @@ pdftoppm -jpeg -r 150 -f N -l N output.pdf slide-fixed
 - LibreOffice (`soffice`) - PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
 - Poppler (`pdftoppm`) - PDF to images
 
-# When to use
-
-Use this skill when you need guidance on pptx.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -250,7 +294,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

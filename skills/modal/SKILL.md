@@ -1,16 +1,52 @@
 ---
 name: modal
 name_zh: modal
-description: "LobeHub imperative modal conventions. Use when creating or migrating modals, dialogs, popups, confirm flows, ModalHost wiring, createModal, confirmModal, useModalContext, or base-ui modal APIs."
-description_zh: "LobeHub imperative modal conventions. Use when creating or migrating modals, dialogs, popups, confirm flows, ModalHost wiring, createModal, confirmModal, useModalContext, or base-ui modal APIs."
-category: "dev-tools"
-tags: [ai, api, backend, cli, docker]
-source: 
+description: LobeHub imperative modal conventions. Use when creating or 
+  migrating modals, dialogs, popups, confirm flows, ModalHost wiring, 
+  createModal, confirmModal, useModalContext, or base-ui modal APIs.
+description_zh: LobeHub imperative modal conventions. Use when creating or 
+  migrating modals, dialogs, popups, confirm flows, ModalHost wiring, 
+  createModal, confirmModal, useModalContext, or base-ui modal APIs.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - docker
+source:
 language: en
 needs_review: false
+slug: modal
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on modal.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Modal Imperative API Guide
 
@@ -219,14 +255,6 @@ const UserList = () => {
 };
 ```
 
-# When to use
-
-Use this skill when you need guidance on modal.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,20 +1,51 @@
 ---
 name: speech
 name_zh: speech
-description: "Use when the user asks for text-to-speech narration or voiceover, accessibility"
-description_zh: "Use when the 用户 asks for text-to-speech narration or voiceover, accessibility"
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
-source: 
+description: Use when the user asks for text-to-speech narration or voiceover, 
+  accessibility
+description_zh: Use when the 用户 asks for text-to-speech narration or voiceover, 
+  accessibility
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
+source:
 language: en
 needs_review: false
+slug: speech
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "speech".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Speech Generation Skill
 
@@ -155,11 +186,6 @@ Use these modules when the request is for a specific delivery style. They provid
 - **`references/accessibility.md`**: templates + defaults for accessibility reads.
 - **`references/network.md`**: environment/network troubleshooting.
 
-# When to use
-
-Use this skill when you need to work with "speech".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -174,7 +200,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

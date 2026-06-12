@@ -1,24 +1,35 @@
 ---
 name: Internal Comms Authoring
 name_zh: 内部沟通文档写作
-description: "|"
-description_zh: 写七种常见的内部沟通文档 —— 3P update、status report、领导汇报、项目进展、incident report、FAQ answer、公司 newsletter。每种有结构、语气、提前要收集的素材清单。通用，适用于任何公司。
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+description: '|'
+description_zh: 写七种常见的内部沟通文档 —— 3P update、status report、领导汇报、项目进展、incident 
+  report、FAQ answer、公司 newsletter。每种有结构、语气、提前要收集的素材清单。通用，适用于任何公司。
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 ref: main
 license: Complete terms in LICENSE.txt
 language: en
-author: "Anthropic (downstream pack: badhope)"
+author: 'Anthropic (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: internal-comms
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're drafting a **piece of internal communication** —

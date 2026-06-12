@@ -1,15 +1,48 @@
 ---
-name: "weekly-user-topics-digest"
-name_zh: "weekly-用户-topics-digest"
-description: ">"
-description_zh: ">"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: weekly-user-topics-digest
+name_zh: weekly-用户-topics-digest
+description: '>'
+description_zh: '>'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: weekly-user-topics-digest
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on weekly-user-topics-digest.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Weekly User Topics Digest
 
@@ -180,10 +213,6 @@ Keep the number of categories small (2-4). The goal is that an engineer reading 
 - Only group items if they are truly the same specific issue — when in doubt, keep separate
 - Redact obviously private customer info (names, emails) before displaying
 
-# When to use
-
-Use this skill when you need guidance on weekly-user-topics-digest.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -191,7 +220,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

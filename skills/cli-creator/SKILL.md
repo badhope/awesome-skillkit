@@ -1,18 +1,56 @@
 ---
-name: "cli-creator"
-name_zh: "cli-creator"
-description: "Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill."
-description_zh: "构建 a composable CLI for Codex from 接口 docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the 用户 wants Codex to 创建 a command-line tool that can 运行 from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion 技能."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: cli-creator
+name_zh: cli-creator
+description: Build a composable CLI for Codex from API docs, an OpenAPI spec, 
+  existing curl examples, an SDK, a web app, an admin tool, or a local script. 
+  Use when the user wants Codex to create a command-line tool that can run from 
+  any repo, expose composable read/write commands, return stable JSON, manage 
+  auth, and pair with a companion skill.
+description_zh: 构建 a composable CLI for Codex from 接口 docs, an OpenAPI spec, 
+  existing curl examples, an SDK, a web app, an admin tool, or a local script. 
+  Use when the 用户 wants Codex to 创建 a command-line tool that can 运行 from any 
+  repo, expose composable read/write commands, return stable JSON, manage auth, 
+  and pair with a companion 技能.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: cli-creator
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on cli-creator.
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # CLI Creator
 
@@ -170,10 +208,6 @@ Write the companion skill in the order a future Codex thread should use the CLI,
 
 Keep API reference details in the CLI docs or a skill reference file. Keep the skill focused on ordering, safety, and examples future Codex threads should actually run.
 
-# When to use
-
-Use this skill when you need guidance on cli-creator.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -181,7 +215,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

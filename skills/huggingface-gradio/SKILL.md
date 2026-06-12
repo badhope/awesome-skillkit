@@ -1,15 +1,50 @@
 ---
-name: "huggingface-gradio"
-name_zh: "huggingface-gradio"
-description: "Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots."
-description_zh: "构建 Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: huggingface-gradio
+name_zh: huggingface-gradio
+description: Build Gradio web UIs and demos in Python. Use when creating or 
+  editing Gradio apps, components, event listeners, layouts, or chatbots.
+description_zh: 构建 Gradio web UIs and demos in Python. Use when creating or 
+  editing Gradio apps, components, event listeners, layouts, or chatbots.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: huggingface-gradio
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-gradio.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Gradio
 
@@ -305,10 +340,6 @@ Both commands accept `--token` for accessing private Spaces.
 
 - [End-to-End Examples](examples.md) — complete working apps
 
-# When to use
-
-Use this skill when you need guidance on huggingface-gradio.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -316,7 +347,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

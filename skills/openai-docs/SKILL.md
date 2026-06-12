@@ -1,18 +1,58 @@
 ---
-name: "openai-docs"
-name_zh: "openai-docs"
-description: "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains."
-description_zh: "Use when the 用户 asks how to 构建 with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official 文档 with citations, help choosing the latest 模型 for a use case, or 模型 upgrade and 提示词-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: openai-docs
+name_zh: openai-docs
+description: Use when the user asks how to build with OpenAI products or APIs, 
+  asks about Codex itself or choosing Codex surfaces, needs up-to-date official 
+  documentation with citations, help choosing the latest model for a use case, 
+  or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for 
+  non-Codex docs questions, use the Codex manual helper first for broad Codex 
+  self-knowledge, and restrict fallback browsing to official OpenAI domains.
+description_zh: Use when the 用户 asks how to 构建 with OpenAI products or APIs, 
+  asks about Codex itself or choosing Codex surfaces, needs up-to-date official 
+  文档 with citations, help choosing the latest 模型 for a use case, or 模型 upgrade 
+  and 提示词-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs 
+  questions, use the Codex manual helper first for broad Codex self-knowledge, 
+  and restrict fallback browsing to official OpenAI domains.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: openai-docs
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on openai-docs.
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # OpenAI Docs
 
@@ -170,10 +210,6 @@ Read only what you need:
 - If the MCP server is installed but returns no meaningful results, then use web search as a fallback.
 - When falling back to web search, restrict to official OpenAI domains (developers.openai.com, platform.openai.com) and cite sources.
 
-# When to use
-
-Use this skill when you need guidance on openai-docs.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -181,7 +217,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

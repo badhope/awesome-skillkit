@@ -1,24 +1,34 @@
 ---
 name: deepeval OTel Trace Export
 name_zh: DeepEval OpenTelemetry
-description: "Suggested follow-up actions"
+description: Suggested follow-up actions
 description_zh: 使用 OpenTelemetry 集成 DeepEval 进行 LLM 应用的可观测性。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 ref: main
-license: "Apache-2.0"
+license: Apache-2.0
 language: en
-author: "Confident AI (downstream pack: badhope)"
+author: 'Confident AI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: deepeval-otel
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're instrumenting an **AI application** — an LLM app, an agent,

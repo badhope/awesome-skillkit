@@ -1,19 +1,50 @@
 ---
 name: imagegen
 name_zh: imagegen
-description: "Generate or edit raster images when the task benefits from AI-created"
-description_zh: "生成 or edit raster images when the task benefits from AI-created"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: Generate or edit raster images when the task benefits from 
+  AI-created
+description_zh: 生成 or edit raster images when the task benefits from AI-created
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: imagegen
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "imagegen".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Image Generation Skill
 
@@ -290,11 +321,6 @@ If installation is not possible in this environment, tell the user which depende
 - `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
 - `scripts/image_gen.py`: fallback-only CLI implementation. Do not load or use it unless the user explicitly chooses CLI mode.
 
-# When to use
-
-Use this skill when you need to work with "imagegen".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -309,7 +335,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

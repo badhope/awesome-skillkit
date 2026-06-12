@@ -1,19 +1,51 @@
 ---
-name: "huggingface-spaces"
-name_zh: "huggingface-spaces"
-description: "Build, deploy, and maintain applications on Hugging Face Spaces — Gradio"
-description_zh: "构建, 部署, and maintain applications on Hugging Face Spaces — Gradio"
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: huggingface-spaces
+name_zh: huggingface-spaces
+description: Build, deploy, and maintain applications on Hugging Face Spaces — 
+  Gradio
+description_zh: 构建, 部署, and maintain applications on Hugging Face Spaces — 
+  Gradio
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 language: en
 needs_review: false
+slug: huggingface-spaces
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-spaces.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Hugging Face Spaces
 
@@ -241,11 +273,6 @@ If you solve an error that wasn't in the known-errors list, suggest the user PR 
 | Community grant requests (non-PRO needing ZeroGPU) | [`references/grants.md`](references/grants.md) |
 | Provider proxy (zero-VRAM big LLM via Cerebras / Fireworks / Together / etc.) | [`references/inference-providers.md`](references/inference-providers.md) |
 
-# When to use
-
-Use this skill when you need to work with huggingface-spaces.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -260,7 +287,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,21 +1,50 @@
 ---
-name: "pr-test"
-name_zh: "pr-测试"
-description: "E2E manual testing of PRs/branches using docker compose, agent-browser,"
-description_zh: "E2E manual 测试 of PRs/branches using docker compose, 智能体-browser,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: pr-test
+name_zh: pr-测试
+description: E2E manual testing of PRs/branches using docker compose, 
+  agent-browser,
+description_zh: E2E manual 测试 of PRs/branches using docker compose, 智能体-browser,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 2.1.0
 needs_review: false
+slug: pr-test
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with pr-test.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Manual E2E Test
 
@@ -1166,11 +1195,6 @@ test scenario → find issue (bug OR UX problem) → screenshot broken state
 **Cause:** The database schema changed (migration ran) but supabase-auth has a stale schema cache.
 **Fix:** `docker restart supabase-db && sleep 10 && docker restart supabase-auth && sleep 8`. If user data was lost, re-signup.
 
-# When to use
-
-Use this skill when you need to work with pr-test.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -1185,7 +1209,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

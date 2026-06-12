@@ -1,15 +1,52 @@
 ---
-name: "huggingface-paper-publisher"
-name_zh: "huggingface-paper-publisher"
-description: "Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research articles."
-description_zh: "Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research articles."
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
+name: huggingface-paper-publisher
+name_zh: huggingface-paper-publisher
+description: Publish and manage research papers on Hugging Face Hub. Supports 
+  creating paper pages, linking papers to models/datasets, claiming authorship, 
+  and generating professional markdown-based research articles.
+description_zh: Publish and manage research papers on Hugging Face Hub. Supports
+  creating paper pages, linking papers to models/datasets, claiming authorship, 
+  and generating professional markdown-based research articles.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
 needs_review: false
-source: 
+source:
 language: en
+slug: huggingface-paper-publisher
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-paper-publisher.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Overview
 This skill provides comprehensive tools for AI engineers and researchers to publish, manage, and link research papers on the Hugging Face Hub. It streamlines the workflow from paper creation to publication, including integration with arXiv, model/dataset linking, and authorship management.
@@ -631,10 +668,6 @@ Planned features for future versions:
 - Automated figure and table extraction
 - Paper metrics and impact tracking
 
-# When to use
-
-Use this skill when you need guidance on huggingface-paper-publisher.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -642,7 +675,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "spa-routes"
-name_zh: "spa-routes"
-description: "LobeHub SPA route architecture. Use when editing src/routes, src/features"
-description_zh: "LobeHub SPA route architecture. Use when editing src/routes, src/features"
-category: "dev-tools"
-tags: [ai, api, backend, frontend, git]
-source: 
+name: spa-routes
+name_zh: spa-routes
+description: LobeHub SPA route architecture. Use when editing src/routes, 
+  src/features
+description_zh: LobeHub SPA route architecture. Use when editing src/routes, 
+  src/features
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - git
+source:
 language: en
 needs_review: false
+slug: spa-routes
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with spa-routes.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # SPA Routes and Features Guide
 
@@ -192,11 +224,6 @@ src/features/Pages/
 
 Router config continues to point at **route** paths (e.g. `@/routes/(main)/page`, `@/routes/(main)/page/_layout`); route files then delegate to features.
 
-# When to use
-
-Use this skill when you need to work with spa-routes.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -211,7 +238,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

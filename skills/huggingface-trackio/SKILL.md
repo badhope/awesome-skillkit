@@ -1,19 +1,51 @@
 ---
-name: "huggingface-trackio"
-name_zh: "huggingface-trackio"
-description: Track and visualize ML training experiments with Trackio. Use when logging
-description_zh: Track and visualize ML 训练 experiments with Trackio. Use when logging
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: huggingface-trackio
+name_zh: huggingface-trackio
+description: Track and visualize ML training experiments with Trackio. Use when 
+  logging
+description_zh: Track and visualize ML 训练 experiments with Trackio. Use when 
+  logging
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: huggingface-trackio
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-trackio.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Trackio - Experiment Tracking for ML Training
 
@@ -126,11 +158,6 @@ Then poll from a separate terminal/process:
 trackio list alerts --project my-project --json --since "2025-01-01T00:00:00"
 ```
 
-# When to use
-
-Use this skill when you need to work with huggingface-trackio.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -145,7 +172,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

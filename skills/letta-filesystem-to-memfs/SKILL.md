@@ -1,20 +1,51 @@
 ---
-name: "letta-filesystem-to-memfs"
-name_zh: "letta-filesystem-to-memfs"
-description: Migrates deprecated Letta Filesystem folders/files to MemFS using markdown
-description_zh: Migrates deprecated Letta Filesystem folders/files to MemFS using markdown
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: letta-filesystem-to-memfs
+name_zh: letta-filesystem-to-memfs
+description: Migrates deprecated Letta Filesystem folders/files to MemFS using 
+  markdown
+description_zh: Migrates deprecated Letta Filesystem folders/files to MemFS 
+  using markdown
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 license: MIT
 language: en
 needs_review: false
+slug: letta-filesystem-to-memfs
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with letta-filesystem-to-memfs.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Letta Filesystem to MemFS
 
@@ -144,11 +175,6 @@ For scanned PDFs or complex tables, use the `tools/extracting-pdf-text` skill fi
 
 See `references/design.md` for design notes and edge cases.
 
-# When to use
-
-Use this skill when you need to work with letta-filesystem-to-memfs.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -163,7 +189,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

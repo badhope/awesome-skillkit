@@ -1,27 +1,39 @@
 ---
-name: "visual-identity"
-name_zh: "visual-identity"
-description: "Build and maintain a persistent visual identity for your agent using Flux Kontext Pro. Use when the user asks the agent to generate selfies, avatars, character art, or any image that should look like the same person across generations."
-description_zh: "构建 and maintain a persistent visual identity for your 智能体 using Flux Kontext Pro. Use when the 用户 asks the 智能体 to 生成 selfies, avatars, character art, or any image that should look like the same person across generations."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: visual-identity
+name_zh: visual-identity
+description: Build and maintain a persistent visual identity for your agent 
+  using Flux Kontext Pro. Use when the user asks the agent to generate selfies, 
+  avatars, character art, or any image that should look like the same person 
+  across generations.
+description_zh: 构建 and maintain a persistent visual identity for your 智能体 using 
+  Flux Kontext Pro. Use when the 用户 asks the 智能体 to 生成 selfies, avatars, 
+  character art, or any image that should look like the same person across 
+  generations.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: visual-identity
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-# Visual Identity
-
-Build a persistent visual identity that stays consistent across sessions. Supports OpenAI (gpt-image-1) and Flux Kontext Pro.
-
-Two workflows:
-
-1. **Visual identity** (primary): Establish a reference appearance, then generate new scenes that preserve the same face and features. Identity persists in the agent's memory across sessions.
-2. **Text-to-image** (secondary): One-off image generation from a text prompt, no identity persistence.
-
 # When to use
 
 - The user asks "show me what you look like" or wants agent selfies
@@ -236,6 +248,27 @@ Full CLI documentation: `references/api.md`
 Common commands:
 
 ```bash
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# Visual Identity
+
+Build a persistent visual identity that stays consistent across sessions. Supports OpenAI (gpt-image-1) and Flux Kontext Pro.
+
+Two workflows:
+
+1. **Visual identity** (primary): Establish a reference appearance, then generate new scenes that preserve the same face and features. Identity persists in the agent's memory across sessions.
+2. **Text-to-image** (secondary): One-off image generation from a text prompt, no identity persistence.
+
 # Text-to-image
 python3 <path-to-skill>/scripts/generate_image.py generate \
   --prompt "..." --out output.jpg
@@ -292,7 +325,3 @@ python3 <path-to-skill>/scripts/generate_image.py edit \
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "migrate-to-codex"
-name_zh: "迁移-to-codex"
-description: "Migrate supported instruction files, skills, agents, and MCP config into"
-description_zh: "Migrate supported instruction files, skills, agents, and MCP 配置 into"
-category: "dev-tools"
-tags: [ai, backend, cli, database, deployment]
-source: 
+name: migrate-to-codex
+name_zh: 迁移-to-codex
+description: Migrate supported instruction files, skills, agents, and MCP config
+  into
+description_zh: Migrate supported instruction files, skills, agents, and MCP 配置 
+  into
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - deployment
+source:
 language: en
 needs_review: false
+slug: migrate-to-codex
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with migrate-to-codex.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Migrate to Codex
 
@@ -125,11 +157,6 @@ Run the post-migration validator against each target after edits.
 
 Run `$MIGRATE_TO_CODEX --help` for flags (`--scan-only`, `--plan`, `--doctor`, `--validate-target`, defaults, and so on). Deep tables and more links are in `references/differences.md`.
 
-# When to use
-
-Use this skill when you need to work with migrate-to-codex.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -144,7 +171,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

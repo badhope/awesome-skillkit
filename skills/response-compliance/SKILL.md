@@ -1,17 +1,52 @@
 ---
-name: "response-compliance"
-name_zh: "response-compliance"
-description: "OpenResponses API compliance testing. Use for Response API endpoint tests, compliance runs, schema debugging, response api test, or openresponses test tasks."
-description_zh: "OpenResponses 接口 compliance 测试. Use for Response 接口 endpoint tests, compliance runs, schema debugging, response 接口 测试, or openresponses 测试 tasks."
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
-source: 
+name: response-compliance
+name_zh: response-compliance
+description: OpenResponses API compliance testing. Use for Response API endpoint
+  tests, compliance runs, schema debugging, response api test, or openresponses 
+  test tasks.
+description_zh: OpenResponses 接口 compliance 测试. Use for Response 接口 endpoint 
+  tests, compliance runs, schema debugging, response 接口 测试, or openresponses 测试 
+  tasks.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
+source:
 language: en
 needs_review: false
+slug: response-compliance
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on response-compliance.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # OpenResponses Compliance Test
 
@@ -96,10 +131,6 @@ The script (`lobehub/packages/openapi/scripts/compliance-test.sh`) clones the of
 - **Test script**: `lobehub/packages/openapi/scripts/compliance-test.sh`
 - **Cloud route**: `src/app/(backend)/api/v1/[[...route]]/route.ts`
 
-# When to use
-
-Use this skill when you need guidance on response-compliance.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -107,7 +138,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

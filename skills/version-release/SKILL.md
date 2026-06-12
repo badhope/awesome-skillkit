@@ -1,18 +1,50 @@
 ---
-name: "version-release"
-name_zh: "version-release"
-description: Version release workflow — release process and GitHub Release notes (not docs/changelog pages).
-description_zh: Version release workflow — release process and GitHub Release notes (not docs/changelog pages).
-category: "dev-tools"
-tags: [ai, database, deployment, documentation, frontend]
-source: 
+name: version-release
+name_zh: version-release
+description: Version release workflow — release process and GitHub Release notes
+  (not docs/changelog pages).
+description_zh: Version release workflow — release process and GitHub Release 
+  notes (not docs/changelog pages).
+category: dev-tools
+tags:
+  - ai
+  - database
+  - deployment
+  - documentation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: version-release
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on version-release.
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Version Release Workflow
 
@@ -108,10 +140,6 @@ Pick the right reference and follow it end-to-end:
 - Patch PRs do not need an explicit version number.
 - Keep release facts accurate; do not invent metrics or availability statements. Release-note inputs (compare base, PR refs, contributor list) **must be derived from `git`** per `references/release-notes-style.md` § Computing Inputs — never from memory or descriptions.
 
-# When to use
-
-Use this skill when you need guidance on version-release.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -131,7 +159,3 @@ python scripts/use-skill.py version-release
 python scripts/inspect-skill.py version-release
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

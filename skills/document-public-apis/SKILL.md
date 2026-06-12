@@ -1,19 +1,51 @@
 ---
-name: "document-public-apis"
-name_zh: "文档-public-apis"
-description: Document undocumented public APIs in PyTorch by removing functions from
-description_zh: Document undocumented public APIs in PyTorch by removing functions from
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: document-public-apis
+name_zh: 文档-public-apis
+description: Document undocumented public APIs in PyTorch by removing functions 
+  from
+description_zh: Document undocumented public APIs in PyTorch by removing 
+  functions from
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: document-public-apis
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with document-public-apis.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Document Public APIs
 
@@ -353,11 +385,6 @@ Also delete any module label comments that no longer have active entries beneath
 - **Use the module label comment** (e.g., `# torch.ao.quantization.fx.convert`) as the primary guide for both the `automodule`/`currentmodule` directives and for finding the right section in the doc file.
 - Always process complete module groups — never split a group across invocations.
 
-# When to use
-
-Use this skill when you need to work with document-public-apis.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -372,7 +399,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

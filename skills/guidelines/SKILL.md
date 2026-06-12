@@ -1,18 +1,35 @@
 ---
 name: guidelines
 name_zh: guidelines
-description: "Response formatting and communication guidelines for generating clear, accurate, and well-structured replies."
-description_zh: "Response formatting and communication guidelines for generating clear, accurate, and well-structured replies."
-category: ai
-tags: [ai, frontend, llm, python, typescript]
-source: 
+description: Response formatting and communication guidelines for generating 
+  clear, accurate, and well-structured replies.
+description_zh: Response formatting and communication guidelines for generating 
+  clear, accurate, and well-structured replies.
+category: applications
+tags:
+  - ai
+  - frontend
+  - llm
+  - python
+  - typescript
+source:
 language: en
 needs_review: false
+slug: guidelines
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
 <response_formatting>
 Provide accurate, relevant responses. Express uncertainty explicitly when you lack information.
 
@@ -27,6 +44,18 @@ Match the user's query language and tone.
 # When to use
 
 Use this skill when you need guidance on guidelines.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # When NOT to use
 
@@ -48,7 +77,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

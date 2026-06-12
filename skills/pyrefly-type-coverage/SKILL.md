@@ -1,19 +1,51 @@
 ---
-name: "pyrefly-type-coverage"
-name_zh: "pyrefly-类型-coverage"
-description: Migrate a file to use stricter Pyrefly type checking with annotations
-description_zh: Migrate a file to use stricter Pyrefly type checking with annotations
-category: ai
-tags: [ai, api, backend, docker, frontend]
-source: 
+name: pyrefly-type-coverage
+name_zh: pyrefly-类型-coverage
+description: Migrate a file to use stricter Pyrefly type checking with 
+  annotations
+description_zh: Migrate a file to use stricter Pyrefly type checking with 
+  annotations
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - docker
+  - frontend
+source:
 language: en
 needs_review: false
+slug: pyrefly-type-coverage
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with pyrefly-type-coverage.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Pyrefly Type Coverage Skill
 
@@ -226,11 +258,6 @@ that broke a downstream `isinstance` check) before reverting the file.
 - **Committing**: don't commit unless the user explicitly asks (per repo
   CLAUDE.md). Stop and surface the diff for review when the file is clean.
 
-# When to use
-
-Use this skill when you need to work with pyrefly-type-coverage.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -245,7 +272,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

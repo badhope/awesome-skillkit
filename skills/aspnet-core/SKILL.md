@@ -1,19 +1,51 @@
 ---
-name: "aspnet-core"
-name_zh: "aspnet-core"
-description: "Build, review, refactor, or architect ASP.NET Core web applications using"
-description_zh: "构建, 审查, refactor, or architect ASP.NET Core web applications using"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: aspnet-core
+name_zh: aspnet-core
+description: Build, review, refactor, or architect ASP.NET Core web applications
+  using
+description_zh: 构建, 审查, refactor, or architect ASP.NET Core web applications 
+  using
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: aspnet-core
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with aspnet-core.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # ASP.NET Core
 
@@ -72,11 +104,6 @@ Load the smallest set of references that fits the task. Do not load every refere
 - When editing an existing solution, follow the solution's conventions first and use these references to avoid framework misuse or outdated patterns.
 - When a task mentions "latest", verify the feature on Microsoft Learn or the ASP.NET Core docs repo before relying on memory.
 
-# When to use
-
-Use this skill when you need to work with aspnet-core.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -91,7 +118,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,17 +1,52 @@
 ---
-name: "skill-installer"
-name_zh: "技能-installer"
-description: "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos)."
-description_zh: "安装 Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a 用户 asks to list installable skills, 安装 a curated 技能, or 安装 a 技能 from another repo (including private repos)."
-category: "dev-tools"
-tags: [ai, api, backend, database, frontend]
-source: 
+name: skill-installer
+name_zh: 技能-installer
+description: Install Codex skills into $CODEX_HOME/skills from a curated list or
+  a GitHub repo path. Use when a user asks to list installable skills, install a
+  curated skill, or install a skill from another repo (including private repos).
+description_zh: 安装 Codex skills into $CODEX_HOME/skills from a curated list or a
+  GitHub repo path. Use when a 用户 asks to list installable skills, 安装 a curated 
+  技能, or 安装 a 技能 from another repo (including private repos).
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - frontend
+source:
 language: en
 needs_review: false
+slug: skill-installer
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on skill-installer.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Skill Installer
 
@@ -65,10 +100,6 @@ All of these scripts use network, so when running in the sandbox, request escala
 - The skills at https://github.com/openai/skills/tree/main/skills/.system are preinstalled, so no need to help users install those. If they ask, just explain this. If they insist, you can download and overwrite.
 - Installed annotations come from `$CODEX_HOME/skills`.
 
-# When to use
-
-Use this skill when you need guidance on skill-installer.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -88,7 +119,3 @@ python scripts/use-skill.py skill-installer
 python scripts/inspect-skill.py skill-installer
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

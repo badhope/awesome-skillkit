@@ -1,21 +1,50 @@
 ---
-name: "widget-generator"
+name: widget-generator
 name_zh: Widget 生成器
-description: Generate customizable widget plugins for the prompts.chat feed system
+description: Generate customizable widget plugins for the prompts.chat feed 
+  system
 description_zh: 生成可嵌入的 widget 组件。
-category: ai
-tags: [ai, backend, frontend, javascript, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - backend
+  - frontend
+  - javascript
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: widget-generator
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on widget generator.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Widget Generator Skill
 
@@ -405,11 +434,6 @@ interface WidgetPlugin {
 | Styling issues | Use Tailwind classes, match existing widget patterns |
 | Position wrong | Remember positions are 0-indexed, check `repeatEvery` value |
 
-# When to use
-
-Use this skill when you need guidance on widget generator.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -419,7 +443,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

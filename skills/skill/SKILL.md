@@ -3,14 +3,46 @@ name: Skill
 name_zh: 技能
 description: Setup tips and tricks for CMA as an MCP server
 description_zh: CMA作为MCP服务器的设置技巧和注意事项
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 language: en
 needs_review: false
+slug: skill
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on skill.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Setup tips & tricks — CMA as an MCP server
 
@@ -144,10 +176,6 @@ Adding any of these is a few lines in `src/cma.ts` + `src/server.ts` if your use
 | claude.ai Connector shows "couldn't connect" | URL wrong, server not reachable, or token mismatch (check server logs for 401). |
 | HTTP server returns 401 locally | `CMA_MCP_TOKEN` not exported in the shell you ran `bun run http` from. |
 
-# When to use
-
-Use this skill when you need guidance on skill.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -155,7 +183,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

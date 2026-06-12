@@ -1,16 +1,56 @@
 ---
-name: "navigating-chatgpt-history"
-name_zh: "navigating-chatgpt-history"
-description: "Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specific chats, seeding reference memory from export sidecars, or mining historical context without doing a full import."
-description_zh: "Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specific chats, seeding reference memory from export sidecars, or mining historical context without doing a full import."
-category: ai
-tags: [ai, evaluation, javascript, llm, python]
+name: navigating-chatgpt-history
+name_zh: navigating-chatgpt-history
+description: Navigates archived ChatGPT or Claude-style conversation exports and
+  a MemFS reference archive on demand. Use when recalling what a past assistant 
+  knew, searching old conversations, rendering specific chats, seeding reference
+  memory from export sidecars, or mining historical context without doing a full
+  import.
+description_zh: Navigates archived ChatGPT or Claude-style conversation exports 
+  and a MemFS reference archive on demand. Use when recalling what a past 
+  assistant knew, searching old conversations, rendering specific chats, seeding
+  reference memory from export sidecars, or mining historical context without 
+  doing a full import.
+category: applications
+tags:
+  - ai
+  - evaluation
+  - javascript
+  - llm
+  - python
 license: MIT
 needs_review: false
-source: 
+source:
 language: en
+slug: navigating-chatgpt-history
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on navigating-chatgpt-history.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Navigating Chat History Without Digesting Everything
 
@@ -162,10 +202,6 @@ This skill is designed for newer exports that contain `conversations.json` with 
 
 When in doubt, start with `inspect-export.py` instead of assuming the schema.
 
-# When to use
-
-Use this skill when you need guidance on navigating-chatgpt-history.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -173,7 +209,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

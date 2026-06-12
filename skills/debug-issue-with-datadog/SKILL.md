@@ -1,21 +1,50 @@
 ---
-name: "debug-issue-with-datadog"
+name: debug-issue-with-datadog
 name_zh: 使用 Datadog 调试问题
-description: "Debug a user-reported issue, Linear ticket, or incident report by combining"
+description: Debug a user-reported issue, Linear ticket, or incident report by 
+  combining
 description_zh: 使用 Datadog 监控和日志数据诊断和调试问题。
-category: "dev-tools"
-tags: [ai, api, backend, cli, datadog]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - datadog
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: debug-issue-with-datadog
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on debug issue with datadog.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Debug Issue with Datadog
 
@@ -128,11 +157,6 @@ do not invent root causes.
 - Once a fix is identified and you switch to implementation, hand off to the
   package `AGENTS.md` for the affected directory.
 
-# When to use
-
-Use this skill when you need guidance on debug issue with datadog.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -170,7 +194,3 @@ python scripts/suggest-fixes.py \
   --output fixes.md
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

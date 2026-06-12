@@ -1,19 +1,33 @@
 ---
-name: "remotion-best-practices"
-name_zh: "remotion-best-practices"
-description: "Best practices for Remotion - Video creation in React"
-description_zh: "Best practices for Remotion - Video creation in React"
-category: ai
-tags: [ai, docker, frontend, javascript, llm]
-source: 
+name: remotion-best-practices
+name_zh: remotion-best-practices
+description: Best practices for Remotion - Video creation in React
+description_zh: Best practices for Remotion - Video creation in React
+category: applications
+tags:
+  - ai
+  - docker
+  - frontend
+  - javascript
+  - llm
+source:
 language: en
 needs_review: false
+slug: remotion
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
 # When to use
 
 Use this skill when working with Remotion code for video creation in React.
@@ -76,6 +90,18 @@ Read individual rule files for detailed explanations and code examples:
 - [rules/silence-detection.md](rules/silence-detection.md) - Adaptive silence detection using FFmpeg loudnorm and silencedetect
 - [rules/voiceover.md](rules/voiceover.md) - Adding AI-generated voiceover to Remotion compositions using ElevenLabs TTS
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -96,7 +122,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

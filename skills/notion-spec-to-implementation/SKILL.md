@@ -1,16 +1,52 @@
 ---
-name: "notion-spec-to-implementation"
-name_zh: "notion-spec-to-implementation"
-description: "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them."
-description_zh: "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: notion-spec-to-implementation
+name_zh: notion-spec-to-implementation
+description: Turn Notion specs into implementation plans, tasks, and progress 
+  tracking; use when implementing PRDs/feature specs and creating Notion plans +
+  tasks from them.
+description_zh: Turn Notion specs into implementation plans, tasks, and progress
+  tracking; use when implementing PRDs/feature specs and creating Notion plans +
+  tasks from them.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: notion-spec-to-implementation
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on notion-spec-to-implementation.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Spec to Implementation
 
@@ -64,10 +100,6 @@ After successful login, the user will have to restart codex. You should finish y
 - `reference/` — parsing patterns, plan/task templates, progress cadence (e.g., `spec-parsing.md`, `standard-implementation-plan.md`, `task-creation.md`, `progress-tracking.md`).
 - `examples/` — end-to-end walkthroughs (e.g., `ui-component.md`, `api-feature.md`, `database-migration.md`).
 
-# When to use
-
-Use this skill when you need guidance on notion-spec-to-implementation.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -87,7 +119,3 @@ python scripts/use-skill.py notion-spec-to-implementation
 python scripts/inspect-skill.py notion-spec-to-implementation
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

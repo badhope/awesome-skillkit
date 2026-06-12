@@ -1,15 +1,62 @@
 ---
 name: pr
 name_zh: pr
-description: "Create a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / server TRPC) merges before its callers (desktop / CLI / UI). Use when the user asks to create / submit a PR, or to split a branch because clients call a server contract that isn't on the trunk yet. Triggers on 'pr', 'create pr', 'submit pr', 'open a PR', 'pull request', 'split this PR', 'stacked PR', 'backend should merge first', '提 PR', '提个 PR', '新建 PR', '拆 PR', '后端先合', '分层合并'."
-description_zh: "创建 a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / 服务器 TRPC) merges before its callers (desktop / CLI / UI). Use when the 用户 asks to 创建 / submit a PR, or to split a branch because clients call a 服务器 contract that isn't on the trunk yet. Triggers on 'pr', '创建 pr', 'submit pr', 'open a PR', 'pull request', 'split this PR', 'stacked PR', '后端 should merge first', '提 PR', '提个 PR', '新建 PR', '拆 PR', '后端先合', '分层合并'."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+description: Create a PR for the current branch (targets `canary` by default), 
+  including splitting one cross-layer branch into ordered stacked PRs so a lower
+  layer (db / shared package / server TRPC) merges before its callers (desktop /
+  CLI / UI). Use when the user asks to create / submit a PR, or to split a 
+  branch because clients call a server contract that isn't on the trunk yet. 
+  Triggers on 'pr', 'create pr', 'submit pr', 'open a PR', 'pull request', 
+  'split this PR', 'stacked PR', 'backend should merge first', '提 PR', '提个 PR', 
+  '新建 PR', '拆 PR', '后端先合', '分层合并'.
+description_zh: 创建 a PR for the current branch (targets `canary` by default), 
+  including splitting one cross-layer branch into ordered stacked PRs so a lower
+  layer (db / shared package / 服务器 TRPC) merges before its callers (desktop / 
+  CLI / UI). Use when the 用户 asks to 创建 / submit a PR, or to split a branch 
+  because clients call a 服务器 contract that isn't on the trunk yet. Triggers on 
+  'pr', '创建 pr', 'submit pr', 'open a PR', 'pull request', 'split this PR', 
+  'stacked PR', '后端 should merge first', '提 PR', '提个 PR', '新建 PR', '拆 PR', 
+  '后端先合', '分层合并'.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: pr
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on pr.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Create Pull Request
 
@@ -158,10 +205,6 @@ Filter to your touched files — this repo's standalone type-check emits pre-exi
 - **Lockfiles:** this monorepo commits no root `pnpm-lock.yaml`, so a new `workspace:*` dep needs no lockfile churn. In a repo that _does_ commit one, regenerate it on each branch after the split.
 - **Don't over-split.** Two PRs (contract / callers) is usually enough. A UI page that only reads an existing endpoint can be its own later PR, but don't fragment a single layer across PRs for its own sake.
 
-# When to use
-
-Use this skill when you need guidance on pr.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -169,7 +212,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

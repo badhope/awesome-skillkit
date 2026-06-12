@@ -1,15 +1,52 @@
 ---
-name: "debug-package"
-name_zh: "调试-package"
-description: "LobeHub debug package and log namespace guide. Use when adding debug() logging, choosing lobe-* namespaces, troubleshooting DEBUG output, localStorage.debug, or log format specifiers."
-description_zh: "LobeHub 调试 package and 日志 namespace guide. Use when adding 调试() logging, choosing lobe-* namespaces, troubleshooting 调试 output, localStorage.调试, or 日志 format specifiers."
-category: "dev-tools"
-tags: [backend, cli, frontend, javascript, typescript]
+name: debug-package
+name_zh: 调试-package
+description: LobeHub debug package and log namespace guide. Use when adding 
+  debug() logging, choosing lobe-* namespaces, troubleshooting DEBUG output, 
+  localStorage.debug, or log format specifiers.
+description_zh: LobeHub 调试 package and 日志 namespace guide. Use when adding 调试() 
+  logging, choosing lobe-* namespaces, troubleshooting 调试 output, 
+  localStorage.调试, or 日志 format specifiers.
+category: dev-tools
+tags:
+  - backend
+  - cli
+  - frontend
+  - javascript
+  - typescript
 needs_review: false
-source: 
+source:
 language: en
+slug: debug-package
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on debug-package.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Debug Package Usage Guide
 
@@ -72,10 +109,6 @@ const log = debug('lobe-edge-router:market');
 log('getAgent input: %O', input);
 ```
 
-# When to use
-
-Use this skill when you need guidance on debug-package.
-
 # Example
 
 ```typescript
@@ -112,7 +145,3 @@ localStorage.debug = 'lobe-server:*';
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

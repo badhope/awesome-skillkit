@@ -1,19 +1,51 @@
 ---
 name: figma
 name_zh: figma
-description: "Use the Figma MCP server to fetch design context, screenshots, variables,"
-description_zh: "Use the Figma MCP 服务器 to fetch 设计 context, screenshots, variables,"
-category: "dev-tools"
-tags: [ai, backend, cli, figma, frontend]
-source: 
+description: Use the Figma MCP server to fetch design context, screenshots, 
+  variables,
+description_zh: Use the Figma MCP 服务器 to fetch 设计 context, screenshots, 
+  variables,
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - figma
+  - frontend
+source:
 language: en
 needs_review: false
+slug: figma
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Figma MCP
 
@@ -53,11 +85,6 @@ These rules define how to translate Figma inputs into code for this project and 
 - `references/figma-mcp-config.md` — setup, verification, troubleshooting, and link-based usage reminders.
 - `references/figma-tools-and-prompts.md` — tool catalog and prompt patterns for selecting frameworks/components and fetching metadata.
 
-# When to use
-
-Use this skill when you need to work with figma.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -72,7 +99,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

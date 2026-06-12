@@ -1,16 +1,48 @@
 ---
-name: "huggingface-best"
-name_zh: "huggingface-best"
-description: ">"
-description_zh: ">"
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: huggingface-best
+name_zh: huggingface-best
+description: '>'
+description_zh: '>'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: huggingface-best
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-best.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # HuggingFace Best Model Finder
 
@@ -134,10 +166,6 @@ If they say yes, ask whether they'd prefer to:
 - **No benchmarks found for task**: use the curated fallback table above, or try `hub_repo_search` with `filters=["<task>"]` sorted by `trendingScore`
 - **All leaderboards fail**: fall back to `hub_repo_search` for popular models tagged with the task, note that results are by popularity rather than benchmark score
 
-# When to use
-
-Use this skill when you need guidance on huggingface-best.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -145,7 +173,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,50 @@
 ---
-name: "figma-create-new-file"
-name_zh: "figma-创建-new-文件"
-description: Create a new blank Figma file. Use when the user wants to create a new
+name: figma-create-new-file
+name_zh: figma-创建-new-文件
+description: Create a new blank Figma file. Use when the user wants to create a 
+  new
 description_zh: 创建 a new blank Figma file. Use when the 用户 wants to 创建 a new
-category: ai
-tags: [ai, figma, frontend, javascript, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - figma
+  - frontend
+  - javascript
+  - llm
+source:
 language: en
 needs_review: false
+slug: figma-create-new-file
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma-create-new-file.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # create_new_file — Create a New Figma File
 
@@ -79,11 +110,6 @@ Use the `file_key` for subsequent tool calls like `use_figma`.
 - Only `"design"` and `"figjam"` editor types are supported.
 - If `use_figma` is your next step, load the `figma-use` skill before calling it.
 
-# When to use
-
-Use this skill when you need to work with figma-create-new-file.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -98,7 +124,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

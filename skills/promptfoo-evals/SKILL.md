@@ -1,24 +1,34 @@
 ---
 name: promptfoo Eval Suite Author
 name_zh: Promptfoo 评估
-description: "Confirmation of the suite path, the assertion mix, and the"
+description: Confirmation of the suite path, the assertion mix, and the
 description_zh: 使用 Promptfoo 运行和评估 prompt 的性能。
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 ref: main
 license: MIT
 language: en
-author: "Promptfoo (downstream pack: badhope)"
+author: 'Promptfoo (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: promptfoo-evals
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're putting **eval coverage** on something LLM-driven — a

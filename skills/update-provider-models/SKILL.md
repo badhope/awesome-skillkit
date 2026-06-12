@@ -1,20 +1,35 @@
 ---
-name: "update-provider-models"
-name_zh: "更新-provider-models"
-description: Add new or remove obsolete model IDs for existing AI SDK providers. Use
-description_zh: Add new or remove obsolete 模型 IDs for existing AI SDK providers. Use
-category: ai
-tags: [ai, api, backend, documentation, frontend]
-source: 
+name: update-provider-models
+name_zh: 更新-provider-models
+description: Add new or remove obsolete model IDs for existing AI SDK providers.
+  Use
+description_zh: Add new or remove obsolete 模型 IDs for existing AI SDK providers.
+  Use
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: update-provider-models
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 ## Update Provider Model IDs
 
 This skill covers adding new model IDs and removing obsolete ones across the AI SDK codebase. Each workflow uses search to discover all locations that need changes.
@@ -54,6 +69,23 @@ Determine:
 Search for a similar existing model from the same provider (e.g. a lower version, or the preview version being replaced) across `packages/`, `content/`, and `examples/`. This reveals all locations that need updates.
 
 ```bash
+# When to use
+
+Use this skill when you need to work with update-provider-models.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # Search quoted occurrences to find all reference locations
 grep -r "'<similar-model-id>'" packages/ content/ examples/ --include='*.ts' --include='*.mdx' --include='*.md'
 grep -r '"<similar-model-id>"' packages/ content/ examples/ --include='*.ts' --include='*.mdx' --include='*.md'
@@ -202,11 +234,6 @@ Also run tests for any other affected packages (same as Workflow A Step 7).
 
 </removing-obsolete-model>
 
-# When to use
-
-Use this skill when you need to work with update-provider-models.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -221,7 +248,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

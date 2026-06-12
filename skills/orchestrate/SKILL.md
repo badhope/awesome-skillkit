@@ -1,21 +1,51 @@
 ---
 name: orchestrate
 name_zh: orchestrate
-description: "Meta-agent supervisor that manages a fleet of Claude Code agents running"
-description_zh: "Meta-智能体 supervisor that manages a fleet of Claude 代码 agents running"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: Meta-agent supervisor that manages a fleet of Claude Code agents 
+  running
+description_zh: Meta-智能体 supervisor that manages a fleet of Claude 代码 agents 
+  running
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 6.0.0
 needs_review: false
+slug: orchestrate
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with orchestrate.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Orchestrate — Agent Fleet Supervisor
 
@@ -717,11 +747,6 @@ Add this to agent briefings when there are >20 unresolved threads:
 18. **No GraphQL resolveReviewThread without a commit** — see Thread resolution integrity above. This is rule #1 for pr-address work.
 19. **Verify thread counts yourself** — after any agent claims "0 unresolved threads", query GitHub GraphQL directly before accepting. Never trust the agent's self-report.
 
-# When to use
-
-Use this skill when you need to work with orchestrate.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -736,7 +761,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

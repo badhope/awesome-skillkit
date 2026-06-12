@@ -1,19 +1,51 @@
 ---
-name: "agent-signal"
-name_zh: "智能体-signal"
-description: "Build or extend LobeHub Agent Signal pipelines. Use for signal sources,"
-description_zh: "构建 or extend LobeHub 智能体 Signal pipelines. Use for signal sources,"
-category: ai
-tags: [ai, backend, database, evaluation, frontend]
-source: 
+name: agent-signal
+name_zh: 智能体-signal
+description: Build or extend LobeHub Agent Signal pipelines. Use for signal 
+  sources,
+description_zh: 构建 or extend LobeHub 智能体 Signal pipelines. Use for signal 
+  sources,
+category: applications
+tags:
+  - ai
+  - backend
+  - database
+  - evaluation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: agent-signal
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with agent-signal.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Agent Signal
 
@@ -106,11 +138,6 @@ Keep the boundaries strict:
 - Writing handlers and policies: `references/handlers.md`
 - Observability, metrics, and debugging: `references/observability.md`
 
-# When to use
-
-Use this skill when you need to work with agent-signal.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -125,7 +152,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

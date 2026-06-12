@@ -1,24 +1,35 @@
 ---
 name: MCP Server Builder
 name_zh: MCP Server 构建指南
-description: "|"
-description_zh: 用 Python (FastMCP) 或 TypeScript (MCP SDK) 写一个高质量 MCP server。覆盖研究、schema 设计、工具实现、错误处理，以及新 server 上线前要带的 10 道评估题。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: '|'
+description_zh: 用 Python (FastMCP) 或 TypeScript (MCP SDK) 写一个高质量 MCP 
+  server。覆盖研究、schema 设计、工具实现、错误处理，以及新 server 上线前要带的 10 道评估题。
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 ref: main
 license: Complete terms in LICENSE.txt
 language: en
-author: "Anthropic (downstream pack: badhope)"
+author: 'Anthropic (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: mcp-builder
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're building an **MCP server** that lets an LLM call into some

@@ -1,19 +1,51 @@
 ---
-name: "huggingface-zerogpu"
-name_zh: "huggingface-zerogpu"
-description: AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.
-description_zh: AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: huggingface-zerogpu
+name_zh: huggingface-zerogpu
+description: AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces
+  ZeroGPU.
+description_zh: AI demos and GPU compute with Gradio Spaces and Hugging Face 
+  Spaces ZeroGPU.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: huggingface-zerogpu
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-zerogpu.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Hugging Face ZeroGPU
 
@@ -300,11 +332,6 @@ How to achieve this depends on your tooling:
 
 If you install a CUDA-dependent wheel via direct URL, the wheel filename encodes the `torch` major.minor it was built against (e.g. `cu12torch2.8`). Pin `torch==X.Y.Z` in `requirements.txt` to match — otherwise pip may resolve `torch` to a different version and the Space fails on first import. Details and the kernels-community alternative are in `references/cuda-and-deps.md`.
 
-# When to use
-
-Use this skill when you need to work with huggingface-zerogpu.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -319,7 +346,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

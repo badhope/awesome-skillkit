@@ -1,15 +1,48 @@
 ---
-name: "fetch-buildkite-logs"
-name_zh: "fetch-buildkite-logs"
+name: fetch-buildkite-logs
+name_zh: fetch-buildkite-logs
 description: Fetch and analyze Buildkite CI build logs for failures
 description_zh: Fetch and 分析 Buildkite CI 构建 logs for failures
-category: ai
-tags: [ai, api, backend, documentation, frontend]
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: fetch-buildkite-logs
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on fetch-buildkite-logs.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Fetch Buildkite Logs
 
@@ -61,10 +94,6 @@ Always extract `<PIPELINE>` (e.g. `premerge`, `postmerge`) and `<BUILD_NUM>` fro
 
 If `curl` returns `{"message":"No organization found"}`, the configured token does not have access to `ray-project`. The user may have a separate org-scoped token — ask them which env var to source.
 
-# When to use
-
-Use this skill when you need guidance on fetch-buildkite-logs.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -72,7 +101,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

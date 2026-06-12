@@ -1,21 +1,50 @@
 ---
-name: "agent-setup-maintenance"
+name: agent-setup-maintenance
 name_zh: Agent 设置与维护
-description: "Shared workflow for editing Langfuse''s repo-owned agent setup under"
+description: Shared workflow for editing Langfuse''s repo-owned agent setup 
+  under
 description_zh: 设置和维护 AI agent 的配置、环境变量和依赖项。
-category: "dev-tools"
-tags: [ai, database, docker, documentation, frontend]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - database
+  - docker
+  - documentation
+  - frontend
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: agent-setup-maintenance
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on agent setup maintenance.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Agent Setup Maintenance
 
@@ -81,11 +110,6 @@ Run additional verification when relevant:
   a fixed discovery path or feature that cannot be expressed through the shared
   setup model.
 
-# When to use
-
-Use this skill when you need guidance on agent setup maintenance.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -106,7 +130,3 @@ python scripts/inspect-skill.py agent-setup-maintenance
 # 验证技能
 python scripts/validate-skill.py agent-setup-maintenance
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,21 +1,49 @@
 ---
-name: "weekly-production-review"
+name: weekly-production-review
 name_zh: 每周生产审查
-description: "Prepare Langfuse weekly production reviews that explain what broke,"
+description: Prepare Langfuse weekly production reviews that explain what broke,
 description_zh: 进行每周生产环境审查，监控性能和可靠性。
-category: ai
-tags: [ai, datadog, frontend, llm, security]
-source: 
+category: applications
+tags:
+  - ai
+  - datadog
+  - frontend
+  - llm
+  - security
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: weekly-production-review
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on weekly production review.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Weekly Production Review
 
@@ -293,11 +321,6 @@ Return valid Markdown only.
 - If a section would be fragile to format, prefer a plain paragraph over broken
   Markdown.
 
-# When to use
-
-Use this skill when you need guidance on weekly production review.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -307,7 +330,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

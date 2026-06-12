@@ -3,22 +3,32 @@ name: deepeval SDK Tracing
 name_zh: DeepEval 追踪
 description: Confirmation that traces are arriving in Confident AI''s
 description_zh: 使用 DeepEval 追踪功能监控和分析 LLM 应用的性能。
-category: "dev-tools"
-tags: [ai, api, backend, database, deployment]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - deployment
+source:
 ref: main
-license: "Apache-2.0"
+license: Apache-2.0
 language: en
-author: "Confident AI (downstream pack: badhope)"
+author: 'Confident AI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: deepeval-tracing
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're instrumenting a **Python AI app** (LLM app, agent, RAG

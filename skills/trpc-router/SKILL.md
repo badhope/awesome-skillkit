@@ -1,19 +1,51 @@
 ---
-name: "trpc-router"
-name_zh: "trpc-router"
-description: "TRPC router development guide. Use when creating or modifying apps/server/src/routers,"
-description_zh: "TRPC router 开发 guide. Use when creating or modifying apps/服务器/src/routers,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: trpc-router
+name_zh: trpc-router
+description: TRPC router development guide. Use when creating or modifying 
+  apps/server/src/routers,
+description_zh: TRPC router 开发 guide. Use when creating or modifying 
+  apps/服务器/src/routers,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: trpc-router
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with trpc-router.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # TRPC Router Guide
 
@@ -134,11 +166,6 @@ This avoids the CLI or frontend making N sequential requests.
 - Procedure names: alphabetical order within the router object
 - Log prefix: `[domain:procedure]` format, e.g. `[task:create]`
 
-# When to use
-
-Use this skill when you need to work with trpc-router.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -153,7 +180,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

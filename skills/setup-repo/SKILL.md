@@ -1,19 +1,46 @@
 ---
-name: "setup-repo"
-name_zh: "设置-repo"
-description: "Initialize a worktree-based repo layout for parallel development. Creates a main worktree, a reviews worktree for PR reviews, and N numbered work branches. Handles .env creation, dependency installation, and branchlet config. TRIGGER when user asks to set up the repo from scratch, initialize worktrees, bootstrap their dev environment, "setup repo", "setup worktrees", "initialize dev environment", "set up branches", or when a freshly cloned repo has no sibling worktrees."
-description_zh: "Initialize a worktree-based repo layout for parallel 开发. Creates a main worktree, a reviews worktree for PR reviews, and N numbered work branches. Handles .env creation, dependency installation, and branchlet 配置. TRIGGER when 用户 asks to set up the repo from scratch, initialize worktrees, bootstrap their dev environment, "设置 repo", "设置 worktrees", "initialize dev environment", "set up branches", or when a freshly cloned repo has no sibling worktrees."
-category: "dev-tools"
+name: setup-repo
+name_zh: 设置 repo
+slug: setup-repo
+description: Initialize a worktree-based repo layout for parallel development. Creates main worktree, reviews worktree, and numbered work branches.
+description_zh: 初始化基于 worktree 的 repo 布局以支持并行开发。创建主 worktree、审查 worktree 和编号工作分支。
+category: dev-tools
 tags: [ai, api, backend, cli, frontend]
-source: 
+source:
 language: en
-author: "autogpt-team"
+author: AI-SKILL
 version: 1.0.0
+license: MIT
+created: 2026-06-12
+updated: 2026-06-12
 needs_review: false
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
 
 
+# When to use
+
+Use this skill when you need guidance on setup-repo.
+
+# Inputs
+
+User request or task description related to repository setup.
+
+# Output
+
+Generated content based on the user request, including setup instructions and configurations.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Repository Setup
 
@@ -201,10 +228,6 @@ parent/
   branchN/           # Work branch N
 ```
 
-# When to use
-
-Use this skill when you need guidance on setup-repo.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -212,7 +235,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

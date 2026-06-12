@@ -1,21 +1,49 @@
 ---
-name: "analyze-cloud-costs"
+name: analyze-cloud-costs
 name_zh: 分析云成本
 description: Analyze Langfuse Cloud infrastructure cost structure using Metabase
 description_zh: 分析和优化云服务的成本，识别浪费和优化机会。
-category: "dev-tools"
-tags: [ai, cli, frontend, javascript, llm]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - frontend
+  - javascript
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: analyze-cloud-costs
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on analyze cloud costs.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Analyze Cloud Costs
 
@@ -71,11 +99,6 @@ Summarize:
 - Caveats, especially incomplete current-day AWS data and ClickHouse credit
   labeling in the unified mart.
 
-# When to use
-
-Use this skill when you need guidance on analyze cloud costs.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -104,7 +127,3 @@ analysis = monitor.analyze(metrics)
 print(f"Average response time: {analysis.avg_response_time}ms")
 print(f"Error rate: {analysis.error_rate}%")
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

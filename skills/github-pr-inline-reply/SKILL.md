@@ -1,23 +1,39 @@
 ---
-name: "github-pr-inline-reply"
-name_zh: "github-pr-inline-reply"
-description: "Reply to inline PR review comments on GitHub pull requests using the GitHub API. Use this skill when you need to respond to individual review comments on a PR, acknowledge feedback, or mark comments as resolved by posting direct replies to comment threads."
-description_zh: "Reply to inline PR 审查 comments on GitHub pull requests using the GitHub 接口. Use this 技能 when you need to respond to individual 审查 comments on a PR, acknowledge feedback, or mark comments as resolved by posting direct replies to comment threads."
-category: "dev-tools"
-tags: [api, backend, cli, database, frontend]
-source: 
+name: github-pr-inline-reply
+name_zh: github-pr-inline-reply
+description: Reply to inline PR review comments on GitHub pull requests using 
+  the GitHub API. Use this skill when you need to respond to individual review 
+  comments on a PR, acknowledge feedback, or mark comments as resolved by 
+  posting direct replies to comment threads.
+description_zh: Reply to inline PR 审查 comments on GitHub pull requests using the
+  GitHub 接口. Use this 技能 when you need to respond to individual 审查 comments on a
+  PR, acknowledge feedback, or mark comments as resolved by posting direct 
+  replies to comment threads.
+category: dev-tools
+tags:
+  - api
+  - backend
+  - cli
+  - database
+  - frontend
+source:
 language: en
 needs_review: false
+slug: github-pr-inline-reply
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-# GitHub PR Inline Reply Skill
-
-This skill enables replying directly to inline review comments on GitHub pull requests.
-
 # When to use
 
 Use this skill when replying to inline PR review comments on GitHub pull requests.
@@ -143,6 +159,22 @@ See:
 https://github.com/github/github-mcp-server/issues/1323
 https://github.com/github/github-mcp-server/issues/1768
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# GitHub PR Inline Reply Skill
+
+This skill enables replying directly to inline review comments on GitHub pull requests.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -150,7 +182,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the "Example Replies" and "Workflow" sections above for practical examples of replying to PR comments and resolving conversations.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

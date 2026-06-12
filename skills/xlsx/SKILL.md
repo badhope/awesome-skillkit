@@ -1,20 +1,51 @@
 ---
 name: xlsx
 name_zh: xlsx
-description: Use this skill any time a spreadsheet file is the primary input or output.
-description_zh: Use this 技能 any time a spreadsheet file is the primary input or output.
-category: "dev-tools"
-tags: [ai, api, cli, database, documentation]
-source: 
+description: Use this skill any time a spreadsheet file is the primary input or 
+  output.
+description_zh: Use this 技能 any time a spreadsheet file is the primary input or 
+  output.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - documentation
+source:
 license: Proprietary. LICENSE.txt has complete terms
 language: en
 needs_review: false
+slug: xlsx
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with xlsx.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Requirements for Outputs
 
@@ -302,11 +333,6 @@ The script returns JSON with error details:
 - Add comments to cells with complex formulas or important assumptions
 - Document data sources for hardcoded values
 - Include notes for key calculations and model sections
-# When to use
-
-Use this skill when you need to work with xlsx.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -321,7 +347,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

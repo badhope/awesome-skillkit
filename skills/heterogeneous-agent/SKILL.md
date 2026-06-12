@@ -1,17 +1,52 @@
 ---
-name: "heterogeneous-agent"
-name_zh: "heterogeneous-智能体"
-description: "Implement or debug LobeHub heterogeneous agents. Use for Claude Code/Codex adapters, external CLI agents, event mapping, IPC, persistence, tool-call chains, sessions, traces, or adapter bugs."
-description_zh: "Implement or 调试 LobeHub heterogeneous agents. Use for Claude 代码/Codex adapters, external CLI agents, event mapping, IPC, persistence, tool-call chains, sessions, traces, or adapter bugs."
-category: "dev-tools"
-tags: [ai, backend, cli, database, frontend]
-source: 
+name: heterogeneous-agent
+name_zh: heterogeneous-智能体
+description: Implement or debug LobeHub heterogeneous agents. Use for Claude 
+  Code/Codex adapters, external CLI agents, event mapping, IPC, persistence, 
+  tool-call chains, sessions, traces, or adapter bugs.
+description_zh: Implement or 调试 LobeHub heterogeneous agents. Use for Claude 
+  代码/Codex adapters, external CLI agents, event mapping, IPC, persistence, 
+  tool-call chains, sessions, traces, or adapter bugs.
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - frontend
+source:
 language: en
 needs_review: false
+slug: heterogeneous-agent
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on heterogeneous-agent.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Heterogeneous Agent Development
 
@@ -92,10 +127,6 @@ Use this skill when the bug or feature lives in the external CLI agent pipeline,
 
 - For commands, trace capture, invariants, and focused test commands, read [references/debug-workflow.md](./references/debug-workflow.md).
 
-# When to use
-
-Use this skill when you need guidance on heterogeneous-agent.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -115,7 +146,3 @@ python scripts/use-skill.py heterogeneous-agent
 python scripts/inspect-skill.py heterogeneous-agent
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

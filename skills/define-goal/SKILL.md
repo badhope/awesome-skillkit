@@ -1,19 +1,51 @@
 ---
-name: "define-goal"
-name_zh: "define-goal"
-description: "Help the user define a concrete, measurable goal before starting work,"
-description_zh: "Help the 用户 define a concrete, measurable goal before starting work,"
-category: "dev-tools"
-tags: [ai, api, backend, documentation, evaluation]
-source: 
+name: define-goal
+name_zh: define-goal
+description: Help the user define a concrete, measurable goal before starting 
+  work,
+description_zh: Help the 用户 define a concrete, measurable goal before starting 
+  work,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - evaluation
+source:
 language: en
 needs_review: false
+slug: define-goal
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with define-goal.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Define Goal
 
@@ -110,11 +142,6 @@ Useful question shapes:
 
 If the user cannot provide a metric, propose the most honest binary validator available and ask for confirmation.
 
-# When to use
-
-Use this skill when you need to work with define-goal.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -129,7 +156,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

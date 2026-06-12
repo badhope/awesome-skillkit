@@ -1,15 +1,54 @@
 ---
-name: "frontend-skill"
-name_zh: "前端-技能"
-description: "Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter."
-description_zh: "Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This 技能 enforces restrained composition, image-led hierarchy, cohesive content structure, and tasteful motion while avoiding generic cards, weak branding, and UI clutter."
-category: ai
-tags: [ai, api, docker, documentation, frontend]
+name: frontend-skill
+name_zh: 前端-技能
+description: Use when the task asks for a visually strong landing page, website,
+  app, prototype, demo, or game UI. This skill enforces restrained composition, 
+  image-led hierarchy, cohesive content structure, and tasteful motion while 
+  avoiding generic cards, weak branding, and UI clutter.
+description_zh: Use when the task asks for a visually strong landing page, 
+  website, app, prototype, demo, or game UI. This 技能 enforces restrained 
+  composition, image-led hierarchy, cohesive content structure, and tasteful 
+  motion while avoiding generic cards, weak branding, and UI clutter.
+category: applications
+tags:
+  - ai
+  - api
+  - docker
+  - documentation
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: frontend-skill
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on frontend-skill.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Frontend Skill
 
@@ -191,10 +230,6 @@ Motion rules:
 - Does motion improve hierarchy or atmosphere?
 - Would the design still feel premium if all decorative shadows were removed?
 
-# When to use
-
-Use this skill when you need guidance on frontend-skill.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -215,7 +250,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

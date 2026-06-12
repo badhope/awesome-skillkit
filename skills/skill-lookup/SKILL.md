@@ -1,22 +1,34 @@
 ---
-name: "skill-lookup"
+name: skill-lookup
 name_zh: 技能查找
-description: "Search, retrieve, and install Agent Skills from the prompts.chat registry"
+description: Search, retrieve, and install Agent Skills from the prompts.chat 
+  registry
 description_zh: 在技能库中查找和检索相关技能。
-category: ai
-tags: [ai, documentation, frontend, llm, security]
-source: 
+category: applications
+tags:
+  - ai
+  - documentation
+  - frontend
+  - llm
+  - security
+source:
 license: MIT
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: skill-lookup
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 ## Workflow
 
 1. Search for skills matching the user's request using `search_skills`
@@ -90,6 +102,18 @@ When the user asks to install a skill:
 Use this skill when you need guidance on skill lookup.
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -99,7 +123,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

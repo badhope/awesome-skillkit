@@ -1,22 +1,34 @@
 ---
-name: "prompt-lookup"
+name: prompt-lookup
 name_zh: Prompt 查找
-description: "Activates when the user asks about AI prompts, needs prompt templates,"
+description: Activates when the user asks about AI prompts, needs prompt 
+  templates,
 description_zh: 在 prompt 库中查找和检索相关的 prompt 模板。
-category: ai
-tags: [ai, backend, frontend, javascript, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - backend
+  - frontend
+  - javascript
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: prompt-lookup
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 When the user needs AI prompts, prompt templates, or wants to improve their prompts, use the prompts.chat MCP server to help them.
 
 ## When to Use This Skill
@@ -86,6 +98,18 @@ Return the enhanced prompt to the user.
 Use this skill when you need guidance on prompt lookup.
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -113,7 +137,3 @@ improve_prompt(
 # 返回: 改进后的 prompt，包含更具体的审查维度
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

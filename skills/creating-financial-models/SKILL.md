@@ -1,21 +1,50 @@
 ---
-name: "creating-financial-models"
+name: creating-financial-models
 name_zh: 创建财务模型
-description: "This skill provides an advanced financial modeling suite with DCF analysis,"
+description: This skill provides an advanced financial modeling suite with DCF 
+  analysis,
 description_zh: 构建财务模型用于预测、估值和决策分析。
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: creating-financial-models
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on creating financial models.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Financial Modeling Suite
 
@@ -186,11 +215,6 @@ The model automatically performs:
 - Incorporation of regulatory changes
 - Continuous improvement based on usage patterns
 
-# When to use
-
-Use this skill when you need guidance on creating financial models.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -227,7 +251,3 @@ sensitivity = model.sensitivity_analysis(
 sensitivity.plot_tornado()
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "figma-generate-library"
-name_zh: "figma-生成-library"
-description: "Build or update a professional-grade design system in Figma from a codebase."
-description_zh: "构建 or 更新 a professional-grade 设计 system in Figma from a codebase."
-category: ai
-tags: [ai, api, backend, database, documentation]
-source: 
+name: figma-generate-library
+name_zh: figma-生成-library
+description: Build or update a professional-grade design system in Figma from a 
+  codebase.
+description_zh: 构建 or 更新 a professional-grade 设计 system in Figma from a 
+  codebase.
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: figma-generate-library
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma-generate-library.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Design System Builder — Figma MCP Skill
 
@@ -325,11 +357,6 @@ Reusable Plugin API helper functions. Embed in `use_figma` calls:
 | [cleanupOrphans.js](scripts/cleanupOrphans.js) | Remove orphaned nodes by name convention or state ledger IDs |
 | [rehydrateState.js](scripts/rehydrateState.js) | Scan file for all pages, components, variables by name; returns full `{key → nodeId}` map for state reconstruction |
 
-# When to use
-
-Use this skill when you need to work with figma-generate-library.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -344,7 +371,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,21 +1,50 @@
 ---
-name: "write-frontend-tests"
-name_zh: "write-frontend-tests"
-description: "Analyze the current branch diff against dev, plan integration tests for"
-description_zh: "分析 the current branch diff against dev, plan 集成 tests for"
-category: "dev-tools"
-tags: [ai, api, backend, database, frontend]
-source: 
+name: write-frontend-tests
+name_zh: write-frontend-tests
+description: Analyze the current branch diff against dev, plan integration tests
+  for
+description_zh: 分析 the current branch diff against dev, plan 集成 tests for
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - frontend
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 1.0.0
 needs_review: false
+slug: write-frontend-tests
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with write-frontend-tests.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Write Frontend Tests
 
@@ -233,11 +262,6 @@ pnpm lint
 pnpm types
 ```
 
-# When to use
-
-Use this skill when you need to work with write-frontend-tests.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -252,7 +276,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

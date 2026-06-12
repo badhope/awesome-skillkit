@@ -1,15 +1,54 @@
 ---
-name: "add-uint-support"
-name_zh: "add-uint-support"
-description: "Add unsigned integer (uint) type support to PyTorch operators by updating AT_DISPATCH macros. Use when adding support for uint16, uint32, uint64 types to operators, kernels, or when user mentions enabling unsigned types, barebones unsigned types, or uint support."
-description_zh: "Add unsigned integer (uint) type support to PyTorch operators by updating AT_DISPATCH macros. Use when adding support for uint16, uint32, uint64 types to operators, kernels, or when 用户 mentions enabling unsigned types, barebones unsigned types, or uint support."
-category: ai
-tags: [ai, frontend, python, testing, typescript]
+name: add-uint-support
+name_zh: add-uint-support
+description: Add unsigned integer (uint) type support to PyTorch operators by 
+  updating AT_DISPATCH macros. Use when adding support for uint16, uint32, 
+  uint64 types to operators, kernels, or when user mentions enabling unsigned 
+  types, barebones unsigned types, or uint support.
+description_zh: Add unsigned integer (uint) type support to PyTorch operators by
+  updating AT_DISPATCH macros. Use when adding support for uint16, uint32, 
+  uint64 types to operators, kernels, or when 用户 mentions enabling unsigned 
+  types, barebones unsigned types, or uint support.
+category: applications
+tags:
+  - ai
+  - frontend
+  - python
+  - testing
+  - typescript
 needs_review: false
-source: 
+source:
 language: en
+slug: add-uint-support
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when adding uint16, uint32, or uint64 support to PyTorch operators, when the user mentions "unsigned types", "uint support", or "barebones unsigned types", or when enabling support for kUInt16, kUInt32, kUInt64 in kernels and dispatch macros.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Add Unsigned Integer (uint) Support to Operators
 
@@ -326,10 +365,6 @@ When asked to add uint support:
 
 After adding uint support, the operator should accept uint16, uint32, and uint64 tensors. The user is responsible for functional testing.
 
-# When to use
-
-Use this skill when adding uint16, uint32, or uint64 support to PyTorch operators, when the user mentions "unsigned types", "uint support", or "barebones unsigned types", or when enabling support for kUInt16, kUInt32, kUInt64 in kernels and dispatch macros.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -380,7 +415,3 @@ print(torch.min(x_uint16))  # tensor(1, dtype=torch.uint16)
 print(torch.min(x_uint32))  # tensor(50, dtype=torch.uint32)
 print(torch.min(x_uint64))  # tensor(500, dtype=torch.uint64)
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

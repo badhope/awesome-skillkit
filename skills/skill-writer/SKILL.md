@@ -1,15 +1,52 @@
 ---
-name: "skill-writer"
-name_zh: "技能-writer"
-description: "Guide users through creating Agent Skills for Claude Code. Use when the user wants to create, write, author, or design a new Skill, or needs help with SKILL.md files, frontmatter, or skill structure."
-description_zh: "Guide users through creating 智能体 Skills for Claude 代码. Use when the 用户 wants to 创建, write, author, or 设计 a new 技能, or needs help with 技能.md files, frontmatter, or 技能 structure."
-category: "dev-tools"
-tags: [ai, api, backend, documentation, frontend]
+name: skill-writer
+name_zh: 技能-writer
+description: Guide users through creating Agent Skills for Claude Code. Use when
+  the user wants to create, write, author, or design a new Skill, or needs help 
+  with SKILL.md files, frontmatter, or skill structure.
+description_zh: Guide users through creating 智能体 Skills for Claude 代码. Use when 
+  the 用户 wants to 创建, write, author, or 设计 a new 技能, or needs help with 技能.md 
+  files, frontmatter, or 技能 structure.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: skill-writer
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when creating a new Agent Skill for Claude Code, writing or updating SKILL.md files, designing skill structure and frontmatter, troubleshooting skill discovery issues, or converting existing prompts and workflows into Skills.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Skill Writer
 
@@ -392,10 +429,6 @@ When creating a Skill, I will:
 
 The result will be a complete, working Skill that follows all best practices and validation rules.
 
-# When to use
-
-Use this skill when creating a new Agent Skill for Claude Code, writing or updating SKILL.md files, designing skill structure and frontmatter, troubleshooting skill discovery issues, or converting existing prompts and workflows into Skills.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -428,7 +461,3 @@ description: "Generate conventional git commit messages from staged changes. Use
 - Use the body to explain "why", not "what".
 - Reference issue numbers when applicable.
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

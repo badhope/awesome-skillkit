@@ -1,16 +1,59 @@
 ---
-name: "ai-news"
-name_zh: "ai-news"
-description: "Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also fetches full transcripts for specific YouTube videos. Use when the user asks about recent AI news, what's happened in AI lately, summaries of AI research or product announcements, or wants a digest of what's going on in the AI space."
-description_zh: "Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also fetches full transcripts for specific YouTube videos. Use when the 用户 asks about recent AI news, what's happened in AI lately, summaries of AI research or product announcements, or wants a digest of what's going on in the AI space."
-category: ai
-tags: [ai, deployment, frontend, javascript, llm]
-source: 
+name: ai-news
+name_zh: ai-news
+description: Fetch and summarize recent AI news from curated RSS feeds (Hugging 
+  Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube 
+  channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also fetches
+  full transcripts for specific YouTube videos. Use when the user asks about 
+  recent AI news, what's happened in AI lately, summaries of AI research or 
+  product announcements, or wants a digest of what's going on in the AI space.
+description_zh: Fetch and summarize recent AI news from curated RSS feeds 
+  (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and 
+  YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also
+  fetches full transcripts for specific YouTube videos. Use when the 用户 asks 
+  about recent AI news, what's happened in AI lately, summaries of AI research 
+  or product announcements, or wants a digest of what's going on in the AI 
+  space.
+category: applications
+tags:
+  - ai
+  - deployment
+  - frontend
+  - javascript
+  - llm
+source:
 language: en
 needs_review: false
+slug: ai-news
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on ai-news.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # AI News
 
@@ -63,10 +106,6 @@ To add/remove sources, edit the `RSS_FEEDS` and `YOUTUBE_CHANNELS` arrays at the
 - Some feeds (arXiv) can be very high volume — use a lower `--limit` or filter by keyword after fetching
 - Transcripts require captions to be enabled on the video; auto-generated captions work fine
 
-# When to use
-
-Use this skill when you need guidance on ai-news.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -74,7 +113,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

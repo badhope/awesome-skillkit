@@ -1,19 +1,51 @@
 ---
-name: "builtin-tool"
-name_zh: "builtin-tool"
-description: "Build LobeHub builtin tool packages. Use when adding agent-callable tools,"
-description_zh: "构建 LobeHub builtin tool packages. Use when adding 智能体-callable tools,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: builtin-tool
+name_zh: builtin-tool
+description: Build LobeHub builtin tool packages. Use when adding agent-callable
+  tools,
+description_zh: 构建 LobeHub builtin tool packages. Use when adding 智能体-callable 
+  tools,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: builtin-tool
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with builtin-tool.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Builtin Tool Authoring Guide
 
@@ -141,11 +173,6 @@ Pick the closest neighbor and copy:
 | Server-side pure (no client executor)                                   | `packages/builtin-tool-web-browsing/` — only `ExecutionRuntime` is exported; the chat client doesn't run it    |
 | Needs human approval before running                                     | `packages/builtin-tool-local-system/src/client/Intervention/` — per-API approval components                    |
 
-# When to use
-
-Use this skill when you need to work with builtin-tool.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -160,7 +187,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

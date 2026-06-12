@@ -1,20 +1,51 @@
 ---
-name: "claude-api"
-name_zh: "claude-接口"
-description: "Reference for the Claude API / Anthropic SDK — model ids, pricing, params,"
-description_zh: "Reference for the Claude 接口 / Anthropic SDK — 模型 ids, pricing, params,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: claude-api
+name_zh: claude-接口
+description: Reference for the Claude API / Anthropic SDK — model ids, pricing, 
+  params,
+description_zh: Reference for the Claude 接口 / Anthropic SDK — 模型 ids, pricing, 
+  params,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: claude-api
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with claude-api.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Building LLM-Powered Applications with Claude
 
@@ -364,11 +395,6 @@ Live documentation URLs are in `shared/live-sources.md`.
 - **Don't define custom types for SDK data structures:** The SDK exports types for all API objects. Use `Anthropic.MessageParam` for messages, `Anthropic.Tool` for tool definitions, `Anthropic.ToolUseBlock` / `Anthropic.ToolResultBlockParam` for tool results, `Anthropic.Message` for responses. Defining your own `interface ChatMessage { role: string; content: unknown }` duplicates what the SDK already provides and loses type safety.
 - **Report and document output:** For tasks that produce reports, documents, or visualizations, the code execution sandbox has `python-docx`, `python-pptx`, `matplotlib`, `pillow`, and `pypdf` pre-installed. Claude can generate formatted files (DOCX, PDF, charts) and return them via the Files API — consider this for "report" or "document" type requests instead of plain stdout text.
 
-# When to use
-
-Use this skill when you need to work with claude-api.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -383,7 +409,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

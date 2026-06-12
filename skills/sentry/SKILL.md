@@ -1,20 +1,51 @@
 ---
 name: sentry
 name_zh: sentry
-description: "Use when the user asks to inspect Sentry issues or events, summarize"
-description_zh: "Use when the 用户 asks to inspect Sentry issues or events, summarize"
-category: "dev-tools"
-tags: [ai, api, backend, deployment, frontend]
-source: 
+description: Use when the user asks to inspect Sentry issues or events, 
+  summarize
+description_zh: Use when the 用户 asks to inspect Sentry issues or events, 
+  summarize
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - frontend
+source:
 language: en
 needs_review: false
+slug: sentry
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "sentry".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Sentry (Read-only Observability)
 
@@ -134,11 +165,6 @@ Always use these endpoints (GET only):
 Example prompt: “List the top 10 open issues for prod in the last 24h.”
 Expected: ordered list with titles, short IDs, counts, last seen.
 
-# When to use
-
-Use this skill when you need to work with "sentry".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -153,7 +179,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

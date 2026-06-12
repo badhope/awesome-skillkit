@@ -1,21 +1,50 @@
 ---
-name: "analyzing-financial-statements"
+name: analyzing-financial-statements
 name_zh: 分析财务报表
-description: This skill calculates key financial ratios and metrics from financial
+description: This skill calculates key financial ratios and metrics from 
+  financial
 description_zh: 计算关键财务比率和指标，用于投资分析和公司评估。
-category: ai
-tags: [ai, api, evaluation, frontend, javascript]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - evaluation
+  - frontend
+  - javascript
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: analyzing-financial-statements
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on analyzing financial statements.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Financial Ratio Calculator Skill
 
@@ -82,11 +111,6 @@ Results include:
 - Some ratios may not apply to all industries
 - Historical data doesn't guarantee future performance
 
-# When to use
-
-Use this skill when you need guidance on analyzing financial statements.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -116,7 +140,3 @@ if result.success:
 else:
     print(f"Error: {result.error}")
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

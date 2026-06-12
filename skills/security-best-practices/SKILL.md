@@ -1,19 +1,50 @@
 ---
-name: "security-best-practices"
-name_zh: "安全-best-practices"
-description: "Perform language and framework specific security best-practice reviews"
-description_zh: "Perform language and framework specific 安全 best-practice reviews"
-category: "dev-tools"
-tags: [ai, api, backend, deployment, documentation]
-source: 
+name: security-best-practices
+name_zh: 安全-best-practices
+description: Perform language and framework specific security best-practice 
+  reviews
+description_zh: Perform language and framework specific 安全 best-practice reviews
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - documentation
+source:
 language: en
 needs_review: false
+slug: security-best-practices
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "security-best-practices".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Security Best Practices
 
@@ -97,11 +128,6 @@ When assigning an ID for some resource, which will then be used by exposed to th
 
 While TLS is important for production deployments, most development work will be with TLS disabled or provided by some out-of-scope TLS proxy. Due to this, be very careful about not reporting lack of TLS as a security issue. Also be very careful around use of "secure" cookies. They should only be set if the application will actually be over TLS. If they are set on non-TLS applications (such as when deployed for local dev or testing), it will break the application. You can provide a env or other flag to override setting secure as a way to keep it off until on a TLS production deployment. Additionally avoid recommending HSTS. It is dangerous to use without full understanding of the lasting impacts (can cause major outages and user lockout) and it is not generally recommended for the scope of projects being reviewed by codex.
 
-# When to use
-
-Use this skill when you need to work with "security-best-practices".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -116,7 +142,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

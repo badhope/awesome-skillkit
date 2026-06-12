@@ -1,21 +1,51 @@
 ---
-name: "pr-address"
-name_zh: "pr-address"
-description: Address PR review comments and loop until CI green and all comments resolved.
-description_zh: Address PR 审查 comments and loop until CI green and all comments resolved.
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: pr-address
+name_zh: pr-address
+description: Address PR review comments and loop until CI green and all comments
+  resolved.
+description_zh: Address PR 审查 comments and loop until CI green and all comments 
+  resolved.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 1.0.0
 needs_review: false
+slug: pr-address
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with pr-address.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # PR Address
 
@@ -503,11 +533,6 @@ echo "Unresolved threads: $UNRESOLVED"
 
 Only output `ORCHESTRATOR:DONE` after this loop reports 0.
 
-# When to use
-
-Use this skill when you need to work with pr-address.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -522,7 +547,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

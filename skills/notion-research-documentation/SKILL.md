@@ -1,19 +1,50 @@
 ---
-name: "notion-research-documentation"
-name_zh: "notion-research-documentation"
-description: Research across Notion and synthesize into structured documentation;
+name: notion-research-documentation
+name_zh: notion-research-documentation
+description: Research across Notion and synthesize into structured 
+  documentation;
 description_zh: Research across Notion and synthesize into structured 文档;
-category: "dev-tools"
-tags: [ai, api, cli, database, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: notion-research-documentation
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with notion-research-documentation.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Research & Documentation
 
@@ -68,11 +99,6 @@ After successful login, the user will have to restart codex. You should finish y
 - `reference/` — search tactics, format selection, templates, and citation rules (e.g., `advanced-search.md`, `format-selection-guide.md`, `research-summary-template.md`, `comparison-template.md`, `citations.md`).
 - `examples/` — end-to-end walkthroughs (e.g., `competitor-analysis.md`, `technical-investigation.md`, `market-research.md`, `trip-planning.md`).
 
-# When to use
-
-Use this skill when you need to work with notion-research-documentation.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -87,7 +113,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

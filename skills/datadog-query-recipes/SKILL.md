@@ -1,21 +1,50 @@
 ---
-name: "datadog-query-recipes"
+name: datadog-query-recipes
 name_zh: Datadog 查询配方
-description: "Langfuse-specific Datadog query recipes for production telemetry research."
+description: Langfuse-specific Datadog query recipes for production telemetry 
+  research.
 description_zh: 使用 Datadog 查询语言分析和可视化监控数据。
-category: "dev-tools"
-tags: [ai, api, backend, cli, datadog]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - datadog
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: datadog-query-recipes
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on datadog query recipes.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Datadog Query Recipes
 
@@ -81,11 +110,6 @@ Summarize what was checked, including:
 - Count, rate, latency, queue depth, trace sample, or "No measurements found".
 - Datadog links or trace IDs that let the human rerun the query.
 
-# When to use
-
-Use this skill when you need guidance on datadog query recipes.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -118,7 +142,3 @@ for env in ["prod-us", "prod-eu"]:
         print(f"  Project {project_id}: {count} errors")
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

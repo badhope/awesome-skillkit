@@ -1,18 +1,54 @@
 ---
-name: "huggingface-local-models"
-name_zh: "huggingface-local-models"
-description: "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving."
-description_zh: "Use to select models to 运行 locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving."
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: huggingface-local-models
+name_zh: huggingface-local-models
+description: Use to select models to run locally with llama.cpp and GGUF on CPU,
+  Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running 
+  servers, exact GGUF file lookup, conversion, and OpenAI-compatible local 
+  serving.
+description_zh: Use to select models to 运行 locally with llama.cpp and GGUF on 
+  CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running 
+  servers, exact GGUF file lookup, conversion, and OpenAI-compatible local 
+  serving.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: huggingface-local-models
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-local-models.
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Hugging Face Local Models
 
@@ -123,10 +159,6 @@ curl http://localhost:8080/v1/chat/completions \
 - Hugging Face Local Agents docs: `https://huggingface.co/docs/hub/agents-local`
 - GGUF converter Space: `https://huggingface.co/spaces/ggml-org/gguf-my-repo`
 
-# When to use
-
-Use this skill when you need guidance on huggingface-local-models.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -134,7 +166,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

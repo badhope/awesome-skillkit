@@ -1,17 +1,48 @@
 ---
 name: Agent
 name_zh: 智能体
-description: "Manage AI agents: create, edit, delete, list, run, and check status"
+description: 'Manage AI agents: create, edit, delete, list, run, and check status'
 description_zh: 管理AI智能体：创建、编辑、删除、列表、运行和检查状态
-category: "dev-tools"
-tags: [ai, backend, cli, frontend, javascript]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: agent
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on agent.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Agent Commands
 
@@ -158,10 +189,6 @@ lh agent status [fields]] [--history] [--history-limit < operationId > [--json <
 
 **Displays**: Status (running/completed/failed), steps count, tokens used, cost, error info, timestamps.
 
-# When to use
-
-Use this skill when you need guidance on agent.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -169,7 +196,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,21 +1,50 @@
 ---
-name: "vercel-react-best-practices"
+name: vercel-react-best-practices
 name_zh: Vercel React 最佳实践
-description: React and Next.js performance optimization guidelines from Vercel Engineering.
+description: React and Next.js performance optimization guidelines from Vercel 
+  Engineering.
 description_zh: 遵循 Vercel 上 React 应用的最佳实践。
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 license: MIT
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: vercel-react-best-practices
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on vercel react best practices.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Vercel React Best Practices
 
@@ -145,11 +174,6 @@ Each rule file contains:
 
 For the complete guide with all rules expanded: `AGENTS.md`
 
-# When to use
-
-Use this skill when you need guidance on vercel react best practices.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -159,7 +183,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "huggingface-community-evals"
-name_zh: "huggingface-community-evals"
-description: "Run evaluations for Hugging Face Hub models using inspect-ai and lighteval"
-description_zh: "运行 evaluations for Hugging Face Hub models using inspect-ai and lighteval"
-category: "dev-tools"
-tags: [ai, backend, documentation, evaluation, frontend]
-source: 
+name: huggingface-community-evals
+name_zh: huggingface-community-evals
+description: Run evaluations for Hugging Face Hub models using inspect-ai and 
+  lighteval
+description_zh: 运行 evaluations for Hugging Face Hub models using inspect-ai and 
+  lighteval
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - documentation
+  - evaluation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: huggingface-community-evals
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-community-evals.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Overview
 
@@ -218,11 +250,6 @@ See:
 - `scripts/inspect_vllm_uv.py`
 - `scripts/lighteval_vllm_uv.py`
 
-# When to use
-
-Use this skill when you need to work with huggingface-community-evals.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -237,7 +264,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,16 +1,56 @@
 ---
-name: "gh-fix-ci"
-name_zh: "gh-fix-ci"
-description: "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL."
-description_zh: "Use when a 用户 asks to 调试 or fix failing GitHub PR checks that 运行 in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: gh-fix-ci
+name_zh: gh-fix-ci
+description: Use when a user asks to debug or fix failing GitHub PR checks that 
+  run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure 
+  context, draft a fix plan, and implement only after explicit approval. Treat 
+  external providers (for example Buildkite) as out of scope and report only the
+  details URL.
+description_zh: Use when a 用户 asks to 调试 or fix failing GitHub PR checks that 运行
+  in GitHub Actions; use `gh` to inspect checks and logs, summarize failure 
+  context, draft a fix plan, and implement only after explicit approval. Treat 
+  external providers (for example Buildkite) as out of scope and report only the
+  details URL.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: gh-fix-ci
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on gh-fix-ci.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Gh Pr Checks Plan Fix
 
@@ -76,10 +116,6 @@ Usage examples:
 - `python "<path-to-skill>/scripts/inspect_pr_checks.py" --repo "." --pr "https://github.com/org/repo/pull/123" --json`
 - `python "<path-to-skill>/scripts/inspect_pr_checks.py" --repo "." --max-lines 200 --context 40`
 
-# When to use
-
-Use this skill when you need guidance on gh-fix-ci.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -99,7 +135,3 @@ python scripts/use-skill.py gh-fix-ci
 python scripts/inspect-skill.py gh-fix-ci
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

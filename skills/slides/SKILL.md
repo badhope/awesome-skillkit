@@ -1,19 +1,51 @@
 ---
 name: slides
 name_zh: slides
-description: "Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled"
-description_zh: "创建 and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled"
-category: "dev-tools"
-tags: [ai, api, backend, frontend, javascript]
-source: 
+description: Create and edit presentation slide decks (`.pptx`) with PptxGenJS, 
+  bundled
+description_zh: 创建 and edit presentation slide decks (`.pptx`) with PptxGenJS, 
+  bundled
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: slides
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with slides.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Slides
 
@@ -82,11 +114,6 @@ python3 scripts/detect_font.py deck.pptx --json
 
 Load `references/pptxgenjs-helpers.md` if you need the helper API summary or dependency details.
 
-# When to use
-
-Use this skill when you need to work with slides.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -101,7 +128,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

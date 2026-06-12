@@ -1,19 +1,51 @@
 ---
 name: datadog
 name_zh: datadog
-description: "Query Datadog observability data (logs, metrics, monitors, dashboards,"
-description_zh: "Query Datadog observability data (logs, metrics, monitors, dashboards,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, datadog]
-source: 
+description: Query Datadog observability data (logs, metrics, monitors, 
+  dashboards,
+description_zh: Query Datadog observability data (logs, metrics, monitors, 
+  dashboards,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - datadog
+source:
 language: en
 needs_review: false
+slug: datadog
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with datadog.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Datadog CLI
 
@@ -139,11 +171,6 @@ The `--from` and `--to` flags accept:
 - Ensure DD_API_KEY and DD_APP_KEY are exported
 - Check for typos in env var names
 
-# When to use
-
-Use this skill when you need to work with datadog.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -158,7 +185,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

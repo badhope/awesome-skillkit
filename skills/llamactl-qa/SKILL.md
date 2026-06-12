@@ -1,15 +1,45 @@
 ---
-name: "llamactl-qa"
-name_zh: "llamactl-qa"
-description: "Plan and run a design-QA / "taste test" of llamactl changes against a real backend. Cooperatively builds a small matrix of cases worth eyeballing, runs them against a chosen backend (test environment by default, local kind+tilt for new API contract changes), and writes a design-review report to `thoughts/shared/qa/`. Use this for changes to `llamactl` commands, output formats, auth, or control-plane API contracts. For UI/template smoke tests, use `llamactl_browser_test` instead."
-description_zh: "Plan and 运行 a 设计-QA / "taste 测试" of llamactl changes against a real 后端. Cooperatively builds a small matrix of cases worth eyeballing, runs them against a chosen 后端 (测试 environment by default, local kind+tilt for new 接口 contract changes), and writes a 设计-审查 report to `thoughts/shared/qa/`. Use this for changes to `llamactl` commands, output formats, auth, or control-plane 接口 contracts. For UI/template smoke tests, use `llamactl_browser_test` instead."
-category: "dev-tools"
+name: llamactl-qa
+name_zh: llamactl-qa
+slug: llamactl-qa
+description: Plan and run a design-QA of llamactl changes against a real backend. Builds a matrix of cases, runs them, and writes a design-review report.
+description_zh: 针对 llamactl 变更计划并运行设计 QA，构建案例矩阵并编写设计审查报告。
+category: dev-tools
 tags: [ai, api, backend, cli, deployment]
 needs_review: false
-source: 
+source:
 language: en
+author: AI-SKILL
+version: 1.0.0
+license: MIT
+created: 2026-06-12
+updated: 2026-06-12
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
+
+# When to use
+
+Use this skill for changes to `llamactl` commands (new flags, output modes, command splits, behavior changes), changes to control-plane API contracts that llamactl consumes, or changes to auth / profile / project resolution. Skip when the change is fully covered by pytest, or when the failure mode is in the UI (use `llamactl_browser_test` instead).
+
+# Inputs
+
+User request or task description related to llamactl QA testing.
+
+# Output
+
+Generated content based on the user request, including QA reports and test results.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # llamactl CLI QA
 
@@ -264,10 +294,6 @@ What to add:
 - Tilt or backend changes go to "Pick a backend".
 
 Edit the file at `.agents/skills/llamactl-qa/SKILL.md` (the `.claude/skills/` entry is a symlink into here, maintained by `uv run dev sync-skills`). Keep the voice terse; don't pad. If you're unsure whether the fact is durable or just incidental to one run, leave it out. False additions are worse than missing ones.
-
-# When to use
-
-Use this skill for changes to `llamactl` commands (new flags, output modes, command splits, behavior changes), changes to control-plane API contracts that llamactl consumes, or changes to auth / profile / project resolution. Skip when the change is fully covered by pytest, or when the failure mode is in the UI (use `llamactl_browser_test` instead).
 
 # When NOT to use
 

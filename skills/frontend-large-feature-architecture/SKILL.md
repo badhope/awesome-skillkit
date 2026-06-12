@@ -1,24 +1,34 @@
 ---
-name: "Frontend Large-Feature Architecture"
+name: Frontend Large-Feature Architecture
 name_zh: 前端大型功能架构
-description: "|"
+description: '|'
 description_zh: 在写代码前规划非平凡的前端功能 —— 控制器组件、状态归属、列表 vs 详情获取、虚拟化。通用模式，框架感知但不绑死。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 ref: main
 license: MIT
 language: en
-author: "Langfuse (downstream pack: badhope)"
+author: 'Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: frontend-large-feature-architecture
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're about to build a **non-trivial frontend feature** —

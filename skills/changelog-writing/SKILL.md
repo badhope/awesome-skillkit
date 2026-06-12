@@ -1,21 +1,50 @@
 ---
-name: "changelog-writing"
+name: changelog-writing
 name_zh: 编写变更日志
-description: Shared workflow for writing Langfuse changelog entries after a feature
+description: Shared workflow for writing Langfuse changelog entries after a 
+  feature
 description_zh: 编写清晰、用户友好的变更日志，记录版本更新和改进。
-category: "dev-tools"
-tags: [ai, deployment, documentation, frontend, git]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - deployment
+  - documentation
+  - frontend
+  - git
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: changelog-writing
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on changelog writing.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Changelog Writing
 
@@ -59,11 +88,6 @@ Provide:
 - Recent changelog examples: inspect 3-5 recent files in that directory
 - Existing docs: `../langfuse-docs/pages`
 
-# When to use
-
-Use this skill when you need guidance on changelog writing.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -88,7 +112,3 @@ python scripts/generate-changelog.py \
 python scripts/validate-changelog.py changelog-draft.md
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

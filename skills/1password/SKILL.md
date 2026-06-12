@@ -1,19 +1,51 @@
 ---
 name: 1password
 name_zh: 1password
-description: "Set up and use 1Password CLI (op). Use when installing the CLI, enabling"
-description_zh: "Set up and use 1Password CLI (op). Use when installing the CLI, enabling"
-category: "dev-tools"
-tags: [ai, cli, frontend, llm, python]
-source: 
+description: Set up and use 1Password CLI (op). Use when installing the CLI, 
+  enabling
+description_zh: Set up and use 1Password CLI (op). Use when installing the CLI, 
+  enabling
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - frontend
+  - llm
+  - python
+source:
 language: en
 needs_review: false
+slug: 1password
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with 1password.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # 1Password CLI
 
@@ -75,11 +107,6 @@ tmux -S "$SOCKET" kill-session -t "$SESSION"
 - If a command returns "account is not signed in", re-run `op signin` inside tmux and authorize in the app.
 - Do not run `op` outside tmux; stop and ask if tmux is unavailable.
 
-# When to use
-
-Use this skill when you need to work with 1password.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -94,7 +121,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

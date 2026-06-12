@@ -1,19 +1,50 @@
 ---
 name: discord
 name_zh: discord
-description: "Discord automation CLI — send/read/search messages, manage channels and"
-description_zh: "Discord 自动化 CLI — send/read/search messages, manage channels and"
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
-source: 
+description: Discord automation CLI — send/read/search messages, manage channels
+  and
+description_zh: Discord 自动化 CLI — send/read/search messages, manage channels and
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
+source:
 language: en
 needs_review: false
+slug: discord
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with discord.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Discord automation with `discord_cli.py`
 
@@ -173,11 +204,6 @@ If the bot token was rotated, update `DISCORD_BOT_TOKEN` with the new value.
 - Bot token auth uses the official Discord API — no user token extraction, no ToS risk.
 - Messages are returned in chronological order (oldest first).
 
-# When to use
-
-Use this skill when you need to work with discord.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -192,7 +218,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

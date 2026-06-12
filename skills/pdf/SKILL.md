@@ -1,16 +1,54 @@
 ---
 name: pdf
 name_zh: pdf
-description: "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction."
-description_zh: "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction."
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, python]
+description: Use when tasks involve reading, creating, or reviewing PDF files 
+  where rendering and layout matter; prefer visual checks by rendering pages 
+  (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` 
+  for generation and extraction.
+description_zh: Use when tasks involve reading, creating, or reviewing PDF files
+  where rendering and layout matter; prefer visual checks by rendering pages 
+  (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` 
+  for generation and extraction.
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - python
 needs_review: false
-source: 
+source:
 language: en
+slug: pdf
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when tasks involve reading or reviewing PDF content where layout and visuals matter, creating PDFs programmatically with reliable formatting, or validating final rendering before delivery. Prefer visual checks by rendering pages with Poppler (`pdftoppm`) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # PDF Skill
 
@@ -73,10 +111,6 @@ pdftoppm -png $INPUT_PDF $OUTPUT_PREFIX
 - Do not deliver until the latest PNG inspection shows zero visual or formatting defects.
 - Confirm headers/footers, page numbering, and section transitions look polished.
 - Keep intermediate files organized or remove them after final approval.
-
-# When to use
-
-Use this skill when tasks involve reading or reviewing PDF content where layout and visuals matter, creating PDFs programmatically with reliable formatting, or validating final rendering before delivery. Prefer visual checks by rendering pages with Poppler (`pdftoppm`) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.
 
 # When NOT to use
 
@@ -199,7 +233,3 @@ with pdfplumber.open(pdf_path) as pdf:
                 for row in table:
                     print(row)
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,49 @@
 ---
-name: "db-migrations"
-name_zh: "db-migrations"
-description: "Use for Drizzle migrations: schema/table/column changes, migration generation"
-description_zh: "Use for Drizzle migrations: schema/table/column changes, 迁移 generation"
-category: "dev-tools"
-tags: [ai, cli, database, deployment, documentation]
-source: 
+name: db-migrations
+name_zh: db-migrations
+description: 'Use for Drizzle migrations: schema/table/column changes, migration generation'
+description_zh: 'Use for Drizzle migrations: schema/table/column changes, 迁移 generation'
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - deployment
+  - documentation
+source:
 language: en
 needs_review: false
+slug: db-migrations
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with db-migrations.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Database Migrations Guide
 
@@ -29,6 +59,8 @@ rm packages/database/migrations/0110_add_verify_tables_and_ai_infra_id.sql
 rm packages/database/migrations/meta/0110_snapshot.json
 
 # 2. Remove the matching 0110 entry from the journal's "entries" array
+#    packages/database/migrations/meta/_journal.json
+
 #    packages/database/migrations/meta/_journal.json
 
 # 3. Regenerate from the current schema
@@ -47,8 +79,6 @@ rm packages/database/migrations/011{0,1,2}_*.sql
 rm packages/database/migrations/meta/011{0,1,2}_snapshot.json
 
 # 2. Remove the 0110/0111/0112 entries from the journal's "entries" array
-#    packages/database/migrations/meta/_journal.json
-
 # 3. Regenerate one migration covering the full schema delta
 bun run db:generate
 ```
@@ -177,11 +207,6 @@ CREATE INDEX "users_email_idx" ON "users" ("email");
 
 After renaming the migration SQL file in Step 2, update the `tag` field in `packages/database/migrations/meta/_journal.json` to match the new filename (without `.sql` extension).
 
-# When to use
-
-Use this skill when you need to work with db-migrations.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -196,7 +221,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

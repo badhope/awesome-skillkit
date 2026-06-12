@@ -3,12 +3,46 @@ name: Haiku
 name_zh: 俳句
 description: Write haiku poems following specific style conventions
 description_zh: 按照特定风格规范创作俳句诗
-category: ai
-tags: [ai, frontend, llm, python, typescript]
-source: 
+category: applications
+tags:
+  - ai
+  - frontend
+  - llm
+  - python
+  - typescript
+source:
 language: en
 needs_review: false
+slug: haiku
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need guidance on haiku.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Haiku house style
 
@@ -18,10 +52,6 @@ When writing a haiku for this bot, follow these conventions:
 - Prefer concrete imagery over abstraction.
 - Include at least one season-word (kigo) when natural.
 - No emojis, no preamble, no closing remarks — output ONLY the haiku itself.
-
-# When to use
-
-Use this skill when you need guidance on haiku.
 
 # When NOT to use
 
@@ -43,7 +73,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

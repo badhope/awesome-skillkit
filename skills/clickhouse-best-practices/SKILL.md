@@ -1,24 +1,35 @@
 ---
 name: ClickHouse Best Practices
 name_zh: ClickHouse 最佳实践
-description: "|"
-description_zh: 28 条 ClickHouse schema / query / insert 规则 —— 回答任何 ClickHouse 问题前都要查的清单。规则过滤、权衡判断、反模式标记。
-category: "dev-tools"
-tags: [ai, cli, database, documentation, evaluation]
-source: 
+description: '|'
+description_zh: 28 条 ClickHouse schema / query / insert 规则 —— 回答任何 ClickHouse 
+  问题前都要查的清单。规则过滤、权衡判断、反模式标记。
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - documentation
+  - evaluation
+source:
 ref: main
-license: "Apache-2.0"
+license: Apache-2.0
 language: en
-author: "ClickHouse Inc + Langfuse (downstream pack: badhope)"
+author: 'ClickHouse Inc + Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: clickhouse-best-practices
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're reviewing or designing something that touches

@@ -1,20 +1,51 @@
 ---
-name: "skill-development"
-name_zh: "技能-development"
-description: Create and contribute skills to the communal knowledge base. Use when
-description_zh: 创建 and contribute skills to the communal knowledge base. Use when
-category: ai
-tags: [ai, api, backend, documentation, frontend]
-source: 
+name: skill-development
+name_zh: 技能-development
+description: Create and contribute skills to the communal knowledge base. Use 
+  when
+description_zh: 创建 and contribute skills to the communal knowledge base. Use 
+  when
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
+source:
 license: MIT
 language: en
 needs_review: false
+slug: skill-development
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with skill-development.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Skill Development
 
@@ -136,11 +167,6 @@ See `references/pr-workflow.md` for detailed PR process.
 - `references/contribution-examples.md` - Real contribution examples
 - `references/progressive-disclosure-research.md` - Research on skill organization
 
-# When to use
-
-Use this skill when you need to work with skill-development.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -155,7 +181,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

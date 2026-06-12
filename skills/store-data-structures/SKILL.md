@@ -1,19 +1,51 @@
 ---
-name: "store-data-structures"
-name_zh: "store-数据-structures"
-description: "LobeHub Zustand store data-shape patterns. Use when designing store state,"
-description_zh: "LobeHub Zustand store data-shape patterns. Use when designing store state,"
-category: ai
-tags: [ai, api, backend, database, documentation]
-source: 
+name: store-data-structures
+name_zh: store-数据-structures
+description: LobeHub Zustand store data-shape patterns. Use when designing store
+  state,
+description_zh: LobeHub Zustand store data-shape patterns. Use when designing 
+  store state,
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: store-data-structures
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with store-data-structures.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # LobeHub Store Data Structures
 
@@ -324,11 +356,6 @@ export interface BenchmarkListItem {
 - `data-fetching-architecture` — how to fetch and update this data
 - `zustand` — general Zustand patterns
 
-# When to use
-
-Use this skill when you need to work with store-data-structures.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -343,7 +370,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

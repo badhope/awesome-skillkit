@@ -1,15 +1,50 @@
 ---
 name: rebuild
 name_zh: rebuild
-description: Rebuild Ray from source — determines the right build mode based on what changed
-description_zh: Rebuild Ray from source — determines the right 构建 mode based on what changed
-category: "dev-tools"
-tags: [ai, backend, cli, database, documentation]
+description: Rebuild Ray from source — determines the right build mode based on 
+  what changed
+description_zh: Rebuild Ray from source — determines the right 构建 mode based on 
+  what changed
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - documentation
 needs_review: false
-source: 
+source:
 language: en
+slug: rebuild
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on rebuild.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Rebuild Ray
 
@@ -89,10 +124,6 @@ build --disk_cache=~/bazel-cache
 - Each worktree may need its own `pip install -e .`
 - If in a worktree and bazel targets fail, ensure symlinks are correct
 
-# When to use
-
-Use this skill when you need guidance on rebuild.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -100,7 +131,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

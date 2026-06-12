@@ -1,21 +1,50 @@
 ---
-name: "applying-brand-guidelines"
+name: applying-brand-guidelines
 name_zh: 应用品牌指南
-description: This skill applies consistent corporate branding and styling to all generated
+description: This skill applies consistent corporate branding and styling to all
+  generated
 description_zh: 确保内容符合品牌指南，包括视觉、语调和消息传递。
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, llm]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: applying-brand-guidelines
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on applying brand guidelines.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Corporate Brand Guidelines Skill
 
@@ -184,11 +213,6 @@ When creating any document:
 - Special projects may have exceptions (request approval)
 - Brand guidelines updated quarterly - check for latest version
 
-# When to use
-
-Use this skill when you need guidance on applying brand guidelines.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -218,7 +242,3 @@ if result.success:
 else:
     print(f"Error: {result.error}")
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

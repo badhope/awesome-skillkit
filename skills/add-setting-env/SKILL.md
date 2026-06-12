@@ -1,19 +1,51 @@
 ---
-name: "add-setting-env"
-name_zh: "添加-设置-env"
-description: "Add server-side environment variables that control default values for"
-description_zh: "Add 服务器-side environment variables that control default values for"
-category: ai
-tags: [ai, backend, documentation, frontend, javascript]
-source: 
+name: add-setting-env
+name_zh: 添加-设置-env
+description: Add server-side environment variables that control default values 
+  for
+description_zh: Add 服务器-side environment variables that control default values 
+  for
+category: applications
+tags:
+  - ai
+  - backend
+  - documentation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: add-setting-env
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with add-setting-env.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Adding Environment Variable for User Settings
 
@@ -117,11 +149,6 @@ image: serverConfig.image,
 # AI_IMAGE_DEFAULT_IMAGE_NUM=4
 ```
 
-# When to use
-
-Use this skill when you need to work with add-setting-env.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -136,7 +163,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

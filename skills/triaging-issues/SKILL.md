@@ -1,17 +1,52 @@
 ---
-name: "triaging-issues"
-name_zh: "triaging-issues"
-description: "Triages GitHub issues by routing to oncall teams, applying labels, and closing questions. Use when processing new PyTorch issues or when asked to triage an issue."
-description_zh: "Triages GitHub issues by routing to oncall teams, applying labels, and closing questions. Use when processing new PyTorch issues or when asked to triage an issue."
-category: "dev-tools"
-tags: [ai, api, backend, deployment, documentation]
-source: 
+name: triaging-issues
+name_zh: triaging-issues
+description: Triages GitHub issues by routing to oncall teams, applying labels, 
+  and closing questions. Use when processing new PyTorch issues or when asked to
+  triage an issue.
+description_zh: Triages GitHub issues by routing to oncall teams, applying 
+  labels, and closing questions. Use when processing new PyTorch issues or when 
+  asked to triage an issue.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - documentation
+source:
 language: en
 needs_review: false
+slug: triaging-issues
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on triaging-issues.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # PyTorch Issue Triage Skill
 
@@ -257,10 +292,6 @@ If not transferred/redirected and not flagged for review, add `triaged`.
 
 **Note:** `bot-triaged` is automatically applied by a post-hook after any issue mutation.
 
-# When to use
-
-Use this skill when you need guidance on triaging-issues.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -280,7 +311,3 @@ python scripts/use-skill.py triaging-issues
 python scripts/inspect-skill.py triaging-issues
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

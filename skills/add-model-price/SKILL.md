@@ -1,15 +1,54 @@
 ---
-name: "add-model-price"
-name_zh: "add-模型-price"
-description: "Use when editing worker/src/constants/default-model-prices.json, packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini model pricing."
-description_zh: "Use when editing worker/src/constants/default-模型-prices.json, packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 模型 pricing."
-category: ai
-tags: [ai, backend, documentation, evaluation, frontend]
+name: add-model-price
+name_zh: add-模型-price
+description: Use when editing worker/src/constants/default-model-prices.json, 
+  packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
+  matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 
+  model pricing.
+description_zh: Use when editing worker/src/constants/default-模型-prices.json, 
+  packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or 
+  matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 
+  模型 pricing.
+category: applications
+tags:
+  - ai
+  - backend
+  - documentation
+  - evaluation
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: add-model-price
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on add-model-price.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Add Model Price
 
@@ -67,10 +106,6 @@ updates in `packages/shared/`.
 - Direct regex tester:
   `node .agents/skills/add-model-price/scripts/test-match-pattern.mjs --pattern '(?i)^(openai/)?(gpt-4o)$' --accept gpt-4o openai/gpt-4o --reject gpt-4o-mini`
 
-# When to use
-
-Use this skill when you need guidance on add-model-price.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -91,7 +126,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

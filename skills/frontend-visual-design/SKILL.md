@@ -1,23 +1,34 @@
 ---
 name: Frontend Visual Design Taste
 name_zh: 前端视觉设计品味
-description: "|"
-description_zh: 做出有主张、显品味、跟得上时代的界面 —— 克制构图、图像主导的层级、连贯的内容、走心的动效。用于 landing page、营销站、demo、原型、游戏 UI —— 凡是质量靠艺术指导而不是组件数量的场景。专门避开"通用卡片 / 弱品牌 / 杂乱 UI"三个坑。
-category: ai
-tags: [ai, api, backend, database, docker]
-source: 
+description: '|'
+description_zh: 做出有主张、显品味、跟得上时代的界面 —— 克制构图、图像主导的层级、连贯的内容、走心的动效。用于 landing 
+  page、营销站、demo、原型、游戏 UI —— 凡是质量靠艺术指导而不是组件数量的场景。专门避开"通用卡片 / 弱品牌 / 杂乱 UI"三个坑。
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - docker
+source:
 license: MIT
 language: en
-author: "Letta (downstream pack: badhope)"
+author: 'Letta (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: frontend-visual-design
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 The user is building something where the quality

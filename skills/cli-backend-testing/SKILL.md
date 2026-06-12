@@ -1,19 +1,50 @@
 ---
-name: "cli-backend-testing"
-name_zh: "cli-backend-testing"
-description: CLI + Backend integration testing workflow. Use when verifying backend
+name: cli-backend-testing
+name_zh: cli-backend-testing
+description: CLI + Backend integration testing workflow. Use when verifying 
+  backend
 description_zh: CLI + 后端 集成 测试 workflow. Use when verifying 后端
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: cli-backend-testing
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with cli-backend-testing.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # CLI + Backend Integration Testing
 
@@ -179,11 +210,6 @@ $CLI provider test <provider-id>
 | `EADDRINUSE` on port 3011   | Server already running; kill with `lsof -ti:3011 \| xargs kill`       |
 | Login opens wrong server    | Must use `--server http://localhost:3011` flag (env var doesn't work) |
 
-# When to use
-
-Use this skill when you need to work with cli-backend-testing.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -198,7 +224,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

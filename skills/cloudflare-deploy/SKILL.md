@@ -1,17 +1,52 @@
 ---
-name: "cloudflare-deploy"
-name_zh: "cloudflare-部署"
-description: "Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare."
-description_zh: "部署 applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the 用户 asks to 部署, host, publish, or set up a project on Cloudflare."
-category: "dev-tools"
-tags: [ai, api, backend, database, deployment]
-source: 
+name: cloudflare-deploy
+name_zh: cloudflare-部署
+description: Deploy applications and infrastructure to Cloudflare using Workers,
+  Pages, and related platform services. Use when the user asks to deploy, host, 
+  publish, or set up a project on Cloudflare.
+description_zh: 部署 applications and infrastructure to Cloudflare using Workers, 
+  Pages, and related platform services. Use when the 用户 asks to 部署, host, 
+  publish, or set up a project on Cloudflare.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - deployment
+source:
 language: en
 needs_review: false
+slug: cloudflare-deploy
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on cloudflare-deploy.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Cloudflare Deploy
 
@@ -233,10 +268,6 @@ Example guidance to the user:
 The deploy needs escalated network access to deploy to Cloudflare. I can rerun the command with escalated permissions—want me to proceed?
 ```
 
-# When to use
-
-Use this skill when you need guidance on cloudflare-deploy.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -244,7 +275,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

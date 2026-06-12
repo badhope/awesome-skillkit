@@ -1,21 +1,54 @@
 ---
 name: worktree
 name_zh: worktree
-description: "Set up a new git worktree for parallel development. Creates the worktree, copies .env files, installs dependencies, and generates Prisma client. TRIGGER when user asks to set up a worktree, work on a branch in isolation, or needs a separate environment for a branch or PR."
-description_zh: "Set up a new git worktree for parallel 开发. Creates the worktree, copies .env files, installs dependencies, and generates Prisma 客户端. TRIGGER when 用户 asks to set up a worktree, work on a branch in isolation, or needs a separate environment for a branch or PR."
-category: "dev-tools"
-tags: [backend, cli, frontend, git, javascript]
-source: 
+description: Set up a new git worktree for parallel development. Creates the 
+  worktree, copies .env files, installs dependencies, and generates Prisma 
+  client. TRIGGER when user asks to set up a worktree, work on a branch in 
+  isolation, or needs a separate environment for a branch or PR.
+description_zh: Set up a new git worktree for parallel 开发. Creates the worktree,
+  copies .env files, installs dependencies, and generates Prisma 客户端. TRIGGER 
+  when 用户 asks to set up a worktree, work on a branch in isolation, or needs a 
+  separate environment for a branch or PR.
+category: dev-tools
+tags:
+  - backend
+  - cli
+  - frontend
+  - git
+  - javascript
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 3.0.0
 needs_review: false
+slug: worktree
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on worktree.
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Worktree Setup
 
@@ -93,10 +126,6 @@ If [branchlet](https://www.npmjs.com/package/branchlet) is installed:
 branchlet create -n <name> -s <source-branch> -b <new-branch>
 ```
 
-# When to use
-
-Use this skill when you need guidance on worktree.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -104,7 +133,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,17 +1,62 @@
 ---
-name: "maf-online-endpoint"
-name_zh: "maf-online-endpoint"
-description: "Deploy a Microsoft Agent Framework (MAF) workflow as a managed online endpoint to an Azure ML workspace or an Azure AI Foundry hub-based project. Wraps any workflow into an init()/run() scoring script, creates conda environment, endpoint and deployment YAMLs, deploy script, and assigns RBAC. Supports managed identity auth and Application Insights tracing. WHEN: deploy MAF workflow, deploy agent-framework workflow, create online endpoint for MAF, deploy workflow to AML, deploy workflow to Foundry project, managed online endpoint for agent workflow, wrap workflow in scoring script, deploy agent as endpoint, realtime endpoint in Foundry project."
-description_zh: "部署 a Microsoft 智能体 Framework (MAF) workflow as a managed online endpoint to an Azure ML workspace or an Azure AI Foundry hub-based project. Wraps any workflow into an init()/运行() scoring script, creates conda environment, endpoint and 部署 YAMLs, 部署 script, and assigns RBAC. Supports managed identity auth and Application Insights tracing. WHEN: 部署 MAF workflow, 部署 智能体-framework workflow, 创建 online endpoint for MAF, 部署 workflow to AML, 部署 workflow to Foundry project, managed online endpoint for 智能体 workflow, wrap workflow in scoring script, 部署 智能体 as endpoint, realtime endpoint in Foundry project."
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: maf-online-endpoint
+name_zh: maf-online-endpoint
+description: 'Deploy a Microsoft Agent Framework (MAF) workflow as a managed online
+  endpoint to an Azure ML workspace or an Azure AI Foundry hub-based project. Wraps
+  any workflow into an init()/run() scoring script, creates conda environment, endpoint
+  and deployment YAMLs, deploy script, and assigns RBAC. Supports managed identity
+  auth and Application Insights tracing. WHEN: deploy MAF workflow, deploy agent-framework
+  workflow, create online endpoint for MAF, deploy workflow to AML, deploy workflow
+  to Foundry project, managed online endpoint for agent workflow, wrap workflow in
+  scoring script, deploy agent as endpoint, realtime endpoint in Foundry project.'
+description_zh: '部署 a Microsoft 智能体 Framework (MAF) workflow as a managed online endpoint
+  to an Azure ML workspace or an Azure AI Foundry hub-based project. Wraps any workflow
+  into an init()/运行() scoring script, creates conda environment, endpoint and 部署 YAMLs,
+  部署 script, and assigns RBAC. Supports managed identity auth and Application Insights
+  tracing. WHEN: 部署 MAF workflow, 部署 智能体-framework workflow, 创建 online endpoint for
+  MAF, 部署 workflow to AML, 部署 workflow to Foundry project, managed online endpoint
+  for 智能体 workflow, wrap workflow in scoring script, 部署 智能体 as endpoint, realtime
+  endpoint in Foundry project.'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 language: en
 needs_review: false
+slug: maf-online-endpoint
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on maf-online-endpoint.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Deploy MAF Workflow as a Managed Online Endpoint
 
@@ -345,10 +390,6 @@ See [./references/managed-identity.md](./references/managed-identity.md) for ful
 
 See [./references/troubleshooting.md](./references/troubleshooting.md) for extended diagnostics.
 
-# When to use
-
-Use this skill when you need guidance on maf-online-endpoint.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -356,7 +397,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

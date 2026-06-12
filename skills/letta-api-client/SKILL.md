@@ -1,20 +1,50 @@
 ---
-name: "letta-api-client"
-name_zh: "letta-接口-客户端"
-description: "Build applications with the Letta API — a model-agnostic, stateful API"
-description_zh: "构建 applications with the Letta 接口 — a 模型-agnostic, stateful 接口"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: letta-api-client
+name_zh: letta-接口-客户端
+description: Build applications with the Letta API — a model-agnostic, stateful 
+  API
+description_zh: 构建 applications with the Letta 接口 — a 模型-agnostic, stateful 接口
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: MIT
 language: en
 needs_review: false
+slug: letta-api-client
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with letta-api-client.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Letta API Client Skill
 
@@ -302,11 +332,6 @@ client.agents.update(agent_id=agent.id, secrets={"API_KEY": "..."})
 **Examples:**
 - [Chatbot Example](https://github.com/letta-ai/letta-chatbot-example) - Full app example
 
-# When to use
-
-Use this skill when you need to work with letta-api-client.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -321,7 +346,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

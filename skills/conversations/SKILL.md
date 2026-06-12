@@ -1,15 +1,54 @@
 ---
 name: Letta Conversations API
 name_zh: Letta Conversations 接口
-description: "Guide for using the Letta Conversations API to manage isolated message threads on agents. Use when building multi-user chat applications, session management, or any scenario requiring separate conversation contexts on a single agent."
-description_zh: "Guide for using the Letta Conversations 接口 to manage isolated message threads on agents. Use when building multi-用户 chat applications, session 管理, or any scenario requiring separate conversation contexts on a single 智能体."
-category: "dev-tools"
-tags: [ai, api, backend, cli, frontend]
+description: Guide for using the Letta Conversations API to manage isolated 
+  message threads on agents. Use when building multi-user chat applications, 
+  session management, or any scenario requiring separate conversation contexts 
+  on a single agent.
+description_zh: Guide for using the Letta Conversations 接口 to manage isolated 
+  message threads on agents. Use when building multi-用户 chat applications, 
+  session 管理, or any scenario requiring separate conversation contexts on a 
+  single 智能体.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: conversations
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on letta conversations api.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Letta Conversations API
 
@@ -213,10 +252,6 @@ LETTA_API_KEY=your-key uv run letta/conversations/scripts/conversations_cli.py -
 - Auth parameter is `api_key`, not `token`: `Letta(base_url=..., api_key=...)`
 - Message streams must be consumed (iterate or `list()`) to complete the request
 
-# When to use
-
-Use this skill when you need guidance on letta conversations api.
-
 # Example
 
 ```python
@@ -241,7 +276,3 @@ for msg in stream:
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,20 +1,51 @@
 ---
-name: "letta-development-guide"
-name_zh: "letta-development-guide"
-description: "Comprehensive guide for developing Letta agents, including architecture"
-description_zh: "Comprehensive guide for developing Letta agents, including architecture"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: letta-development-guide
+name_zh: letta-development-guide
+description: Comprehensive guide for developing Letta agents, including 
+  architecture
+description_zh: Comprehensive guide for developing Letta agents, including 
+  architecture
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: MIT
 language: en
 needs_review: false
+slug: agent-development
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with letta-development-guide.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Letta Development Guide
 
@@ -291,11 +322,6 @@ For detailed information on specific topics, consult the reference materials:
 - `references/model-recommendations.md` - Model selection guidance
 - `references/tool-patterns.md` - Common tool configurations
 
-# When to use
-
-Use this skill when you need to work with letta-development-guide.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -310,7 +336,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

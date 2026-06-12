@@ -1,19 +1,51 @@
 ---
-name: "render-deploy"
-name_zh: "render-部署"
-description: "Deploy applications to Render by analyzing codebases, generating render.yaml"
-description_zh: "部署 applications to Render by analyzing codebases, generating render.yaml"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: render-deploy
+name_zh: render-部署
+description: Deploy applications to Render by analyzing codebases, generating 
+  render.yaml
+description_zh: 部署 applications to Render by analyzing codebases, generating 
+  render.yaml
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: render-deploy
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with render-deploy.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Deploy to Render
 
@@ -490,11 +522,6 @@ The deploy needs escalated network access to deploy to Render. I can rerun the c
 Optional: If you need deeper diagnostics (metrics/DB checks/error catalog), suggest installing the
 `render-debug` skill. It is not required for the core deploy flow.
 
-# When to use
-
-Use this skill when you need to work with render-deploy.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -509,7 +536,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,17 +1,54 @@
 ---
-name: "aoti-debug"
-name_zh: "aoti-调试"
-description: "Debug AOTInductor (AOTI) errors and crashes. Use when encountering AOTI segfaults, device mismatch errors, constant loading failures, or runtime errors from aot_compile, aot_load, aoti_compile_and_package, or aoti_load_package."
-description_zh: "调试 AOTInductor (AOTI) errors and crashes. Use when encountering AOTI segfaults, device mismatch errors, constant loading failures, or runtime errors from aot_compile, aot_load, aoti_compile_and_package, or aoti_load_package."
-category: ai
-tags: [ai, api, backend, evaluation, frontend]
-source: 
+name: aoti-debug
+name_zh: aoti-调试
+description: Debug AOTInductor (AOTI) errors and crashes. Use when encountering 
+  AOTI segfaults, device mismatch errors, constant loading failures, or runtime 
+  errors from aot_compile, aot_load, aoti_compile_and_package, or 
+  aoti_load_package.
+description_zh: 调试 AOTInductor (AOTI) errors and crashes. Use when encountering 
+  AOTI segfaults, device mismatch errors, constant loading failures, or runtime 
+  errors from aot_compile, aot_load, aoti_compile_and_package, or 
+  aoti_load_package.
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - evaluation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: aoti-debug
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on aoti-debug.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # AOTI Debugging Guide
 
@@ -187,10 +224,6 @@ The new API stores device metadata in the package, so `aoti_load_package()` auto
 | `TORCH_LOGS="+inductor,output_code"` | Runtime | See PT2 internal logs |
 | `TORCH_SHOW_CPP_STACKTRACES=1` | Runtime | Show C++ stack traces |
 
-# When to use
-
-Use this skill when you need guidance on aoti-debug.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -198,7 +231,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,24 +1,36 @@
 ---
 name: PNPM Upgrade Package
 name_zh: pnpm 升级依赖
-description: "|"
-description_zh: 把 pnpm workspace 依赖升级到目标或最新版本 —— 直系与传递依赖 bump、发布时效检查、作用域 override、lockfile 与 dedupe 校验。覆盖四个"不要"陷阱：手编 lockfile、永久 override、静默升级 latest、dedupe 引入无关 churn。
-category: "dev-tools"
-tags: [ai, api, cli, deployment, documentation]
-source: 
+description: '|'
+description_zh: 把 pnpm workspace 依赖升级到目标或最新版本 —— 直系与传递依赖 bump、发布时效检查、作用域 
+  override、lockfile 与 dedupe 校验。覆盖四个"不要"陷阱：手编 lockfile、永久 override、静默升级 
+  latest、dedupe 引入无关 churn。
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - deployment
+  - documentation
+source:
 ref: main
 license: MIT
 language: en
-author: "Langfuse (downstream pack: badhope)"
+author: 'Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: pnpm-upgrade-package
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're bumping a dependency in a **pnpm workspace**.

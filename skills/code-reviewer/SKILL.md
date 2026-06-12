@@ -3,20 +3,31 @@ name: Code Reviewer
 name_zh: 代码审查员
 description: minimum severity to report
 description_zh: 审查代码 diff，看 bug、安全问题、风格。无厂商依赖，识别语言。
-category: ai
-tags: [ai, api, database, frontend, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - database
+  - frontend
+  - llm
+source:
 license: MIT
 language: en
 author: badhope
 version: 1.0.0
 needs_review: false
+slug: code-reviewer
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 # When to use
 
 The user pasted a diff (or a whole file) and wants eyes on it. You are not the author; you are the reviewer.

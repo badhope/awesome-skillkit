@@ -1,17 +1,50 @@
 ---
-name: "add-or-fix-type-checking"
-name_zh: "add-or-fix-type-checking"
-description: "Fixes broken typing checks detected by ty, make typing, or make check-repo. Use when typing errors appear in local runs, CI, or PR logs."
-description_zh: "Fixes broken typing checks detected by ty, make typing, or make 检查-repo. Use when typing errors appear in local runs, CI, or PR logs."
-category: ai
-tags: [ai, api, backend, docker, frontend]
-source: 
+name: add-or-fix-type-checking
+name_zh: add-or-fix-type-checking
+description: Fixes broken typing checks detected by ty, make typing, or make 
+  check-repo. Use when typing errors appear in local runs, CI, or PR logs.
+description_zh: Fixes broken typing checks detected by ty, make typing, or make 
+  检查-repo. Use when typing errors appear in local runs, CI, or PR logs.
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - docker
+  - frontend
+source:
 language: en
 needs_review: false
+slug: add-or-fix-type-checking
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on add-or-fix-type-checking.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Add Or Fix Type Checking
 
@@ -224,10 +257,6 @@ needs_review: false
 8. **Update CI coverage when adding new typed areas**:
    - Update `ty_check_dirs` in `Makefile` to include newly type-checked directories.
 
-# When to use
-
-Use this skill when you need guidance on add-or-fix-type-checking.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -235,7 +264,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

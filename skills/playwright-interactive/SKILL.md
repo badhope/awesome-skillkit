@@ -1,17 +1,50 @@
 ---
-name: "playwright-interactive"
-name_zh: "playwright-interactive"
-description: "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging."
-description_zh: "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: playwright-interactive
+name_zh: playwright-interactive
+description: Persistent browser and Electron interaction through `js_repl` for 
+  fast iterative UI debugging.
+description_zh: Persistent browser and Electron interaction through `js_repl` 
+  for fast iterative UI debugging.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: playwright-interactive
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on playwright-interactive.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Playwright Interactive Skill
 
@@ -702,10 +735,6 @@ If you plan to exit Codex immediately after debugging, run the cleanup cell firs
 - `js_repl` timed out or reset: rerun the bootstrap cell and recreate the session with shorter, more focused cells.
 - Browser launch or network operations fail immediately: confirm the session was started with `--sandbox danger-full-access` and restart that way if needed.
 
-# When to use
-
-Use this skill when you need guidance on playwright-interactive.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -713,7 +742,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

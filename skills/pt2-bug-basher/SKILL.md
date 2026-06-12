@@ -1,19 +1,51 @@
 ---
-name: "pt2-bug-basher"
-name_zh: "pt2-缺陷-basher"
-description: "Debug PyTorch 2 compiler stack failures including Dynamo graph breaks,"
-description_zh: "调试 PyTorch 2 compiler stack failures including Dynamo graph breaks,"
-category: ai
-tags: [ai, api, backend, database, evaluation]
-source: 
+name: pt2-bug-basher
+name_zh: pt2-缺陷-basher
+description: Debug PyTorch 2 compiler stack failures including Dynamo graph 
+  breaks,
+description_zh: 调试 PyTorch 2 compiler stack failures including Dynamo graph 
+  breaks,
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - evaluation
+source:
 language: en
 needs_review: false
+slug: pt2-bug-basher
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with pt2-bug-basher.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # PT2 Bug Basher
 
@@ -283,11 +315,6 @@ For accuracy issues, use level 4:
 TORCHDYNAMO_REPRO_AFTER=aot TORCHDYNAMO_REPRO_LEVEL=4 python your_script.py
 ```
 
-# When to use
-
-Use this skill when you need to work with pt2-bug-basher.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -302,7 +329,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

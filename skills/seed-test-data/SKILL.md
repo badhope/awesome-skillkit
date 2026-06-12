@@ -1,21 +1,49 @@
 ---
-name: "seed-test-data"
+name: seed-test-data
 name_zh: 种子测试数据
-description: "Seed local Langfuse test data with one command: large/branching observation"
+description: 'Seed local Langfuse test data with one command: large/branching observation'
 description_zh: 生成和管理测试数据，用于开发和测试环境。
-category: "dev-tools"
-tags: [ai, backend, cli, database, docker]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - cli
+  - database
+  - docker
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: seed-test-data
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on seed test data.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Seed Test Data
 
@@ -74,11 +102,6 @@ function using the deterministic `Rng` (never `Math.random`), register it in
 flags, and JSON keys are additive-only contracts. Design rationale:
 `packages/shared/scripts/seeder/README.md`.
 
-# When to use
-
-Use this skill when you need guidance on seed test data.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -88,7 +111,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

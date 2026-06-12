@@ -1,19 +1,51 @@
 ---
 name: i18n
 name_zh: i18n
-description: "LobeHub i18n with react-i18next. Use for user-facing strings, locale"
-description_zh: "LobeHub i18n with react-i18next. Use for 用户-facing strings, locale"
-category: "dev-tools"
-tags: [ai, cli, database, frontend, javascript]
-source: 
+description: LobeHub i18n with react-i18next. Use for user-facing strings, 
+  locale
+description_zh: LobeHub i18n with react-i18next. Use for 用户-facing strings, 
+  locale
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: i18n
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with i18n.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # LobeHub Internationalization Guide
 
@@ -88,11 +120,6 @@ t('common:save');
 
 Others: auth, changelog, components, discover, editor, electron, error, file, hotkey, knowledgeBase, memory, models, plugin, portal, providers, tool, topic
 
-# When to use
-
-Use this skill when you need to work with i18n.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -107,7 +134,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

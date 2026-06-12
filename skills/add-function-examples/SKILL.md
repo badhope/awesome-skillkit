@@ -1,17 +1,35 @@
 ---
-name: "add-function-examples"
-name_zh: "add-函数-examples"
-description: "Guide for adding new AI function examples, for testing specific features against the actual provider APIs."
-description_zh: "Guide for adding new AI 函数 examples, for 测试 specific features against the actual provider APIs."
-category: ai
-tags: [ai, api, backend, documentation, frontend]
-source: 
+name: add-function-examples
+name_zh: add-函数-examples
+description: Guide for adding new AI function examples, for testing specific 
+  features against the actual provider APIs.
+description_zh: Guide for adding new AI 函数 examples, for 测试 specific features 
+  against the actual provider APIs.
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: add-function-examples
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
 ## Adding Function Examples
 
 Review the changes in the current branch, and identify new or modified features or bug fixes that would benefit from having an example in the `examples/ai-functions` directory. These examples are used for testing specific features against the actual provider APIs, and can also serve as documentation for users.
@@ -23,6 +41,18 @@ After creating the example, run `pnpm type-check:full`; fix any errors encounter
 # When to use
 
 Use this skill when you need guidance on add-function-examples.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # When NOT to use
 
@@ -44,7 +74,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

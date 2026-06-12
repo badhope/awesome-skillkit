@@ -1,16 +1,27 @@
 ---
-name: "Single-Flow PR Yeet"
+name: Single-Flow PR Yeet
 name_zh: 一次性 PR 推送
-description: "|"
-description_zh: "在一个线性流程里完成 stage / commit / push / 开 PR —— 选对分支名、写一条简洁的 conventional commit、按 repo 里的 PR 模板填正文、推送、用 `gh` 开 PR。仅在用户明确说"yeet"或"ship"时触发，不接普通的"提个 PR"的活儿。"
-category: "dev-tools"
+slug: pr-yeet
+description: 在一个线性流程里完成 stage、commit、push、开 PR。仅在用户明确说 yeet 或 ship 时触发。
+description_zh: 在一个线性流程里完成 stage、commit、push、开 PR。仅在用户明确说 yeet 或 ship 时触发。
+category: dev-tools
 tags: [ai, api, frontend, git, llm]
-source: 
+source:
 license: MIT
 language: en
-author: "OpenAI (downstream pack: badhope)"
-version: 0.1.0
+author: AI-SKILL
+version: 1.0.0
+created: 2026-06-12
+updated: 2026-06-12
 needs_review: false
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
 

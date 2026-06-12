@@ -1,17 +1,50 @@
 ---
-name: "cookbook-audit"
-name_zh: "cookbook-audit"
-description: Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook review or audit is requested.
-description_zh: Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook 审查 or audit is requested.
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: cookbook-audit
+name_zh: cookbook-audit
+description: Audit an Anthropic Cookbook notebook based on a rubric. Use 
+  whenever a notebook review or audit is requested.
+description_zh: Audit an Anthropic Cookbook notebook based on a rubric. Use 
+  whenever a notebook 审查 or audit is requested.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 language: en
 needs_review: false
+slug: cookbook-audit
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on cookbook-audit.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Cookbook Audit
 
@@ -309,14 +342,6 @@ total_score = narrative_score + code_score + technical_score + actionability_sco
 print(f"Overall Score: {total_score}/20")
 ```
 
-# When to use
-
-Use this skill when you need guidance on cookbook-audit.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

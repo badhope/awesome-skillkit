@@ -1,15 +1,49 @@
 ---
 name: notion
 name_zh: notion
-description: "Notion API for creating and managing pages, databases, and blocks."
-description_zh: "Notion 接口 for creating and managing pages, databases, and blocks."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+description: Notion API for creating and managing pages, databases, and blocks.
+description_zh: Notion 接口 for creating and managing pages, databases, and 
+  blocks.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: notion
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on notion.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # notion
 
@@ -175,10 +209,6 @@ Common property formats for database items:
 - Payload size limits: up to 1000 block elements and 500KB overall
 - Use `is_inline: true` when creating data sources to embed them in pages
 
-# When to use
-
-Use this skill when you need guidance on notion.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -186,7 +216,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "huggingface-papers"
-name_zh: "huggingface-papers"
-description: "Look up and read Hugging Face paper pages in markdown, and use the papers"
-description_zh: "Look up and read Hugging Face paper pages in markdown, and use the papers"
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: huggingface-papers
+name_zh: huggingface-papers
+description: Look up and read Hugging Face paper pages in markdown, and use the 
+  papers
+description_zh: Look up and read Hugging Face paper pages in markdown, and use 
+  the papers
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: huggingface-papers
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-papers.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Hugging Face Paper Pages
 
@@ -249,11 +281,6 @@ If the Hugging Face paper page does not contain enough detail for the user's que
 - Write endpoints such as claim authorship, index paper, and update paper links require `Authorization: Bearer $HF_TOKEN`.
 - Prefer the `.md` endpoint for reliable machine-readable output.
 - Prefer `/api/papers/{PAPER_ID}` when you need structured JSON fields instead of page markdown.
-# When to use
-
-Use this skill when you need to work with huggingface-papers.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -268,7 +295,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

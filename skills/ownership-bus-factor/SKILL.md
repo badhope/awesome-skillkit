@@ -1,23 +1,35 @@
 ---
-name: "Code Ownership & Bus Factor"
+name: Code Ownership & Bus Factor
 name_zh: 代码所有权与巴士因子
-description: "|"
-description_zh: "从 git 历史里画出一张安全导向的所有权图谱 —— 谁拥有哪些文件、谁在维护敏感代码、巴士因子是多少、哪些敏感路径已经无人维护。导出 CSV / JSON 给图数据库（Neo4j / Gephi），再画一张 co-change 图给聚类分析用。仅在用户明确要求 AppSec / 巴士因子分析时触发，不接普通 maintainer 列表的活。"
-category: "dev-tools"
-tags: [ai, database, frontend, git, javascript]
-source: 
+description: '|'
+description_zh: 从 git 历史里画出一张安全导向的所有权图谱 —— 
+  谁拥有哪些文件、谁在维护敏感代码、巴士因子是多少、哪些敏感路径已经无人维护。导出 CSV / JSON 给图数据库（Neo4j / Gephi），再画一张 
+  co-change 图给聚类分析用。仅在用户明确要求 AppSec / 巴士因子分析时触发，不接普通 maintainer 列表的活。
+category: dev-tools
+tags:
+  - ai
+  - database
+  - frontend
+  - git
+  - javascript
+source:
 license: MIT
 language: en
-author: "OpenAI (downstream pack: badhope)"
+author: 'OpenAI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: ownership-bus-factor
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 The user said "build me an ownership map", "what

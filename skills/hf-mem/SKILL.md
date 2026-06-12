@@ -1,18 +1,35 @@
 ---
-name: "hf-mem"
-name_zh: "hf-mem"
-description: Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub
-description_zh: Hugging Face CLI to estimate the required memory to load Safetensors or GGUF 模型 weights for inference from the Hugging Face Hub
-category: "dev-tools"
-tags: [ai, cli, frontend, huggingface, javascript]
-source: 
+name: hf-mem
+name_zh: hf-mem
+description: Hugging Face CLI to estimate the required memory to load 
+  Safetensors or GGUF model weights for inference from the Hugging Face Hub
+description_zh: Hugging Face CLI to estimate the required memory to load 
+  Safetensors or GGUF 模型 weights for inference from the Hugging Face Hub
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - frontend
+  - huggingface
+  - javascript
+source:
 language: en
 needs_review: false
+slug: hf-mem
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
 `hf_mem` estimates the required memory for inference, including model weights and an optional KV cache, for Safetensors and GGUF for models on the Hugging Face Hub using HTTP Range requests i.e., without downloading or loading any weights locally.
 
 # When to use
@@ -56,6 +73,18 @@ And, for GGUF use as:
 uvx hf-mem --model-id <model-id> --gguf-file <file-or-path> --experimental [--max-model-len N] [--batch-size N] [--kv-cache-dtype auto|F32|F16|Q4_0|Q4_1|Q5_0|Q5_1|Q8_0|Q8_1|Q2_K|Q3_K|Q4_K|Q5_K|Q6_K|Q8_K|IQ2_XXS|IQ2_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ2_S|IQ4_XS|I8|I16|I32|I64|F64|IQ1_M|BF16|TQ1_0|TQ2_0|MXFP4] --json-output
 ```
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # Example
 
 For Transformers with Safetensors weights:
@@ -91,7 +120,3 @@ uvx hf-mem --model-id unsloth/Qwen3.5-397B-A17B-GGUF --gguf-file Q4_K_M --experi
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

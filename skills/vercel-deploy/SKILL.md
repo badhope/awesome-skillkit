@@ -1,19 +1,50 @@
 ---
-name: "vercel-deploy"
-name_zh: "vercel-部署"
-description: Deploy applications and websites to Vercel. Use when the user requests
+name: vercel-deploy
+name_zh: vercel-部署
+description: Deploy applications and websites to Vercel. Use when the user 
+  requests
 description_zh: 部署 applications and websites to Vercel. Use when the 用户 requests
-category: "dev-tools"
-tags: [ai, cli, database, deployment, frontend]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - deployment
+  - frontend
+source:
 language: en
 needs_review: false
+slug: vercel-deploy
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with vercel-deploy.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Vercel Deploy
 
@@ -88,11 +119,6 @@ Example guidance to the user:
 The deploy needs escalated network access to deploy to Vercel. I can rerun the command with escalated permissions—want me to proceed?
 ```
 
-# When to use
-
-Use this skill when you need to work with vercel-deploy.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -107,7 +133,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

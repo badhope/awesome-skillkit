@@ -1,21 +1,83 @@
 ---
-name: "maf-prs-job"
-name_zh: "maf-prs-job"
-description: "Convert an existing Prompt Flow Parallel Run Step (PRS) pipeline submission into an Azure ML PRS pipeline that runs a Microsoft Agent Framework (MAF) workflow. Wraps the MAF workflow into a PRS init()/run() entry script, generates the parallel component YAML and conda environment, and rewrites the pipeline submission script. Replaces what `load_component(flow.dag.yaml)` did automatically for Prompt Flow \u2014 produces the hand-built equivalent so that downstream pipeline code (`flow_node = flow_component(...)`, `flow_node.outputs.flow_outputs`, `flow_node.outputs.debug_info`, `flow_node.mini_batch_size`, scheduler, batch endpoint) stays unchanged. WHEN: convert promptflow PRS to MAF PRS, migrate PRS pipeline to agent framework, wrap MAF workflow as parallel component, bulk run MAF workflow, run agent framework as parallel run step, batch run MAF workflow on AML, submit MAF workflow as pipeline component, replace flow.dag.yaml with MAF workflow in pipeline, load_component equivalent for MAF workflow, MAF version of flow_component, load MAF workflow as component, wrap MAF workflow as flow component, MAF flow component, replace flow_node in pipeline with MAF workflow, keep flow_outputs and debug_info ports with MAF, MAF parallel component with connections={}, run MAF workflow as flow_node in AML pipeline, load_component('workflow.py') doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf), deploying as online endpoint (use maf-online-endpoint), enabling tracing only (use maf-tracing)."
-description_zh: "Convert an existing 提示词 Flow Parallel 运行 Step (PRS) pipeline submission into an Azure ML PRS pipeline that runs a Microsoft 智能体 Framework (MAF) workflow. Wraps the MAF workflow into a PRS init()/运行() entry script, generates the parallel component YAML and conda environment, and rewrites the pipeline submission script. Replaces what `load_component(flow.dag.yaml)` did automatically for 提示词 Flow \u2014 produces the hand-built equivalent so that downstream pipeline 代码 (`flow_node = flow_component(...)`, `flow_node.outputs.flow_outputs`, `flow_node.outputs.debug_info`, `flow_node.mini_batch_size`, scheduler, batch endpoint) stays unchanged. WHEN: convert promptflow PRS to MAF PRS, migrate PRS pipeline to 智能体 framework, wrap MAF workflow as parallel component, bulk 运行 MAF workflow, 运行 智能体 framework as parallel 运行 step, batch 运行 MAF workflow on AML, submit MAF workflow as pipeline component, replace flow.dag.yaml with MAF workflow in pipeline, load_component equivalent for MAF workflow, MAF version of flow_component, load MAF workflow as component, wrap MAF workflow as flow component, MAF flow component, replace flow_node in pipeline with MAF workflow, keep flow_outputs and debug_info ports with MAF, MAF parallel component with connections={}, 运行 MAF workflow as flow_node in AML pipeline, load_component('workflow.py') doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf), deploying as online endpoint (use maf-online-endpoint), enabling tracing only (use maf-tracing)."
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
+name: maf-prs-job
+name_zh: maf-prs-job
+description: "Convert an existing Prompt Flow Parallel Run Step (PRS) pipeline submission
+  into an Azure ML PRS pipeline that runs a Microsoft Agent Framework (MAF) workflow.
+  Wraps the MAF workflow into a PRS init()/run() entry script, generates the parallel
+  component YAML and conda environment, and rewrites the pipeline submission script.
+  Replaces what `load_component(flow.dag.yaml)` did automatically for Prompt Flow
+  — produces the hand-built equivalent so that downstream pipeline code (`flow_node
+  = flow_component(...)`, `flow_node.outputs.flow_outputs`, `flow_node.outputs.debug_info`,
+  `flow_node.mini_batch_size`, scheduler, batch endpoint) stays unchanged. WHEN: convert
+  promptflow PRS to MAF PRS, migrate PRS pipeline to agent framework, wrap MAF workflow
+  as parallel component, bulk run MAF workflow, run agent framework as parallel run
+  step, batch run MAF workflow on AML, submit MAF workflow as pipeline component,
+  replace flow.dag.yaml with MAF workflow in pipeline, load_component equivalent for
+  MAF workflow, MAF version of flow_component, load MAF workflow as component, wrap
+  MAF workflow as flow component, MAF flow component, replace flow_node in pipeline
+  with MAF workflow, keep flow_outputs and debug_info ports with MAF, MAF parallel
+  component with connections={}, run MAF workflow as flow_node in AML pipeline, load_component('workflow.py')
+  doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf),
+  deploying as online endpoint (use maf-online-endpoint), enabling tracing only (use
+  maf-tracing)."
+description_zh: "Convert an existing 提示词 Flow Parallel 运行 Step (PRS) pipeline submission
+  into an Azure ML PRS pipeline that runs a Microsoft 智能体 Framework (MAF) workflow.
+  Wraps the MAF workflow into a PRS init()/运行() entry script, generates the parallel
+  component YAML and conda environment, and rewrites the pipeline submission script.
+  Replaces what `load_component(flow.dag.yaml)` did automatically for 提示词 Flow — produces
+  the hand-built equivalent so that downstream pipeline 代码 (`flow_node = flow_component(...)`,
+  `flow_node.outputs.flow_outputs`, `flow_node.outputs.debug_info`, `flow_node.mini_batch_size`,
+  scheduler, batch endpoint) stays unchanged. WHEN: convert promptflow PRS to MAF
+  PRS, migrate PRS pipeline to 智能体 framework, wrap MAF workflow as parallel component,
+  bulk 运行 MAF workflow, 运行 智能体 framework as parallel 运行 step, batch 运行 MAF workflow
+  on AML, submit MAF workflow as pipeline component, replace flow.dag.yaml with MAF
+  workflow in pipeline, load_component equivalent for MAF workflow, MAF version of
+  flow_component, load MAF workflow as component, wrap MAF workflow as flow component,
+  MAF flow component, replace flow_node in pipeline with MAF workflow, keep flow_outputs
+  and debug_info ports with MAF, MAF parallel component with connections={}, 运行 MAF
+  workflow as flow_node in AML pipeline, load_component('workflow.py') doesn't work.
+  DO NOT USE FOR: converting the flow itself (use promptflow-to-maf), deploying as
+  online endpoint (use maf-online-endpoint), enabling tracing only (use maf-tracing)."
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
 license: MIT
 language: en
 author: Team
-version: "0.1.0-draft"
+version: 0.1.0-draft
 needs_review: false
+slug: maf-prs-job
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
 
+Use this skill when converting Prompt Flow PRS pipelines to MAF PRS pipelines.
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when converting Prompt Flow PRS pipelines to MAF PRS pipelines.
 
 # Prompt Flow PRS → MAF PRS Pipeline Conversion
 
@@ -259,10 +321,6 @@ in the streamed log (one JSONL row per input row in
 - [gotchas.md](references/gotchas.md) — async loop reuse, mini-batch retry
   semantics, MSI / connection mapping, common dry-run failures.
 
-# When to use
-
-Use this skill when converting Prompt Flow PRS pipelines to MAF PRS pipelines.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -270,7 +328,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the "Workflow" and "Outputs" sections above for practical examples of the conversion process.
-
-# Prompt
-
-Follow the guidelines in this skill when converting Prompt Flow PRS pipelines to MAF PRS pipelines.

@@ -1,16 +1,50 @@
 ---
 name: testing
 name_zh: 测试
-description: "Vitest testing guide. Use when writing or updating tests, fixing failing tests, improving coverage, debugging test issues, or setting up mocks."
-description_zh: "Vitest 测试 guide. Use when writing or updating tests, fixing failing tests, improving coverage, debugging 测试 issues, or setting up mocks."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: Vitest testing guide. Use when writing or updating tests, fixing 
+  failing tests, improving coverage, debugging test issues, or setting up mocks.
+description_zh: Vitest 测试 guide. Use when writing or updating tests, fixing 
+  failing tests, improving coverage, debugging 测试 issues, or setting up mocks.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: testing
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on testing.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # LobeHub Testing Guide
 
@@ -133,10 +167,6 @@ When tests fail due to implementation changes (not bugs), evaluate before blindl
 3. **Test data pollution**: Clean database state in beforeEach/afterEach
 4. **Async issues**: Wrap state changes in `act()` for React hooks
 
-# When to use
-
-Use this skill when you need guidance on testing.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -144,7 +174,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

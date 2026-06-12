@@ -1,17 +1,50 @@
 ---
-name: "spotify-player"
-name_zh: "spotify-player"
-description: Terminal Spotify playback/search via spogo (preferred) or spotify_player.
-description_zh: Terminal Spotify playback/search via spogo (preferred) or spotify_player.
-category: "dev-tools"
-tags: [ai, cli, frontend, llm, python]
-source: 
+name: spotify-player
+name_zh: spotify-player
+description: Terminal Spotify playback/search via spogo (preferred) or 
+  spotify_player.
+description_zh: Terminal Spotify playback/search via spogo (preferred) or 
+  spotify_player.
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - frontend
+  - llm
+  - python
+source:
 language: en
 needs_review: false
+slug: spotify-player
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on spotify-player.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # spogo / spotify_player
 
@@ -46,10 +79,6 @@ Notes
 - For Spotify Connect integration, set a user `client_id` in config.
 - TUI shortcuts are available via `?` in the app.
 
-# When to use
-
-Use this skill when you need guidance on spotify-player.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -69,7 +98,3 @@ python scripts/use-skill.py spotify-player
 python scripts/inspect-skill.py spotify-player
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

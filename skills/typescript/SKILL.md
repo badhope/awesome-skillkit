@@ -1,19 +1,51 @@
 ---
 name: typescript
 name_zh: typescript
-description: "LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,"
-description_zh: "LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,"
-category: ai
-tags: [ai, api, backend, database, frontend]
-source: 
+description: LobeHub TypeScript style and type-safety guide. Use when editing 
+  TS/TSX/MTS,
+description_zh: LobeHub TypeScript style and type-safety guide. Use when editing
+  TS/TSX/MTS,
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - frontend
+source:
 language: en
 needs_review: false
+slug: typescript
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with typescript.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # TypeScript Code Style Guide
 
@@ -83,11 +115,6 @@ needs_review: false
 - Use `console.error` in catch blocks instead of debug package
 - Always log the error in `.catch()` callbacks — silent `.catch(() => fallback)` swallows failures and makes debugging impossible
 
-# When to use
-
-Use this skill when you need to work with typescript.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -102,7 +129,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

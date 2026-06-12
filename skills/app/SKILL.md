@@ -3,16 +3,31 @@ name: app
 name_zh: app
 description: Opinionated app components building on top of ./ui primitives
 description_zh: Opinionated app components building on top of ./ui primitives
-category: ai
-tags: [ai, frontend, javascript, llm, python]
-source: 
+category: applications
+tags:
+  - ai
+  - frontend
+  - javascript
+  - llm
+  - python
+source:
 language: en
 needs_review: false
+slug: app
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
 - Can include business logic and state management
 - Can include data fetching and caching logic
 - Should use original spelling for HTML-native events and `camelCase` for custom events
@@ -23,6 +38,18 @@ needs_review: false
 # When to use
 
 Use this skill when you need guidance on app.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # When NOT to use
 
@@ -44,7 +71,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

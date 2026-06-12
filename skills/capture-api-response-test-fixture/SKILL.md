@@ -1,18 +1,33 @@
 ---
-name: "capture-api-response-test-fixture"
-name_zh: "capture-接口-response-测试-fixture"
+name: capture-api-response-test-fixture
+name_zh: capture-接口-response-测试-fixture
 description: Capture API response test fixture.
 description_zh: Capture 接口 response 测试 fixture.
-category: ai
-tags: [ai, api, backend, frontend, javascript]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: capture-api-response-test-fixture
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
 ### API Response Test Fixtures
 
 For provider response parsing tests, we aim at storing test fixtures with the true responses from the providers (unless they are too large in which case some cutting that does not change semantics is advised).
@@ -65,6 +80,18 @@ run(async () => {
 
 Use this skill when you need guidance on capture-api-response-test-fixture.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -72,7 +99,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

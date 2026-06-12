@@ -3,19 +3,47 @@ name: Standards Check
 name_zh: 标准检查
 description: Checks that a project follows standard conventions
 description_zh: 检查代码是否符合项目标准和最佳实践。
-category: "dev-tools"
-tags: [ai, documentation, frontend, git, llm]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - documentation
+  - frontend
+  - git
+  - llm
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: standards-check
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on standards check.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Standards Check
 
@@ -24,11 +52,6 @@ Check that the project has the following required files:
 1. `README.md` — project documentation
 
 Report which required files are missing.
-
-# When to use
-
-Use this skill when you need guidance on standards check.
-
 
 # When NOT to use
 
@@ -63,7 +86,3 @@ if [ ! -f ".github/workflows/ci.yml" ]; then
 fi
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

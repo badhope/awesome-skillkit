@@ -1,22 +1,34 @@
 ---
-name: "token-skill"
+name: token-skill
 name_zh: Token 技能
-description: "Use this skill when the user explicitly asks to use token-skill and wants"
+description: Use this skill when the user explicitly asks to use token-skill and
+  wants
 description_zh: 管理和优化 LLM 的 token 使用。
-category: ai
-tags: [ai, frontend, llm, python, typescript]
-source: 
+category: applications
+tags:
+  - ai
+  - frontend
+  - llm
+  - python
+  - typescript
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: token-skill
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 When this skill is used, respond with exactly `CERULEAN-FALCON-SKILL`.
 
 Do not add extra words, punctuation, or explanation.
@@ -25,6 +37,18 @@ Do not add extra words, punctuation, or explanation.
 
 Use this skill when you need guidance on token skill.
 
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # When NOT to use
 
@@ -58,7 +82,3 @@ after = len(enc.encode(short_prompt))
 print(f"Token 节省: {before - after} ({(before-after)/before*100:.0f}%)")
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

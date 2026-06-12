@@ -1,17 +1,52 @@
 ---
-name: "project-overview"
-name_zh: "project-overview"
-description: "LobeHub open-source monorepo architecture map. Use when locating code layers, understanding apps/packages/src layout, business stubs, project structure, or onboarding to the repository."
-description_zh: "LobeHub open-source monorepo architecture map. Use when locating 代码 layers, understanding apps/packages/src layout, business stubs, project structure, or onboarding to the repository."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: project-overview
+name_zh: project-overview
+description: LobeHub open-source monorepo architecture map. Use when locating 
+  code layers, understanding apps/packages/src layout, business stubs, project 
+  structure, or onboarding to the repository.
+description_zh: LobeHub open-source monorepo architecture map. Use when locating
+  代码 layers, understanding apps/packages/src layout, business stubs, project 
+  structure, or onboarding to the repository.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: project-overview
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on project-overview.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # LobeHub Project Overview
 
@@ -144,10 +179,6 @@ as a git submodule mounted at `lobehub/`. The cloud repo provides:
 When working in this repo alone, ignore the cloud layer — the stubs in
 `src/business/` and `packages/business/` are the source of truth here.
 
-# When to use
-
-Use this skill when you need guidance on project-overview.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -155,7 +186,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

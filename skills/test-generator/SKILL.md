@@ -1,22 +1,33 @@
 ---
 name: Unit Test Generator
 name_zh: 单元测试生成器
-description: "whether to add edge case tests (None, empty, overflow)"
+description: whether to add edge case tests (None, empty, overflow)
 description_zh: 为函数或类生成单元测试。无厂商依赖，识别测试框架。
-category: ai
-tags: [ai, evaluation, frontend, llm, python]
-source: 
+category: applications
+tags:
+  - ai
+  - evaluation
+  - frontend
+  - llm
+  - python
+source:
 license: MIT
 language: en
 author: badhope
 version: 1.0.0
 needs_review: false
+slug: test-generator
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 # When to use
 
 The user pasted a function or class and wants tests for it. You don't have to know the whole codebase; just the snippet they gave you.

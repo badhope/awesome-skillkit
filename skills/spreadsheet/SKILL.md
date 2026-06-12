@@ -1,15 +1,52 @@
 ---
 name: spreadsheet
 name_zh: spreadsheet
-description: "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review."
-description_zh: "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual 审查."
-category: "dev-tools"
-tags: [ai, api, backend, cli, evaluation]
+description: Use when tasks involve creating, editing, analyzing, or formatting 
+  spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached 
+  recalculation, and visual review.
+description_zh: Use when tasks involve creating, editing, analyzing, or 
+  formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware 
+  workflows, cached recalculation, and visual 审查.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - evaluation
 needs_review: false
-source: 
+source:
 language: en
+slug: spreadsheet
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when tasks involve creating new workbooks with formulas, formatting, and structured layouts; reading or analyzing tabular data (filter, aggregate, pivot, compute metrics); modifying existing workbooks without breaking formulas, references, or formatting; visualizing data with charts and summary tables; or recalculating formulas and reviewing rendered sheets before delivery.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Spreadsheet Skill
 
@@ -152,10 +189,6 @@ If the spreadsheet is an IB-style model (LBO, DCF, 3-statement, valuation):
 - Column labels for numeric data should be right-aligned; row labels should be left-aligned.
 - Indent submetrics under their parent line items.
 
-# When to use
-
-Use this skill when tasks involve creating new workbooks with formulas, formatting, and structured layouts; reading or analyzing tabular data (filter, aggregate, pivot, compute metrics); modifying existing workbooks without breaking formulas, references, or formatting; visualizing data with charts and summary tables; or recalculating formulas and reviewing rendered sheets before delivery.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -200,7 +233,3 @@ ws.cell(row=total_row, column=3).value = f"=SUM(C2:C{total_row - 1})"
 
 wb.save("output/spreadsheet/revenue_model.xlsx")
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

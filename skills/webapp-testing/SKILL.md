@@ -1,17 +1,28 @@
 ---
 name: Webapp Testing Harness
-name_zh: Web 应用 Playwright 测试脚手架
-description: "|"
-description_zh: "用 Playwright + Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察-行动模式、截图捕获，以及"静态 HTML vs 动态 SPA"决策树。"
-category: "dev-tools"
+name_zh: Web 应用测试脚手架
+slug: webapp-testing
+description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察行动模式、截图捕获。
+description_zh: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察行动模式、截图捕获。
+category: dev-tools
 tags: [ai, api, backend, cli, database]
-source: 
+source:
 ref: main
-license: Complete terms in LICENSE.txt
+license: MIT
 language: en
-author: "Anthropic (downstream pack: badhope)"
-version: 0.1.0
+author: AI-SKILL
+version: 1.0.0
+created: 2026-06-12
+updated: 2026-06-12
 needs_review: false
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
 
 

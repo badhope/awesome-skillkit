@@ -1,19 +1,51 @@
 ---
-name: "memfs-search"
-name_zh: "memfs-搜索"
-description: Semantic search over agent memory files. Use when you need to find conceptually
-description_zh: Semantic search over 智能体 memory files. Use when you need to find conceptually
-category: "dev-tools"
-tags: [ai, documentation, evaluation, frontend, javascript]
-source: 
+name: memfs-search
+name_zh: memfs-搜索
+description: Semantic search over agent memory files. Use when you need to find 
+  conceptually
+description_zh: Semantic search over 智能体 memory files. Use when you need to find
+  conceptually
+category: dev-tools
+tags:
+  - ai
+  - documentation
+  - evaluation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: memfs-search
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with memfs-search.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # MemFS Search
 
@@ -112,11 +144,6 @@ bash <SKILL_DIR>/scripts/memfs-search.sh status
 - Searching message history — use the `searching-messages` skill.
 - The query is a single word that would match literally — keyword Grep is faster.
 
-# When to use
-
-Use this skill when you need to work with memfs-search.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -131,7 +158,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

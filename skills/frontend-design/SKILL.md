@@ -1,20 +1,51 @@
 ---
-name: "frontend-design"
-name_zh: "frontend-design"
-description: "Guidance for distinctive, intentional visual design when building new"
-description_zh: "Guidance for distinctive, intentional visual 设计 when building new"
-category: "dev-tools"
-tags: [ai, api, cli, frontend, git]
-source: 
+name: frontend-design
+name_zh: frontend-design
+description: Guidance for distinctive, intentional visual design when building 
+  new
+description_zh: Guidance for distinctive, intentional visual 设计 when building 
+  new
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - frontend
+  - git
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: frontend-design
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with frontend-design.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Frontend Design
 
@@ -66,11 +97,6 @@ Treat failure and emptiness as moments for direction, not mood. Explain what wen
 
 Keep the register conversational and tuned: plain verbs, sentence case, no filler, with tone matched to the brand and the audience. Let each element do exactly one job. A label labels, an example demonstrates, and nothing quietly does double duty.
 
-# When to use
-
-Use this skill when you need to work with frontend-design.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -85,7 +111,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

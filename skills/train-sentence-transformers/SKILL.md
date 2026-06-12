@@ -1,17 +1,62 @@
 ---
-name: "train-sentence-transformers"
-name_zh: "train-sentence-transformers"
-description: "Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding model; for retrieval, similarity, clustering, classification, paraphrase mining, dedup, multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / pair classification), and `SparseEncoder` (SPLADE, sparse embedding model; for learned-sparse retrieval). Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. Use for any sentence-transformers training task."
-description_zh: "Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding 模型; for retrieval, similarity, clustering, classification, paraphrase mining, dedup, multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / pair classification), and `SparseEncoder` (SPLADE, sparse embedding 模型; for learned-sparse retrieval). Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. Use for any sentence-transformers 训练 task."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: train-sentence-transformers
+name_zh: train-sentence-transformers
+description: Train or fine-tune sentence-transformers models across 
+  `SentenceTransformer` (bi-encoder; dense or static embedding model; for 
+  retrieval, similarity, clustering, classification, paraphrase mining, dedup, 
+  multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / 
+  pair classification), and `SparseEncoder` (SPLADE, sparse embedding model; for
+  learned-sparse retrieval). Covers loss selection, hard-negative mining, 
+  evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. 
+  Use for any sentence-transformers training task.
+description_zh: Train or fine-tune sentence-transformers models across 
+  `SentenceTransformer` (bi-encoder; dense or static embedding 模型; for 
+  retrieval, similarity, clustering, classification, paraphrase mining, dedup, 
+  multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / 
+  pair classification), and `SparseEncoder` (SPLADE, sparse embedding 模型; for 
+  learned-sparse retrieval). Covers loss selection, hard-negative mining, 
+  evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. 
+  Use for any sentence-transformers 训练 task.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: train-sentence-transformers
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on train-sentence-transformers.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Train a sentence-transformers Model
 
@@ -110,10 +155,6 @@ hf auth login                                          # or set HF_TOKEN with wr
 
 GPU strongly recommended. CPU works only for demos and `[SentenceTransformer]` `StaticEmbedding`.
 
-# When to use
-
-Use this skill when you need guidance on train-sentence-transformers.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -121,7 +162,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
-name: "yelp-search"
-name_zh: "yelp-搜索"
-description: "Search Yelp for local businesses, get contact info, ratings, and hours."
-description_zh: "Search Yelp for local businesses, get contact info, ratings, and hours."
-category: "dev-tools"
-tags: [ai, api, backend, cli, evaluation]
-source: 
+name: yelp-search
+name_zh: yelp-搜索
+description: Search Yelp for local businesses, get contact info, ratings, and 
+  hours.
+description_zh: Search Yelp for local businesses, get contact info, ratings, and
+  hours.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - evaluation
+source:
 language: en
 needs_review: false
+slug: yelp-search
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with yelp-search.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Yelp Search Integration
 
@@ -167,11 +199,6 @@ Each business result includes:
 - Results limited to 50 per request
 - Some business info (pickup/delivery) not in API - contact directly
 
-# When to use
-
-Use this skill when you need to work with yelp-search.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -186,7 +213,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

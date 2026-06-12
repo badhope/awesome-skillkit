@@ -1,21 +1,49 @@
 ---
-name: "promptfoo-redteam-setup"
+name: promptfoo-redteam-setup
 name_zh: 设置 Promptfoo 红队测试
-description: "Create or refine promptfoo redteam setup configs: purpose, targets,"
+description: 'Create or refine promptfoo redteam setup configs: purpose, targets,'
 description_zh: 配置 Promptfoo 红队测试环境和测试用例。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: promptfoo-redteam-setup
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on promptfoo redteam setup.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Promptfoo Redteam Setup
 
@@ -199,11 +227,6 @@ When done, state:
 - Validation/generation commands run and generated test count
 - Risks intentionally deferred to a later scan
 
-# When to use
-
-Use this skill when you need guidance on promptfoo redteam setup.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -213,7 +236,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

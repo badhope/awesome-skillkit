@@ -1,18 +1,54 @@
 ---
-name: "letta-fleet-management"
-name_zh: "letta-fleet-管理"
-description: "Manage Letta AI agent fleets declaratively with kubectl-style CLI. Use when creating, updating, or managing multiple Letta agents with shared configurations, memory blocks, tools, folders, canary deployments, multi-tenancy, and bulk operations."
-description_zh: "Manage Letta AI 智能体 fleets declaratively with kubectl-style CLI. Use when creating, updating, or managing multiple Letta agents with shared configurations, memory blocks, tools, folders, canary deployments, multi-tenancy, and bulk operations."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: letta-fleet-management
+name_zh: letta-fleet-管理
+description: Manage Letta AI agent fleets declaratively with kubectl-style CLI. 
+  Use when creating, updating, or managing multiple Letta agents with shared 
+  configurations, memory blocks, tools, folders, canary deployments, 
+  multi-tenancy, and bulk operations.
+description_zh: Manage Letta AI 智能体 fleets declaratively with kubectl-style CLI.
+  Use when creating, updating, or managing multiple Letta agents with shared 
+  configurations, memory blocks, tools, folders, canary deployments, 
+  multi-tenancy, and bulk operations.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: MIT
 language: en
 needs_review: false
+slug: fleet-management
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on letta-fleet-management.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # lettactl
 
@@ -252,10 +288,6 @@ await ctl.deployFromYaml('./template.yaml', { match: '*-prod' });
 
 See `reference/sdk-usage.md` for full API.
 
-# When to use
-
-Use this skill when you need guidance on letta-fleet-management.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -263,7 +295,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

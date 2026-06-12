@@ -1,21 +1,50 @@
 ---
-name: "open-pr"
-name_zh: "open-pr"
-description: "Open a pull request with proper PR template, test coverage, and review"
-description_zh: "Open a pull request with proper PR template, 测试 coverage, and 审查"
-category: "dev-tools"
-tags: [ai, api, backend, database, docker]
-source: 
+name: open-pr
+name_zh: open-pr
+description: Open a pull request with proper PR template, test coverage, and 
+  review
+description_zh: Open a pull request with proper PR template, 测试 coverage, and 审查
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - docker
+source:
 language: en
-author: "autogpt-team"
+author: autogpt-team
 version: 1.0.0
 needs_review: false
+slug: open-pr
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with open-pr.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Open a Pull Request
 
@@ -114,11 +143,6 @@ After the PR is created and review is triggered:
 - If waiting on the review bot, let the user know the expected wait time (~30 min)
 - Do not merge without human approval
 
-# When to use
-
-Use this skill when you need to work with open-pr.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -133,7 +157,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

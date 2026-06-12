@@ -1,15 +1,52 @@
 ---
-name: "huggingface-datasets"
-name_zh: "huggingface-datasets"
-description: "Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics."
-description_zh: "Use this 技能 for Hugging Face Dataset Viewer 接口 workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: huggingface-datasets
+name_zh: huggingface-datasets
+description: Use this skill for Hugging Face Dataset Viewer API workflows that 
+  fetch subset/split metadata, paginate rows, search text, apply filters, 
+  download parquet URLs, and read size or statistics.
+description_zh: Use this 技能 for Hugging Face Dataset Viewer 接口 workflows that 
+  fetch subset/split metadata, paginate rows, search text, apply filters, 
+  download parquet URLs, and read size or statistics.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: huggingface-datasets
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-datasets.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Hugging Face Dataset Viewer
 
@@ -114,10 +151,6 @@ hf repos create <namespace>/<repo> --type dataset --private --exist-ok
 hf upload <namespace>/<repo> ~/.codex/sessions codex/<project-or-cwd> --type dataset
 ```
 
-# When to use
-
-Use this skill when you need guidance on huggingface-datasets.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -125,7 +158,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

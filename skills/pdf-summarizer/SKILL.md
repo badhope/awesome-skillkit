@@ -3,20 +3,31 @@ name: PDF Summarizer
 name_zh: PDF 摘要器
 description: number of bullets in the summary
 description_zh: 把 PDF 总结成 N 条要点，按受众调整深度。无厂商依赖。
-category: ai
-tags: [ai, api, documentation, frontend, llm]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - documentation
+  - frontend
+  - llm
+source:
 license: MIT
 language: en
 author: badhope
 version: 1.0.0
 needs_review: false
+slug: pdf-summarizer
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 # When to use
 
 The user has handed you a PDF (paper, report, contract, README-as-PDF) and wants the gist without reading 50 pages. You have access to a PDF reader.

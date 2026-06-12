@@ -1,16 +1,33 @@
 ---
-name: "testing-parity"
-name_zh: "测试-parity"
-description: ">"
-description_zh: ">"
-category: "dev-tools"
-tags: [ai, cli, evaluation, frontend, huggingface]
+name: testing-parity
+name_zh: 测试-parity
+description: '>'
+description_zh: '>'
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - evaluation
+  - frontend
+  - huggingface
 needs_review: false
-source: 
+source:
 language: en
+slug: parity-testing
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
 > **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — follow the **"#### Model-level tests"** section in [`../model-integration/SKILL.md`](../model-integration/SKILL.md) (generate via `utils/generate_model_tests.py`, no `--include` flags initially, no `LoraTesterMixin`). Parity tests verify numerical correctness during development; the generated test suite is what CI runs.
 
 ## Setup — gather before starting
@@ -84,6 +101,22 @@ The challenge: pipelines are monolithic `__call__` methods -- you can't just cal
 - **`denoise`** (test last): Run both pipelines with realistic `num_steps` (e.g. 30) so the scheduler computes correct sigmas/timesteps, but stop after 2 loop iterations using `after_step_1`. Don't set `num_steps=2` -- that produces unrealistic sigma schedules.
 
 ```python
+# When to use
+
+Use this skill when you need guidance on testing-parity.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # Encode stage -- stop before the loop, compare ALL inputs:
 ref_ckpts = {"preloop": Checkpoint(save=True, stop=True)}
 run_reference_pipeline(ref_ckpts)
@@ -175,10 +208,6 @@ Cosine similarity is especially useful for GPU/bfloat16 tests where max_diff can
 
 See [pitfalls.md](pitfalls.md) for the full list of gotchas to watch for during parity testing.
 
-# When to use
-
-Use this skill when you need guidance on testing-parity.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -186,7 +215,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,20 +1,51 @@
 ---
-name: "importing-chatgpt-memory"
-name_zh: "importing-chatgpt-内存"
-description: "Clone ChatGPT saved memory into Letta, then optionally enrich it with"
-description_zh: "Clone ChatGPT saved memory into Letta, then optionally enrich it with"
-category: "dev-tools"
-tags: [ai, api, documentation, frontend, git]
-source: 
+name: importing-chatgpt-memory
+name_zh: importing-chatgpt-内存
+description: Clone ChatGPT saved memory into Letta, then optionally enrich it 
+  with
+description_zh: Clone ChatGPT saved memory into Letta, then optionally enrich it
+  with
+category: dev-tools
+tags:
+  - ai
+  - api
+  - documentation
+  - frontend
+  - git
+source:
 license: MIT
 language: en
 needs_review: false
+slug: importing-chatgpt-memory
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with importing-chatgpt-memory.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Cloning ChatGPT Memory into Letta
 
@@ -723,11 +754,6 @@ If the user needs help obtaining their export: <https://help.openai.com/en/artic
 
 - `references/memory-import-workflow.md` — condensed checklist for the import workflow
 
-# When to use
-
-Use this skill when you need to work with importing-chatgpt-memory.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -742,7 +768,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

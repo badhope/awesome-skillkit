@@ -1,19 +1,50 @@
 ---
-name: "agent-slack"
-name_zh: "智能体-slack"
-description: "Slack automation CLI — read/send/search messages, browse threads and"
-description_zh: "Slack 自动化 CLI — read/send/search messages, browse threads and"
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, git]
-source: 
+name: agent-slack
+name_zh: 智能体-slack
+description: Slack automation CLI — read/send/search messages, browse threads 
+  and
+description_zh: Slack 自动化 CLI — read/send/search messages, browse threads and
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - git
+source:
 language: en
 needs_review: false
+slug: slack
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with agent-slack.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Slack automation with `agent-slack`
 
@@ -232,11 +263,6 @@ agent-slack user get "@alice" --workspace "https://workspace.slack.com"
 - references/targets.md: URL vs `#channel` targeting rules
 - references/output.md: JSON output shapes + download paths
 
-# When to use
-
-Use this skill when you need to work with agent-slack.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -251,7 +277,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

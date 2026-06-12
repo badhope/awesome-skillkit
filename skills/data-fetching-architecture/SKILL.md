@@ -1,15 +1,52 @@
 ---
-name: "data-fetching-architecture"
-name_zh: "data-fetching-architecture"
-description: "LobeHub data-fetching pipeline guide. Use for service layer, Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or migrating useEffect fetches."
-description_zh: "LobeHub data-fetching pipeline guide. Use for service layer, Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or migrating useEffect fetches."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: data-fetching-architecture
+name_zh: data-fetching-architecture
+description: LobeHub data-fetching pipeline guide. Use for service layer, 
+  Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
+  migrating useEffect fetches.
+description_zh: LobeHub data-fetching pipeline guide. Use for service layer, 
+  Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
+  migrating useEffect fetches.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: data-fetching-architecture
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on data-fetching-architecture.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # LobeHub Data Fetching Architecture
 
@@ -620,10 +657,6 @@ See `store-data-structures` for details.
 - **`store-data-structures`** — How to structure List and Detail data in stores
 - **`zustand`** — General Zustand patterns and best practices
 
-# When to use
-
-Use this skill when you need guidance on data-fetching-architecture.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -631,7 +664,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

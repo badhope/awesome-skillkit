@@ -1,22 +1,51 @@
 ---
-name: "trl-training"
-name_zh: "trl-training"
-description: "Train and fine-tune transformer language models using TRL (Transformers"
-description_zh: "Train and fine-tune transformer language models using TRL (Transformers"
-category: "dev-tools"
-tags: [ai, cli, database, documentation, evaluation]
-source: 
-license: "Apache-2.0"
+name: trl-training
+name_zh: trl-training
+description: Train and fine-tune transformer language models using TRL 
+  (Transformers
+description_zh: Train and fine-tune transformer language models using TRL 
+  (Transformers
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - documentation
+  - evaluation
+source:
+license: Apache-2.0
 language: en
 author: huggingface
 version: 1.0.0
 needs_review: false
+slug: trl-training
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need to work with trl-training.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # TRL Training Skill
 
@@ -324,11 +353,6 @@ When helping users with TRL:
 - Suggest LoRA for resource-constrained environments
 - Point to specific documentation sections for advanced features
 
-# When to use
-
-Use this skill when you need to work with trl-training.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -343,7 +367,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,20 +1,34 @@
 ---
-name: "review-standards"
-name_zh: "审查-standards"
-description: Use this skill when asked to review authentication code for security
+name: review-standards
+name_zh: 审查-standards
+description: Use this skill when asked to review authentication code for 
+  security
 description_zh: Use this 技能 when asked to 审查 authentication 代码 for 安全
-category: ai
-tags: [ai, frontend, llm, python, security]
-source: 
+category: applications
+tags:
+  - ai
+  - frontend
+  - llm
+  - python
+  - security
+source:
 language: en
 needs_review: false
+slug: review-standards
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 When reviewing authentication code:
 
 1. Check password hashing.
@@ -25,6 +39,18 @@ When reviewing authentication code:
 
 Use this skill when you need to work with review-standards.
 
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # When NOT to use
 
@@ -40,7 +66,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

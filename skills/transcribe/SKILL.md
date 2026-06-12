@@ -1,20 +1,51 @@
 ---
 name: transcribe
 name_zh: transcribe
-description: "Transcribe audio files to text with optional diarization and known-speaker"
-description_zh: "Transcribe audio files to text with optional diarization and known-speaker"
-category: "dev-tools"
-tags: [ai, api, backend, cli, evaluation]
-source: 
+description: Transcribe audio files to text with optional diarization and 
+  known-speaker
+description_zh: Transcribe audio files to text with optional diarization and 
+  known-speaker
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - evaluation
+source:
 language: en
 needs_review: false
+slug: transcribe
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "transcribe".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Audio Transcribe
 
@@ -92,11 +123,6 @@ python3 "$TRANSCRIBE_CLI" \
 ## Reference map
 - `references/api.md`: supported formats, limits, response formats, and known-speaker notes.
 
-# When to use
-
-Use this skill when you need to work with "transcribe".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -111,7 +137,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -3,18 +3,49 @@ name: Task
 name_zh: 任务
 description: Execute tasks within the LobeHub task system using the lh task CLI
 description_zh: 在LobeHub任务系统中使用lh task CLI执行任务
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, javascript]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: task
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
 \<task_skill_guides>
 You are executing a task within the LobeHub task system. Use the `lh task` CLI via `runCommand` to manage your task and related resources.
+
+# When to use
+
+Use this skill when you need guidance on task.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Task Lifecycle
 
@@ -67,10 +98,6 @@ You are executing a task within the LobeHub task system. Use the `lh task` CLI v
 - **Complete when done**: Use `lh task complete` when all deliverables are ready
   \</task_skill_guides>
 
-# When to use
-
-Use this skill when you need guidance on task.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -90,7 +117,3 @@ python scripts/use-skill.py task
 python scripts/inspect-skill.py task
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,20 +1,51 @@
 ---
-name: "huggingface-llm-trainer"
-name_zh: "huggingface-大语言模型-trainer"
-description: "Train or fine-tune language and vision models using TRL (Transformer"
-description_zh: "Train or fine-tune language and vision models using TRL (Transformer"
-category: "dev-tools"
-tags: [ai, api, cli, deployment, docker]
-source: 
+name: huggingface-llm-trainer
+name_zh: huggingface-大语言模型-trainer
+description: Train or fine-tune language and vision models using TRL 
+  (Transformer
+description_zh: Train or fine-tune language and vision models using TRL 
+  (Transformer
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - deployment
+  - docker
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: huggingface-llm-trainer
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with huggingface-llm-trainer.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # TRL Training on Hugging Face Jobs
 
@@ -173,6 +204,7 @@ UV scripts use PEP 723 inline dependencies for clean, self-contained training. *
 hf_jobs("uv", {
     "script": """
 # /// script
+# /// script
 # dependencies = ["trl>=0.12.0", "peft>=0.7.0", "trackio"]
 # ///
 
@@ -182,6 +214,68 @@ from trl import SFTTrainer, SFTConfig
 import trackio
 
 dataset = load_dataset("trl-lib/Capybara", split="train")
+
+# ///
+```
+
+## Troubleshooting
+
+**Common issues:**
+- Job times out → Increase timeout, reduce epochs/dataset, use smaller model/LoRA
+- Model not saved to Hub → Check push_to_hub=True, hub_model_id, secrets=HF_TOKEN
+- Out of Memory (OOM) → Reduce batch size, increase gradient accumulation, enable LoRA, use larger GPU
+- Dataset format error → Validate with dataset inspector (see Dataset Validation section)
+- Import/module errors → Add PEP 723 header with dependencies, verify format
+- Authentication errors → Check `mcp__huggingface__hf_whoami()`, token permissions, secrets parameter
+
+**See:** `references/troubleshooting.md` for complete troubleshooting guide
+
+## Resources
+
+### References (In This Skill)
+- `references/training_methods.md` - Overview of SFT, DPO, GRPO, KTO, PPO, Reward Modeling
+- `references/training_patterns.md` - Common training patterns and examples
+- `references/unsloth.md` - Unsloth for fast VLM training (~2x speed, 60% less VRAM)
+- `references/gguf_conversion.md` - Complete GGUF conversion guide
+- `references/trackio_guide.md` - Trackio monitoring setup
+- `references/hardware_guide.md` - Hardware specs and selection
+- `references/hub_saving.md` - Hub authentication troubleshooting
+- `references/troubleshooting.md` - Common issues and solutions
+- `references/local_training_macos.md` - Local training on macOS
+
+### Scripts (In This Skill)
+- `scripts/train_sft_example.py` - Production SFT template
+- `scripts/train_dpo_example.py` - Production DPO template
+- `scripts/train_grpo_example.py` - Production GRPO template
+- `scripts/unsloth_sft_example.py` - Unsloth text LLM training template (faster, less VRAM)
+- `scripts/estimate_cost.py` - Estimate time and cost (offer when appropriate)
+- `scripts/convert_to_gguf.py` - Complete GGUF conversion script
+- `scripts/hf_benchmarks.py` - Search for benchmark results and leaderboards by task, alias or free text.
+
+### External Scripts
+- [Dataset Inspector](https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py) - Validate dataset format before training (use via `uv run` or `hf_jobs`)
+
+### External Links
+- [TRL Documentation](https://huggingface.co/docs/trl)
+- [TRL Jobs Training Guide](https://huggingface.co/docs/trl/en/jobs_training)
+- [TRL Jobs Package](https://github.com/huggingface/trl-jobs)
+- [HF Jobs Documentation](https://huggingface.co/docs/huggingface_hub/guides/jobs)
+- [TRL Example Scripts](https://github.com/huggingface/trl/tree/main/examples/scripts)
+- [UV Scripts Guide](https://docs.astral.sh/uv/guides/scripts/)
+- [UV Scripts Organization](https://huggingface.co/uv-scripts)
+
+## Key Takeaways
+
+1. **Submit scripts inline** - The `script` parameter accepts Python code directly; no file saving required unless user requests
+2. **Jobs are asynchronous** - Don't wait/poll; let user check when ready
+3. **Always set timeout** - Default 30 min is insufficient; minimum 1-2 hours recommended
+4. **Always enable Hub push** - Environment is ephemeral; without push, all results lost
+5. **Include Trackio** - Use example scripts as templates for real-time monitoring
+6. **Offer cost estimation** - When parameters are known, use `scripts/estimate_cost.py`
+7. **Use UV scripts (Approach 1)** - Default to `hf_jobs("uv", {...})` with inline scripts; TRL maintained scripts for standard training; avoid bash `trl-jobs` commands in Claude Code
+8. **Use hf_doc_fetch/hf_doc_search** for latest TRL documentation
+9. **Validate dataset format** before training with dataset inspector (see Dataset Validation section)
+10. **Choose appropriate hardware** for model size; use LoRA for models >7B
 
 # Create train/eval split for monitoring
 dataset_split = dataset.train_test_split(test_size=0.1, seed=42)
@@ -685,75 +779,7 @@ See `references/training_patterns.md` for detailed examples including:
 **Fix:**
 Add to PEP 723 header:
 ```python
-# /// script
 # dependencies = ["trl>=0.12.0", "peft>=0.7.0", "trackio", "missing-package"]
-# ///
-```
-
-## Troubleshooting
-
-**Common issues:**
-- Job times out → Increase timeout, reduce epochs/dataset, use smaller model/LoRA
-- Model not saved to Hub → Check push_to_hub=True, hub_model_id, secrets=HF_TOKEN
-- Out of Memory (OOM) → Reduce batch size, increase gradient accumulation, enable LoRA, use larger GPU
-- Dataset format error → Validate with dataset inspector (see Dataset Validation section)
-- Import/module errors → Add PEP 723 header with dependencies, verify format
-- Authentication errors → Check `mcp__huggingface__hf_whoami()`, token permissions, secrets parameter
-
-**See:** `references/troubleshooting.md` for complete troubleshooting guide
-
-## Resources
-
-### References (In This Skill)
-- `references/training_methods.md` - Overview of SFT, DPO, GRPO, KTO, PPO, Reward Modeling
-- `references/training_patterns.md` - Common training patterns and examples
-- `references/unsloth.md` - Unsloth for fast VLM training (~2x speed, 60% less VRAM)
-- `references/gguf_conversion.md` - Complete GGUF conversion guide
-- `references/trackio_guide.md` - Trackio monitoring setup
-- `references/hardware_guide.md` - Hardware specs and selection
-- `references/hub_saving.md` - Hub authentication troubleshooting
-- `references/troubleshooting.md` - Common issues and solutions
-- `references/local_training_macos.md` - Local training on macOS
-
-### Scripts (In This Skill)
-- `scripts/train_sft_example.py` - Production SFT template
-- `scripts/train_dpo_example.py` - Production DPO template
-- `scripts/train_grpo_example.py` - Production GRPO template
-- `scripts/unsloth_sft_example.py` - Unsloth text LLM training template (faster, less VRAM)
-- `scripts/estimate_cost.py` - Estimate time and cost (offer when appropriate)
-- `scripts/convert_to_gguf.py` - Complete GGUF conversion script
-- `scripts/hf_benchmarks.py` - Search for benchmark results and leaderboards by task, alias or free text.
-
-### External Scripts
-- [Dataset Inspector](https://huggingface.co/datasets/mcp-tools/skills/raw/main/dataset_inspector.py) - Validate dataset format before training (use via `uv run` or `hf_jobs`)
-
-### External Links
-- [TRL Documentation](https://huggingface.co/docs/trl)
-- [TRL Jobs Training Guide](https://huggingface.co/docs/trl/en/jobs_training)
-- [TRL Jobs Package](https://github.com/huggingface/trl-jobs)
-- [HF Jobs Documentation](https://huggingface.co/docs/huggingface_hub/guides/jobs)
-- [TRL Example Scripts](https://github.com/huggingface/trl/tree/main/examples/scripts)
-- [UV Scripts Guide](https://docs.astral.sh/uv/guides/scripts/)
-- [UV Scripts Organization](https://huggingface.co/uv-scripts)
-
-## Key Takeaways
-
-1. **Submit scripts inline** - The `script` parameter accepts Python code directly; no file saving required unless user requests
-2. **Jobs are asynchronous** - Don't wait/poll; let user check when ready
-3. **Always set timeout** - Default 30 min is insufficient; minimum 1-2 hours recommended
-4. **Always enable Hub push** - Environment is ephemeral; without push, all results lost
-5. **Include Trackio** - Use example scripts as templates for real-time monitoring
-6. **Offer cost estimation** - When parameters are known, use `scripts/estimate_cost.py`
-7. **Use UV scripts (Approach 1)** - Default to `hf_jobs("uv", {...})` with inline scripts; TRL maintained scripts for standard training; avoid bash `trl-jobs` commands in Claude Code
-8. **Use hf_doc_fetch/hf_doc_search** for latest TRL documentation
-9. **Validate dataset format** before training with dataset inspector (see Dataset Validation section)
-10. **Choose appropriate hardware** for model size; use LoRA for models >7B
-
-# When to use
-
-Use this skill when you need to work with huggingface-llm-trainer.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -768,7 +794,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

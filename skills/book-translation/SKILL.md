@@ -1,21 +1,50 @@
 ---
-name: "book-translation"
+name: book-translation
 name_zh: 书籍翻译
-description: Translate "The Interactive Book of Prompting" chapters and UI strings
+description: Translate "The Interactive Book of Prompting" chapters and UI 
+  strings
 description_zh: 将书籍内容从一种语言翻译成另一种语言，保持风格和语调。
-category: ai
-tags: [ai, api, backend, frontend, javascript]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - frontend
+  - javascript
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: book-translation
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on book translation.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Book Translation Skill
 
@@ -226,11 +255,6 @@ The English (`en`) translation is complete and serves as the **base template** f
 - **Cultural adaptation**: Adapt examples to be relevant for the target audience where appropriate
 - **Natural language**: Prioritize natural-sounding translations over literal ones
 
-# When to use
-
-Use this skill when you need guidance on book translation.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -240,7 +264,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,20 +1,51 @@
 ---
 name: screenshot
 name_zh: screenshot
-description: Use when the user explicitly asks for a desktop or system screenshot
-description_zh: Use when the 用户 explicitly asks for a desktop or system screenshot
-category: "dev-tools"
-tags: [ai, database, figma, frontend, llm]
-source: 
+description: Use when the user explicitly asks for a desktop or system 
+  screenshot
+description_zh: Use when the 用户 explicitly asks for a desktop or system 
+  screenshot
+category: dev-tools
+tags:
+  - ai
+  - database
+  - figma
+  - frontend
+  - llm
+source:
 language: en
 needs_review: false
+slug: screenshot
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "screenshot".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Screenshot Capture
 
@@ -278,11 +309,6 @@ gnome-screenshot -w -f output/window.png
 - If saving to the OS default location fails with permission errors in a sandbox, rerun the command with escalated permissions.
 - Always report the saved file path in the response.
 
-# When to use
-
-Use this skill when you need to work with "screenshot".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -297,7 +323,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

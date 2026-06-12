@@ -1,17 +1,58 @@
 ---
-name: "plugin-creator"
-name_zh: "plugin-creator"
-description: "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metadata."
-description_zh: "创建 and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or 测试. Use when Codex needs to 创建 a new local plugin, add optional plugin structure, or 生成 or 更新 repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metadata."
-category: ai
-tags: [ai, frontend, javascript, llm, python]
-source: 
+name: plugin-creator
+name_zh: plugin-creator
+description: Create and scaffold plugin directories for Codex with a required 
+  `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline 
+  placeholders you can edit before publishing or testing. Use when Codex needs 
+  to create a new local plugin, add optional plugin structure, or generate or 
+  update repo-root `.agents/plugins/marketplace.json` entries for plugin 
+  ordering and availability metadata.
+description_zh: 创建 and scaffold plugin directories for Codex with a required 
+  `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline 
+  placeholders you can edit before publishing or 测试. Use when Codex needs to 创建 
+  a new local plugin, add optional plugin structure, or 生成 or 更新 repo-root 
+  `.agents/plugins/marketplace.json` entries for plugin ordering and 
+  availability metadata.
+category: applications
+tags:
+  - ai
+  - frontend
+  - javascript
+  - llm
+  - python
+source:
 language: en
 needs_review: false
+slug: plugin-creator
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on plugin-creator.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Plugin Creator
 
@@ -169,10 +210,6 @@ After editing `SKILL.md`, run:
 python3 <path-to-skill-creator>/scripts/quick_validate.py .agents/skills/plugin-creator
 ```
 
-# When to use
-
-Use this skill when you need guidance on plugin-creator.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -180,7 +217,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

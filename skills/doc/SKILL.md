@@ -1,20 +1,51 @@
 ---
 name: doc
 name_zh: doc
-description: "Use when the task involves reading, creating, or editing `.docx` documents,"
-description_zh: "Use when the task involves reading, creating, or editing `.docx` documents,"
-category: "dev-tools"
-tags: [ai, cli, documentation, frontend, llm]
-source: 
+description: Use when the task involves reading, creating, or editing `.docx` 
+  documents,
+description_zh: Use when the task involves reading, creating, or editing `.docx`
+  documents,
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - frontend
+  - llm
+source:
 language: en
 needs_review: false
+slug: doc
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "doc".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # DOCX Skill
 
@@ -91,11 +122,6 @@ python3 scripts/render_docx.py /path/to/file.docx --output_dir /tmp/docx_pages
 - Fix any spacing, alignment, or pagination issues and repeat the render loop.
 - Confirm there are no leftovers (temp files, duplicate renders) unless the user asks to keep them.
 
-# When to use
-
-Use this skill when you need to work with "doc".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -110,7 +136,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

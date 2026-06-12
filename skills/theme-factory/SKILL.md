@@ -1,21 +1,51 @@
 ---
-name: "theme-factory"
-name_zh: "theme-factory"
-description: "Toolkit for styling artifacts with a theme. These artifacts can be slides,"
-description_zh: "Toolkit for styling artifacts with a theme. These artifacts can be slides,"
-category: ai
-tags: [ai, api, frontend, llm, python]
-source: 
+name: theme-factory
+name_zh: theme-factory
+description: Toolkit for styling artifacts with a theme. These artifacts can be 
+  slides,
+description_zh: Toolkit for styling artifacts with a theme. These artifacts can 
+  be slides,
+category: applications
+tags:
+  - ai
+  - api
+  - frontend
+  - llm
+  - python
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: theme-factory
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with theme-factory.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Theme Factory Skill
 
@@ -70,11 +100,6 @@ After a preferred theme is selected:
 ## Create your Own Theme
 To handle cases where none of the existing themes work for an artifact, create a custom theme. Based on provided inputs, generate a new theme similar to the ones above. Give the theme a similar name describing what the font/color combinations represent. Use any basic description provided to choose appropriate colors/fonts. After generating the theme, show it for review and verification. Following that, apply the theme as described above.
 
-# When to use
-
-Use this skill when you need to work with theme-factory.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -89,7 +114,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,19 +1,51 @@
 ---
-name: "upstash-workflow"
-name_zh: "upstash-workflow"
-description: "LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute"
-description_zh: "LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute"
-category: ai
-tags: [ai, api, backend, database, deployment]
-source: 
+name: upstash-workflow
+name_zh: upstash-workflow
+description: LobeHub Upstash Workflow and QStash guide. Use for async workflows,
+  process/paginate/execute
+description_zh: LobeHub Upstash Workflow and QStash guide. Use for async 
+  workflows, process/paginate/execute
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - deployment
+source:
 language: en
 needs_review: false
+slug: upstash-workflow
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with upstash-workflow.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Upstash Workflow Implementation Guide
 
@@ -199,11 +231,6 @@ QSTASH_URL=https://custom-qstash.com
 - [Example Workflows in Codebase](<../../src/app/(backend)/api/workflows/>)
 - [Workflow Classes](../../apps/server/src/workflows/)
 
-# When to use
-
-Use this skill when you need to work with upstash-workflow.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -218,7 +245,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

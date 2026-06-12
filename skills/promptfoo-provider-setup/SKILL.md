@@ -1,19 +1,50 @@
 ---
-name: "promptfoo-provider-setup"
-name_zh: "promptfoo-provider-设置"
-description: "Configure promptfoo providers or redteam targets for hosted models,"
-description_zh: "Configure promptfoo providers or redteam targets for hosted models,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: promptfoo-provider-setup
+name_zh: promptfoo-provider-设置
+description: Configure promptfoo providers or redteam targets for hosted models,
+description_zh: Configure promptfoo providers or redteam targets for hosted 
+  models,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: promptfoo-provider-setup
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with promptfoo-provider-setup.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Promptfoo Provider Setup
 
@@ -174,11 +205,6 @@ When done, state:
 - Safe smoke command with `--no-cache --no-share`
 - What was actually verified, and what remains a TODO
 
-# When to use
-
-Use this skill when you need to work with promptfoo-provider-setup.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -193,7 +219,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

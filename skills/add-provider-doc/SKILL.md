@@ -1,19 +1,50 @@
 ---
-name: "add-provider-doc"
-name_zh: "添加-provider-doc"
-description: "Add documentation for a new AI provider — usage docs, env vars, Docker"
-description_zh: "Add 文档 for a new AI provider — usage docs, env vars, Docker"
-category: "dev-tools"
-tags: [ai, api, backend, database, docker]
-source: 
+name: add-provider-doc
+name_zh: 添加-provider-doc
+description: Add documentation for a new AI provider — usage docs, env vars, 
+  Docker
+description_zh: Add 文档 for a new AI provider — usage docs, env vars, Docker
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - database
+  - docker
+source:
 language: en
 needs_review: false
+slug: add-provider-doc
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with add-provider-doc.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Adding New AI Provider Documentation
 
@@ -103,11 +134,6 @@ Update all Dockerfiles at the **end** of ENV section:
 - [ ] All images prepared
 - [ ] No real API keys in docs
 
-# When to use
-
-Use this skill when you need to work with add-provider-doc.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -122,7 +148,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,20 +1,35 @@
 ---
-name: "add-provider-package"
-name_zh: "添加-provider-package"
-description: Guide for adding new AI provider packages to the AI SDK. Use when creating
-description_zh: Guide for adding new AI provider packages to the AI SDK. Use when creating
-category: "dev-tools"
-tags: [ai, api, backend, deployment, documentation]
-source: 
+name: add-provider-package
+name_zh: 添加-provider-package
+description: Guide for adding new AI provider packages to the AI SDK. Use when 
+  creating
+description_zh: Guide for adding new AI provider packages to the AI SDK. Use 
+  when creating
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - deployment
+  - documentation
+source:
 language: en
 needs_review: false
+slug: add-provider-package
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 ## Adding a New Provider Package
 
 This guide covers the process of creating a new `@ai-sdk/<provider>` package to integrate an AI service into the AI SDK.
@@ -269,15 +284,25 @@ Run `pnpm update-references` from the workspace root to update tsconfig referenc
 ### 14. Build and Test
 
 ```bash
+# When to use
+
+Use this skill when you need to work with add-provider-package.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # From workspace root
 pnpm build
-
-# From provider package
-cd packages/<provider>
-pnpm test              # Run all tests
-pnpm test:node         # Run Node.js tests
-pnpm test:edge         # Run Edge tests
-pnpm type-check        # Type checking
 
 # From workspace root
 pnpm type-check:full   # Full type check including examples
@@ -373,10 +398,12 @@ If `main` is set up to publish `beta` releases, no further action is necessary. 
 - [Develop AI Functions Example](../develop-ai-functions-example/SKILL.md)
 - [Capture API Response Test Fixture](../capture-api-response-test-fixture/SKILL.md)
 
-# When to use
-
-Use this skill when you need to work with add-provider-package.
-
+# From provider package
+cd packages/<provider>
+pnpm test              # Run all tests
+pnpm test:node         # Run Node.js tests
+pnpm test:edge         # Run Edge tests
+pnpm type-check        # Type checking
 
 # When NOT to use
 
@@ -392,7 +419,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

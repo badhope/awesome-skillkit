@@ -1,17 +1,37 @@
 ---
-name: "develop-ai-functions-example"
-name_zh: "develop-ai-functions-example"
-description: "Develop examples for AI SDK functions. Use when creating, running, or modifying examples under examples/ai-functions/src to validate provider support, demonstrate features, or create test fixtures."
-description_zh: "Develop examples for AI SDK functions. Use when creating, running, or modifying examples under examples/ai-functions/src to 验证 provider support, demonstrate features, or 创建 测试 fixtures."
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: develop-ai-functions-example
+name_zh: develop-ai-functions-example
+description: Develop examples for AI SDK functions. Use when creating, running, 
+  or modifying examples under examples/ai-functions/src to validate provider 
+  support, demonstrate features, or create test fixtures.
+description_zh: Develop examples for AI SDK functions. Use when creating, 
+  running, or modifying examples under examples/ai-functions/src to 验证 provider 
+  support, demonstrate features, or 创建 测试 fixtures.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: develop-ai-functions-example
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
 ## AI Functions Examples
 
 The `examples/ai-functions/` directory contains scripts for validating, testing, and iterating on AI SDK functions across providers.
@@ -231,6 +251,22 @@ const result = await generateText({
 
 6. **Reuse tools when appropriate**: Use `weatherTool` or create new reusable tools in `tools/`
 
+# When to use
+
+Use this skill when you need guidance on develop-ai-functions-example.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
 # Example
 
 Create a basic text generation example for OpenAI:
@@ -254,14 +290,6 @@ run(async () => {
 
 Run with: `pnpm tsx src/generate-text/openai.ts`
 
-# When to use
-
-Use this skill when you need guidance on develop-ai-functions-example.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

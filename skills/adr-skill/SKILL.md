@@ -1,17 +1,58 @@
 ---
-name: "adr-skill"
-name_zh: "adr-技能"
-description: "Create and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, update, accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and index; consult existing ADRs before implementing changes; or enforce ADR conventions. This skill uses Socratic questioning to capture intent before drafting, and validates output against an agent-readiness checklist."
-description_zh: "创建 and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, 更新, accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and index; consult existing ADRs before implementing changes; or enforce ADR conventions. This 技能 uses Socratic questioning to capture intent before drafting, and validates output against an 智能体-readiness checklist."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: adr-skill
+name_zh: adr-技能
+description: Create and maintain Architecture Decision Records (ADRs) optimized 
+  for agentic coding workflows. Use when you need to propose, write, update, 
+  accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and 
+  index; consult existing ADRs before implementing changes; or enforce ADR 
+  conventions. This skill uses Socratic questioning to capture intent before 
+  drafting, and validates output against an agent-readiness checklist.
+description_zh: 创建 and maintain Architecture Decision Records (ADRs) optimized 
+  for agentic coding workflows. Use when you need to propose, write, 更新, 
+  accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and 
+  index; consult existing ADRs before implementing changes; or enforce ADR 
+  conventions. This 技能 uses Socratic questioning to capture intent before 
+  drafting, and validates output against an 智能体-readiness checklist.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: adr-skill
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on adr-skill.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # ADR Skill
 
@@ -331,10 +372,6 @@ Notes:
 - Use `--dir` and `--strategy` to override.
 - Use `--json` to emit machine-readable output.
 
-# When to use
-
-Use this skill when you need guidance on adr-skill.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -342,7 +379,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

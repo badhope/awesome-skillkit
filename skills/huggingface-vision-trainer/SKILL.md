@@ -1,16 +1,68 @@
 ---
-name: "huggingface-vision-trainer"
-name_zh: "huggingface-vision-trainer"
-description: "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, Albumentations augmentation, mAP/mAR evaluation, accuracy metrics, SAM segmentation with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio monitoring, and Hub persistence. Use when users mention training object detection, image classification, SAM, SAM2, segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or fine-tuning vision models on Hugging Face Jobs."
-description_zh: "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, Albumentations augmentation, mAP/mAR 评估, accuracy metrics, SAM segmentation with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio monitoring, and Hub persistence. Use when users mention 训练 object detection, image classification, SAM, SAM2, segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or fine-tuning vision models on Hugging Face Jobs."
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: huggingface-vision-trainer
+name_zh: huggingface-vision-trainer
+description: Trains and fine-tunes vision models for object detection (D-FINE, 
+  RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, 
+  MobileViT, ResNet, ViT/DINOv3 — plus any Transformers classifier), and 
+  SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs 
+  cloud GPUs. Covers COCO-format dataset preparation, Albumentations 
+  augmentation, mAP/mAR evaluation, accuracy metrics, SAM segmentation with 
+  bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio 
+  monitoring, and Hub persistence. Use when users mention training object 
+  detection, image classification, SAM, SAM2, segmentation, image matting, DETR,
+  D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or 
+  fine-tuning vision models on Hugging Face Jobs.
+description_zh: Trains and fine-tunes vision models for object detection 
+  (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — 
+  MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers 
+  classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on 
+  Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, 
+  Albumentations augmentation, mAP/mAR 评估, accuracy metrics, SAM segmentation 
+  with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, 
+  Trackio monitoring, and Hub persistence. Use when users mention 训练 object 
+  detection, image classification, SAM, SAM2, segmentation, image matting, DETR,
+  D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or 
+  fine-tuning vision models on Hugging Face Jobs.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: huggingface-vision-trainer
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-vision-trainer.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Vision Model Training on Hugging Face Jobs
 
@@ -601,10 +653,6 @@ For comprehensive troubleshooting: see [references/reliability_principles.md](re
 - [Object Detection Datasets](https://huggingface.co/datasets?task_categories=task_categories:object-detection)
 - [Image Classification Datasets](https://huggingface.co/datasets?task_categories=task_categories:image-classification)
 
-# When to use
-
-Use this skill when you need guidance on huggingface-vision-trainer.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -612,7 +660,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

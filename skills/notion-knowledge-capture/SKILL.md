@@ -1,19 +1,51 @@
 ---
-name: "notion-knowledge-capture"
-name_zh: "notion-knowledge-capture"
-description: Capture conversations and decisions into structured Notion pages; use
-description_zh: Capture conversations and decisions into structured Notion pages; use
-category: "dev-tools"
-tags: [ai, api, cli, database, documentation]
-source: 
+name: notion-knowledge-capture
+name_zh: notion-knowledge-capture
+description: Capture conversations and decisions into structured Notion pages; 
+  use
+description_zh: Capture conversations and decisions into structured Notion 
+  pages; use
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: notion-knowledge-capture
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with notion-knowledge-capture.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Knowledge Capture
 
@@ -65,11 +97,6 @@ After successful login, the user will have to restart codex. You should finish y
 - `reference/` — database schemas and templates (e.g., `team-wiki-database.md`, `how-to-guide-database.md`, `faq-database.md`, `decision-log-database.md`, `documentation-database.md`, `learning-database.md`, `database-best-practices.md`).
 - `examples/` — capture patterns in practice (e.g., `decision-capture.md`, `how-to-guide.md`, `conversation-to-faq.md`).
 
-# When to use
-
-Use this skill when you need to work with notion-knowledge-capture.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -84,7 +111,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,19 +1,51 @@
 ---
-name: "figma-generate-design"
-name_zh: "figma-生成-design"
-description: "Use this skill alongside figma-use when the task involves translating"
-description_zh: "Use this 技能 alongside figma-use when the task involves translating"
-category: "dev-tools"
-tags: [ai, api, backend, cli, docker]
-source: 
+name: figma-generate-design
+name_zh: figma-生成-design
+description: Use this skill alongside figma-use when the task involves 
+  translating
+description_zh: Use this 技能 alongside figma-use when the task involves 
+  translating
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - docker
+source:
 language: en
 needs_review: false
+slug: figma-generate-design
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma-generate-design.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Build / Update Screens from Design System
 
@@ -352,11 +384,6 @@ Because this skill works incrementally (one section per call), errors are natura
 - **Validate visually after each section.** Use `get_screenshot` to catch issues early.
 - **Match existing conventions.** If the file already has screens, match their naming, sizing, and layout patterns.
 
-# When to use
-
-Use this skill when you need to work with figma-generate-design.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -371,7 +398,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

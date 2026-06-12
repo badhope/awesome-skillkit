@@ -1,19 +1,51 @@
 ---
-name: "at-dispatch-v2"
-name_zh: "at-dispatch-v2"
-description: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++
-description_zh: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++
-category: ai
-tags: [ai, api, backend, documentation, frontend]
-source: 
+name: at-dispatch-v2
+name_zh: at-dispatch-v2
+description: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen
+  C++
+description_zh: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in 
+  ATen C++
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - documentation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: at-dispatch-v2
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with at-dispatch-v2.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # AT_DISPATCH to AT_DISPATCH_V2 Converter
 
@@ -316,11 +348,6 @@ When asked to convert AT_DISPATCH macros:
 
 Do NOT compile or test the code - focus on accurate conversion only.
 
-# When to use
-
-Use this skill when you need to work with at-dispatch-v2.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -335,7 +362,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

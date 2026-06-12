@@ -1,15 +1,52 @@
 ---
-name: "hf-mcp"
-name_zh: "hf-mcp"
-description: "Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use Gradio Spaces as AI tools. Available when connected to the HF MCP server."
-description_zh: "Use Hugging Face Hub via MCP 服务器 tools. Search models, datasets, Spaces, papers. Get repo details, fetch 文档, 运行 compute jobs, and use Gradio Spaces as AI tools. Available when connected to the HF MCP 服务器."
-category: "dev-tools"
-tags: [ai, backend, database, documentation, frontend]
+name: hf-mcp
+name_zh: hf-mcp
+description: Use Hugging Face Hub via MCP server tools. Search models, datasets,
+  Spaces, papers. Get repo details, fetch documentation, run compute jobs, and 
+  use Gradio Spaces as AI tools. Available when connected to the HF MCP server.
+description_zh: Use Hugging Face Hub via MCP 服务器 tools. Search models, datasets,
+  Spaces, papers. Get repo details, fetch 文档, 运行 compute jobs, and use Gradio 
+  Spaces as AI tools. Available when connected to the HF MCP 服务器.
+category: dev-tools
+tags:
+  - ai
+  - backend
+  - database
+  - documentation
+  - frontend
 needs_review: false
-source: 
+source:
 language: en
+slug: hf-mcp
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on hf-mcp.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Hugging Face MCP Server
 
@@ -185,10 +222,6 @@ hf_jobs(operation="scheduled uv", args={
 - For jobs accessing private repos, always include `secrets: {"HF_TOKEN": "$HF_TOKEN"}`
 - Use `dynamic_space(operation="discover")` to see all available Space-based tasks
 
-# When to use
-
-Use this skill when you need guidance on hf-mcp.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -196,7 +229,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

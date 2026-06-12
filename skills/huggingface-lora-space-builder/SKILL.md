@@ -1,15 +1,67 @@
 ---
-name: "huggingface-lora-space-builder"
-name_zh: "huggingface-lora-space-builder"
-description: "Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default."
-description_zh: "构建 and publish a Gradio demo on Hugging Face Spaces for a 用户-provided LoRA. Use when someone asks to 创建, 生成, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting 模型-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
+name: huggingface-lora-space-builder
+name_zh: huggingface-lora-space-builder
+description: Build and publish a Gradio demo on Hugging Face Spaces for a 
+  user-provided LoRA. Use when someone asks to create, generate, ship, or 
+  publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs 
+  for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other 
+  diffusion base models. Also triggers when someone describes a LoRA they 
+  trained or hosts on the Hub and wants to share it. Covers picking the right 
+  base pipeline and `diffusers` inference recipe, designing a UI tailored to the
+  LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), 
+  respecting model-card recommendations (trigger words, steps, guidance, LoRA 
+  scale, example inputs), and shipping to ZeroGPU hardware as a private Space by
+  default.
+description_zh: 构建 and publish a Gradio demo on Hugging Face Spaces for a 
+  用户-provided LoRA. Use when someone asks to 创建, 生成, ship, or publish a Space, 
+  demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, 
+  Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. 
+  Also triggers when someone describes a LoRA they trained or hosts on the Hub 
+  and wants to share it. Covers picking the right base pipeline and `diffusers` 
+  inference recipe, designing a UI tailored to the LoRA's task and inputs 
+  (Union/multi-task control, edit, video, image, etc.), respecting 模型-card 
+  recommendations (trigger words, steps, guidance, LoRA scale, example inputs), 
+  and shipping to ZeroGPU hardware as a private Space by default.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
 needs_review: false
-source: 
+source:
 language: en
+slug: huggingface-lora-space-builder
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on huggingface-lora-space-builder.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Gradio LoRA Space Builder
 
@@ -397,10 +449,6 @@ The smoke-test exists to convert these from "user discovers it and reports back"
 - Asking for the HF token only at the end, then discovering the LoRA was private all along and you couldn't read the model card.
 - Exposing every diffusers knob. Pick the 1–3 controls that matter for this LoRA.
 - Long preambles in the chat reply once the Space is published. The Space URL is the deliverable; keep the wrap-up brief.
-# When to use
-
-Use this skill when you need guidance on huggingface-lora-space-builder.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -408,7 +456,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

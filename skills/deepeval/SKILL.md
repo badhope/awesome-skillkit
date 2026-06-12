@@ -1,21 +1,50 @@
 ---
 name: deepeval
 name_zh: DeepEval 评估
-description: DeepEval evaluation workflow for AI agents and LLM applications. TRIGGER
+description: DeepEval evaluation workflow for AI agents and LLM applications. 
+  TRIGGER
 description_zh: 使用 DeepEval 框架评估 LLM 应用的性能和质量。
-category: "dev-tools"
-tags: [ai, cli, documentation, evaluation, frontend]
-source: 
-license: "Apache-2.0"
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - documentation
+  - evaluation
+  - frontend
+source:
+license: Apache-2.0
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: deepeval
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on deepeval.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # DeepEval
 
@@ -170,11 +199,6 @@ deepeval view
 | Multi-turn E2E | `templates/test_multi_turn_e2e.py` |
 | Shared metric lists | `templates/metrics.py` |
 
-# When to use
-
-Use this skill when you need guidance on deepeval.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -184,7 +208,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,22 +1,51 @@
 ---
-name: "transformers-js"
-name_zh: "transformers-js"
-description: "Use Transformers.js to run state-of-the-art machine learning models directly"
-description_zh: "Use Transformers.js to 运行 state-of-the-art machine learning models directly"
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
-source: 
-license: "Apache-2.0"
+name: transformers-js
+name_zh: transformers-js
+description: Use Transformers.js to run state-of-the-art machine learning models
+  directly
+description_zh: Use Transformers.js to 运行 state-of-the-art machine learning 
+  models directly
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
+source:
+license: Apache-2.0
 language: en
 author: huggingface
-version: 4.x
+version: 4.0.0
 needs_review: false
+slug: transformers-js
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need to work with transformers-js.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Transformers.js - Machine Learning for JavaScript
 
@@ -699,11 +728,6 @@ For detailed patterns (React cleanup, servers, browser), see **[Code Examples](.
 
 This skill enables you to integrate state-of-the-art machine learning capabilities directly into JavaScript applications without requiring separate ML servers or Python environments.
 
-# When to use
-
-Use this skill when you need to work with transformers-js.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -718,7 +742,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

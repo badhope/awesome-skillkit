@@ -1,16 +1,52 @@
 ---
-name: "notion-meeting-intelligence"
-name_zh: "notion-meeting-intelligence"
-description: "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees."
-description_zh: "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees."
-category: "dev-tools"
-tags: [ai, api, cli, database, documentation]
-source: 
+name: notion-meeting-intelligence
+name_zh: notion-meeting-intelligence
+description: Prepare meeting materials with Notion context and Codex research; 
+  use when gathering context, drafting agendas/pre-reads, and tailoring 
+  materials to attendees.
+description_zh: Prepare meeting materials with Notion context and Codex 
+  research; use when gathering context, drafting agendas/pre-reads, and 
+  tailoring materials to attendees.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - documentation
+source:
 language: en
 needs_review: false
+slug: notion-meeting-intelligence
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on notion-meeting-intelligence.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Meeting Intelligence
 
@@ -66,10 +102,6 @@ After successful login, the user will have to restart codex. You should finish y
 - `reference/` — template picker and meeting templates (e.g., `template-selection-guide.md`, `status-update-template.md`, `decision-meeting-template.md`, `sprint-planning-template.md`, `one-on-one-template.md`, `retrospective-template.md`, `brainstorming-template.md`).
 - `examples/` — end-to-end meeting preps (e.g., `executive-review.md`, `project-decision.md`, `sprint-planning.md`, `customer-meeting.md`).
 
-# When to use
-
-Use this skill when you need guidance on notion-meeting-intelligence.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -89,7 +121,3 @@ python scripts/use-skill.py notion-meeting-intelligence
 python scripts/inspect-skill.py notion-meeting-intelligence
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

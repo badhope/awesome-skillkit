@@ -1,19 +1,50 @@
 ---
 name: cli
 name_zh: cli
-description: "LobeHub CLI (@lobehub/cli) development guide — commands, subcommands,"
-description_zh: "LobeHub CLI (@lobehub/cli) 开发 guide — commands, subcommands,"
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+description: LobeHub CLI (@lobehub/cli) development guide — commands, 
+  subcommands,
+description_zh: LobeHub CLI (@lobehub/cli) 开发 guide — commands, subcommands,
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: cli
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with cli.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # LobeHub CLI Development Guide
 
@@ -306,11 +337,6 @@ See `references/` for each command group:
 - **Models & Providers**: `references/models-providers.md` (model, provider)
 - **Search & Config**: `references/search-config.md` (search, whoami, usage)
 
-# When to use
-
-Use this skill when you need to work with cli.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -325,7 +351,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

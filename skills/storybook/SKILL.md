@@ -1,24 +1,35 @@
 ---
 name: Storybook Component Stories
 name_zh: Storybook 组件故事编写
-description: "|"
-description_zh: 为 React 组件编写或审查 Storybook 故事（.stories.tsx）—— CSF Next 格式、纯展示组件规则、类型化元数据、故事命名按状态、禁止 MSW。"一个文件一个导出组件"的规则是一把双刃剑。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: '|'
+description_zh: 为 React 组件编写或审查 Storybook 故事（.stories.tsx）—— CSF Next 
+  格式、纯展示组件规则、类型化元数据、故事命名按状态、禁止 MSW。"一个文件一个导出组件"的规则是一把双刃剑。
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 ref: main
 license: MIT
 language: en
-author: "Langfuse (downstream pack: badhope)"
+author: 'Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: storybook
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're writing or reviewing a **Storybook story** for a

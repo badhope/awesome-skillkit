@@ -1,17 +1,50 @@
 ---
 name: desktop
 name_zh: desktop
-description: "Electron desktop development guide — IPC handlers, controllers, preload scripts, window/menu management."
-description_zh: "Electron desktop 开发 guide — IPC handlers, controllers, preload scripts, window/menu 管理."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: Electron desktop development guide — IPC handlers, controllers, 
+  preload scripts, window/menu management.
+description_zh: Electron desktop 开发 guide — IPC handlers, controllers, preload 
+  scripts, window/menu 管理.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: desktop
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on desktop.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Desktop Development Guide
 
@@ -97,10 +130,6 @@ See `references/` for specific topics:
 3. **UX**: Add progress indicators, provide error feedback
 4. **Code organization**: Follow existing patterns, add documentation
 
-# When to use
-
-Use this skill when you need guidance on desktop.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -108,7 +137,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

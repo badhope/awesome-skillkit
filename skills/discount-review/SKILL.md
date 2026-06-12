@@ -1,20 +1,35 @@
 ---
-name: "discount-review"
-name_zh: "discount-审查"
-description: Inspect the discount policy fixture with a repeatable review checklist
-description_zh: Inspect the discount policy fixture with a repeatable 审查 checklist
-category: "dev-tools"
-tags: [ai, frontend, llm, python, typescript]
-source: 
+name: discount-review
+name_zh: discount-审查
+description: Inspect the discount policy fixture with a repeatable review 
+  checklist
+description_zh: Inspect the discount policy fixture with a repeatable 审查 
+  checklist
+category: dev-tools
+tags:
+  - ai
+  - frontend
+  - llm
+  - python
+  - typescript
+source:
 language: en
 needs_review: false
+slug: discount-review
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 Use this skill when asked to review the discount-policy fixture under `skill_fixture/repo`.
 
 1. Do not enumerate this skill directory; the workflow below is complete.
@@ -27,6 +42,18 @@ Use this skill when asked to review the discount-policy fixture under `skill_fix
 
 Use this skill when you need to work with discount-review.
 
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # When NOT to use
 
@@ -42,7 +69,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

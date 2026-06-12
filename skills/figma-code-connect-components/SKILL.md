@@ -1,19 +1,50 @@
 ---
-name: "figma-code-connect-components"
-name_zh: "figma-代码-connect-components"
-description: Connects Figma design components to code components using Code Connect
+name: figma-code-connect-components
+name_zh: figma-代码-connect-components
+description: Connects Figma design components to code components using Code 
+  Connect
 description_zh: Connects Figma 设计 components to 代码 components using 代码 Connect
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: figma-code-connect-components
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with figma-code-connect-components.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Code Connect Components
 
@@ -360,11 +391,6 @@ For more information about Code Connect:
 - [Code Connect Documentation](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect)
 - [Figma MCP Server Tools and Prompts](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
 
-# When to use
-
-Use this skill when you need to work with figma-code-connect-components.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -379,7 +405,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

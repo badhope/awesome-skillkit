@@ -1,20 +1,35 @@
 ---
 name: yeet
 name_zh: yeet
-description: "Use only when the user explicitly asks to stage, commit, push, and open"
-description_zh: "Use only when the 用户 explicitly asks to stage, commit, push, and open"
-category: "dev-tools"
-tags: [ai, api, cli, documentation, frontend]
-source: 
+description: Use only when the user explicitly asks to stage, commit, push, and 
+  open
+description_zh: Use only when the 用户 explicitly asks to stage, commit, push, and
+  open
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - documentation
+  - frontend
+source:
 language: en
 needs_review: false
+slug: yeet
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
-
-
-
-
-
-
 ## Prerequisites
 
 - Require GitHub CLI `gh`. Check `gh --version`. If missing, ask the user to install `gh` and stop.
@@ -148,6 +163,18 @@ Describe the net implementation change in concise prose.
 Use this skill when you need to work with "yeet".
 
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -162,7 +189,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

@@ -1,18 +1,69 @@
 ---
-name: "promptflow-to-maf"
-name_zh: "promptflow-to-maf"
-description: "Convert Prompt Flow flow definitions to Microsoft Agent Framework (MAF) workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates runnable Python code using agent-framework 1.0.x. WHEN: convert promptflow, migrate promptflow, promptflow to MAF, promptflow to agent framework, convert flow.dag.yaml, migrate flow to MAF, convert PF flow, PF to agent-framework, convert DAG flow to workflow, migrate LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source flow), deploying MAF workflows (use maf-online-endpoint), enabling tracing (use maf-tracing), or general agent-framework Q&A."
-description_zh: "Convert 提示词 Flow flow definitions to Microsoft 智能体 Framework (MAF) workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates runnable Python 代码 using 智能体-framework 1.0.x. WHEN: convert promptflow, migrate promptflow, promptflow to MAF, promptflow to 智能体 framework, convert flow.dag.yaml, migrate flow to MAF, convert PF flow, PF to 智能体-framework, convert DAG flow to workflow, migrate LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source flow), deploying MAF workflows (use maf-online-endpoint), enabling tracing (use maf-tracing), or general 智能体-framework Q&A."
-category: "dev-tools"
-tags: [ai, api, backend, cli, deployment]
+name: promptflow-to-maf
+name_zh: promptflow-to-maf
+description: 'Convert Prompt Flow flow definitions to Microsoft Agent Framework (MAF)
+  workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates runnable
+  Python code using agent-framework 1.0.x. WHEN: convert promptflow, migrate promptflow,
+  promptflow to MAF, promptflow to agent framework, convert flow.dag.yaml, migrate
+  flow to MAF, convert PF flow, PF to agent-framework, convert DAG flow to workflow,
+  migrate LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source
+  flow), deploying MAF workflows (use maf-online-endpoint), enabling tracing (use
+  maf-tracing), or general agent-framework Q&A.'
+description_zh: 'Convert 提示词 Flow flow definitions to Microsoft 智能体 Framework (MAF)
+  workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates runnable
+  Python 代码 using 智能体-framework 1.0.x. WHEN: convert promptflow, migrate promptflow,
+  promptflow to MAF, promptflow to 智能体 framework, convert flow.dag.yaml, migrate flow
+  to MAF, convert PF flow, PF to 智能体-framework, convert DAG flow to workflow, migrate
+  LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source flow),
+  deploying MAF workflows (use maf-online-endpoint), enabling tracing (use maf-tracing),
+  or general 智能体-framework Q&A.'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - deployment
 license: MIT
 author: Team
 version: 2.0.0
 needs_review: false
-source: 
+source:
 language: en
+slug: promptflow-to-maf
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
 
+Use this skill when you need guidance on promptflow-to-maf.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+When converting a Prompt Flow to MAF, follow these steps:
+1. Read the source `flow.dag.yaml` and all referenced files (`.jinja2`, `.py`, `requirements.txt`).
+2. Map the node dependency graph and produce a node-mapping table.
+3. Detect special cases (evaluation flows, custom tools, multimodal inputs) and load the matching topic file.
+4. Create the output folder `<original-folder>-maf/` and generate one Executor per node.
+5. Wire the workflow inside a `create_workflow()` factory using `WorkflowBuilder`.
+6. Generate supporting files (`requirements.txt`, `.env.example`, `test_<name>.py`).
+7. Validate graph topology equivalence against the original `flow.dag.yaml`.
 
 # Prompt Flow → Microsoft Agent Framework Conversion
 
@@ -165,10 +216,6 @@ This skill is split across multiple files. **Always read this file first.** Then
     ├── multimodal-chat.md         ← Image inputs (GPT-4V style)
     └── evaluation.md              ← Per-row workflow + aggregation function + run_eval.py
 ```
-
-# When to use
-
-Use this skill when you need guidance on promptflow-to-maf.
 
 # When NOT to use
 
@@ -337,14 +384,3 @@ jinja2>=3.1.0
 ```
 OPENAI_API_KEY=your-api-key-here
 ```
-
-# Prompt
-
-When converting a Prompt Flow to MAF, follow these steps:
-1. Read the source `flow.dag.yaml` and all referenced files (`.jinja2`, `.py`, `requirements.txt`).
-2. Map the node dependency graph and produce a node-mapping table.
-3. Detect special cases (evaluation flows, custom tools, multimodal inputs) and load the matching topic file.
-4. Create the output folder `<original-folder>-maf/` and generate one Executor per node.
-5. Wire the workflow inside a `create_workflow()` factory using `WorkflowBuilder`.
-6. Generate supporting files (`requirements.txt`, `.env.example`, `test_<name>.py`).
-7. Validate graph topology equivalence against the original `flow.dag.yaml`.

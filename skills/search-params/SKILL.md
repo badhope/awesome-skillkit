@@ -1,17 +1,54 @@
 ---
-name: "search-params"
-name_zh: "search-params"
-description: "URL search param and hash state management. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash fragments, or fixing browser back/forward button issues."
-description_zh: "URL search param and hash state 管理. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash fragments, or fixing browser back/forward button issues."
-category: "dev-tools"
-tags: [ai, cli, evaluation, frontend, llm]
-source: 
+name: search-params
+name_zh: search-params
+description: URL search param and hash state management. Use when adding or 
+  modifying URL search params, working with useSearchParams, setSearchParams, 
+  useSearchParamState, or navigate() with query strings or hash fragments, or 
+  fixing browser back/forward button issues.
+description_zh: URL search param and hash state 管理. Use when adding or modifying
+  URL search params, working with useSearchParams, setSearchParams, 
+  useSearchParamState, or navigate() with query strings or hash fragments, or 
+  fixing browser back/forward button issues.
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - evaluation
+  - frontend
+  - llm
+source:
 language: en
 needs_review: false
+slug: search-params
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on search-params.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # URL Search Param State Management
 
@@ -137,10 +174,6 @@ setTab(null);
 - `src/app/src/pages/eval/components/ResultsView.tsx` - example of correct `{ replace: true }` usage
 - `src/app/src/pages/redteam/setup/page.tsx` - example of intentional push for wizard steps
 
-# When to use
-
-Use this skill when you need guidance on search-params.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -148,7 +181,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

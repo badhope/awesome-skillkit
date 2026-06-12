@@ -1,20 +1,51 @@
 ---
 name: playwright
 name_zh: playwright
-description: Use when the task requires automating a real browser from the terminal
-description_zh: Use when the task requires automating a real browser from the terminal
-category: "dev-tools"
-tags: [ai, cli, evaluation, frontend, javascript]
-source: 
+description: Use when the task requires automating a real browser from the 
+  terminal
+description_zh: Use when the task requires automating a real browser from the 
+  terminal
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - evaluation
+  - frontend
+  - javascript
+source:
 language: en
 needs_review: false
+slug: playwright
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "playwright".
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
 
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Playwright CLI Skill
 
@@ -158,11 +189,6 @@ Open only what you need:
 - When capturing artifacts in this repo, use `output/playwright/` and avoid introducing new top-level artifact folders.
 - Default to CLI commands and workflows, not Playwright test specs.
 
-# When to use
-
-Use this skill when you need to work with "playwright".
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -177,7 +203,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

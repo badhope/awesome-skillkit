@@ -1,21 +1,50 @@
 ---
-name: "promptfoo-redteam-run"
+name: promptfoo-redteam-run
 name_zh: 运行 Promptfoo 红队测试
-description: "Run, rerun, inspect, and QA promptfoo redteam scans from generated redteam"
+description: Run, rerun, inspect, and QA promptfoo redteam scans from generated 
+  redteam
 description_zh: 执行 Promptfoo 红队测试场景并分析结果。
-category: "dev-tools"
-tags: [ai, cli, evaluation, frontend, javascript]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - evaluation
+  - frontend
+  - javascript
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: promptfoo-redteam-run
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on promptfoo redteam run.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Promptfoo Redteam Run
 
@@ -182,11 +211,6 @@ When done, state:
 - Success, failure, error counts and attack success rate
 - Highest-priority failing plugins/strategies and recommended next rerun or fix
 
-# When to use
-
-Use this skill when you need guidance on promptfoo redteam run.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -196,7 +220,3 @@ Do not use this skill for tasks outside its scope.
 
 See the skill content above for practical examples.
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,19 +1,51 @@
 ---
 name: microcopy
 name_zh: microcopy
-description: "UI copy and microcopy guidelines. Use for user-facing copy, buttons,"
-description_zh: "UI copy and microcopy guidelines. Use for 用户-facing copy, buttons,"
-category: ai
-tags: [ai, api, evaluation, frontend, llm]
-source: 
+description: UI copy and microcopy guidelines. Use for user-facing copy, 
+  buttons,
+description_zh: UI copy and microcopy guidelines. Use for 用户-facing copy, 
+  buttons,
+category: applications
+tags:
+  - ai
+  - api
+  - evaluation
+  - frontend
+  - llm
+source:
 language: en
 needs_review: false
+slug: microcopy
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with microcopy.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # LobeHub UI Microcopy Guidelines
 
@@ -109,11 +141,6 @@ Provide: Retry / View details / Go to Settings / Contact support / Copy logs
 
 Never blame user. Put error codes in "Details".
 
-# When to use
-
-Use this skill when you need to work with microcopy.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -128,7 +155,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

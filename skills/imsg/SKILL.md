@@ -1,19 +1,51 @@
 ---
 name: imsg
 name_zh: imsg
-description: "iMessage/SMS CLI for listing chats, history, and sending messages via"
-description_zh: "iMessage/SMS CLI for listing chats, history, and sending messages via"
-category: "dev-tools"
-tags: [ai, cli, frontend, javascript, llm]
-source: 
+description: iMessage/SMS CLI for listing chats, history, and sending messages 
+  via
+description_zh: iMessage/SMS CLI for listing chats, history, and sending 
+  messages via
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - frontend
+  - javascript
+  - llm
+source:
 language: en
 needs_review: false
+slug: imsg
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with imsg.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # imsg
 
@@ -103,11 +135,6 @@ imsg chats --limit 20 --json | jq '.[] | select(.displayName | contains("Mom"))'
 imsg send --to "+1555123456" --text "I'll be late"
 ```
 
-# When to use
-
-Use this skill when you need to work with imsg.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -122,7 +149,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

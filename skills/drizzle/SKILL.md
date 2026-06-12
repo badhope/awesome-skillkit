@@ -1,16 +1,52 @@
 ---
 name: drizzle
 name_zh: drizzle
-description: "LobeHub Drizzle ORM schema and query style. Use for pgTable schemas, indexes, joins, inferred types, db.select/db.query, schema fields, foreign keys, junction tables, or postgres query patterns."
-description_zh: "LobeHub Drizzle ORM schema and query style. Use for pgTable schemas, indexes, joins, inferred types, db.select/db.query, schema fields, foreign keys, junction tables, or postgres query patterns."
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+description: LobeHub Drizzle ORM schema and query style. Use for pgTable 
+  schemas, indexes, joins, inferred types, db.select/db.query, schema fields, 
+  foreign keys, junction tables, or postgres query patterns.
+description_zh: LobeHub Drizzle ORM schema and query style. Use for pgTable 
+  schemas, indexes, joins, inferred types, db.select/db.query, schema fields, 
+  foreign keys, junction tables, or postgres query patterns.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: drizzle
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on drizzle.
 
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Drizzle ORM Schema Style Guide
 
@@ -499,14 +535,6 @@ const publishedPosts = await postRepo.findPublished();
 const authorPostCount = await postRepo.countByAuthor(userId);
 ```
 
-# When to use
-
-Use this skill when you need guidance on drizzle.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

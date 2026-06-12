@@ -1,24 +1,34 @@
 ---
 name: promptfoo Redteam Plugin Author
 name_zh: Promptfoo 红队测试
-description: "How many fail conditions the rubric covers (self-check)"
+description: How many fail conditions the rubric covers (self-check)
 description_zh: 使用 Promptfoo 进行 LLM 应用的红队测试和安全评估。
-category: ai
-tags: [ai, api, backend, evaluation, frontend]
-source: 
+category: applications
+tags:
+  - ai
+  - api
+  - backend
+  - evaluation
+  - frontend
+source:
 ref: main
 license: MIT
 language: en
-author: "Promptfoo (downstream pack: badhope)"
+author: 'Promptfoo (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false
+slug: promptfoo-redteam
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're writing or extending **promptfoo redteam** components —

@@ -1,15 +1,48 @@
 ---
-name: "local-testing"
-name_zh: "local-测试"
-description: ">"
-description_zh: ">"
-category: "dev-tools"
-tags: [ai, api, backend, cli, docker]
+name: local-testing
+name_zh: local-测试
+description: '>'
+description_zh: '>'
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - docker
 needs_review: false
-source: 
+source:
 language: en
+slug: local-testing
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on local-testing.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Local App & Bot Testing
 
@@ -562,10 +595,6 @@ Outputs to `.records/` directory (gitignored): `<name>.mp4` (video) + `<name>/` 
 
 See [bot/osascript-common.md](./bot/osascript-common.md#gotchas) for the full osascript gotchas list (accessibility permissions, `keystroke` non-ASCII issues, locale-specific app names, rate limiting, etc.).
 
-# When to use
-
-Use this skill when you need guidance on local-testing.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -573,7 +602,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

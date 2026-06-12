@@ -1,19 +1,51 @@
 ---
-name: "review-checklist"
-name_zh: "审查-checklist"
-description: "LobeHub code review checklist. Use when reviewing a PR, diff, or branch"
-description_zh: "LobeHub 代码 审查 checklist. Use when reviewing a PR, diff, or branch"
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: review-checklist
+name_zh: 审查-checklist
+description: LobeHub code review checklist. Use when reviewing a PR, diff, or 
+  branch
+description_zh: LobeHub 代码 审查 checklist. Use when reviewing a PR, diff, or 
+  branch
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 language: en
 needs_review: false
+slug: review-checklist
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with review-checklist.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Review Checklist
 
@@ -68,11 +100,6 @@ A downstream cloud deployment depends on this repo. Flag changes that may requir
 - **`@lobechat/business-*` exports changed** — e.g., renaming a function in `src/business/` or changing type signatures in `packages/business/`
 - `src/business/` and `packages/business/` must not expose cloud commercial logic in comments or code
 
-# When to use
-
-Use this skill when you need to work with review-checklist.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -87,7 +114,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

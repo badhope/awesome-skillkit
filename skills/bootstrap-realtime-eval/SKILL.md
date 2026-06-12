@@ -1,15 +1,56 @@
 ---
-name: "bootstrap-realtime-eval"
-name_zh: "bootstrap-realtime-eval"
-description: "Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding prompt/tools/data files, generating a useful README, and validating it with smoke, full eval, and test runs. Use when a user wants to start a new crawl, walk, or run realtime eval in this repository."
-description_zh: "Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding 提示词/tools/data files, generating a useful README, and validating it with smoke, full eval, and 测试 runs. Use when a 用户 wants to start a new crawl, walk, or 运行 realtime eval in this repository."
-category: "dev-tools"
-tags: [ai, cli, database, documentation, evaluation]
+name: bootstrap-realtime-eval
+name_zh: bootstrap-realtime-eval
+description: Bootstrap a new realtime eval folder inside this cookbook repo by 
+  choosing the right harness from examples/evals/realtime_evals, scaffolding 
+  prompt/tools/data files, generating a useful README, and validating it with 
+  smoke, full eval, and test runs. Use when a user wants to start a new crawl, 
+  walk, or run realtime eval in this repository.
+description_zh: Bootstrap a new realtime eval folder inside this cookbook repo 
+  by choosing the right harness from examples/evals/realtime_evals, scaffolding 
+  提示词/tools/data files, generating a useful README, and validating it with 
+  smoke, full eval, and 测试 runs. Use when a 用户 wants to start a new crawl, walk,
+  or 运行 realtime eval in this repository.
+category: dev-tools
+tags:
+  - ai
+  - cli
+  - database
+  - documentation
+  - evaluation
 needs_review: false
-source: 
+source:
 language: en
+slug: bootstrap-realtime-eval
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on bootstrap-realtime-eval.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Bootstrap Realtime Eval
 
@@ -140,10 +181,6 @@ Only add items that are likely to help future realtime-eval scaffolding in this 
 - **Synthetic audio can be overfit to the wrong harness** -> Default unspecified synthetic-audio requests to `crawl` text-to-TTS and reserve `walk` for replay-specific audio characteristics like noise or telephony artifacts -> Keeps the bootstrap path simpler unless audio realism is the actual target.
 - **Smoke-only validation can leave scaffolds half-proven** -> After a successful smoke run, automatically run the full eval before declaring the bootstrap complete -> Catches dataset-wide or late-row failures that a one-example smoke test misses.
 
-# When to use
-
-Use this skill when you need guidance on bootstrap-realtime-eval.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -151,7 +188,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

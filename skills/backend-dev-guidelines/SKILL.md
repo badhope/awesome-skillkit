@@ -1,21 +1,50 @@
 ---
-name: "backend-dev-guidelines"
+name: backend-dev-guidelines
 name_zh: 后端开发指南
-description: "Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and TypeScript"
+description: Shared backend guide for Langfuse's Next.js, tRPC, BullMQ, and 
+  TypeScript
 description_zh: 遵循后端开发最佳实践，包括 API 设计、数据库操作和安全性。
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: UNKNOWN
 language: en
 author: unknown
 version: 0.1.0
 needs_review: false
+slug: backend-dev-guidelines
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on backend dev guidelines.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Backend Development Guidelines
 
@@ -129,11 +158,6 @@ Use this skill for backend and API work across `web/`, `worker/`, and
 | Configuration                       | You are adding env vars, startup config, or runtime toggles              | [references/configuration.md](references/configuration.md)                         |
 | Testing                             | You are adding or updating backend tests                                 | [references/testing-guide.md](references/testing-guide.md)                         |
 
-# When to use
-
-Use this skill when you need guidance on backend dev guidelines.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -154,7 +178,3 @@ python scripts/inspect-skill.py backend-dev-guidelines
 # 验证技能
 python scripts/validate-skill.py backend-dev-guidelines
 ```
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

@@ -1,22 +1,33 @@
 ---
-name: "valid-skill"
-name_zh: "valid-技能"
+name: valid-skill
+name_zh: valid-技能
 description: A complete test skill with all optional directories.
 description_zh: A complete 测试 技能 with all optional directories.
-category: ai
-tags: [frontend, llm, python, testing, typescript]
-source: 
-license: "Apache-2.0"
+category: applications
+tags:
+  - frontend
+  - llm
+  - python
+  - testing
+  - typescript
+source:
+license: Apache-2.0
 language: en
 author: test
-version: 1.0
+version: 1.0.0
 needs_review: false
+slug: valid-skill
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
 ---
-
-
-
-
-
 ## Instructions
 
 This skill provides comprehensive instructions for the agent.
@@ -32,6 +43,18 @@ Additional context for the agent.
 # When to use
 
 Use this skill when you need guidance on valid-skill.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # When NOT to use
 
@@ -53,7 +76,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

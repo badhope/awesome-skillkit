@@ -1,18 +1,54 @@
 ---
-name: "brand-guidelines"
-name_zh: "brand-guidelines"
-description: "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply."
-description_zh: "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company 设计 standards apply."
-category: ai
-tags: [ai, api, frontend, llm, python]
-source: 
+name: brand-guidelines
+name_zh: brand-guidelines
+description: Applies Anthropic's official brand colors and typography to any 
+  sort of artifact that may benefit from having Anthropic's look-and-feel. Use 
+  it when brand colors or style guidelines, visual formatting, or company design
+  standards apply.
+description_zh: Applies Anthropic's official brand colors and typography to any 
+  sort of artifact that may benefit from having Anthropic's look-and-feel. Use 
+  it when brand colors or style guidelines, visual formatting, or company 设计 
+  standards apply.
+category: applications
+tags:
+  - ai
+  - api
+  - frontend
+  - llm
+  - python
+source:
 license: Complete terms in LICENSE.txt
 language: en
 needs_review: false
+slug: brand-guidelines
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
 
+Use this skill when you need guidance on brand-guidelines.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Anthropic Brand Styling
 
@@ -82,10 +118,6 @@ To access Anthropic's official brand identity and style resources, use this skil
 - Applied via python-pptx's RGBColor class
 - Maintains color fidelity across different systems
 
-# When to use
-
-Use this skill when you need guidance on brand-guidelines.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -106,7 +138,3 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.

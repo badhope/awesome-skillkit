@@ -1,20 +1,51 @@
 ---
-name: "compaction-prompts"
-name_zh: "compaction-prompts"
-description: Configures Letta agent compaction settings and custom summarization prompts.
-description_zh: Configures Letta 智能体 compaction settings and custom summarization prompts.
-category: "dev-tools"
-tags: [ai, api, backend, cli, database]
-source: 
+name: compaction-prompts
+name_zh: compaction-prompts
+description: Configures Letta agent compaction settings and custom summarization
+  prompts.
+description_zh: Configures Letta 智能体 compaction settings and custom 
+  summarization prompts.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - database
+source:
 license: MIT
 language: en
 needs_review: false
+slug: compaction-prompts
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with compaction-prompts.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # Compaction prompts
 
@@ -214,11 +245,6 @@ curl -sS "$BASE_URL/v1/agents/$AGENT_ID" \
 - Keep prompts concrete. Overly vague prompts produce summaries that erase continuity.
 - Do not encode private user details into a shared skill. Put reusable structure in the skill; put specific user details in the agent's actual prompt or memory.
 
-# When to use
-
-Use this skill when you need to work with compaction-prompts.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -233,7 +259,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

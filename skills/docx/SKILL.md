@@ -1,20 +1,51 @@
 ---
 name: docx
 name_zh: docx
-description: "Use this skill whenever the user wants to create, read, edit, or manipulate"
-description_zh: "Use this 技能 whenever the 用户 wants to 创建, read, edit, or manipulate"
-category: "dev-tools"
-tags: [ai, api, cli, database, documentation]
-source: 
+description: Use this skill whenever the user wants to create, read, edit, or 
+  manipulate
+description_zh: Use this 技能 whenever the 用户 wants to 创建, read, edit, or 
+  manipulate
+category: dev-tools
+tags:
+  - ai
+  - api
+  - cli
+  - database
+  - documentation
+source:
 license: Proprietary. LICENSE.txt has complete terms
 language: en
 needs_review: false
+slug: docx
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with docx.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # DOCX creation, editing, and analysis
 
@@ -601,11 +632,6 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 - **LibreOffice**: PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
 - **Poppler**: `pdftoppm` for images
 
-# When to use
-
-Use this skill when you need to work with docx.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -620,7 +646,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

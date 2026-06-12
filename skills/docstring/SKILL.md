@@ -1,19 +1,51 @@
 ---
 name: docstring
 name_zh: docstring
-description: Write docstrings for PyTorch functions and methods following PyTorch
-description_zh: Write docstrings for PyTorch functions and methods following PyTorch
-category: "dev-tools"
-tags: [ai, api, documentation, frontend, git]
-source: 
+description: Write docstrings for PyTorch functions and methods following 
+  PyTorch
+description_zh: Write docstrings for PyTorch functions and methods following 
+  PyTorch
+category: dev-tools
+tags:
+  - ai
+  - api
+  - documentation
+  - frontend
+  - git
+source:
 language: en
 needs_review: false
+slug: docstring
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with docstring.
 
 
+# Inputs
 
+User request or task description.
 
+# Output
 
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
 
 # PyTorch Docstring Writing Guide
 
@@ -370,11 +402,6 @@ When writing a PyTorch docstring, ensure:
 - **Backticks**: Use double backticks for code: ``` ``True`` ``None`` ``False`` ```
 - **Types**: Common types are `Tensor`, `int`, `float`, `bool`, `str`, `tuple`, `list`, etc.
 
-# When to use
-
-Use this skill when you need to work with docstring.
-
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope or when simpler alternatives are available.
@@ -389,7 +416,3 @@ result = skill.execute()
 print(result)
 ```
 
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

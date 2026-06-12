@@ -1,17 +1,62 @@
 ---
-name: "hatch-pet"
-name_zh: "hatch-pet"
-description: "Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly."
-description_zh: "创建, repair, 验证, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a 用户 wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This 技能 composes the installed $imagegen system 技能 for visual generation and uses bundled scripts for deterministic spritesheet assembly."
-category: "dev-tools"
-tags: [ai, api, backend, cli, documentation]
-source: 
+name: hatch-pet
+name_zh: hatch-pet
+description: Create, repair, validate, visually QA, and package Codex-compatible
+  animated pets and pet spritesheets from character art, generated images, 
+  company or prospect brand cues, or visual references. Use when a user wants a 
+  lightweight-worker Codex pet workflow, a non-pixel custom pet style, a 
+  prospect or company mascot pet, or a full 8x9 animated pet atlas with 
+  transparent unused cells, QA contact sheets, and pet.json packaging. This 
+  skill composes the installed $imagegen system skill for visual generation and 
+  uses bundled scripts for deterministic spritesheet assembly.
+description_zh: 创建, repair, 验证, visually QA, and package Codex-compatible 
+  animated pets and pet spritesheets from character art, generated images, 
+  company or prospect brand cues, or visual references. Use when a 用户 wants a 
+  lightweight-worker Codex pet workflow, a non-pixel custom pet style, a 
+  prospect or company mascot pet, or a full 8x9 animated pet atlas with 
+  transparent unused cells, QA contact sheets, and pet.json packaging. This 技能 
+  composes the installed $imagegen system 技能 for visual generation and uses 
+  bundled scripts for deterministic spritesheet assembly.
+category: dev-tools
+tags:
+  - ai
+  - api
+  - backend
+  - cli
+  - documentation
+source:
 language: en
 needs_review: false
+slug: hatch-pet
+version: 1.0.0
+created: '2026-06-12'
+updated: '2026-06-12'
+inputs:
+  - name: request
+    type: string
+    required: true
+    description: User request or task description
+output:
+  format: markdown
+  description: Generated content based on the user request
+author: AI-SKILL
+license: MIT
 ---
+# When to use
 
+Use this skill when you need guidance on hatch-pet.
 
+# Inputs
 
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
 
 # Hatch Pet
 
@@ -548,10 +593,6 @@ For extraction-induced motion popping, do not regenerate imagery first. If the s
 - Non-pixel styles are accepted when readable at pet size and consistent across rows.
 - `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/pet.json` and `${CODEX_HOME:-$HOME/.codex}/pets/<pet-name>/spritesheet.webp` are staged together for custom pets.
 
-# When to use
-
-Use this skill when you need guidance on hatch-pet.
-
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
@@ -559,7 +600,3 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
