@@ -71,7 +71,7 @@ export async function renderList(
   const totalSkills = index.skills.length;
   const totalCategories = new Set(index.skills.map(s => s.category)).size;
   const toReview = index.skills.filter(s => s.needs_review).length;
-  const vendorNeutral = index.skills.filter(s => s.platforms.length === 0).length;
+  const vendorNeutral = index.skills.filter(s => (s.platforms?.length ?? 0) === 0).length;
 
   root.innerHTML = `
     <section class="hero">
@@ -209,24 +209,24 @@ function match(s: SkillIndexEntry, q: string, cat: string, plat: string): boolea
   if (plat) {
     if (plat === "all") {
       // vendor-neutral: empty platforms OR platforms includes "any"
-      if (s.platforms.length > 0) return false;
+      if ((s.platforms?.length ?? 0) > 0) return false;
     } else {
-      if (!s.platforms.includes(plat)) return false;
+      if (!(s.platforms ?? []).includes(plat)) return false;
     }
   }
   if (q) {
     // Search the localized blob too — so a Chinese query like
     // "浏览器" still finds browser-ml-in-js via its name_zh.
-    const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.tags.join(" ")} ${s.category} ${s.description} ${s.description_zh ?? ""}`.toLowerCase();
+    const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${(s.tags ?? []).join(" ")} ${s.category} ${s.description} ${s.description_zh ?? ""}`.toLowerCase();
     if (!blob.includes(q)) return false;
   }
   return true;
 }
 
 function cardHtml(s: SkillIndexEntry, i: number): string {
-  const platChips = s.platforms.length === 0
+  const platChips = (s.platforms?.length ?? 0) === 0
     ? `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`
-    : s.platforms.map(p => {
+    : (s.platforms ?? []).map(p => {
         const label = pickPlatform(p);
         return `<span class="chip chip--${escAttr(p)}" title="${escAttr(t("platform.tip", { p }))}">${escHtml(label)}</span>`;
       }).join(" ");
@@ -245,7 +245,7 @@ function cardHtml(s: SkillIndexEntry, i: number): string {
       <div class="skill-card__meta">
         <span>${escHtml(categoryLabel(s.category))}</span>
         ${platChips}
-        <span>${s.tags.slice(0, 4).map(escHtml).join(" · ")}</span>
+        <span>${(s.tags ?? []).slice(0, 4).map(escHtml).join(" · ")}</span>
       </div>
     </a>
   `;

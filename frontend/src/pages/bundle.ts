@@ -71,7 +71,7 @@ export async function renderBundle(
     const q = qInput.value.trim().toLowerCase();
     const filtered = index.skills.filter(s => {
       if (!q) return true;
-      const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.description} ${s.description_zh ?? ""} ${s.category} ${s.tags.join(" ")}`.toLowerCase();
+      const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.description} ${s.description_zh ?? ""} ${s.category} ${(s.tags ?? []).join(" ")}`.toLowerCase();
       return blob.includes(q);
     });
     // Snapshot which slugs are checked before re-rendering, so a

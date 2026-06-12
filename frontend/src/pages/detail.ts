@@ -120,7 +120,7 @@ function tocBlock(s: Skill): string {
   // is required by the schema.
   const has = {
     wtu: true,
-    inputs: s.inputs.length > 0,
+    inputs: (s.inputs?.length ?? 0) > 0,
     output: true,
     prompt: extractPromptText(s).length > 0,
     wnot: hasH1Section(s.body, "When NOT to use"),
@@ -174,8 +174,8 @@ function zhBlock(s: Skill): string {
 }
 
 function inputsTable(s: Skill): string {
-  if (s.inputs.length === 0) return "";
-  const rows = s.inputs.map(i => {
+  if ((s.inputs?.length ?? 0) === 0) return "";
+  const rows = (s.inputs ?? []).map(i => {
     const reqText = i.required
       ? t("input.required")
       : (i.default !== undefined ? t("input.default", { v: String(i.default) }) : t("input.optional"));
