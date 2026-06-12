@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "typescript": "^5.4.5",
-    "vite": "^5.2.11"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "jszip": "^3.10.1"
