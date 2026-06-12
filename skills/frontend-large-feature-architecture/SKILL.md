@@ -1,76 +1,23 @@
 ---
-slug: frontend-large-feature-architecture
-name: Frontend Large-Feature Architecture
+name: "Frontend Large-Feature Architecture"
 name_zh: 前端大型功能架构
-version: 0.1.0
-description: Plan a non-trivial frontend feature before coding — controller components, state location, list vs detail fetch, virtualization. Generic patterns, framework-aware but not framework-bound.
+description: "|"
 description_zh: 在写代码前规划非平凡的前端功能 —— 控制器组件、状态归属、列表 vs 详情获取、虚拟化。通用模式，框架感知但不绑死。
-
-category: applications
-tags: [frontend, react, architecture, state-management, performance]
-platforms: []
-
-inputs:
-  - name: feature
-    type: string
-    required: true
-    description: |
-      One-sentence description of the feature (e.g. "user can
-      pin a row in the table and the pin persists across
-      sessions").
-  - name: framework
-    type: enum
-    required: false
-    values: [react, vue, svelte, solid, other]
-    default: react
-    description: |
-      Target framework. Most of the principles are
-      framework-agnostic; some (controller components,
-      tRPC) default to React/Next.
-  - name: state_libraries
-    type: array
-    required: false
-    items: { type: string }
-    description: |
-      State management libraries the app already uses
-      (e.g. `[zustand, react-query, jotai, redux]`).
-      Default to react-query + zustand for new code.
-  - name: data_scale
-    type: enum
-    required: false
-    values: [small, medium, large, huge]
-    description: |
-      Approximate size of the data the feature touches.
-      `huge` (>=10K rows, >=50 columns) forces
-      virtualization. `large` (>=1K rows) usually
-      virtualizes too.
-
-output:
-  format: text
-  description: |
-    An architecture plan covering: which state lives where,
-    the component split, the list vs detail fetch decision,
-    virtualization choice, and the edge cases to handle
-    before writing code. No JSON envelope — the plan is
-    text.
-  schema:
-    type: object
-    properties:
-      state_map: { type: string, description: "Where each piece of state lives (URL / server / local / cache)" }
-      components: { type: array, items: { type: string } }
-      fetch_strategy: { type: string, description: "Server component vs react-query vs URL state" }
-      virtualization: { type: string, enum: [none, window, fixed, custom] }
-      edge_cases: { type: array, items: { type: string } }
-
-author: "Langfuse (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/frontend-large-feature-architecture
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

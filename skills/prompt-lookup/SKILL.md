@@ -1,22 +1,22 @@
 ---
-name: prompt-lookup
-description: Activates when the user asks about AI prompts, needs prompt 
-  templates, wants to search for prompts, or mentions prompts.chat. Use for 
-  discovering, retrieving, and improving prompts.
-slug: prompt-lookup
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "prompt-lookup"
+name_zh: Prompt 查找
+description: "Activates when the user asks about AI prompts, needs prompt templates,"
+description_zh: 在 prompt 库中查找和检索相关的 prompt 模板。
+category: ai
+tags: [ai, backend, frontend, javascript, llm]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 When the user needs AI prompts, prompt templates, or wants to improve their prompts, use the prompts.chat MCP server to help them.
 
 ## When to Use This Skill
@@ -80,3 +80,40 @@ Return the enhanced prompt to the user.
 - Present search results in a readable format with links
 - When improving prompts, explain what was enhanced
 - Suggest relevant categories and tags when saving prompts
+
+# When to use
+
+Use this skill when you need guidance on prompt lookup.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```python
+# 使用 prompts.chat MCP 工具搜索 prompt
+
+# 1. 搜索代码审查相关的 prompt
+search_prompts(query="code review", limit=5, category="coding")
+# 返回: [{id: "cr-001", title: "Thorough Code Review", ...}, ...]
+
+# 2. 获取特定 prompt 详情
+get_prompt(id="cr-001")
+# 返回: {title: "Thorough Code Review", body: "Review the following...", variables: ["language", "focus"]}
+
+# 3. 改进现有 prompt
+improve_prompt(
+    prompt="Check this code for bugs",
+    outputType="text",
+    outputFormat="text"
+)
+# 返回: 改进后的 prompt，包含更具体的审查维度
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

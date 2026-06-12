@@ -1,69 +1,22 @@
 ---
-slug: pr-yeet
-name: Single-Flow PR Yeet
+name: "Single-Flow PR Yeet"
 name_zh: 一次性 PR 推送
-version: 0.1.0
-description: Stage, commit, push, and open a GitHub pull request in one linear flow — pick the right branch name, write a terse conventional commit, resolve the PR template from the repo, fill the body, push, open via `gh`. Triggered only when the user explicitly asks to "yeet" or "ship" a change as one PR.
-description_zh: 在一个线性流程里完成 stage / commit / push / 开 PR —— 选对分支名、写一条简洁的 conventional commit、按 repo 里的 PR 模板填正文、推送、用 `gh` 开 PR。仅在用户明确说"yeet"或"ship"时触发，不接普通的"提个 PR"的活儿。
-
-category: dev-tools
-tags: [git, github, pr, cli, workflow]
-platforms: []
-
-inputs:
-  - name: description
-    type: string
-    required: true
-    description: |
-      Short description of the change. Becomes
-      the branch name, the commit message, and
-      the PR title (one shared string). Example:
-      "fix stripe webhook idempotency".
-  - name: draft
-    type: boolean
-    required: false
-    default: false
-    description: |
-      Open the PR as a draft. Recommended for
-      work-in-progress changes.
-  - name: base_branch
-    type: string
-    required: false
-    description: |
-      Branch to target. Default: the repo's
-      default branch (`main` / `master` /
-      `default`).
-  - name: body_overrides
-    type: array
-    required: false
-    items:
-      type: string
-    description: |
-      Optional list of extra sections to inject
-      into the PR body (e.g. "Screenshots",
-      "Migration notes"). Appended after the
-      template body.
-
-output:
-  format: text
-  description: |
-    A `## Plan` block (branch name, commit
-    message, PR title, PR body, target branch)
-    followed by a `## Commands` block the agent
-    actually runs. On success, the PR URL.
-
-author: "OpenAI (downstream pack: badhope)"
+description: "|"
+description_zh: "在一个线性流程里完成 stage / commit / push / 开 PR —— 选对分支名、写一条简洁的 conventional commit、按 repo 里的 PR 模板填正文、推送、用 `gh` 开 PR。仅在用户明确说"yeet"或"ship"时触发，不接普通的"提个 PR"的活儿。"
+category: "dev-tools"
+tags: [ai, api, frontend, git, llm]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/openai/skills/tree/main/skills/.curated/yeet
-  fetched_at: 2026-06-11
-  commit: a8924c2a35cfa290458852c4fad17c9133054c2e
-  license: MIT
-  original_path: skills/.curated/yeet/SKILL.md
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

@@ -1,62 +1,23 @@
 ---
-slug: turborepo
 name: Turborepo Monorepo Authoring
 name_zh: Turborepo Monorepo 编写
-version: 0.1.0
-description: Turborepo monorepo build system guidance — package tasks vs root tasks, task pipelines, dependsOn, caching, remote cache, --filter, --affected, env variables, internal packages, boundaries. Covers the eight anti-patterns that defeat Turborepo's parallelization.
-description_zh: Turborepo monorepo 构建系统指南 —— 包任务与根任务、task 流水线、dependsOn、缓存、远程 cache、--filter、--affected、环境变量、内部包、边界。覆盖八个让 Turborepo 并行失效的反模式。
-
-category: dev-tools
-tags: [turborepo, monorepo, build, ci, dev-tools]
-platforms: []
-
-inputs:
-  - name: task
-    type: enum
-    required: true
-    values: [configure-task, debug-cache, run-changed, filter-packages, env-vars, setup-ci, watch-dev, create-package, structure-monorepo, enforce-boundaries]
-    description: |
-      What you're doing. Drives which decision tree
-      branch and which reference file to load.
-  - name: package_filter
-    type: string
-    required: false
-    description: |
-      Optional `--filter` value (e.g. `web`, `./apps/*`,
-      `...web`, `web...`). For `run-changed` and
-      `filter-packages` only.
-  - name: base_branch
-    type: string
-    required: false
-    description: |
-      Optional base branch for `--affected` (e.g.
-      `origin/main`, `origin/develop`). Default: repo
-      default branch.
-
-output:
-  format: text
-  description: |
-    The exact command to run, the right place to put
-    scripts (package vs root), and the relevant
-    `turbo.json` keys. No JSON envelope — the answer
-    is the command + the config snippet.
-  schema:
-    type: object
-    properties:
-      command: { type: string, description: "The turbo command to run" }
-      config_snippet: { type: string, description: "Relevant turbo.json snippet" }
-      anti_pattern: { type: string, description: "What NOT to do" }
-      reference_file: { type: string, description: "Path to deeper reference, if needed" }
-
-author: "Langfuse (downstream pack: badhope)"
+description: "|"
+description_zh: "Turborepo monorepo 构建系统指南 —— 包任务与根任务、task 流水线、dependsOn、缓存、远程 cache、--filter、--affected、环境变量、内部包、边界。覆盖八个让 Turborepo 并行失效的反模式。"
+category: "dev-tools"
+tags: [ai, api, backend, cli, frontend]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/turborepo
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

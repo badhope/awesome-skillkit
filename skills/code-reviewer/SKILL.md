@@ -1,54 +1,22 @@
 ---
-slug: code-reviewer
 name: Code Reviewer
 name_zh: 代码审查员
-version: 1.0.0
-description: Review a code diff for bugs, security issues, and style. 
-  Vendor-neutral, language-aware.
+description: minimum severity to report
 description_zh: 审查代码 diff，看 bug、安全问题、风格。无厂商依赖，识别语言。
-category: dev-tools
-tags:
-  - code
-  - review
-  - security
-  - refactoring
-inputs:
-  - name: diff
-    type: string
-    required: true
-    description: unified diff or code block to review
-  - name: language
-    type: string
-    required: false
-    description: programming language (auto-detect if empty)
-  - name: focus
-    type: enum
-    required: false
-    values:
-      - bugs
-      - security
-      - perf
-      - style
-      - all
-    default: all
-    description: what to prioritise
-  - name: severity_threshold
-    type: enum
-    required: false
-    values:
-      - low
-      - medium
-      - high
-    default: medium
-    description: minimum severity to report
-output:
-  format: markdown
-author: badhope
+category: ai
+tags: [ai, api, database, frontend, llm]
+source: 
 license: MIT
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: badhope
+version: 1.0.0
 needs_review: false
 ---
+
+
+
+
+
 # When to use
 
 The user pasted a diff (or a whole file) and wants eyes on it. You are not the author; you are the reviewer.

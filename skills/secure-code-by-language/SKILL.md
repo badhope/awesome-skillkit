@@ -1,84 +1,22 @@
 ---
-slug: secure-code-by-language
 name: Secure Code by Language
 name_zh: 按语言的安全编码指南
-version: 0.1.0
-description: Look up language- and framework-specific secure-by-default coding guidance before writing or reviewing code — pick the right reference file (Python, JavaScript / TypeScript, Go, frontend / backend split), apply it in the right mode (proactive, passive detect, full report). Triggers on explicit "secure by default", "security review", or "AppSec" requests, not general code review.
+description: "|"
 description_zh: 在写或审查代码前，按语言 / 框架查安全编码指南 —— 挑对参考文件（Python / JavaScript / TypeScript / Go / 前后端分查），按正确模式用（主动写、被动检测、完整报告）。只在用户明确说"secure by default"、"security review"或"AppSec"时触发，不接普通 code review 的活儿。
-
-category: guardrails
-tags: [security, appsec, secure-defaults, review, language]
-platforms: []
-
-inputs:
-  - name: languages
-    type: array
-    required: true
-    items:
-      type: enum
-      values: [python, javascript, typescript, go, other]
-    description: |
-      All languages the project uses. If unsure,
-      inspect `package.json`, `pyproject.toml`,
-      `requirements.txt`, `go.mod`, etc. and
-      enumerate.
-  - name: frameworks
-    type: array
-    required: false
-    items:
-      type: string
-    description: |
-      Optional list of frameworks (express, fastapi,
-      gin, react, nextjs, etc.). Drives which
-      language-specific reference to load.
-  - name: mode
-    type: enum
-    required: false
-    values: [proactive, passive-detect, full-report]
-    default: proactive
-    description: |
-      How to apply the guidance:
-      - `proactive` — write secure-by-default code
-        going forward (new project / new feature)
-      - `passive-detect` — flag major issues while
-        doing other work, do not derail
-      - `full-report` — write a
-        `security_best_practices_report.md` with
-        severity sections
-  - name: report_path
-    type: path
-    required: false
-    description: |
-      Where to write the full report when
-      `mode=full-report`. Default
-      `security_best_practices_report.md` in the
-      repo root.
-
-output:
-  format: markdown
-  description: |
-    Depends on `mode`:
-      - `proactive` — a short `## Checklist` of
-        the loaded references + any decisions
-        applied
-      - `passive-detect` — inline notes attached
-        to specific code locations (file:line)
-      - `full-report` — a markdown report with
-        severity sections (Critical, High, Medium,
-        Low) and a finding ID per issue
-
-author: "OpenAI (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices
-  fetched_at: 2026-06-11
-  commit: a8924c2a35cfa290458852c4fad17c9133054c2e
-  license: MIT
-  original_path: skills/.curated/security-best-practices/SKILL.md
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

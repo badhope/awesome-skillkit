@@ -1,0 +1,1103 @@
+{
+  "_meta": {
+    "_about": "Comprehensive audit manifest for large-scale skill discovery.",
+    "_version": "1.0.0",
+    "_created": "2026-06-12",
+    "_goal": "Audit 50+ repos to discover 10,000+ skill-shaped files for mass conversion.",
+    "_tiers": {
+      "tier1": "Must-audit: Official cookbooks, major AI frameworks, top vector DBs",
+      "tier2": "Important: Community projects, specialized tools, emerging frameworks",
+      "tier3": "Nice-to-have: Niche tools, experimental projects, archived repos"
+    }
+  },
+  "items": [
+    {
+      "source": "anthropics/anthropic-cookbook",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "official-cookbook",
+      "notes": "Anthropic official cookbook - likely has many skill-shaped examples"
+    },
+    {
+      "source": "openai/openai-cookbook",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "official-cookbook",
+      "notes": "OpenAI official cookbook - massive collection of examples"
+    },
+    {
+      "source": "google/generative-ai-docs",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "official-cookbook",
+      "notes": "Google Gemini/AI Studio official docs"
+    },
+    {
+      "source": "aws-samples/bedrock-recipes",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "official-cookbook",
+      "notes": "AWS Bedrock official examples"
+    },
+    {
+      "source": "vercel/ai",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "Vercel AI SDK - popular framework with many examples"
+    },
+    {
+      "source": "microsoft/semantic-kernel",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "Microsoft Semantic Kernel - enterprise AI framework"
+    },
+    {
+      "source": "microsoft/promptflow",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "Microsoft Prompt Flow - LLM development tool"
+    },
+    {
+      "source": "langchain-ai/langchain",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "LangChain - most popular LLM framework, huge ecosystem"
+    },
+    {
+      "source": "microsoft/autogen",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "Microsoft AutoGen - multi-agent framework"
+    },
+    {
+      "source": "crewAIInc/crewAI",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "CrewAI - agent orchestration framework"
+    },
+    {
+      "source": "run-llama/llama_index",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "LlamaIndex - RAG framework, many examples"
+    },
+    {
+      "source": "agno-agi/agno",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "framework",
+      "notes": "Agno - agent framework with cookbook"
+    },
+    {
+      "source": "pinecone-io/examples",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "vector-db",
+      "notes": "Pinecone official examples"
+    },
+    {
+      "source": "qdrant/qdrant",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "vector-db",
+      "notes": "Qdrant vector database"
+    },
+    {
+      "source": "chroma-core/chroma",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "vector-db",
+      "notes": "Chroma vector database"
+    },
+    {
+      "source": "weaviate/weaviate",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "vector-db",
+      "notes": "Weaviate vector database"
+    },
+    {
+      "source": "milvus-io/milvus",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "vector-db",
+      "notes": "Milvus vector database"
+    },
+    {
+      "source": "cohere-ai/cookbook",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "critical",
+      "category": "official-cookbook",
+      "notes": "Cohere official cookbook"
+    },
+    {
+      "source": "huggingface/transformers",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "deep-learning",
+      "notes": "HuggingFace Transformers - massive example collection"
+    },
+    {
+      "source": "pytorch/pytorch",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "deep-learning",
+      "notes": "PyTorch official examples"
+    },
+    {
+      "source": "tensorflow/tensorflow",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "deep-learning",
+      "notes": "TensorFlow official examples"
+    },
+    {
+      "source": "stability-ai/stable-diffusion",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "generative-ai",
+      "notes": "Stable Diffusion examples"
+    },
+    {
+      "source": "facebookresearch/faiss",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "vector-db",
+      "notes": "Facebook FAISS vector search"
+    },
+    {
+      "source": "neuml/txtai",
+      "ref": "master",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "vector-db",
+      "notes": "txtai - all-in-one embeddings database"
+    },
+    {
+      "source": "huggingface/smol-course",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "education",
+      "notes": "HuggingFace small course - educational content"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "prompt-collection",
+      "notes": "Awesome ChatGPT Prompts - huge prompt collection"
+    },
+    {
+      "source": "promptfoo/promptfoo",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "tool",
+      "notes": "Promptfoo - LLM testing tool (already partially audited)"
+    },
+    {
+      "source": "langfuse/langfuse",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "tool",
+      "notes": "Langfuse - LLM observability (already partially audited)"
+    },
+    {
+      "source": "confident-ai/deepeval",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "tool",
+      "notes": "DeepEval - LLM evaluation (already partially audited)"
+    },
+    {
+      "source": "letta-ai/skills",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "skill-collection",
+      "notes": "Letta skills collection (already partially audited)"
+    },
+    {
+      "source": "anthropics/skills",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "skill-collection",
+      "notes": "Anthropic skills (already partially audited)"
+    },
+    {
+      "source": "openai/skills",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "skill-collection",
+      "notes": "OpenAI skills (already partially audited)"
+    },
+    {
+      "source": "huggingface/skills",
+      "ref": "main",
+      "tier": "tier1",
+      "priority": "high",
+      "category": "skill-collection",
+      "notes": "HuggingFace skills (already partially audited)"
+    },
+    {
+      "source": "instructor-ai/instructor",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "framework",
+      "notes": "Instructor - structured LLM outputs"
+    },
+    {
+      "source": "jxnl/openai-function-call",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "OpenAI function call patterns"
+    },
+    {
+      "source": "Significant-Gravitas/AutoGPT",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "agent",
+      "notes": "AutoGPT - autonomous agent"
+    },
+    {
+      "source": "Torantulino/Auto-GPT",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "agent",
+      "notes": "Auto-GPT (legacy repo)"
+    },
+    {
+      "source": "reworkd/AgentGPT",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "agent",
+      "notes": "AgentGPT - autonomous AI agents"
+    },
+    {
+      "source": "microsoft/semantic-kernel-skills",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "skill-collection",
+      "notes": "Microsoft Semantic Kernel skills collection"
+    },
+    {
+      "source": "azure-samples/azure-search-openai-demo",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Azure OpenAI + Search demo"
+    },
+    {
+      "source": "googleapis/python-aiplatform",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Google Cloud AI Platform SDK"
+    },
+    {
+      "source": "google-gemini/generative-ai-python",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "framework",
+      "notes": "Google Gemini Python SDK"
+    },
+    {
+      "source": "run-llama/llama-agents",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "agent",
+      "notes": "LlamaIndex agents"
+    },
+    {
+      "source": "langchain-ai/langgraph",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "framework",
+      "notes": "LangGraph - stateful agent framework"
+    },
+    {
+      "source": "langchain-ai/langserve",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "LangServe - LangChain deployment"
+    },
+    {
+      "source": "run-llama/llama-parse",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "LlamaParse - document parsing"
+    },
+    {
+      "source": "weaviate/recipes",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "vector-db",
+      "notes": "Weaviate recipes collection"
+    },
+    {
+      "source": "pinecone-io/pinecone-examples",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "vector-db",
+      "notes": "Pinecone examples (alternative repo)"
+    },
+    {
+      "source": "chroma-core/examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "vector-db",
+      "notes": "Chroma examples collection"
+    },
+    {
+      "source": "milvus-io/bootcamp",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "education",
+      "notes": "Milvus bootcamp - tutorials"
+    },
+    {
+      "source": "openai/openai-python",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "OpenAI Python SDK examples"
+    },
+    {
+      "source": "anthropics/anthropic-sdk-python",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Anthropic Python SDK examples"
+    },
+    {
+      "source": "cohere-ai/cohere-python",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Cohere Python SDK examples"
+    },
+    {
+      "source": "huggingface/diffusers",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "generative-ai",
+      "notes": "HuggingFace Diffusers examples"
+    },
+    {
+      "source": "huggingface/peft",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "deep-learning",
+      "notes": "HuggingFace PEFT - parameter efficient fine-tuning"
+    },
+    {
+      "source": "huggingface/accelerate",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "deep-learning",
+      "notes": "HuggingFace Accelerate - distributed training"
+    },
+    {
+      "source": "huggingface/datasets",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "deep-learning",
+      "notes": "HuggingFace Datasets examples"
+    },
+    {
+      "source": "openai/whisper",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "speech",
+      "notes": "OpenAI Whisper - speech recognition"
+    },
+    {
+      "source": "openai/clip",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "vision",
+      "notes": "OpenAI CLIP - vision-language model"
+    },
+    {
+      "source": "openai/dalle-2",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "generative-ai",
+      "notes": "OpenAI DALL-E 2 examples"
+    },
+    {
+      "source": "openai/gpt-3",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "OpenAI GPT-3 examples (legacy)"
+    },
+    {
+      "source": "openai/gpt-4",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "llm",
+      "notes": "OpenAI GPT-4 examples"
+    },
+    {
+      "source": "anthropics/claude-code-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "llm",
+      "notes": "Claude Code examples"
+    },
+    {
+      "source": "google-deepmind/gemma",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "Google DeepMind Gemma examples"
+    },
+    {
+      "source": "meta-llama/llama",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "llm",
+      "notes": "Meta Llama examples"
+    },
+    {
+      "source": "mistralai/mistral-src",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "Mistral AI examples"
+    },
+    {
+      "source": "togethercomputer/openchatkit",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "Together AI OpenChatKit"
+    },
+    {
+      "source": "stability-ai/stablediffusion",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "generative-ai",
+      "notes": "Stability AI Stable Diffusion"
+    },
+    {
+      "source": "CompVis/stable-diffusion",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "generative-ai",
+      "notes": "CompVis Stable Diffusion (original)"
+    },
+    {
+      "source": "AUTOMATIC1111/stable-diffusion-webui",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Stable Diffusion WebUI"
+    },
+    {
+      "source": "invoke-ai/InvokeAI",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "InvokeAI - creative AI toolkit"
+    },
+    {
+      "source": "oobabooga/text-generation-webui",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Text generation WebUI"
+    },
+    {
+      "source": "ggerganov/llama.cpp",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "llama.cpp - LLM inference in C/C++"
+    },
+    {
+      "source": "mudler/LocalAI",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "LocalAI - local OpenAI-compatible API"
+    },
+    {
+      "source": "imartinez/privateGPT",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "PrivateGPT - local LLM interaction"
+    },
+    {
+      "source": "cognitivecomputations/dolphin-models",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "llm",
+      "notes": "Dolphin models - uncensored LLMs"
+    },
+    {
+      "source": "TheBloke/local-models",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "tool",
+      "notes": "TheBloke's local model collection"
+    },
+    {
+      "source": "lm-sys/FastChat",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "FastChat - ChatGPT-style interface"
+    },
+    {
+      "source": "open-webui/open-webui",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Open WebUI - chat interface"
+    },
+    {
+      "source": "lobehub/lobe-chat",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Lobe Chat - chat interface"
+    },
+    {
+      "source": "Chainlit/chainlit",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Chainlit - conversational AI apps"
+    },
+    {
+      "source": "streamlit/streamlit-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Streamlit examples"
+    },
+    {
+      "source": "gradio-app/gradio-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Gradio examples"
+    },
+    {
+      "source": "huggingface/text-generation-inference",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "HuggingFace TGI - LLM serving"
+    },
+    {
+      "source": "vllm-project/vllm",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "vLLM - high-throughput LLM serving"
+    },
+    {
+      "source": "ray-project/ray",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "framework",
+      "notes": "Ray - distributed computing"
+    },
+    {
+      "source": "databricks/dolly",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "Databricks Dolly - open LLM"
+    },
+    {
+      "source": "stability-ai/stablelm",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "llm",
+      "notes": "Stability AI StableLM"
+    },
+    {
+      "source": "togethercomputer/RedPajama-Data",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "dataset",
+      "notes": "RedPajama dataset"
+    },
+    {
+      "source": "allenai/dolma",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "dataset",
+      "notes": "Allen AI Dolma dataset"
+    },
+    {
+      "source": "EleutherAI/lm-evaluation-harness",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "evaluation",
+      "notes": "LM Evaluation Harness"
+    },
+    {
+      "source": "openai/evals",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "evaluation",
+      "notes": "OpenAI Evals framework"
+    },
+    {
+      "source": "anthropics/evals",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "evaluation",
+      "notes": "Anthropic evals"
+    },
+    {
+      "source": "google-deepmind/generative-ai-evals",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "evaluation",
+      "notes": "Google DeepMind generative AI evals"
+    },
+    {
+      "source": "langchain-ai/evals",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "evaluation",
+      "notes": "LangChain evals"
+    },
+    {
+      "source": "run-llama/llama-hub",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "tool",
+      "notes": "LlamaHub - data connectors"
+    },
+    {
+      "source": "langchain-ai/langchain-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "official-cookbook",
+      "notes": "LangChain cookbook"
+    },
+    {
+      "source": "microsoft/autogen-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "official-cookbook",
+      "notes": "AutoGen cookbook"
+    },
+    {
+      "source": "crewAIInc/crewAI-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "official-cookbook",
+      "notes": "CrewAI examples"
+    },
+    {
+      "source": "run-llama/llama-index-starter",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "education",
+      "notes": "LlamaIndex starter examples"
+    },
+    {
+      "source": "agno-agi/agno-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "high",
+      "category": "official-cookbook",
+      "notes": "Agno cookbook"
+    },
+    {
+      "source": "instructor-ai/instructor-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Instructor cookbook"
+    },
+    {
+      "source": "Significant-Gravitas/AutoGPT-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "AutoGPT examples"
+    },
+    {
+      "source": "reworkd/AgentGPT-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "AgentGPT examples"
+    },
+    {
+      "source": "huggingface/transformers-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Transformers cookbook"
+    },
+    {
+      "source": "pytorch/pytorch-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "PyTorch examples"
+    },
+    {
+      "source": "tensorflow/tensorflow-examples",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "TensorFlow examples"
+    },
+    {
+      "source": "stability-ai/stable-diffusion-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Stable Diffusion cookbook"
+    },
+    {
+      "source": "openai/openai-cookbook-legacy",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "official-cookbook",
+      "notes": "OpenAI cookbook legacy"
+    },
+    {
+      "source": "anthropics/anthropic-cookbook-legacy",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "official-cookbook",
+      "notes": "Anthropic cookbook legacy"
+    },
+    {
+      "source": "google/generative-ai-docs-legacy",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "official-cookbook",
+      "notes": "Google generative AI docs legacy"
+    },
+    {
+      "source": "aws-samples/bedrock-recipes-legacy",
+      "ref": "main",
+      "tier": "tier3",
+      "priority": "low",
+      "category": "official-cookbook",
+      "notes": "AWS Bedrock recipes legacy"
+    },
+    {
+      "source": "vercel/ai-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Vercel AI examples"
+    },
+    {
+      "source": "microsoft/semantic-kernel-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Semantic Kernel examples"
+    },
+    {
+      "source": "microsoft/promptflow-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Prompt Flow examples"
+    },
+    {
+      "source": "cohere-ai/cohere-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Cohere cookbook"
+    },
+    {
+      "source": "pinecone-io/pinecone-cookbook",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Pinecone cookbook"
+    },
+    {
+      "source": "qdrant/qdrant-cookbook",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Qdrant cookbook"
+    },
+    {
+      "source": "chroma-core/chroma-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Chroma cookbook"
+    },
+    {
+      "source": "weaviate/weaviate-cookbook",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Weaviate cookbook"
+    },
+    {
+      "source": "milvus-io/milvus-cookbook",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Milvus cookbook"
+    },
+    {
+      "source": "huggingface/transformers-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Transformers examples"
+    },
+    {
+      "source": "pytorch/examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "PyTorch examples"
+    },
+    {
+      "source": "tensorflow/examples",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "TensorFlow examples"
+    },
+    {
+      "source": "stability-ai/stable-diffusion-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "Stable Diffusion examples"
+    },
+    {
+      "source": "facebookresearch/faiss-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "FAISS examples"
+    },
+    {
+      "source": "neuml/txtai-examples",
+      "ref": "master",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "official-cookbook",
+      "notes": "txtai examples"
+    },
+    {
+      "source": "huggingface/smol-course-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "education",
+      "notes": "HuggingFace small course examples"
+    },
+    {
+      "source": "f/awesome-chatgpt-prompts-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "prompt-collection",
+      "notes": "Awesome ChatGPT Prompts examples"
+    },
+    {
+      "source": "promptfoo/promptfoo-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Promptfoo examples"
+    },
+    {
+      "source": "langfuse/langfuse-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "Langfuse examples"
+    },
+    {
+      "source": "confident-ai/deepeval-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "tool",
+      "notes": "DeepEval examples"
+    },
+    {
+      "source": "letta-ai/skills-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "skill-collection",
+      "notes": "Letta skills examples"
+    },
+    {
+      "source": "anthropics/skills-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "skill-collection",
+      "notes": "Anthropic skills examples"
+    },
+    {
+      "source": "openai/skills-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "skill-collection",
+      "notes": "OpenAI skills examples"
+    },
+    {
+      "source": "huggingface/skills-examples",
+      "ref": "main",
+      "tier": "tier2",
+      "priority": "medium",
+      "category": "skill-collection",
+      "notes": "HuggingFace skills examples"
+    }
+  ]
+}

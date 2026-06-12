@@ -1,85 +1,23 @@
 ---
-slug: promptfoo-evals
 name: promptfoo Eval Suite Author
-name_zh: promptfoo 评估套件作者
-version: 0.1.0
-description: Author, refine, and run promptfoo eval suites (`promptfooconfig.yaml` + `prompts/` + `tests/`). For regression, matrix, and coverage evals of any prompt, endpoint, or LLM-driven system. NOT for adversarial redteam setup — that's the `promptfoo-redteam` skill.
-description_zh: 编写、优化、跑 promptfoo 评估套件（`promptfooconfig.yaml` + `prompts/` + `tests/`）。用于回归、矩阵、覆盖测试任何 prompt / 端点 / LLM 驱动系统。**不**用于对抗性 redteam（那用 `promptfoo-redteam`）。
-
-category: evaluation
-tags: [promptfoo, evals, regression, llm, yaml]
-platforms: []
-
-inputs:
-  - name: target
-    type: string
-    required: true
-    enum: [prompt, endpoint, agent, rag, chatbot, code-gen]
-    description: |
-      What you're evaluating. Drives the choice of provider pattern.
-      `prompt` = a static prompt template; `endpoint` = an HTTP
-      API; `agent` / `rag` / `chatbot` = a system driven by
-      promptfoo's openai/anthropic/echo provider or a custom
-      `file://provider.py`; `code-gen` = static prompt that
-      emits code blocks.
-  - name: suite_layout
-    type: string
-    required: false
-    description: |
-      Where to put the suite. Default `evals/<suite-name>/` with
-      `promptfooconfig.yaml` + `prompts/` + `tests/`. If the repo
-      already has a different layout, reuse it; do not impose a
-      new one.
-  - name: provider_count
-    type: integer
-    required: true
-    description: |
-      How many providers to compare. `1` for regression, `2` for
-      model comparison (e.g. cheap vs expensive). Cap at 3 — more
-      dilutes the signal.
-  - name: assertion_style
-    type: string
-    required: true
-    enum: [deterministic, model-graded, mixed]
-    description: |
-      Default `mixed` (deterministic assertions first, model-graded
-      only where ambiguous). `deterministic` only for fully
-      verifiable output (JSON shape, regex, exact match). Model
-      graded for quality judgments.
-  - name: dataset
-    type: string
-    required: false
-    enum: [inline, csv, jsonl, generated]
-    description: |
-      Test data source. `inline` for small suites (≤20 cases);
-      `csv` / `jsonl` for larger or importable corpora;
-      `generated` when you have a `generate_tests.py` that
-      produces cases on demand.
-
-output:
-  format: text
-  description: |
-    Confirmation of the suite path, the assertion mix, and the
-    latest `promptfoo eval` summary. No JSON envelope — promptfoo
-    is the system of record.
-  schema:
-    type: object
-    properties:
-      config_path: { type: string }
-      prompt_count: { type: integer }
-      test_count: { type: integer }
-      pass_rate: { type: number }
-      failing_assertions: { type: array, items: { type: string } }
-
-author: "Promptfoo (downstream pack: badhope)"
+name_zh: Promptfoo 评估
+description: "Confirmation of the suite path, the assertion mix, and the"
+description_zh: 使用 Promptfoo 运行和评估 prompt 的性能。
+category: "dev-tools"
+tags: [ai, api, backend, cli, deployment]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/promptfoo/promptfoo/tree/main/.claude/skills/promptfoo-evals
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Promptfoo (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

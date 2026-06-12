@@ -1,47 +1,22 @@
 ---
-slug: pdf-summarizer
 name: PDF Summarizer
 name_zh: PDF 摘要器
-version: 1.0.0
-description: Summarise a PDF into N bullets for a target audience. 
-  Vendor-neutral — works on any agent that can read PDFs.
+description: number of bullets in the summary
 description_zh: 把 PDF 总结成 N 条要点，按受众调整深度。无厂商依赖。
-category: official-cookbooks
-tags:
-  - pdf
-  - summarization
-  - document
-  - reading
-inputs:
-  - name: pdf_path
-    type: path
-    required: true
-    description: local path to the PDF
-  - name: audience
-    type: enum
-    required: false
-    values:
-      - engineer
-      - pm
-      - exec
-    default: pm
-    description: who is reading the summary
-  - name: length
-    type: integer
-    required: false
-    default: 5
-    constraints:
-      min: 3
-      max: 10
-    description: number of bullets in the summary
-output:
-  format: markdown
-author: badhope
+category: ai
+tags: [ai, api, documentation, frontend, llm]
+source: 
 license: MIT
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: badhope
+version: 1.0.0
 needs_review: false
 ---
+
+
+
+
+
 # When to use
 
 The user has handed you a PDF (paper, report, contract, README-as-PDF) and wants the gist without reading 50 pages. You have access to a PDF reader.

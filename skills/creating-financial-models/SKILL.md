@@ -1,22 +1,22 @@
 ---
-name: creating-financial-models
-description: This skill provides an advanced financial modeling suite with DCF 
-  analysis, sensitivity testing, Monte Carlo simulations, and scenario planning 
-  for investment decisions
-slug: creating-financial-models
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
+name: "creating-financial-models"
+name_zh: 创建财务模型
+description: "This skill provides an advanced financial modeling suite with DCF analysis,"
+description_zh: 构建财务模型用于预测、估值和决策分析。
+category: "dev-tools"
+tags: [ai, api, backend, cli, documentation]
+source: 
 license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+language: en
+author: unknown
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 # Financial Modeling Suite
 
 A comprehensive financial modeling toolkit for investment analysis, valuation, and risk assessment using industry-standard methodologies.
@@ -185,3 +185,49 @@ The model automatically performs:
 - Regular updates for market parameter defaults
 - Incorporation of regulatory changes
 - Continuous improvement based on usage patterns
+
+# When to use
+
+Use this skill when you need guidance on creating financial models.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+```python
+# DCF估值示例
+from financial_models import DCFModel
+
+# 构建DCF模型
+model = DCFModel(
+    historical_financials={
+        2021: {"revenue": 100, "fcf": 20},
+        2022: {"revenue": 120, "fcf": 25},
+        2023: {"revenue": 150, "fcf": 32},
+    },
+    growth_rate=0.15,
+    wacc=0.10,
+    terminal_growth=0.03
+)
+
+# 计算估值
+valuation = model.calculate()
+print(f"企业价值: ${valuation.enterprise_value:.2f}M")
+print(f"股权价值: ${valuation.equity_value:.2f}M")
+
+# 敏感性分析
+sensitivity = model.sensitivity_analysis(
+    variables=["growth_rate", "wacc"],
+    ranges=[(0.10, 0.20), (0.08, 0.12)]
+)
+sensitivity.plot_tornado()
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.

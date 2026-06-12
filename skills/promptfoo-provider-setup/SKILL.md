@@ -1,25 +1,20 @@
 ---
-name: promptfoo-provider-setup
-description: Configure promptfoo providers or redteam targets for hosted models,
-  live HTTP APIs, Python/JavaScript local scripts, agent SDKs, or multi-input 
-  systems. Use when connecting promptfoo to the system under test, mapping vars,
-  auth env vars, request bodies, response transforms, or static-code-derived 
-  provider wrappers. Do not use for choosing eval assertions or red team plugins
-  unless a smoke test is needed to verify the connection.
-slug: promptfoo-provider-setup
-version: 0.1.0
-category: uncategorized
-tags:
-  - needs-tagging
-inputs: []
-output:
-  format: markdown
-author: unknown
-license: UNKNOWN
-created: '2026-06-11'
-updated: '2026-06-11'
-needs_review: true
+name: "promptfoo-provider-setup"
+name_zh: "promptfoo-provider-设置"
+description: "Configure promptfoo providers or redteam targets for hosted models,"
+description_zh: "Configure promptfoo providers or redteam targets for hosted models,"
+category: "dev-tools"
+tags: [ai, api, backend, cli, documentation]
+source: 
+language: en
+needs_review: false
 ---
+
+
+
+
+
+
 # Promptfoo Provider Setup
 
 Connect Promptfoo to the system under test with the smallest reliable provider
@@ -178,3 +173,27 @@ When done, state:
 - Required environment variables
 - Safe smoke command with `--no-cache --no-share`
 - What was actually verified, and what remains a TODO
+
+# When to use
+
+Use this skill when you need to work with promptfoo-provider-setup.
+
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 promptfoo-provider-setup 技能
+skill = load_skill("promptfoo-provider-setup")
+result = skill.execute()
+print(result)
+```
+
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.

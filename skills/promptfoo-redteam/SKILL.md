@@ -1,70 +1,23 @@
 ---
-slug: promptfoo-redteam
 name: promptfoo Redteam Plugin Author
-name_zh: promptfoo Redteam 插件作者
-version: 0.1.0
-description: Standards and templates for writing promptfoo redteam plugins and graders — adversarial attack generation, scoring rubrics, and the `UserQuery` / `purpose` / `Output` / `AllowedEntities` tag contract. The counterpart to `promptfoo-evals` (regression), focused on "can I break it?".
-description_zh: 编写 promptfoo redteam 插件和评分器的规范 + 模板：对抗性攻击生成、评分 rubric、UserQuery / purpose / Output / AllowedEntities 标签协议。`promptfoo-evals`（回归）的兄弟，专注"能不能把它搞坏"。
-
-category: safety-alignment
-tags: [promptfoo, redteam, security, adversarial, llm]
-platforms: []
-
-inputs:
-  - name: artifact
-    type: string
-    required: true
-    enum: [plugin, grader, attack-template, strategy]
-    description: |
-      What you're writing. `plugin` = a new attack generator
-      (the "what to try" part); `grader` = the scoring rubric
-      (the "did it pass" part); `attack-template` = the
-      Jinja-style template that wraps the system purpose +
-      fewshot examples; `strategy` = a mutation layer (rot13,
-      base64, multilingual, etc.) applied on top of an existing
-      plugin.
-  - name: modality
-    type: string
-    required: true
-    enum: [text, multimodal, agent]
-    description: |
-      `text` for plain LLM endpoints; `multimodal` when attacks
-      include images / audio (the `{{prompt}}` variable is
-      base64-encoded — avoid putting it in rubric prose);
-      `agent` when the target has tools and you need to test
-      tool-call abuse (jailbreak into tool execution).
-  - name: target_harm
-    type: string
-    required: false
-    description: |
-      What harm category the plugin targets: `pii-leak`,
-      `prompt-injection`, `jailbreak`, `hallucination`,
-      `harmful-content`, `copyright`, `bias`, `tool-abuse`.
-      Drives the FAIL conditions in the grader rubric.
-
-output:
-  format: text
-  description: |
-    Confirmation of the created / modified files, the
-    `purpose`-aware rubric, and the test plan. No structured
-    payload — promptfoo's redteam runner is the system of record.
-  schema:
-    type: object
-    properties:
-      plugin_path: { type: string }
-      grader_path: { type: string }
-      rubric_passes: { type: integer, description: "How many fail conditions the rubric covers (self-check)" }
-      rubric_fails: { type: array, items: { type: string } }
-
-author: "Promptfoo (downstream pack: badhope)"
+name_zh: Promptfoo 红队测试
+description: "How many fail conditions the rubric covers (self-check)"
+description_zh: 使用 Promptfoo 进行 LLM 应用的红队测试和安全评估。
+category: ai
+tags: [ai, api, backend, evaluation, frontend]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/promptfoo/promptfoo/tree/main/.claude/skills/redteam-plugin-development
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Promptfoo (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

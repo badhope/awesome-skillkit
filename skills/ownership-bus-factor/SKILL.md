@@ -1,74 +1,22 @@
 ---
-slug: ownership-bus-factor
-name: Code Ownership & Bus Factor
+name: "Code Ownership & Bus Factor"
 name_zh: 代码所有权与巴士因子
-version: 0.1.0
-description: Build a security-oriented ownership map of a git repo from history — who owns which file, who maintains sensitive code, what's the bus factor, where are the orphaned sensitive paths. Exports CSV / JSON for graph databases (Neo4j, Gephi) and a co-change graph for clustering files that move together. Triggered by explicit AppSec / bus-factor requests, not general maintainer lists.
-description_zh: 从 git 历史里画出一张安全导向的所有权图谱 —— 谁拥有哪些文件、谁在维护敏感代码、巴士因子是多少、哪些敏感路径已经无人维护。导出 CSV / JSON 给图数据库（Neo4j / Gephi），再画一张 co-change 图给聚类分析用。仅在用户明确要求 AppSec / 巴士因子分析时触发，不接普通 maintainer 列表的活。
-
-category: guardrails
-tags: [security, ownership, bus-factor, git, appsec]
-platforms: []
-
-inputs:
-  - name: repo_path
-    type: path
-    required: true
-    description: |
-      Path to the git repo to analyze. Skill
-      reads `git log` to build the ownership
-      graph.
-  - name: since
-    type: date
-    required: false
-    description: |
-      Optional start date (inclusive) for the
-      commit history window. Default: 1 year
-      ago.
-  - name: until
-    type: date
-    required: false
-    description: |
-      Optional end date (inclusive) for the
-      commit history window. Default: today.
-  - name: sensitivity_rules
-    type: path
-    required: false
-    description: |
-      Optional CSV file with custom sensitivity
-      rules. Format:
-      `pattern,category,description`. Patterns
-      use git pathspec glob. If omitted, the
-      defaults below are used.
-  - name: out_dir
-    type: path
-    required: false
-    default: ./ownership-map-out
-    description: |
-      Where to write the output artifacts
-      (CSV / JSON / GraphML).
-
-output:
-  format: markdown
-  description: |
-    A `## Pipeline` block (commands to run, in
-    order), a `## Outputs` block (file map), a
-    `## Sensitivity defaults` block, and a
-    `## Analysis queries` block with the JSON
-    queries to ask of the resulting data.
-
-author: "OpenAI (downstream pack: badhope)"
+description: "|"
+description_zh: "从 git 历史里画出一张安全导向的所有权图谱 —— 谁拥有哪些文件、谁在维护敏感代码、巴士因子是多少、哪些敏感路径已经无人维护。导出 CSV / JSON 给图数据库（Neo4j / Gephi），再画一张 co-change 图给聚类分析用。仅在用户明确要求 AppSec / 巴士因子分析时触发，不接普通 maintainer 列表的活。"
+category: "dev-tools"
+tags: [ai, database, frontend, git, javascript]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/openai/skills/tree/main/skills/.curated/security-ownership-map
-  fetched_at: 2026-06-11
-  commit: a8924c2a35cfa290458852c4fad17c9133054c2e
-  license: MIT
-  original_path: skills/.curated/security-ownership-map/SKILL.md
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

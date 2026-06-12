@@ -1,99 +1,23 @@
 ---
-slug: realtime-eval-bootstrap
 name: Realtime Eval Scaffold
 name_zh: Realtime Eval 脚手架
-version: 0.1.0
-description: Bootstrap a new realtime (audio / multi-turn) eval folder — pick the right harness (single-turn TTS, replay audio, multi-turn simulation), scaffold prompt / tools / data files, and run a smoke + full eval before returning. The input is a use case; the output is a runnable eval.
+description: "|"
 description_zh: 引导搭建一个 realtime (音频 / 多轮) eval 文件夹 —— 选对 harness (单轮 TTS、音频回放、多轮模拟)，脚手架 prompt / tools / data 文件，最后跑 smoke + full eval 才返回。输入是一个使用场景，输出是可跑的 eval。
-
-category: evaluation
-tags: [realtime, evals, audio, harness, agents]
-platforms: []
-
-inputs:
-  - name: eval_name
-    type: string
-    required: true
-    description: |
-      Kebab-case folder name for the new eval. Will be created
-      under `<evals_root>/<name>_realtime_eval/`.
-  - name: goal
-    type: string
-    required: true
-    description: |
-      What scenario the eval measures. One or two sentences
-      describing the user behaviour you want to test (e.g.
-      "Customer calls the support line and asks for a refund").
-  - name: harness
-    type: enum
-    required: false
-    values: [crawl, walk, run]
-    description: |
-      Pick one:
-        - `crawl` — single-turn text-to-TTS; the model hears
-          synthetic audio generated from text rows. Default
-          for synthetic audio.
-        - `walk` — replay saved audio, or generate audio from
-          text rows with replay-specific characteristics
-          (noise, telephony artifacts, speaker identity).
-          Default when the user needs realistic audio
-          fidelity.
-        - `run`  — multi-turn simulation with tool mocks and
-          judge criteria. Use when the scenario has back-
-          and-forth and tool calls.
-  - name: system_prompt
-    type: string
-    required: false
-    description: |
-      Path to an existing system prompt file, OR inline system
-      prompt text. Will be written into the scaffolded folder
-      unless the path already exists.
-  - name: tools
-    type: string
-    required: false
-    description: |
-      Path to a tools JSON file (OpenAI function-calling
-      format), OR inline tool descriptions.
-  - name: data
-    type: string
-    required: false
-    description: |
-      Path to existing data (CSV / JSONL) the eval should use.
-      If absent, the skill authors 3 starter rows.
-  - name: graders
-    type: array
-    required: false
-    items: { type: string }
-    description: |
-      List of grader ids to apply (e.g. `transcript_accuracy`,
-      `tool_call_correctness`, `tone_professionalism`).
-
-output:
-  format: text
-  description: |
-    Confirmation that the scaffolded folder exists, the README
-    is in place, the smoke eval passed, and the full eval also
-    passed. No JSON envelope — the scaffolded folder IS the
-    deliverable.
-  schema:
-    type: object
-    properties:
-      folder_path: { type: string }
-      harness: { type: string, enum: [crawl, walk, run] }
-      smoke_result: { type: string, enum: [pass, fail, blocked] }
-      full_result: { type: string, enum: [pass, fail, blocked] }
-      data_rows: { type: integer, description: "Number of data rows the eval ran on" }
-      blockers: { type: array, items: { type: string } }
-
-author: "OpenAI (downstream pack: badhope)"
+category: ai
+tags: [ai, documentation, evaluation, frontend, javascript]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/openai/openai-cookbook/tree/main/examples/evals/realtime_evals/skills/bootstrap-realtime-eval/SKILL.md
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

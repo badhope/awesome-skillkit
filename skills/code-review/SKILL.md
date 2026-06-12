@@ -1,64 +1,23 @@
 ---
-slug: code-review
 name: Code Review Workflow
 name_zh: 代码审查工作流
-version: 0.1.0
-description: Code review workflow for any PR, branch, diff, or local change — start with a canonical review checklist, defer to specialised skills (security, ClickHouse, frontend) when the change touches those areas, output findings ordered by severity with file:line references. No findings is a valid result.
-description_zh: 适用于任何 PR / branch / diff / 本地变更的代码审查工作流 —— 先看 canonical 审查清单,当变更涉及特定领域时 defer 给专精技能 (security / ClickHouse / 前端),按严重度排序输出带 file:line 引用 的 findings。没有 finding 也是有效结果。
-
-category: code-assistants
-tags: [code-review, pr, quality, security, workflow]
-platforms: []
-
-inputs:
-  - name: change_scope
-    type: string
-    required: true
-    description: |
-      What is being reviewed: a PR number / URL, a
-      branch name, a diff path, or "local changes".
-  - name: areas_touched
-    type: array
-    required: false
-    items:
-      type: enum
-      values: [frontend, backend, security, database, ci, docs, infra, mobile, none]
-    description: |
-      Areas the change touches. Drives which
-      specialised skill(s) to defer to.
-  - name: severity_threshold
-    type: enum
-    required: false
-    values: [low, medium, high, critical-only]
-    default: medium
-    description: |
-      Lowest severity to report. `medium` (default)
-      reports medium and above. `critical-only` is for
-      fast triage.
-
-output:
-  format: text
-  description: |
-    Findings first, ordered by severity, with file:line
-    references. Short summary only after findings. If no
-    findings, say so explicitly and mention residual
-    risk or coverage gaps. The review is the deliverable.
-  schema:
-    type: object
-    properties:
-      findings: { type: array, items: { type: object } }
-      deferred_to: { type: array, items: { type: string }, description: "Specialised skills consulted" }
-      residual_risk: { type: string, description: "What you couldn't verify and why" }
-
-author: "Langfuse (downstream pack: badhope)"
+description: "|"
+description_zh: "适用于任何 PR / branch / diff / 本地变更的代码审查工作流 —— 先看 canonical 审查清单,当变更涉及特定领域时 defer 给专精技能 (security / ClickHouse / 前端),按严重度排序输出带 file:line 引用 的 findings。没有 finding 也是有效结果。"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/code-review
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

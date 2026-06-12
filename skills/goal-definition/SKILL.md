@@ -1,61 +1,22 @@
 ---
-slug: goal-definition
 name: Goal Definition
 name_zh: 目标定义
-version: 0.1.0
-description: Turn a fuzzy intention into a concrete, measurable objective before starting work — restate in concrete terms, prefer numeric evidence over decorative precision, reject pure activity goals, and only set the goal when it actually passes the bar.
+description: "|"
 description_zh: 在动手前把一个模糊的意图重写成一个具体、可衡量的目标 —— 用具体语言复述、优先采用数字证据、拒绝纯活动型目标，只在真正达标时再记录。
-
-category: code-assistants
-tags: [goal-setting, planning, okr, scope, workflow]
-platforms: []
-
-inputs:
-  - name: intent
-    type: string
-    required: true
-    description: |
-      The fuzzy intention the user expressed, in their
-      own words. Usually a sentence fragment ("make the
-      API faster", "fix the dashboard", "improve
-      onboarding").
-  - name: artifact_scope
-    type: string
-    required: false
-    description: |
-      Optional hint about the artifact, system, repo,
-      environment, or user-facing behavior the goal
-      targets. Helps the model pick the right
-      evidence type.
-  - name: budget
-    type: integer
-    required: false
-    default: 0
-    description: |
-      Optional token / time budget. Only set when the
-      user explicitly asked for one. 0 = no budget.
-
-output:
-  format: markdown
-  description: |
-    A single concise objective string, plus a short
-    evidence block naming the validators, thresholds,
-    and scope bounds. Output either a "REWRITE"
-    block (when the original intent is too vague to
-    commit) or a "GOAL" block (when it passes the bar).
-
-author: "OpenAI (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, database, evaluation]
+source: 
 license: MIT
-created: 2026-06-11
-updated: 2026-06-11
-
-source:
-  url: https://github.com/openai/skills/tree/main/skills/.curated/define-goal
-  fetched_at: 2026-06-11
-  commit: a8924c2a35cfa290458852c4fad17c9133054c2e
-  license: MIT
-  original_path: skills/.curated/define-goal/SKILL.md
+language: en
+author: "OpenAI (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

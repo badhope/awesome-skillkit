@@ -34,3 +34,15 @@ vite.log
 # contributors see where bundles go, but never commit the zips.
 bundles/*.zip
 !bundles/.gitkeep
+
+# Frontend (暂不上传)
+frontend/
+
+# Temporary files
+scripts/conversion-results.json
+scripts/retry-rate-limited.py
+CONVERSION-COMPLETE.md
+*.log
+
+# Git temporary
+.git/*.md

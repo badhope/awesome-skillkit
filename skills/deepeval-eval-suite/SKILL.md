@@ -1,89 +1,23 @@
 ---
-slug: deepeval-eval-suite
 name: deepeval Pytest Eval Suite
-name_zh: deepeval Pytest 评估套件
-version: 0.1.0
-description: Build and run an end-to-end pytest eval suite for an AI app with DeepEval. Covers dataset reuse / generation, metric selection, `deepeval test run`, and failure-driven iteration. The counterpart to deepeval-tracing (instrumentation) and deepeval-otel (raw OTLP).
-description_zh: 用 DeepEval 给 AI 应用搭建端到端 pytest 评估套件。覆盖数据集复用/生成、指标选择、`deepeval test run` 跑测、失败驱动迭代。跟 deepeval-tracing（打点）和 deepeval-otel（裸 OTLP）互为补充。
-
-category: evaluation
-tags: [deepeval, pytest, evals, agents, llm]
-platforms: []
-
-inputs:
-  - name: use_case
-    type: string
-    required: true
-    enum: [chatbot, multi-turn-agent, agent, rag, single-turn-llm]
-    description: |
-      Top-level use case. Pick exactly one. Precedence: chatbot /
-      multi-turn-agent > agent > rag. If the app is both RAG and
-      agentic, treat as `agent`. Chatbot that also calls tools =
-      `multi-turn-agent`.
-  - name: dataset_source
-    type: string
-    required: true
-    enum: [existing, generate]
-    description: |
-      `existing` = use a committed dataset the user already has.
-      `generate` = run `deepeval generate` to produce goldens
-      synthetically. Never invent goldens by hand.
-  - name: eval_model
-    type: string
-    required: true
-    description: |
-      Model used by the eval metrics (judge / scorer). Pick
-      `gpt-4.1` for stability, `gpt-4.1-mini` for cost, or
-      `claude-sonnet-4-6` if you prefer Anthropic. Must have its
-      own credentials — separate from the app's own model.
-  - name: tracing
-    type: boolean
-    required: true
-    description: |
-      Whether to instrument the app so each test case captures a
-      trace. `true` is strongly preferred when a supported
-      integration exists. Set to `false` only when the user
-      explicitly declines.
-  - name: confident_ai
-    type: boolean
-    required: true
-    description: |
-      Whether to push results to Confident AI for hosted reports
-      and dashboards. `true` requires `CONFIDENT_API_KEY` (or
-      `deepeval login`).
-  - name: iteration_rounds
-    type: integer
-    required: true
-    description: |
-      How many failure → fix → rerun cycles to perform. Default 5
-      when the user doesn't specify. Capped at 10 to avoid
-      runaway loops.
-
-output:
-  format: text
-  description: |
-    A committed pytest eval suite + a run report. Typical return
-    lists the test file(s), the metric module, the dataset path,
-    the latest pass rate, and the next concrete fix.
-  schema:
-    type: object
-    properties:
-      test_files: { type: array, items: { type: string } }
-      metrics_module: { type: string }
-      dataset_path: { type: string }
-      pass_rate: { type: number, description: 0-1, latest run }
-      failing_count: { type: integer }
-      next_change: { type: string, description: Targeted fix to attempt next round }
-
+name_zh: DeepEval 评估套件
+description: Targeted fix to attempt next round
+description_zh: 配置和运行 DeepEval 评估套件进行全面的 LLM 测试。
+category: "dev-tools"
+tags: [ai, api, backend, cli, evaluation]
+source: 
+ref: main
+license: "Apache-2.0"
+language: en
 author: "Confident AI (downstream pack: badhope)"
-license: Apache-2.0
-source:
-  url: https://github.com/confident-ai/deepeval/tree/main/skills/deepeval
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

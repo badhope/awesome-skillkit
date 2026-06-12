@@ -1,51 +1,22 @@
 ---
-slug: pdf-vision-extractor
 name: PDF Vision Extractor
 name_zh: PDF 视觉抽取器
-version: 0.1.0
-description: 从扫描版 / 图像版 PDF 抽取结构化字段，依赖 Claude 的 vision 能力。
+description: "|"
 description_zh: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
-
-category: dev-tools
-tags: [pdf, ocr, extraction, vision, claude-only]
-platforms: [claude]
-
-inputs:
-  - name: pdf_path
-    type: path
-    required: true
-    description: 本地 PDF 路径，扫描版或图像版
-  - name: schema
-    type: object
-    required: true
-    description: |
-      要抽取的字段定义。键是字段名，值是类型 + 可选 description /
-      enum。例如 `{ invoice_no: string, total: number, currency: { enum: [CNY, USD] } }`。
-  - name: pages
-    type: array
-    required: false
-    items:
-      type: integer
-    description: 只看哪些页（1-based），省略 = 全文档
-
-output:
-  format: json
-  schema:
-    type: object
-    required: [extracted, confidence]
-    properties:
-      extracted: { type: object, description: 按 schema 抽取的字段 }
-      confidence: { type: number, description: 0-1 之间，越高越确定 }
-      missing: { type: array, items: { type: string }, description: 文档里没找到的字段 }
-  description: |
-    JSON 对象：`extracted` 是字段映射，`confidence` 整体可信度，
-    `missing` 列出 schema 里没在文档里出现的字段。
-
-author: badhope
+category: ai
+tags: [ai, documentation, javascript, llm, typescript]
+source: 
 license: MIT
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: badhope
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

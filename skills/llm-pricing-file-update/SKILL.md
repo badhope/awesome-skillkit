@@ -1,80 +1,23 @@
 ---
-slug: llm-pricing-file-update
 name: LLM Model Pricing File Update
 name_zh: LLM 模型价目文件更新
-version: 0.1.0
-description: Add or update an LLM model's entry in a per-token pricing JSON — matchPattern regex for cross-provider IDs, pricing tiers, cache pricing, tokenizer alignment, and the schema validation that has to run before the change ships.
-description_zh: 在 per-token 价目 JSON 里新增/修改 LLM 模型条目 —— 跨 provider ID 的 matchPattern regex、定价 tier、缓存价格、tokenizer 对齐，以及变更上线前要跑的 schema 校验。
-
-category: observability
-tags: [pricing, llm, cost, monitoring, ops]
-platforms: []
-
-inputs:
-  - name: pricing_file
-    type: path
-    required: true
-    description: |
-      Absolute path to the JSON file that holds the per-model price
-      entries. The schema is repo-specific (a single `models` array,
-      each entry with `id`, `matchPattern`, `tiers`, `tokenizer`,
-      `updatedAt`).
-  - name: action
-    type: enum
-    required: true
-    values: [add, update]
-    description: |
-      `add` for a brand-new model; `update` for changing prices,
-      tiers, tokenizer, or regex on an existing entry.
-  - name: model_spec
-    type: object
-    required: true
-    description: |
-      The model spec. Fields:
-        - `id`: canonical model id, e.g. `gpt-4o`, `claude-opus-4-5`
-        - `provider_prefixes`: list of strings the regex must
-          accept (e.g. `['openai/gpt-4o', 'gpt-4o-2024-08-06']`)
-        - `provider`: one of openai / anthropic / bedrock / vertex
-          / azure / gemini
-        - `tokenizer`: the tokenizer name/id used to convert usage
-          to tokens (e.g. `o200k_base`, `claude`, `gemini`)
-        - `tiers`: list of pricing tiers; at least one default tier
-          with `input_cost_per_1m_tokens`,
-          `output_cost_per_1m_tokens`, optional
-          `cache_read_cost_per_1m_tokens`
-        - `source_url`: official pricing URL from the provider
-  - name: types_file
-    type: path
-    required: false
-    description: |
-      Optional path to the TS type module that lists selectable
-      models. If your playground / eval flow only allows whitelisted
-      models, update this file too.
-
-output:
-  format: text
-  description: |
-    Confirmation of the diff applied to the pricing file (and
-    types file, if any), the regex self-check result against
-    the supplied sample names, and a list of any downstream
-    consumers that might need a refresh.
-  schema:
-    type: object
-    properties:
-      diff_summary: { type: string, description: "What changed: id, fields, timestamps" }
-      regex_self_check: { type: object, description: "{accept: [names accepted], reject: [names rejected]}" }
-      validation_result: { type: string, enum: [pass, fail] }
-      downstream_consumers: { type: array, items: { type: string } }
-
-author: "Langfuse (downstream pack: badhope)"
+description: "|"
+description_zh: "在 per-token 价目 JSON 里新增/修改 LLM 模型条目 —— 跨 provider ID 的 matchPattern regex、定价 tier、缓存价格、tokenizer 对齐，以及变更上线前要跑的 schema 校验。"
+category: "dev-tools"
+tags: [ai, api, backend, cli, deployment]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/add-model-price
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

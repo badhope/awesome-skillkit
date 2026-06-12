@@ -1,71 +1,23 @@
 ---
-slug: mcp-builder
 name: MCP Server Builder
 name_zh: MCP Server 构建指南
-version: 0.1.0
-description: Author a high-quality MCP (Model Context Protocol) server in Python (FastMCP) or TypeScript (MCP SDK). Covers research, schema design, tool implementation, error handling, and the 10-question evaluation set any new server should ship with.
+description: "|"
 description_zh: 用 Python (FastMCP) 或 TypeScript (MCP SDK) 写一个高质量 MCP server。覆盖研究、schema 设计、工具实现、错误处理，以及新 server 上线前要带的 10 道评估题。
-
-category: mcp-protocol
-tags: [mcp, server, tools, protocol, llm]
-platforms: []
-
-inputs:
-  - name: target_service
-    type: string
-    required: true
-    description: |
-      The external service or API the MCP server wraps (e.g. GitHub,
-      Stripe, internal datastore). Name + a one-line purpose.
-  - name: language
-    type: enum
-    required: true
-    values: [python, typescript]
-    description: |
-      `typescript` recommended — static typing, broad AI fluency, MCPB
-      compatibility. `python` is the alternative when the user already
-      runs FastMCP or has a Python SDK dependency.
-  - name: transport
-    type: enum
-    required: false
-    default: streamable-http
-    values: [streamable-http, stdio]
-    description: |
-      `streamable-http` for remote servers (stateless JSON preferred —
-      scales and is easier to maintain than stateful sessions). `stdio`
-      for local-only.
-  - name: deployment_target
-    type: enum
-    required: false
-    values: [mcpb, remote, local]
-    description: |
-      Where the server will run. Affects packaging and transport choice.
-      Omit if you do not know yet — decide after Phase 1.
-
-output:
-  format: text
-  description: |
-    A summary of the created server: file list, tool inventory, the
-    10-question evaluation set, and any caveats (uncovered endpoints,
-    rate limits, missing pagination). No structured payload — the
-    server itself is the deliverable.
-  schema:
-    type: object
-    properties:
-      files_created: { type: array, items: { type: string } }
-      tools: { type: array, items: { type: object } }
-      evaluation_path: { type: string, description: "Path to the 10-question eval XML" }
-      open_questions: { type: array, items: { type: string } }
-
-author: "Anthropic (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: Complete terms in LICENSE.txt
-source:
-  url: https://github.com/anthropics/skills/tree/main/skills/mcp-builder
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Anthropic (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 

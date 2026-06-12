@@ -1,78 +1,23 @@
 ---
-slug: security-review
 name: Security Review Checklist
 name_zh: 安全审查清单
-version: 0.1.0
-description: Security review patterns for code review and design — SSRF and outbound URL validation, secrets and encryption-at-rest, cross-tenant data, file uploads, redirect handling, RBAC scope drift, signed URL scoping. Catches recurring security findings at design and review time, not after the CVE.
+description: "|"
 description_zh: 代码审查与设计阶段的安全检查清单 —— SSRF 与出站 URL 校验、密钥与静态加密、跨租户数据、文件上传、跳转处理、RBAC 作用域漂移、签名 URL 作用域。在设计与审查阶段捕获反复出现的安全问题，别等 CVE 出现。
-
-category: guardrails
-tags: [security, ssrf, secrets, rbac, review]
-platforms: []
-
-inputs:
-  - name: change_type
-    type: enum
-    required: true
-    values: [review, design-plan, new-integration, new-procedure]
-    description: |
-      What you're doing:
-        - `review`         — review-mode walk through a diff
-        - `design-plan`    — design a new feature (catch
-                              missing validations before code)
-        - `new-integration` — adding a new external service
-                              (webhook / blob storage / LLM)
-        - `new-procedure`  — adding a new public API or
-                              tRPC procedure that mutates
-                              project-scoped data
-  - name: trigger_surfaces
-    type: array
-    required: true
-    items:
-      type: enum
-      values:
-        - user-supplied-url
-        - new-outbound-http
-        - new-integration-form
-        - new-procedure
-        - secrets
-        - redirect-following
-        - file-upload
-    description: |
-      Which security surfaces the change touches. Drives
-      which validation helpers are required.
-  - name: repo_helpers_root
-    type: path
-    required: false
-    description: |
-      Path to the project-specific helpers (e.g. the
-      `validateOutboundUrl` function). Default: use the
-      search-tool against the repo. Override when the
-      helpers are in a known location.
-
-output:
-  format: text
-  description: |
-    Findings list ordered by severity, with file and line
-    references. Each finding names the canonical helper or
-    known-good call site the author should copy. Missing
-    negative tests are findings, not nice-to-haves.
-  schema:
-    type: object
-    properties:
-      findings: { type: array, items: { type: object } }
-      missing_negative_tests: { type: array, items: { type: string } }
-      defer_to: { type: array, items: { type: string }, description: "Other skills that should also run" }
-
-author: "Langfuse (downstream pack: badhope)"
+category: "dev-tools"
+tags: [ai, api, backend, cli, database]
+source: 
+ref: main
 license: MIT
-source:
-  url: https://github.com/langfuse/langfuse/tree/main/.agents/skills/security-review
-  ref: main
-  commit: latest
-created: 2026-06-10
-updated: 2026-06-10
+language: en
+author: "Langfuse (downstream pack: badhope)"
+version: 0.1.0
+needs_review: false
 ---
+
+
+
+
+
 
 # When to use
 
