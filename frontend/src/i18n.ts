@@ -168,6 +168,7 @@ const STRINGS = {
   "platformChip":   { en: "{p}",                                 zh: "{p}" },
   // ----- topbar / nav -----
   "nav.bundle":       { en: "Bundle",                            zh: "合集" },
+  "nav.external":     { en: "External",                          zh: "外部仓库" },
   "nav.gh":           { en: "GitHub",                            zh: "GitHub" },
   "footer.tagline":   { en: "MIT · vendor-neutral · no tracking · static site", zh: "MIT · 厂商中立 · 无追踪 · 静态站点" },
   "footer.source":    { en: "Source on GitHub",                  zh: "在 GitHub 上查看" },
@@ -213,6 +214,19 @@ const STRINGS = {
   "meta.license":      { en: "{l}",                          zh: "{l}" },
   "meta.slug":         { en: "{s}",                          zh: "{s}" },
   "meta.category":     { en: "{c}",                          zh: "{c}" },
+
+  // ----- external repos page -----
+  "external.title":      { en: "External repositories",           zh: "外部仓库索引" },
+  "external.subtitle":   { en: "We don't have every skill in the world — here are the upstream repos we pull from. Click through to grab anything we don't vendored.", zh: "我们没把全世界的技能都收齐 —— 这里列出我们抓取过的上游仓库。没收录的，可以自己去原仓库挑。" },
+  "external.vendor":     { en: "Vendor",                          zh: "厂商" },
+  "external.skills":     { en: "skills",                          zh: "条技能" },
+  "external.category":   { en: "Category",                        zh: "分类" },
+  "external.license":    { en: "License",                         zh: "许可证" },
+  "external.ref":        { en: "ref",                             zh: "ref" },
+  "external.visit":      { en: "Visit on GitHub",                 zh: "在 GitHub 上查看" },
+  "external.hint":       { en: "Each card links to the upstream repo. SKILL.md files inside the repo use the same shape we vendor; you can drop them in directly.", zh: "每张卡片链向上游仓库。仓库里的 SKILL.md 用的是我们采用的同一种格式，可以直接拿去用。" },
+  "external.empty":      { en: "No external repositories registered yet.", zh: "还没有登记外部仓库。" },
+  "external.errorLoad":  { en: "Could not load the repo list. Try reloading the page.", zh: "加载仓库列表失败，刷新页面重试。" },
 
   // ----- footer brand / glyphs (no translation, but kept here for symmetry) -----
   "brand.glyph":       { en: "▮ AI-SKILL",                   zh: "▮ AI-SKILL" },

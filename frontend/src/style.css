@@ -825,6 +825,169 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   gap: var(--s-3);
 }
 
+/* ============================ external repos page ============================
+ *
+ * A directory of upstream repos the user can jump to. Cards are
+ * grid-laid-out, with a vendor-coloured top stripe and a list of
+ * meta fields. The hue is set inline on each card by the page
+ * (vendor-name hash → hue) — we keep saturation/lightness fixed
+ * here so the family stays consistent.
+ */
+.external__title {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: var(--t-2xl);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--s-3);
+}
+.external__subtitle {
+  color: var(--ink-soft);
+  font-size: var(--t-md);
+  line-height: 1.55;
+  max-width: 65ch;
+  margin: 0 0 var(--s-6);
+}
+.external__hint {
+  margin: var(--s-5) 0 0;
+  padding: var(--s-3) var(--s-4);
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+}
+.external-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--s-4);
+}
+.external-card {
+  position: relative;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-3);
+  padding: var(--s-4);
+  padding-top: calc(var(--s-4) + 4px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.external-card::before {
+  /* Vendor-coloured top stripe. The hue comes from the inline
+     --vendor-hue set on the card. */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: hsl(var(--vendor-hue) 65% 50%);
+}
+.external-card:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--vendor-hue) 50% 60%);
+}
+.external-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+.external-card__vendor-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.external-card__vendor {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.external-card__repo {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--ink-mute);
+  word-break: break-all;
+}
+.external-card__link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: var(--radius-1);
+  background: hsl(var(--vendor-hue) 30% 95%);
+  color: hsl(var(--vendor-hue) 50% 30%);
+  text-decoration: none;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  border: 1px solid hsl(var(--vendor-hue) 30% 85%);
+  transition: background 0.15s ease;
+}
+@media (prefers-color-scheme: dark) {
+  .external-card__link {
+    background: hsl(var(--vendor-hue) 25% 18%);
+    color: hsl(var(--vendor-hue) 50% 80%);
+    border-color: hsl(var(--vendor-hue) 30% 30%);
+  }
+}
+.external-card__link:hover { background: hsl(var(--vendor-hue) 35% 92%); }
+@media (prefers-color-scheme: dark) {
+  .external-card__link:hover { background: hsl(var(--vendor-hue) 35% 24%); }
+}
+.external-card__desc {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+  line-height: 1.55;
+  margin: 0;
+}
+.external-card__meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-2) var(--s-3);
+  margin: 0;
+  padding: var(--s-3);
+  background: var(--bg-deep);
+  border-radius: var(--radius-2);
+}
+.external-card__meta > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.external-card__meta dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+.external-card__meta dd {
+  margin: 0;
+  font-size: var(--t-sm);
+  color: var(--ink);
+  word-break: break-word;
+}
+.external-card__meta code {
+  background: var(--bg-elev);
+  padding: 1px 6px;
+  border-radius: var(--radius-1);
+  font-size: 0.9em;
+}
+.external-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.external-card__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  background: var(--bg-deep);
+  padding: 2px 8px;
+  border-radius: var(--radius-1);
+}
+
 .codeblock { position: relative; }
 .codeblock pre { margin: 0 0 var(--s-3); }
 .codeblock:last-child pre { margin-bottom: 0; }

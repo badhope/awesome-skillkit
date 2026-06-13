@@ -384,6 +384,12 @@ def write_frontend_bundle(targets: list[Path], passed: list[dict]) -> None:
                 skill["platforms"] = []
             skill["body"] = body
             skill["needs_review"] = bool(skill.get("needs_review"))
+            # Preserve the original SKILL.md text so the detail /
+            # bundle pages can hand the user the *exact* file we
+            # vendored, byte-for-byte (no re-emitted YAML, no
+            # field reordering). Used by the "Download .md" /
+            # bundle .zip export buttons. (F1)
+            skill["rawMarkdown"] = text
             (FRONTEND_SKILLS_DIR / f"{slug}.json").write_text(
                 json.dumps(skill, ensure_ascii=False, indent=2, default=_json_default),
                 encoding="utf-8",

@@ -1,0 +1,149 @@
+{
+  "_about": "External skill repositories curated by AI-SKILL. Each entry is a known-good source of SKILL.md files. The /external page renders this list as a directory the user can browse and jump to. Update this file when a new upstream releases a skill library.",
+  "repos": [
+    {
+      "vendor": "Anthropic",
+      "repo": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "ref": "main",
+      "license": "See repo",
+      "skill_count_hint": "16+",
+      "category": "Official cookbooks",
+      "description_en": "Anthropic's official skill library. Heavy Claude-artifact skills (pdf, docx, theme-factory, canvas-design) and a few that generalise (mcp-builder, skill-creator, doc-coauthoring).",
+      "description_zh": "Anthropic 官方技能库。包含较多 Claude artifact 技能（pdf、docx、theme-factory、canvas-design），也有一批可通用化的（mcp-builder、skill-creator、doc-coauthoring）。",
+      "tags": ["official", "claude", "artifacts", "mcp"]
+    },
+    {
+      "vendor": "Anthropic",
+      "repo": "anthropics/anthropic-cookbook",
+      "url": "https://github.com/anthropics/anthropic-cookbook",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "8+",
+      "category": "Official cookbooks",
+      "description_en": "Cookbook-style example skills: financial-statement analysis, brand-guidelines application, financial-model generation. Notebook-driven, not production-shaped.",
+      "description_zh": "Cookbook 风格的示例技能：财报分析、品牌规范应用、财务模型生成。偏 notebook 演示，不是生产形态。",
+      "tags": ["cookbook", "notebooks", "finance", "branding"]
+    },
+    {
+      "vendor": "OpenAI",
+      "repo": "openai/skills",
+      "url": "https://github.com/openai/skills",
+      "ref": "main",
+      "license": "See repo",
+      "skill_count_hint": "44+",
+      "category": "Code assistants",
+      "description_en": "OpenAI's curated + system skills for Codex. AppSec-focused (threat-model, secure-code-by-language, ownership-bus-factor) plus Codex workflow helpers (goal-definition, pr-yeet).",
+      "description_zh": "OpenAI 给 Codex 用的 curated + system 技能集。以 AppSec 为主（threat-model、secure-code-by-language、ownership-bus-factor），附带 Codex 工作流辅助（goal-definition、pr-yeet）。",
+      "tags": ["codex", "official", "security", "workflow"]
+    },
+    {
+      "vendor": "OpenAI",
+      "repo": "openai/openai-cookbook",
+      "url": "https://github.com/openai/openai-cookbook",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "1 (curated)",
+      "category": "Evaluation",
+      "description_en": "The realtime-eval-bootstrap skill lives in examples/evals/. Most of the repo is notebooks, not skills. Use the cookbook to learn patterns, not to grab ready-made skills.",
+      "description_zh": "realtime-eval-bootstrap 技能位于 examples/evals/。仓库主体是 notebook，不是技能。当作模式参考用，不要期望能直接抓出大量成品技能。",
+      "tags": ["cookbook", "evals", "realtime", "notebooks"]
+    },
+    {
+      "vendor": "Langfuse",
+      "repo": "langfuse/langfuse",
+      "url": "https://github.com/langfuse/langfuse",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "20+",
+      "category": "Developer tools",
+      "description_en": "Langfuse's `.agents/skills/` directory is a goldmine of practical, opinionated engineering skills: code-review, clickhouse-best-practices, storybook, turborepo, security-review. Several are vendor-neutral after we re-typo them.",
+      "description_zh": "Langfuse 仓库里的 `.agents/skills/` 是一堆实用的、明确表态的工程技能：code-review、clickhouse-best-practices、storybook、turborepo、security-review。我们改了内部路径后大部分都能 vendor-neutral 化。",
+      "tags": ["code-review", "clickhouse", "frontend", "security"]
+    },
+    {
+      "vendor": "Hugging Face",
+      "repo": "huggingface/skills",
+      "url": "https://github.com/huggingface/skills",
+      "ref": "main",
+      "license": "See repo",
+      "skill_count_hint": "19+",
+      "category": "Embeddings",
+      "description_en": "Hugging Face's skills are mostly HF-platform-specific (datasets, spaces, gradio, trackio). Two generalise: transformers-js for in-browser inference and train-sentence-transformers for embedding training.",
+      "description_zh": "Hugging Face 的技能大部分是平台专用（datasets、spaces、gradio、trackio）。其中两条可以通用化：transformers-js 浏览器端推理，train-sentence-transformers 训练 embedding。",
+      "tags": ["huggingface", "transformers", "datasets", "gradio"]
+    },
+    {
+      "vendor": "Letta",
+      "repo": "letta-ai/skills",
+      "url": "https://github.com/letta-ai/skills",
+      "ref": "main",
+      "license": "See repo",
+      "skill_count_hint": "42+",
+      "category": "Documentation",
+      "description_en": "Letta's skill library is mostly platform-locked (letta/ SDK usage, fleet management) or single-tool-locked (1password, discord, notion, slack). One generalises: frontend-visual-design.",
+      "description_zh": "Letta 的技能库大部分绑死在自家平台（letta/ SDK 用法、fleet management）或单一工具（1password、discord、notion、slack）。能通用化的只有 frontend-visual-design。",
+      "tags": ["letta", "agent", "memory", "platform"]
+    },
+    {
+      "vendor": "Promptfoo",
+      "repo": "promptfoo/promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "12+",
+      "category": "Evaluation",
+      "description_en": "Promptfoo ships skills for red-team plugin development, eval setup, provider setup, and search-params. The redteam tag protocol (`<UserQuery>`, `<purpose>`, `<Output>`, `<AllowedEntities>`) is the most reusable piece.",
+      "description_zh": "Promptfoo 自带的技能覆盖 redteam 插件开发、eval 套件、provider setup、search-params。最值得复用的是 redteam 的 tag 协议（`<UserQuery>`、`<purpose>`、`<Output>`、`<AllowedEntities>`）。",
+      "tags": ["redteam", "evals", "providers", "search-params"]
+    },
+    {
+      "vendor": "Confident AI",
+      "repo": "confident-ai/deepeval",
+      "url": "https://github.com/confident-ai/deepeval",
+      "ref": "main",
+      "license": "Apache-2.0",
+      "skill_count_hint": "3+",
+      "category": "Evaluation",
+      "description_en": "Deepeval's three skills: deepeval-otel (OTLP tracing), deepeval-tracing (framework integration recipes), deepeval-eval-suite (general pytest eval pattern). The OTLP one generalises to any tracing backend.",
+      "description_zh": "Deepeval 的三个技能：deepeval-otel（OTLP tracing）、deepeval-tracing（框架集成示例）、deepeval-eval-suite（通用 pytest eval 套件）。OTLP 那条对任何 tracing 后端都通用。",
+      "tags": ["deepeval", "otel", "tracing", "evals"]
+    },
+    {
+      "vendor": "Anthropic (alt)",
+      "repo": "anthropics/anthropic-cookbook",
+      "url": "https://github.com/anthropics/anthropic-cookbook",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "8",
+      "category": "Official cookbooks",
+      "description_en": "Listed again as 'anthropics/anthropic-cookbook' — same content as the entry above. The hash-dashed path matters for source.commit pinning in our index.",
+      "description_zh": "和上面那条重复列出，源仓库标识是 anthropics/anthropic-cookbook。源 commit 固定时 path 区分有意义。",
+      "tags": ["cookbook", "anthropic", "examples"]
+    },
+    {
+      "vendor": "f/awesome",
+      "repo": "f/awesome-chatgpt-prompts",
+      "url": "https://github.com/f/awesome-chatgpt-prompts",
+      "ref": "main",
+      "license": "CC0",
+      "skill_count_hint": "1000+",
+      "category": "Applications",
+      "description_en": "A community-driven library of prompt snippets. The .windsurf/skills/ directory has a handful of re-typed skills (book-translation, widget-generator). Most of the prompts are raw YAML in /prompts/.",
+      "description_zh": "社区驱动的 prompt 片段库。`.windsurf/skills/` 里有少量重写过的技能（book-translation、widget-generator）。主体 prompt 在 `/prompts/` 是裸 YAML。",
+      "tags": ["prompts", "community", "windsurf", "cc0"]
+    },
+    {
+      "vendor": "Agno",
+      "repo": "agno-agi/agno",
+      "url": "https://github.com/agno-agi/agno",
+      "ref": "main",
+      "license": "MIT",
+      "skill_count_hint": "20+",
+      "category": "Code assistants",
+      "description_en": "Agno's cookbook/ directory has example skills (git-workflow, system-info, haiku). They're thin and intended as templates — useful as a starting shape, less so as final products.",
+      "description_zh": "Agno 的 cookbook/ 里有些示例技能（git-workflow、system-info、haiku）。都比较薄，更适合当模板起点，不是最终成品。",
+      "tags": ["agno", "cookbook", "templates"]
+    }
+  ]
+}

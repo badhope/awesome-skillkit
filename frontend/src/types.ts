@@ -56,6 +56,11 @@ export interface Skill {
   updated: string;
   needs_review: boolean;
   body: string; // Markdown body (everything after the `---` closer)
+  // The original SKILL.md text, byte-for-byte. The download and
+  // bundle export buttons hand this to the user — we don't
+  // re-emit the YAML from the typed fields, so what the user
+  // gets is exactly what we vendored from the source repo.
+  rawMarkdown?: string;
   // Provenance block. Every skill is expected to have one, but
   // hand-written skills may leave the upstream `commit` as
   // "n/a". Optional in the type so the UI can degrade gracefully.

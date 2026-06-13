@@ -62,6 +62,7 @@ export async function renderList(
       <p class="hero__sub">${escHtml(t("hero.sub"))}</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#/bundle" data-link>${escHtml(t("hero.cta.bundle"))}</a>
+        <a class="btn" href="#/external" data-link>${escHtml(t("nav.external"))}</a>
         <a class="btn" href="https://github.com/badhope/AI-SKILL" rel="noopener noreferrer" target="_blank">${escHtml(t("hero.cta.gh"))}</a>
       </div>
       <div class="hero__mark-glyph" aria-hidden="true">▮ AI-SKILL</div>

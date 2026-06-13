@@ -132,5 +132,9 @@ export async function renderBundle(
 }
 
 function reEmit(s: Skill): string {
+  // Prefer the original vendored text. If a per-skill JSON was
+  // produced without the rawMarkdown field, fall back to a
+  // synthesized frontmatter + body so the bundle still works.
+  if (s.rawMarkdown && s.rawMarkdown.length > 0) return s.rawMarkdown;
   return dumpFrontmatter(s) + "\n\n" + s.body;
 }

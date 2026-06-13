@@ -319,8 +319,15 @@ async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: 
 }
 
 function downloadSkill(s: Skill): void {
-  const fm = dumpFrontmatter(s);
-  const blob = new Blob([fm, "\n", s.body], { type: "text/markdown" });
+  // Prefer the byte-for-byte original we vendored from the source
+  // repo. Fall back to a re-emitted frontmatter + body if the
+  // build pipeline was run without the raw field (defensive —
+  // shouldn't happen in normal CI, but keeps the button working
+  // if a contributor hand-writes a per-skill JSON).
+  const text = s.rawMarkdown && s.rawMarkdown.length > 0
+    ? s.rawMarkdown
+    : dumpFrontmatter(s) + "\n" + s.body;
+  const blob = new Blob([text], { type: "text/markdown" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = `${s.slug}.md`;

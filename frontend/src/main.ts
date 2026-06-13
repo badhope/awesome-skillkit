@@ -8,6 +8,7 @@
 import { renderList } from "./pages/list";
 import { renderDetail, renderNotFound } from "./pages/detail";
 import { renderBundle } from "./pages/bundle";
+import { renderExternal } from "./pages/external";
 import type { Skill, SkillIndex } from "./types";
 import { applyStaticTranslations, getLocale, setLocale, subscribe, t } from "./i18n";
 import { escHtml } from "./shared";
@@ -55,6 +56,9 @@ async function route() {
     } else if (hash === "#/bundle") {
       document.title = `${t("bundle.title")} — AI-SKILL`;
       await renderBundle(mainEl, idx);
+    } else if (hash === "#/external") {
+      document.title = `${t("external.title")} — AI-SKILL`;
+      await renderExternal(mainEl);
     } else if (hash.startsWith("#/skill/")) {
       const slug = decodeURIComponent(hash.slice("#/skill/".length));
       const skill = await loadSkill(slug);
