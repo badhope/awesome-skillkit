@@ -12,7 +12,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: cli-backend-testing
 version: 1.0.0

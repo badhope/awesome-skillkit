@@ -13,7 +13,6 @@ tags:
   - frontend
   - llm
 source:
-language: en
 needs_review: false
 slug: screenshot
 version: 1.0.0

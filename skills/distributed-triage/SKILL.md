@@ -13,7 +13,6 @@ tags:
   - frontend
   - git
 source:
-language: en
 needs_review: false
 slug: distributed-triage
 version: 1.0.0

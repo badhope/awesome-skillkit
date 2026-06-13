@@ -11,7 +11,6 @@ tags:
   - llm
   - python
 source:
-language: en
 needs_review: false
 slug: app
 version: 1.0.0

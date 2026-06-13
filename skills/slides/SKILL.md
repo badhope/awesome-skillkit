@@ -13,7 +13,6 @@ tags:
   - frontend
   - javascript
 source:
-language: en
 needs_review: false
 slug: slides
 version: 1.0.0

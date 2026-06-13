@@ -13,7 +13,6 @@ tags:
   - javascript
   - llm
 source:
-language: en
 needs_review: false
 slug: imsg
 version: 1.0.0

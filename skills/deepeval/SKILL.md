@@ -13,7 +13,6 @@ tags:
   - frontend
 source:
 license: Apache-2.0
-language: en
 author: unknown
 version: 0.1.0
 needs_review: false

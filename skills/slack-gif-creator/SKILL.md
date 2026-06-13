@@ -9,7 +9,6 @@ tags: [ai, api, frontend, python, typescript]
 license: MIT
 needs_review: false
 source:
-language: en
 author: AI-SKILL
 version: 1.0.0
 created: 2026-06-12
@@ -23,8 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
 # When to use
 
 Use this skill when you need guidance on slack-gif-creator.

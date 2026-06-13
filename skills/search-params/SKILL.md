@@ -17,7 +17,6 @@ tags:
   - frontend
   - llm
 source:
-language: en
 needs_review: false
 slug: search-params
 version: 1.0.0

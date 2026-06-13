@@ -15,7 +15,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: notion-spec-to-implementation
 version: 1.0.0

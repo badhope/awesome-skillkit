@@ -448,7 +448,7 @@ skills:
   - slug: browser-ml-in-js
     name: Browser ML in JavaScript
     name_zh: 浏览器端机器学习（JavaScript）
-    description: '|'
+    description: The user wants to run an ML model in JavaScript
     category: dev-tools
     tags:
       - ai
@@ -599,7 +599,7 @@ skills:
   - slug: cli-builder
     name: CLI Builder
     name_zh: CLI 工具构造
-    description: '|'
+    description: The user wants a **real CLI** they can run by name
     category: dev-tools
     tags:
       - ai
@@ -631,7 +631,7 @@ skills:
   - slug: clickhouse-best-practices
     name: ClickHouse Best Practices
     name_zh: ClickHouse 最佳实践
-    description: '|'
+    description: You're reviewing or designing something that touches
     category: dev-tools
     tags:
       - ai
@@ -661,7 +661,9 @@ skills:
   - slug: code-review
     name: Code Review Workflow
     name_zh: 代码审查工作流
-    description: '|'
+    description: Canonical code-review workflow for any PR, branch, diff, or 
+      local change. Findings ordered by severity, defer to specialist skills 
+      when needed.
     category: dev-tools
     tags:
       - ai
@@ -1129,7 +1131,7 @@ skills:
   - slug: embedding-model-training
     name: Embedding Model Training
     name_zh: 嵌入模型训练
-    description: '|'
+    description: The user wants to train, fine-tune, or adapt an
     category: applications
     tags:
       - ai
@@ -1338,7 +1340,7 @@ skills:
   - slug: frontend-large-feature-architecture
     name: Frontend Large-Feature Architecture
     name_zh: 前端大型功能架构
-    description: '|'
+    description: You're about to build a **non-trivial frontend feature** —
     category: dev-tools
     tags:
       - ai
@@ -1369,7 +1371,7 @@ skills:
   - slug: frontend-visual-design
     name: Frontend Visual Design Taste
     name_zh: 前端视觉设计品味
-    description: '|'
+    description: The user is building something where the quality
     category: applications
     tags:
       - ai
@@ -1467,7 +1469,7 @@ skills:
   - slug: goal-definition
     name: Goal Definition
     name_zh: 目标定义
-    description: '|'
+    description: The user said "I want to…" or "let's set a goal" or
     category: dev-tools
     tags:
       - ai
@@ -1920,7 +1922,7 @@ skills:
   - slug: internal-comms
     name: Internal Comms Authoring
     name_zh: 内部沟通文档写作
-    description: '|'
+    description: You're drafting a **piece of internal communication** —
     category: dev-tools
     tags:
       - ai
@@ -2116,7 +2118,7 @@ skills:
   - slug: llm-pricing-file-update
     name: LLM Model Pricing File Update
     name_zh: LLM 模型价目文件更新
-    description: '|'
+    description: You maintain an internal **per-token LLM pricing data file** —
     category: dev-tools
     tags:
       - ai
@@ -2234,7 +2236,8 @@ skills:
   - slug: mcp-builder
     name: MCP Server Builder
     name_zh: MCP Server 构建指南
-    description: '|'
+    description: You're building an **MCP server** that lets an LLM call into 
+      some
     category: dev-tools
     tags:
       - ai
@@ -2544,7 +2547,7 @@ skills:
   - slug: ownership-bus-factor
     name: Code Ownership & Bus Factor
     name_zh: 代码所有权与巴士因子
-    description: '|'
+    description: The user said "build me an ownership map", "what
     category: dev-tools
     tags:
       - ai
@@ -2603,7 +2606,7 @@ skills:
   - slug: pdf-vision-extractor
     name: PDF Vision Extractor
     name_zh: PDF 视觉抽取器
-    description: '|'
+    description: '> **Claude-only** — 这个技能假设模型有 vision 能力读 PDF 里的图像。'
     category: applications
     tags:
       - ai
@@ -2666,7 +2669,7 @@ skills:
   - slug: pnpm-upgrade-package
     name: PNPM Upgrade Package
     name_zh: pnpm 升级依赖
-    description: '|'
+    description: You're bumping a dependency in a **pnpm workspace**.
     category: dev-tools
     tags:
       - ai
@@ -3017,7 +3020,7 @@ skills:
   - slug: realtime-eval-bootstrap
     name: Realtime Eval Scaffold
     name_zh: Realtime Eval 脚手架
-    description: '|'
+    description: You want to **start a new realtime eval** for an audio or
     category: applications
     tags:
       - ai
@@ -3183,7 +3186,7 @@ skills:
   - slug: secure-code-by-language
     name: Secure Code by Language
     name_zh: 按语言的安全编码指南
-    description: '|'
+    description: The user said "write this securely", "do a security
     category: dev-tools
     tags:
       - ai
@@ -3232,7 +3235,7 @@ skills:
   - slug: security-review
     name: Security Review Checklist
     name_zh: 安全审查清单
-    description: '|'
+    description: You're reviewing or designing a change that touches a
     category: dev-tools
     tags:
       - ai
@@ -3321,7 +3324,7 @@ skills:
   - slug: skill-creator
     name: Skill Authoring Loop
     name_zh: 技能编写迭代流程
-    description: '|'
+    description: You're authoring a **skill** — a self-contained
     category: dev-tools
     tags:
       - ai
@@ -3579,7 +3582,7 @@ skills:
   - slug: storybook
     name: Storybook Component Stories
     name_zh: Storybook 组件故事编写
-    description: '|'
+    description: You're writing or reviewing a **Storybook story** for a
     category: dev-tools
     tags:
       - ai
@@ -3680,7 +3683,7 @@ skills:
   - slug: threat-modeling
     name: Repository Threat Model
     name_zh: 仓库威胁建模
-    description: '|'
+    description: The user said "threat model this", "what could go
     category: dev-tools
     tags:
       - ai
@@ -3807,7 +3810,7 @@ skills:
   - slug: turborepo
     name: Turborepo Monorepo Authoring
     name_zh: Turborepo Monorepo 编写
-    description: '|'
+    description: You have a **Turborepo monorepo** and you're doing one of
     category: dev-tools
     tags:
       - ai

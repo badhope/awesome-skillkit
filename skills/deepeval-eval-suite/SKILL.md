@@ -10,10 +10,8 @@ tags:
   - backend
   - cli
   - evaluation
-source:
-ref: main
+source: null
 license: Apache-2.0
-language: en
 author: 'Confident AI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

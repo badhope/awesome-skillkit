@@ -11,7 +11,6 @@ tags:
   - cli
   - deployment
 source:
-language: en
 needs_review: false
 slug: skill
 version: 1.0.0

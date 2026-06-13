@@ -15,7 +15,6 @@ tags:
   - deployment
   - documentation
 source:
-language: en
 needs_review: false
 slug: triaging-issues
 version: 1.0.0

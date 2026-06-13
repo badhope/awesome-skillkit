@@ -11,7 +11,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: huggingface-best
 version: 1.0.0

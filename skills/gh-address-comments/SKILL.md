@@ -15,7 +15,6 @@ tags:
   - frontend
   - git
 source:
-language: en
 needs_review: false
 slug: gh-address-comments
 version: 1.0.0

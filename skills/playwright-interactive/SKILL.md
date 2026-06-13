@@ -13,7 +13,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: playwright-interactive
 version: 1.0.0

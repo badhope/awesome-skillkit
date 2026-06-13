@@ -12,7 +12,6 @@ tags:
   - cli
   - database
 source:
-language: en
 author: autogpt-team
 version: 2.1.0
 needs_review: false

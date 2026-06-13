@@ -13,7 +13,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: update-provider-models
 version: 1.0.0

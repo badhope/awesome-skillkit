@@ -21,7 +21,6 @@ tags:
   - llm
   - python
 source:
-language: en
 needs_review: false
 slug: plugin-creator
 version: 1.0.0

@@ -16,7 +16,6 @@ tags:
   - documentation
 needs_review: false
 source:
-language: en
 slug: huggingface-paper-publisher
 version: 1.0.0
 created: '2026-06-12'

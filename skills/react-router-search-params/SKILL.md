@@ -6,10 +6,8 @@ description: 在 React Router 里为 URL 状态变化选 replace 还是 push。�
 description_zh: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 useSearchParamState hook 模式和决策表。
 category: dev-tools
 tags: [ai, api, backend, cli, frontend]
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: AI-SKILL
 version: 1.0.0
 created: 2026-06-12
@@ -24,12 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're wiring up **URL state in a React app** — a filter, a

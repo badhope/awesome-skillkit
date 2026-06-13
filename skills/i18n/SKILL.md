@@ -13,7 +13,6 @@ tags:
   - frontend
   - javascript
 source:
-language: en
 needs_review: false
 slug: i18n
 version: 1.0.0

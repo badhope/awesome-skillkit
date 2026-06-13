@@ -11,7 +11,6 @@ tags:
   - javascript
   - llm
 source:
-language: en
 needs_review: false
 slug: remotion
 version: 1.0.0

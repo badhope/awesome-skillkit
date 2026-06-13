@@ -13,7 +13,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: version-release
 version: 1.0.0

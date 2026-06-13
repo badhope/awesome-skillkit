@@ -13,7 +13,6 @@ tags:
   - frontend
   - git
 source:
-language: en
 needs_review: false
 slug: docs-changelog
 version: 1.0.0

@@ -8,7 +8,6 @@ category: dev-tools
 tags: [ai, api, frontend, git, llm]
 source:
 license: MIT
-language: en
 author: AI-SKILL
 version: 1.0.0
 created: 2026-06-12
@@ -23,12 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 The user said "yeet this", "ship it as a PR",

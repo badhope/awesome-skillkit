@@ -10,7 +10,6 @@ tags:
   - python
   - typescript
 source:
-language: en
 needs_review: false
 slug: invalid-name
 version: 1.0.0

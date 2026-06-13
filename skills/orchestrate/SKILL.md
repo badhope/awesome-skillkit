@@ -13,7 +13,6 @@ tags:
   - cli
   - database
 source:
-language: en
 author: autogpt-team
 version: 6.0.0
 needs_review: false

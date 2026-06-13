@@ -17,7 +17,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: visual-identity
 version: 1.0.0

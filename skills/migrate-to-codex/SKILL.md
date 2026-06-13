@@ -13,7 +13,6 @@ tags:
   - database
   - deployment
 source:
-language: en
 needs_review: false
 slug: migrate-to-codex
 version: 1.0.0

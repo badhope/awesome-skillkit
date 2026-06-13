@@ -13,7 +13,6 @@ tags:
   - database
   - evaluation
 source:
-language: en
 needs_review: false
 slug: pt2-bug-basher
 version: 1.0.0

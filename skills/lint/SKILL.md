@@ -11,7 +11,6 @@ tags:
   - frontend
   - git
 source:
-language: en
 needs_review: false
 slug: lint
 version: 1.0.0

@@ -13,7 +13,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: document-public-apis
 version: 1.0.0

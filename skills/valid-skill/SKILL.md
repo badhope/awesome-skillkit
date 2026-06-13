@@ -12,7 +12,6 @@ tags:
   - typescript
 source:
 license: Apache-2.0
-language: en
 author: test
 version: 1.0.0
 needs_review: false

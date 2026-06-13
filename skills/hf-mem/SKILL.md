@@ -13,7 +13,6 @@ tags:
   - huggingface
   - javascript
 source:
-language: en
 needs_review: false
 slug: hf-mem
 version: 1.0.0

@@ -14,7 +14,6 @@ tags:
   - documentation
 source:
 license: Proprietary. LICENSE.txt has complete terms
-language: en
 needs_review: false
 slug: xlsx
 version: 1.0.0

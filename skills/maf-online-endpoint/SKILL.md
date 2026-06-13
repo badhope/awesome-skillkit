@@ -25,7 +25,6 @@ tags:
   - cli
   - deployment
 source:
-language: en
 needs_review: false
 slug: maf-online-endpoint
 version: 1.0.0

@@ -17,7 +17,6 @@ tags:
   - git
   - javascript
 source:
-language: en
 author: autogpt-team
 version: 3.0.0
 needs_review: false

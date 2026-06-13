@@ -13,7 +13,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: desktop
 version: 1.0.0

@@ -25,7 +25,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: hatch-pet
 version: 1.0.0

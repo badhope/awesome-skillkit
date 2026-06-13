@@ -14,7 +14,6 @@ tags:
   - git
 source:
 license: MIT
-language: en
 needs_review: false
 slug: importing-chatgpt-memory
 version: 1.0.0

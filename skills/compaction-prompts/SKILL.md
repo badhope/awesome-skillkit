@@ -14,7 +14,6 @@ tags:
   - database
 source:
 license: MIT
-language: en
 needs_review: false
 slug: compaction-prompts
 version: 1.0.0

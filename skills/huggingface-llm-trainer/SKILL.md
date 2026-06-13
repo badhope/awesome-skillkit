@@ -14,7 +14,6 @@ tags:
   - docker
 source:
 license: Complete terms in LICENSE.txt
-language: en
 needs_review: false
 slug: huggingface-llm-trainer
 version: 1.0.0

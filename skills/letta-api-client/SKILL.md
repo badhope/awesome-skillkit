@@ -13,7 +13,6 @@ tags:
   - database
 source:
 license: MIT
-language: en
 needs_review: false
 slug: letta-api-client
 version: 1.0.0

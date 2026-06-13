@@ -17,7 +17,6 @@ tags:
   - database
   - frontend
 source:
-language: en
 needs_review: false
 slug: github-pr-inline-reply
 version: 1.0.0

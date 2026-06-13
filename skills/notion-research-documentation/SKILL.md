@@ -12,7 +12,6 @@ tags:
   - database
   - documentation
 source:
-language: en
 needs_review: false
 slug: notion-research-documentation
 version: 1.0.0

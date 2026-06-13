@@ -14,7 +14,6 @@ tags:
   - python
 source:
 license: Complete terms in LICENSE.txt
-language: en
 needs_review: false
 slug: theme-factory
 version: 1.0.0

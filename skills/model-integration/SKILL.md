@@ -11,7 +11,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: model-integration
 version: 1.0.0

@@ -12,7 +12,6 @@ tags:
   - deployment
   - documentation
 source:
-language: en
 needs_review: false
 slug: security-best-practices
 version: 1.0.0

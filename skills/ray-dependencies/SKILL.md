@@ -19,7 +19,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: ray-dependencies
 version: 1.0.0

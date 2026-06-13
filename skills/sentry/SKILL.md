@@ -13,7 +13,6 @@ tags:
   - deployment
   - frontend
 source:
-language: en
 needs_review: false
 slug: sentry
 version: 1.0.0

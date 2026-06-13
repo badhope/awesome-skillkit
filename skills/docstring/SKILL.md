@@ -13,7 +13,6 @@ tags:
   - frontend
   - git
 source:
-language: en
 needs_review: false
 slug: docstring
 version: 1.0.0

@@ -13,7 +13,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: at-dispatch-v2
 version: 1.0.0

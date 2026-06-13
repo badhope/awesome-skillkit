@@ -13,7 +13,6 @@ tags:
   - database
   - deployment
 source:
-language: en
 needs_review: false
 slug: upstash-workflow
 version: 1.0.0

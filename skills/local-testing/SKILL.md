@@ -12,7 +12,6 @@ tags:
   - docker
 needs_review: false
 source:
-language: en
 slug: local-testing
 version: 1.0.0
 created: '2026-06-12'

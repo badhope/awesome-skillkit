@@ -13,7 +13,6 @@ tags:
   - frontend
   - llm
 source:
-language: en
 needs_review: false
 slug: zustand
 version: 1.0.0

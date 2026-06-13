@@ -13,7 +13,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: add-function-examples
 version: 1.0.0

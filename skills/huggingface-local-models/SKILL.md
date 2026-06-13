@@ -17,7 +17,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: huggingface-local-models
 version: 1.0.0

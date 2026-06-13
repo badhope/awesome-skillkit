@@ -7,7 +7,6 @@ description_zh: 初始化基于 worktree 的 repo 布局以支持并行开发。
 category: dev-tools
 tags: [ai, api, backend, cli, frontend]
 source:
-language: en
 author: AI-SKILL
 version: 1.0.0
 license: MIT
@@ -23,9 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
-
 # When to use
 
 Use this skill when you need guidance on setup-repo.

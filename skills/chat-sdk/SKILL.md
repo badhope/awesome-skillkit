@@ -13,7 +13,6 @@ tags:
   - cli
   - deployment
 source:
-language: en
 needs_review: false
 slug: chat-sdk
 version: 1.0.0

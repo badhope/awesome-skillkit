@@ -13,7 +13,6 @@ tags:
   - cli
   - evaluation
 source:
-language: en
 needs_review: false
 slug: transcribe
 version: 1.0.0

@@ -14,7 +14,6 @@ tags:
   - database
 source:
 license: MIT
-language: en
 needs_review: false
 slug: agent-development
 version: 1.0.0

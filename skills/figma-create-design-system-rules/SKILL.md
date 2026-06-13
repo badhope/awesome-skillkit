@@ -12,7 +12,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: figma-create-design-system-rules
 version: 1.0.0

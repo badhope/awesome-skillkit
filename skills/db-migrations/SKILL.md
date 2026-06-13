@@ -11,7 +11,6 @@ tags:
   - deployment
   - documentation
 source:
-language: en
 needs_review: false
 slug: db-migrations
 version: 1.0.0

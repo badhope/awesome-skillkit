@@ -6,10 +6,8 @@ description: "三阶段结构化文档共写工作流 - Context Gathering / Refi
 description_zh: "三阶段结构化文档共写工作流 - Context Gathering / Refinement & Structure / Reader Testing。当用户提到写文档、起草提案、创建 spec 时触发。跳出写完即发的陷阱。"
 category: documentation
 tags: [ai, documentation, frontend, llm, security]
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: AI-SKILL
 version: 1.0.0
 created: 2026-06-12
@@ -24,12 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You're about to co-author a **substantial document** —

@@ -12,7 +12,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: figma-code-connect-components
 version: 1.0.0

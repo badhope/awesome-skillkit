@@ -13,7 +13,6 @@ tags:
   - cli
   - docker
 source:
-language: en
 needs_review: false
 slug: figma-generate-design
 version: 1.0.0

@@ -15,7 +15,6 @@ tags:
   - cli
   - docker
 source:
-language: en
 needs_review: false
 slug: modal
 version: 1.0.0

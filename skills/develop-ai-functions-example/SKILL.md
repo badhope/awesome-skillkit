@@ -15,7 +15,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: develop-ai-functions-example
 version: 1.0.0

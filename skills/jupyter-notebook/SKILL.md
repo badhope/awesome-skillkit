@@ -12,7 +12,6 @@ tags:
   - javascript
   - llm
 source:
-language: en
 needs_review: false
 slug: jupyter-notebook
 version: 1.0.0

@@ -13,7 +13,6 @@ tags:
   - documentation
   - frontend
 source:
-language: en
 needs_review: false
 slug: yeet
 version: 1.0.0

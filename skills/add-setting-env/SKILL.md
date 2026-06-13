@@ -13,7 +13,6 @@ tags:
   - frontend
   - javascript
 source:
-language: en
 needs_review: false
 slug: add-setting-env
 version: 1.0.0

@@ -19,7 +19,6 @@ tags:
   - cli
   - deployment
 source:
-language: en
 needs_review: false
 slug: github
 version: 1.0.0

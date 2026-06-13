@@ -13,7 +13,6 @@ tags:
   - cli
   - deployment
 source:
-language: en
 needs_review: false
 slug: cookbook-audit
 version: 1.0.0

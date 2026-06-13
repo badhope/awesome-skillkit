@@ -12,7 +12,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: imagegen
 version: 1.0.0

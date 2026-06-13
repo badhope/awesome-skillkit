@@ -14,7 +14,6 @@ tags:
   - evaluation
 source:
 license: Apache-2.0
-language: en
 author: huggingface
 version: 1.0.0
 needs_review: false

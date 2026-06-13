@@ -15,7 +15,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: drizzle
 version: 1.0.0

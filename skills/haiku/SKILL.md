@@ -11,7 +11,6 @@ tags:
   - python
   - typescript
 source:
-language: en
 needs_review: false
 slug: haiku
 version: 1.0.0

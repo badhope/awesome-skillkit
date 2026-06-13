@@ -14,7 +14,6 @@ tags:
   - deployment
 source:
 license: Apache-2.0
-language: en
 author: huggingface
 version: 4.0.0
 needs_review: false

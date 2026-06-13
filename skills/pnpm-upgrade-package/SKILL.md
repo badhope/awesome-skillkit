@@ -1,7 +1,7 @@
 ---
 name: PNPM Upgrade Package
 name_zh: pnpm 升级依赖
-description: '|'
+description: 'You''re bumping a dependency in a **pnpm workspace**.'
 description_zh: 把 pnpm workspace 依赖升级到目标或最新版本 —— 直系与传递依赖 bump、发布时效检查、作用域 
   override、lockfile 与 dedupe 校验。覆盖四个"不要"陷阱：手编 lockfile、永久 override、静默升级 
   latest、dedupe 引入无关 churn。
@@ -12,10 +12,8 @@ tags:
   - cli
   - deployment
   - documentation
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: 'Langfuse (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

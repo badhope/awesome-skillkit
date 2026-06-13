@@ -22,7 +22,6 @@ tags:
   - javascript
   - llm
 source:
-language: en
 needs_review: false
 slug: ai-news
 version: 1.0.0

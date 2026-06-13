@@ -1,7 +1,7 @@
 ---
 name: Skill Authoring Loop
 name_zh: 技能编写迭代流程
-description: '|'
+description: 'You''re authoring a **skill** — a self-contained'
 description_zh: 从零创建新技能或改进已有技能 —— 起草、写测试 prompt、跑定性 + 定量评估、迭代 description 
   以提升触发准确率、扩充测试集、再来一遍。这个循环就是技能本身。
 category: dev-tools
@@ -11,10 +11,8 @@ tags:
   - cli
   - database
   - documentation
-source:
-ref: main
+source: null
 license: Complete terms in LICENSE.txt
-language: en
 author: 'Anthropic (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

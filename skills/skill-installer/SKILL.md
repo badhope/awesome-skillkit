@@ -15,7 +15,6 @@ tags:
   - database
   - frontend
 source:
-language: en
 needs_review: false
 slug: skill-installer
 version: 1.0.0

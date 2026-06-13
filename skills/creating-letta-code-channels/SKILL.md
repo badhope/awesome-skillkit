@@ -20,7 +20,6 @@ tags:
   - documentation
 source:
 license: MIT
-language: en
 needs_review: false
 slug: creating-letta-code-channels
 version: 1.0.0

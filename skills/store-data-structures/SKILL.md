@@ -13,7 +13,6 @@ tags:
   - database
   - documentation
 source:
-language: en
 needs_review: false
 slug: store-data-structures
 version: 1.0.0

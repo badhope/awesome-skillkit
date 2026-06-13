@@ -1,7 +1,7 @@
 ---
 name: Repository Threat Model
 name_zh: 仓库威胁建模
-description: '|'
+description: 'The user said "threat model this", "what could go'
 description_zh: 写一份基于仓库证据的威胁建模 —— 划定系统范围、画出信任边界、列出资产、枚举绑定到资产的滥用路径、用显式 likelihood
   × impact 推理排优先级、最后验证假设。每一句结论都要在仓库里找到证据，别写通用检查表。
 category: dev-tools
@@ -13,7 +13,6 @@ tags:
   - database
 source:
 license: MIT
-language: en
 author: 'OpenAI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

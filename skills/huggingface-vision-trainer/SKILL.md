@@ -31,7 +31,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: huggingface-vision-trainer
 version: 1.0.0

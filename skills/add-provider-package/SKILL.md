@@ -13,7 +13,6 @@ tags:
   - deployment
   - documentation
 source:
-language: en
 needs_review: false
 slug: add-provider-package
 version: 1.0.0

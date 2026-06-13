@@ -14,7 +14,6 @@ tags:
   - frontend
 source:
 license: MIT
-language: en
 needs_review: false
 slug: skill-development
 version: 1.0.0

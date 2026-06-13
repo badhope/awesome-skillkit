@@ -13,7 +13,6 @@ tags:
   - python
   - typescript
 source:
-language: en
 needs_review: false
 slug: discount-review
 version: 1.0.0

@@ -13,7 +13,6 @@ tags:
   - cli
   - frontend
 source:
-language: en
 needs_review: false
 slug: speech
 version: 1.0.0

@@ -16,7 +16,6 @@ tags:
   - database
 needs_review: false
 source:
-language: en
 slug: data-fetching-architecture
 version: 1.0.0
 created: '2026-06-12'

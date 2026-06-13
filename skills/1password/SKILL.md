@@ -13,7 +13,6 @@ tags:
   - llm
   - python
 source:
-language: en
 needs_review: false
 slug: 1password
 version: 1.0.0

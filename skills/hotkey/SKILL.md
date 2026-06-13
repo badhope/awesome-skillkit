@@ -13,7 +13,6 @@ tags:
   - llm
   - python
 source:
-language: en
 needs_review: false
 slug: hotkey
 version: 1.0.0

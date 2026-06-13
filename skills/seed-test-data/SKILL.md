@@ -12,7 +12,6 @@ tags:
   - docker
 source:
 license: UNKNOWN
-language: en
 author: unknown
 version: 0.1.0
 needs_review: false

@@ -13,7 +13,6 @@ tags:
   - docker
   - frontend
 source:
-language: en
 needs_review: false
 slug: pyrefly-type-coverage
 version: 1.0.0

@@ -12,7 +12,6 @@ tags:
   - database
   - docker
 source:
-language: en
 needs_review: false
 slug: add-provider-doc
 version: 1.0.0

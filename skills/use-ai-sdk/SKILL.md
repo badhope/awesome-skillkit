@@ -8,7 +8,6 @@ category: dev-tools
 tags: [ai, api, backend, cli, documentation]
 needs_review: false
 source:
-language: en
 author: AI-SKILL
 version: 1.0.0
 license: MIT
@@ -23,8 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
 ## Prerequisites
 
 Before searching docs, check if `node_modules/ai/docs/` exists. If not, install **only** the `ai` package using the project's package manager (e.g., `pnpm add ai`).

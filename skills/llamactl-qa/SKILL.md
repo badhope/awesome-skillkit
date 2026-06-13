@@ -8,7 +8,6 @@ category: dev-tools
 tags: [ai, api, backend, cli, deployment]
 needs_review: false
 source:
-language: en
 author: AI-SKILL
 version: 1.0.0
 license: MIT
@@ -23,8 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
 # When to use
 
 Use this skill for changes to `llamactl` commands (new flags, output modes, command splits, behavior changes), changes to control-plane API contracts that llamactl consumes, or changes to auth / profile / project resolution. Skip when the change is fully covered by pytest, or when the failure mode is in the UI (use `llamactl_browser_test` instead).

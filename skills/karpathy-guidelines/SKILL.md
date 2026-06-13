@@ -16,7 +16,6 @@ tags:
   - typescript
 source:
 license: MIT
-language: en
 needs_review: false
 slug: karpathy-guidelines
 version: 1.0.0

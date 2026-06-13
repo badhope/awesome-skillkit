@@ -21,7 +21,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: adr-skill
 version: 1.0.0

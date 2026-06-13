@@ -13,7 +13,6 @@ tags:
   - database
   - deployment
 source:
-language: en
 needs_review: false
 slug: security-threat-model
 version: 1.0.0

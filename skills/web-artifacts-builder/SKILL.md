@@ -19,7 +19,6 @@ tags:
 license: Complete terms in LICENSE.txt
 needs_review: false
 source:
-language: en
 slug: web-artifacts-builder
 version: 1.0.0
 created: '2026-06-12'

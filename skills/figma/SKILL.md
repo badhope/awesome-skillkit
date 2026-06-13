@@ -13,7 +13,6 @@ tags:
   - figma
   - frontend
 source:
-language: en
 needs_review: false
 slug: figma
 version: 1.0.0

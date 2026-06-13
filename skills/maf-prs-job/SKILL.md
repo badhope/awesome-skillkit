@@ -47,7 +47,6 @@ tags:
   - deployment
 source:
 license: MIT
-language: en
 author: Team
 version: 0.1.0-draft
 needs_review: false

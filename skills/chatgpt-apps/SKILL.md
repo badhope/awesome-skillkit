@@ -13,7 +13,6 @@ tags:
   - deployment
   - documentation
 source:
-language: en
 needs_review: false
 slug: chatgpt-apps
 version: 1.0.0

@@ -15,7 +15,6 @@ tags:
   - database
   - deployment
 source:
-language: en
 needs_review: false
 slug: cloudflare-deploy
 version: 1.0.0

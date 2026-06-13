@@ -21,7 +21,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: openai-docs
 version: 1.0.0

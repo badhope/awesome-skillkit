@@ -17,7 +17,6 @@ tags:
   - evaluation
   - frontend
 source:
-language: en
 needs_review: false
 slug: aoti-debug
 version: 1.0.0

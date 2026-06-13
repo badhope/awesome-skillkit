@@ -13,7 +13,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: huggingface-trackio
 version: 1.0.0

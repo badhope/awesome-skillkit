@@ -13,7 +13,6 @@ tags:
   - evaluation
   - frontend
 source:
-language: en
 needs_review: false
 slug: huggingface-community-evals
 version: 1.0.0

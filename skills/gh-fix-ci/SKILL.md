@@ -20,7 +20,6 @@ tags:
   - database
 needs_review: false
 source:
-language: en
 slug: gh-fix-ci
 version: 1.0.0
 created: '2026-06-12'

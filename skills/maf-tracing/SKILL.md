@@ -24,7 +24,6 @@ tags:
   - llm
 source:
 license: MIT
-language: en
 author: Team
 version: 1.0.0
 needs_review: false

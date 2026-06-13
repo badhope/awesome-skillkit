@@ -11,7 +11,6 @@ tags:
   - frontend
   - llm
 source:
-language: en
 needs_review: false
 slug: island-rescue
 version: 1.0.0

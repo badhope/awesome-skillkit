@@ -10,10 +10,8 @@ tags:
   - backend
   - cli
   - deployment
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: 'Promptfoo (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

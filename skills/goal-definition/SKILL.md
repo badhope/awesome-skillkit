@@ -1,7 +1,7 @@
 ---
 name: Goal Definition
 name_zh: 目标定义
-description: '|'
+description: 'The user said "I want to…" or "let''s set a goal" or'
 description_zh: 在动手前把一个模糊的意图重写成一个具体、可衡量的目标 —— 
   用具体语言复述、优先采用数字证据、拒绝纯活动型目标，只在真正达标时再记录。
 category: dev-tools
@@ -13,7 +13,6 @@ tags:
   - evaluation
 source:
 license: MIT
-language: en
 author: 'OpenAI (downstream pack: badhope)'
 version: 0.1.0
 needs_review: false

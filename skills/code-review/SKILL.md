@@ -1,10 +1,8 @@
 ---
 name: Code Review Workflow
 name_zh: 代码审查工作流
-description: '|'
-description_zh: 适用于任何 PR / branch / diff / 本地变更的代码审查工作流 —— 先看 canonical 
-  审查清单,当变更涉及特定领域时 defer 给专精技能 (security / ClickHouse / 前端),按严重度排序输出带 file:line 
-  引用 的 findings。没有 finding 也是有效结果。
+description: 'Canonical code-review workflow for any PR, branch, diff, or local change. Findings ordered by severity, defer to specialist skills when needed.'
+description_zh: '适用于任何 PR / branch / diff / 本地变更的代码审查工作流 —— 先看 canonical 审查清单,当变更涉及特定领域时 defer 给专精技能 (security / ClickHouse / 前端),按严重度排序输出带 file:line 引用的 findings。没有 finding 也是有效结果。'
 category: dev-tools
 tags:
   - ai
@@ -12,12 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: 'Langfuse (downstream pack: badhope)'
-version: 0.1.0
+version: '1.0.0'
 needs_review: false
 slug: code-review
 created: '2026-06-12'

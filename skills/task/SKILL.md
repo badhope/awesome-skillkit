@@ -11,7 +11,6 @@ tags:
   - frontend
   - javascript
 source:
-language: en
 needs_review: false
 slug: task
 version: 1.0.0

@@ -19,7 +19,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: cli-creator
 version: 1.0.0

@@ -12,7 +12,6 @@ tags:
   - javascript
   - llm
 source:
-language: en
 needs_review: false
 slug: figma-create-new-file
 version: 1.0.0

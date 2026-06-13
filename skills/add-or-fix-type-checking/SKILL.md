@@ -13,7 +13,6 @@ tags:
   - docker
   - frontend
 source:
-language: en
 needs_review: false
 slug: add-or-fix-type-checking
 version: 1.0.0

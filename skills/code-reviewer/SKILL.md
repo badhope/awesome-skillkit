@@ -12,7 +12,6 @@ tags:
   - llm
 source:
 license: MIT
-language: en
 author: badhope
 version: 1.0.0
 needs_review: false

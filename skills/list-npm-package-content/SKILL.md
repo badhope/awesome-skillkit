@@ -15,7 +15,6 @@ tags:
   - git
   - javascript
 source:
-language: en
 needs_review: false
 slug: list-npm-package-content
 version: 1.0.0

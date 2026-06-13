@@ -6,10 +6,8 @@ description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。
 description_zh: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 侦察行动模式、截图捕获。
 category: dev-tools
 tags: [ai, api, backend, cli, database]
-source:
-ref: main
+source: null
 license: MIT
-language: en
 author: AI-SKILL
 version: 1.0.0
 created: 2026-06-12
@@ -24,12 +22,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-
-
-
-
-
-
 # When to use
 
 You need to test a local web application end-to-end — click

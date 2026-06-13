@@ -13,7 +13,6 @@ tags:
   - database
   - documentation
 source:
-language: en
 needs_review: false
 slug: notion-knowledge-capture
 version: 1.0.0

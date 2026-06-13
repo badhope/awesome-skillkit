@@ -25,7 +25,6 @@ tags:
   - cli
   - database
 source:
-language: en
 needs_review: false
 slug: train-sentence-transformers
 version: 1.0.0

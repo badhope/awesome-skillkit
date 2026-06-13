@@ -12,7 +12,6 @@ tags:
   - cli
   - documentation
 source:
-language: en
 needs_review: false
 slug: morph-warpgrep
 version: 1.0.0

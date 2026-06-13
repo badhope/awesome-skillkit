@@ -13,7 +13,6 @@ tags:
   - cli
   - datadog
 source:
-language: en
 needs_review: false
 slug: datadog
 version: 1.0.0

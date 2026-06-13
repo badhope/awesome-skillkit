@@ -13,7 +13,6 @@ tags:
   - documentation
   - evaluation
 source:
-language: en
 needs_review: false
 slug: define-goal
 version: 1.0.0

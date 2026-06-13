@@ -11,7 +11,6 @@ tags:
   - cli
   - docker
 source:
-language: en
 needs_review: false
 slug: figma-use
 version: 1.0.0

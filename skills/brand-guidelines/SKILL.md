@@ -18,7 +18,6 @@ tags:
   - python
 source:
 license: Complete terms in LICENSE.txt
-language: en
 needs_review: false
 slug: brand-guidelines
 version: 1.0.0

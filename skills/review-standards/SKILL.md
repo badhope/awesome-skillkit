@@ -12,7 +12,6 @@ tags:
   - python
   - security
 source:
-language: en
 needs_review: false
 slug: review-standards
 version: 1.0.0

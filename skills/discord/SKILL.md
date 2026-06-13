@@ -12,7 +12,6 @@ tags:
   - cli
   - frontend
 source:
-language: en
 needs_review: false
 slug: discord
 version: 1.0.0

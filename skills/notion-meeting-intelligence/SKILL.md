@@ -15,7 +15,6 @@ tags:
   - database
   - documentation
 source:
-language: en
 needs_review: false
 slug: notion-meeting-intelligence
 version: 1.0.0

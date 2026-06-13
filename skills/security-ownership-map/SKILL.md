@@ -22,7 +22,6 @@ tags:
   - git
   - javascript
 source:
-language: en
 needs_review: false
 slug: security-ownership-map
 version: 1.0.0

@@ -29,7 +29,6 @@ tags:
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
 source:
-language: en
 slug: pptx
 version: 1.0.0
 created: '2026-06-12'

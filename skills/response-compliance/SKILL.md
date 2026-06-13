@@ -15,7 +15,6 @@ tags:
   - cli
   - frontend
 source:
-language: en
 needs_review: false
 slug: response-compliance
 version: 1.0.0

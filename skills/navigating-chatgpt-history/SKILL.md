@@ -21,7 +21,6 @@ tags:
 license: MIT
 needs_review: false
 source:
-language: en
 slug: navigating-chatgpt-history
 version: 1.0.0
 created: '2026-06-12'
