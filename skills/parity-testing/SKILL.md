@@ -1,7 +1,7 @@
 ---
 name: testing-parity
 name_zh: 测试-parity
-description: '>'
+description: '> **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — ...'
 description_zh: '>'
 category: dev-tools
 tags:

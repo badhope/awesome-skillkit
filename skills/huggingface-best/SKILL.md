@@ -1,7 +1,7 @@
 ---
 name: huggingface-best
 name_zh: huggingface-best
-description: '>'
+description: 'Use this skill when you need guidance on huggingface-best.'
 description_zh: '>'
 category: dev-tools
 tags:

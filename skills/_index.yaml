@@ -878,7 +878,7 @@ skills:
     name: deepeval
     name_zh: DeepEval 评估
     description: DeepEval evaluation workflow for AI agents and LLM 
-      applications. TRIGGER
+      applications.
     category: dev-tools
     tags:
       - ai
@@ -1627,7 +1627,7 @@ skills:
   - slug: huggingface-best
     name: huggingface-best
     name_zh: huggingface-best
-    description: '>'
+    description: Use this skill when you need guidance on huggingface-best.
     category: dev-tools
     tags:
       - ai
@@ -2132,7 +2132,7 @@ skills:
   - slug: local-testing
     name: local-testing
     name_zh: local-测试
-    description: '>'
+    description: Use this skill when you need guidance on local-testing.
     category: dev-tools
     tags:
       - ai
@@ -2342,7 +2342,7 @@ skills:
   - slug: model-integration
     name: integrating-models
     name_zh: integrating-models
-    description: '>'
+    description: 'Integrate a new model into diffusers end-to-end. The overall flow:'
     category: dev-tools
     tags:
       - ai
@@ -2561,7 +2561,9 @@ skills:
   - slug: parity-testing
     name: testing-parity
     name_zh: 测试-parity
-    description: '>'
+    description: '> **Note**: Parity testing is **separate from** the unit-level tests
+      that ship in `tests/`. If you are integrating a new model, the model-level test
+      suite under `tests/models/` is still required — ...'
     category: dev-tools
     tags:
       - ai
@@ -4024,7 +4026,8 @@ skills:
   - slug: weekly-user-topics-digest
     name: weekly-user-topics-digest
     name_zh: weekly-用户-topics-digest
-    description: '>'
+    description: Use this skill when you need guidance on 
+      weekly-user-topics-digest.
     category: dev-tools
     tags:
       - ai

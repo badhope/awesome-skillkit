@@ -1,8 +1,7 @@
 ---
 name: deepeval
 name_zh: DeepEval 评估
-description: DeepEval evaluation workflow for AI agents and LLM applications. 
-  TRIGGER
+description: 'DeepEval evaluation workflow for AI agents and LLM applications.'
 description_zh: 使用 DeepEval 框架评估 LLM 应用的性能和质量。
 category: dev-tools
 tags:

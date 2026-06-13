@@ -1,7 +1,7 @@
 ---
 name: weekly-user-topics-digest
 name_zh: weekly-用户-topics-digest
-description: '>'
+description: 'Use this skill when you need guidance on weekly-user-topics-digest.'
 description_zh: '>'
 category: dev-tools
 tags:

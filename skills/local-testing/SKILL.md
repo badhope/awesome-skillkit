@@ -1,7 +1,7 @@
 ---
 name: local-testing
 name_zh: local-测试
-description: '>'
+description: 'Use this skill when you need guidance on local-testing.'
 description_zh: '>'
 category: dev-tools
 tags:

@@ -32,8 +32,9 @@ def fix_file(path: str) -> bool:
     while i < len(fm_lines):
         line = fm_lines[i]
 
-        # Fix 1: description: '|' or description: "|"
-        if re.match(r"""^description:\s*['"]\|['"]\s*$""", line):
+        # Fix 1: description: '|' or description: ">" or description: "|"
+        # (YAML literal/folded block markers used as literal values)
+        if re.match(r"""^description:\s*['"][|>]['"]\s*$""", line):
             # Get first meaningful line from body
             body_lines = [
                 l.strip()
