@@ -1264,6 +1264,109 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   .filter-bar { gap: var(--s-2); }
   .filter-bar input[type="search"] { flex: 1 1 100%; }
   .related__grid { grid-template-columns: 1fr; }
+  
+  /* Mobile: larger touch targets */
+  .btn { min-height: 44px; padding: var(--s-3) var(--s-4); }
+  .topbar__nav { gap: var(--s-4); }
+  .topbar__nav a { min-height: 44px; display: inline-flex; align-items: center; }
+  
+  /* Mobile: single column cards */
+  .cards { grid-template-columns: 1fr; }
+  .external-list { grid-template-columns: 1fr; }
+  
+  /* Mobile: compact external card */
+  .external-card__head { flex-direction: column; }
+  .external-card__meta { grid-template-columns: 1fr; }
+  
+  /* Mobile: compact bundle list */
+  .bundle-list li { padding: var(--s-3) var(--s-4); }
+  .bundle-list__slug { font-size: var(--t-xs); }
+  
+  /* Mobile: reduce spacing */
+  .hero__cta { gap: var(--s-2); }
+  .detail h2, .bundle__title, .detail__zh summary { margin: var(--s-5) 0 var(--s-3); }
+}
+
+/* Small phones (≤480px) */
+@media (max-width: 480px) {
+  /* Even smaller padding */
+  .container-wide, .container-read, .hero, .stats { padding-left: var(--s-3); padding-right: var(--s-3); }
+  .topbar { padding: var(--s-2) var(--s-3); }
+  
+  /* Smaller hero */
+  .hero { padding: var(--s-6) var(--s-3) var(--s-5); }
+  .hero__title { font-size: clamp(28px, 8vw, 40px); }
+  .hero__sub { font-size: var(--t-sm); }
+  .hero__eyebrow { font-size: 10px; }
+  
+  /* Stats: 2 columns but smaller */
+  .stats { gap: var(--s-2); }
+  .stat { padding: var(--s-3); }
+  .stat__num { font-size: var(--t-xl); }
+  .stat__label { font-size: 10px; }
+  
+  /* Filter bar: stack vertically */
+  .filter-bar { flex-direction: column; }
+  .filter-bar input[type="search"],
+  .filter-bar select,
+  .group-toggle { width: 100%; }
+  
+  /* Cards: tighter spacing */
+  .skill-card { padding: var(--s-3); }
+  .skill-card__name { font-size: var(--t-sm); }
+  .skill-card__desc { font-size: var(--t-xs); }
+  .skill-card__meta { font-size: 10px; }
+  
+  /* Detail page */
+  .detail h1 { font-size: var(--t-xl); }
+  .detail h2, .bundle__title, .detail__zh summary { font-size: var(--t-lg); }
+  .detail pre { font-size: var(--t-xs); padding: var(--s-3); }
+  .detail table { font-size: var(--t-xs); }
+  .detail th, .detail td { padding: var(--s-1) var(--s-2); }
+  
+  /* External page */
+  .external__title { font-size: var(--t-xl); }
+  .external__subtitle { font-size: var(--t-sm); }
+  .external-card { padding: var(--s-3); }
+  .external-card__vendor { font-size: var(--t-sm); }
+  .external-card__repo { font-size: var(--t-xs); }
+  .external-card__desc { font-size: var(--t-xs); }
+  .external-card__link { font-size: var(--t-xs); padding: var(--s-2) var(--s-3); }
+  
+  /* Bundle page */
+  .bundle__title { font-size: var(--t-xl); }
+  .bundle-list__slug { font-size: 10px; }
+  .bundle-list__cat { font-size: 9px; }
+  
+  /* Footer */
+  .footer { padding: var(--s-5) var(--s-3); }
+  .footer__row { gap: var(--s-2); }
+  
+  /* 404 page */
+  .notfound { padding: var(--s-7) var(--s-3); }
+  .notfound__title { font-size: var(--t-xl); }
+  .notfound__sub { font-size: var(--t-sm); }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .btn { min-height: 44px; }
+  .topbar__nav a { min-height: 44px; }
+  .skill-card { padding: var(--s-4); }
+  .external-card { padding: var(--s-4); }
+  .bundle-list li { min-height: 48px; }
+  
+  /* Remove hover effects that don't work on touch */
+  .skill-card:hover { transform: none; }
+  .external-card:hover { transform: none; }
+  
+  /* Larger chips for easier tapping */
+  .chip { padding: 2px 10px; font-size: 11px; }
+  
+  /* Larger lang toggle */
+  .lang-toggle { min-height: 36px; }
+  .lang-toggle__opt { padding: 6px 14px; }
 }
 
 /* vendor-specific chip colors live in a small map kept in JS;
