@@ -2,7 +2,7 @@
 name: integrating-models
 name_zh: integrating-models
 description: 'Integrate a new model into diffusers end-to-end. The overall flow:'
-description_zh: '>'
+description_zh: 'Integrate a new model into diffusers end-to-end. The overall flow:'
 category: dev-tools
 tags:
   - ai

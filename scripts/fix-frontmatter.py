@@ -32,9 +32,9 @@ def fix_file(path: str) -> bool:
     while i < len(fm_lines):
         line = fm_lines[i]
 
-        # Fix 1: description: '|' or description: ">" or description: "|"
-        # (YAML literal/folded block markers used as literal values)
-        if re.match(r"""^description:\s*['"][|>]['"]\s*$""", line):
+        # Fix 1: description/description_zh: '|' or ">" (YAML markers as values)
+        if re.match(r"""^(description(?:_zh)?):\s*['"][|>]['"]\s*$""", line):
+            field = re.match(r"""^(description(?:_zh)?):""", line).group(1)
             # Get first meaningful line from body
             body_lines = [
                 l.strip()
@@ -49,7 +49,7 @@ def fix_file(path: str) -> bool:
 
             # Escape single quotes
             escaped = first_body_line.replace("'", "''")
-            new_fm_lines.append(f"description: '{escaped}'")
+            new_fm_lines.append(f"{field}: '{escaped}'")
             changed = True
             i += 1
             continue
