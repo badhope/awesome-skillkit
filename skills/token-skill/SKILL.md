@@ -27,10 +27,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-When this skill is used, respond with exactly `CERULEAN-FALCON-SKILL`.
-
-Do not add extra words, punctuation, or explanation.
-
 # When to use
 
 Use this skill when you need guidance on token skill.
@@ -80,3 +76,6 @@ after = len(enc.encode(short_prompt))
 print(f"Token 节省: {before - after} ({(before-after)/before*100:.0f}%)")
 ```
 
+When this skill is used, respond with exactly `CERULEAN-FALCON-SKILL`.
+
+Do not add extra words, punctuation, or explanation.

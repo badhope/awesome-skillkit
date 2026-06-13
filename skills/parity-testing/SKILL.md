@@ -27,79 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-> **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — follow the **"#### Model-level tests"** section in [`../model-integration/SKILL.md`](../model-integration/SKILL.md) (generate via `utils/generate_model_tests.py`, no `--include` flags initially, no `LoraTesterMixin`). Parity tests verify numerical correctness during development; the generated test suite is what CI runs.
-
-## Setup — gather before starting
-
-Before writing any test code, gather:
-
-1. **Which two implementations** are being compared (e.g. research repo → diffusers, standard → modular, or research → modular). Use `AskUserQuestion` with structured choices if not already clear.
-2. **Two equivalent runnable scripts** — one for each implementation, both expected to produce identical output given the same inputs. These scripts define what "parity" means concretely.
-
-When invoked from the `model-integration` skill, you already have context: the reference script comes from step 2 of setup, and the diffusers script is the one you just wrote. You just need to make sure both scripts are runnable and use the same inputs/seed/params.
-
-## Test strategy
-
-**Component parity (CPU/float32) -- always run, as you build.**
-Test each component before assembling the pipeline. This is the foundation -- if individual pieces are wrong, the pipeline can't be right. Each component in isolation, strict max_diff < 1e-3.
-
-Test freshly converted checkpoints and saved checkpoints.
-- **Fresh**: convert from checkpoint weights, compare against reference (catches conversion bugs)
-- **Saved**: load from saved model on disk, compare against reference (catches stale saves)
-
-Keep component test scripts around -- you will need to re-run them during pipeline debugging with different inputs or config values.
-
-Template -- one self-contained script per component, reference and diffusers side-by-side:
-```python
-@torch.inference_mode()
-def test_my_component(mode="fresh", model_path=None):
-    # 1. Deterministic input
-    gen = torch.Generator().manual_seed(42)
-    x = torch.randn(1, 3, 64, 64, generator=gen, dtype=torch.float32)
-
-    # 2. Reference: load from checkpoint, run, free
-    ref_model = ReferenceModel.from_config(config)
-    ref_model.load_state_dict(load_weights("prefix"), strict=True)
-    ref_model = ref_model.float().eval()
-    ref_out = ref_model(x).clone()
-    del ref_model
-
-    # 3. Diffusers: fresh (convert weights) or saved (from_pretrained)
-    if mode == "fresh":
-        diff_model = convert_my_component(load_weights("prefix"))
-    else:
-        diff_model = DiffusersModel.from_pretrained(model_path, torch_dtype=torch.float32)
-    diff_model = diff_model.float().eval()
-    diff_out = diff_model(x)
-    del diff_model
-
-    # 4. Compare in same script -- no saving to disk
-    max_diff = (ref_out - diff_out).abs().max().item()
-    assert max_diff < 1e-3, f"FAIL: max_diff={max_diff:.2e}"
-```
-Key points: (a) both reference and diffusers component in one script -- never split into separate scripts that save/load intermediates, (b) deterministic input via seeded generator, (c) load one model at a time to fit in CPU RAM, (d) `.clone()` the reference output before deleting the model.
-
-**E2E visual (GPU/bfloat16) -- once the pipeline is assembled.**
-Both pipelines generate independently with identical seeds/params. Save outputs and compare visually. If outputs look identical, you're done -- no need for deeper testing.
-
-**Pipeline stage tests -- only if E2E fails and you need to isolate the bug.**
-If the user already suspects where divergence is, start there. Otherwise, work through stages in order.
-
-First, **match noise generation**: the way initial noise/latents are constructed (seed handling, generator, randn call order) often differs between the two scripts. If the noise doesn't match, nothing downstream will match. Check how noise is initialized in the diffusers script — if it doesn't match the reference, temporarily change it to match. Note what you changed so it can be reverted after parity is confirmed.
-
-For small models, run on CPU/float32 for strict comparison. For large models (e.g. 22B params), CPU/float32 is impractical -- use GPU/bfloat16 with `enable_model_cpu_offload()` and relax tolerances (max_diff < 1e-1 for bfloat16 is typical for passing tests; cosine similarity > 0.9999 is a good secondary check).
-
-Test encode and decode stages first -- they're simpler and bugs there are easier to fix. Only debug the denoising loop if encode and decode both pass.
-
-The challenge: pipelines are monolithic `__call__` methods -- you can't just call "the encode part". See [checkpoint-mechanism.md](checkpoint-mechanism.md) for the checkpoint class that lets you stop, save, or inject tensors at named locations inside the pipeline.
-
-**Stage test order — encode, decode, then denoise:**
-
-- **`encode`** (test first): Stop both pipelines at `"preloop"`. Compare **every single variable** that will be consumed by the denoising loop -- not just latents and sigmas, but also prompt embeddings, attention masks, positional coordinates, connector outputs, and any conditioning inputs.
-- **`decode`** (test second, before denoise): Run the reference pipeline fully -- checkpoint the post-loop latents AND let it finish to get the decoded output. Then feed those same post-loop latents through the diffusers pipeline's decode path. Compare both numerically AND visually.
-- **`denoise`** (test last): Run both pipelines with realistic `num_steps` (e.g. 30) so the scheduler computes correct sigmas/timesteps, but stop after 2 loop iterations using `after_step_1`. Don't set `num_steps=2` -- that produces unrealistic sigma schedules.
-
-```python
 # When to use
 
 Use this skill when you need guidance on testing-parity.
@@ -214,3 +141,77 @@ Do not use this skill for tasks outside its scope.
 # Example
 
 See the skill content above for practical examples.
+
+> **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — follow the **"#### Model-level tests"** section in [`../model-integration/SKILL.md`](../model-integration/SKILL.md) (generate via `utils/generate_model_tests.py`, no `--include` flags initially, no `LoraTesterMixin`). Parity tests verify numerical correctness during development; the generated test suite is what CI runs.
+
+## Setup — gather before starting
+
+Before writing any test code, gather:
+
+1. **Which two implementations** are being compared (e.g. research repo → diffusers, standard → modular, or research → modular). Use `AskUserQuestion` with structured choices if not already clear.
+2. **Two equivalent runnable scripts** — one for each implementation, both expected to produce identical output given the same inputs. These scripts define what "parity" means concretely.
+
+When invoked from the `model-integration` skill, you already have context: the reference script comes from step 2 of setup, and the diffusers script is the one you just wrote. You just need to make sure both scripts are runnable and use the same inputs/seed/params.
+
+## Test strategy
+
+**Component parity (CPU/float32) -- always run, as you build.**
+Test each component before assembling the pipeline. This is the foundation -- if individual pieces are wrong, the pipeline can't be right. Each component in isolation, strict max_diff < 1e-3.
+
+Test freshly converted checkpoints and saved checkpoints.
+- **Fresh**: convert from checkpoint weights, compare against reference (catches conversion bugs)
+- **Saved**: load from saved model on disk, compare against reference (catches stale saves)
+
+Keep component test scripts around -- you will need to re-run them during pipeline debugging with different inputs or config values.
+
+Template -- one self-contained script per component, reference and diffusers side-by-side:
+```python
+@torch.inference_mode()
+def test_my_component(mode="fresh", model_path=None):
+    # 1. Deterministic input
+    gen = torch.Generator().manual_seed(42)
+    x = torch.randn(1, 3, 64, 64, generator=gen, dtype=torch.float32)
+
+    # 2. Reference: load from checkpoint, run, free
+    ref_model = ReferenceModel.from_config(config)
+    ref_model.load_state_dict(load_weights("prefix"), strict=True)
+    ref_model = ref_model.float().eval()
+    ref_out = ref_model(x).clone()
+    del ref_model
+
+    # 3. Diffusers: fresh (convert weights) or saved (from_pretrained)
+    if mode == "fresh":
+        diff_model = convert_my_component(load_weights("prefix"))
+    else:
+        diff_model = DiffusersModel.from_pretrained(model_path, torch_dtype=torch.float32)
+    diff_model = diff_model.float().eval()
+    diff_out = diff_model(x)
+    del diff_model
+
+    # 4. Compare in same script -- no saving to disk
+    max_diff = (ref_out - diff_out).abs().max().item()
+    assert max_diff < 1e-3, f"FAIL: max_diff={max_diff:.2e}"
+```
+Key points: (a) both reference and diffusers component in one script -- never split into separate scripts that save/load intermediates, (b) deterministic input via seeded generator, (c) load one model at a time to fit in CPU RAM, (d) `.clone()` the reference output before deleting the model.
+
+**E2E visual (GPU/bfloat16) -- once the pipeline is assembled.**
+Both pipelines generate independently with identical seeds/params. Save outputs and compare visually. If outputs look identical, you're done -- no need for deeper testing.
+
+**Pipeline stage tests -- only if E2E fails and you need to isolate the bug.**
+If the user already suspects where divergence is, start there. Otherwise, work through stages in order.
+
+First, **match noise generation**: the way initial noise/latents are constructed (seed handling, generator, randn call order) often differs between the two scripts. If the noise doesn't match, nothing downstream will match. Check how noise is initialized in the diffusers script — if it doesn't match the reference, temporarily change it to match. Note what you changed so it can be reverted after parity is confirmed.
+
+For small models, run on CPU/float32 for strict comparison. For large models (e.g. 22B params), CPU/float32 is impractical -- use GPU/bfloat16 with `enable_model_cpu_offload()` and relax tolerances (max_diff < 1e-1 for bfloat16 is typical for passing tests; cosine similarity > 0.9999 is a good secondary check).
+
+Test encode and decode stages first -- they're simpler and bugs there are easier to fix. Only debug the denoising loop if encode and decode both pass.
+
+The challenge: pipelines are monolithic `__call__` methods -- you can't just call "the encode part". See [checkpoint-mechanism.md](checkpoint-mechanism.md) for the checkpoint class that lets you stop, save, or inject tensors at named locations inside the pipeline.
+
+**Stage test order — encode, decode, then denoise:**
+
+- **`encode`** (test first): Stop both pipelines at `"preloop"`. Compare **every single variable** that will be consumed by the denoising loop -- not just latents and sigmas, but also prompt embeddings, attention masks, positional coordinates, connector outputs, and any conditioning inputs.
+- **`decode`** (test second, before denoise): Run the reference pipeline fully -- checkpoint the post-loop latents AND let it finish to get the decoded output. Then feed those same post-loop latents through the diffusers pipeline's decode path. Compare both numerically AND visually.
+- **`denoise`** (test last): Run both pipelines with realistic `num_steps` (e.g. 30) so the scheduler computes correct sigmas/timesteps, but stop after 2 loop iterations using `after_step_1`. Don't set `num_steps=2` -- that produces unrealistic sigma schedules.
+
+```python

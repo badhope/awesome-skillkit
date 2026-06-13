@@ -59,6 +59,7 @@
   :root {
     --bg:        #fafaf7;
     --bg-elev:   #ffffff;
+    --bg-elev-2: #f5f3ed;
     --bg-deep:   #f0eee8;
     --ink:       #1a1816;
     --ink-soft:  #4d4a45;
@@ -79,6 +80,7 @@
   :root {
     --bg:        #161514;
     --bg-elev:   #1f1d1b;
+    --bg-elev-2: #262422;
     --bg-deep:   #0d0c0b;
     --ink:       #ece9e2;
     --ink-soft:  #c8c4ba;
@@ -990,7 +992,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   border: 1px solid var(--border);
   border-radius: var(--radius-2);
   /* No max-height. We used to cap at 480px with inner scroll, but
-     that hid 30+ of 35 skills below the fold, broke the browser's
+     that hid most skills below the fold, broke the browser's
      back/forward scroll position, and made the footer feel
      unreachable. Letting the page itself scroll keeps the
      natural reading flow. */

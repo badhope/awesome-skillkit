@@ -27,6 +27,49 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need guidance on develop-ai-functions-example.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# Example
+
+Create a basic text generation example for OpenAI:
+
+```typescript
+// examples/ai-functions/src/generate-text/openai.ts
+import { openai } from '@ai-sdk/openai';
+import { generateText } from 'ai';
+import { run } from '../lib/run';
+
+run(async () => {
+  const result = await generateText({
+    model: openai('gpt-4o'),
+    prompt: 'Write a haiku about programming.',
+  });
+
+  console.log(result.text);
+  console.log('Token usage:', result.usage);
+});
+```
+
+Run with: `pnpm tsx src/generate-text/openai.ts`
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
 ## AI Functions Examples
 
 The `examples/ai-functions/` directory contains scripts for validating, testing, and iterating on AI SDK functions across providers.
@@ -245,46 +288,3 @@ const result = await generateText({
 5. **Add comments for complex logic**: Explain non-obvious code patterns
 
 6. **Reuse tools when appropriate**: Use `weatherTool` or create new reusable tools in `tools/`
-
-# When to use
-
-Use this skill when you need guidance on develop-ai-functions-example.
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# Example
-
-Create a basic text generation example for OpenAI:
-
-```typescript
-// examples/ai-functions/src/generate-text/openai.ts
-import { openai } from '@ai-sdk/openai';
-import { generateText } from 'ai';
-import { run } from '../lib/run';
-
-run(async () => {
-  const result = await generateText({
-    model: openai('gpt-4o'),
-    prompt: 'Write a haiku about programming.',
-  });
-
-  console.log(result.text);
-  console.log('Token usage:', result.usage);
-});
-```
-
-Run with: `pnpm tsx src/generate-text/openai.ts`
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.

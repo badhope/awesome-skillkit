@@ -27,18 +27,6 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
-## Instructions
-
-This skill provides comprehensive instructions for the agent.
-
-### Usage
-
-Follow these steps to use the skill effectively.
-
-### Notes
-
-Additional context for the agent.
-
 # When to use
 
 Use this skill when you need guidance on valid-skill.
@@ -75,3 +63,14 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
+## Instructions
+
+This skill provides comprehensive instructions for the agent.
+
+### Usage
+
+Follow these steps to use the skill effectively.
+
+### Notes
+
+Additional context for the agent.

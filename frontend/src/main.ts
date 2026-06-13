@@ -10,6 +10,7 @@ import { renderDetail, renderNotFound } from "./pages/detail";
 import { renderBundle } from "./pages/bundle";
 import type { Skill, SkillIndex } from "./types";
 import { applyStaticTranslations, getLocale, setLocale, subscribe, t } from "./i18n";
+import { escHtml } from "./shared";
 
 const main = () => document.querySelector<HTMLElement>("#main")!;
 let cachedIndex: SkillIndex | null = null;
@@ -44,7 +45,7 @@ async function route() {
   // index is already cached, this would flash for a single
   // microtask. (S2)
   if (cachedIndex === null) {
-    mainEl.innerHTML = `<div class="empty" role="status" aria-live="polite">${escapeHtml(t("loading"))}</div>`;
+    mainEl.innerHTML = `<div class="empty" role="status" aria-live="polite">${escHtml(t("loading"))}</div>`;
   }
   try {
     const idx = await loadIndex();
@@ -69,22 +70,15 @@ async function route() {
       }
     } else {
       document.title = "AI-SKILL";
-      mainEl.innerHTML = `<div class="empty">${escapeHtml(t("unknownRoute"))} <a href="#/" data-link>${escapeHtml(t("backToList"))}</a>.</div>`;
+      mainEl.innerHTML = `<div class="empty">${escHtml(t("unknownRoute"))} <a href="#/" data-link>${escHtml(t("backToList"))}</a>.</div>`;
     }
     // Scroll to top on route change (unless the user is mid-click)
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   } catch (e) {
     document.title = "Error — AI-SKILL";
-    mainEl.innerHTML = `<div class="empty">${escapeHtml(t("errorPrefix"))} ${escapeHtml(String(e))}</div>`;
+    mainEl.innerHTML = `<div class="empty">${escHtml(t("errorPrefix"))} ${escHtml(String(e))}</div>`;
     console.error(e);
   }
-}
-
-function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, c => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;",
-    '"': "&quot;", "'": "&#39;",
-  }[c]!));
 }
 
 // ============================ i18n wiring ============================

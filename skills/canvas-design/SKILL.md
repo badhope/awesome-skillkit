@@ -27,6 +27,41 @@ output:
   description: Generated content based on the user request
 author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need guidance on canvas-design.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
+
+# Example
+
+```bash
+# Use the canvas-design skill
+python scripts/use-skill.py canvas-design
+
+# View skill details
+python scripts/inspect-skill.py canvas-design
+```
+
 These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.
 
 Complete this in two steps:
@@ -151,38 +186,3 @@ Take a second pass. Go back to the code and refine/polish further to make this a
 ## MULTI-PAGE OPTION
 
 To create additional pages when requested, create more creative pages along the same lines as the design philosophy but distinctly different as well. Bundle those pages in the same .pdf or many .pngs. Treat the first page as just a single page in a whole coffee table book waiting to be filled. Make the next pages unique twists and memories of the original. Have them almost tell a story in a very tasteful way. Exercise full creative freedom.
-# When to use
-
-Use this skill when you need guidance on canvas-design.
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.
-
-# Example
-
-See the skill content above for practical examples.
-
-
-# Example
-
-```bash
-# Use the canvas-design skill
-python scripts/use-skill.py canvas-design
-
-# View skill details
-python scripts/inspect-skill.py canvas-design
-```
-

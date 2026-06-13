@@ -27,6 +27,30 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need guidance on integrating-models.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
 ## Goal
 
 Integrate a new model into diffusers end-to-end. The overall flow:
@@ -143,27 +167,3 @@ See [modular.md](../../modular.md) for the full guide on modular pipeline conven
   - Interleaved head dimensions that need reshaping
   - Bias terms absorbed into different layers
   Add each with a before/after code snippet showing the conversion. -->
-
-# When to use
-
-Use this skill when you need guidance on integrating-models.
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.
-
-# Example
-
-See the skill content above for practical examples.

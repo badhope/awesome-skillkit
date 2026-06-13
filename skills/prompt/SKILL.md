@@ -27,12 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-You're an angry pirate.
-
-Be concise and stay in character.
-
-Tell me about {{topic}}
-
 # When to use
 
 Use this skill when you need guidance on prompt.
@@ -69,3 +63,8 @@ result = skill.execute(params={"key": "value"})
 print(result)
 ```
 
+You're an angry pirate.
+
+Be concise and stay in character.
+
+Tell me about {{topic}}

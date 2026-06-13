@@ -17,7 +17,8 @@
 // locale is Chinese and the zh fields are present.
 
 import type { SkillIndex, SkillIndexEntry } from "../types";
-import { t, pickZh, pickPlatform, getLocale } from "../i18n";
+import { t, pickZh, pickPlatform } from "../i18n";
+import { categoryLabel, escHtml, escAttr } from "../shared";
 
 // Stable hash → hue. Categories are short labels, so a tiny string
 // hash is fine. We lock saturation/lightness so the bars feel like
@@ -29,32 +30,6 @@ function categoryHue(cat: string): number {
 }
 function categoryColor(cat: string): string {
   return `hsl(${categoryHue(cat)} 60% 52%)`;
-}
-
-// Friendly display labels for the few categories whose raw slug
-// would be confusing in a heading. Anything not in the map falls
-// through to the slug, title-cased.
-const CATEGORY_LABELS: Record<string, { en: string; zh: string }> = {
-  "applications":        { en: "Applications",        zh: "应用" },
-  "browser-automation":  { en: "Browser automation",  zh: "浏览器自动化" },
-  "code-assistants":     { en: "Code assistants",     zh: "代码助手" },
-  "data-pipelines":      { en: "Data pipelines",      zh: "数据流水线" },
-  "dev-tools":           { en: "Developer tools",     zh: "开发工具" },
-  "documentation":       { en: "Documentation",       zh: "文档" },
-  "embeddings":          { en: "Embeddings",          zh: "向量嵌入" },
-  "evaluation":          { en: "Evaluation",          zh: "评估" },
-  "guardrails":          { en: "Guardrails & safety", zh: "护栏与安全" },
-  "mcp-protocol":        { en: "MCP protocol",        zh: "MCP 协议" },
-  "observability":       { en: "Observability",       zh: "可观测性" },
-  "official-cookbooks":  { en: "Official cookbooks",  zh: "官方 Cookbook" },
-  "safety-alignment":    { en: "Safety & alignment",  zh: "安全与对齐" },
-  "terminal-cli":        { en: "Terminal & CLI",      zh: "终端与 CLI" },
-  "text-to-sql":         { en: "Text-to-SQL",         zh: "Text-to-SQL" },
-};
-function categoryLabel(cat: string): string {
-  const m = CATEGORY_LABELS[cat];
-  if (m) return getLocale() === "zh" ? m.zh : m.en;
-  return cat.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
 export async function renderList(
@@ -257,14 +232,4 @@ function debounce<T extends (...a: unknown[]) => void>(fn: T, ms: number): T {
     if (h) clearTimeout(h);
     h = setTimeout(() => fn(...args), ms);
   }) as T;
-}
-
-function escHtml(s: string): string {
-  return s.replace(/[&<>"']/g, c => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;",
-    '"': "&quot;", "'": "&#39;",
-  }[c]!));
-}
-function escAttr(s: string): string {
-  return escHtml(s);
 }

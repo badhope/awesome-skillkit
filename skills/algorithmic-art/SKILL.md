@@ -27,6 +27,37 @@ output:
   description: Generated content based on the user request
 author: AI-SKILL
 ---
+# When to use
+
+Use this skill when you need to work with algorithmic-art.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 algorithmic-art 技能
+skill = load_skill("algorithmic-art")
+result = skill.execute()
+print(result)
+```
+
 Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
 
 This happens in two steps:
@@ -426,34 +457,3 @@ This skill includes helpful templates and documentation:
 - The **algorithm is where to create** something unique
 - Don't copy the flow field example - build what the philosophy demands
 - But DO keep the exact UI structure and Anthropic branding from the template
-# When to use
-
-Use this skill when you need to work with algorithmic-art.
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope or when simpler alternatives are available.
-
-
-# Example
-
-```python
-# 使用 algorithmic-art 技能
-skill = load_skill("algorithmic-art")
-result = skill.execute()
-print(result)
-```
-

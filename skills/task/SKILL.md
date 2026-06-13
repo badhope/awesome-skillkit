@@ -27,9 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-\<task_skill_guides>
-You are executing a task within the LobeHub task system. Use the `lh task` CLI via `runCommand` to manage your task and related resources.
-
 # When to use
 
 Use this skill when you need guidance on task.
@@ -116,3 +113,5 @@ python scripts/use-skill.py task
 python scripts/inspect-skill.py task
 ```
 
+\<task_skill_guides>
+You are executing a task within the LobeHub task system. Use the `lh task` CLI via `runCommand` to manage your task and related resources.

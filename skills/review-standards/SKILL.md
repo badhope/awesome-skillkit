@@ -27,12 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-When reviewing authentication code:
-
-1. Check password hashing.
-2. Use the issue id `weak-password-hash` when passwords use SHA-1 or MD5.
-3. Return no more than one issue.
-
 # When to use
 
 Use this skill when you need to work with review-standards.
@@ -64,3 +58,8 @@ result = skill.execute()
 print(result)
 ```
 
+When reviewing authentication code:
+
+1. Check password hashing.
+2. Use the issue id `weak-password-hash` when passwords use SHA-1 or MD5.
+3. Return no more than one issue.

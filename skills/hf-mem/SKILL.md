@@ -27,8 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-`hf_mem` estimates the required memory for inference, including model weights and an optional KV cache, for Safetensors and GGUF for models on the Hugging Face Hub using HTTP Range requests i.e., without downloading or loading any weights locally.
-
 # When to use
 
 - User asks how much VRAM or memory a model needs to run
@@ -117,3 +115,5 @@ uvx hf-mem --model-id unsloth/Qwen3.5-397B-A17B-GGUF --gguf-file Q4_K_M --experi
 # When NOT to use
 
 Do not use this skill for tasks outside its scope.
+
+`hf_mem` estimates the required memory for inference, including model weights and an optional KV cache, for Safetensors and GGUF for models on the Hugging Face Hub using HTTP Range requests i.e., without downloading or loading any weights locally.

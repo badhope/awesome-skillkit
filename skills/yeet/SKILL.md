@@ -27,6 +27,37 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with "yeet".
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 "yeet" 技能
+skill = load_skill("yeet")
+result = skill.execute()
+print(result)
+```
+
 ## Prerequisites
 
 - Require GitHub CLI `gh`. Check `gh --version`. If missing, ask the user to install `gh` and stop.
@@ -154,35 +185,3 @@ Describe the user-facing or maintainer-facing problem, including cause and effec
 
 Describe the net implementation change in concise prose.
 ```
-
-# When to use
-
-Use this skill when you need to work with "yeet".
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope or when simpler alternatives are available.
-
-
-# Example
-
-```python
-# 使用 "yeet" 技能
-skill = load_skill("yeet")
-result = skill.execute()
-print(result)
-```
-

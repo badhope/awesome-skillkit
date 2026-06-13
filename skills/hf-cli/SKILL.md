@@ -27,6 +27,37 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with hf-cli.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 hf-cli 技能
+skill = load_skill("hf-cli")
+result = skill.execute()
+print(result)
+```
+
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
 
 The Hugging Face Hub CLI tool `hf` is available. IMPORTANT: The `hf` command replaces the deprecated `huggingface-cli` command.
@@ -240,35 +271,3 @@ Some command examples:
 - Use `hf <command> --help` for full options, descriptions, usage, and real-world examples
 - Authenticate with `HF_TOKEN` env var (recommended) or with `--token`
 - Update the CLI with `hf update` (uses the correct command for the detected install method)
-
-# When to use
-
-Use this skill when you need to work with hf-cli.
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope or when simpler alternatives are available.
-
-
-# Example
-
-```python
-# 使用 hf-cli 技能
-skill = load_skill("hf-cli")
-result = skill.execute()
-print(result)
-```
-

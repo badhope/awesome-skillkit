@@ -27,45 +27,6 @@ output:
 author: AI-SKILL
 license: MIT
 ---
-## Update Provider Model IDs
-
-This skill covers adding new model IDs and removing obsolete ones across the AI SDK codebase. Each workflow uses search to discover all locations that need changes.
-
-You may be asked to add or remove a single model ID, or to process a list of multiple model ID changes from an issue. For each model ID, follow the appropriate workflow:
-
-- If a new model ID is being added, follow the `<adding-new-model>` workflow.
-- If an obsolete model ID is being removed, follow the `<removing-obsolete-model>` workflow.
-
-## Critical Rules
-
-- **Exact matching**: Model IDs are often substrings of others (e.g. `grok-3` vs `grok-3-mini`). Always verify each search result is the exact model, not a substring match.
-- **Respect sort order**: When inserting into any list (type unions, table rows, arrays), observe the existing order and place the new entry accordingly.
-- **File naming for examples**: Use kebab-case with hyphens replacing dots (e.g. `gpt-5.4-codex` → `gpt-5-4-codex.ts`).
-- **Sequential processing**: When handling multiple models, complete the full workflow for one model before starting the next.
-- **Affected providers**: New model IDs always need to be added to the primary provider package and the AI Gateway. There may be additional affected packages (e.g. Bedrock, Vertex, OpenAI-compatible) if the model is available there or referenced in tests/docs.
-- **Never make unrelated changes**: Only update model IDs and related references. Don't modify any other code, text, or formatting in the files you edit.
-- **Never modify `CHANGELOG.md` files of `packages/codemod`**: Changelog files are historical records, codemods are migration scripts. Do not edit either when updating model IDs.
-
-<adding-new-model>
-
-## Workflow for Adding a New Model ID
-
-### Step 1: Identify Scope
-
-Determine:
-
-- Provider name (e.g. `anthropic`, `openai`, `google`, `xai`)
-- Exact model ID string (e.g. `claude-haiku-4-5-20260218`, `gemini-3.1-pro`, `gpt-5.4-codex`)
-- Model type: chat, embedding, image, etc.
-- Whether this is a new version of an existing older model, or even the stable version of an existing preview or experimental model
-- Whether any provider packages other than the primary one and the AI Gateway need to be updated (e.g. Bedrock, Vertex, OpenAI-compatible)
-  - If a similar model ID is listed in one of those other provider packages, the new model ID should likely be added there as well. Check the provider's documentation for clues on availability.
-
-### Step 2: Find Where Similar Models Are Referenced
-
-Search for a similar existing model from the same provider (e.g. a lower version, or the preview version being replaced) across `packages/`, `content/`, and `examples/`. This reveals all locations that need updates.
-
-```bash
 # When to use
 
 Use this skill when you need to work with update-provider-models.
@@ -245,3 +206,42 @@ result = skill.execute()
 print(result)
 ```
 
+## Update Provider Model IDs
+
+This skill covers adding new model IDs and removing obsolete ones across the AI SDK codebase. Each workflow uses search to discover all locations that need changes.
+
+You may be asked to add or remove a single model ID, or to process a list of multiple model ID changes from an issue. For each model ID, follow the appropriate workflow:
+
+- If a new model ID is being added, follow the `<adding-new-model>` workflow.
+- If an obsolete model ID is being removed, follow the `<removing-obsolete-model>` workflow.
+
+## Critical Rules
+
+- **Exact matching**: Model IDs are often substrings of others (e.g. `grok-3` vs `grok-3-mini`). Always verify each search result is the exact model, not a substring match.
+- **Respect sort order**: When inserting into any list (type unions, table rows, arrays), observe the existing order and place the new entry accordingly.
+- **File naming for examples**: Use kebab-case with hyphens replacing dots (e.g. `gpt-5.4-codex` → `gpt-5-4-codex.ts`).
+- **Sequential processing**: When handling multiple models, complete the full workflow for one model before starting the next.
+- **Affected providers**: New model IDs always need to be added to the primary provider package and the AI Gateway. There may be additional affected packages (e.g. Bedrock, Vertex, OpenAI-compatible) if the model is available there or referenced in tests/docs.
+- **Never make unrelated changes**: Only update model IDs and related references. Don't modify any other code, text, or formatting in the files you edit.
+- **Never modify `CHANGELOG.md` files of `packages/codemod`**: Changelog files are historical records, codemods are migration scripts. Do not edit either when updating model IDs.
+
+<adding-new-model>
+
+## Workflow for Adding a New Model ID
+
+### Step 1: Identify Scope
+
+Determine:
+
+- Provider name (e.g. `anthropic`, `openai`, `google`, `xai`)
+- Exact model ID string (e.g. `claude-haiku-4-5-20260218`, `gemini-3.1-pro`, `gpt-5.4-codex`)
+- Model type: chat, embedding, image, etc.
+- Whether this is a new version of an existing older model, or even the stable version of an existing preview or experimental model
+- Whether any provider packages other than the primary one and the AI Gateway need to be updated (e.g. Bedrock, Vertex, OpenAI-compatible)
+  - If a similar model ID is listed in one of those other provider packages, the new model ID should likely be added there as well. Check the provider's documentation for clues on availability.
+
+### Step 2: Find Where Similar Models Are Referenced
+
+Search for a similar existing model from the same provider (e.g. a lower version, or the preview version being replaced) across `packages/`, `content/`, and `examples/`. This reveals all locations that need updates.
+
+```bash

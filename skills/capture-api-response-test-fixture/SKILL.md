@@ -27,6 +27,30 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need guidance on capture-api-response-test-fixture.
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
 ### API Response Test Fixtures
 
 For provider response parsing tests, we aim at storing test fixtures with the true responses from the providers (unless they are too large in which case some cutting that does not change semantics is advised).
@@ -74,27 +98,3 @@ run(async () => {
   await saveRawChunks({ result, filename: 'openai-gpt-5-nano' });
 });
 ```
-
-# When to use
-
-Use this skill when you need guidance on capture-api-response-test-fixture.
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.
-
-# Example
-
-See the skill content above for practical examples.

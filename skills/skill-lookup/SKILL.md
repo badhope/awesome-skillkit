@@ -27,6 +27,32 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on skill lookup.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+
+# Example
+
+See the skill content above for practical examples.
+
 ## Workflow
 
 1. Search for skills matching the user's request using `search_skills`
@@ -94,30 +120,3 @@ When the user asks to install a skill:
 - Present search results in a readable format with file counts
 - When installing, confirm the skill was saved successfully
 - Explain what the skill does and when it activates
-
-# When to use
-
-Use this skill when you need guidance on skill lookup.
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.
-
-
-# Example
-
-See the skill content above for practical examples.
-

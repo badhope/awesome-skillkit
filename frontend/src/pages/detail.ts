@@ -13,32 +13,7 @@
 
 import type { Skill, SkillIndex, SkillIndexEntry, SkillSource } from "../types";
 import { t, getLocale, pickZh, pickPlatform } from "../i18n";
-
-// Map category slugs to a friendly localized label. The list page
-// has a more comprehensive version; this one only covers the
-// categories present in the 35 skills that ship with the vault.
-const CATEGORY_LABELS: Record<string, { en: string; zh: string }> = {
-  "applications":        { en: "Applications",        zh: "应用" },
-  "browser-automation":  { en: "Browser automation",  zh: "浏览器自动化" },
-  "code-assistants":     { en: "Code assistants",     zh: "代码助手" },
-  "data-pipelines":      { en: "Data pipelines",      zh: "数据流水线" },
-  "dev-tools":           { en: "Developer tools",     zh: "开发工具" },
-  "documentation":       { en: "Documentation",       zh: "文档" },
-  "embeddings":          { en: "Embeddings",          zh: "向量嵌入" },
-  "evaluation":          { en: "Evaluation",          zh: "评估" },
-  "guardrails":          { en: "Guardrails & safety", zh: "护栏与安全" },
-  "mcp-protocol":        { en: "MCP protocol",        zh: "MCP 协议" },
-  "observability":       { en: "Observability",       zh: "可观测性" },
-  "official-cookbooks":  { en: "Official cookbooks",  zh: "官方 Cookbook" },
-  "safety-alignment":    { en: "Safety & alignment",  zh: "安全与对齐" },
-  "terminal-cli":        { en: "Terminal & CLI",      zh: "终端与 CLI" },
-  "text-to-sql":         { en: "Text-to-SQL",         zh: "Text-to-SQL" },
-};
-function categoryLabel(cat: string): string {
-  const m = CATEGORY_LABELS[cat];
-  if (m) return getLocale() === "zh" ? m.zh : m.en;
-  return cat.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-}
+import { categoryLabel, escHtml, escAttr, dumpFrontmatter } from "../shared";
 
 export async function renderDetail(
   root: HTMLElement,
@@ -344,10 +319,7 @@ async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: 
 }
 
 function downloadSkill(s: Skill): void {
-  // We re-emit frontmatter + body. We don't have the original
-  // yaml text on the client, so we re-construct it from the
-  // typed Skill fields. Good enough for a download.
-  const fm = yamlDump(s);
+  const fm = dumpFrontmatter(s);
   const blob = new Blob([fm, "\n", s.body], { type: "text/markdown" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
@@ -356,83 +328,6 @@ function downloadSkill(s: Skill): void {
   a.click();
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-}
-
-function yamlDump(s: Skill): string {
-  // Re-emit the SKILL.md frontmatter as YAML. We could ask the
-  // server for the raw frontmatter string, but this dumper is
-  // small and avoids a round-trip. It supports the Skill type
-  // (typed inputs, nested constraints) and produces text that
-  // round-trips through validate-skill.py.
-  const lines: string[] = ["---"];
-  const set = (k: string, v: unknown, indent = 0) => {
-    const pad = " ".repeat(indent);
-    if (v === undefined || v === null) return;
-    if (Array.isArray(v)) {
-      if (v.length === 0) { lines.push(`${pad}${k}: []`); return; }
-      lines.push(`${pad}${k}:`);
-      for (const x of v) {
-        if (x !== null && typeof x === "object" && !Array.isArray(x)) {
-          // Render a list of mappings as `- key: val` with one
-          // level deeper indent. We can't perfectly preserve
-          // order across all object shapes, so this is best-effort.
-          lines.push(`${pad}  -`);
-          for (const [kk, vv] of Object.entries(x)) {
-            set(kk, vv, indent + 4);
-          }
-        } else {
-          lines.push(`${pad}  - ${formatScalar(x)}`);
-        }
-      }
-      return;
-    }
-    if (typeof v === "object") {
-      lines.push(`${pad}${k}:`);
-      for (const [kk, vv] of Object.entries(v)) {
-        if (vv === undefined) continue;
-        set(kk, vv, indent + 2);
-      }
-      return;
-    }
-    lines.push(`${pad}${k}: ${formatScalar(v)}`);
-  };
-  set("slug", s.slug);
-  set("name", s.name);
-  set("name_zh", s.name_zh);
-  set("version", s.version);
-  set("description", s.description);
-  set("description_zh", s.description_zh);
-  set("category", s.category);
-  set("tags", s.tags);
-  set("platforms", s.platforms);
-  set("inputs", s.inputs);
-  set("output", s.output);
-  set("author", s.author);
-  set("license", s.license);
-  set("created", s.created);
-  set("updated", s.updated);
-  set("needs_review", s.needs_review);
-  return lines.join("\n") + "\n---\n";
-}
-
-function formatScalar(v: unknown): string {
-  if (typeof v === "string") {
-    // Always quote strings — Skill fields may contain colons,
-    // leading `#`, etc., and unquoted YAML is fragile.
-    return JSON.stringify(v);
-  }
-  if (typeof v === "number" || typeof v === "boolean") return String(v);
-  return JSON.stringify(v);
-}
-
-function escHtml(s: string): string {
-  return s.replace(/[&<>"']/g, c => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;",
-    '"': "&quot;", "'": "&#39;",
-  }[c]!));
-}
-function escAttr(s: string): string {
-  return escHtml(s);
 }
 
 // ============================ source block ============================

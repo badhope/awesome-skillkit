@@ -27,6 +27,141 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with add-provider-package.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
+# From workspace root
+pnpm build
+
+# From workspace root
+pnpm type-check:full   # Full type check including examples
+```
+
+### 15. Run Examples
+
+Test your examples:
+
+```bash
+cd examples/ai-functions
+pnpm tsx src/generate-text/<provider>.ts
+pnpm tsx src/stream-text/<provider>.ts
+```
+
+## Provider Method Naming
+
+- **Full names**: `languageModel(id)`, `imageModel(id)`, `embeddingModel(id)` (required)
+- **Short aliases**: `.chat(id)`, `.image(id)`, `.embedding(id)` (for DX)
+
+## File Naming Conventions
+
+- Source files: `kebab-case.ts`
+- Test files: `kebab-case.test.ts`
+- Type test files: `kebab-case.test-d.ts`
+- Provider classes: `<Provider>Provider`, `<Provider>LanguageModel`, etc.
+
+## Security Best Practices
+
+- Never use `JSON.parse` directly - use `parseJSON` or `safeParseJSON` from `@ai-sdk/provider-utils`
+- Load API keys securely using `loadApiKey` from `@ai-sdk/provider-utils`
+- Validate all API responses against schemas
+
+## Error Handling
+
+Errors should extend `AISDKError` from `@ai-sdk/provider` and use a marker pattern:
+
+```typescript
+import { AISDKError } from '@ai-sdk/provider';
+
+const name = 'AI_ProviderError';
+const marker = `vercel.ai.error.${name}`;
+const symbol = Symbol.for(marker);
+
+export class ProviderError extends AISDKError {
+  private readonly [symbol] = true;
+
+  constructor({ message, cause }: { message: string; cause?: unknown }) {
+    super({ name, message, cause });
+  }
+
+  static isInstance(error: unknown): error is ProviderError {
+    return AISDKError.hasMarker(error, marker);
+  }
+}
+```
+
+## Pre-release Mode
+
+If `main` is set up to publish `beta` releases, no further action is necessary. Just make sure not to backport it to the `vX.Y` stable branch since it will result in an npm version conflict once we exit pre-release mode on `main`.
+
+## Checklist
+
+- [ ] Package structure created in `packages/<provider>`
+- [ ] `package.json` configured with correct dependencies
+- [ ] TypeScript configs set up (`tsconfig.json`, `tsconfig.build.json`)
+- [ ] Build configuration (`tsup.config.ts`)
+- [ ] Test configurations (`vitest.node.config.js`, `vitest.edge.config.js`)
+- [ ] Provider implementation complete
+- [ ] Model classes implement appropriate interfaces
+- [ ] Unit tests written and passing
+- [ ] API response test fixtures captured
+- [ ] Examples created in `examples/ai-functions/src/`
+- [ ] Documentation added in `content/providers/01-ai-sdk-providers/`
+- [ ] README.md written
+- [ ] Major changeset created
+- [ ] `pnpm update-references` run
+- [ ] All tests passing (`pnpm test` from package)
+- [ ] Type checking passing (`pnpm type-check:full` from root)
+- [ ] Examples run successfully
+
+## Common Issues
+
+- **Missing tsconfig references**: Run `pnpm update-references` from workspace root
+- **Type errors in examples**: Run `pnpm type-check:full` to catch issues early
+- **Test failures**: Ensure both Node and Edge tests pass
+- **Build errors**: Check that `tsup.config.ts` is configured correctly
+
+## Related Documentation
+
+- [Provider Architecture](../../contributing/provider-architecture.md)
+- [Provider Development Notes](../../contributing/providers.md)
+- [Develop AI Functions Example](../develop-ai-functions-example/SKILL.md)
+- [Capture API Response Test Fixture](../capture-api-response-test-fixture/SKILL.md)
+
+# From provider package
+cd packages/<provider>
+pnpm test              # Run all tests
+pnpm test:node         # Run Node.js tests
+pnpm test:edge         # Run Edge tests
+pnpm type-check        # Type checking
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 add-provider-package 技能
+skill = load_skill("add-provider-package")
+result = skill.execute()
+print(result)
+```
+
 ## Adding a New Provider Package
 
 This guide covers the process of creating a new `@ai-sdk/<provider>` package to integrate an AI service into the AI SDK.
@@ -281,138 +416,3 @@ Run `pnpm update-references` from the workspace root to update tsconfig referenc
 ### 14. Build and Test
 
 ```bash
-# When to use
-
-Use this skill when you need to work with add-provider-package.
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
-
-# From workspace root
-pnpm build
-
-# From workspace root
-pnpm type-check:full   # Full type check including examples
-```
-
-### 15. Run Examples
-
-Test your examples:
-
-```bash
-cd examples/ai-functions
-pnpm tsx src/generate-text/<provider>.ts
-pnpm tsx src/stream-text/<provider>.ts
-```
-
-## Provider Method Naming
-
-- **Full names**: `languageModel(id)`, `imageModel(id)`, `embeddingModel(id)` (required)
-- **Short aliases**: `.chat(id)`, `.image(id)`, `.embedding(id)` (for DX)
-
-## File Naming Conventions
-
-- Source files: `kebab-case.ts`
-- Test files: `kebab-case.test.ts`
-- Type test files: `kebab-case.test-d.ts`
-- Provider classes: `<Provider>Provider`, `<Provider>LanguageModel`, etc.
-
-## Security Best Practices
-
-- Never use `JSON.parse` directly - use `parseJSON` or `safeParseJSON` from `@ai-sdk/provider-utils`
-- Load API keys securely using `loadApiKey` from `@ai-sdk/provider-utils`
-- Validate all API responses against schemas
-
-## Error Handling
-
-Errors should extend `AISDKError` from `@ai-sdk/provider` and use a marker pattern:
-
-```typescript
-import { AISDKError } from '@ai-sdk/provider';
-
-const name = 'AI_ProviderError';
-const marker = `vercel.ai.error.${name}`;
-const symbol = Symbol.for(marker);
-
-export class ProviderError extends AISDKError {
-  private readonly [symbol] = true;
-
-  constructor({ message, cause }: { message: string; cause?: unknown }) {
-    super({ name, message, cause });
-  }
-
-  static isInstance(error: unknown): error is ProviderError {
-    return AISDKError.hasMarker(error, marker);
-  }
-}
-```
-
-## Pre-release Mode
-
-If `main` is set up to publish `beta` releases, no further action is necessary. Just make sure not to backport it to the `vX.Y` stable branch since it will result in an npm version conflict once we exit pre-release mode on `main`.
-
-## Checklist
-
-- [ ] Package structure created in `packages/<provider>`
-- [ ] `package.json` configured with correct dependencies
-- [ ] TypeScript configs set up (`tsconfig.json`, `tsconfig.build.json`)
-- [ ] Build configuration (`tsup.config.ts`)
-- [ ] Test configurations (`vitest.node.config.js`, `vitest.edge.config.js`)
-- [ ] Provider implementation complete
-- [ ] Model classes implement appropriate interfaces
-- [ ] Unit tests written and passing
-- [ ] API response test fixtures captured
-- [ ] Examples created in `examples/ai-functions/src/`
-- [ ] Documentation added in `content/providers/01-ai-sdk-providers/`
-- [ ] README.md written
-- [ ] Major changeset created
-- [ ] `pnpm update-references` run
-- [ ] All tests passing (`pnpm test` from package)
-- [ ] Type checking passing (`pnpm type-check:full` from root)
-- [ ] Examples run successfully
-
-## Common Issues
-
-- **Missing tsconfig references**: Run `pnpm update-references` from workspace root
-- **Type errors in examples**: Run `pnpm type-check:full` to catch issues early
-- **Test failures**: Ensure both Node and Edge tests pass
-- **Build errors**: Check that `tsup.config.ts` is configured correctly
-
-## Related Documentation
-
-- [Provider Architecture](../../contributing/provider-architecture.md)
-- [Provider Development Notes](../../contributing/providers.md)
-- [Develop AI Functions Example](../develop-ai-functions-example/SKILL.md)
-- [Capture API Response Test Fixture](../capture-api-response-test-fixture/SKILL.md)
-
-# From provider package
-cd packages/<provider>
-pnpm test              # Run all tests
-pnpm test:node         # Run Node.js tests
-pnpm test:edge         # Run Edge tests
-pnpm type-check        # Type checking
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope or when simpler alternatives are available.
-
-
-# Example
-
-```python
-# 使用 add-provider-package 技能
-skill = load_skill("add-provider-package")
-result = skill.execute()
-print(result)
-```
-

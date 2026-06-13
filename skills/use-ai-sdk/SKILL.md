@@ -22,6 +22,30 @@ output:
   format: markdown
   description: Generated content based on the user request
 ---
+# When to use
+
+Use this skill when you need guidance on ai-sdk.
+
+# Inputs
+
+User request or task description related to AI SDK development.
+
+# Output
+
+Generated content based on the user request, including code examples and guidance.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope.
+
+# Example
+
+See the skill content above for practical examples.
+
 ## Prerequisites
 
 Before searching docs, check if `node_modules/ai/docs/` exists. If not, install **only** the `ai` package using the project's package manager (e.g., `pnpm add ai`).
@@ -95,27 +119,3 @@ Before implementing agent consumption:
 - [AI Gateway](references/ai-gateway.md) - Gateway setup and usage
 - [Type-Safe Agents with useChat](references/type-safe-agents.md) - End-to-end type safety with InferAgentUIMessage
 - [DevTools](references/devtools.md) - Set up local debugging and observability (development only)
-
-# When to use
-
-Use this skill when you need guidance on ai-sdk.
-
-# Inputs
-
-User request or task description related to AI SDK development.
-
-# Output
-
-Generated content based on the user request, including code examples and guidance.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope.
-
-# Example
-
-See the skill content above for practical examples.

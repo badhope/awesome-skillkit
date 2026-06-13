@@ -27,6 +27,37 @@ output:
 author: AI-SKILL
 license: MIT
 ---
+# When to use
+
+Use this skill when you need to work with major-version-mode.
+
+
+# Inputs
+
+User request or task description.
+
+# Output
+
+Generated content based on the user request.
+
+# Prompt
+
+Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
+
+# When NOT to use
+
+Do not use this skill for tasks outside its scope or when simpler alternatives are available.
+
+
+# Example
+
+```python
+# 使用 major-version-mode 技能
+skill = load_skill("major-version-mode")
+result = skill.execute()
+print(result)
+```
+
 ## Context
 
 This task is part of the next AI SDK major release. Breaking changes are acceptable.
@@ -74,35 +105,3 @@ If the change requires consumers to update their code or migrate stored data, ad
 
 - Find the migration guide with the highest version number in `content/docs/08-migration-guides/`
 - Add a concise section explaining what changed and how to migrate
-
-# When to use
-
-Use this skill when you need to work with major-version-mode.
-
-
-# Inputs
-
-User request or task description.
-
-# Output
-
-Generated content based on the user request.
-
-# Prompt
-
-Follow the guidelines in this skill when working on related tasks. Ensure you understand the requirements and constraints before proceeding.
-
-# When NOT to use
-
-Do not use this skill for tasks outside its scope or when simpler alternatives are available.
-
-
-# Example
-
-```python
-# 使用 major-version-mode 技能
-skill = load_skill("major-version-mode")
-result = skill.execute()
-print(result)
-```
-
