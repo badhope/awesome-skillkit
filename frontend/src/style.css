@@ -665,7 +665,9 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   letter-spacing: -0.02em;
   margin: 0 0 var(--s-3);
 }
-.detail h2 {
+.detail h2,
+.bundle__title,
+.detail__zh summary {
   font-family: var(--font-disp);
   font-weight: 700;
   font-size: var(--t-xl);
@@ -675,6 +677,27 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   letter-spacing: -0.01em;
   scroll-margin-top: 80px;
 }
+.bundle__title {
+  /* The bundle page title sits at the top of the page, not after
+     other h2 sections, so we don't want the big top margin. */
+  margin-top: 0;
+}
+.detail__zh {
+  margin: var(--s-4) 0;
+  padding: var(--s-3) var(--s-4);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+}
+.detail__zh summary {
+  cursor: pointer;
+  font-size: var(--t-md);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.detail__zh summary::marker { color: var(--ink-mute); }
+.detail__zh p { margin: var(--s-2) 0 0; }
 .detail h3 {
   font-family: var(--font-ui);
   font-weight: 600;
