@@ -1,8 +1,7 @@
 ---
 name: applying-brand-guidelines
 name_zh: 应用品牌指南
-description: This skill applies consistent corporate branding and styling to all
-  generated
+description: 'This skill applies consistent corporate branding and styling to all generated'
 description_zh: 确保内容符合品牌指南，包括视觉、语调和消息传递。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - documentation
   - frontend
   - llm
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: applying-brand-guidelines
 created: '2026-06-12'

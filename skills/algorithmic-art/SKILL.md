@@ -1,10 +1,8 @@
 ---
 name: algorithmic-art
 name_zh: algorithmic-art
-description: Creating algorithmic art using p5.js with seeded randomness and 
-  interactive
-description_zh: Creating algorithmic art using p5.js with seeded randomness and 
-  interactive
+description: 'Creating algorithmic art using p5.js with seeded randomness and interactive'
+description_zh: 'Creating algorithmic art using p5.js with seeded randomness and interactive'
 category: applications
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - backend
   - database
   - docker
-source:
+source: null
 license: Complete terms in LICENSE.txt
 needs_review: false
 slug: algorithmic-art
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: version-release
 name_zh: version-release
-description: Version release workflow — release process and GitHub Release notes
-  (not docs/changelog pages).
-description_zh: Version release workflow — release process and GitHub Release 
-  notes (not docs/changelog pages).
+description: 'Version release workflow — release process and GitHub Release notes (not docs/changelog pages).'
+description_zh: 'Version release workflow — release process and GitHub Release notes (not docs/changelog pages).'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - deployment
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: version-release
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

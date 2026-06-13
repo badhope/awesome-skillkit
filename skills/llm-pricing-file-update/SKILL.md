@@ -2,8 +2,7 @@
 name: LLM Model Pricing File Update
 name_zh: LLM 模型价目文件更新
 description: 'You maintain an internal **per-token LLM pricing data file** —'
-description_zh: 在 per-token 价目 JSON 里新增/修改 LLM 模型条目 —— 跨 provider ID 的 
-  matchPattern regex、定价 tier、缓存价格、tokenizer 对齐，以及变更上线前要跑的 schema 校验。
+description_zh: '在 per-token 价目 JSON 里新增/修改 LLM 模型条目 —— 跨 provider ID 的 matchPattern regex、定价 tier、缓存价格、tokenizer 对齐，以及变更上线前要跑的 schema 校验。'
 category: dev-tools
 tags:
   - ai
@@ -14,7 +13,7 @@ tags:
 source: null
 license: MIT
 author: 'Langfuse (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: llm-pricing-file-update
 created: '2026-06-12'

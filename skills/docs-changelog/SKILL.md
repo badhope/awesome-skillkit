@@ -1,10 +1,8 @@
 ---
 name: docs-changelog
 name_zh: docs-changelog
-description: Write website changelog pages under docs/changelog/*.mdx. Use for 
-  EN/ZH
-description_zh: Write website changelog pages under docs/changelog/*.mdx. Use 
-  for EN/ZH
+description: 'Write website changelog pages under docs/changelog/*.mdx. Use for EN/ZH'
+description_zh: 'Write website changelog pages under docs/changelog/*.mdx. Use for EN/ZH'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - frontend
   - git
-source:
+source: null
 needs_review: false
 slug: docs-changelog
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

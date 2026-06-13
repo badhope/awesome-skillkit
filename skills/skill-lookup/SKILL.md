@@ -1,8 +1,7 @@
 ---
 name: skill-lookup
 name_zh: 技能查找
-description: Search, retrieve, and install Agent Skills from the prompts.chat 
-  registry
+description: 'Search, retrieve, and install Agent Skills from the prompts.chat registry'
 description_zh: 在技能库中查找和检索相关技能。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - frontend
   - llm
   - security
-source:
+source: null
 license: MIT
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: skill-lookup
 created: '2026-06-12'

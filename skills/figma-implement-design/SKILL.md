@@ -1,10 +1,8 @@
 ---
 name: figma-implement-design
 name_zh: figma-implement-design
-description: Translates Figma designs into production-ready application code 
-  with
-description_zh: Translates Figma designs into production-ready application 代码 
-  with
+description: 'Translates Figma designs into production-ready application code with'
+description_zh: 'Translates Figma designs into production-ready application 代码 with'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - figma
   - frontend
-source:
+source: null
 needs_review: false
 slug: figma-implement-design
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

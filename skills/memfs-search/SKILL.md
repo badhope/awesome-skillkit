@@ -1,10 +1,8 @@
 ---
 name: memfs-search
 name_zh: memfs-搜索
-description: Semantic search over agent memory files. Use when you need to find 
-  conceptually
-description_zh: Semantic search over 智能体 memory files. Use when you need to find
-  conceptually
+description: 'Semantic search over agent memory files. Use when you need to find conceptually'
+description_zh: 'Semantic search over 智能体 memory files. Use when you need to find conceptually'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - javascript
-source:
+source: null
 needs_review: false
 slug: memfs-search
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

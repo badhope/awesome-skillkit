@@ -1,10 +1,8 @@
 ---
 name: huggingface-trackio
 name_zh: huggingface-trackio
-description: Track and visualize ML training experiments with Trackio. Use when 
-  logging
-description_zh: Track and visualize ML 训练 experiments with Trackio. Use when 
-  logging
+description: 'Track and visualize ML training experiments with Trackio. Use when logging'
+description_zh: 'Track and visualize ML 训练 experiments with Trackio. Use when logging'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: huggingface-trackio
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

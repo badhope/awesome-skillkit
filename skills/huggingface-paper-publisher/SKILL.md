@@ -1,12 +1,8 @@
 ---
 name: huggingface-paper-publisher
 name_zh: huggingface-paper-publisher
-description: Publish and manage research papers on Hugging Face Hub. Supports 
-  creating paper pages, linking papers to models/datasets, claiming authorship, 
-  and generating professional markdown-based research articles.
-description_zh: Publish and manage research papers on Hugging Face Hub. Supports
-  creating paper pages, linking papers to models/datasets, claiming authorship, 
-  and generating professional markdown-based research articles.
+description: 'Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research ar...'
+description_zh: 'Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research ar...'
 category: dev-tools
 tags:
   - ai
@@ -15,9 +11,9 @@ tags:
   - cli
   - documentation
 needs_review: false
-source:
+source: null
 slug: huggingface-paper-publisher
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

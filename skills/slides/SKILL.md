@@ -1,10 +1,8 @@
 ---
 name: slides
 name_zh: slides
-description: Create and edit presentation slide decks (`.pptx`) with PptxGenJS, 
-  bundled
-description_zh: 创建 and edit presentation slide decks (`.pptx`) with PptxGenJS, 
-  bundled
+description: 'Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled'
+description_zh: '创建 and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - frontend
   - javascript
-source:
+source: null
 needs_review: false
 slug: slides
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

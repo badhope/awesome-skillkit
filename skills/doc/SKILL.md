@@ -1,10 +1,8 @@
 ---
 name: doc
 name_zh: doc
-description: Use when the task involves reading, creating, or editing `.docx` 
-  documents,
-description_zh: Use when the task involves reading, creating, or editing `.docx`
-  documents,
+description: 'Use when the task involves reading, creating, or editing `.docx` documents,'
+description_zh: 'Use when the task involves reading, creating, or editing `.docx` documents,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - frontend
   - llm
-source:
+source: null
 needs_review: false
 slug: doc
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

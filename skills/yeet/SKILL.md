@@ -1,10 +1,8 @@
 ---
 name: yeet
 name_zh: yeet
-description: Use only when the user explicitly asks to stage, commit, push, and 
-  open
-description_zh: Use only when the 用户 explicitly asks to stage, commit, push, and
-  open
+description: 'Use only when the user explicitly asks to stage, commit, push, and open'
+description_zh: 'Use only when the 用户 explicitly asks to stage, commit, push, and open'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: yeet
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -10,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 license: Apache-2.0
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: git-workflow
 created: '2026-06-12'

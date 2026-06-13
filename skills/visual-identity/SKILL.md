@@ -1,14 +1,8 @@
 ---
 name: visual-identity
 name_zh: visual-identity
-description: Build and maintain a persistent visual identity for your agent 
-  using Flux Kontext Pro. Use when the user asks the agent to generate selfies, 
-  avatars, character art, or any image that should look like the same person 
-  across generations.
-description_zh: 构建 and maintain a persistent visual identity for your 智能体 using 
-  Flux Kontext Pro. Use when the 用户 asks the 智能体 to 生成 selfies, avatars, 
-  character art, or any image that should look like the same person across 
-  generations.
+description: 'Build and maintain a persistent visual identity for your agent using Flux Kontext Pro. Use when the user asks the agent to generate selfies, avatars, character art, or any image that should look li...'
+description_zh: '构建 and maintain a persistent visual identity for your 智能体 using Flux Kontext Pro. Use when the 用户 asks the 智能体 to 生成 selfies, avatars, character art, or any image that should look like the same per...'
 category: dev-tools
 tags:
   - ai
@@ -16,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: visual-identity
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: docx
 name_zh: docx
-description: Use this skill whenever the user wants to create, read, edit, or 
-  manipulate
-description_zh: Use this 技能 whenever the 用户 wants to 创建, read, edit, or 
-  manipulate
+description: 'Use this skill whenever the user wants to create, read, edit, or manipulate'
+description_zh: 'Use this 技能 whenever the 用户 wants to 创建, read, edit, or manipulate'
 category: dev-tools
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
 slug: docx
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

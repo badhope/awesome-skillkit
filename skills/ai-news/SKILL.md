@@ -1,19 +1,8 @@
 ---
 name: ai-news
 name_zh: ai-news
-description: Fetch and summarize recent AI news from curated RSS feeds (Hugging 
-  Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube 
-  channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also fetches
-  full transcripts for specific YouTube videos. Use when the user asks about 
-  recent AI news, what's happened in AI lately, summaries of AI research or 
-  product announcements, or wants a digest of what's going on in the AI space.
-description_zh: Fetch and summarize recent AI news from curated RSS feeds 
-  (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and 
-  YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, etc.). Also
-  fetches full transcripts for specific YouTube videos. Use when the 用户 asks 
-  about recent AI news, what's happened in AI lately, summaries of AI research 
-  or product announcements, or wants a digest of what's going on in the AI 
-  space.
+description: 'Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...'
+description_zh: 'Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...'
 category: applications
 tags:
   - ai
@@ -21,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 needs_review: false
 slug: ai-news
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

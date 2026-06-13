@@ -1,8 +1,7 @@
 ---
 name: open-pr
 name_zh: open-pr
-description: Open a pull request with proper PR template, test coverage, and 
-  review
+description: 'Open a pull request with proper PR template, test coverage, and review'
 description_zh: Open a pull request with proper PR template, 测试 coverage, and 审查
 category: dev-tools
 tags:
@@ -11,9 +10,9 @@ tags:
   - backend
   - database
   - docker
-source:
+source: null
 author: autogpt-team
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: open-pr
 created: '2026-06-12'

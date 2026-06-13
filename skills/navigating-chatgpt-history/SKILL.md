@@ -1,16 +1,8 @@
 ---
 name: navigating-chatgpt-history
 name_zh: navigating-chatgpt-history
-description: Navigates archived ChatGPT or Claude-style conversation exports and
-  a MemFS reference archive on demand. Use when recalling what a past assistant 
-  knew, searching old conversations, rendering specific chats, seeding reference
-  memory from export sidecars, or mining historical context without doing a full
-  import.
-description_zh: Navigates archived ChatGPT or Claude-style conversation exports 
-  and a MemFS reference archive on demand. Use when recalling what a past 
-  assistant knew, searching old conversations, rendering specific chats, seeding
-  reference memory from export sidecars, or mining historical context without 
-  doing a full import.
+description: 'Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specif...'
+description_zh: 'Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specif...'
 category: applications
 tags:
   - ai
@@ -20,9 +12,9 @@ tags:
   - python
 license: MIT
 needs_review: false
-source:
+source: null
 slug: navigating-chatgpt-history
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

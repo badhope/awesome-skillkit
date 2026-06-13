@@ -1,16 +1,8 @@
 ---
 name: ray-dependencies
 name_zh: ray-dependencies
-description: Manage Python dependencies in Ray — add/remove/upgrade packages, 
-  work with raydepsets lock files, debug dependency conflicts, and regenerate 
-  compiled requirements. Covers `python/requirements*`, 
-  `python/requirements/**`, `python/deplocks/**`, and 
-  `ci/raydepsets/configs/*.depsets.yaml`.
-description_zh: Manage Python dependencies in Ray — add/remove/upgrade packages,
-  work with raydepsets lock files, 调试 dependency conflicts, and regenerate 
-  compiled requirements. Covers `python/requirements*`, 
-  `python/requirements/**`, `python/deplocks/**`, and 
-  `ci/raydepsets/configs/*.depsets.yaml`.
+description: 'Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, debug dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `p...'
+description_zh: 'Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, 调试 dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `pyth...'
 category: dev-tools
 tags:
   - ai
@@ -18,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: ray-dependencies
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

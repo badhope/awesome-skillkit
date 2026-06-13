@@ -11,9 +11,9 @@ tags:
   - documentation
   - frontend
 needs_review: false
-source:
+source: null
 slug: fetch-buildkite-logs
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

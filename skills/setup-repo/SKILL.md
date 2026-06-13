@@ -6,12 +6,12 @@ description: Initialize a worktree-based repo layout for parallel development. C
 description_zh: 初始化基于 worktree 的 repo 布局以支持并行开发。创建主 worktree、审查 worktree 和编号工作分支。
 category: dev-tools
 tags: [ai, api, backend, cli, frontend]
-source:
+source: null
 author: AI-SKILL
-version: 1.0.0
+version: '1.0.0'
 license: MIT
-created: 2026-06-12
-updated: 2026-06-12
+created: '2026-06-12'
+updated: '2026-06-12'
 needs_review: false
 inputs:
   - name: request

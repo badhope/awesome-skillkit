@@ -1,14 +1,8 @@
 ---
 name: add-model-price
 name_zh: add-模型-price
-description: Use when editing worker/src/constants/default-model-prices.json, 
-  packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
-  matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 
-  model pricing.
-description_zh: Use when editing worker/src/constants/default-模型-prices.json, 
-  packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or 
-  matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or Gemini 
-  模型 pricing.
+description: 'Use when editing worker/src/constants/default-model-prices.json, packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Verte...'
+description_zh: 'Use when editing worker/src/constants/default-模型-prices.json, packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azu...'
 category: applications
 tags:
   - ai
@@ -17,9 +11,9 @@ tags:
   - evaluation
   - frontend
 needs_review: false
-source:
+source: null
 slug: add-model-price
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: template-skill
 name_zh: template-技能
-description: Replace with description of the skill and when Claude should use 
-  it.
-description_zh: Replace with description of the 技能 and when Claude should use 
-  it.
+description: 'Replace with description of the skill and when Claude should use it.'
+description_zh: 'Replace with description of the 技能 and when Claude should use it.'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - llm
   - python
   - typescript
-source:
+source: null
 needs_review: false
 slug: template
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

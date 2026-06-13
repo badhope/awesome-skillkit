@@ -1,10 +1,8 @@
 ---
 name: frontend-design
 name_zh: frontend-design
-description: Guidance for distinctive, intentional visual design when building 
-  new
-description_zh: Guidance for distinctive, intentional visual 设计 when building 
-  new
+description: 'Guidance for distinctive, intentional visual design when building new'
+description_zh: 'Guidance for distinctive, intentional visual 设计 when building new'
 category: dev-tools
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - cli
   - frontend
   - git
-source:
+source: null
 license: Complete terms in LICENSE.txt
 needs_review: false
 slug: frontend-design
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

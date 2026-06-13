@@ -1,10 +1,8 @@
 ---
 name: pyrefly-type-coverage
 name_zh: pyrefly-类型-coverage
-description: Migrate a file to use stricter Pyrefly type checking with 
-  annotations
-description_zh: Migrate a file to use stricter Pyrefly type checking with 
-  annotations
+description: 'Migrate a file to use stricter Pyrefly type checking with annotations'
+description_zh: 'Migrate a file to use stricter Pyrefly type checking with annotations'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - docker
   - frontend
-source:
+source: null
 needs_review: false
 slug: pyrefly-type-coverage
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

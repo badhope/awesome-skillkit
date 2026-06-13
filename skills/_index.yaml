@@ -40,8 +40,7 @@ skills:
     description: Use when editing 
       worker/src/constants/default-model-prices.json, 
       packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
-      matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azure, or 
-      Gemini model pricing.
+      matchPattern regexes for OpenAI, Anthropic, Bedrock, Verte...
     category: applications
     tags:
       - ai
@@ -117,8 +116,7 @@ skills:
     name_zh: add-uint-support
     description: Add unsigned integer (uint) type support to PyTorch operators 
       by updating AT_DISPATCH macros. Use when adding support for uint16, 
-      uint32, uint64 types to operators, kernels, or when user mentions enabling
-      unsigned types, barebones unsigned types, or uint support.
+      uint32, uint64 types to operators, kernels, or when user mentions e...
     category: applications
     tags:
       - ai
@@ -134,11 +132,7 @@ skills:
     name_zh: adr-技能
     description: Create and maintain Architecture Decision Records (ADRs) 
       optimized for agentic coding workflows. Use when you need to propose, 
-      write, update, accept/reject, deprecate, or supersede an ADR; bootstrap an
-      adr folder and index; consult existing ADRs before implementing changes; 
-      or enforce ADR conventions. This skill uses Socratic questioning to 
-      capture intent before drafting, and validates output against an 
-      agent-readiness checklist.
+      write, update, accept/reject, deprecate, or supersede an ADR; bootstra...
     category: dev-tools
     tags:
       - ai
@@ -244,11 +238,7 @@ skills:
     name_zh: ai-news
     description: Fetch and summarize recent AI news from curated RSS feeds 
       (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) 
-      and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Explained, 
-      etc.). Also fetches full transcripts for specific YouTube videos. Use when
-      the user asks about recent AI news, what's happened in AI lately, 
-      summaries of AI research or product announcements, or wants a digest of 
-      what's going on in the AI space.
+      and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...
     category: applications
     tags:
       - ai
@@ -310,7 +300,7 @@ skills:
     description: Debug AOTInductor (AOTI) errors and crashes. Use when 
       encountering AOTI segfaults, device mismatch errors, constant loading 
       failures, or runtime errors from aot_compile, aot_load, 
-      aoti_compile_and_package, or aoti_load_package.
+      aoti_compile_and_...
     category: applications
     tags:
       - ai
@@ -415,9 +405,7 @@ skills:
     name_zh: bootstrap-realtime-eval
     description: Bootstrap a new realtime eval folder inside this cookbook repo 
       by choosing the right harness from examples/evals/realtime_evals, 
-      scaffolding prompt/tools/data files, generating a useful README, and 
-      validating it with smoke, full eval, and test runs. Use when a user wants 
-      to start a new crawl, walk, or run realtime eval in this repository.
+      scaffolding prompt/tools/data files, generating a useful README, and...
     category: dev-tools
     tags:
       - ai
@@ -433,8 +421,7 @@ skills:
     name_zh: brand-guidelines
     description: Applies Anthropic's official brand colors and typography to any
       sort of artifact that may benefit from having Anthropic's look-and-feel. 
-      Use it when brand colors or style guidelines, visual formatting, or 
-      company design standards apply.
+      Use it when brand colors or style guidelines, visual formatt...
     category: applications
     tags:
       - ai
@@ -479,9 +466,7 @@ skills:
     name_zh: canvas-设计
     description: Create beautiful visual art in .png and .pdf documents using 
       design philosophy. You should use this skill when the user asks to create 
-      a poster, piece of art, design, or other static piece. Create original 
-      visual designs, never copying existing artists' work to avoid copyright 
-      violations.
+      a poster, piece of art, design, or other static piece. Create ...
     category: dev-tools
     tags:
       - ai
@@ -615,9 +600,7 @@ skills:
     name_zh: cli-creator
     description: Build a composable CLI for Codex from API docs, an OpenAPI 
       spec, existing curl examples, an SDK, a web app, an admin tool, or a local
-      script. Use when the user wants Codex to create a command-line tool that 
-      can run from any repo, expose composable read/write commands, return 
-      stable JSON, manage auth, and pair with a companion skill.
+      script. Use when the user wants Codex to create a command-line ...
     category: dev-tools
     tags:
       - ai
@@ -722,8 +705,7 @@ skills:
     name_zh: Letta Conversations 接口
     description: Guide for using the Letta Conversations API to manage isolated 
       message threads on agents. Use when building multi-user chat applications,
-      session management, or any scenario requiring separate conversation 
-      contexts on a single agent.
+      session management, or any scenario requiring separate conv...
     category: dev-tools
     tags:
       - ai
@@ -769,9 +751,7 @@ skills:
     name_zh: creating-letta-代码-channels
     description: Builds and debugs Letta Code channels, including first-party 
       channel adapters and dynamic user channel plugins under ~/.letta/channels.
-      Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, or custom 
-      channel support; testing channel routing, pairing, MessageChannel, runtime
-      dependencies, or channel plugin manifests.
+      Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, ...
     category: dev-tools
     tags:
       - ai
@@ -1295,8 +1275,7 @@ skills:
     name_zh: letta-fleet-管理
     description: Manage Letta AI agent fleets declaratively with kubectl-style 
       CLI. Use when creating, updating, or managing multiple Letta agents with 
-      shared configurations, memory blocks, tools, folders, canary deployments, 
-      multi-tenancy, and bulk operations.
+      shared configurations, memory blocks, tools, folders, canary d...
     category: dev-tools
     tags:
       - ai
@@ -1356,8 +1335,7 @@ skills:
     name_zh: 前端-技能
     description: Use when the task asks for a visually strong landing page, 
       website, app, prototype, demo, or game UI. This skill enforces restrained 
-      composition, image-led hierarchy, cohesive content structure, and tasteful
-      motion while avoiding generic cards, weak branding, and UI clutter.
+      composition, image-led hierarchy, cohesive content structure, an...
     category: applications
     tags:
       - ai
@@ -1403,9 +1381,7 @@ skills:
     name_zh: gh-fix-ci
     description: Use when a user asks to debug or fix failing GitHub PR checks 
       that run in GitHub Actions; use `gh` to inspect checks and logs, summarize
-      failure context, draft a fix plan, and implement only after explicit 
-      approval. Treat external providers (for example Buildkite) as out of scope
-      and report only the details URL.
+      failure context, draft a fix plan, and implement only after ...
     category: dev-tools
     tags:
       - ai
@@ -1454,8 +1430,8 @@ skills:
     name_zh: github-pr-inline-reply
     description: Reply to inline PR review comments on GitHub pull requests 
       using the GitHub API. Use this skill when you need to respond to 
-      individual review comments on a PR, acknowledge feedback, or mark comments
-      as resolved by posting direct replies to comment threads.
+      individual review comments on a PR, acknowledge feedback, or mark 
+      comment...
     category: dev-tools
     tags:
       - api
@@ -1530,12 +1506,7 @@ skills:
     description: Create, repair, validate, visually QA, and package 
       Codex-compatible animated pets and pet spritesheets from character art, 
       generated images, company or prospect brand cues, or visual references. 
-      Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel
-      custom pet style, a prospect or company mascot pet, or a full 8x9 animated
-      pet atlas with transparent unused cells, QA contact sheets, and pet.json 
-      packaging. This skill composes the installed $imagegen system skill for 
-      visual generation and uses bundled scripts for deterministic spritesheet 
-      assembly.
+      Us...
     category: dev-tools
     tags:
       - ai
@@ -1582,8 +1553,7 @@ skills:
     name_zh: hf-mcp
     description: Use Hugging Face Hub via MCP server tools. Search models, 
       datasets, Spaces, papers. Get repo details, fetch documentation, run 
-      compute jobs, and use Gradio Spaces as AI tools. Available when connected 
-      to the HF MCP server.
+      compute jobs, and use Gradio Spaces as AI tools. Available when connec...
     category: dev-tools
     tags:
       - ai
@@ -1704,8 +1674,7 @@ skills:
     name_zh: huggingface-local-models
     description: Use to select models to run locally with llama.cpp and GGUF on 
       CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, 
-      running servers, exact GGUF file lookup, conversion, and OpenAI-compatible
-      local serving.
+      running servers, exact GGUF file lookup, conversion, and OpenAI-...
     category: dev-tools
     tags:
       - ai
@@ -1721,15 +1690,7 @@ skills:
     name_zh: huggingface-lora-space-builder
     description: Build and publish a Gradio demo on Hugging Face Spaces for a 
       user-provided LoRA. Use when someone asks to create, generate, ship, or 
-      publish a Space, demo, Gradio app, or playground for a LoRA — including 
-      LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or 
-      other diffusion base models. Also triggers when someone describes a LoRA 
-      they trained or hosts on the Hub and wants to share it. Covers picking the
-      right base pipeline and `diffusers` inference recipe, designing a UI 
-      tailored to the LoRA's task and inputs (Union/multi-task control, edit, 
-      video, image, etc.), respecting model-card recommendations (trigger words,
-      steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU 
-      hardware as a private Space by default.
+      publish a Space, demo, Gradio app, or playground for a LoRA — in...
     category: dev-tools
     tags:
       - ai
@@ -1745,7 +1706,7 @@ skills:
     name_zh: huggingface-paper-publisher
     description: Publish and manage research papers on Hugging Face Hub. 
       Supports creating paper pages, linking papers to models/datasets, claiming
-      authorship, and generating professional markdown-based research articles.
+      authorship, and generating professional markdown-based research ar...
     category: dev-tools
     tags:
       - ai
@@ -1791,9 +1752,7 @@ skills:
     name_zh: huggingface-tool-builder
     description: Use this skill when the user wants to build tool/scripts or 
       achieve a task where using data from the Hugging Face API would help. This
-      is especially useful when chaining or combining API calls or the task will
-      be repeated/automated. This Skill creates a reusable script to fetch, 
-      enrich or process data.
+      is especially useful when chaining or combining API calls or t...
     category: dev-tools
     tags:
       - ai
@@ -1824,16 +1783,7 @@ skills:
     name_zh: huggingface-vision-trainer
     description: Trains and fine-tunes vision models for object detection 
       (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — 
-      MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers 
-      classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on 
-      Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, 
-      Albumentations augmentation, mAP/mAR evaluation, accuracy metrics, SAM 
-      segmentation with bbox/point prompts, DiceCE loss, hardware selection, 
-      cost estimation, Trackio monitoring, and Hub persistence. Use when users 
-      mention training object detection, image classification, SAM, SAM2, 
-      segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, 
-      ResNet, bounding box models, or fine-tuning vision models on Hugging Face 
-      Jobs.
+      MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...
     category: dev-tools
     tags:
       - ai
@@ -1980,8 +1930,7 @@ skills:
     name_zh: karpathy-guidelines
     description: Behavioral guidelines to reduce common LLM coding mistakes. Use
       when writing, reviewing, or refactoring code to avoid overcomplication, 
-      make surgical changes, surface assumptions, and define verifiable success 
-      criteria.
+      make surgical changes, surface assumptions, and define verifi...
     category: applications
     tags:
       - ai
@@ -2012,8 +1961,7 @@ skills:
     name_zh: letta-configuration
     description: Configure LLM models and providers for Letta agents and 
       servers. Use when setting model handles, adjusting temperature/tokens, 
-      configuring provider-specific settings, setting up BYOK providers, or 
-      configuring self-hosted deployments with environment variables.
+      configuring provider-specific settings, setting up BYOK providers, or ...
     category: dev-tools
     tags:
       - ai
@@ -2268,8 +2216,7 @@ skills:
     name_zh: metal-kernel
     description: Write Metal/MPS kernels for PyTorch operators. Use when adding 
       MPS device support to operators, implementing Metal shaders, or porting 
-      CUDA kernels to Apple Silicon. Covers native_functions.yaml dispatch, 
-      host-side operators, and Metal kernel implementation.
+      CUDA kernels to Apple Silicon. Covers native_functions.yaml di...
     category: applications
     tags:
       - ai
@@ -2373,9 +2320,7 @@ skills:
     name_zh: navigating-chatgpt-history
     description: Navigates archived ChatGPT or Claude-style conversation exports
       and a MemFS reference archive on demand. Use when recalling what a past 
-      assistant knew, searching old conversations, rendering specific chats, 
-      seeding reference memory from export sidecars, or mining historical 
-      context without doing a full import.
+      assistant knew, searching old conversations, rendering specif...
     category: applications
     tags:
       - ai
@@ -2514,11 +2459,7 @@ skills:
     name_zh: openai-docs
     description: Use when the user asks how to build with OpenAI products or 
       APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date
-      official documentation with citations, help choosing the latest model for 
-      a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs 
-      MCP tools for non-Codex docs questions, use the Codex manual helper first 
-      for broad Codex self-knowledge, and restrict fallback browsing to official
-      OpenAI domains.
+      official documentation with citations, help choosing the lates...
     category: dev-tools
     tags:
       - ai
@@ -2579,8 +2520,7 @@ skills:
     name_zh: pdf
     description: Use when tasks involve reading, creating, or reviewing PDF 
       files where rendering and layout matter; prefer visual checks by rendering
-      pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, 
-      and `pypdf` for generation and extraction.
+      pages (Poppler) and use Python tools such as `reportlab`, `pdfp...
     category: dev-tools
     tags:
       - ai
@@ -2654,10 +2594,7 @@ skills:
     name_zh: plugin-creator
     description: Create and scaffold plugin directories for Codex with a 
       required `.codex-plugin/plugin.json`, optional plugin folders/files, and 
-      baseline placeholders you can edit before publishing or testing. Use when 
-      Codex needs to create a new local plugin, add optional plugin structure, 
-      or generate or update repo-root `.agents/plugins/marketplace.json` entries
-      for plugin ordering and availability metadata.
+      baseline placeholders you can edit before publishing or testing. Use...
     category: applications
     tags:
       - ai
@@ -2709,12 +2646,7 @@ skills:
     name_zh: pr
     description: Create a PR for the current branch (targets `canary` by 
       default), including splitting one cross-layer branch into ordered stacked 
-      PRs so a lower layer (db / shared package / server TRPC) merges before its
-      callers (desktop / CLI / UI). Use when the user asks to create / submit a 
-      PR, or to split a branch because clients call a server contract that isn't
-      on the trunk yet. Triggers on 'pr', 'create pr', 'submit pr', 'open a PR',
-      'pull request', 'split this PR', 'stacked PR', 'backend should merge 
-      first', '提 PR', '提个 PR', '新建 PR', '拆 PR', '后端先合', '分层合并'.
+      PRs so a lower layer (db / shared package / server TRPC) merges bef...
     category: dev-tools
     tags:
       - ai
@@ -2745,9 +2677,7 @@ skills:
     name_zh: pr-polish
     description: Alternate /pr-review and /pr-address on a PR until the PR is 
       truly mergeable — no new review findings, zero unresolved inline threads, 
-      zero unaddressed top-level reviews or issue comments, all CI checks green,
-      and two consecutive quiet polls after CI settles. Use when the user wants 
-      a PR polished to merge-ready without setting a fixed number of rounds.
+      zero unaddressed top-level reviews or issue comments, all CI c...
     category: dev-tools
     tags:
       - ai
@@ -2975,9 +2905,7 @@ skills:
     name_zh: ray-dependencies
     description: Manage Python dependencies in Ray — add/remove/upgrade 
       packages, work with raydepsets lock files, debug dependency conflicts, and
-      regenerate compiled requirements. Covers `python/requirements*`, 
-      `python/requirements/**`, `python/deplocks/**`, and 
-      `ci/raydepsets/configs/*.depsets.yaml`.
+      regenerate compiled requirements. Covers `python/requirements*`, `p...
     category: dev-tools
     tags:
       - ai
@@ -3174,7 +3102,7 @@ skills:
     description: URL search param and hash state management. Use when adding or 
       modifying URL search params, working with useSearchParams, 
       setSearchParams, useSearchParamState, or navigate() with query strings or 
-      hash fragments, or fixing browser back/forward button issues.
+      h...
     category: dev-tools
     tags:
       - ai
@@ -3357,8 +3285,7 @@ skills:
     name_zh: 技能-installer
     description: Install Codex skills into $CODEX_HOME/skills from a curated 
       list or a GitHub repo path. Use when a user asks to list installable 
-      skills, install a curated skill, or install a skill from another repo 
-      (including private repos).
+      skills, install a curated skill, or install a skill from another rep...
     category: dev-tools
     tags:
       - ai
@@ -3465,8 +3392,7 @@ skills:
     name_zh: social-cli
     description: Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML
       in, YAML out, exit codes for automation. Use when the task involves 
-      posting, replying, reading feeds, searching, annotating URLs, or running a
-      sync/check/dispatch agent loop across social platforms.
+      posting, replying, reading feeds, searching, annotating URLs, or ...
     category: dev-tools
     tags:
       - ai
@@ -3716,13 +3642,7 @@ skills:
     name_zh: train-sentence-transformers
     description: Train or fine-tune sentence-transformers models across 
       `SentenceTransformer` (bi-encoder; dense or static embedding model; for 
-      retrieval, similarity, clustering, classification, paraphrase mining, 
-      dedup, multimodal), `CrossEncoder` (reranker; pair scoring for two-stage 
-      retrieval / pair classification), and `SparseEncoder` (SPLADE, sparse 
-      embedding model; for learned-sparse retrieval). Covers loss selection, 
-      hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and 
-      Hugging Face Hub publishing. Use for any sentence-transformers training 
-      task.
+      retrieval, similarity, clustering, classification, paraphrase mining, ...
     category: dev-tools
     tags:
       - ai
@@ -3963,8 +3883,7 @@ skills:
     name_zh: visual-identity
     description: Build and maintain a persistent visual identity for your agent 
       using Flux Kontext Pro. Use when the user asks the agent to generate 
-      selfies, avatars, character art, or any image that should look like the 
-      same person across generations.
+      selfies, avatars, character art, or any image that should look li...
     category: dev-tools
     tags:
       - ai
@@ -3980,9 +3899,7 @@ skills:
     name_zh: web-artifacts-builder
     description: Suite of tools for creating elaborate, multi-component 
       claude.ai HTML artifacts using modern frontend web technologies (React, 
-      Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state 
-      management, routing, or shadcn/ui components - not for simple single-file 
-      HTML/JSX artifacts.
+      Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma...
     category: applications
     tags:
       - ai
@@ -4073,8 +3990,7 @@ skills:
     name_zh: worktree
     description: Set up a new git worktree for parallel development. Creates the
       worktree, copies .env files, installs dependencies, and generates Prisma 
-      client. TRIGGER when user asks to set up a worktree, work on a branch in 
-      isolation, or needs a separate environment for a branch or PR.
+      client. TRIGGER when user asks to set up a worktree, work on...
     category: dev-tools
     tags:
       - backend

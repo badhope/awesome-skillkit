@@ -1,22 +1,8 @@
 ---
 name: train-sentence-transformers
 name_zh: train-sentence-transformers
-description: Train or fine-tune sentence-transformers models across 
-  `SentenceTransformer` (bi-encoder; dense or static embedding model; for 
-  retrieval, similarity, clustering, classification, paraphrase mining, dedup, 
-  multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / 
-  pair classification), and `SparseEncoder` (SPLADE, sparse embedding model; for
-  learned-sparse retrieval). Covers loss selection, hard-negative mining, 
-  evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. 
-  Use for any sentence-transformers training task.
-description_zh: Train or fine-tune sentence-transformers models across 
-  `SentenceTransformer` (bi-encoder; dense or static embedding 模型; for 
-  retrieval, similarity, clustering, classification, paraphrase mining, dedup, 
-  multimodal), `CrossEncoder` (reranker; pair scoring for two-stage retrieval / 
-  pair classification), and `SparseEncoder` (SPLADE, sparse embedding 模型; for 
-  learned-sparse retrieval). Covers loss selection, hard-negative mining, 
-  evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. 
-  Use for any sentence-transformers 训练 task.
+description: 'Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding model; for retrieval, similarity, clustering, classification, paraphrase mining, ...'
+description_zh: 'Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding 模型; for retrieval, similarity, clustering, classification, paraphrase mining, ded...'
 category: dev-tools
 tags:
   - ai
@@ -24,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: train-sentence-transformers
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

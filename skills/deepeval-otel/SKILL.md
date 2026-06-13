@@ -13,7 +13,7 @@ tags:
 source: null
 license: Apache-2.0
 author: 'Confident AI (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: deepeval-otel
 created: '2026-06-12'

@@ -1,14 +1,8 @@
 ---
 name: letta-fleet-management
 name_zh: letta-fleet-管理
-description: Manage Letta AI agent fleets declaratively with kubectl-style CLI. 
-  Use when creating, updating, or managing multiple Letta agents with shared 
-  configurations, memory blocks, tools, folders, canary deployments, 
-  multi-tenancy, and bulk operations.
-description_zh: Manage Letta AI 智能体 fleets declaratively with kubectl-style CLI.
-  Use when creating, updating, or managing multiple Letta agents with shared 
-  configurations, memory blocks, tools, folders, canary deployments, 
-  multi-tenancy, and bulk operations.
+description: 'Manage Letta AI agent fleets declaratively with kubectl-style CLI. Use when creating, updating, or managing multiple Letta agents with shared configurations, memory blocks, tools, folders, canary d...'
+description_zh: 'Manage Letta AI 智能体 fleets declaratively with kubectl-style CLI. Use when creating, updating, or managing multiple Letta agents with shared configurations, memory blocks, tools, folders, canary dep...'
 category: dev-tools
 tags:
   - ai
@@ -16,11 +10,11 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 license: MIT
 needs_review: false
 slug: fleet-management
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

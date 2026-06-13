@@ -1,10 +1,8 @@
 ---
 name: render-deploy
 name_zh: render-部署
-description: Deploy applications to Render by analyzing codebases, generating 
-  render.yaml
-description_zh: 部署 applications to Render by analyzing codebases, generating 
-  render.yaml
+description: 'Deploy applications to Render by analyzing codebases, generating render.yaml'
+description_zh: '部署 applications to Render by analyzing codebases, generating render.yaml'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: render-deploy
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

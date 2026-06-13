@@ -1,27 +1,8 @@
 ---
 name: huggingface-lora-space-builder
 name_zh: huggingface-lora-space-builder
-description: Build and publish a Gradio demo on Hugging Face Spaces for a 
-  user-provided LoRA. Use when someone asks to create, generate, ship, or 
-  publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs 
-  for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other 
-  diffusion base models. Also triggers when someone describes a LoRA they 
-  trained or hosts on the Hub and wants to share it. Covers picking the right 
-  base pipeline and `diffusers` inference recipe, designing a UI tailored to the
-  LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), 
-  respecting model-card recommendations (trigger words, steps, guidance, LoRA 
-  scale, example inputs), and shipping to ZeroGPU hardware as a private Space by
-  default.
-description_zh: 构建 and publish a Gradio demo on Hugging Face Spaces for a 
-  用户-provided LoRA. Use when someone asks to 创建, 生成, ship, or publish a Space, 
-  demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, 
-  Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. 
-  Also triggers when someone describes a LoRA they trained or hosts on the Hub 
-  and wants to share it. Covers picking the right base pipeline and `diffusers` 
-  inference recipe, designing a UI tailored to the LoRA's task and inputs 
-  (Union/multi-task control, edit, video, image, etc.), respecting 模型-card 
-  recommendations (trigger words, steps, guidance, LoRA scale, example inputs), 
-  and shipping to ZeroGPU hardware as a private Space by default.
+description: 'Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — in...'
+description_zh: '构建 and publish a Gradio demo on Hugging Face Spaces for a 用户-provided LoRA. Use when someone asks to 创建, 生成, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs f...'
 category: dev-tools
 tags:
   - ai
@@ -30,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: huggingface-lora-space-builder
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

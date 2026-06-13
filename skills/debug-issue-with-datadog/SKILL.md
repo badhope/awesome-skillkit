@@ -1,8 +1,7 @@
 ---
 name: debug-issue-with-datadog
 name_zh: 使用 Datadog 调试问题
-description: Debug a user-reported issue, Linear ticket, or incident report by 
-  combining
+description: 'Debug a user-reported issue, Linear ticket, or incident report by combining'
 description_zh: 使用 Datadog 监控和日志数据诊断和调试问题。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - cli
   - datadog
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: debug-issue-with-datadog
 created: '2026-06-12'

@@ -1,12 +1,8 @@
 ---
 name: drizzle
 name_zh: drizzle
-description: LobeHub Drizzle ORM schema and query style. Use for pgTable 
-  schemas, indexes, joins, inferred types, db.select/db.query, schema fields, 
-  foreign keys, junction tables, or postgres query patterns.
-description_zh: LobeHub Drizzle ORM schema and query style. Use for pgTable 
-  schemas, indexes, joins, inferred types, db.select/db.query, schema fields, 
-  foreign keys, junction tables, or postgres query patterns.
+description: 'LobeHub Drizzle ORM schema and query style. Use for pgTable schemas, indexes, joins, inferred types, db.select/db.query, schema fields, foreign keys, junction tables, or postgres query patterns.'
+description_zh: 'LobeHub Drizzle ORM schema and query style. Use for pgTable schemas, indexes, joins, inferred types, db.select/db.query, schema fields, foreign keys, junction tables, or postgres query patterns.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: drizzle
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

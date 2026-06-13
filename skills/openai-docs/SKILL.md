@@ -1,18 +1,8 @@
 ---
 name: openai-docs
 name_zh: openai-docs
-description: Use when the user asks how to build with OpenAI products or APIs, 
-  asks about Codex itself or choosing Codex surfaces, needs up-to-date official 
-  documentation with citations, help choosing the latest model for a use case, 
-  or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for 
-  non-Codex docs questions, use the Codex manual helper first for broad Codex 
-  self-knowledge, and restrict fallback browsing to official OpenAI domains.
-description_zh: Use when the 用户 asks how to 构建 with OpenAI products or APIs, 
-  asks about Codex itself or choosing Codex surfaces, needs up-to-date official 
-  文档 with citations, help choosing the latest 模型 for a use case, or 模型 upgrade 
-  and 提示词-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs 
-  questions, use the Codex manual helper first for broad Codex self-knowledge, 
-  and restrict fallback browsing to official OpenAI domains.
+description: 'Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the lates...'
+description_zh: 'Use when the 用户 asks how to 构建 with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official 文档 with citations, help choosing the latest 模型 for a use c...'
 category: dev-tools
 tags:
   - ai
@@ -20,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: openai-docs
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

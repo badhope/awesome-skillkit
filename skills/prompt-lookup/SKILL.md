@@ -1,8 +1,7 @@
 ---
 name: prompt-lookup
 name_zh: Prompt 查找
-description: Activates when the user asks about AI prompts, needs prompt 
-  templates,
+description: 'Activates when the user asks about AI prompts, needs prompt templates,'
 description_zh: 在 prompt 库中查找和检索相关的 prompt 模板。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: prompt-lookup
 created: '2026-06-12'

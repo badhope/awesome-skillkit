@@ -1,10 +1,8 @@
 ---
 name: hotkey
 name_zh: hotkey
-description: Add or edit LobeHub keyboard shortcuts. Use for HotkeyEnum, 
-  HOTKEYS_REGISTRATION,
-description_zh: Add or edit LobeHub keyboard shortcuts. Use for HotkeyEnum, 
-  HOTKEYS_REGISTRATION,
+description: 'Add or edit LobeHub keyboard shortcuts. Use for HotkeyEnum, HOTKEYS_REGISTRATION,'
+description_zh: 'Add or edit LobeHub keyboard shortcuts. Use for HotkeyEnum, HOTKEYS_REGISTRATION,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - frontend
   - llm
   - python
-source:
+source: null
 needs_review: false
 slug: hotkey
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

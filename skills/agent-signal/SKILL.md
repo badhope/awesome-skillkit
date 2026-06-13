@@ -1,10 +1,8 @@
 ---
 name: agent-signal
 name_zh: 智能体-signal
-description: Build or extend LobeHub Agent Signal pipelines. Use for signal 
-  sources,
-description_zh: 构建 or extend LobeHub 智能体 Signal pipelines. Use for signal 
-  sources,
+description: 'Build or extend LobeHub Agent Signal pipelines. Use for signal sources,'
+description_zh: '构建 or extend LobeHub 智能体 Signal pipelines. Use for signal sources,'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - database
   - evaluation
   - frontend
-source:
+source: null
 needs_review: false
 slug: agent-signal
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

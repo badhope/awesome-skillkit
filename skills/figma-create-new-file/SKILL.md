@@ -1,8 +1,7 @@
 ---
 name: figma-create-new-file
 name_zh: figma-创建-new-文件
-description: Create a new blank Figma file. Use when the user wants to create a 
-  new
+description: 'Create a new blank Figma file. Use when the user wants to create a new'
 description_zh: 创建 a new blank Figma file. Use when the 用户 wants to 创建 a new
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 needs_review: false
 slug: figma-create-new-file
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -26,9 +26,9 @@ tags:
   - deployment
 license: MIT
 author: Team
-version: 2.0.0
+version: '2.0.0'
 needs_review: false
-source:
+source: null
 slug: promptflow-to-maf
 created: '2026-06-12'
 updated: '2026-06-12'

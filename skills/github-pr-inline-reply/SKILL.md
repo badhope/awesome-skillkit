@@ -1,14 +1,8 @@
 ---
 name: github-pr-inline-reply
 name_zh: github-pr-inline-reply
-description: Reply to inline PR review comments on GitHub pull requests using 
-  the GitHub API. Use this skill when you need to respond to individual review 
-  comments on a PR, acknowledge feedback, or mark comments as resolved by 
-  posting direct replies to comment threads.
-description_zh: Reply to inline PR 审查 comments on GitHub pull requests using the
-  GitHub 接口. Use this 技能 when you need to respond to individual 审查 comments on a
-  PR, acknowledge feedback, or mark comments as resolved by posting direct 
-  replies to comment threads.
+description: 'Reply to inline PR review comments on GitHub pull requests using the GitHub API. Use this skill when you need to respond to individual review comments on a PR, acknowledge feedback, or mark comment...'
+description_zh: 'Reply to inline PR 审查 comments on GitHub pull requests using the GitHub 接口. Use this 技能 when you need to respond to individual 审查 comments on a PR, acknowledge feedback, or mark comments as resolve...'
 category: dev-tools
 tags:
   - api
@@ -16,10 +10,10 @@ tags:
   - cli
   - database
   - frontend
-source:
+source: null
 needs_review: false
 slug: github-pr-inline-reply
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

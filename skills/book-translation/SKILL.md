@@ -1,8 +1,7 @@
 ---
 name: book-translation
 name_zh: 书籍翻译
-description: Translate "The Interactive Book of Prompting" chapters and UI 
-  strings
+description: 'Translate "The Interactive Book of Prompting" chapters and UI strings'
 description_zh: 将书籍内容从一种语言翻译成另一种语言，保持风格和语调。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - frontend
   - javascript
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: book-translation
 created: '2026-06-12'

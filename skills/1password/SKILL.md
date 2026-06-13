@@ -1,10 +1,8 @@
 ---
 name: 1password
 name_zh: 1password
-description: Set up and use 1Password CLI (op). Use when installing the CLI, 
-  enabling
-description_zh: Set up and use 1Password CLI (op). Use when installing the CLI, 
-  enabling
+description: 'Set up and use 1Password CLI (op). Use when installing the CLI, enabling'
+description_zh: 'Set up and use 1Password CLI (op). Use when installing the CLI, enabling'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - frontend
   - llm
   - python
-source:
+source: null
 needs_review: false
 slug: 1password
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

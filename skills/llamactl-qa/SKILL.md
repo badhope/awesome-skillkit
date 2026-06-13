@@ -7,12 +7,12 @@ description_zh: 针对 llamactl 变更计划并运行设计 QA，构建案例矩
 category: dev-tools
 tags: [ai, api, backend, cli, deployment]
 needs_review: false
-source:
+source: null
 author: AI-SKILL
-version: 1.0.0
+version: '1.0.0'
 license: MIT
-created: 2026-06-12
-updated: 2026-06-12
+created: '2026-06-12'
+updated: '2026-06-12'
 inputs:
   - name: request
     type: string

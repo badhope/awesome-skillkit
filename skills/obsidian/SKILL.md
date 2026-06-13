@@ -1,10 +1,8 @@
 ---
 name: obsidian
 name_zh: obsidian
-description: Work with Obsidian vaults (plain Markdown notes) and automate via 
-  obsidian-cli.
-description_zh: Work with Obsidian vaults (plain Markdown notes) and automate 
-  via obsidian-cli.
+description: 'Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.'
+description_zh: 'Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - frontend
   - javascript
-source:
+source: null
 needs_review: false
 slug: obsidian
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

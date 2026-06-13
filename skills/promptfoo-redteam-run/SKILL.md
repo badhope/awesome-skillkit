@@ -1,8 +1,7 @@
 ---
 name: promptfoo-redteam-run
 name_zh: 运行 Promptfoo 红队测试
-description: Run, rerun, inspect, and QA promptfoo redteam scans from generated 
-  redteam
+description: 'Run, rerun, inspect, and QA promptfoo redteam scans from generated redteam'
 description_zh: 执行 Promptfoo 红队测试场景并分析结果。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - javascript
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: promptfoo-redteam-run
 created: '2026-06-12'

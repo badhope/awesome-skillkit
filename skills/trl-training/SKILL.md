@@ -1,10 +1,8 @@
 ---
 name: trl-training
 name_zh: trl-training
-description: Train and fine-tune transformer language models using TRL 
-  (Transformers
-description_zh: Train and fine-tune transformer language models using TRL 
-  (Transformers
+description: 'Train and fine-tune transformer language models using TRL (Transformers'
+description_zh: 'Train and fine-tune transformer language models using TRL (Transformers'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - database
   - documentation
   - evaluation
-source:
+source: null
 license: Apache-2.0
 author: huggingface
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: trl-training
 created: '2026-06-12'

@@ -1,10 +1,8 @@
 ---
 name: spotify-player
 name_zh: spotify-player
-description: Terminal Spotify playback/search via spogo (preferred) or 
-  spotify_player.
-description_zh: Terminal Spotify playback/search via spogo (preferred) or 
-  spotify_player.
+description: 'Terminal Spotify playback/search via spogo (preferred) or spotify_player.'
+description_zh: 'Terminal Spotify playback/search via spogo (preferred) or spotify_player.'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - frontend
   - llm
   - python
-source:
+source: null
 needs_review: false
 slug: spotify-player
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

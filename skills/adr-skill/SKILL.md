@@ -1,18 +1,8 @@
 ---
 name: adr-skill
 name_zh: adr-技能
-description: Create and maintain Architecture Decision Records (ADRs) optimized 
-  for agentic coding workflows. Use when you need to propose, write, update, 
-  accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and 
-  index; consult existing ADRs before implementing changes; or enforce ADR 
-  conventions. This skill uses Socratic questioning to capture intent before 
-  drafting, and validates output against an agent-readiness checklist.
-description_zh: 创建 and maintain Architecture Decision Records (ADRs) optimized 
-  for agentic coding workflows. Use when you need to propose, write, 更新, 
-  accept/reject, deprecate, or supersede an ADR; bootstrap an adr folder and 
-  index; consult existing ADRs before implementing changes; or enforce ADR 
-  conventions. This 技能 uses Socratic questioning to capture intent before 
-  drafting, and validates output against an 智能体-readiness checklist.
+description: 'Create and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, update, accept/reject, deprecate, or supersede an ADR; bootstra...'
+description_zh: '创建 and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, 更新, accept/reject, deprecate, or supersede an ADR; bootstrap an adr...'
 category: dev-tools
 tags:
   - ai
@@ -20,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: adr-skill
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

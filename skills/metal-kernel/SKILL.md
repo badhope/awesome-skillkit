@@ -1,14 +1,8 @@
 ---
 name: metal-kernel
 name_zh: metal-kernel
-description: Write Metal/MPS kernels for PyTorch operators. Use when adding MPS 
-  device support to operators, implementing Metal shaders, or porting CUDA 
-  kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side 
-  operators, and Metal kernel implementation.
-description_zh: Write Metal/MPS kernels for PyTorch operators. Use when adding 
-  MPS device support to operators, implementing Metal shaders, or porting CUDA 
-  kernels to Apple Silicon. Covers native_functions.yaml dispatch, host-side 
-  operators, and Metal kernel implementation.
+description: 'Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml di...'
+description_zh: 'Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml di...'
 category: applications
 tags:
   - ai
@@ -17,9 +11,9 @@ tags:
   - frontend
   - python
 needs_review: false
-source:
+source: null
 slug: metal-kernel
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

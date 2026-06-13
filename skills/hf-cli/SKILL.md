@@ -1,10 +1,8 @@
 ---
 name: hf-cli
 name_zh: hf-cli
-description: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
-  managing
-description_zh: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
-  managing
+description: 'Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing'
+description_zh: 'Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - database
   - deployment
-source:
+source: null
 needs_review: false
 slug: hf-cli
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -10,10 +10,10 @@ tags:
   - backend
   - deployment
   - documentation
-source:
+source: null
 license: MIT
 author: badhope
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: commit-message-writer
 created: '2026-06-12'

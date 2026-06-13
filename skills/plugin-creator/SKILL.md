@@ -1,18 +1,8 @@
 ---
 name: plugin-creator
 name_zh: plugin-creator
-description: Create and scaffold plugin directories for Codex with a required 
-  `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline 
-  placeholders you can edit before publishing or testing. Use when Codex needs 
-  to create a new local plugin, add optional plugin structure, or generate or 
-  update repo-root `.agents/plugins/marketplace.json` entries for plugin 
-  ordering and availability metadata.
-description_zh: 创建 and scaffold plugin directories for Codex with a required 
-  `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline 
-  placeholders you can edit before publishing or 测试. Use when Codex needs to 创建 
-  a new local plugin, add optional plugin structure, or 生成 or 更新 repo-root 
-  `.agents/plugins/marketplace.json` entries for plugin ordering and 
-  availability metadata.
+description: 'Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use...'
+description_zh: '创建 and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or 测试. Use when Cod...'
 category: applications
 tags:
   - ai
@@ -20,10 +10,10 @@ tags:
   - javascript
   - llm
   - python
-source:
+source: null
 needs_review: false
 slug: plugin-creator
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

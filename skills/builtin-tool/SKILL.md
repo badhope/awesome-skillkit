@@ -1,10 +1,8 @@
 ---
 name: builtin-tool
 name_zh: builtin-tool
-description: Build LobeHub builtin tool packages. Use when adding agent-callable
-  tools,
-description_zh: 构建 LobeHub builtin tool packages. Use when adding 智能体-callable 
-  tools,
+description: 'Build LobeHub builtin tool packages. Use when adding agent-callable tools,'
+description_zh: '构建 LobeHub builtin tool packages. Use when adding 智能体-callable tools,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: builtin-tool
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

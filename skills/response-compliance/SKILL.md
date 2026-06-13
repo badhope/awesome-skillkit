@@ -1,12 +1,8 @@
 ---
 name: response-compliance
 name_zh: response-compliance
-description: OpenResponses API compliance testing. Use for Response API endpoint
-  tests, compliance runs, schema debugging, response api test, or openresponses 
-  test tasks.
-description_zh: OpenResponses 接口 compliance 测试. Use for Response 接口 endpoint 
-  tests, compliance runs, schema debugging, response 接口 测试, or openresponses 测试 
-  tasks.
+description: 'OpenResponses API compliance testing. Use for Response API endpoint tests, compliance runs, schema debugging, response api test, or openresponses test tasks.'
+description_zh: 'OpenResponses 接口 compliance 测试. Use for Response 接口 endpoint tests, compliance runs, schema debugging, response 接口 测试, or openresponses 测试 tasks.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - cli
   - frontend
-source:
+source: null
 needs_review: false
 slug: response-compliance
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

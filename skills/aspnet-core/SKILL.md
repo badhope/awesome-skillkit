@@ -1,10 +1,8 @@
 ---
 name: aspnet-core
 name_zh: aspnet-core
-description: Build, review, refactor, or architect ASP.NET Core web applications
-  using
-description_zh: 构建, 审查, refactor, or architect ASP.NET Core web applications 
-  using
+description: 'Build, review, refactor, or architect ASP.NET Core web applications using'
+description_zh: '构建, 审查, refactor, or architect ASP.NET Core web applications using'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: aspnet-core
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

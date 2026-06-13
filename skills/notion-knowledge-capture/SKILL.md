@@ -1,10 +1,8 @@
 ---
 name: notion-knowledge-capture
 name_zh: notion-knowledge-capture
-description: Capture conversations and decisions into structured Notion pages; 
-  use
-description_zh: Capture conversations and decisions into structured Notion 
-  pages; use
+description: 'Capture conversations and decisions into structured Notion pages; use'
+description_zh: 'Capture conversations and decisions into structured Notion pages; use'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 needs_review: false
 slug: notion-knowledge-capture
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,14 +1,8 @@
 ---
 name: search-params
 name_zh: search-params
-description: URL search param and hash state management. Use when adding or 
-  modifying URL search params, working with useSearchParams, setSearchParams, 
-  useSearchParamState, or navigate() with query strings or hash fragments, or 
-  fixing browser back/forward button issues.
-description_zh: URL search param and hash state 管理. Use when adding or modifying
-  URL search params, working with useSearchParams, setSearchParams, 
-  useSearchParamState, or navigate() with query strings or hash fragments, or 
-  fixing browser back/forward button issues.
+description: 'URL search param and hash state management. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or h...'
+description_zh: 'URL search param and hash state 管理. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash frag...'
 category: dev-tools
 tags:
   - ai
@@ -16,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - llm
-source:
+source: null
 needs_review: false
 slug: search-params
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

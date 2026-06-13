@@ -1,10 +1,8 @@
 ---
 name: linear-cli
 name_zh: linear-cli
-description: Manage Linear issues from the command line using the linear cli. 
-  This
-description_zh: Manage Linear issues from the command line using the linear cli.
-  This
+description: 'Manage Linear issues from the command line using the linear cli. This'
+description_zh: 'Manage Linear issues from the command line using the linear cli. This'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: linear
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

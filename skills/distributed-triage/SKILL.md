@@ -1,10 +1,8 @@
 ---
 name: distributed-triage
 name_zh: distributed-triage
-description: Sub-triages issues in the oncall:distributed queue by assigning 
-  distributed
-description_zh: Sub-triages issues in the oncall:distributed queue by assigning 
-  distributed
+description: 'Sub-triages issues in the oncall:distributed queue by assigning distributed'
+description_zh: 'Sub-triages issues in the oncall:distributed queue by assigning distributed'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - frontend
   - git
-source:
+source: null
 needs_review: false
 slug: distributed-triage
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

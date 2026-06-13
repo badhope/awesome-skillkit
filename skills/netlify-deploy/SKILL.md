@@ -1,12 +1,8 @@
 ---
 name: netlify-deploy
 name_zh: netlify-部署
-description: Deploy web projects to Netlify using the Netlify CLI (`npx 
-  netlify`). Use when the user asks to deploy, host, publish, or link a 
-  site/repo on Netlify, including preview and production deploys.
-description_zh: 部署 web projects to Netlify using the Netlify CLI (`npx 
-  netlify`). Use when the 用户 asks to 部署, host, publish, or link a site/repo on 
-  Netlify, including preview and production deploys.
+description: 'Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.'
+description_zh: '部署 web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the 用户 asks to 部署, host, publish, or link a site/repo on Netlify, including preview and production deploys.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: netlify-deploy
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

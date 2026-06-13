@@ -1,8 +1,7 @@
 ---
 name: analyzing-financial-statements
 name_zh: 分析财务报表
-description: This skill calculates key financial ratios and metrics from 
-  financial
+description: 'This skill calculates key financial ratios and metrics from financial'
 description_zh: 计算关键财务比率和指标，用于投资分析和公司评估。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - javascript
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: analyzing-financial-statements
 created: '2026-06-12'

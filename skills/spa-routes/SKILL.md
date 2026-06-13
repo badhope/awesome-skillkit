@@ -1,10 +1,8 @@
 ---
 name: spa-routes
 name_zh: spa-routes
-description: LobeHub SPA route architecture. Use when editing src/routes, 
-  src/features
-description_zh: LobeHub SPA route architecture. Use when editing src/routes, 
-  src/features
+description: 'LobeHub SPA route architecture. Use when editing src/routes, src/features'
+description_zh: 'LobeHub SPA route architecture. Use when editing src/routes, src/features'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - frontend
   - git
-source:
+source: null
 needs_review: false
 slug: spa-routes
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

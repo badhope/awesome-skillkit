@@ -1,8 +1,7 @@
 ---
 name: vercel-composition-patterns
 name_zh: Vercel 组合模式
-description: React composition patterns that scale. Use when refactoring 
-  components
+description: 'React composition patterns that scale. Use when refactoring components'
 description_zh: 使用 Vercel 的组合模式构建可扩展的应用。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 license: MIT
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: vercel-composition-patterns
 created: '2026-06-12'

@@ -10,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: analyze-cloud-costs
 created: '2026-06-12'

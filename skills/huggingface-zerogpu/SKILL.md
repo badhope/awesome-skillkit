@@ -1,10 +1,8 @@
 ---
 name: huggingface-zerogpu
 name_zh: huggingface-zerogpu
-description: AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces
-  ZeroGPU.
-description_zh: AI demos and GPU compute with Gradio Spaces and Hugging Face 
-  Spaces ZeroGPU.
+description: 'AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.'
+description_zh: 'AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: huggingface-zerogpu
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

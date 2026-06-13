@@ -13,7 +13,7 @@ tags:
 source: null
 license: MIT
 author: 'Langfuse (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: frontend-large-feature-architecture
 created: '2026-06-12'

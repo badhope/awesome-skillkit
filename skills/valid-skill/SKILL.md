@@ -10,10 +10,10 @@ tags:
   - python
   - testing
   - typescript
-source:
+source: null
 license: Apache-2.0
 author: test
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: valid-skill
 created: '2026-06-12'

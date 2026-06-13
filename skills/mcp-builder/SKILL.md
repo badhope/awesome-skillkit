@@ -2,8 +2,7 @@
 name: MCP Server Builder
 name_zh: MCP Server 构建指南
 description: 'You''re building an **MCP server** that lets an LLM call into some'
-description_zh: 用 Python (FastMCP) 或 TypeScript (MCP SDK) 写一个高质量 MCP 
-  server。覆盖研究、schema 设计、工具实现、错误处理，以及新 server 上线前要带的 10 道评估题。
+description_zh: '用 Python (FastMCP) 或 TypeScript (MCP SDK) 写一个高质量 MCP server。覆盖研究、schema 设计、工具实现、错误处理，以及新 server 上线前要带的 10 道评估题。'
 category: dev-tools
 tags:
   - ai
@@ -14,7 +13,7 @@ tags:
 source: null
 license: Complete terms in LICENSE.txt
 author: 'Anthropic (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: mcp-builder
 created: '2026-06-12'

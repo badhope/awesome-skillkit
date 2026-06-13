@@ -1,10 +1,8 @@
 ---
 name: guidelines
 name_zh: guidelines
-description: Response formatting and communication guidelines for generating 
-  clear, accurate, and well-structured replies.
-description_zh: Response formatting and communication guidelines for generating 
-  clear, accurate, and well-structured replies.
+description: 'Response formatting and communication guidelines for generating clear, accurate, and well-structured replies.'
+description_zh: 'Response formatting and communication guidelines for generating clear, accurate, and well-structured replies.'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - llm
   - python
   - typescript
-source:
+source: null
 needs_review: false
 slug: guidelines
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

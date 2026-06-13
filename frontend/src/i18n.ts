@@ -232,9 +232,9 @@ const STRINGS = {
   //       and search-result snippets all match the user's
   //       language) -----
   "meta.title":        { en: "AI-SKILL · vendor-neutral skill vault",         zh: "AI-SKILL · 跨平台技能库" },
-  "meta.description":  { en: "A vendor-neutral vault of agent skills. 35 SKILL.md files sourced from deepeval, promptfoo, langfuse, openai, letta, huggingface, anthropics, and hand-written. Drop into Claude, Codex, Cursor, or any Markdown-reading agent.", zh: "一个中立的 agent 技能库，35 份 SKILL.md 收录自 deepeval / promptfoo / langfuse / openai / letta / huggingface / anthropics 以及自写。可直接放进 Claude / Codex / Cursor 或任何读 Markdown 的 agent。" },
+  "meta.description":  { en: "A vendor-neutral vault of agent skills. SKILL.md files sourced from deepeval, promptfoo, langfuse, openai, letta, huggingface, anthropics, and hand-written. Drop into Claude, Codex, Cursor, or any Markdown-reading agent.", zh: "一个中立的 agent 技能库，SKILL.md 收录自 deepeval / promptfoo / langfuse / openai / letta / huggingface / anthropics 以及自写。可直接放进 Claude / Codex / Cursor 或任何读 Markdown 的 agent。" },
   "meta.ogTitle":      { en: "AI-SKILL · vendor-neutral skill vault",         zh: "AI-SKILL · 跨平台技能库" },
-  "meta.ogDescription":{ en: "35 SKILL.md files. No tracking. No signup. Just markdown.", zh: "35 份 SKILL.md，无追踪、无注册，就是 markdown。" },
+  "meta.ogDescription":{ en: "SKILL.md files. No tracking. No signup. Just markdown.", zh: "SKILL.md，无追踪、无注册，就是 markdown。" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 type Key = keyof typeof STRINGS;

@@ -1,10 +1,8 @@
 ---
 name: add-function-examples
 name_zh: add-函数-examples
-description: Guide for adding new AI function examples, for testing specific 
-  features against the actual provider APIs.
-description_zh: Guide for adding new AI 函数 examples, for 测试 specific features 
-  against the actual provider APIs.
+description: 'Guide for adding new AI function examples, for testing specific features against the actual provider APIs.'
+description_zh: 'Guide for adding new AI 函数 examples, for 测试 specific features against the actual provider APIs.'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: add-function-examples
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: at-dispatch-v2
 name_zh: at-dispatch-v2
-description: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen
-  C++
-description_zh: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in 
-  ATen C++
+description: 'Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++'
+description_zh: 'Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: at-dispatch-v2
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,16 +1,8 @@
 ---
 name: pr-polish
 name_zh: pr-polish
-description: Alternate /pr-review and /pr-address on a PR until the PR is truly 
-  mergeable — no new review findings, zero unresolved inline threads, zero 
-  unaddressed top-level reviews or issue comments, all CI checks green, and two 
-  consecutive quiet polls after CI settles. Use when the user wants a PR 
-  polished to merge-ready without setting a fixed number of rounds.
-description_zh: Alternate /pr-审查 and /pr-address on a PR until the PR is truly 
-  mergeable — no new 审查 findings, zero unresolved inline threads, zero 
-  unaddressed top-level reviews or issue comments, all CI checks green, and two 
-  consecutive quiet polls after CI settles. Use when the 用户 wants a PR polished 
-  to merge-ready without setting a fixed number of rounds.
+description: 'Alternate /pr-review and /pr-address on a PR until the PR is truly mergeable — no new review findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI c...'
+description_zh: 'Alternate /pr-审查 and /pr-address on a PR until the PR is truly mergeable — no new 审查 findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI checks gr...'
 category: dev-tools
 tags:
   - ai
@@ -18,9 +10,9 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 author: autogpt-team
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: pr-polish
 created: '2026-06-12'

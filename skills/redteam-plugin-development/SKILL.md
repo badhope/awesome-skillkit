@@ -1,8 +1,7 @@
 ---
 name: redteam-plugin-development
 name_zh: 红队插件开发
-description: Standards for creating redteam plugins and graders. Use when 
-  creating
+description: 'Standards for creating redteam plugins and graders. Use when creating'
 description_zh: 开发红队测试插件和评分器，扩展安全测试能力。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - llm
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: redteam-plugin-development
 created: '2026-06-12'

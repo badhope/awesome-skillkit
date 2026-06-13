@@ -1,12 +1,8 @@
 ---
 name: karpathy-guidelines
 name_zh: karpathy-guidelines
-description: Behavioral guidelines to reduce common LLM coding mistakes. Use 
-  when writing, reviewing, or refactoring code to avoid overcomplication, make 
-  surgical changes, surface assumptions, and define verifiable success criteria.
-description_zh: Behavioral guidelines to reduce common LLM coding mistakes. Use 
-  when writing, reviewing, or refactoring 代码 to avoid overcomplication, make 
-  surgical changes, surface assumptions, and define verifiable success criteria.
+description: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifi...'
+description_zh: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring 代码 to avoid overcomplication, make surgical changes, surface assumptions, and define verifiab...'
 category: applications
 tags:
   - ai
@@ -14,11 +10,11 @@ tags:
   - llm
   - testing
   - typescript
-source:
+source: null
 license: MIT
 needs_review: false
 slug: karpathy-guidelines
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

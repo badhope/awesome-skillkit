@@ -1,14 +1,8 @@
 ---
 name: social-cli
 name_zh: social-cli
-description: Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in,
-  YAML out, exit codes for automation. Use when the task involves posting, 
-  replying, reading feeds, searching, annotating URLs, or running a 
-  sync/check/dispatch agent loop across social platforms.
-description_zh: 智能体-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML 
-  in, YAML out, exit codes for 自动化. Use when the task involves posting, 
-  replying, reading feeds, searching, annotating URLs, or running a 
-  sync/检查/dispatch 智能体 loop across social platforms.
+description: 'Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in, YAML out, exit codes for automation. Use when the task involves posting, replying, reading feeds, searching, annotating URLs, or ...'
+description_zh: '智能体-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML in, YAML out, exit codes for 自动化. Use when the task involves posting, replying, reading feeds, searching, annotating URLs, or running a...'
 category: dev-tools
 tags:
   - ai
@@ -17,9 +11,9 @@ tags:
   - cli
   - frontend
 needs_review: false
-source:
+source: null
 slug: social-cli
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

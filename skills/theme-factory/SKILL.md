@@ -1,10 +1,8 @@
 ---
 name: theme-factory
 name_zh: theme-factory
-description: Toolkit for styling artifacts with a theme. These artifacts can be 
-  slides,
-description_zh: Toolkit for styling artifacts with a theme. These artifacts can 
-  be slides,
+description: 'Toolkit for styling artifacts with a theme. These artifacts can be slides,'
+description_zh: 'Toolkit for styling artifacts with a theme. These artifacts can be slides,'
 category: applications
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - frontend
   - llm
   - python
-source:
+source: null
 license: Complete terms in LICENSE.txt
 needs_review: false
 slug: theme-factory
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: xlsx
 name_zh: xlsx
-description: Use this skill any time a spreadsheet file is the primary input or 
-  output.
-description_zh: Use this 技能 any time a spreadsheet file is the primary input or 
-  output.
+description: 'Use this skill any time a spreadsheet file is the primary input or output.'
+description_zh: 'Use this 技能 any time a spreadsheet file is the primary input or output.'
 category: dev-tools
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
 slug: xlsx
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,8 +1,7 @@
 ---
 name: widget-generator
 name_zh: Widget 生成器
-description: Generate customizable widget plugins for the prompts.chat feed 
-  system
+description: 'Generate customizable widget plugins for the prompts.chat feed system'
 description_zh: 生成可嵌入的 widget 组件。
 category: applications
 tags:
@@ -11,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: widget-generator
 created: '2026-06-12'

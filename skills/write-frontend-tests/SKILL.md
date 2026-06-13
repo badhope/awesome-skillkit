@@ -1,8 +1,7 @@
 ---
 name: write-frontend-tests
 name_zh: write-frontend-tests
-description: Analyze the current branch diff against dev, plan integration tests
-  for
+description: 'Analyze the current branch diff against dev, plan integration tests for'
 description_zh: 分析 the current branch diff against dev, plan 集成 tests for
 category: dev-tools
 tags:
@@ -11,9 +10,9 @@ tags:
   - backend
   - database
   - frontend
-source:
+source: null
 author: autogpt-team
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: write-frontend-tests
 created: '2026-06-12'

@@ -9,9 +9,9 @@ tags: [ai, api, backend, cli, frontend]
 source: null
 license: MIT
 author: AI-SKILL
-version: 1.0.0
-created: 2026-06-12
-updated: 2026-06-12
+version: '1.0.0'
+created: '2026-06-12'
+updated: '2026-06-12'
 needs_review: false
 inputs:
   - name: request

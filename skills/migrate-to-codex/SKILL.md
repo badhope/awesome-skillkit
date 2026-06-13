@@ -1,10 +1,8 @@
 ---
 name: migrate-to-codex
 name_zh: 迁移-to-codex
-description: Migrate supported instruction files, skills, agents, and MCP config
-  into
-description_zh: Migrate supported instruction files, skills, agents, and MCP 配置 
-  into
+description: 'Migrate supported instruction files, skills, agents, and MCP config into'
+description_zh: 'Migrate supported instruction files, skills, agents, and MCP 配置 into'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - database
   - deployment
-source:
+source: null
 needs_review: false
 slug: migrate-to-codex
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

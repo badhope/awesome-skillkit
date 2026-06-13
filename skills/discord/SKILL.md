@@ -1,8 +1,7 @@
 ---
 name: discord
 name_zh: discord
-description: Discord automation CLI — send/read/search messages, manage channels
-  and
+description: 'Discord automation CLI — send/read/search messages, manage channels and'
 description_zh: Discord 自动化 CLI — send/read/search messages, manage channels and
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - cli
   - frontend
-source:
+source: null
 needs_review: false
 slug: discord
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

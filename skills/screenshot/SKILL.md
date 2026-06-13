@@ -1,10 +1,8 @@
 ---
 name: screenshot
 name_zh: screenshot
-description: Use when the user explicitly asks for a desktop or system 
-  screenshot
-description_zh: Use when the 用户 explicitly asks for a desktop or system 
-  screenshot
+description: 'Use when the user explicitly asks for a desktop or system screenshot'
+description_zh: 'Use when the 用户 explicitly asks for a desktop or system screenshot'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - figma
   - frontend
   - llm
-source:
+source: null
 needs_review: false
 slug: screenshot
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

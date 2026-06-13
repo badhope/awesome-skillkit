@@ -10,9 +10,9 @@ tags:
   - typescript
 license: MIT
 author: agno
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
-source:
+source: null
 slug: system-info
 created: '2026-06-12'
 updated: '2026-06-12'

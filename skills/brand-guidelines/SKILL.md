@@ -1,14 +1,8 @@
 ---
 name: brand-guidelines
 name_zh: brand-guidelines
-description: Applies Anthropic's official brand colors and typography to any 
-  sort of artifact that may benefit from having Anthropic's look-and-feel. Use 
-  it when brand colors or style guidelines, visual formatting, or company design
-  standards apply.
-description_zh: Applies Anthropic's official brand colors and typography to any 
-  sort of artifact that may benefit from having Anthropic's look-and-feel. Use 
-  it when brand colors or style guidelines, visual formatting, or company 设计 
-  standards apply.
+description: 'Applies Anthropic''s official brand colors and typography to any sort of artifact that may benefit from having Anthropic''s look-and-feel. Use it when brand colors or style guidelines, visual formatt...'
+description_zh: 'Applies Anthropic''s official brand colors and typography to any sort of artifact that may benefit from having Anthropic''s look-and-feel. Use it when brand colors or style guidelines, visual formatt...'
 category: applications
 tags:
   - ai
@@ -16,11 +10,11 @@ tags:
   - frontend
   - llm
   - python
-source:
+source: null
 license: Complete terms in LICENSE.txt
 needs_review: false
 slug: brand-guidelines
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

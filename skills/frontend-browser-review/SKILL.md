@@ -1,8 +1,7 @@
 ---
 name: frontend-browser-review
 name_zh: 前端浏览器审查
-description: Shared workflow for browser-based review of user-visible frontend 
-  changes
+description: 'Shared workflow for browser-based review of user-visible frontend changes'
 description_zh: 审查前端代码的浏览器兼容性、性能和可访问性。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - cli
   - documentation
   - frontend
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: frontend-browser-review
 created: '2026-06-12'

@@ -13,7 +13,7 @@ tags:
 source: null
 license: MIT
 author: 'Promptfoo (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: promptfoo-evals
 created: '2026-06-12'

@@ -1,10 +1,8 @@
 ---
 name: add-or-fix-type-checking
 name_zh: add-or-fix-type-checking
-description: Fixes broken typing checks detected by ty, make typing, or make 
-  check-repo. Use when typing errors appear in local runs, CI, or PR logs.
-description_zh: Fixes broken typing checks detected by ty, make typing, or make 
-  检查-repo. Use when typing errors appear in local runs, CI, or PR logs.
+description: 'Fixes broken typing checks detected by ty, make typing, or make check-repo. Use when typing errors appear in local runs, CI, or PR logs.'
+description_zh: 'Fixes broken typing checks detected by ty, make typing, or make 检查-repo. Use when typing errors appear in local runs, CI, or PR logs.'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - docker
   - frontend
-source:
+source: null
 needs_review: false
 slug: add-or-fix-type-checking
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

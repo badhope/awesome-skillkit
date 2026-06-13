@@ -1,16 +1,8 @@
 ---
 name: creating-letta-code-channels
 name_zh: creating-letta-代码-channels
-description: Builds and debugs Letta Code channels, including first-party 
-  channel adapters and dynamic user channel plugins under ~/.letta/channels. Use
-  when adding Telegram, WhatsApp, Bluesky, Slack, Discord, or custom channel 
-  support; testing channel routing, pairing, MessageChannel, runtime 
-  dependencies, or channel plugin manifests.
-description_zh: Builds and debugs Letta 代码 channels, including first-party 
-  channel adapters and dynamic 用户 channel plugins under ~/.letta/channels. Use 
-  when adding Telegram, WhatsApp, Bluesky, Slack, Discord, or custom channel 
-  support; 测试 channel routing, pairing, MessageChannel, runtime dependencies, or
-  channel plugin manifests.
+description: 'Builds and debugs Letta Code channels, including first-party channel adapters and dynamic user channel plugins under ~/.letta/channels. Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, ...'
+description_zh: 'Builds and debugs Letta 代码 channels, including first-party channel adapters and dynamic 用户 channel plugins under ~/.letta/channels. Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, or c...'
 category: dev-tools
 tags:
   - ai
@@ -18,11 +10,11 @@ tags:
   - cli
   - deployment
   - documentation
-source:
+source: null
 license: MIT
 needs_review: false
 slug: creating-letta-code-channels
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

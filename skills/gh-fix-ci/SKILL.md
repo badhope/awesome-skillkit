@@ -1,16 +1,8 @@
 ---
 name: gh-fix-ci
 name_zh: gh-fix-ci
-description: Use when a user asks to debug or fix failing GitHub PR checks that 
-  run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure 
-  context, draft a fix plan, and implement only after explicit approval. Treat 
-  external providers (for example Buildkite) as out of scope and report only the
-  details URL.
-description_zh: Use when a 用户 asks to 调试 or fix failing GitHub PR checks that 运行
-  in GitHub Actions; use `gh` to inspect checks and logs, summarize failure 
-  context, draft a fix plan, and implement only after explicit approval. Treat 
-  external providers (for example Buildkite) as out of scope and report only the
-  details URL.
+description: 'Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after ...'
+description_zh: 'Use when a 用户 asks to 调试 or fix failing GitHub PR checks that 运行 in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explic...'
 category: dev-tools
 tags:
   - ai
@@ -19,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: gh-fix-ci
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

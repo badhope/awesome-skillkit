@@ -1,10 +1,8 @@
 ---
 name: huggingface-spaces
 name_zh: huggingface-spaces
-description: Build, deploy, and maintain applications on Hugging Face Spaces — 
-  Gradio
-description_zh: 构建, 部署, and maintain applications on Hugging Face Spaces — 
-  Gradio
+description: 'Build, deploy, and maintain applications on Hugging Face Spaces — Gradio'
+description_zh: '构建, 部署, and maintain applications on Hugging Face Spaces — Gradio'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - deployment
-source:
+source: null
 needs_review: false
 slug: huggingface-spaces
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

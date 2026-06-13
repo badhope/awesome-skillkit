@@ -1,8 +1,7 @@
 ---
 name: add-provider-doc
 name_zh: 添加-provider-doc
-description: Add documentation for a new AI provider — usage docs, env vars, 
-  Docker
+description: 'Add documentation for a new AI provider — usage docs, env vars, Docker'
 description_zh: Add 文档 for a new AI provider — usage docs, env vars, Docker
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - database
   - docker
-source:
+source: null
 needs_review: false
 slug: add-provider-doc
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

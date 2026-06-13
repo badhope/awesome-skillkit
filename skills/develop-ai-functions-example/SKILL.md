@@ -1,12 +1,8 @@
 ---
 name: develop-ai-functions-example
 name_zh: develop-ai-functions-example
-description: Develop examples for AI SDK functions. Use when creating, running, 
-  or modifying examples under examples/ai-functions/src to validate provider 
-  support, demonstrate features, or create test fixtures.
-description_zh: Develop examples for AI SDK functions. Use when creating, 
-  running, or modifying examples under examples/ai-functions/src to 验证 provider 
-  support, demonstrate features, or 创建 测试 fixtures.
+description: 'Develop examples for AI SDK functions. Use when creating, running, or modifying examples under examples/ai-functions/src to validate provider support, demonstrate features, or create test fixtures.'
+description_zh: 'Develop examples for AI SDK functions. Use when creating, running, or modifying examples under examples/ai-functions/src to 验证 provider support, demonstrate features, or 创建 测试 fixtures.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: develop-ai-functions-example
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

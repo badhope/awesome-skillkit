@@ -1,8 +1,7 @@
 ---
 name: creating-financial-models
 name_zh: 创建财务模型
-description: This skill provides an advanced financial modeling suite with DCF 
-  analysis,
+description: 'This skill provides an advanced financial modeling suite with DCF analysis,'
 description_zh: 构建财务模型用于预测、估值和决策分析。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: creating-financial-models
 created: '2026-06-12'

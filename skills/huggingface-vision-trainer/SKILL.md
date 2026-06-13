@@ -1,28 +1,8 @@
 ---
 name: huggingface-vision-trainer
 name_zh: huggingface-vision-trainer
-description: Trains and fine-tunes vision models for object detection (D-FINE, 
-  RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, 
-  MobileViT, ResNet, ViT/DINOv3 — plus any Transformers classifier), and 
-  SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs 
-  cloud GPUs. Covers COCO-format dataset preparation, Albumentations 
-  augmentation, mAP/mAR evaluation, accuracy metrics, SAM segmentation with 
-  bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio 
-  monitoring, and Hub persistence. Use when users mention training object 
-  detection, image classification, SAM, SAM2, segmentation, image matting, DETR,
-  D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or 
-  fine-tuning vision models on Hugging Face Jobs.
-description_zh: Trains and fine-tunes vision models for object detection 
-  (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — 
-  MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers 
-  classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on 
-  Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, 
-  Albumentations augmentation, mAP/mAR 评估, accuracy metrics, SAM segmentation 
-  with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, 
-  Trackio monitoring, and Hub persistence. Use when users mention 训练 object 
-  detection, image classification, SAM, SAM2, segmentation, image matting, DETR,
-  D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or 
-  fine-tuning vision models on Hugging Face Jobs.
+description: 'Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...'
+description_zh: 'Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...'
 category: dev-tools
 tags:
   - ai
@@ -30,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: huggingface-vision-trainer
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

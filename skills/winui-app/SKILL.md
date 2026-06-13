@@ -1,10 +1,8 @@
 ---
 name: winui-app
 name_zh: winui-app
-description: Bootstrap, develop, and design modern WinUI 3 desktop applications 
-  with
-description_zh: Bootstrap, develop, and 设计 modern WinUI 3 desktop applications 
-  with
+description: 'Bootstrap, develop, and design modern WinUI 3 desktop applications with'
+description_zh: 'Bootstrap, develop, and 设计 modern WinUI 3 desktop applications with'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: winui-app
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

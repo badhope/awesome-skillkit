@@ -10,10 +10,10 @@ tags:
   - javascript
   - llm
   - python
-source:
+source: null
 needs_review: false
 slug: app
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

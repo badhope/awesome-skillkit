@@ -1,10 +1,8 @@
 ---
 name: imsg
 name_zh: imsg
-description: iMessage/SMS CLI for listing chats, history, and sending messages 
-  via
-description_zh: iMessage/SMS CLI for listing chats, history, and sending 
-  messages via
+description: 'iMessage/SMS CLI for listing chats, history, and sending messages via'
+description_zh: 'iMessage/SMS CLI for listing chats, history, and sending messages via'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - frontend
   - javascript
   - llm
-source:
+source: null
 needs_review: false
 slug: imsg
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,10 +1,8 @@
 ---
 name: skills-audit
 name_zh: skills-audit
-description: Audit .agents/skills SKILL.md files. Use for recurring checks of 
-  duplicate,
-description_zh: Audit .agents/skills 技能.md files. Use for recurring checks of 
-  duplicate,
+description: 'Audit .agents/skills SKILL.md files. Use for recurring checks of duplicate,'
+description_zh: 'Audit .agents/skills 技能.md files. Use for recurring checks of duplicate,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 needs_review: false
 slug: skills-audit
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

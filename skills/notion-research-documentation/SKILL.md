@@ -1,8 +1,7 @@
 ---
 name: notion-research-documentation
 name_zh: notion-research-documentation
-description: Research across Notion and synthesize into structured 
-  documentation;
+description: 'Research across Notion and synthesize into structured documentation;'
 description_zh: Research across Notion and synthesize into structured 文档;
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 needs_review: false
 slug: notion-research-documentation
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

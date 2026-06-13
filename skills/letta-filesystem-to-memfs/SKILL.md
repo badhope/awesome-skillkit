@@ -1,10 +1,8 @@
 ---
 name: letta-filesystem-to-memfs
 name_zh: letta-filesystem-to-memfs
-description: Migrates deprecated Letta Filesystem folders/files to MemFS using 
-  markdown
-description_zh: Migrates deprecated Letta Filesystem folders/files to MemFS 
-  using markdown
+description: 'Migrates deprecated Letta Filesystem folders/files to MemFS using markdown'
+description_zh: 'Migrates deprecated Letta Filesystem folders/files to MemFS using markdown'
 category: dev-tools
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 license: MIT
 needs_review: false
 slug: letta-filesystem-to-memfs
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

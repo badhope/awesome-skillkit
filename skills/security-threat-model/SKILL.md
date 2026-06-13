@@ -1,10 +1,8 @@
 ---
 name: security-threat-model
 name_zh: 安全-threat-model
-description: Repository-grounded threat modeling that enumerates trust 
-  boundaries,
-description_zh: Repository-grounded threat modeling that enumerates trust 
-  boundaries,
+description: 'Repository-grounded threat modeling that enumerates trust boundaries,'
+description_zh: 'Repository-grounded threat modeling that enumerates trust boundaries,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - cli
   - database
   - deployment
-source:
+source: null
 needs_review: false
 slug: security-threat-model
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

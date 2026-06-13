@@ -1,10 +1,8 @@
 ---
 name: zustand
 name_zh: zustand
-description: LobeHub Zustand store conventions. Use when editing src/store, 
-  store
-description_zh: LobeHub Zustand store conventions. Use when editing src/store, 
-  store
+description: 'LobeHub Zustand store conventions. Use when editing src/store, store'
+description_zh: 'LobeHub Zustand store conventions. Use when editing src/store, store'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - frontend
   - llm
-source:
+source: null
 needs_review: false
 slug: zustand
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

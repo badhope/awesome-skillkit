@@ -1,22 +1,8 @@
 ---
 name: hatch-pet
 name_zh: hatch-pet
-description: Create, repair, validate, visually QA, and package Codex-compatible
-  animated pets and pet spritesheets from character art, generated images, 
-  company or prospect brand cues, or visual references. Use when a user wants a 
-  lightweight-worker Codex pet workflow, a non-pixel custom pet style, a 
-  prospect or company mascot pet, or a full 8x9 animated pet atlas with 
-  transparent unused cells, QA contact sheets, and pet.json packaging. This 
-  skill composes the installed $imagegen system skill for visual generation and 
-  uses bundled scripts for deterministic spritesheet assembly.
-description_zh: 创建, repair, 验证, visually QA, and package Codex-compatible 
-  animated pets and pet spritesheets from character art, generated images, 
-  company or prospect brand cues, or visual references. Use when a 用户 wants a 
-  lightweight-worker Codex pet workflow, a non-pixel custom pet style, a 
-  prospect or company mascot pet, or a full 8x9 animated pet atlas with 
-  transparent unused cells, QA contact sheets, and pet.json packaging. This 技能 
-  composes the installed $imagegen system 技能 for visual generation and uses 
-  bundled scripts for deterministic spritesheet assembly.
+description: 'Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Us...'
+description_zh: '创建, repair, 验证, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a 用...'
 category: dev-tools
 tags:
   - ai
@@ -24,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: hatch-pet
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

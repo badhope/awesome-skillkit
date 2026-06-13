@@ -2,8 +2,7 @@
 name: Security Review Checklist
 name_zh: 安全审查清单
 description: 'You''re reviewing or designing a change that touches a'
-description_zh: 代码审查与设计阶段的安全检查清单 —— SSRF 与出站 URL 校验、密钥与静态加密、跨租户数据、文件上传、跳转处理、RBAC
-  作用域漂移、签名 URL 作用域。在设计与审查阶段捕获反复出现的安全问题，别等 CVE 出现。
+description_zh: '代码审查与设计阶段的安全检查清单 —— SSRF 与出站 URL 校验、密钥与静态加密、跨租户数据、文件上传、跳转处理、RBAC 作用域漂移、签名 URL 作用域。在设计与审查阶段捕获反复出现的安全问题，别等 CVE 出现。'
 category: dev-tools
 tags:
   - ai
@@ -14,7 +13,7 @@ tags:
 source: null
 license: MIT
 author: 'Langfuse (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: security-review
 created: '2026-06-12'

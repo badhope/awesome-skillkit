@@ -1,14 +1,8 @@
 ---
 name: worktree
 name_zh: worktree
-description: Set up a new git worktree for parallel development. Creates the 
-  worktree, copies .env files, installs dependencies, and generates Prisma 
-  client. TRIGGER when user asks to set up a worktree, work on a branch in 
-  isolation, or needs a separate environment for a branch or PR.
-description_zh: Set up a new git worktree for parallel 开发. Creates the worktree,
-  copies .env files, installs dependencies, and generates Prisma 客户端. TRIGGER 
-  when 用户 asks to set up a worktree, work on a branch in isolation, or needs a 
-  separate environment for a branch or PR.
+description: 'Set up a new git worktree for parallel development. Creates the worktree, copies .env files, installs dependencies, and generates Prisma client. TRIGGER when user asks to set up a worktree, work on...'
+description_zh: 'Set up a new git worktree for parallel 开发. Creates the worktree, copies .env files, installs dependencies, and generates Prisma 客户端. TRIGGER when 用户 asks to set up a worktree, work on a branch in i...'
 category: dev-tools
 tags:
   - backend
@@ -16,9 +10,9 @@ tags:
   - frontend
   - git
   - javascript
-source:
+source: null
 author: autogpt-team
-version: 3.0.0
+version: '3.0.0'
 needs_review: false
 slug: worktree
 created: '2026-06-12'

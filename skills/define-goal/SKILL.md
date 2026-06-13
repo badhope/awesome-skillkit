@@ -1,10 +1,8 @@
 ---
 name: define-goal
 name_zh: define-goal
-description: Help the user define a concrete, measurable goal before starting 
-  work,
-description_zh: Help the 用户 define a concrete, measurable goal before starting 
-  work,
+description: 'Help the user define a concrete, measurable goal before starting work,'
+description_zh: 'Help the 用户 define a concrete, measurable goal before starting work,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - documentation
   - evaluation
-source:
+source: null
 needs_review: false
 slug: define-goal
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

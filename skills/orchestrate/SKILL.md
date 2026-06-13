@@ -1,10 +1,8 @@
 ---
 name: orchestrate
 name_zh: orchestrate
-description: Meta-agent supervisor that manages a fleet of Claude Code agents 
-  running
-description_zh: Meta-智能体 supervisor that manages a fleet of Claude 代码 agents 
-  running
+description: 'Meta-agent supervisor that manages a fleet of Claude Code agents running'
+description_zh: 'Meta-智能体 supervisor that manages a fleet of Claude 代码 agents running'
 category: dev-tools
 tags:
   - ai
@@ -12,9 +10,9 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 author: autogpt-team
-version: 6.0.0
+version: '6.0.0'
 needs_review: false
 slug: orchestrate
 created: '2026-06-12'

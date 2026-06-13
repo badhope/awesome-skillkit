@@ -10,10 +10,10 @@ tags:
   - database
   - frontend
   - llm
-source:
+source: null
 license: MIT
 author: badhope
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: code-reviewer
 created: '2026-06-12'

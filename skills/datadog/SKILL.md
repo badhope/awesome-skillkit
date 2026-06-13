@@ -1,10 +1,8 @@
 ---
 name: datadog
 name_zh: datadog
-description: Query Datadog observability data (logs, metrics, monitors, 
-  dashboards,
-description_zh: Query Datadog observability data (logs, metrics, monitors, 
-  dashboards,
+description: 'Query Datadog observability data (logs, metrics, monitors, dashboards,'
+description_zh: 'Query Datadog observability data (logs, metrics, monitors, dashboards,'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - datadog
-source:
+source: null
 needs_review: false
 slug: datadog
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

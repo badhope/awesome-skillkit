@@ -1,12 +1,8 @@
 ---
 name: skill-installer
 name_zh: 技能-installer
-description: Install Codex skills into $CODEX_HOME/skills from a curated list or
-  a GitHub repo path. Use when a user asks to list installable skills, install a
-  curated skill, or install a skill from another repo (including private repos).
-description_zh: 安装 Codex skills into $CODEX_HOME/skills from a curated list or a
-  GitHub repo path. Use when a 用户 asks to list installable skills, 安装 a curated 
-  技能, or 安装 a 技能 from another repo (including private repos).
+description: 'Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep...'
+description_zh: '安装 Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a 用户 asks to list installable skills, 安装 a curated 技能, or 安装 a 技能 from another repo (including private re...'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - database
   - frontend
-source:
+source: null
 needs_review: false
 slug: skill-installer
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

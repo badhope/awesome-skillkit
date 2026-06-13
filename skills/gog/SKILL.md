@@ -1,10 +1,8 @@
 ---
 name: gog
 name_zh: gog
-description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, 
-  and
-description_zh: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, 
-  Sheets, and
+description: 'Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and'
+description_zh: 'Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: gog
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

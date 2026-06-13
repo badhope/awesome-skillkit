@@ -1,8 +1,7 @@
 ---
 name: cli-backend-testing
 name_zh: cli-backend-testing
-description: CLI + Backend integration testing workflow. Use when verifying 
-  backend
+description: 'CLI + Backend integration testing workflow. Use when verifying backend'
 description_zh: CLI + 后端 集成 测试 workflow. Use when verifying 后端
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: cli-backend-testing
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

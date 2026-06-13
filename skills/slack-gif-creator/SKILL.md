@@ -8,11 +8,11 @@ category: applications
 tags: [ai, api, frontend, python, typescript]
 license: MIT
 needs_review: false
-source:
+source: null
 author: AI-SKILL
-version: 1.0.0
-created: 2026-06-12
-updated: 2026-06-12
+version: '1.0.0'
+created: '2026-06-12'
+updated: '2026-06-12'
 inputs:
   - name: request
     type: string

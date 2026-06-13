@@ -6,12 +6,12 @@ description: 在一个线性流程里完成 stage、commit、push、开 PR。仅
 description_zh: 在一个线性流程里完成 stage、commit、push、开 PR。仅在用户明确说 yeet 或 ship 时触发。
 category: dev-tools
 tags: [ai, api, frontend, git, llm]
-source:
+source: null
 license: MIT
 author: AI-SKILL
-version: 1.0.0
-created: 2026-06-12
-updated: 2026-06-12
+version: '1.0.0'
+created: '2026-06-12'
+updated: '2026-06-12'
 needs_review: false
 inputs:
   - name: request

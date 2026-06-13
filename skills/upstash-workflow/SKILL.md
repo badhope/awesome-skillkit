@@ -1,10 +1,8 @@
 ---
 name: upstash-workflow
 name_zh: upstash-workflow
-description: LobeHub Upstash Workflow and QStash guide. Use for async workflows,
-  process/paginate/execute
-description_zh: LobeHub Upstash Workflow and QStash guide. Use for async 
-  workflows, process/paginate/execute
+description: 'LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute'
+description_zh: 'LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - database
   - deployment
-source:
+source: null
 needs_review: false
 slug: upstash-workflow
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

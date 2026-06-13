@@ -1,10 +1,8 @@
 ---
 name: docstring
 name_zh: docstring
-description: Write docstrings for PyTorch functions and methods following 
-  PyTorch
-description_zh: Write docstrings for PyTorch functions and methods following 
-  PyTorch
+description: 'Write docstrings for PyTorch functions and methods following PyTorch'
+description_zh: 'Write docstrings for PyTorch functions and methods following PyTorch'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - frontend
   - git
-source:
+source: null
 needs_review: false
 slug: docstring
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,12 +1,8 @@
 ---
 name: notion-meeting-intelligence
 name_zh: notion-meeting-intelligence
-description: Prepare meeting materials with Notion context and Codex research; 
-  use when gathering context, drafting agendas/pre-reads, and tailoring 
-  materials to attendees.
-description_zh: Prepare meeting materials with Notion context and Codex 
-  research; use when gathering context, drafting agendas/pre-reads, and 
-  tailoring materials to attendees.
+description: 'Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.'
+description_zh: 'Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - cli
   - database
   - documentation
-source:
+source: null
 needs_review: false
 slug: notion-meeting-intelligence
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

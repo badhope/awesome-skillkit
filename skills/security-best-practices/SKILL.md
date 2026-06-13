@@ -1,8 +1,7 @@
 ---
 name: security-best-practices
 name_zh: 安全-best-practices
-description: Perform language and framework specific security best-practice 
-  reviews
+description: 'Perform language and framework specific security best-practice reviews'
 description_zh: Perform language and framework specific 安全 best-practice reviews
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - backend
   - deployment
   - documentation
-source:
+source: null
 needs_review: false
 slug: security-best-practices
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

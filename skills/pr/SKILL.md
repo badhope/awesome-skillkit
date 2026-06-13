@@ -1,22 +1,8 @@
 ---
 name: pr
 name_zh: pr
-description: Create a PR for the current branch (targets `canary` by default), 
-  including splitting one cross-layer branch into ordered stacked PRs so a lower
-  layer (db / shared package / server TRPC) merges before its callers (desktop /
-  CLI / UI). Use when the user asks to create / submit a PR, or to split a 
-  branch because clients call a server contract that isn't on the trunk yet. 
-  Triggers on 'pr', 'create pr', 'submit pr', 'open a PR', 'pull request', 
-  'split this PR', 'stacked PR', 'backend should merge first', '提 PR', '提个 PR', 
-  '新建 PR', '拆 PR', '后端先合', '分层合并'.
-description_zh: 创建 a PR for the current branch (targets `canary` by default), 
-  including splitting one cross-layer branch into ordered stacked PRs so a lower
-  layer (db / shared package / 服务器 TRPC) merges before its callers (desktop / 
-  CLI / UI). Use when the 用户 asks to 创建 / submit a PR, or to split a branch 
-  because clients call a 服务器 contract that isn't on the trunk yet. Triggers on 
-  'pr', '创建 pr', 'submit pr', 'open a PR', 'pull request', 'split this PR', 
-  'stacked PR', '后端 should merge first', '提 PR', '提个 PR', '新建 PR', '拆 PR', 
-  '后端先合', '分层合并'.
+description: 'Create a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / server TRPC) merges bef...'
+description_zh: '创建 a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / 服务器 TRPC) merges before its...'
 category: dev-tools
 tags:
   - ai
@@ -25,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: pr
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

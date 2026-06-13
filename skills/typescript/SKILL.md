@@ -1,10 +1,8 @@
 ---
 name: typescript
 name_zh: typescript
-description: LobeHub TypeScript style and type-safety guide. Use when editing 
-  TS/TSX/MTS,
-description_zh: LobeHub TypeScript style and type-safety guide. Use when editing
-  TS/TSX/MTS,
+description: 'LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,'
+description_zh: 'LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - database
   - frontend
-source:
+source: null
 needs_review: false
 slug: typescript
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

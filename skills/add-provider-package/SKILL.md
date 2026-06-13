@@ -1,10 +1,8 @@
 ---
 name: add-provider-package
 name_zh: 添加-provider-package
-description: Guide for adding new AI provider packages to the AI SDK. Use when 
-  creating
-description_zh: Guide for adding new AI provider packages to the AI SDK. Use 
-  when creating
+description: 'Guide for adding new AI provider packages to the AI SDK. Use when creating'
+description_zh: 'Guide for adding new AI provider packages to the AI SDK. Use when creating'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - deployment
   - documentation
-source:
+source: null
 needs_review: false
 slug: add-provider-package
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

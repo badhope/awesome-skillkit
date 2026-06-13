@@ -1,8 +1,7 @@
 ---
 name: agent-slack
 name_zh: 智能体-slack
-description: Slack automation CLI — read/send/search messages, browse threads 
-  and
+description: 'Slack automation CLI — read/send/search messages, browse threads and'
 description_zh: Slack 自动化 CLI — read/send/search messages, browse threads and
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - documentation
   - frontend
   - git
-source:
+source: null
 needs_review: false
 slug: slack
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

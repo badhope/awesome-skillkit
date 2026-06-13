@@ -1,10 +1,8 @@
 ---
 name: huggingface-papers
 name_zh: huggingface-papers
-description: Look up and read Hugging Face paper pages in markdown, and use the 
-  papers
-description_zh: Look up and read Hugging Face paper pages in markdown, and use 
-  the papers
+description: 'Look up and read Hugging Face paper pages in markdown, and use the papers'
+description_zh: 'Look up and read Hugging Face paper pages in markdown, and use the papers'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - documentation
-source:
+source: null
 needs_review: false
 slug: huggingface-papers
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -45,10 +45,10 @@ tags:
   - backend
   - cli
   - deployment
-source:
+source: null
 license: MIT
 author: Team
-version: 0.1.0-draft
+version: '0.1.0-draft'
 needs_review: false
 slug: maf-prs-job
 created: '2026-06-12'

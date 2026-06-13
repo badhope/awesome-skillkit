@@ -1,12 +1,8 @@
 ---
 name: react
 name_zh: react
-description: LobeHub React component conventions. Use when editing TSX UI, 
-  choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, 
-  desktop variants, layouts, or component state.
-description_zh: LobeHub React component conventions. Use when editing TSX UI, 
-  choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, 
-  desktop variants, layouts, or component state.
+description: 'LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state.'
+description_zh: 'LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state.'
 category: dev-tools
 tags:
   - ai
@@ -15,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: react
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

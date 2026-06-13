@@ -22,10 +22,10 @@ tags:
   - backend
   - frontend
   - llm
-source:
+source: null
 license: MIT
 author: Team
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: maf-tracing
 created: '2026-06-12'

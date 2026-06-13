@@ -1,14 +1,8 @@
 ---
 name: pdf
 name_zh: pdf
-description: Use when tasks involve reading, creating, or reviewing PDF files 
-  where rendering and layout matter; prefer visual checks by rendering pages 
-  (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` 
-  for generation and extraction.
-description_zh: Use when tasks involve reading, creating, or reviewing PDF files
-  where rendering and layout matter; prefer visual checks by rendering pages 
-  (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` 
-  for generation and extraction.
+description: 'Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfp...'
+description_zh: 'Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfp...'
 category: dev-tools
 tags:
   - ai
@@ -17,9 +11,9 @@ tags:
   - frontend
   - python
 needs_review: false
-source:
+source: null
 slug: pdf
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

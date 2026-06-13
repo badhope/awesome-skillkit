@@ -1,10 +1,8 @@
 ---
 name: transcribe
 name_zh: transcribe
-description: Transcribe audio files to text with optional diarization and 
-  known-speaker
-description_zh: Transcribe audio files to text with optional diarization and 
-  known-speaker
+description: 'Transcribe audio files to text with optional diarization and known-speaker'
+description_zh: 'Transcribe audio files to text with optional diarization and known-speaker'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - evaluation
-source:
+source: null
 needs_review: false
 slug: transcribe
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

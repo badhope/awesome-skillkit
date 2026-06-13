@@ -1,16 +1,8 @@
 ---
 name: cli-creator
 name_zh: cli-creator
-description: Build a composable CLI for Codex from API docs, an OpenAPI spec, 
-  existing curl examples, an SDK, a web app, an admin tool, or a local script. 
-  Use when the user wants Codex to create a command-line tool that can run from 
-  any repo, expose composable read/write commands, return stable JSON, manage 
-  auth, and pair with a companion skill.
-description_zh: 构建 a composable CLI for Codex from 接口 docs, an OpenAPI spec, 
-  existing curl examples, an SDK, a web app, an admin tool, or a local script. 
-  Use when the 用户 wants Codex to 创建 a command-line tool that can 运行 from any 
-  repo, expose composable read/write commands, return stable JSON, manage auth, 
-  and pair with a companion 技能.
+description: 'Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ...'
+description_zh: '构建 a composable CLI for Codex from 接口 docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the 用户 wants Codex to 创建 a command-line tool that ...'
 category: dev-tools
 tags:
   - ai
@@ -18,10 +10,10 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 needs_review: false
 slug: cli-creator
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

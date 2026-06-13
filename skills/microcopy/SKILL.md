@@ -1,10 +1,8 @@
 ---
 name: microcopy
 name_zh: microcopy
-description: UI copy and microcopy guidelines. Use for user-facing copy, 
-  buttons,
-description_zh: UI copy and microcopy guidelines. Use for 用户-facing copy, 
-  buttons,
+description: 'UI copy and microcopy guidelines. Use for user-facing copy, buttons,'
+description_zh: 'UI copy and microcopy guidelines. Use for 用户-facing copy, buttons,'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - evaluation
   - frontend
   - llm
-source:
+source: null
 needs_review: false
 slug: microcopy
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

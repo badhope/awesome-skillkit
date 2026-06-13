@@ -1,8 +1,7 @@
 ---
 name: changelog-writing
 name_zh: 编写变更日志
-description: Shared workflow for writing Langfuse changelog entries after a 
-  feature
+description: 'Shared workflow for writing Langfuse changelog entries after a feature'
 description_zh: 编写清晰、用户友好的变更日志，记录版本更新和改进。
 category: dev-tools
 tags:
@@ -11,10 +10,10 @@ tags:
   - documentation
   - frontend
   - git
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: changelog-writing
 created: '2026-06-12'

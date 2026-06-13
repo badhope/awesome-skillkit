@@ -1,12 +1,8 @@
 ---
 name: huggingface-datasets
 name_zh: huggingface-datasets
-description: Use this skill for Hugging Face Dataset Viewer API workflows that 
-  fetch subset/split metadata, paginate rows, search text, apply filters, 
-  download parquet URLs, and read size or statistics.
-description_zh: Use this 技能 for Hugging Face Dataset Viewer 接口 workflows that 
-  fetch subset/split metadata, paginate rows, search text, apply filters, 
-  download parquet URLs, and read size or statistics.
+description: 'Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.'
+description_zh: 'Use this 技能 for Hugging Face Dataset Viewer 接口 workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.'
 category: dev-tools
 tags:
   - ai
@@ -15,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: huggingface-datasets
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

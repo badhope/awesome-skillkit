@@ -10,10 +10,10 @@ tags:
   - documentation
   - frontend
   - llm
-source:
+source: null
 license: MIT
 author: badhope
-version: 1.0.0
+version: '1.0.0'
 needs_review: false
 slug: pdf-summarizer
 created: '2026-06-12'

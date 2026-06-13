@@ -1,12 +1,8 @@
 ---
 name: data-fetching-architecture
 name_zh: data-fetching-architecture
-description: LobeHub data-fetching pipeline guide. Use for service layer, 
-  Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
-  migrating useEffect fetches.
-description_zh: LobeHub data-fetching pipeline guide. Use for service layer, 
-  Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
-  migrating useEffect fetches.
+description: 'LobeHub data-fetching pipeline guide. Use for service layer, Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or migrating useEffect fetches.'
+description_zh: 'LobeHub data-fetching pipeline guide. Use for service layer, Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or migrating useEffect fetches.'
 category: dev-tools
 tags:
   - ai
@@ -15,9 +11,9 @@ tags:
   - cli
   - database
 needs_review: false
-source:
+source: null
 slug: data-fetching-architecture
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -10,10 +10,10 @@ tags:
   - javascript
   - llm
   - typescript
-source:
+source: null
 license: MIT
 author: badhope
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: pdf-vision-extractor
 created: '2026-06-12'

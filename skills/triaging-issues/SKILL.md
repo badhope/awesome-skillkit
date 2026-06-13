@@ -1,12 +1,8 @@
 ---
 name: triaging-issues
 name_zh: triaging-issues
-description: Triages GitHub issues by routing to oncall teams, applying labels, 
-  and closing questions. Use when processing new PyTorch issues or when asked to
-  triage an issue.
-description_zh: Triages GitHub issues by routing to oncall teams, applying 
-  labels, and closing questions. Use when processing new PyTorch issues or when 
-  asked to triage an issue.
+description: 'Triages GitHub issues by routing to oncall teams, applying labels, and closing questions. Use when processing new PyTorch issues or when asked to triage an issue.'
+description_zh: 'Triages GitHub issues by routing to oncall teams, applying labels, and closing questions. Use when processing new PyTorch issues or when asked to triage an issue.'
 category: dev-tools
 tags:
   - ai
@@ -14,10 +10,10 @@ tags:
   - backend
   - deployment
   - documentation
-source:
+source: null
 needs_review: false
 slug: triaging-issues
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

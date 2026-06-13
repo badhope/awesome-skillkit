@@ -1,10 +1,8 @@
 ---
 name: update-provider-models
 name_zh: 更新-provider-models
-description: Add new or remove obsolete model IDs for existing AI SDK providers.
-  Use
-description_zh: Add new or remove obsolete 模型 IDs for existing AI SDK providers.
-  Use
+description: 'Add new or remove obsolete model IDs for existing AI SDK providers. Use'
+description_zh: 'Add new or remove obsolete 模型 IDs for existing AI SDK providers. Use'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: update-provider-models
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

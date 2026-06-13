@@ -1,10 +1,8 @@
 ---
 name: letta-development-guide
 name_zh: letta-development-guide
-description: Comprehensive guide for developing Letta agents, including 
-  architecture
-description_zh: Comprehensive guide for developing Letta agents, including 
-  architecture
+description: 'Comprehensive guide for developing Letta agents, including architecture'
+description_zh: 'Comprehensive guide for developing Letta agents, including architecture'
 category: dev-tools
 tags:
   - ai
@@ -12,11 +10,11 @@ tags:
   - backend
   - cli
   - database
-source:
+source: null
 license: MIT
 needs_review: false
 slug: agent-development
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -1,16 +1,8 @@
 ---
 name: bootstrap-realtime-eval
 name_zh: bootstrap-realtime-eval
-description: Bootstrap a new realtime eval folder inside this cookbook repo by 
-  choosing the right harness from examples/evals/realtime_evals, scaffolding 
-  prompt/tools/data files, generating a useful README, and validating it with 
-  smoke, full eval, and test runs. Use when a user wants to start a new crawl, 
-  walk, or run realtime eval in this repository.
-description_zh: Bootstrap a new realtime eval folder inside this cookbook repo 
-  by choosing the right harness from examples/evals/realtime_evals, scaffolding 
-  提示词/tools/data files, generating a useful README, and validating it with 
-  smoke, full eval, and 测试 runs. Use when a 用户 wants to start a new crawl, walk,
-  or 运行 realtime eval in this repository.
+description: 'Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding prompt/tools/data files, generating a useful README, and...'
+description_zh: 'Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding 提示词/tools/data files, generating a useful README, and va...'
 category: dev-tools
 tags:
   - ai
@@ -19,9 +11,9 @@ tags:
   - documentation
   - evaluation
 needs_review: false
-source:
+source: null
 slug: bootstrap-realtime-eval
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

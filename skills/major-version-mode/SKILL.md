@@ -1,10 +1,8 @@
 ---
 name: major-version-mode
 name_zh: major-版本-mode
-description: Context for working on the next AI SDK major release. Only use when
-  explicitly
-description_zh: Context for working on the next AI SDK major release. Only use 
-  when explicitly
+description: 'Context for working on the next AI SDK major release. Only use when explicitly'
+description_zh: 'Context for working on the next AI SDK major release. Only use when explicitly'
 category: applications
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - documentation
   - frontend
   - javascript
-source:
+source: null
 needs_review: false
 slug: major-version-mode
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -2,9 +2,7 @@
 name: Browser ML in JavaScript
 name_zh: 浏览器端机器学习（JavaScript）
 description: 'The user wants to run an ML model in JavaScript'
-description_zh: 在 JavaScript / TypeScript 里直接跑 SOTA 机器学习模型 —— 
-  文本分类、翻译、摘要、图像分类、目标检测、语音识别、音频分类、多模态。支持浏览器和 Node / Bun / Deno 服务端运行时，走 WebGPU / 
-  WASM。不需要 Python 后端。
+description_zh: '在 JavaScript / TypeScript 里直接跑 SOTA 机器学习模型 —— 文本分类、翻译、摘要、图像分类、目标检测、语音识别、音频分类、多模态。支持浏览器和 Node / Bun / Deno 服务端运行时，走 WebGPU / WASM。不需要 Python 后端。'
 category: dev-tools
 tags:
   - ai
@@ -12,10 +10,10 @@ tags:
   - backend
   - cli
   - frontend
-source:
+source: null
 license: Apache-2.0
 author: 'Hugging Face (downstream pack: badhope)'
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: browser-ml-in-js
 created: '2026-06-12'

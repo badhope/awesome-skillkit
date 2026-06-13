@@ -10,10 +10,10 @@ tags:
   - backend
   - documentation
   - frontend
-source:
+source: null
 needs_review: false
 slug: model-integration
-version: 1.0.0
+version: '1.0.0'
 created: '2026-06-12'
 updated: '2026-06-12'
 inputs:

@@ -10,10 +10,10 @@ tags:
   - cli
   - database
   - docker
-source:
+source: null
 license: UNKNOWN
 author: unknown
-version: 0.1.0
+version: '0.1.0'
 needs_review: false
 slug: seed-test-data
 created: '2026-06-12'
