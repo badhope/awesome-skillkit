@@ -5,10 +5,8 @@
 // We use hash routing because GitHub Pages serves a static
 // site; clean URLs would need server rewrites.
 
-import { renderList } from "./pages/list";
-import { renderDetail, renderNotFound } from "./pages/detail";
-import { renderBundle } from "./pages/bundle";
-import { renderExternal } from "./pages/external";
+// Lazy-load page components for better code splitting and performance.
+// Each page is only loaded when the user navigates to its route.
 import type { Skill, SkillIndex } from "./types";
 import { applyStaticTranslations, getLocale, setLocale, subscribe, t } from "./i18n";
 import { escHtml } from "./shared";
@@ -16,6 +14,11 @@ import { escHtml } from "./shared";
 const main = () => document.querySelector<HTMLElement>("#main")!;
 let cachedIndex: SkillIndex | null = null;
 let skillCache = new Map<string, Skill>();
+// Route ID counter to prevent race conditions when the user
+// rapidly switches routes. Each route() call increments the
+// counter; if the counter changes during an async operation,
+// the stale render is aborted.
+let routeId = 0;
 
 async function loadIndex(): Promise<SkillIndex> {
   if (cachedIndex) return cachedIndex;
@@ -40,6 +43,7 @@ async function loadSkill(slug: string): Promise<Skill | null> {
 }
 
 async function route() {
+  const thisRouteId = ++routeId;
   const hash = window.location.hash || "#/";
   const mainEl = main();
   // Only show the Loading placeholder on a cold load — when the
@@ -50,26 +54,35 @@ async function route() {
   }
   try {
     const idx = await loadIndex();
+    // Abort if the user navigated away while we were loading
+    if (thisRouteId !== routeId) return;
     if (hash === "#/" || hash === "#") {
       document.title = "AI-SKILL";
+      const { renderList } = await import("./pages/list");
       await renderList(mainEl, idx);
     } else if (hash === "#/bundle") {
       document.title = `${t("bundle.title")} — AI-SKILL`;
+      const { renderBundle } = await import("./pages/bundle");
       await renderBundle(mainEl, idx);
     } else if (hash === "#/external") {
       document.title = `${t("external.title")} — AI-SKILL`;
+      const { renderExternal } = await import("./pages/external");
       await renderExternal(mainEl);
     } else if (hash.startsWith("#/skill/")) {
       const slug = decodeURIComponent(hash.slice("#/skill/".length));
       const skill = await loadSkill(slug);
+      // Abort if the user navigated away while we were loading
+      if (thisRouteId !== routeId) return;
       if (skill) {
         // Use the localized name in the document title so the
         // browser tab also reflects the language choice.
         const titleName = getLocale() === "zh" && skill.name_zh ? skill.name_zh : skill.name;
         document.title = `${titleName} — AI-SKILL`;
+        const { renderDetail } = await import("./pages/detail");
         await renderDetail(mainEl, skill, idx);
       } else {
         document.title = `${t("nf.code")} — AI-SKILL`;
+        const { renderNotFound } = await import("./pages/detail");
         renderNotFound(mainEl, slug, idx);
       }
     } else {
@@ -81,7 +94,11 @@ async function route() {
   } catch (e) {
     document.title = "Error — AI-SKILL";
     mainEl.innerHTML = `<div class="empty">${escHtml(t("errorPrefix"))} ${escHtml(String(e))}</div>`;
-    console.error(e);
+    // Production: suppress detailed error logs to prevent information leakage
+    // Development: keep console.error for debugging
+    if (import.meta.env.DEV) {
+      console.error(e);
+    }
   }
 }
 

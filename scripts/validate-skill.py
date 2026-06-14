@@ -115,7 +115,7 @@ def has_platform_disclaimer(body: str, platforms: list[str]) -> bool:
     return False
 
 
-def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dict | None:
+def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dict[str, Any] | None:
     text = path.read_text(encoding="utf-8")
     fm, _header, body = split_frontmatter(text)
 
@@ -279,7 +279,7 @@ def load_categories() -> set[str]:
     return {c.get("slug") for c in cats if isinstance(c, dict) and c.get("slug")}
 
 
-def write_index(entries: list[dict]) -> None:
+def write_index(entries: list[dict[str, Any]]) -> None:
     """Regenerate skills/_index.yaml from validated entries.
 
     The index is a slim projection: it keeps what the front-end /
@@ -296,7 +296,7 @@ def write_index(entries: list[dict]) -> None:
     yaml.indent(mapping=2, sequence=4, offset=2)
     from io import StringIO
 
-    skills_out: list[dict] = []
+    skills_out: list[dict[str, Any]] = []
     for fm in sorted(entries, key=lambda x: x.get("slug", "")):
         skills_out.append({
             "slug": fm.get("slug"),
@@ -315,7 +315,7 @@ def write_index(entries: list[dict]) -> None:
     INDEX_YAML.write_text("\n".join(lines) + "\n" + buf.getvalue(), encoding="utf-8")
 
 
-def write_frontend_bundle(targets: list[Path], passed: list[dict]) -> None:
+def write_frontend_bundle(targets: list[Path], passed: list[dict[str, Any]]) -> None:
     """Write JSON files the frontend reads at runtime.
 
     Two outputs:

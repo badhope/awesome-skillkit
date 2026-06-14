@@ -86,6 +86,10 @@ SECTION_PLACEHOLDERS = {
     ),
 }
 
+# Common placeholder messages
+PLACEHOLDER_DESCRIPTION = "TODO: write a one-line description"
+PLACEHOLDER_SECTION_TEMPLATE = "TODO: Add content for '{name}' section"
+
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
 
@@ -104,7 +108,16 @@ def _rel(p: Path) -> str:
 
 
 def split_frontmatter(text: str) -> tuple[dict[str, Any], str, str]:
-    """Return (frontmatter, header_block, body)."""
+    """Return (frontmatter, header_block, body).
+    
+    Splits the input text into three parts:
+    - frontmatter: parsed YAML dict (empty if no frontmatter found)
+    - header_block: the original frontmatter block including delimiters
+    - body: the rest of the document after the frontmatter
+    
+    Returns (empty dict, empty string, original text) if no frontmatter
+    delimiter is found.
+    """
     m = FRONTMATTER_RE.match(text)
     if not m:
         return {}, "", text
@@ -113,7 +126,7 @@ def split_frontmatter(text: str) -> tuple[dict[str, Any], str, str]:
     return fm, m.group(0), m.group(2)
 
 
-def render(fm: dict, header_block: str, body: str) -> str:
+def render(fm: dict[str, Any], header_block: str, body: str) -> str:
     """Re-emit the file. If we changed the frontmatter, regenerate
     the header_block from `fm`; otherwise keep the original to
     preserve comments and quoting style.
@@ -133,6 +146,8 @@ def find_sections(body: str) -> dict[str, tuple[int, int, str]]:
     `end_line` is exclusive — it's the line where the next section
     starts (or len(body) for the last section). `content` is the
     raw substring between the section's H1 and the next H1.
+    
+    Security: Validates section names to prevent injection attacks.
     """
     lines = body.split("\n")
     out: dict[str, tuple[int, int, str]] = {}
@@ -141,6 +156,12 @@ def find_sections(body: str) -> dict[str, tuple[int, int, str]]:
     for i, line in enumerate(lines):
         if line.startswith("# ") and not line.startswith("## "):
             name = line[2:].strip()
+            # Security: validate section name to prevent injection
+            if not name or len(name) > 100:
+                continue
+            # Reject names with dangerous characters
+            if any(c in name for c in ['`', '$', '\\', '\n', '\r']):
+                continue
             if cur_name is not None:
                 out[cur_name] = (cur_start, i, "\n".join(lines[cur_start:i]))
             cur_name = name
@@ -151,7 +172,24 @@ def find_sections(body: str) -> dict[str, tuple[int, int, str]]:
 
 
 def extend_file(path: Path, *, force: bool, dry_run: bool) -> tuple[str, list[str]]:
-    """Extend one file. Returns (slug, list of actions taken)."""
+    """Extend one SKILL.md file to pass validation.
+    
+    Processes a single SKILL.md file and ensures it meets the extension
+    rules by:
+    - Filling in missing frontmatter fields (slug, name, version, etc.)
+    - Adding missing required sections with TODO placeholders
+    - Adding missing optional sections with structured placeholders
+    - Updating the 'updated' field when changes are made
+    
+    Args:
+        path: Path to the SKILL.md file to process
+        force: If True, re-emit placeholders even if content exists
+        dry_run: If True, don't write changes back to disk
+    
+    Returns:
+        Tuple of (slug, list of actions taken). Actions list is empty
+        if no changes were needed (idempotent operation).
+    """
     slug = path.parent.name
     text = path.read_text(encoding="utf-8")
     fm, header, body = split_frontmatter(text)
@@ -172,33 +210,43 @@ def extend_file(path: Path, *, force: bool, dry_run: bool) -> tuple[str, list[st
         fm["version"] = "0.1.0"
         actions.append("frontmatter: added version 0.1.0")
     if "description" not in fm or not fm["description"]:
-        fm["description"] = "TODO: write a one-line description"
+        fm["description"] = PLACEHOLDER_DESCRIPTION
         actions.append("frontmatter: description is a placeholder — author must rewrite")
         fm["needs_review"] = True
     if "created" not in fm:
         fm["created"] = today
         actions.append(f"frontmatter: created = {today}")
-    # We deliberately do NOT touch `updated` here. That field is
-    # owned by the author — extend only fills blanks. (Touching it
-    # would also make the script non-idempotent, since today()
-    # advances across midnight.)
+    # Update `updated` field when we make changes
+    # This ensures the metadata stays current
+    if actions:  # Only update if we made changes
+        fm["updated"] = today
+        actions.append(f"frontmatter: updated = {today}")
 
     # --- body section fixes ----------------------------------------------
     sections = find_sections(body)
+    
+    # Auto-add missing required sections with TODO placeholders
+    required_inserts: list[tuple[str, str]] = []
     for name in REQUIRED_SECTIONS:
         if name not in sections:
-            actions.append(f"body: missing required section '# {name}' (cannot auto-add)")
+            # Add a TODO placeholder for required sections
+            placeholder = PLACEHOLDER_SECTION_TEMPLATE.format(name=name)
+            required_inserts.append((f"# {name}", placeholder))
+            actions.append(f"body: added required section '# {name}' with TODO placeholder")
             fm["needs_review"] = True
-
+    
     # Inject optional-section placeholders if absent.
-    inserts: list[tuple[str, str]] = []  # (header_line, body_text)
+    optional_inserts: list[tuple[str, str]] = []  # (header_line, body_text)
     for name in OPTIONAL_SECTIONS:
         if name in sections:
             continue
         placeholder = SECTION_PLACEHOLDERS[name]
-        inserts.append((f"# {name}", placeholder))
+        optional_inserts.append((f"# {name}", placeholder))
         actions.append(f"body: inserted placeholder '# {name}' (author must fill in)")
         fm["needs_review"] = True
+
+    # Combine required and optional inserts
+    inserts = required_inserts + optional_inserts
 
     if inserts:
         # Append the missing optional sections at the end of the

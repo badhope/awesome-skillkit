@@ -74,7 +74,10 @@ export async function renderExternal(root: HTMLElement): Promise<void> {
   } catch (e) {
     list.removeAttribute("aria-busy");
     list.innerHTML = `<div class="empty" role="alert">${escHtml(t("external.errorLoad"))} <code>${escHtml(String(e))}</code></div>`;
-    console.error(e);
+    // Production: suppress detailed error logs to prevent information leakage
+    if (import.meta.env.DEV) {
+      console.error(e);
+    }
   }
 }
 

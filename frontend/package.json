@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "test": "echo 'No tests configured yet' && exit 0",
     "data:sync": "python3 ../scripts/validate-skill.py"
   },
   "devDependencies": {

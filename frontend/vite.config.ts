@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 
-// Minimal Vite config. We:
-//  - emit a flat `dist/` (no code-splitting chatter to debug)
+// Optimized Vite config:
+//  - emit a flat `dist/` with code splitting for better caching
 //  - ship base = "./" so the site works under
 //    https://<user>.github.io/AI-SKILL/  AND
 //    http://localhost:5173/  with the same index.html
-//  - leave CSS handling to Vite (it inlines small files)
+//  - enable CSS code splitting for smaller initial bundles
 //  - process BOTH index.html and 404.html through Vite so the
 //    hashed JS/CSS asset paths are injected. 404.html is the
 //    GH Pages deep-link fallback (see public/404.html's
@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     target: "es2022",
-    cssCodeSplit: false,
+    cssCodeSplit: true, // Enable CSS code splitting for better caching
     sourcemap: false,
     rollupOptions: {
       input: {
@@ -28,10 +28,18 @@ export default defineConfig({
         fallback: resolve(__dirname, "404.html"),
       },
       output: {
-        // Single bundle file. Simpler, no surprise chunk fetches.
+        // Enable automatic code splitting for better caching
         manualChunks: undefined,
+        // Optimize chunk file names for better caching
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash][extname]",
       },
     },
+    // Enable minification for smaller bundles (Vite 8 uses oxc by default)
+    minify: true,
+    // Inline assets smaller than 4KB
+    assetsInlineLimit: 4096,
   },
   server: {
     port: 5173,

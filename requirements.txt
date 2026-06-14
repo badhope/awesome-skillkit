@@ -1,0 +1,4 @@
+# Python dependencies for skill validation scripts
+# Used by CI to cache pip packages and speed up builds
+ruamel.yaml
+pyyaml

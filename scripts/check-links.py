@@ -18,6 +18,7 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
 INDEX_YAML = REPO / "external-index" / "skills.yaml"
@@ -44,8 +45,42 @@ def _err(e: Exception) -> tuple[str, int, str]:
     return (f"error: {msg}", 0, "error")
 
 
+def _validate_url(url: str) -> bool:
+    """Validate URL to prevent path traversal and SSRF attacks.
+    
+    Security checks:
+    - Only allow http/https schemes
+    - Reject file://, ftp://, and other dangerous schemes
+    - Reject localhost and loopback addresses (SSRF prevention)
+    - Allow private IP ranges (192.168.x, 10.x, 172.x) for internal Git repos
+    - Reject URLs with path traversal patterns
+    """
+    from urllib.parse import urlparse
+    try:
+        parsed = urlparse(url)
+        # Only allow http/https
+        if parsed.scheme not in ("http", "https"):
+            return False
+        # Reject localhost and loopback (SSRF prevention)
+        # Allow private IPs (192.168.x, 10.x, 172.x) for internal Git repos
+        hostname = parsed.hostname or ""
+        dangerous_hosts = ("localhost", "127.0.0.1", "0.0.0.0", "::1")
+        if hostname in dangerous_hosts:
+            return False
+        # Reject path traversal patterns
+        if ".." in parsed.path or ".." in parsed.query:
+            return False
+        return True
+    except Exception:
+        return False
+
+
 def head_or_get(url: str) -> tuple[str, int, str]:
     """GET a URL with a small Range, retrying transient failures."""
+    # Security: validate URL before making request
+    if not _validate_url(url):
+        return ("error: invalid or unsafe URL", 0, "error")
+    
     last_exc: Exception | None = None
     for attempt in range(1 + len(RETRY_BACKOFF_S)):
         req = urllib.request.Request(url, method="GET", headers={
@@ -76,20 +111,20 @@ def head_or_get(url: str) -> tuple[str, int, str]:
     return _err(last_exc) if last_exc else ("error: unknown", 0, "error")
 
 
-def load_index(path: Path) -> list[dict]:
+def load_index(path: Path) -> list[dict[str, Any]]:
     import yaml
     with path.open() as f:
         data = yaml.safe_load(f)
     return data.get("skills", []) or []
 
 
-def collect_urls(skills: list[dict]) -> list[tuple[str, str]]:
+def collect_urls(skills: list[dict[str, Any]]) -> list[tuple[str, str]]:
     return [(s.get("slug", "?"), s["source_url"])
             for s in skills if s.get("source_url")]
 
 
-def scan(pairs: list[tuple[str, str]]) -> dict[str, dict]:
-    results: dict[str, dict] = {}
+def scan(pairs: list[tuple[str, str]]) -> dict[str, dict[str, Any]]:
+    results: dict[str, dict[str, Any]] = {}
     with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         futs = {pool.submit(head_or_get, url): (slug, url) for slug, url in pairs}
         for fut in as_completed(futs):
@@ -124,7 +159,7 @@ def main() -> int:
     results = scan(pairs)
     elapsed = time.time() - started
 
-    by_group: dict[str, list[tuple[str, dict]]] = {
+    by_group: dict[str, list[tuple[str, dict[str, Any]]]] = {
         "ok": [], "redirect": [], "client_error": [], "server_error": [], "error": []
     }
     for slug, info in results.items():

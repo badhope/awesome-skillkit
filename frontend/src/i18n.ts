@@ -62,7 +62,12 @@ export function setLocale(l: Locale): void {
   history.replaceState(null, "", u.toString());
   // Notify subscribers (router re-runs the current view).
   for (const fn of subs) {
-    try { fn(); } catch (e) { console.error("[i18n] subscriber threw", e); }
+    try { fn(); } catch (e) {
+      // Production: suppress detailed error logs to prevent information leakage
+      if (import.meta.env.DEV) {
+        console.error("[i18n] subscriber threw", e);
+      }
+    }
   }
 }
 

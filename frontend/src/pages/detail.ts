@@ -294,7 +294,17 @@ function inlineMd(s: string): string {
   return s
     .replace(/`([^`]+)`/g, (_, x) => `<code>${escHtml(x)}</code>`)
     .replace(/\*\*([^*]+)\*\*/g, (_, x) => `<strong>${escHtml(x)}</strong>`)
-    .replace(/\*([^*]+)\*/g, (_, x) => `<em>${escHtml(x)}</em>`);
+    .replace(/\*([^*]+)\*/g, (_, x) => `<em>${escHtml(x)}</em>`)
+    // Add link support: [text](url)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
+      // Validate URL to prevent javascript: and data: URLs
+      const safeUrl = url.trim();
+      if (/^(https?:\/\/|\/|#|mailto:)/.test(safeUrl)) {
+        return `<a href="${escAttr(safeUrl)}" rel="noopener noreferrer" target="_blank">${escHtml(text)}</a>`;
+      }
+      // For relative or unknown schemes, escape and render as text
+      return `[${escHtml(text)}](${escHtml(safeUrl)})`;
+    });
 }
 
 async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: string): Promise<void> {

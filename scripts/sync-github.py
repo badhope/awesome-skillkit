@@ -61,12 +61,32 @@ def _github_get(path: str, token: str | None) -> dict[str, Any]:
 
 
 def _parse_source(source: str) -> tuple[str, str] | None:
+    """Parse owner/repo from source string with security validation.
+    
+    Prevents command injection by:
+    - Rejecting sources with shell metacharacters
+    - Only allowing alphanumeric and hyphen in owner
+    - Only allowing alphanumeric, hyphen, dot, underscore in repo
+    - Rejecting sources with path separators or special chars
+    """
     if not source or source.count("/") != 1:
         return None
     owner, repo = source.split("/", 1)
+    # Reject empty or whitespace-only values
     if not owner or not repo or " " in owner or " " in repo:
         return None
+    # Security: reject shell metacharacters and path separators
+    dangerous_chars = set('`$|;&<>(){}[]!#~*?\\\'"\n\r\t')
+    if any(c in dangerous_chars for c in owner + repo):
+        return None
+    # Owner: only alphanumeric and hyphen (GitHub username rules)
     if not all(c.isalnum() or c == "-" for c in owner):
+        return None
+    # Repo: alphanumeric, hyphen, dot, underscore (GitHub repo rules)
+    if not all(c.isalnum() or c in "-._" for c in repo):
+        return None
+    # Additional check: reject if it looks like a path traversal
+    if ".." in owner or ".." in repo or "/" in owner or "/" in repo:
         return None
     return owner, repo
 
@@ -92,7 +112,7 @@ def _fetch_one(slug: str, source: str, token: str | None) -> dict[str, Any]:
     }
 
 
-def _normalise_license(lic: dict) -> str:
+def _normalise_license(lic: dict[str, Any]) -> str:
     spdx = lic.get("spdx_id") or ""
     if spdx in ("NOASSERTION", "NONE"):
         return ""

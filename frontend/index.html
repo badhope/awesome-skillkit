@@ -28,7 +28,7 @@
         <span class="topbar__mark" aria-hidden="true">▮</span>
         <span>AI-SKILL</span>
       </a>
-      <nav class="topbar__nav">
+      <nav class="topbar__nav" role="navigation" aria-label="Main navigation">
         <a href="#/bundle" data-link data-i18n="nav.bundle">Bundle</a>
         <a href="#/external" data-link data-i18n="nav.external">External</a>
         <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-i18n-aria="aria.langToggle" data-i18n-title="aria.langToggle" title="Switch language">
@@ -40,11 +40,12 @@
           rel="noopener noreferrer"
           target="_blank"
           data-i18n="nav.gh"
+          aria-label="View source on GitHub"
           >GitHub</a
         >
       </nav>
     </header>
-    <main id="main" class="main">
+    <main id="main" class="main" tabindex="-1" aria-label="Main content">
       <noscript>
         <div class="container-wide">
           <p class="empty">

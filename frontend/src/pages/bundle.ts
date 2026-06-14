@@ -121,6 +121,9 @@ export async function renderBundle(
         "beforebegin",
         `<div class="empty" role="alert" style="color: var(--err);">${escHtml(t("bundle.failed", { msg: e instanceof Error ? e.message : String(e) }))}</div>`,
       );
+      if (import.meta.env.DEV) {
+        console.error(e);
+      }
     } finally {
       dlBtn.textContent = downloadLabel;
       dlBtn.removeAttribute("disabled");

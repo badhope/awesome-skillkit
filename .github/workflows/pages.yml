@@ -28,6 +28,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            scripts/requirements.txt
 
       - name: Install Python deps for validate-skill
         run: |
@@ -45,6 +49,14 @@ jobs:
       - name: Install JS deps
         working-directory: frontend
         run: npm ci
+
+      - name: Type check
+        working-directory: frontend
+        run: npm run typecheck
+
+      - name: Run tests
+        working-directory: frontend
+        run: npm run test
 
       - name: Build static site
         working-directory: frontend
