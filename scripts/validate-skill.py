@@ -31,8 +31,10 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import re
 import sys
+from io import StringIO
 from pathlib import Path
 from typing import Any
 
@@ -78,12 +80,21 @@ class Report:
     def __init__(self) -> None:
         self.errors: list[tuple[Path, str]] = []
         self.warnings: list[tuple[Path, str]] = []
+        # Paths that have at least one error — kept in sync so callers
+        # can do O(1) "did this file fail?" checks instead of scanning
+        # the errors list every time (which was O(n) per file → O(n²)
+        # across the whole run).
+        self.error_paths: set[Path] = set()
 
     def err(self, p: Path, msg: str) -> None:
         self.errors.append((p, msg))
+        self.error_paths.add(p)
 
     def warn(self, p: Path, msg: str) -> None:
         self.warnings.append((p, msg))
+
+    def has_errors(self, p: Path) -> bool:
+        return p in self.error_paths
 
 
 def split_frontmatter(text: str) -> tuple[dict[str, Any] | None, str, str]:
@@ -142,10 +153,9 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
 
     # dates — accept both strings and datetime.date (ruamel.yaml
     # parses YYYY-MM-DD into a date object under some loaders)
-    import datetime as _dt
     for d in ("created", "updated"):
         v = fm.get(d)
-        if isinstance(v, _dt.date):
+        if isinstance(v, dt.date):
             v = v.isoformat()
         if not isinstance(v, str) or not DATE_RE.match(v):
             report.err(path, f"{d} is not YYYY-MM-DD: {v!r}")
@@ -254,7 +264,7 @@ def validate_one(path: Path, report: Report, *, all_categories: set[str]) -> dic
         report.warn(path, "needs_review: true — author must revisit")
 
     # If we got any errors, don't include this skill in the index
-    if any(p == path for p, _ in report.errors):
+    if report.has_errors(path):
         return None
     return fm
 
@@ -269,11 +279,17 @@ def load_categories() -> set[str]:
     path = REPO / "external-index" / "skills.yaml"
     if not path.exists():
         return set()
+    yaml = YAML(typ="safe")
     try:
-        import yaml
-        with path.open() as f:
-            data = yaml.safe_load(f)
-    except Exception:
+        with path.open(encoding="utf-8") as f:
+            data = yaml.load(f)
+    except Exception as e:
+        # Don't silently swallow — surface the parse error so a
+        # broken external-index/skills.yaml gets noticed instead of
+        # quietly disabling the category check.
+        print(f"  warn   {_rel(path)}: failed to parse categories: {e}", file=sys.stderr)
+        return set()
+    if not isinstance(data, dict):
         return set()
     cats = data.get("categories", []) or []
     return {c.get("slug") for c in cats if isinstance(c, dict) and c.get("slug")}
@@ -294,7 +310,6 @@ def write_index(entries: list[dict[str, Any]]) -> None:
     yaml = YAML()
     yaml.default_flow_style = False
     yaml.indent(mapping=2, sequence=4, offset=2)
-    from io import StringIO
 
     skills_out: list[dict[str, Any]] = []
     for fm in sorted(entries, key=lambda x: x.get("slug", "")):
@@ -338,7 +353,6 @@ def write_frontend_bundle(targets: list[Path], passed: list[dict[str, Any]]) -> 
     FRONTEND_PUBLIC.mkdir(parents=True, exist_ok=True)
     FRONTEND_SKILLS_DIR.mkdir(parents=True, exist_ok=True)
 
-    import json
     slim: list[dict] = []
     passed_slugs = {fm.get("slug") for fm in passed}
     for fm in sorted(passed, key=lambda x: x.get("slug", "")):
@@ -405,8 +419,7 @@ def _json_default(o):
     refuses. Convert to ISO string. Anything else is a bug
     and we let it raise so it shows up in the warning.
     """
-    import datetime as _dt
-    if isinstance(o, (_dt.date, _dt.datetime)):
+    if isinstance(o, (dt.date, dt.datetime)):
         return o.isoformat()
     raise TypeError(f"{type(o).__name__} is not JSON serialisable")
 

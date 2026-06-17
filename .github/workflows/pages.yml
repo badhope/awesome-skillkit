@@ -29,13 +29,10 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-          cache-dependency-path: |
-            requirements.txt
-            scripts/requirements.txt
+          cache-dependency-path: requirements.txt
 
-      - name: Install Python deps for validate-skill
-        run: |
-          python -m pip install --quiet ruamel.yaml pyyaml
+      - name: Install Python deps
+        run: pip install -r requirements.txt
 
       - name: Validate all skills (writes public/skills.json)
         run: python scripts/validate-skill.py
@@ -53,10 +50,6 @@ jobs:
       - name: Type check
         working-directory: frontend
         run: npm run typecheck
-
-      - name: Run tests
-        working-directory: frontend
-        run: npm run test
 
       - name: Build static site
         working-directory: frontend

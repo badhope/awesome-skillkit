@@ -38,26 +38,85 @@ API_BASE = "https://api.github.com"
 DEFAULT_WORKERS_AUTH = 12
 DEFAULT_WORKERS_ANON = 1
 
+# Retry policy for transient failures (5xx, network errors).
+MAX_RETRIES = 3
+RETRY_BACKOFF = 1.5  # seconds, multiplied by attempt index
+# Cap how long we'll sleep waiting for a rate-limit reset, so a
+# misbehaving / missing header can't stall the run for hours.
+RATELIMIT_SLEEP_CAP = 600  # 10 minutes
+
 
 def _github_get(path: str, token: str | None) -> dict[str, Any]:
+    """GET a GitHub API path with retry + rate-limit handling.
+
+    - On 403 with X-RateLimit-Remaining: 0, sleep until the reset
+      epoch (capped) and retry once.
+    - On 5xx / network errors, retry with exponential backoff up
+      to MAX_RETRIES attempts.
+    - On 404, return {"_404": True} (repo gone / private / renamed).
+    - Other 4xx are raised immediately — retrying won't help.
+    """
     req = urllib.request.Request(API_BASE + path)
     req.add_header("Accept", "application/vnd.github+json")
     req.add_header("X-GitHub-Api-Version", "2022-11-28")
     req.add_header("User-Agent", "AI-SKILL-sync/1.0")
     if token:
         req.add_header("Authorization", "Bearer " + token)
+
+    last_exc: Exception | None = None
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return {"_404": True}
+            if e.code == 403:
+                remaining = e.headers.get("X-RateLimit-Remaining")
+                if remaining == "0":
+                    reset = e.headers.get("X-RateLimit-Reset")
+                    sleep_for = _ratelimit_sleep(reset)
+                    if sleep_for is not None and attempt < MAX_RETRIES:
+                        print(f"  ! rate-limited, sleeping {sleep_for:.0f}s until reset "
+                              f"(attempt {attempt + 1}/{MAX_RETRIES})", file=sys.stderr)
+                        time.sleep(sleep_for)
+                        continue
+                    # No reset header or out of retries — surface it.
+                    print(f"  ! 403 rate-limited, remaining={remaining}, "
+                          f"reset at epoch {reset}", file=sys.stderr)
+                raise
+            if 500 <= e.code < 600 and attempt < MAX_RETRIES:
+                last_exc = e
+                time.sleep(RETRY_BACKOFF * (attempt + 1))
+                continue
+            raise
+        except (urllib.error.URLError, TimeoutError) as e:
+            # Network blips / DNS / connection reset — retry.
+            last_exc = e
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF * (attempt + 1))
+                continue
+            raise
+    # Shouldn't reach here, but be defensive.
+    raise last_exc or RuntimeError("exhausted retries unexpectedly")
+
+
+def _ratelimit_sleep(reset_epoch: str | None) -> float | None:
+    """How long to sleep before retrying after a 403 rate-limit.
+
+    Returns None if we can't compute a sane sleep duration (e.g.
+    the header is missing or already in the past).
+    """
+    if not reset_epoch or reset_epoch == "?":
+        return None
     try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return json.loads(r.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return {"_404": True}
-        if e.code == 403:
-            reset = e.headers.get("X-RateLimit-Reset", "?")
-            remaining = e.headers.get("X-RateLimit-Remaining", "?")
-            print(f"  ! 403 rate-limited, remaining={remaining}, reset at epoch {reset}",
-                  file=sys.stderr)
-        raise
+        reset_at = int(reset_epoch)
+    except (TypeError, ValueError):
+        return None
+    sleep_for = reset_at - time.time()
+    if sleep_for <= 0:
+        return None
+    return min(sleep_for, RATELIMIT_SLEEP_CAP)
 
 
 def _parse_source(source: str) -> tuple[str, str] | None:
@@ -137,7 +196,7 @@ def main() -> int:
     yaml.preserve_quotes = True
     yaml.indent(mapping=2, sequence=4, offset=2)
 
-    with open(SKILLS_YAML) as f:
+    with open(SKILLS_YAML, encoding="utf-8") as f:
         data = yaml.load(f)
 
     skills = data.get("skills", [])
@@ -162,6 +221,7 @@ def main() -> int:
         old_stars = s.get("stars", 0) or 0
         old_license = s.get("license") or ""
         old_pushed = s.get("pushed_at") or ""
+        old_archived = bool(s.get("archived"))
         local: dict[str, Any] = {}
         if r["stars"] != old_stars:
             local["stars"] = (old_stars, r["stars"])
@@ -169,8 +229,12 @@ def main() -> int:
             local["license"] = (old_license, r["license"])
         if r["pushed_at"] and r["pushed_at"] != old_pushed:
             local["pushed_at"] = (old_pushed, r["pushed_at"])
-        if r["archived"] and not s.get("archived"):
-            local["archived"] = (False, True)
+        # Track archived in BOTH directions: a repo can be un-archived
+        # (archived: true → false) and we must not leave stale `true`
+        # in skills.yaml. Previously this only ever set True, so an
+        # un-archived repo stayed marked forever.
+        if r["archived"] != old_archived:
+            local["archived"] = (old_archived, r["archived"])
         if local:
             changes.append((r["slug"], local))
             if not args.dry_run:
@@ -179,8 +243,7 @@ def main() -> int:
                     s["license"] = r["license"]
                 if r["pushed_at"]:
                     s["pushed_at"] = r["pushed_at"]
-                if r["archived"]:
-                    s["archived"] = True
+                s["archived"] = r["archived"]
 
     elapsed = time.time() - started
     print(f"Done in {elapsed:.1f}s")

@@ -2,8 +2,8 @@
 // Kept in one place so the category labels, escape functions,
 // and YAML dumper stay in sync.
 
-import type { Skill } from "./types";
-import { getLocale } from "./i18n";
+import type { Skill, SkillIndexEntry } from "./types";
+import { getLocale, t, pickPlatform } from "./i18n";
 
 // ============================ category labels ============================
 
@@ -131,4 +131,61 @@ function formatScalar(v: unknown): string {
   if (typeof v === "string") return JSON.stringify(v);
   if (typeof v === "number" || typeof v === "boolean") return String(v);
   return JSON.stringify(v);
+}
+
+// ============================ shared utilities ============================
+
+/** Stable string hash → hue (0-359). Used for category/vendor color chips. */
+export function stableHue(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
+/** Category color string for inline CSS. */
+export function categoryColor(cat: string): string {
+  return `hsl(${stableHue(cat)} 60% 52%)`;
+}
+
+/** Build platform chips HTML for a skill card / detail page. */
+export function platformChipsHtml(platforms: string[] | undefined): string {
+  if (!platforms || platforms.length === 0) {
+    return `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`;
+  }
+  return platforms.map(p => {
+    const label = pickPlatform(p);
+    return `<span class="chip chip--${escAttr(p)}" title="${escAttr(t("platform.tip", { p }))}">${escHtml(label)}</span>`;
+  }).join(" ");
+}
+
+/** Pre-compute a lowercased search blob for a skill entry. */
+export function buildSearchBlob(s: SkillIndexEntry): string {
+  return `${s.slug} ${s.name} ${s.name_zh ?? ""} ${(s.tags ?? []).join(" ")} ${s.category} ${s.description} ${s.description_zh ?? ""}`.toLowerCase();
+}
+
+/** Debounce a function call by `ms` milliseconds. */
+export function debounce<T extends (...a: never[]) => void>(fn: T, ms: number): T {
+  let h: ReturnType<typeof setTimeout> | null = null;
+  return ((...args: never[]) => {
+    if (h) clearTimeout(h);
+    h = setTimeout(() => fn(...args), ms);
+  }) as T;
+}
+
+/** Trigger a browser download for a Blob, cleaning up the object URL. */
+export function triggerBlobDownload(blob: Blob, filename: string): void {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/** Convert a Skill object back to SKILL.md text, preferring rawMarkdown. */
+export function skillToMarkdown(s: Skill): string {
+  if (s.rawMarkdown && s.rawMarkdown.length > 0) return s.rawMarkdown;
+  return dumpFrontmatter(s) + "\n" + s.body;
 }

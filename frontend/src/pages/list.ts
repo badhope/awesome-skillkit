@@ -17,20 +17,8 @@
 // locale is Chinese and the zh fields are present.
 
 import type { SkillIndex, SkillIndexEntry } from "../types";
-import { t, pickZh, pickPlatform } from "../i18n";
-import { categoryLabel, escHtml, escAttr } from "../shared";
-
-// Stable hash → hue. Categories are short labels, so a tiny string
-// hash is fine. We lock saturation/lightness so the bars feel like
-// one family.
-function categoryHue(cat: string): number {
-  let h = 0;
-  for (let i = 0; i < cat.length; i++) h = (h * 31 + cat.charCodeAt(i)) >>> 0;
-  return h % 360;
-}
-function categoryColor(cat: string): string {
-  return `hsl(${categoryHue(cat)} 60% 52%)`;
-}
+import { t, pickZh } from "../i18n";
+import { categoryLabel, escHtml, escAttr, categoryColor, platformChipsHtml, buildSearchBlob, debounce } from "../shared";
 
 export async function renderList(
   root: HTMLElement,
@@ -89,7 +77,7 @@ export async function renderList(
 
     <div class="container-wide">
       <div class="filter-bar">
-        <input type="search" id="filter-q" placeholder="${escAttr(t("filter.search.ph"))}" value="${escAttr(initialQ)}" />
+        <input type="search" id="filter-q" placeholder="${escAttr(t("filter.search.ph"))}" value="${escAttr(initialQ)}" aria-label="${escAttr(t("filter.search.ph"))}" />
         <select id="filter-cat" aria-label="${escAttr(t("filter.cat.label"))}">
           <option value="">${escHtml(t("filter.cat.all"))}</option>
         </select>
@@ -193,19 +181,13 @@ function match(s: SkillIndexEntry, q: string, cat: string, plat: string): boolea
   if (q) {
     // Search the localized blob too — so a Chinese query like
     // "浏览器" still finds browser-ml-in-js via its name_zh.
-    const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${(s.tags ?? []).join(" ")} ${s.category} ${s.description} ${s.description_zh ?? ""}`.toLowerCase();
-    if (!blob.includes(q)) return false;
+    if (!buildSearchBlob(s).includes(q)) return false;
   }
   return true;
 }
 
 function cardHtml(s: SkillIndexEntry, i: number): string {
-  const platChips = (s.platforms?.length ?? 0) === 0
-    ? `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`
-    : (s.platforms ?? []).map(p => {
-        const label = pickPlatform(p);
-        return `<span class="chip chip--${escAttr(p)}" title="${escAttr(t("platform.tip", { p }))}">${escHtml(label)}</span>`;
-      }).join(" ");
+  const platChips = platformChipsHtml(s.platforms);
   // The --i custom property drives the stagger animation defined
   // in style.css. Inline style is the only way to set a custom
   // property from a string template without a CSS per-card rule.
@@ -225,12 +207,4 @@ function cardHtml(s: SkillIndexEntry, i: number): string {
       </div>
     </a>
   `;
-}
-
-function debounce<T extends (...a: unknown[]) => void>(fn: T, ms: number): T {
-  let h: ReturnType<typeof setTimeout> | null = null;
-  return ((...args: unknown[]) => {
-    if (h) clearTimeout(h);
-    h = setTimeout(() => fn(...args), ms);
-  }) as T;
 }

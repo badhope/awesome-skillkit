@@ -19,7 +19,7 @@
 // them up.
 
 import { t, getLocale } from "../i18n";
-import { escHtml, escAttr } from "../shared";
+import { escHtml, escAttr, stableHue } from "../shared";
 
 interface ExternalRepo {
   vendor: string;
@@ -116,13 +116,4 @@ function cardHtml(r: ExternalRepo, zh: boolean): string {
       <div class="external-card__tags">${tags}</div>
     </article>
   `;
-}
-
-function stableHue(s: string): number {
-  // Same family as list.ts's categoryHue — a 32-bit string hash
-  // mapped into 0..359. Locked L/S so the chips feel consistent
-  // across vendors.
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  return h % 360;
 }

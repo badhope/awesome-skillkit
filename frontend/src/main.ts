@@ -13,7 +13,7 @@ import { escHtml } from "./shared";
 
 const main = () => document.querySelector<HTMLElement>("#main")!;
 let cachedIndex: SkillIndex | null = null;
-let skillCache = new Map<string, Skill>();
+const skillCache = new Map<string, Skill>();
 // Route ID counter to prevent race conditions when the user
 // rapidly switches routes. Each route() call increments the
 // counter; if the counter changes during an async operation,
@@ -69,7 +69,12 @@ async function route() {
       const { renderExternal } = await import("./pages/external");
       await renderExternal(mainEl);
     } else if (hash.startsWith("#/skill/")) {
-      const slug = decodeURIComponent(hash.slice("#/skill/".length));
+      let slug: string;
+      try {
+        slug = decodeURIComponent(hash.slice("#/skill/".length));
+      } catch {
+        slug = hash.slice("#/skill/".length);
+      }
       const skill = await loadSkill(slug);
       // Abort if the user navigated away while we were loading
       if (thisRouteId !== routeId) return;
@@ -90,7 +95,7 @@ async function route() {
       mainEl.innerHTML = `<div class="empty">${escHtml(t("unknownRoute"))} <a href="#/" data-link>${escHtml(t("backToList"))}</a>.</div>`;
     }
     // Scroll to top on route change (unless the user is mid-click)
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    window.scrollTo({ top: 0, behavior: "instant" });
   } catch (e) {
     document.title = "Error — AI-SKILL";
     mainEl.innerHTML = `<div class="empty">${escHtml(t("errorPrefix"))} ${escHtml(String(e))}</div>`;

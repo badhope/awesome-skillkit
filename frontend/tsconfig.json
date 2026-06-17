@@ -18,5 +18,5 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true
   },
-  "include": ["src/**/*", "scripts/**/*"]
+  "include": ["src/**/*"]
 }

@@ -1,4 +1,4 @@
 # Python dependencies for skill validation scripts
 # Used by CI to cache pip packages and speed up builds
-ruamel.yaml
-pyyaml
+ruamel.yaml>=0.18,<1.0
+pyyaml>=6.0,<7.0

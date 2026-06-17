@@ -12,8 +12,8 @@
 // English and the Chinese variant based on the current locale.
 
 import type { Skill, SkillIndex, SkillIndexEntry, SkillSource } from "../types";
-import { t, getLocale, pickZh, pickPlatform } from "../i18n";
-import { categoryLabel, escHtml, escAttr, dumpFrontmatter } from "../shared";
+import { t, getLocale, pickZh } from "../i18n";
+import { categoryLabel, escHtml, escAttr, platformChipsHtml, triggerBlobDownload, skillToMarkdown } from "../shared";
 
 export async function renderDetail(
   root: HTMLElement,
@@ -23,7 +23,8 @@ export async function renderDetail(
   // Compute once, used both in the template (to disable the
   // button when the prompt section is missing) and in the click
   // handler below.
-  const promptText = extractPromptText(s);
+  const bodyLines = s.body.split("\n");
+  const promptText = extractPromptText(bodyLines);
   const related = pickRelated(s, index, 3);
   const titleName = pickZh(s, "name");
   const lead = pickZh(s, "description");
@@ -39,18 +40,18 @@ export async function renderDetail(
         <span>${escHtml(s.license)}</span>
         <span>·</span>
         <span>${escHtml(categoryLabel(s.category))}</span>
-        ${platformChips(s.platforms)}
+        ${platformChipsHtml(s.platforms)}
       </p>
       <p class="detail__lead">${escHtml(lead)}</p>
       ${sourceBlock(s)}
       ${zhBlock(s)}
-      ${tocBlock(s)}
+      ${tocBlock(s, bodyLines, promptText)}
       <h2 id="when-to-use">${escHtml(t("detail.wtu"))}</h2>
       <div id="wtu-body"></div>
       ${inputsTable(s)}
       ${outputBlock(s)}
       <h2 id="prompt">${escHtml(t("detail.prompt"))}</h2>
-      ${promptBlock(s)}
+      ${promptBlock(promptText)}
       <div class="actions">
         <button class="btn btn--primary" id="copy-prompt" type="button"${promptText ? "" : " disabled"}>${escHtml(t("detail.copy"))}</button>
         <button class="btn" id="dl-md" type="button">${escHtml(t("detail.download"))}</button>
@@ -72,9 +73,9 @@ export async function renderDetail(
   // Body sections that come AFTER the frontmatter schema.
   // The H1 string we slice on is the canonical English one —
   // the visible label is the localized one above.
-  root.querySelector<HTMLDivElement>("#wtu-body")!.innerHTML = renderH1Section(s.body, "When to use");
-  root.querySelector<HTMLDivElement>("#wnot-body")!.innerHTML = renderH1Section(s.body, "When NOT to use");
-  root.querySelector<HTMLDivElement>("#example-body")!.innerHTML = renderH1Section(s.body, "Example");
+  root.querySelector<HTMLDivElement>("#wtu-body")!.innerHTML = renderH1Section(bodyLines, "When to use");
+  root.querySelector<HTMLDivElement>("#wnot-body")!.innerHTML = renderH1Section(bodyLines, "When NOT to use");
+  root.querySelector<HTMLDivElement>("#example-body")!.innerHTML = renderH1Section(bodyLines, "Example");
   // Attach a copy button to every body code block (the prompt
   // block already has a top-level "Copy prompt" button, so we
   // skip the one inside the prompt H2). N9 from the prosecutor
@@ -88,7 +89,7 @@ export async function renderDetail(
   });
 }
 
-function tocBlock(s: Skill): string {
+function tocBlock(s: Skill, bodyLines: string[], promptText: string): string {
   // Build a small table of contents. Skip a section if it
   // wouldn't render anything (no inputs / no When-NOT-to-use /
   // no Example body). Output is always present; When to use
@@ -97,9 +98,9 @@ function tocBlock(s: Skill): string {
     wtu: true,
     inputs: (s.inputs?.length ?? 0) > 0,
     output: true,
-    prompt: extractPromptText(s).length > 0,
-    wnot: hasH1Section(s.body, "When NOT to use"),
-    example: hasH1Section(s.body, "Example"),
+    prompt: promptText.length > 0,
+    wnot: hasH1Section(bodyLines, "When NOT to use"),
+    example: hasH1Section(bodyLines, "Example"),
   };
   const items: { id: string; label: string }[] = [];
   if (has.wtu)      items.push({ id: "when-to-use",      label: t("detail.wtu") });
@@ -117,18 +118,8 @@ function tocBlock(s: Skill): string {
   `;
 }
 
-function hasH1Section(body: string, h1: string): boolean {
-  return body.split("\n").some(l => l.trim() === `# ${h1}`);
-}
-
-function platformChips(p: string[] | undefined): string {
-  if (!p || p.length === 0) {
-    return `<span class="chip chip--all" title="${escAttr(t("vendorNeutral"))}">${escHtml(t("anyChip"))}</span>`;
-  }
-  return p.map(x => {
-    const label = pickPlatform(x);
-    return `<span class="chip chip--${escAttr(x)}" title="${escAttr(t("platform.tip", { p: x }))}">${escHtml(label)}</span>`;
-  }).join(" ");
+function hasH1Section(lines: string[], h1: string): boolean {
+  return lines.some(l => l.trim() === `# ${h1}`);
 }
 
 // Bilingual block. We always render this when the skill has
@@ -166,7 +157,7 @@ function inputsTable(s: Skill): string {
   return `
     <h2 id="inputs">${escHtml(t("detail.inputs"))}</h2>
     <table>
-      <thead><tr><th>${escHtml(t("table.name"))}</th><th>${escHtml(t("table.type"))}</th><th>${escHtml(t("table.required"))}</th><th>${escHtml(t("table.description"))}</th></tr></thead>
+      <thead><tr><th scope="col">${escHtml(t("table.name"))}</th><th scope="col">${escHtml(t("table.type"))}</th><th scope="col">${escHtml(t("table.required"))}</th><th scope="col">${escHtml(t("table.description"))}</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   `;
@@ -179,17 +170,14 @@ function outputBlock(s: Skill): string {
   `;
 }
 
-function promptBlock(s: Skill): string {
-  // Prompt section body is in s.body between "# Prompt" and the next H1
-  const text = extractPromptText(s);
+function promptBlock(promptText: string): string {
   return `
-    <pre><code>${escHtml(text)}</code></pre>
+    <pre><code>${escHtml(promptText)}</code></pre>
   `;
 }
 
-function extractPromptText(s: Skill): string {
+function extractPromptText(lines: string[]): string {
   // Find the "Prompt" H1 and return everything until the next H1
-  const lines = s.body.split("\n");
   const start = lines.findIndex(l => /^#\s+Prompt\s*$/.test(l));
   if (start === -1) return "";
   let end = lines.length;
@@ -201,8 +189,7 @@ function extractPromptText(s: Skill): string {
   return lines.slice(start + 1, end).join("\n").replace(/^\n+|\n+$/g, "");
 }
 
-function renderH1Section(body: string, h1: string): string {
-  const lines = body.split("\n");
+function renderH1Section(lines: string[], h1: string): string {
   const start = lines.findIndex(l => l.trim() === `# ${h1}`);
   if (start === -1) return "";
   let end = lines.length;
@@ -291,20 +278,24 @@ function mdToHtml(src: string): string {
 }
 
 function inlineMd(s: string): string {
-  return s
-    .replace(/`([^`]+)`/g, (_, x) => `<code>${escHtml(x)}</code>`)
-    .replace(/\*\*([^*]+)\*\*/g, (_, x) => `<strong>${escHtml(x)}</strong>`)
-    .replace(/\*([^*]+)\*/g, (_, x) => `<em>${escHtml(x)}</em>`)
-    // Add link support: [text](url)
+  // Escape HTML first to prevent XSS from raw markdown content,
+  // then apply inline formatting on the escaped text.
+  let out = escHtml(s);
+  // Restore markdown patterns that were mangled by escaping
+  // (escHtml turns ` into &#96; etc., so we match the escaped forms)
+  out = out
+    .replace(/&#96;([^&#]+)&#96;/g, (_, x) => `<code>${x}</code>`)
+    .replace(/\*\*([^*]+)\*\*/g, (_, x) => `<strong>${x}</strong>`)
+    .replace(/\*([^*]+)\*/g, (_, x) => `<em>${x}</em>`)
+    // Link support: [text](url) — url was escaped by escHtml so &amp; etc. are safe
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
-      // Validate URL to prevent javascript: and data: URLs
       const safeUrl = url.trim();
       if (/^(https?:\/\/|\/|#|mailto:)/.test(safeUrl)) {
-        return `<a href="${escAttr(safeUrl)}" rel="noopener noreferrer" target="_blank">${escHtml(text)}</a>`;
+        return `<a href="${safeUrl}" rel="noopener noreferrer" target="_blank">${text}</a>`;
       }
-      // For relative or unknown schemes, escape and render as text
-      return `[${escHtml(text)}](${escHtml(safeUrl)})`;
+      return `[${text}](${safeUrl})`;
     });
+  return out;
 }
 
 async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: string): Promise<void> {
@@ -329,22 +320,9 @@ async function copyAndPulse(btn: HTMLButtonElement, text: string, successLabel: 
 }
 
 function downloadSkill(s: Skill): void {
-  // Prefer the byte-for-byte original we vendored from the source
-  // repo. Fall back to a re-emitted frontmatter + body if the
-  // build pipeline was run without the raw field (defensive —
-  // shouldn't happen in normal CI, but keeps the button working
-  // if a contributor hand-writes a per-skill JSON).
-  const text = s.rawMarkdown && s.rawMarkdown.length > 0
-    ? s.rawMarkdown
-    : dumpFrontmatter(s) + "\n" + s.body;
+  const text = skillToMarkdown(s);
   const blob = new Blob([text], { type: "text/markdown" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `${s.slug}.md`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  triggerBlobDownload(blob, `${s.slug}.md`);
 }
 
 // ============================ source block ============================

@@ -7,7 +7,7 @@
 import JSZip from "jszip";
 import type { Skill, SkillIndex } from "../types";
 import { t } from "../i18n";
-import { categoryLabel, escHtml, escAttr, dumpFrontmatter } from "../shared";
+import { categoryLabel, escHtml, escAttr, buildSearchBlob, debounce, triggerBlobDownload, skillToMarkdown } from "../shared";
 
 export async function renderBundle(
   root: HTMLElement,
@@ -20,7 +20,7 @@ export async function renderBundle(
         <span>${escHtml(t("bundle.intro"))}</span>
       </p>
       <div class="filter-bar">
-        <input type="search" id="b-q" placeholder="${escAttr(t("bundle.filter.ph"))}" />
+        <input type="search" id="b-q" placeholder="${escAttr(t("bundle.filter.ph"))}" aria-label="${escAttr(t("bundle.filter.ph"))}" />
       </div>
       <ul class="bundle-list" id="b-list"></ul>
       <div class="actions" style="display: flex; gap: var(--s-2); align-items: center; flex-wrap: wrap;">
@@ -46,8 +46,7 @@ export async function renderBundle(
     const q = qInput.value.trim().toLowerCase();
     const filtered = index.skills.filter(s => {
       if (!q) return true;
-      const blob = `${s.slug} ${s.name} ${s.name_zh ?? ""} ${s.description} ${s.description_zh ?? ""} ${s.category} ${(s.tags ?? []).join(" ")}`.toLowerCase();
-      return blob.includes(q);
+      return buildSearchBlob(s).includes(q);
     });
     // Snapshot which slugs are checked before re-rendering, so a
     // filter that hides then re-shows a row doesn't drop the
@@ -76,7 +75,7 @@ export async function renderBundle(
     dlBtn.toggleAttribute("disabled", n === 0);
   }
 
-  qInput.addEventListener("input", () => paint());
+  qInput.addEventListener("input", debounce(paint, 80));
   selAllBtn.addEventListener("click", () => {
     listEl.querySelectorAll<HTMLInputElement>("input[type=checkbox]").forEach(c => { c.checked = true; });
     updateCount();
@@ -96,30 +95,29 @@ export async function renderBundle(
     dlBtn.setAttribute("disabled", "true");
     try {
       const zip = new JSZip();
-      for (const slug of slugs) {
-        // encodeURIComponent for the same reason as main.ts: keep
-        // the path safe if SLUG_RE is ever relaxed. (S6)
+      // Parallel fetch all selected skills
+      const results = await Promise.all(slugs.map(async slug => {
         const r = await fetch(`${import.meta.env.BASE_URL}skills/${encodeURIComponent(slug)}.json`);
         if (!r.ok) throw new Error(`fetch ${slug}: ${r.status}`);
         const s = (await r.json()) as Skill;
-        zip.file(`${slug}/SKILL.md`, reEmit(s));
+        return { slug, md: skillToMarkdown(s) };
+      }));
+      for (const { slug, md } of results) {
+        zip.file(`${slug}/SKILL.md`, md);
       }
       const blob = await zip.generateAsync({ type: "blob" });
       const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `ai-skill-${slugs.length}-${stamp}.zip`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      triggerBlobDownload(blob, `ai-skill-${slugs.length}-${stamp}.zip`);
     } catch (e) {
+      // Clear any previous error message before inserting a new one
+      const prevErr = listEl.parentElement?.querySelector(".bundle-error");
+      if (prevErr) prevErr.remove();
       // Render the error inline instead of using alert(); the
       // page already has the .empty shape, and alert() is blocked
       // in some embedded contexts. (W8)
       listEl.insertAdjacentHTML(
         "beforebegin",
-        `<div class="empty" role="alert" style="color: var(--err);">${escHtml(t("bundle.failed", { msg: e instanceof Error ? e.message : String(e) }))}</div>`,
+        `<div class="empty bundle-error" role="alert" style="color: var(--err);">${escHtml(t("bundle.failed", { msg: e instanceof Error ? e.message : String(e) }))}</div>`,
       );
       if (import.meta.env.DEV) {
         console.error(e);
@@ -132,12 +130,4 @@ export async function renderBundle(
 
   paint();
   updateCount();
-}
-
-function reEmit(s: Skill): string {
-  // Prefer the original vendored text. If a per-skill JSON was
-  // produced without the rawMarkdown field, fall back to a
-  // synthesized frontmatter + body so the bundle still works.
-  if (s.rawMarkdown && s.rawMarkdown.length > 0) return s.rawMarkdown;
-  return dumpFrontmatter(s) + "\n\n" + s.body;
 }

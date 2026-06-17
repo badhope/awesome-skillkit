@@ -40,6 +40,7 @@ frontend/
 
 # Temporary files
 scripts/conversion-results.json
+scripts/skill-audit.json
 scripts/retry-rate-limited.py
 CONVERSION-COMPLETE.md
 *.log

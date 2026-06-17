@@ -271,9 +271,10 @@ export function t(key: Key, vars?: Record<string, string | number>): string {
   const entry = STRINGS[key] as Record<Locale, string> | undefined;
   let s = entry?.[current] ?? entry?.en ?? String(key);
   if (vars) {
-    for (const [k, v] of Object.entries(vars)) {
-      s = s.replace(new RegExp(`\\{${k}\\}`, "g"), String(v));
-    }
+    s = s.replace(/\{(\w+)\}/g, (_, k: string) => {
+      const v = vars[k];
+      return v !== undefined ? String(v) : `{${k}}`;
+    });
   }
   return s;
 }

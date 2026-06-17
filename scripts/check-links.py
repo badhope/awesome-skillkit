@@ -11,7 +11,9 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import ipaddress
 import json
+import socket
 import sys
 import time
 import urllib.error
@@ -19,6 +21,12 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
+
+try:
+    import yaml  # PyYAML — read-only parsing for the link index
+except ImportError:
+    yaml = None  # type: ignore[assignment]
 
 REPO = Path(__file__).resolve().parent.parent
 INDEX_YAML = REPO / "external-index" / "skills.yaml"
@@ -45,34 +53,82 @@ def _err(e: Exception) -> tuple[str, int, str]:
     return (f"error: {msg}", 0, "error")
 
 
+def _is_unsafe_ip(ip: ipaddress._BaseAddress) -> bool:
+    """True if an IP literal points at loopback / link-local / unspecified
+    space — i.e. somewhere a link checker must never fetch.
+
+    Private ranges (10/8, 172.16/12, 192.168/16, fc00::/7) are
+    intentionally ALLOWED: the project supports internal Git repos
+    behind a VPN, and those are the operator's own hosts.
+    """
+    return ip.is_loopback or ip.is_link_local or ip.is_unspecified
+
+
+def _hostname_to_unsafe_ip(hostname: str) -> bool:
+    """Return True if `hostname` is an IP literal that resolves to an
+    unsafe address.
+
+    Covers plain IPv4/IPv6, IPv4-mapped IPv6 (`::ffff:127.0.0.1`),
+    and the non-standard integer/hex/octal encodings that
+    `socket.inet_aton` accepts (e.g. `2130706433`, `0x7f000001`,
+    `0177.0.0.1`) — all of which a browser/curl would happily send
+    to 127.0.0.1.
+    """
+    # Standard ipaddress parse (IPv4 + IPv6, including mapped forms).
+    try:
+        ip = ipaddress.ip_address(hostname)
+    except ValueError:
+        ip = None
+    if ip is not None:
+        if _is_unsafe_ip(ip):
+            return True
+        # IPv4-mapped IPv6: ::ffff:a.b.c.d — check the embedded v4.
+        if isinstance(ip, ipaddress.IPv6Address) and ip.ipv4_mapped is not None:
+            if _is_unsafe_ip(ip.ipv4_mapped):
+                return True
+        return False
+    # socket.inet_aton accepts decimal/hex/octal IP encodings that
+    # ipaddress rejects — catch those too.
+    try:
+        packed = socket.inet_aton(hostname)
+    except OSError:
+        return False
+    try:
+        std = ipaddress.IPv4Address(socket.inet_ntoa(packed))
+    except (OSError, ValueError):
+        return False
+    return _is_unsafe_ip(std)
+
+
 def _validate_url(url: str) -> bool:
     """Validate URL to prevent path traversal and SSRF attacks.
-    
+
     Security checks:
-    - Only allow http/https schemes
-    - Reject file://, ftp://, and other dangerous schemes
-    - Reject localhost and loopback addresses (SSRF prevention)
-    - Allow private IP ranges (192.168.x, 10.x, 172.x) for internal Git repos
-    - Reject URLs with path traversal patterns
+    - Only allow http/https schemes (blocks file://, ftp://, gopher://, …)
+    - Reject loopback / link-local / unspecified IP literals in any
+      encoding (SSRF prevention). This covers 127.0.0.0/8, ::1,
+      ::ffff:127.x, 169.254.x (cloud metadata), 0.0.0.0, and
+      decimal/hex/octal encodings of the same.
+    - Allow private IP ranges (192.168.x, 10.x, 172.x) for internal
+      Git repos, per project policy.
+    - Reject URLs with path traversal patterns.
     """
-    from urllib.parse import urlparse
     try:
         parsed = urlparse(url)
-        # Only allow http/https
-        if parsed.scheme not in ("http", "https"):
-            return False
-        # Reject localhost and loopback (SSRF prevention)
-        # Allow private IPs (192.168.x, 10.x, 172.x) for internal Git repos
-        hostname = parsed.hostname or ""
-        dangerous_hosts = ("localhost", "127.0.0.1", "0.0.0.0", "::1")
-        if hostname in dangerous_hosts:
-            return False
-        # Reject path traversal patterns
-        if ".." in parsed.path or ".." in parsed.query:
-            return False
-        return True
     except Exception:
         return False
+    if parsed.scheme not in ("http", "https"):
+        return False
+    hostname = parsed.hostname or ""
+    if not hostname:
+        return False
+    if hostname.lower() == "localhost":
+        return False
+    if _hostname_to_unsafe_ip(hostname):
+        return False
+    if ".." in parsed.path or ".." in parsed.query:
+        return False
+    return True
 
 
 def head_or_get(url: str) -> tuple[str, int, str]:
@@ -112,8 +168,7 @@ def head_or_get(url: str) -> tuple[str, int, str]:
 
 
 def load_index(path: Path) -> list[dict[str, Any]]:
-    import yaml
-    with path.open() as f:
+    with path.open(encoding="utf-8") as f:
         data = yaml.safe_load(f)
     return data.get("skills", []) or []
 
@@ -123,9 +178,9 @@ def collect_urls(skills: list[dict[str, Any]]) -> list[tuple[str, str]]:
             for s in skills if s.get("source_url")]
 
 
-def scan(pairs: list[tuple[str, str]]) -> dict[str, dict[str, Any]]:
+def scan(pairs: list[tuple[str, str]], workers: int = WORKERS) -> dict[str, dict[str, Any]]:
     results: dict[str, dict[str, Any]] = {}
-    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         futs = {pool.submit(head_or_get, url): (slug, url) for slug, url in pairs}
         for fut in as_completed(futs):
             slug, url = futs[fut]
@@ -146,9 +201,7 @@ def main() -> int:
         print(f"index not found at {INDEX_YAML}", file=sys.stderr)
         return 1
 
-    try:
-        import yaml
-    except ImportError:
+    if yaml is None:
         print("PyYAML is required: pip install pyyaml", file=sys.stderr)
         return 2
 
@@ -156,7 +209,7 @@ def main() -> int:
     pairs = collect_urls(skills)
     print(f"Checking {len(pairs)} URLs from {INDEX_YAML.relative_to(REPO)} …")
     started = time.time()
-    results = scan(pairs)
+    results = scan(pairs, args.workers)
     elapsed = time.time() - started
 
     by_group: dict[str, list[tuple[str, dict[str, Any]]]] = {
@@ -188,7 +241,7 @@ def main() -> int:
         "broken": broken,
         "by_group": {k: len(v) for k, v in by_group.items()},
         "results": results,
-    }, indent=2, ensure_ascii=False, sort_keys=True))
+    }, indent=2, ensure_ascii=False, sort_keys=True), encoding="utf-8")
     print(f"\nWrote {HEALTH_JSON.relative_to(REPO)}")
 
     return 1 if (args.fail and broken) else 0
