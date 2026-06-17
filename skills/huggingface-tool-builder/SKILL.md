@@ -104,9 +104,9 @@ The following are the main API endpoints available at `https://huggingface.co`
 
 The API is documented with the OpenAPI standard at `https://huggingface.co/.well-known/openapi.json`.
 
-**IMPORTANT:** DO NOT ATTEMPT to read `https://huggingface.co/.well-known/openapi.json` directly as it is too large to process. 
+**IMPORTANT:** DO NOT ATTEMPT to read `https://huggingface.co/.well-known/openapi.json` directly as it is too large to process.
 
-**IMPORTANT** Use `jq` to query and extract relevant parts. For example, 
+**IMPORTANT** Use `jq` to query and extract relevant parts. For example,
 
  Command to Get All 160 Endpoints
 
@@ -124,7 +124,7 @@ You can also query endpoints to see the shape of the data. When doing so constra
 
 ## Using the HF command line tool
 
-The `hf` command line tool gives you further access to Hugging Face repository content and infrastructure. 
+The `hf` command line tool gives you further access to Hugging Face repository content and infrastructure.
 
 ```bash
 ❯ hf --help

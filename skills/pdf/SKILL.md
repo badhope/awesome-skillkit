@@ -155,8 +155,8 @@ story.append(Spacer(1, 0.25 * inch))
 
 # Add summary paragraph
 summary = """
-This quarter we achieved 115% of our target revenue, with strong growth 
-in the enterprise segment. Customer acquisition costs decreased by 12% 
+This quarter we achieved 115% of our target revenue, with strong growth
+in the enterprise segment. Customer acquisition costs decreased by 12%
 while retention rates improved to 94%.
 """
 story.append(Paragraph(summary, styles['Normal']))
@@ -216,7 +216,7 @@ with pdfplumber.open(pdf_path) as pdf:
         text = page.extract_text()
         print(f"--- Page {i+1} ---")
         print(text)
-        
+
         # Extract tables if present
         tables = page.extract_tables()
         if tables:

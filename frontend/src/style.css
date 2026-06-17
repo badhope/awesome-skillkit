@@ -492,11 +492,6 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--s-4);
 }
-.cards--flat {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-}
 
 .skill-card {
   --i: 0;
@@ -541,7 +536,6 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   width: 6px;
   opacity: 1;
 }
-.skill-card--alt { background: var(--bg-elev); }
 
 .skill-card__head {
   display: flex;

@@ -74,7 +74,7 @@ See [client-setup.md](./client-setup.md) for initialization patterns:
 - Environment variable management
 - Singleton patterns for web frameworks
 
-### 2. Memory Architecture  
+### 2. Memory Architecture
 See [memory-architecture.md](./memory-architecture.md) for memory patterns:
 - **Core Memory Blocks**: Always in-context (persona, human, custom blocks)
 - **Archival Memory**: Large corpus with semantic search
@@ -255,7 +255,7 @@ for await (const chunk of stream) { ... }
 
 // Tool rule types
 { type: "run_first", tool_name: "..." }           // InitToolRule
-{ type: "constrain_child_tools", tool_name: "...", children: [...] } // ChildToolRule  
+{ type: "constrain_child_tools", tool_name: "...", children: [...] } // ChildToolRule
 { type: "exit_loop", tool_name: "..." }           // TerminalToolRule
 ```
 

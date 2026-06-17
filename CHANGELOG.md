@@ -10,6 +10,24 @@ where it makes sense.
 
 ### Changed
 
+- **Comprehensive frontend / Python / CI optimization** (#62).
+  - Frontend: extracted 7 shared utilities to `shared.ts` (eliminated
+    duplication across 4 page files); fixed XSS in `detail.ts`
+    `inlineMd` (escape HTML before processing markdown); parallelized
+    `bundle.ts` fetch with `Promise.all`; cached `body.split("\n")`;
+    single-regex `i18n.t()`; added `aria-label` / `scope="col"`.
+  - Python: `validate-skill.py` O(n²)→O(1) error check, unified
+    imports; `check-links.py` SSRF hardening (127.0.0.0/8, ::1,
+    IPv4-mapped IPv6, cloud metadata, encoded IPs); `sync-github.py`
+    retry + rate-limit handling + `archived` bidirectional sync;
+    `audit-all-skills.py` rewritten with ruamel.yaml.
+  - CI: `concurrency` + pip cache + timeout in `validate-skills.yml`;
+    unified Python 3.11 + `requirements.txt` across all workflows.
+- **Removed 268 bad mixed Chinese-English translations** (#63).
+  195 `SKILL.md` files had `name_zh`/`description_zh` that were
+  partial machine translations (e.g. `add-函数-examples`). These
+  are now `null`, falling back to clean English. 39 pure Chinese
+  translations are preserved.
 - **Full recategorization of all 267 skills.** Previously 201/267
   skills (75%) were dumped into `dev-tools`; only 3 of 49 categories
   were used. After a content-aware audit (slug + name + description +
@@ -35,6 +53,11 @@ where it makes sense.
 
 ### Fixed
 
+- **Code hygiene from full scan.** Removed unused `toggleLocale()`
+  export; removed dead CSS (`.cards--flat`, `.skill-card--alt`);
+  stripped trailing whitespace from 19 `SKILL.md` files; updated
+  `docs/next-steps.md` to reflect 89/267 (not 267/267) Chinese
+  translations after the bad-translation cleanup.
 - `README.md` — removed stale `dev-tools: 201, ai: 66` stat (the
   `ai` category doesn't exist); updated `pdf-vision-extractor`
   description to note the body disclaimer rather than a non-existent

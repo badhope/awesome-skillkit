@@ -310,10 +310,10 @@ SITE_LINKED=$(npx netlify status | grep -c "Site ID" || true)
 
 if [ "$SITE_LINKED" -eq 0 ]; then
   echo "Site not linked. Attempting to link by Git remote..."
-  
+
   # Get Git remote URL
   REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
-  
+
   if [ -n "$REMOTE_URL" ]; then
     # Try to link by remote URL
     npx netlify link --git-remote-url "$REMOTE_URL" || {
@@ -346,7 +346,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "Deploying to production..."
   PROD_URL=$(npx netlify deploy --prod --json | jq -r '.deploy_url')
   echo "Production deployed: $PROD_URL"
-  
+
   # Open site in browser
   npx netlify open
 fi

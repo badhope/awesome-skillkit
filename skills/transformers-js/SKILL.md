@@ -566,12 +566,12 @@ function onProgress(info) {
   }
 
   console.log(`${info.status}: ${info.file ?? ''}`);
-  
+
   if (info.status === 'progress') {
     fileProgress[info.file] = info.progress;
     console.log(`${info.file}: ${info.progress.toFixed(1)}%`);
   }
-  
+
   if (info.status === 'done') {
     console.log(`✓ ${info.file} complete`);
   }

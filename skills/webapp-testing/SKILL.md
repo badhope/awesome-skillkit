@@ -2,9 +2,9 @@
 name: Webapp Testing Harness
 name_zh:
 slug: webapp-testing
-description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 
+description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM
   侦察行动模式、截图捕获。
-description_zh: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 
+description_zh: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM
   侦察行动模式、截图捕获。
 category: browser-automation
 tags: [ai, api, backend, cli, database]

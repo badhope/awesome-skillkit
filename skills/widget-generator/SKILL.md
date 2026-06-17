@@ -168,12 +168,12 @@ export const {widgetId}Widget: WidgetPlugin = {
       },
       shouldInject: (context) => {
         const { filters } = context;
-        
+
         // Always show when no filters active
         if (!filters?.q && !filters?.category && !filters?.tag) {
           return true;
         }
-        
+
         // Add custom filter logic here
         return false;
       },
@@ -206,7 +206,7 @@ function {WidgetName}Widget() {
             className="object-cover rounded-lg"
           />
         </div>
-        
+
         {/* Content */}
         <div className="w-full text-center">
           <h3 className="font-semibold text-base mb-1.5">{Title}</h3>

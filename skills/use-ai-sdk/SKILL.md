@@ -2,8 +2,8 @@
 name: ai-sdk
 name_zh: ai-sdk
 slug: use-ai-sdk
-description: Answer questions about the AI SDK and help build AI-powered 
-  features. Use when developers ask about AI SDK functions, want to build AI 
+description: Answer questions about the AI SDK and help build AI-powered
+  features. Use when developers ask about AI SDK functions, want to build AI
   agents, or have questions about AI providers.
 description_zh:
 category: code-assistants

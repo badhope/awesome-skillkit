@@ -303,11 +303,11 @@ class LLMNodeExecutor(Executor):
             model="gpt-4"
         )
         self.prompt_template = self._load_prompt()
-    
+
     def _load_prompt(self) -> str:
         prompt_path = Path(__file__).parent / "llm_node.jinja2"
         return prompt_path.read_text()
-    
+
     @handler
     async def process(self, chat_history: str, question: str) -> str:
         from jinja2 import Template
@@ -324,7 +324,7 @@ class LLMNodeExecutor(Executor):
 def create_workflow():
     format_history = FormatChatHistoryExecutor()
     llm_node = LLMNodeExecutor()
-    
+
     return (
         WorkflowBuilder()
         .add_edge(format_history, llm_node)
@@ -339,7 +339,7 @@ from workflow import create_workflow
 
 async def main():
     workflow = create_workflow()
-    
+
     # Single-turn test
     result = await workflow.run(
         inputs={
@@ -348,7 +348,7 @@ async def main():
         }
     )
     print(f"Answer: {result['answer']}")
-    
+
     # Multi-turn test
     history = [
         {"user": "What is Python?", "assistant": "Python is a programming language."}

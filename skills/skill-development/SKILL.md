@@ -82,7 +82,7 @@ skill-name/
 ```yaml
 ---
 name: skill-name
-description: What this skill does. Use when [triggers]. 
+description: What this skill does. Use when [triggers].
 ---
 
 # Skill Name

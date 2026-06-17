@@ -114,7 +114,7 @@ Before starting any training job, verify:
 - Hugging Face Account with [Pro](https://hf.co/pro), [Team](https://hf.co/enterprise), or [Enterprise](https://hf.co/enterprise) plan (Jobs require paid plan)
 - Authenticated login: Check with `hf_whoami()`
 - **HF_TOKEN for Hub Push** ⚠️ CRITICAL - Training environment is ephemeral, must push to Hub or ALL training results are lost
-- Token must have write permissions  
+- Token must have write permissions
 - **MUST pass `secrets={"HF_TOKEN": "$HF_TOKEN"}` in job config** to make token available (the `$HF_TOKEN` syntax
   references your actual token value)
 
@@ -539,7 +539,7 @@ uv run scripts/hf_benchmarks.py --help
 # Search for benchmarks containing whose name contains the text `ocr`
 uv run scripts/hf_benchmarks.py search --query ocr
 
-# Get the ranked leaderboard for the allenai/olmOCR-bench benchmark 
+# Get the ranked leaderboard for the allenai/olmOCR-bench benchmark
 uv run scripts/hf_benchmarks.py leaderboard allenai/olmOCR-bench
 ```
 
@@ -588,7 +588,7 @@ These scripts demonstrate proper Hub saving, Trackio integration, checkpoint man
 - **Space ID**: `{username}/trackio` (use "trackio" as default space name)
 - **Run naming**: Unless otherwise specified, name the run in a way the user will recognize (e.g., descriptive of the task, model, or purpose)
 - **Config**: Keep minimal - only include hyperparameters and model/dataset info
-- **Project Name**: Use a Project Name to associate runs with a particular Project 
+- **Project Name**: Use a Project Name to associate runs with a particular Project
 
 **User overrides:** If user requests specific trackio configuration (custom space, run naming, grouping, or additional config), apply their preferences instead of defaults.
 
@@ -738,9 +738,9 @@ See `references/training_patterns.md` for detailed examples including:
 ### Out of Memory (OOM)
 
 **Fix (try in order):**
-1. Reduce batch size: `per_device_train_batch_size=1`, increase `gradient_accumulation_steps=8`. Effective batch size is `per_device_train_batch_size` x `gradient_accumulation_steps`. For best performance keep effective batch size close to 128. 
+1. Reduce batch size: `per_device_train_batch_size=1`, increase `gradient_accumulation_steps=8`. Effective batch size is `per_device_train_batch_size` x `gradient_accumulation_steps`. For best performance keep effective batch size close to 128.
 2. Enable: `gradient_checkpointing=True`
-3. Upgrade hardware: t4-small → l4x1, a10g-small → a10g-large etc. 
+3. Upgrade hardware: t4-small → l4x1, a10g-small → a10g-large etc.
 
 ### Dataset Misformatted
 

@@ -71,10 +71,6 @@ export function setLocale(l: Locale): void {
   }
 }
 
-export function toggleLocale(): void {
-  setLocale(current === "en" ? "zh" : "en");
-}
-
 export function subscribe(fn: () => void): () => void {
   subs.add(fn);
   return () => subs.delete(fn);

@@ -2,7 +2,7 @@
 name: setup-repo
 name_zh:
 slug: setup-repo
-description: Initialize a worktree-based repo layout for parallel development. 
+description: Initialize a worktree-based repo layout for parallel development.
   Creates main worktree, reviews worktree, and numbered work branches.
 description_zh:
 category: dev-tools

@@ -2,7 +2,7 @@
 name: slack-gif-creator
 name_zh: slack-gif-creator
 slug: slack-gif-creator
-description: Knowledge and utilities for creating animated GIFs optimized for 
+description: Knowledge and utilities for creating animated GIFs optimized for
   Slack. Provides constraints, validation tools, and animation concepts.
 description_zh:
 category: chat-uikits

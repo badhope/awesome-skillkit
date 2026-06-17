@@ -2,8 +2,8 @@
 name: llamactl-qa
 name_zh: llamactl-qa
 slug: llamactl-qa
-description: Plan and run a design-QA of llamactl changes against a real 
-  backend. Builds a matrix of cases, runs them, and writes a design-review 
+description: Plan and run a design-QA of llamactl changes against a real
+  backend. Builds a matrix of cases, runs them, and writes a design-review
   report.
 description_zh:
 category: terminal-cli

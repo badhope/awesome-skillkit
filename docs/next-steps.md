@@ -163,7 +163,7 @@
   - 合集：列表 category 列 / 5 个按钮
   - 404：标题 / 副标题 / 搜索建议标签 / 返回按钮
   - topbar / footer / noscript / skip-link / lang-toggle aria-label
-- `scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index，267/267 技能非空
+- `scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index；89/267 技能有中文翻译，其余回退英文（劣质中英混杂翻译已清除）
 - **不做的部分**：SKILL.md 正文、`hero.sub` 这种"原文是英文" 的描述字段、meta description、og:title/description（这些是 SEO 用，爬虫通常不跑 JS）
 - **验收**：
   - `npm run build` 通过

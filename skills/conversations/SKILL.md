@@ -189,7 +189,7 @@ def send_user_message(user_id: str, agent_id: str, message: str):
 def get_all_messages(conversation_id: str):
     all_messages = []
     after = None
-    
+
     while True:
         batch = client.conversations.messages.list(
             conversation_id=conversation_id,
@@ -200,7 +200,7 @@ def get_all_messages(conversation_id: str):
             break
         all_messages.extend(batch)
         after = batch[-1].id
-    
+
     return all_messages
 ```
 

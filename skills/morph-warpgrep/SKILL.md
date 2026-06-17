@@ -99,7 +99,7 @@ npm install @morphllm/morphsdk@latest
 # macOS
 brew install ripgrep
 
-# Ubuntu/Debian  
+# Ubuntu/Debian
 sudo apt install ripgrep
 
 # Verify installation
@@ -232,7 +232,7 @@ async function handleToolCall(name: string, input: { query: string }) {
       query: input.query,
       repoRoot: process.cwd()
     });
-    
+
     if (result.success) {
       return result.contexts.map(c => `## ${c.file}\n${c.content}`).join('\n\n');
     }
@@ -422,13 +422,13 @@ const search = await morph.warpGrep.execute({
 
 if (search.success && search.contexts.length > 0) {
   const targetFile = search.contexts[0];
-  
+
   // 2. Apply an edit
   const result = await morph.fastApply.apply({
     originalCode: targetFile.content,
     editSnippet: '// Add your modified version here'
   });
-  
+
   console.log(result.mergedCode);
 }
 ```
