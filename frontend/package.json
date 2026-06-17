@@ -11,7 +11,7 @@
     "data:sync": "python3 ../scripts/validate-skill.py"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
+    "typescript": "^6.0.3",
     "vite": "^8.0.16"
   },
   "dependencies": {
