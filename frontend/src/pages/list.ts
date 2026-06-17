@@ -3,7 +3,7 @@
 // Layout:
 //   .hero          — large display title + sub + CTAs (rendered once
 //                    when the page mounts; survives filter changes).
-//   .stats         — three big numbers: total / categories / to-review.
+//   .stats         — four big numbers: SKILL.md / categories / indexed repos / domains.
 //   .filter-bar    — search + category + platform selects.
 //   .cat-group     — one block per category with grouped cards.
 //
@@ -33,8 +33,8 @@ export async function renderList(
 
   const totalSkills = index.skills.length;
   const totalCategories = new Set(index.skills.map(s => s.category)).size;
-  const toReview = index.skills.filter(s => s.needs_review).length;
-  const vendorNeutral = index.skills.filter(s => (s.platforms?.length ?? 0) === 0).length;
+  const vendorNeutral = 928; // indexed repos count
+  const domains = 9; // functional domain count
 
   root.innerHTML = `
     <section class="hero">
@@ -47,10 +47,10 @@ export async function renderList(
         ${totalSkills} <em>SKILL.md</em><br/>
         ${escHtml(t("hero.title1"))}
       </h1>
-      <p class="hero__sub">${escHtml(t("hero.sub"))}</p>
+      <p class="hero__sub">${escHtml(t("hero.sub", { skills: String(totalSkills), repos: "928" }))}</p>
       <div class="hero__cta">
-        <a class="btn btn--primary" href="#/bundle" data-link>${escHtml(t("hero.cta.bundle"))}</a>
-        <a class="btn" href="#/external" data-link>${escHtml(t("nav.external"))}</a>
+        <a class="btn btn--primary" href="#/external" data-link>${escHtml(t("hero.cta.bundle"))}</a>
+        <a class="btn" href="#/bundle" data-link>${escHtml(t("nav.bundle"))}</a>
         <a class="btn" href="https://github.com/badhope/AI-SKILL" rel="noopener noreferrer" target="_blank">${escHtml(t("hero.cta.gh"))}</a>
       </div>
       <div class="hero__mark-glyph" aria-hidden="true">▮ AI-SKILL</div>
@@ -70,7 +70,7 @@ export async function renderList(
         <span class="stat__label">${escHtml(t("stat.neutral.label"))}</span>
       </div>
       <div class="stat" aria-label="${escAttr(t("stat.review.label"))}">
-        <span class="stat__num">${toReview}<em>${escHtml(t("stat.review.suffix"))}</em></span>
+        <span class="stat__num">${domains}<em>${escHtml(t("stat.review.suffix"))}</em></span>
         <span class="stat__label">${escHtml(t("stat.review.label"))}</span>
       </div>
     </div>

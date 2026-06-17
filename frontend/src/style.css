@@ -834,6 +834,113 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   letter-spacing: -0.02em;
   margin: 0 0 var(--s-3);
 }
+
+/* ---- external index: toolbar / views / groups ---- */
+.ext-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: var(--s-2) 0;
+}
+.ext-toolbar #ext-search {
+  flex: 1 1 280px;
+  min-width: 200px;
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--bg-elev);
+  color: var(--ink);
+  font: inherit;
+}
+.ext-toolbar #ext-search:focus {
+  outline: 2px solid hsl(var(--accent-h) 60% 50%);
+  border-color: transparent;
+}
+.ext-views {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: 2px;
+}
+.ext-view-btn {
+  padding: var(--s-1) var(--s-3);
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: var(--t-sm);
+  border-radius: var(--r-1);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.ext-view-btn[aria-selected="true"] {
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.ext-view-btn:hover:not([aria-selected="true"]) {
+  color: var(--ink);
+}
+.ext-toolbar #ext-vendor-filter {
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--bg-elev);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-sm);
+}
+.ext-stats {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+  margin: 0 0 var(--s-3);
+}
+.ext-group {
+  margin: 0 0 var(--s-6);
+}
+.ext-group__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--border);
+}
+.ext-group__title {
+  font-family: var(--font-disp);
+  font-weight: 600;
+  font-size: var(--t-lg);
+  margin: 0;
+}
+.ext-group__count {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+.ext-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--s-3);
+}
+.ext-archived {
+  color: var(--warn, #c0392b);
+  font-size: var(--t-xs);
+  font-weight: 600;
+}
+.external-card__title {
+  font-family: var(--font-disp);
+  font-weight: 600;
+  font-size: var(--t-md);
+  margin: 0 0 var(--s-2);
+  color: var(--ink);
+}
 .external__subtitle {
   color: var(--ink-soft);
   font-size: var(--t-md);
@@ -980,6 +1087,31 @@ h1, h2, h3, h4, h5, h6 { margin: 0; line-height: var(--lh-snug); }
   background: var(--bg-deep);
   padding: 2px 8px;
   border-radius: var(--radius-1);
+}
+/* Skill-level index: a compact list of concrete capabilities
+   the repo provides. Helps users find a specific skill and
+   know which repo to open. */
+.external-card__skills {
+  list-style: none;
+  margin: 0 0 var(--s-2);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+.external-card__skill {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  padding-left: 12px;
+  position: relative;
+}
+.external-card__skill::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--vendor-hue, 220) 60% 55%);
+  font-size: 10px;
 }
 
 .codeblock { position: relative; }

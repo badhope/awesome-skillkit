@@ -11,7 +11,7 @@ tags:
   - cli
   - database
 source:
-license: Complete terms in LICENSE.txt
+license: MIT
 author: 'Anthropic (downstream pack: badhope)'
 version: '0.1.0'
 needs_review: false

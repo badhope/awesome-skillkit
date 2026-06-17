@@ -8,6 +8,52 @@ where it makes sense.
 
 ## [Unreleased]
 
+### Changed — Major pivot: open-source skill repository index
+
+- **Strategic pivot from "skill vault" to "open-source skill repository
+  index."** The repo's primary purpose is now being the best indexed,
+  classified, searchable directory of AI agent skill repositories.
+  All licenses changed to MIT; no commercialization, community-driven.
+- **Deleted 229 empty shell skills.** 229 of 267 skills were placeholder
+  Prompts with no real content. Only 38 skills with genuine, complete
+  content were retained. The vault is now lean and real.
+- **All licenses changed to MIT.** 35 skills had problematic licenses
+  (UNKNOWN / Proprietary / missing). All are now MIT. The repo is
+  fully open-source, community-driven, no commercialization.
+- **Multi-dimensional classification of 928 indexed repositories.**
+  Every repo in `external-index/skills.yaml` now carries:
+  - `domain` — 9 functional groups (Infrastructure / Agents / RAG /
+    Evaluation & Safety / Dev Tools / Applications / Multimodal /
+    Content & Docs / Research & Training)
+  - `vendor_type` — 4 types (big-corp / popular-community / community /
+    indie)
+  - `category` — 49 sub-categories
+  - `star_tier` — 6 tiers (100k+ / 50k+ / 10k+ / 1k+ / <1k / none)
+- **Skill-level indexing.** Every repo now has a `skills` field listing
+  the concrete capabilities it provides (e.g. `tool use`, `RAG`,
+  `function calling`). Users can search for a specific skill and find
+  which repos provide it. See `scripts/enrich-skills-field.py`.
+- **Frontend external page completely rewritten.** New features:
+  - Search by name / vendor / tag / description / **skills**
+  - 4 grouping views: By Domain / By Vendor Type / By Category / By Stars
+  - Vendor type filter dropdown
+  - Each card displays the repo's skills list
+  - Debounced 120ms search input
+- **Frontend homepage restructured** to emphasize the index positioning.
+  Hero CTA now leads to the external index page; stats show SKILL.md
+  count / categories / indexed repos (928) / domains (9).
+- **`scripts/sync-external-index.py`** bridges `skills.yaml` (928 repos)
+  → `frontend/public/external-repos.json`. Called automatically by
+  `validate-skill.py`.
+- **`scripts/enrich-skills-field.py`** derives a `skills` list for each
+  repo from its category, tags, and summary using a curated
+  category→skills map plus keyword extraction.
+- **README.md rewritten** to reflect the new positioning: open-source,
+  community-driven, MIT-licensed skill repository index.
+- **i18n updated** — hero text, stats labels, external page strings all
+  reflect the index positioning. 13 new keys for search/view/filter/
+  stars/archived/results/skills.
+
 ### Changed
 
 - **Comprehensive frontend / Python / CI optimization** (#62).

@@ -484,6 +484,21 @@ def main() -> int:
     if not args.no_index:
         write_index(passed)
         write_frontend_bundle(targets, passed)
+        # Also sync the external repo index so the frontend's
+        # "External repositories" page stays current with skills.yaml.
+        # The script is named sync-external-index.py (hyphenated), so
+        # we use importlib to load it as a module.
+        try:
+            import importlib.util
+            sync_path = REPO / "scripts" / "sync-external-index.py"
+            if sync_path.exists():
+                spec = importlib.util.spec_from_file_location("sync_external_index", sync_path)
+                if spec and spec.loader:
+                    mod = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(mod)
+                    mod.main()
+        except Exception as e:
+            print(f"  warn   external-index sync failed: {e}", file=sys.stderr)
         if not args.quiet:
             print(f"wrote {INDEX_YAML.relative_to(REPO)}")
             if FRONTEND_PUBLIC.exists():
