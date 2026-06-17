@@ -1,8 +1,10 @@
 ---
 name: store-data-structures
-name_zh: store-数据-structures
-description: 'LobeHub Zustand store data-shape patterns. Use when designing store state,'
-description_zh: 'LobeHub Zustand store data-shape patterns. Use when designing store state,'
+name_zh:
+description: 'LobeHub Zustand store data-shape patterns. Use when designing store
+  state,'
+description_zh: 'LobeHub Zustand store data-shape patterns. Use when designing store
+  state,'
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - database
   - documentation
-source: null
+source:
 needs_review: false
 slug: store-data-structures
 version: '1.0.0'

@@ -1,8 +1,8 @@
 ---
 name: deepeval Pytest Eval Suite
-name_zh: DeepEval 评估套件
+name_zh:
 description: Targeted fix to attempt next round
-description_zh: 配置和运行 DeepEval 评估套件进行全面的 LLM 测试。
+description_zh:
 category: evaluation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - evaluation
-source: null
+source:
 license: Apache-2.0
 author: 'Confident AI (downstream pack: badhope)'
 version: '0.1.0'

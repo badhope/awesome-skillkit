@@ -1,8 +1,9 @@
 ---
 name: cookbook-audit
 name_zh: cookbook-audit
-description: 'Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook review or audit is requested.'
-description_zh: 'Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook 审查 or audit is requested.'
+description: 'Audit an Anthropic Cookbook notebook based on a rubric. Use whenever
+  a notebook review or audit is requested.'
+description_zh:
 category: documentation
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: cookbook-audit
 version: '1.0.0'

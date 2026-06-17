@@ -1,8 +1,10 @@
 ---
 name: agent-runtime-hooks
-name_zh: 智能体-runtime-hooks
-description: 'Agent runtime lifecycle hooks. Use for before/after tool or step hooks, tool mocks, human intervention, sub-agent calls, context compression, evals, tracing, callAgent, or lifecycle events.'
-description_zh: '智能体 runtime lifecycle hooks. Use for before/after tool or step hooks, tool mocks, human intervention, sub-智能体 calls, context compression, evals, tracing, callAgent, or lifecycle events.'
+name_zh:
+description: 'Agent runtime lifecycle hooks. Use for before/after tool or step hooks,
+  tool mocks, human intervention, sub-agent calls, context compression, evals, tracing,
+  callAgent, or lifecycle events.'
+description_zh:
 category: agent-frameworks
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - cli
   - database
 needs_review: false
-source: null
+source:
 slug: agent-runtime-hooks
 version: '1.0.0'
 created: '2026-06-12'

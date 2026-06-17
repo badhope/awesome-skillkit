@@ -9,14 +9,7 @@ description: 'Convert Prompt Flow flow definitions to Microsoft Agent Framework 
   migrate LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source
   flow), deploying MAF workflows (use maf-online-endpoint), enabling tracing (use
   maf-tracing), or general agent-framework Q&A.'
-description_zh: 'Convert 提示词 Flow flow definitions to Microsoft 智能体 Framework (MAF)
-  workflows. Parses flow.dag.yaml, maps nodes to Executors, and generates runnable
-  Python 代码 using 智能体-framework 1.0.x. WHEN: convert promptflow, migrate promptflow,
-  promptflow to MAF, promptflow to 智能体 framework, convert flow.dag.yaml, migrate flow
-  to MAF, convert PF flow, PF to 智能体-framework, convert DAG flow to workflow, migrate
-  LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source flow),
-  deploying MAF workflows (use maf-online-endpoint), enabling tracing (use maf-tracing),
-  or general 智能体-framework Q&A.'
+description_zh:
 category: data-pipelines
 tags:
   - ai
@@ -28,7 +21,7 @@ license: MIT
 author: Team
 version: '2.0.0'
 needs_review: false
-source: null
+source:
 slug: promptflow-to-maf
 created: '2026-06-12'
 updated: '2026-06-12'

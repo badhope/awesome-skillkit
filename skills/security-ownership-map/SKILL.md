@@ -1,6 +1,6 @@
 ---
 name: security-ownership-map
-name_zh: 安全-ownership-map
+name_zh:
 description: 'Analyze git repositories to build a security ownership topology (people-to-file),
   compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases
   and visualization. Trigger only when the user explicitly wants a security-oriented
@@ -8,12 +8,7 @@ description: 'Analyze git repositories to build a security ownership topology (p
   sensitive code, security maintainers, CODEOWNERS reality checks for risk, sensitive
   hotspots, or ownership clusters). Do not trigger for general maintainer lists or
   non-security ownership questions.'
-description_zh: '分析 git repositories to 构建 a 安全 ownership topology (people-to-file),
-  compute bus factor and sensitive-代码 ownership, and export CSV/JSON for graph databases
-  and visualization. Trigger only when the 用户 explicitly wants a 安全-oriented ownership
-  or bus-factor analysis grounded in git history (for example: orphaned sensitive
-  代码, 安全 maintainers, CODEOWNERS reality checks for risk, sensitive hotspots, or ownership
-  clusters). Do not trigger for general maintainer lists or non-安全 ownership questions.'
+description_zh:
 category: guardrails
 tags:
   - ai
@@ -21,7 +16,7 @@ tags:
   - frontend
   - git
   - javascript
-source: null
+source:
 needs_review: false
 slug: security-ownership-map
 version: '1.0.0'

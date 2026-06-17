@@ -20,24 +20,7 @@ description: "Convert an existing Prompt Flow Parallel Run Step (PRS) pipeline s
   doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf),
   deploying as online endpoint (use maf-online-endpoint), enabling tracing only (use
   maf-tracing)."
-description_zh: "Convert an existing 提示词 Flow Parallel 运行 Step (PRS) pipeline submission
-  into an Azure ML PRS pipeline that runs a Microsoft 智能体 Framework (MAF) workflow.
-  Wraps the MAF workflow into a PRS init()/运行() entry script, generates the parallel
-  component YAML and conda environment, and rewrites the pipeline submission script.
-  Replaces what `load_component(flow.dag.yaml)` did automatically for 提示词 Flow — produces
-  the hand-built equivalent so that downstream pipeline 代码 (`flow_node = flow_component(...)`,
-  `flow_node.outputs.flow_outputs`, `flow_node.outputs.debug_info`, `flow_node.mini_batch_size`,
-  scheduler, batch endpoint) stays unchanged. WHEN: convert promptflow PRS to MAF
-  PRS, migrate PRS pipeline to 智能体 framework, wrap MAF workflow as parallel component,
-  bulk 运行 MAF workflow, 运行 智能体 framework as parallel 运行 step, batch 运行 MAF workflow
-  on AML, submit MAF workflow as pipeline component, replace flow.dag.yaml with MAF
-  workflow in pipeline, load_component equivalent for MAF workflow, MAF version of
-  flow_component, load MAF workflow as component, wrap MAF workflow as flow component,
-  MAF flow component, replace flow_node in pipeline with MAF workflow, keep flow_outputs
-  and debug_info ports with MAF, MAF parallel component with connections={}, 运行 MAF
-  workflow as flow_node in AML pipeline, load_component('workflow.py') doesn't work.
-  DO NOT USE FOR: converting the flow itself (use promptflow-to-maf), deploying as
-  online endpoint (use maf-online-endpoint), enabling tracing only (use maf-tracing)."
+description_zh:
 category: data-pipelines
 tags:
   - ai
@@ -45,7 +28,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 license: MIT
 author: Team
 version: '0.1.0-draft'

@@ -2,7 +2,7 @@
 name: notion-research-documentation
 name_zh: notion-research-documentation
 description: 'Research across Notion and synthesize into structured documentation;'
-description_zh: Research across Notion and synthesize into structured 文档;
+description_zh:
 category: documentation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - database
   - documentation
-source: null
+source:
 needs_review: false
 slug: notion-research-documentation
 version: '1.0.0'

@@ -2,7 +2,7 @@
 name: Skill
 name_zh: 技能
 description: Setup tips and tricks for CMA as an MCP server
-description_zh: CMA作为MCP服务器的设置技巧和注意事项
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: skill
 version: '1.0.0'

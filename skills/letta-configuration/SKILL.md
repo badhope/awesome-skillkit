@@ -1,8 +1,10 @@
 ---
 name: letta-configuration
 name_zh: letta-configuration
-description: 'Configure LLM models and providers for Letta agents and servers. Use when setting model handles, adjusting temperature/tokens, configuring provider-specific settings, setting up BYOK providers, or ...'
-description_zh: 'Configure LLM models and providers for Letta agents and servers. Use when setting 模型 handles, adjusting temperature/tokens, configuring provider-specific settings, setting up BYOK providers, or con...'
+description: 'Configure LLM models and providers for Letta agents and servers. Use
+  when setting model handles, adjusting temperature/tokens, configuring provider-specific
+  settings, setting up BYOK providers, or ...'
+description_zh:
 category: agent-frameworks
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 license: MIT
 needs_review: false
 slug: letta-configuration

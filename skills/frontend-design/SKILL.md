@@ -2,7 +2,7 @@
 name: frontend-design
 name_zh: frontend-design
 description: 'Guidance for distinctive, intentional visual design when building new'
-description_zh: 'Guidance for distinctive, intentional visual 设计 when building new'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - frontend
   - git
-source: null
+source:
 license: Complete terms in LICENSE.txt
 needs_review: false
 slug: frontend-design

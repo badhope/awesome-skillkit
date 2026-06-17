@@ -1,8 +1,9 @@
 ---
 name: scrub-issue
-name_zh: scrub-问题
-description: 'Fetch, analyze, reproduce, and minimize GitHub issue reproductions. Use'
-description_zh: 'Fetch, 分析, reproduce, and minimize GitHub issue reproductions. Use'
+name_zh:
+description: 'Fetch, analyze, reproduce, and minimize GitHub issue reproductions.
+  Use'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - evaluation
-source: null
+source:
 needs_review: false
 slug: scrub-issue
 version: '1.0.0'

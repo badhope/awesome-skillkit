@@ -1,8 +1,10 @@
 ---
 name: add-uint-support
 name_zh: add-uint-support
-description: 'Add unsigned integer (uint) type support to PyTorch operators by updating AT_DISPATCH macros. Use when adding support for uint16, uint32, uint64 types to operators, kernels, or when user mentions e...'
-description_zh: 'Add unsigned integer (uint) type support to PyTorch operators by updating AT_DISPATCH macros. Use when adding support for uint16, uint32, uint64 types to operators, kernels, or when 用户 mentions ena...'
+description: 'Add unsigned integer (uint) type support to PyTorch operators by updating
+  AT_DISPATCH macros. Use when adding support for uint16, uint32, uint64 types to
+  operators, kernels, or when user mentions e...'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - testing
   - typescript
 needs_review: false
-source: null
+source:
 slug: add-uint-support
 version: '1.0.0'
 created: '2026-06-12'

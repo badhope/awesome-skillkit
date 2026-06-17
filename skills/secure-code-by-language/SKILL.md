@@ -2,7 +2,7 @@
 name: Secure Code by Language
 name_zh: 按语言的安全编码指南
 description: 'The user said "write this securely", "do a security'
-description_zh: '在写或审查代码前，按语言 / 框架查安全编码指南 —— 挑对参考文件（Python / JavaScript / TypeScript / Go / 前后端分查），按正确模式用（主动写、被动检测、完整报告）。只在用户明确说"secure by default"、"security review"或"AppSec"时触发，不接普通 code review 的活儿。'
+description_zh:
 category: guardrails
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: MIT
 author: 'OpenAI (downstream pack: badhope)'
 version: '0.1.0'

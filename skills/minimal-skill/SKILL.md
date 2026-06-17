@@ -1,15 +1,15 @@
 ---
 name: minimal-skill
-name_zh: minimal-技能
+name_zh:
 description: A minimal skill with only required fields.
-description_zh: A minimal 技能 with only required fields.
+description_zh:
 category: dev-tools
 tags:
   - frontend
   - llm
   - python
   - typescript
-source: null
+source:
 needs_review: false
 slug: minimal-skill
 version: '1.0.0'

@@ -1,8 +1,10 @@
 ---
 name: frontend-skill
 name_zh: 前端-技能
-description: 'Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This skill enforces restrained composition, image-led hierarchy, cohesive content structure, an...'
-description_zh: 'Use when the task asks for a visually strong landing page, website, app, prototype, demo, or game UI. This 技能 enforces restrained composition, image-led hierarchy, cohesive content structure, and t...'
+description: 'Use when the task asks for a visually strong landing page, website,
+  app, prototype, demo, or game UI. This skill enforces restrained composition, image-led
+  hierarchy, cohesive content structure, an...'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - documentation
   - frontend
 needs_review: false
-source: null
+source:
 slug: frontend-skill
 version: '1.0.0'
 created: '2026-06-12'

@@ -2,7 +2,7 @@
 name: chatgpt-apps
 name_zh: chatgpt-apps
 description: 'Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications'
-description_zh: '构建, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications'
+description_zh:
 category: chat-uikits
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - deployment
   - documentation
-source: null
+source:
 needs_review: false
 slug: chatgpt-apps
 version: '1.0.0'

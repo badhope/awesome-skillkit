@@ -2,7 +2,7 @@
 name: pr-review
 name_zh: pr-审查
 description: 'Review a PR for correctness, security, code quality, and testing issues.'
-description_zh: 审查 a PR for correctness, 安全, 代码 quality, and 测试 issues.
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - database
   - frontend
-source: null
+source:
 author: autogpt-team
 version: '1.0.0'
 needs_review: false

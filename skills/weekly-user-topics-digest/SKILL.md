@@ -1,6 +1,6 @@
 ---
 name: weekly-user-topics-digest
-name_zh: weekly-用户-topics-digest
+name_zh:
 description: 'Use this skill when you need guidance on weekly-user-topics-digest.'
 description_zh: 'Use this skill when you need guidance on weekly-user-topics-digest.'
 category: case-studies
@@ -11,7 +11,7 @@ tags:
   - cli
   - database
 needs_review: false
-source: null
+source:
 slug: weekly-user-topics-digest
 version: '1.0.0'
 created: '2026-06-12'

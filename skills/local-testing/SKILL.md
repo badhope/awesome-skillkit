@@ -1,6 +1,6 @@
 ---
 name: local-testing
-name_zh: local-测试
+name_zh:
 description: 'Use this skill when you need guidance on local-testing.'
 description_zh: 'Use this skill when you need guidance on local-testing.'
 category: dev-tools
@@ -11,7 +11,7 @@ tags:
   - cli
   - docker
 needs_review: false
-source: null
+source:
 slug: local-testing
 version: '1.0.0'
 created: '2026-06-12'

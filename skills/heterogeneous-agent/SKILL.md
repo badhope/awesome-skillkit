@@ -1,8 +1,10 @@
 ---
 name: heterogeneous-agent
-name_zh: heterogeneous-智能体
-description: 'Implement or debug LobeHub heterogeneous agents. Use for Claude Code/Codex adapters, external CLI agents, event mapping, IPC, persistence, tool-call chains, sessions, traces, or adapter bugs.'
-description_zh: 'Implement or 调试 LobeHub heterogeneous agents. Use for Claude 代码/Codex adapters, external CLI agents, event mapping, IPC, persistence, tool-call chains, sessions, traces, or adapter bugs.'
+name_zh:
+description: 'Implement or debug LobeHub heterogeneous agents. Use for Claude Code/Codex
+  adapters, external CLI agents, event mapping, IPC, persistence, tool-call chains,
+  sessions, traces, or adapter bugs.'
+description_zh:
 category: agent-frameworks
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - cli
   - database
   - frontend
-source: null
+source:
 needs_review: false
 slug: heterogeneous-agent
 version: '1.0.0'

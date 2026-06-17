@@ -1,8 +1,8 @@
 ---
 name: vercel-deploy
-name_zh: vercel-部署
+name_zh:
 description: 'Deploy applications and websites to Vercel. Use when the user requests'
-description_zh: 部署 applications and websites to Vercel. Use when the 用户 requests
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - database
   - deployment
   - frontend
-source: null
+source:
 needs_review: false
 slug: vercel-deploy
 version: '1.0.0'

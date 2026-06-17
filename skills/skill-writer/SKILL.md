@@ -1,8 +1,10 @@
 ---
 name: skill-writer
-name_zh: 技能-writer
-description: 'Guide users through creating Agent Skills for Claude Code. Use when the user wants to create, write, author, or design a new Skill, or needs help with SKILL.md files, frontmatter, or skill structure.'
-description_zh: 'Guide users through creating 智能体 Skills for Claude 代码. Use when the 用户 wants to 创建, write, author, or 设计 a new 技能, or needs help with 技能.md files, frontmatter, or 技能 structure.'
+name_zh:
+description: 'Guide users through creating Agent Skills for Claude Code. Use when
+  the user wants to create, write, author, or design a new Skill, or needs help with
+  SKILL.md files, frontmatter, or skill structure.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - documentation
   - frontend
 needs_review: false
-source: null
+source:
 slug: skill-writer
 version: '1.0.0'
 created: '2026-06-12'

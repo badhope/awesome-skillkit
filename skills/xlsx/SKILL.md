@@ -2,7 +2,7 @@
 name: xlsx
 name_zh: xlsx
 description: 'Use this skill any time a spreadsheet file is the primary input or output.'
-description_zh: 'Use this 技能 any time a spreadsheet file is the primary input or output.'
+description_zh:
 category: multimodal
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - database
   - documentation
-source: null
+source:
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
 slug: xlsx

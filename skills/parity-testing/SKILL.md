@@ -1,8 +1,12 @@
 ---
 name: testing-parity
-name_zh: 测试-parity
-description: '> **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — ...'
-description_zh: '> **Note**: Parity testing is **separate from** the unit-level tests that ship in `tests/`. If you are integrating a new model, the model-level test suite under `tests/models/` is still required — ...'
+name_zh:
+description: '> **Note**: Parity testing is **separate from** the unit-level tests
+  that ship in `tests/`. If you are integrating a new model, the model-level test
+  suite under `tests/models/` is still required — ...'
+description_zh: '> **Note**: Parity testing is **separate from** the unit-level tests
+  that ship in `tests/`. If you are integrating a new model, the model-level test
+  suite under `tests/models/` is still required — ...'
 category: evaluation
 tags:
   - ai
@@ -11,7 +15,7 @@ tags:
   - frontend
   - huggingface
 needs_review: false
-source: null
+source:
 slug: parity-testing
 version: '1.0.0'
 created: '2026-06-12'

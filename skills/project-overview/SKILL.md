@@ -1,8 +1,10 @@
 ---
 name: project-overview
 name_zh: project-overview
-description: 'LobeHub open-source monorepo architecture map. Use when locating code layers, understanding apps/packages/src layout, business stubs, project structure, or onboarding to the repository.'
-description_zh: 'LobeHub open-source monorepo architecture map. Use when locating 代码 layers, understanding apps/packages/src layout, business stubs, project structure, or onboarding to the repository.'
+description: 'LobeHub open-source monorepo architecture map. Use when locating code
+  layers, understanding apps/packages/src layout, business stubs, project structure,
+  or onboarding to the repository.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: project-overview
 version: '1.0.0'

@@ -1,8 +1,10 @@
 ---
 name: karpathy-guidelines
 name_zh: karpathy-guidelines
-description: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifi...'
-description_zh: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring 代码 to avoid overcomplication, make surgical changes, surface assumptions, and define verifiab...'
+description: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when
+  writing, reviewing, or refactoring code to avoid overcomplication, make surgical
+  changes, surface assumptions, and define verifi...'
+description_zh:
 category: documentation
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - llm
   - testing
   - typescript
-source: null
+source:
 license: MIT
 needs_review: false
 slug: karpathy-guidelines

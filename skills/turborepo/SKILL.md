@@ -1,8 +1,8 @@
 ---
 name: Turborepo Monorepo Authoring
-name_zh: Turborepo Monorepo 编写
+name_zh:
 description: 'You have a **Turborepo monorepo** and you''re doing one of'
-description_zh: 'Turborepo monorepo 构建系统指南 —— 包任务与根任务、task 流水线、dependsOn、缓存、远程 cache、--filter、--affected、环境变量、内部包、边界。覆盖八个让 Turborepo 并行失效的反模式。'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - frontend
-source: null
+source:
 license: MIT
 author: 'Langfuse (downstream pack: badhope)'
 version: '0.1.0'

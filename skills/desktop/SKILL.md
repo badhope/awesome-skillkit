@@ -1,8 +1,9 @@
 ---
 name: desktop
 name_zh: desktop
-description: 'Electron desktop development guide — IPC handlers, controllers, preload scripts, window/menu management.'
-description_zh: 'Electron desktop 开发 guide — IPC handlers, controllers, preload scripts, window/menu 管理.'
+description: 'Electron desktop development guide — IPC handlers, controllers, preload
+  scripts, window/menu management.'
+description_zh:
 category: applications
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: desktop
 version: '1.0.0'

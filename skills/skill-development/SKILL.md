@@ -1,8 +1,8 @@
 ---
 name: skill-development
-name_zh: 技能-development
+name_zh:
 description: 'Create and contribute skills to the communal knowledge base. Use when'
-description_zh: '创建 and contribute skills to the communal knowledge base. Use when'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - documentation
   - frontend
-source: null
+source:
 license: MIT
 needs_review: false
 slug: skill-development

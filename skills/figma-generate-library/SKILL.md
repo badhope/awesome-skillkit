@@ -1,8 +1,8 @@
 ---
 name: figma-generate-library
-name_zh: figma-生成-library
+name_zh:
 description: 'Build or update a professional-grade design system in Figma from a codebase.'
-description_zh: '构建 or 更新 a professional-grade 设计 system in Figma from a codebase.'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - database
   - documentation
-source: null
+source:
 needs_review: false
 slug: figma-generate-library
 version: '1.0.0'

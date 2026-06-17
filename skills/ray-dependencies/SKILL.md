@@ -1,8 +1,10 @@
 ---
 name: ray-dependencies
 name_zh: ray-dependencies
-description: 'Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, debug dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `p...'
-description_zh: 'Manage Python dependencies in Ray — add/remove/upgrade packages, work with raydepsets lock files, 调试 dependency conflicts, and regenerate compiled requirements. Covers `python/requirements*`, `pyth...'
+description: 'Manage Python dependencies in Ray — add/remove/upgrade packages, work
+  with raydepsets lock files, debug dependency conflicts, and regenerate compiled
+  requirements. Covers `python/requirements*`, `p...'
+description_zh:
 category: distributed-training
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: ray-dependencies
 version: '1.0.0'

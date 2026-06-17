@@ -2,7 +2,7 @@
 name: docx
 name_zh: docx
 description: 'Use this skill whenever the user wants to create, read, edit, or manipulate'
-description_zh: 'Use this 技能 whenever the 用户 wants to 创建, read, edit, or manipulate'
+description_zh:
 category: multimodal
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - database
   - documentation
-source: null
+source:
 license: Proprietary. LICENSE.txt has complete terms
 needs_review: false
 slug: docx

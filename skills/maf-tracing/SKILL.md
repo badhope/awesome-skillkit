@@ -8,13 +8,7 @@ description: 'Enable tracing and logging for Microsoft Agent Framework (MAF) wor
   Application Insights for MAF, OTLP export, observe workflow, monitor agent workflow,
   trace agent framework, instrument MAF, add observability, trace workflow executions,
   debug workflow.'
-description_zh: 'Enable tracing and logging for Microsoft 智能体 Framework (MAF) workflows.
-  Configures OpenTelemetry export to Azure Application Insights and/or a generic OTLP
-  endpoint using environment variables. Adds required packages to requirements.txt.
-  WHEN: enable tracing, add tracing, enable logging, add logging, configure telemetry,
-  Application Insights for MAF, OTLP export, observe workflow, 监控 智能体 workflow, trace
-  智能体 framework, instrument MAF, add observability, trace workflow executions, 调试
-  workflow.'
+description_zh:
 category: observability
 tags:
   - ai
@@ -22,7 +16,7 @@ tags:
   - backend
   - frontend
   - llm
-source: null
+source:
 license: MIT
 author: Team
 version: '1.0.0'

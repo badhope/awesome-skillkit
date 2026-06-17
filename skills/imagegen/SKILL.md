@@ -2,7 +2,7 @@
 name: imagegen
 name_zh: imagegen
 description: 'Generate or edit raster images when the task benefits from AI-created'
-description_zh: 生成 or edit raster images when the task benefits from AI-created
+description_zh:
 category: image-generation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: imagegen
 version: '1.0.0'

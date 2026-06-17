@@ -2,7 +2,7 @@
 name: db-migrations
 name_zh: db-migrations
 description: 'Use for Drizzle migrations: schema/table/column changes, migration generation'
-description_zh: 'Use for Drizzle migrations: schema/table/column changes, 迁移 generation'
+description_zh:
 category: text-to-sql
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - database
   - deployment
   - documentation
-source: null
+source:
 needs_review: false
 slug: db-migrations
 version: '1.0.0'

@@ -1,8 +1,10 @@
 ---
 name: pr
 name_zh: pr
-description: 'Create a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / server TRPC) merges bef...'
-description_zh: '创建 a PR for the current branch (targets `canary` by default), including splitting one cross-layer branch into ordered stacked PRs so a lower layer (db / shared package / 服务器 TRPC) merges before its...'
+description: 'Create a PR for the current branch (targets `canary` by default), including
+  splitting one cross-layer branch into ordered stacked PRs so a lower layer (db /
+  shared package / server TRPC) merges bef...'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - cli
   - database
 needs_review: false
-source: null
+source:
 slug: pr
 version: '1.0.0'
 created: '2026-06-12'

@@ -1,8 +1,10 @@
 ---
 name: pr-polish
 name_zh: pr-polish
-description: 'Alternate /pr-review and /pr-address on a PR until the PR is truly mergeable — no new review findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI c...'
-description_zh: 'Alternate /pr-审查 and /pr-address on a PR until the PR is truly mergeable — no new 审查 findings, zero unresolved inline threads, zero unaddressed top-level reviews or issue comments, all CI checks gr...'
+description: 'Alternate /pr-review and /pr-address on a PR until the PR is truly mergeable
+  — no new review findings, zero unresolved inline threads, zero unaddressed top-level
+  reviews or issue comments, all CI c...'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 author: autogpt-team
 version: '1.0.0'
 needs_review: false

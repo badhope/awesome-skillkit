@@ -1,8 +1,8 @@
 ---
 name: memfs-search
-name_zh: memfs-搜索
+name_zh:
 description: 'Semantic search over agent memory files. Use when you need to find conceptually'
-description_zh: 'Semantic search over 智能体 memory files. Use when you need to find conceptually'
+description_zh:
 category: memory
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - evaluation
   - frontend
   - javascript
-source: null
+source:
 needs_review: false
 slug: memfs-search
 version: '1.0.0'

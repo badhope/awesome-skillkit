@@ -1,8 +1,8 @@
 ---
 name: promptfoo Redteam Plugin Author
-name_zh: Promptfoo 红队测试
+name_zh:
 description: How many fail conditions the rubric covers (self-check)
-description_zh: 使用 Promptfoo 进行 LLM 应用的红队测试和安全评估。
+description_zh:
 category: safety-alignment
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - evaluation
   - frontend
-source: null
+source:
 license: MIT
 author: 'Promptfoo (downstream pack: badhope)'
 version: '0.1.0'

@@ -1,8 +1,8 @@
 ---
 name: discount-review
-name_zh: discount-审查
+name_zh:
 description: 'Inspect the discount policy fixture with a repeatable review checklist'
-description_zh: 'Inspect the discount policy fixture with a repeatable 审查 checklist'
+description_zh:
 category: finance
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - llm
   - python
   - typescript
-source: null
+source:
 needs_review: false
 slug: discount-review
 version: '1.0.0'

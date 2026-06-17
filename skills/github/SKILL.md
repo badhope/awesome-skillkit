@@ -6,11 +6,7 @@ description: 'GitHub operations via `gh` CLI: issues, PRs, CI runs, code review,
   (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web
   UI interactions requiring manual browser flows (use browser tooling when available),
   bulk operations across many repos (script with gh api), or when gh auth is not configured.'
-description_zh: 'GitHub operations via `gh` CLI: issues, PRs, CI runs, 代码 审查, 接口 queries.
-  Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering
-  PRs or issues, (4) viewing 运行 logs. NOT for: complex web UI interactions requiring
-  manual browser flows (use browser tooling when available), bulk operations across
-  many repos (script with gh 接口), or when gh auth is not configured.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -18,7 +14,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: github
 version: '1.0.0'

@@ -2,7 +2,7 @@
 name: morph-warpgrep
 name_zh: morph-warpgrep
 description: 'Integration guide for Morph''s WarpGrep (fast agentic code search) and'
-description_zh: 集成 guide for Morph's WarpGrep (fast agentic 代码 search) and
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 needs_review: false
 slug: morph-warpgrep
 version: '1.0.0'

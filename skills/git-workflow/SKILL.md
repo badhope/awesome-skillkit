@@ -1,8 +1,8 @@
 ---
 name: git-workflow
-name_zh: Git 工作流
+name_zh:
 description: Git workflow guidance for commits, branches, and pull requests
-description_zh: 遵循 Git 工作流最佳实践，包括分支策略和提交规范。
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - documentation
   - frontend
-source: null
+source:
 license: Apache-2.0
 author: unknown
 version: '0.1.0'

@@ -2,7 +2,7 @@
 name: huggingface-spaces
 name_zh: huggingface-spaces
 description: 'Build, deploy, and maintain applications on Hugging Face Spaces — Gradio'
-description_zh: '构建, 部署, and maintain applications on Hugging Face Spaces — Gradio'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: huggingface-spaces
 version: '1.0.0'

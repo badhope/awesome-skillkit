@@ -1,6 +1,6 @@
 ---
 name: fix-issue
-name_zh: fix-问题
+name_zh:
 description: 'Fix bugs reported in PyTorch GitHub issues by reproducing, root-causing,'
 description_zh: 'Fix bugs reported in PyTorch GitHub issues by reproducing, root-causing,'
 category: dev-tools
@@ -10,7 +10,7 @@ tags:
   - documentation
   - frontend
   - git
-source: null
+source:
 needs_review: false
 slug: fix-issue
 version: '1.0.0'

@@ -1,8 +1,8 @@
 ---
 name: Storybook Component Stories
-name_zh: Storybook 组件故事编写
+name_zh:
 description: 'You''re writing or reviewing a **Storybook story** for a'
-description_zh: '为 React 组件编写或审查 Storybook 故事（.stories.tsx）—— CSF Next 格式、纯展示组件规则、类型化元数据、故事命名按状态、禁止 MSW。"一个文件一个导出组件"的规则是一把双刃剑。'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: MIT
 author: 'Langfuse (downstream pack: badhope)'
 version: '0.1.0'

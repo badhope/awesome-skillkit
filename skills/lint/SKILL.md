@@ -2,7 +2,7 @@
 name: lint
 name_zh: lint
 description: Run linting and formatting checks on Ray code
-description_zh: 运行 linting and formatting checks on Ray 代码
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - documentation
   - frontend
   - git
-source: null
+source:
 needs_review: false
 slug: lint
 version: '1.0.0'

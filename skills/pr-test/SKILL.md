@@ -2,7 +2,7 @@
 name: pr-test
 name_zh: pr-测试
 description: 'E2E manual testing of PRs/branches using docker compose, agent-browser,'
-description_zh: E2E manual 测试 of PRs/branches using docker compose, 智能体-browser,
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 author: autogpt-team
 version: '2.1.0'
 needs_review: false

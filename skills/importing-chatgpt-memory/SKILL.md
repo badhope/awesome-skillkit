@@ -1,8 +1,9 @@
 ---
 name: importing-chatgpt-memory
-name_zh: importing-chatgpt-内存
+name_zh:
 description: 'Clone ChatGPT saved memory into Letta, then optionally enrich it with'
-description_zh: 'Clone ChatGPT saved memory into Letta, then optionally enrich it with'
+description_zh: 'Clone ChatGPT saved memory into Letta, then optionally enrich it
+  with'
 category: memory
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - documentation
   - frontend
   - git
-source: null
+source:
 license: MIT
 needs_review: false
 slug: importing-chatgpt-memory

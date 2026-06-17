@@ -1,8 +1,10 @@
 ---
 name: Letta Conversations API
-name_zh: Letta Conversations 接口
-description: 'Guide for using the Letta Conversations API to manage isolated message threads on agents. Use when building multi-user chat applications, session management, or any scenario requiring separate conv...'
-description_zh: 'Guide for using the Letta Conversations 接口 to manage isolated message threads on agents. Use when building multi-用户 chat applications, session 管理, or any scenario requiring separate conversation co...'
+name_zh:
+description: 'Guide for using the Letta Conversations API to manage isolated message
+  threads on agents. Use when building multi-user chat applications, session management,
+  or any scenario requiring separate conv...'
+description_zh:
 category: agent-frameworks
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - cli
   - frontend
 needs_review: false
-source: null
+source:
 slug: conversations
 version: '1.0.0'
 created: '2026-06-12'

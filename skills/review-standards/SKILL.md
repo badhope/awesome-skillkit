@@ -1,8 +1,8 @@
 ---
 name: review-standards
-name_zh: 审查-standards
+name_zh:
 description: 'Use this skill when asked to review authentication code for security'
-description_zh: Use this 技能 when asked to 审查 authentication 代码 for 安全
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - llm
   - python
   - security
-source: null
+source:
 needs_review: false
 slug: review-standards
 version: '1.0.0'

@@ -2,7 +2,7 @@
 name: yeet
 name_zh: yeet
 description: 'Use only when the user explicitly asks to stage, commit, push, and open'
-description_zh: 'Use only when the 用户 explicitly asks to stage, commit, push, and open'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - documentation
   - frontend
-source: null
+source:
 needs_review: false
 slug: yeet
 version: '1.0.0'

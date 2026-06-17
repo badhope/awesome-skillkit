@@ -1,8 +1,9 @@
 ---
 name: testing
 name_zh: 测试
-description: 'Vitest testing guide. Use when writing or updating tests, fixing failing tests, improving coverage, debugging test issues, or setting up mocks.'
-description_zh: 'Vitest 测试 guide. Use when writing or updating tests, fixing failing tests, improving coverage, debugging 测试 issues, or setting up mocks.'
+description: 'Vitest testing guide. Use when writing or updating tests, fixing failing
+  tests, improving coverage, debugging test issues, or setting up mocks.'
+description_zh:
 category: evaluation
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: testing
 version: '1.0.0'

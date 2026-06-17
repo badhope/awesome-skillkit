@@ -1,8 +1,10 @@
 ---
 name: huggingface-local-models
 name_zh: huggingface-local-models
-description: 'Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-...'
-description_zh: 'Use to select models to 运行 locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-c...'
+description: 'Use to select models to run locally with llama.cpp and GGUF on CPU,
+  Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers,
+  exact GGUF file lookup, conversion, and OpenAI-...'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 needs_review: false
 slug: huggingface-local-models
 version: '1.0.0'

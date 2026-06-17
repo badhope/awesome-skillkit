@@ -1,6 +1,6 @@
 ---
 name: PDF Vision Extractor
-name_zh: PDF 视觉抽取器
+name_zh:
 description: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
 description_zh: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
 category: multimodal
@@ -10,7 +10,7 @@ tags:
   - javascript
   - llm
   - typescript
-source: null
+source:
 license: MIT
 author: badhope
 version: '0.1.0'

@@ -1,8 +1,8 @@
 ---
 name: linear-bug-triage
-name_zh: Linear Bug 分类
+name_zh:
 description: 'Deduplicate measured bug or regression evidence against Linear, then'
-description_zh: 使用 Linear 对 bug 进行分类、优先级排序和跟踪。
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - datadog
-source: null
+source:
 license: UNKNOWN
 author: unknown
 version: '0.1.0'

@@ -1,8 +1,8 @@
 ---
 name: PDF Summarizer
-name_zh: PDF 摘要器
+name_zh:
 description: number of bullets in the summary
-description_zh: 把 PDF 总结成 N 条要点，按受众调整深度。无厂商依赖。
+description_zh:
 category: multimodal
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - documentation
   - frontend
   - llm
-source: null
+source:
 license: MIT
 author: badhope
 version: '1.0.0'

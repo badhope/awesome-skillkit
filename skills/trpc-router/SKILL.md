@@ -2,7 +2,7 @@
 name: trpc-router
 name_zh: trpc-router
 description: 'TRPC router development guide. Use when creating or modifying apps/server/src/routers,'
-description_zh: 'TRPC router 开发 guide. Use when creating or modifying apps/服务器/src/routers,'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: trpc-router
 version: '1.0.0'

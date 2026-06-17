@@ -2,7 +2,7 @@
 name: cli
 name_zh: cli
 description: 'LobeHub CLI (@lobehub/cli) development guide — commands, subcommands,'
-description_zh: LobeHub CLI (@lobehub/cli) 开发 guide — commands, subcommands,
+description_zh:
 category: terminal-cli
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 needs_review: false
 slug: cli
 version: '1.0.0'

@@ -2,7 +2,7 @@
 name: Task
 name_zh: 任务
 description: Execute tasks within the LobeHub task system using the lh task CLI
-description_zh: 在LobeHub任务系统中使用lh task CLI执行任务
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - documentation
   - frontend
   - javascript
-source: null
+source:
 needs_review: false
 slug: task
 version: '1.0.0'

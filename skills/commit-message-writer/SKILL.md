@@ -2,7 +2,7 @@
 name: Commit Message Writer
 name_zh: 提交信息写手
 description: max subject line length
-description_zh: 根据 diff 生成 conventional commit 信息。无厂商依赖。
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - deployment
   - documentation
-source: null
+source:
 license: MIT
 author: badhope
 version: '1.0.0'

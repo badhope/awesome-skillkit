@@ -1,8 +1,10 @@
 ---
 name: gh-address-comments
 name_zh: gh-address-comments
-description: 'Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.'
-description_zh: 'Help address 审查/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and 提示词 the 用户 to authenticate if not logged in.'
+description: 'Help address review/issue comments on the open GitHub PR for the current
+  branch using gh CLI; verify gh auth first and prompt the user to authenticate if
+  not logged in.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - database
   - frontend
   - git
-source: null
+source:
 needs_review: false
 slug: gh-address-comments
 version: '1.0.0'

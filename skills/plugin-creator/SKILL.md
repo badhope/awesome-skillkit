@@ -1,8 +1,10 @@
 ---
 name: plugin-creator
 name_zh: plugin-creator
-description: 'Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use...'
-description_zh: '创建 and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or 测试. Use when Cod...'
+description: 'Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`,
+  optional plugin folders/files, and baseline placeholders you can edit before publishing
+  or testing. Use...'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - javascript
   - llm
   - python
-source: null
+source:
 needs_review: false
 slug: plugin-creator
 version: '1.0.0'

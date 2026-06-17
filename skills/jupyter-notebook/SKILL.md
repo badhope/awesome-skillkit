@@ -2,7 +2,7 @@
 name: jupyter-notebook
 name_zh: jupyter-notebook
 description: 'Use when the user asks to create, scaffold, or edit Jupyter notebooks'
-description_zh: Use when the 用户 asks to 创建, scaffold, or edit Jupyter notebooks
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - frontend
   - javascript
   - llm
-source: null
+source:
 needs_review: false
 slug: jupyter-notebook
 version: '1.0.0'

@@ -1,6 +1,6 @@
 ---
 name: security-threat-model
-name_zh: 安全-threat-model
+name_zh:
 description: 'Repository-grounded threat modeling that enumerates trust boundaries,'
 description_zh: 'Repository-grounded threat modeling that enumerates trust boundaries,'
 category: guardrails
@@ -10,7 +10,7 @@ tags:
   - cli
   - database
   - deployment
-source: null
+source:
 needs_review: false
 slug: security-threat-model
 version: '1.0.0'

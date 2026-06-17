@@ -1,8 +1,9 @@
 ---
 name: rebuild
 name_zh: rebuild
-description: 'Rebuild Ray from source — determines the right build mode based on what changed'
-description_zh: 'Rebuild Ray from source — determines the right 构建 mode based on what changed'
+description: 'Rebuild Ray from source — determines the right build mode based on what
+  changed'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -11,7 +12,7 @@ tags:
   - database
   - documentation
 needs_review: false
-source: null
+source:
 slug: rebuild
 version: '1.0.0'
 created: '2026-06-12'

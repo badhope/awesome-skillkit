@@ -2,7 +2,7 @@
 name: speech
 name_zh: speech
 description: 'Use when the user asks for text-to-speech narration or voiceover, accessibility'
-description_zh: 'Use when the 用户 asks for text-to-speech narration or voiceover, accessibility'
+description_zh:
 category: audio-speech
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - frontend
-source: null
+source:
 needs_review: false
 slug: speech
 version: '1.0.0'

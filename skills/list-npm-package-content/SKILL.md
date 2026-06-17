@@ -1,8 +1,10 @@
 ---
 name: list-npm-package-content
 name_zh: list-npm-package-content
-description: 'List the contents of an npm package tarball before publishing. Use when the user wants to see what files are included in an npm bundle, verify package contents, or debug npm publish issues.'
-description_zh: 'List the contents of an npm package tarball before publishing. Use when the 用户 wants to see what files are included in an npm bundle, verify package contents, or 调试 npm publish issues.'
+description: 'List the contents of an npm package tarball before publishing. Use when
+  the user wants to see what files are included in an npm bundle, verify package contents,
+  or debug npm publish issues.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - frontend
   - git
   - javascript
-source: null
+source:
 needs_review: false
 slug: list-npm-package-content
 version: '1.0.0'

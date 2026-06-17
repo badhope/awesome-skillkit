@@ -1,8 +1,8 @@
 ---
 name: valid-skill
-name_zh: valid-技能
+name_zh:
 description: A complete test skill with all optional directories.
-description_zh: A complete 测试 技能 with all optional directories.
+description_zh:
 category: dev-tools
 tags:
   - frontend
@@ -10,7 +10,7 @@ tags:
   - python
   - testing
   - typescript
-source: null
+source:
 license: Apache-2.0
 author: test
 version: '1.0.0'

@@ -1,8 +1,8 @@
 ---
 name: capture-api-response-test-fixture
-name_zh: capture-接口-response-测试-fixture
+name_zh:
 description: Capture API response test fixture.
-description_zh: Capture 接口 response 测试 fixture.
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - frontend
   - javascript
-source: null
+source:
 needs_review: false
 slug: capture-api-response-test-fixture
 version: '1.0.0'

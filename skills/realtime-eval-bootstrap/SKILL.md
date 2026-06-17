@@ -1,8 +1,8 @@
 ---
 name: Realtime Eval Scaffold
-name_zh: Realtime Eval 脚手架
+name_zh:
 description: 'You want to **start a new realtime eval** for an audio or'
-description_zh: '引导搭建一个 realtime (音频 / 多轮) eval 文件夹 —— 选对 harness (单轮 TTS、音频回放、多轮模拟)，脚手架 prompt / tools / data 文件，最后跑 smoke + full eval 才返回。输入是一个使用场景，输出是可跑的 eval。'
+description_zh:
 category: evaluation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - evaluation
   - frontend
   - javascript
-source: null
+source:
 license: MIT
 author: 'OpenAI (downstream pack: badhope)'
 version: '0.1.0'

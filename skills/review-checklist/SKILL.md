@@ -1,8 +1,8 @@
 ---
 name: review-checklist
-name_zh: 审查-checklist
+name_zh:
 description: 'LobeHub code review checklist. Use when reviewing a PR, diff, or branch'
-description_zh: 'LobeHub 代码 审查 checklist. Use when reviewing a PR, diff, or branch'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: review-checklist
 version: '1.0.0'

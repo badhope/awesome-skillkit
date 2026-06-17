@@ -1,8 +1,8 @@
 ---
 name: vercel-react-best-practices
-name_zh: Vercel React 最佳实践
+name_zh:
 description: 'React and Next.js performance optimization guidelines from Vercel Engineering.'
-description_zh: 遵循 Vercel 上 React 应用的最佳实践。
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 license: MIT
 author: unknown
 version: '0.1.0'

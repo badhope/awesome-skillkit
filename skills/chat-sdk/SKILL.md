@@ -2,7 +2,7 @@
 name: chat-sdk
 name_zh: chat-sdk
 description: 'Build multi-platform chat bots with the chat SDK. Use for Slack, Teams,'
-description_zh: '构建 multi-platform chat bots with the chat SDK. Use for Slack, Teams,'
+description_zh:
 category: chat-uikits
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: chat-sdk
 version: '1.0.0'

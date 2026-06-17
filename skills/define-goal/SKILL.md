@@ -2,7 +2,7 @@
 name: define-goal
 name_zh: define-goal
 description: 'Help the user define a concrete, measurable goal before starting work,'
-description_zh: 'Help the 用户 define a concrete, measurable goal before starting work,'
+description_zh:
 category: prompt-libraries
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - documentation
   - evaluation
-source: null
+source:
 needs_review: false
 slug: define-goal
 version: '1.0.0'

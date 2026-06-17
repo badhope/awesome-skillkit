@@ -1,12 +1,13 @@
 ---
 name: setup-repo
-name_zh: 设置 repo
+name_zh:
 slug: setup-repo
-description: Initialize a worktree-based repo layout for parallel development. Creates main worktree, reviews worktree, and numbered work branches.
-description_zh: 初始化基于 worktree 的 repo 布局以支持并行开发。创建主 worktree、审查 worktree 和编号工作分支。
+description: Initialize a worktree-based repo layout for parallel development. 
+  Creates main worktree, reviews worktree, and numbered work branches.
+description_zh:
 category: dev-tools
 tags: [ai, api, backend, cli, frontend]
-source: null
+source:
 author: AI-SKILL
 version: '1.0.0'
 license: MIT

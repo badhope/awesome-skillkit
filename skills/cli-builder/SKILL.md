@@ -1,8 +1,8 @@
 ---
 name: CLI Builder
-name_zh: CLI 工具构造
+name_zh:
 description: 'The user wants a **real CLI** they can run by name'
-description_zh: '从 API 文档、SDK、curl 样例或现有脚本构造一个能复用、可组合的 CLI —— 先选好运行时、动工前先把命令表面画清楚、默认 JSON 输出、管理好认证、配套一个安装命令。是给真正会反复调用的工具用的，不是给一次性脚本用的。'
+description_zh:
 category: terminal-cli
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: MIT
 author: 'OpenAI (downstream pack: badhope)'
 version: '0.1.0'

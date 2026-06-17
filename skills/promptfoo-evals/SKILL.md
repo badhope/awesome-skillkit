@@ -1,8 +1,8 @@
 ---
 name: promptfoo Eval Suite Author
-name_zh: Promptfoo 评估
+name_zh:
 description: Confirmation of the suite path, the assertion mix, and the
-description_zh: 使用 Promptfoo 运行和评估 prompt 的性能。
+description_zh:
 category: evaluation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 license: MIT
 author: 'Promptfoo (downstream pack: badhope)'
 version: '0.1.0'

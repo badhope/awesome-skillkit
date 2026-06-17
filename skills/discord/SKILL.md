@@ -1,8 +1,9 @@
 ---
 name: discord
 name_zh: discord
-description: 'Discord automation CLI — send/read/search messages, manage channels and'
-description_zh: Discord 自动化 CLI — send/read/search messages, manage channels and
+description: 'Discord automation CLI — send/read/search messages, manage channels
+  and'
+description_zh:
 category: chat-uikits
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - frontend
-source: null
+source:
 needs_review: false
 slug: discord
 version: '1.0.0'

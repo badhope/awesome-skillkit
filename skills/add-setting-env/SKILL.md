@@ -1,8 +1,8 @@
 ---
 name: add-setting-env
-name_zh: 添加-设置-env
+name_zh:
 description: 'Add server-side environment variables that control default values for'
-description_zh: 'Add 服务器-side environment variables that control default values for'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - documentation
   - frontend
   - javascript
-source: null
+source:
 needs_review: false
 slug: add-setting-env
 version: '1.0.0'

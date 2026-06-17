@@ -1,8 +1,9 @@
 ---
 name: compaction-prompts
 name_zh: compaction-prompts
-description: 'Configures Letta agent compaction settings and custom summarization prompts.'
-description_zh: 'Configures Letta 智能体 compaction settings and custom summarization prompts.'
+description: 'Configures Letta agent compaction settings and custom summarization
+  prompts.'
+description_zh:
 category: prompt-libraries
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: MIT
 needs_review: false
 slug: compaction-prompts

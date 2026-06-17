@@ -1,8 +1,8 @@
 ---
 name: agent-tracing
-name_zh: 智能体-tracing
+name_zh:
 description: 'Agent tracing CLI for execution snapshots. Use for agent-tracing, traces,'
-description_zh: '智能体 tracing CLI for execution snapshots. Use for 智能体-tracing, traces,'
+description_zh:
 category: observability
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: agent-tracing
 version: '1.0.0'

@@ -1,8 +1,9 @@
 ---
 name: update-provider-models
-name_zh: 更新-provider-models
-description: 'Add new or remove obsolete model IDs for existing AI SDK providers. Use'
-description_zh: 'Add new or remove obsolete 模型 IDs for existing AI SDK providers. Use'
+name_zh:
+description: 'Add new or remove obsolete model IDs for existing AI SDK providers.
+  Use'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - documentation
   - frontend
-source: null
+source:
 needs_review: false
 slug: update-provider-models
 version: '1.0.0'

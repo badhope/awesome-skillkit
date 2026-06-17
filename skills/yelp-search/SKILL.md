@@ -1,8 +1,9 @@
 ---
 name: yelp-search
-name_zh: yelp-搜索
+name_zh:
 description: 'Search Yelp for local businesses, get contact info, ratings, and hours.'
-description_zh: 'Search Yelp for local businesses, get contact info, ratings, and hours.'
+description_zh: 'Search Yelp for local businesses, get contact info, ratings, and
+  hours.'
 category: applications
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - evaluation
-source: null
+source:
 needs_review: false
 slug: yelp-search
 version: '1.0.0'

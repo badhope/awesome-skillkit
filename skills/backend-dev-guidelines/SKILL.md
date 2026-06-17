@@ -2,7 +2,7 @@
 name: backend-dev-guidelines
 name_zh: 后端开发指南
 description: 'Shared backend guide for Langfuse''s Next.js, tRPC, BullMQ, and TypeScript'
-description_zh: 遵循后端开发最佳实践，包括 API 设计、数据库操作和安全性。
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: UNKNOWN
 author: unknown
 version: '0.1.0'

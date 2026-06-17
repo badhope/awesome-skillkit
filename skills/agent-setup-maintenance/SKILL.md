@@ -1,8 +1,8 @@
 ---
 name: agent-setup-maintenance
-name_zh: Agent 设置与维护
+name_zh:
 description: 'Shared workflow for editing Langfuse''''s repo-owned agent setup under'
-description_zh: 设置和维护 AI agent 的配置、环境变量和依赖项。
+description_zh:
 category: agent-frameworks
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - docker
   - documentation
   - frontend
-source: null
+source:
 license: UNKNOWN
 author: unknown
 version: '0.1.0'

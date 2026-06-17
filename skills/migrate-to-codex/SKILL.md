@@ -1,8 +1,9 @@
 ---
 name: migrate-to-codex
-name_zh: 迁移-to-codex
-description: 'Migrate supported instruction files, skills, agents, and MCP config into'
-description_zh: 'Migrate supported instruction files, skills, agents, and MCP 配置 into'
+name_zh:
+description: 'Migrate supported instruction files, skills, agents, and MCP config
+  into'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - cli
   - database
   - deployment
-source: null
+source:
 platforms:
   - codex
 needs_review: false

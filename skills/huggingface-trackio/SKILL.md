@@ -2,7 +2,7 @@
 name: huggingface-trackio
 name_zh: huggingface-trackio
 description: 'Track and visualize ML training experiments with Trackio. Use when logging'
-description_zh: 'Track and visualize ML 训练 experiments with Trackio. Use when logging'
+description_zh:
 category: observability
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: huggingface-trackio
 version: '1.0.0'

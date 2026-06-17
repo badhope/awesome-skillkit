@@ -1,8 +1,10 @@
 ---
 name: debug-package
-name_zh: 调试-package
-description: 'LobeHub debug package and log namespace guide. Use when adding debug() logging, choosing lobe-* namespaces, troubleshooting DEBUG output, localStorage.debug, or log format specifiers.'
-description_zh: 'LobeHub 调试 package and 日志 namespace guide. Use when adding 调试() logging, choosing lobe-* namespaces, troubleshooting 调试 output, localStorage.调试, or 日志 format specifiers.'
+name_zh:
+description: 'LobeHub debug package and log namespace guide. Use when adding debug()
+  logging, choosing lobe-* namespaces, troubleshooting DEBUG output, localStorage.debug,
+  or log format specifiers.'
+description_zh:
 category: dev-tools
 tags:
   - backend
@@ -11,7 +13,7 @@ tags:
   - javascript
   - typescript
 needs_review: false
-source: null
+source:
 slug: debug-package
 version: '1.0.0'
 created: '2026-06-12'

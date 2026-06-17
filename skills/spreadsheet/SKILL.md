@@ -1,8 +1,10 @@
 ---
 name: spreadsheet
 name_zh: spreadsheet
-description: 'Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review.'
-description_zh: 'Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual 审查.'
+description: 'Use when tasks involve creating, editing, analyzing, or formatting spreadsheets
+  (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and
+  visual review.'
+description_zh:
 category: multimodal
 tags:
   - ai
@@ -11,7 +13,7 @@ tags:
   - cli
   - evaluation
 needs_review: false
-source: null
+source:
 slug: spreadsheet
 version: '1.0.0'
 created: '2026-06-12'

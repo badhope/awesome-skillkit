@@ -1,8 +1,8 @@
 ---
 name: security-best-practices
-name_zh: 安全-best-practices
+name_zh:
 description: 'Perform language and framework specific security best-practice reviews'
-description_zh: Perform language and framework specific 安全 best-practice reviews
+description_zh:
 category: guardrails
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - deployment
   - documentation
-source: null
+source:
 needs_review: false
 slug: security-best-practices
 version: '1.0.0'

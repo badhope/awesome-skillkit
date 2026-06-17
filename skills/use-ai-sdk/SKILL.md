@@ -2,12 +2,14 @@
 name: ai-sdk
 name_zh: ai-sdk
 slug: use-ai-sdk
-description: Answer questions about the AI SDK and help build AI-powered features. Use when developers ask about AI SDK functions, want to build AI agents, or have questions about AI providers.
-description_zh: 回答有关 AI SDK 的问题并帮助构建 AI 驱动的功能。当开发人员询问 AI SDK 函数、想要构建 AI 智能体或对 AI 提供商有疑问时使用。
+description: Answer questions about the AI SDK and help build AI-powered 
+  features. Use when developers ask about AI SDK functions, want to build AI 
+  agents, or have questions about AI providers.
+description_zh:
 category: code-assistants
 tags: [ai, api, backend, cli, documentation]
 needs_review: false
-source: null
+source:
 author: AI-SKILL
 version: '1.0.0'
 license: MIT

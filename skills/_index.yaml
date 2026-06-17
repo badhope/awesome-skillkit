@@ -21,7 +21,7 @@ skills:
     path: skills/1password/SKILL.md
   - slug: add-function-examples
     name: add-function-examples
-    name_zh: add-函数-examples
+    name_zh:
     description: Guide for adding new AI function examples, for testing specific
       features against the actual provider APIs.
     category: dev-tools
@@ -36,7 +36,7 @@ skills:
     path: skills/add-function-examples/SKILL.md
   - slug: add-model-price
     name: add-model-price
-    name_zh: add-模型-price
+    name_zh:
     description: Use when editing 
       worker/src/constants/default-model-prices.json, 
       packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
@@ -68,7 +68,7 @@ skills:
     path: skills/add-or-fix-type-checking/SKILL.md
   - slug: add-provider-doc
     name: add-provider-doc
-    name_zh: 添加-provider-doc
+    name_zh:
     description: Add documentation for a new AI provider — usage docs, env vars,
       Docker
     category: dev-tools
@@ -83,7 +83,7 @@ skills:
     path: skills/add-provider-doc/SKILL.md
   - slug: add-provider-package
     name: add-provider-package
-    name_zh: 添加-provider-package
+    name_zh:
     description: Guide for adding new AI provider packages to the AI SDK. Use 
       when creating
     category: dev-tools
@@ -98,7 +98,7 @@ skills:
     path: skills/add-provider-package/SKILL.md
   - slug: add-setting-env
     name: add-setting-env
-    name_zh: 添加-设置-env
+    name_zh:
     description: Add server-side environment variables that control default 
       values for
     category: dev-tools
@@ -129,7 +129,7 @@ skills:
     path: skills/add-uint-support/SKILL.md
   - slug: adr-skill
     name: adr-skill
-    name_zh: adr-技能
+    name_zh:
     description: Create and maintain Architecture Decision Records (ADRs) 
       optimized for agentic coding workflows. Use when you need to propose, 
       write, update, accept/reject, deprecate, or supersede an ADR; bootstra...
@@ -174,7 +174,7 @@ skills:
     path: skills/agent-development/SKILL.md
   - slug: agent-runtime-hooks
     name: agent-runtime-hooks
-    name_zh: 智能体-runtime-hooks
+    name_zh:
     description: Agent runtime lifecycle hooks. Use for before/after tool or 
       step hooks, tool mocks, human intervention, sub-agent calls, context 
       compression, evals, tracing, callAgent, or lifecycle events.
@@ -190,7 +190,7 @@ skills:
     path: skills/agent-runtime-hooks/SKILL.md
   - slug: agent-setup-maintenance
     name: agent-setup-maintenance
-    name_zh: Agent 设置与维护
+    name_zh:
     description: Shared workflow for editing Langfuse''s repo-owned agent setup 
       under
     category: agent-frameworks
@@ -205,7 +205,7 @@ skills:
     path: skills/agent-setup-maintenance/SKILL.md
   - slug: agent-signal
     name: agent-signal
-    name_zh: 智能体-signal
+    name_zh:
     description: Build or extend LobeHub Agent Signal pipelines. Use for signal 
       sources,
     category: applications
@@ -220,7 +220,7 @@ skills:
     path: skills/agent-signal/SKILL.md
   - slug: agent-tracing
     name: agent-tracing
-    name_zh: 智能体-tracing
+    name_zh:
     description: Agent tracing CLI for execution snapshots. Use for 
       agent-tracing, traces,
     category: observability
@@ -296,7 +296,7 @@ skills:
     path: skills/analyzing-financial-statements/SKILL.md
   - slug: aoti-debug
     name: aoti-debug
-    name_zh: aoti-调试
+    name_zh:
     description: Debug AOTInductor (AOTI) errors and crashes. Use when 
       encountering AOTI segfaults, device mismatch errors, constant loading 
       failures, or runtime errors from aot_compile, aot_load, 
@@ -434,7 +434,7 @@ skills:
     path: skills/brand-guidelines/SKILL.md
   - slug: browser-ml-in-js
     name: Browser ML in JavaScript
-    name_zh: 浏览器端机器学习（JavaScript）
+    name_zh:
     description: The user wants to run an ML model in JavaScript
     category: browser-automation
     tags:
@@ -463,7 +463,7 @@ skills:
     path: skills/builtin-tool/SKILL.md
   - slug: canvas-design
     name: canvas-design
-    name_zh: canvas-设计
+    name_zh:
     description: Create beautiful visual art in .png and .pdf documents using 
       design philosophy. You should use this skill when the user asks to create 
       a poster, piece of art, design, or other static piece. Create ...
@@ -479,7 +479,7 @@ skills:
     path: skills/canvas-design/SKILL.md
   - slug: capture-api-response-test-fixture
     name: capture-api-response-test-fixture
-    name_zh: capture-接口-response-测试-fixture
+    name_zh:
     description: Capture API response test fixture.
     category: dev-tools
     tags:
@@ -538,7 +538,7 @@ skills:
     path: skills/chatgpt-apps/SKILL.md
   - slug: claude-api
     name: claude-api
-    name_zh: claude-接口
+    name_zh:
     description: Reference for the Claude API / Anthropic SDK — model ids, 
       pricing, params,
     category: llm-serving
@@ -584,7 +584,7 @@ skills:
     path: skills/cli-backend-testing/SKILL.md
   - slug: cli-builder
     name: CLI Builder
-    name_zh: CLI 工具构造
+    name_zh:
     description: The user wants a **real CLI** they can run by name
     category: terminal-cli
     tags:
@@ -614,7 +614,7 @@ skills:
     path: skills/cli-creator/SKILL.md
   - slug: clickhouse-best-practices
     name: ClickHouse Best Practices
-    name_zh: ClickHouse 最佳实践
+    name_zh:
     description: You're reviewing or designing something that touches
     category: text-to-sql
     tags:
@@ -628,7 +628,7 @@ skills:
     path: skills/clickhouse-best-practices/SKILL.md
   - slug: cloudflare-deploy
     name: cloudflare-deploy
-    name_zh: cloudflare-部署
+    name_zh:
     description: Deploy applications and infrastructure to Cloudflare using 
       Workers, Pages, and related platform services. Use when the user asks to 
       deploy, host, publish, or set up a project on Cloudflare.
@@ -703,7 +703,7 @@ skills:
     path: skills/compaction-prompts/SKILL.md
   - slug: conversations
     name: Letta Conversations API
-    name_zh: Letta Conversations 接口
+    name_zh:
     description: Guide for using the Letta Conversations API to manage isolated 
       message threads on agents. Use when building multi-user chat applications,
       session management, or any scenario requiring separate conv...
@@ -749,7 +749,7 @@ skills:
     path: skills/creating-financial-models/SKILL.md
   - slug: creating-letta-code-channels
     name: creating-letta-code-channels
-    name_zh: creating-letta-代码-channels
+    name_zh:
     description: Builds and debugs Letta Code channels, including first-party 
       channel adapters and dynamic user channel plugins under ~/.letta/channels.
       Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, ...
@@ -796,7 +796,7 @@ skills:
     path: skills/datadog/SKILL.md
   - slug: datadog-query-recipes
     name: datadog-query-recipes
-    name_zh: Datadog 查询配方
+    name_zh:
     description: Langfuse-specific Datadog query recipes for production 
       telemetry research.
     category: observability
@@ -826,7 +826,7 @@ skills:
     path: skills/db-migrations/SKILL.md
   - slug: debug-issue-with-datadog
     name: debug-issue-with-datadog
-    name_zh: 使用 Datadog 调试问题
+    name_zh:
     description: Debug a user-reported issue, Linear ticket, or incident report 
       by combining
     category: observability
@@ -841,7 +841,7 @@ skills:
     path: skills/debug-issue-with-datadog/SKILL.md
   - slug: debug-package
     name: debug-package
-    name_zh: 调试-package
+    name_zh:
     description: LobeHub debug package and log namespace guide. Use when adding 
       debug() logging, choosing lobe-* namespaces, troubleshooting DEBUG output,
       localStorage.debug, or log format specifiers.
@@ -857,7 +857,7 @@ skills:
     path: skills/debug-package/SKILL.md
   - slug: deepeval
     name: deepeval
-    name_zh: DeepEval 评估
+    name_zh:
     description: DeepEval evaluation workflow for AI agents and LLM 
       applications.
     category: evaluation
@@ -872,7 +872,7 @@ skills:
     path: skills/deepeval/SKILL.md
   - slug: deepeval-eval-suite
     name: deepeval Pytest Eval Suite
-    name_zh: DeepEval 评估套件
+    name_zh:
     description: Targeted fix to attempt next round
     category: evaluation
     tags:
@@ -900,7 +900,7 @@ skills:
     path: skills/deepeval-otel/SKILL.md
   - slug: deepeval-tracing
     name: deepeval SDK Tracing
-    name_zh: DeepEval 追踪
+    name_zh:
     description: Confirmation that traces are arriving in Confident AI''s
     category: observability
     tags:
@@ -975,7 +975,7 @@ skills:
     path: skills/discord/SKILL.md
   - slug: discount-review
     name: discount-review
-    name_zh: discount-审查
+    name_zh:
     description: Inspect the discount policy fixture with a repeatable review 
       checklist
     category: finance
@@ -1065,7 +1065,7 @@ skills:
     path: skills/docstring/SKILL.md
   - slug: document-public-apis
     name: document-public-apis
-    name_zh: 文档-public-apis
+    name_zh:
     description: Document undocumented public APIs in PyTorch by removing 
       functions from
     category: documentation
@@ -1154,7 +1154,7 @@ skills:
     path: skills/figma/SKILL.md
   - slug: figma-code-connect-components
     name: figma-code-connect-components
-    name_zh: figma-代码-connect-components
+    name_zh:
     description: Connects Figma design components to code components using Code 
       Connect
     category: code-assistants
@@ -1169,7 +1169,7 @@ skills:
     path: skills/figma-code-connect-components/SKILL.md
   - slug: figma-create-design-system-rules
     name: figma-create-design-system-rules
-    name_zh: figma-创建-design-system-rules
+    name_zh:
     description: Generates custom design system rules for the user's codebase. 
       Use when
     category: code-assistants
@@ -1184,7 +1184,7 @@ skills:
     path: skills/figma-create-design-system-rules/SKILL.md
   - slug: figma-create-new-file
     name: figma-create-new-file
-    name_zh: figma-创建-new-文件
+    name_zh:
     description: Create a new blank Figma file. Use when the user wants to 
       create a new
     category: code-assistants
@@ -1199,7 +1199,7 @@ skills:
     path: skills/figma-create-new-file/SKILL.md
   - slug: figma-generate-design
     name: figma-generate-design
-    name_zh: figma-生成-design
+    name_zh:
     description: Use this skill alongside figma-use when the task involves 
       translating
     category: code-assistants
@@ -1214,7 +1214,7 @@ skills:
     path: skills/figma-generate-design/SKILL.md
   - slug: figma-generate-library
     name: figma-generate-library
-    name_zh: figma-生成-library
+    name_zh:
     description: Build or update a professional-grade design system in Figma 
       from a codebase.
     category: code-assistants
@@ -1258,7 +1258,7 @@ skills:
     path: skills/figma-use/SKILL.md
   - slug: fix-issue
     name: fix-issue
-    name_zh: fix-问题
+    name_zh:
     description: Fix bugs reported in PyTorch GitHub issues by reproducing, 
       root-causing,
     category: dev-tools
@@ -1273,7 +1273,7 @@ skills:
     path: skills/fix-issue/SKILL.md
   - slug: fleet-management
     name: letta-fleet-management
-    name_zh: letta-fleet-管理
+    name_zh:
     description: Manage Letta AI agent fleets declaratively with kubectl-style 
       CLI. Use when creating, updating, or managing multiple Letta agents with 
       shared configurations, memory blocks, tools, folders, canary d...
@@ -1395,7 +1395,7 @@ skills:
     path: skills/gh-fix-ci/SKILL.md
   - slug: git-workflow
     name: git-workflow
-    name_zh: Git 工作流
+    name_zh:
     description: Git workflow guidance for commits, branches, and pull requests
     category: dev-tools
     tags:
@@ -1520,7 +1520,7 @@ skills:
     path: skills/hatch-pet/SKILL.md
   - slug: heterogeneous-agent
     name: heterogeneous-agent
-    name_zh: heterogeneous-智能体
+    name_zh:
     description: Implement or debug LobeHub heterogeneous agents. Use for Claude
       Code/Codex adapters, external CLI agents, event mapping, IPC, persistence,
       tool-call chains, sessions, traces, or adapter bugs.
@@ -1657,7 +1657,7 @@ skills:
     path: skills/huggingface-gradio/SKILL.md
   - slug: huggingface-llm-trainer
     name: huggingface-llm-trainer
-    name_zh: huggingface-大语言模型-trainer
+    name_zh:
     description: Train or fine-tune language and vision models using TRL 
       (Transformer
     category: fine-tuning
@@ -1842,7 +1842,7 @@ skills:
     path: skills/imagegen/SKILL.md
   - slug: importing-chatgpt-memory
     name: importing-chatgpt-memory
-    name_zh: importing-chatgpt-内存
+    name_zh:
     description: Clone ChatGPT saved memory into Letta, then optionally enrich 
       it with
     category: memory
@@ -1944,7 +1944,7 @@ skills:
     path: skills/karpathy-guidelines/SKILL.md
   - slug: letta-api-client
     name: letta-api-client
-    name_zh: letta-接口-客户端
+    name_zh:
     description: Build applications with the Letta API — a model-agnostic, 
       stateful API
     category: agent-frameworks
@@ -2005,7 +2005,7 @@ skills:
     path: skills/linear/SKILL.md
   - slug: linear-bug-triage
     name: linear-bug-triage
-    name_zh: Linear Bug 分类
+    name_zh:
     description: Deduplicate measured bug or regression evidence against Linear,
       then
     category: dev-tools
@@ -2066,7 +2066,7 @@ skills:
     path: skills/llamactl-qa/SKILL.md
   - slug: llm-pricing-file-update
     name: LLM Model Pricing File Update
-    name_zh: LLM 模型价目文件更新
+    name_zh:
     description: You maintain an internal **per-token LLM pricing data file** —
     category: finance
     tags:
@@ -2080,7 +2080,7 @@ skills:
     path: skills/llm-pricing-file-update/SKILL.md
   - slug: local-testing
     name: local-testing
-    name_zh: local-测试
+    name_zh:
     description: Use this skill when you need guidance on local-testing.
     category: dev-tools
     tags:
@@ -2169,7 +2169,7 @@ skills:
     path: skills/maf-tracing/SKILL.md
   - slug: major-version-mode
     name: major-version-mode
-    name_zh: major-版本-mode
+    name_zh:
     description: Context for working on the next AI SDK major release. Only use 
       when explicitly
     category: dev-tools
@@ -2184,7 +2184,7 @@ skills:
     path: skills/major-version-mode/SKILL.md
   - slug: mcp-builder
     name: MCP Server Builder
-    name_zh: MCP Server 构建指南
+    name_zh:
     description: You're building an **MCP server** that lets an LLM call into 
       some
     category: mcp-protocol
@@ -2199,7 +2199,7 @@ skills:
     path: skills/mcp-builder/SKILL.md
   - slug: memfs-search
     name: memfs-search
-    name_zh: memfs-搜索
+    name_zh:
     description: Semantic search over agent memory files. Use when you need to 
       find conceptually
     category: memory
@@ -2245,7 +2245,7 @@ skills:
     path: skills/microcopy/SKILL.md
   - slug: migrate-to-codex
     name: migrate-to-codex
-    name_zh: 迁移-to-codex
+    name_zh:
     description: Migrate supported instruction files, skills, agents, and MCP 
       config into
     category: code-assistants
@@ -2261,7 +2261,7 @@ skills:
     path: skills/migrate-to-codex/SKILL.md
   - slug: minimal-skill
     name: minimal-skill
-    name_zh: minimal-技能
+    name_zh:
     description: A minimal skill with only required fields.
     category: dev-tools
     tags:
@@ -2335,7 +2335,7 @@ skills:
     path: skills/navigating-chatgpt-history/SKILL.md
   - slug: netlify-deploy
     name: netlify-deploy
-    name_zh: netlify-部署
+    name_zh:
     description: Deploy web projects to Netlify using the Netlify CLI (`npx 
       netlify`). Use when the user asks to deploy, host, publish, or link a 
       site/repo on Netlify, including preview and production deploys.
@@ -2503,7 +2503,7 @@ skills:
     path: skills/ownership-bus-factor/SKILL.md
   - slug: parity-testing
     name: testing-parity
-    name_zh: 测试-parity
+    name_zh:
     description: '> **Note**: Parity testing is **separate from** the unit-level tests
       that ship in `tests/`. If you are integrating a new model, the model-level test
       suite under `tests/models/` is still required — ...'
@@ -2535,7 +2535,7 @@ skills:
     path: skills/pdf/SKILL.md
   - slug: pdf-summarizer
     name: PDF Summarizer
-    name_zh: PDF 摘要器
+    name_zh:
     description: number of bullets in the summary
     category: multimodal
     tags:
@@ -2549,7 +2549,7 @@ skills:
     path: skills/pdf-summarizer/SKILL.md
   - slug: pdf-vision-extractor
     name: PDF Vision Extractor
-    name_zh: PDF 视觉抽取器
+    name_zh:
     description: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
     category: multimodal
     tags:
@@ -2610,7 +2610,7 @@ skills:
     path: skills/plugin-creator/SKILL.md
   - slug: pnpm-upgrade-package
     name: PNPM Upgrade Package
-    name_zh: pnpm 升级依赖
+    name_zh:
     description: You're bumping a dependency in a **pnpm workspace**.
     category: dev-tools
     tags:
@@ -2767,7 +2767,7 @@ skills:
     path: skills/prompt/SKILL.md
   - slug: prompt-lookup
     name: prompt-lookup
-    name_zh: Prompt 查找
+    name_zh:
     description: Activates when the user asks about AI prompts, needs prompt 
       templates,
     category: prompt-libraries
@@ -2803,7 +2803,7 @@ skills:
     path: skills/promptflow-to-maf/SKILL.md
   - slug: promptfoo-evals
     name: promptfoo Eval Suite Author
-    name_zh: Promptfoo 评估
+    name_zh:
     description: Confirmation of the suite path, the assertion mix, and the
     category: evaluation
     tags:
@@ -2817,7 +2817,7 @@ skills:
     path: skills/promptfoo-evals/SKILL.md
   - slug: promptfoo-provider-setup
     name: promptfoo-provider-setup
-    name_zh: promptfoo-provider-设置
+    name_zh:
     description: Configure promptfoo providers or redteam targets for hosted 
       models,
     category: evaluation
@@ -2832,7 +2832,7 @@ skills:
     path: skills/promptfoo-provider-setup/SKILL.md
   - slug: promptfoo-redteam
     name: promptfoo Redteam Plugin Author
-    name_zh: Promptfoo 红队测试
+    name_zh:
     description: How many fail conditions the rubric covers (self-check)
     category: safety-alignment
     tags:
@@ -2846,7 +2846,7 @@ skills:
     path: skills/promptfoo-redteam/SKILL.md
   - slug: promptfoo-redteam-run
     name: promptfoo-redteam-run
-    name_zh: 运行 Promptfoo 红队测试
+    name_zh:
     description: Run, rerun, inspect, and QA promptfoo redteam scans from 
       generated redteam
     category: safety-alignment
@@ -2861,7 +2861,7 @@ skills:
     path: skills/promptfoo-redteam-run/SKILL.md
   - slug: promptfoo-redteam-setup
     name: promptfoo-redteam-setup
-    name_zh: 设置 Promptfoo 红队测试
+    name_zh:
     description: 'Create or refine promptfoo redteam setup configs: purpose, targets,'
     category: safety-alignment
     tags:
@@ -2875,7 +2875,7 @@ skills:
     path: skills/promptfoo-redteam-setup/SKILL.md
   - slug: pt2-bug-basher
     name: pt2-bug-basher
-    name_zh: pt2-缺陷-basher
+    name_zh:
     description: Debug PyTorch 2 compiler stack failures including Dynamo graph 
       breaks,
     category: dev-tools
@@ -2890,7 +2890,7 @@ skills:
     path: skills/pt2-bug-basher/SKILL.md
   - slug: pyrefly-type-coverage
     name: pyrefly-type-coverage
-    name_zh: pyrefly-类型-coverage
+    name_zh:
     description: Migrate a file to use stricter Pyrefly type checking with 
       annotations
     category: dev-tools
@@ -2937,7 +2937,7 @@ skills:
     path: skills/react/SKILL.md
   - slug: react-router-search-params
     name: React Router Search Param State
-    name_zh: React Router 搜索参数状态管理
+    name_zh:
     description: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 
       useSearchParamState hook 模式和决策表。
     category: code-assistants
@@ -2952,7 +2952,7 @@ skills:
     path: skills/react-router-search-params/SKILL.md
   - slug: realtime-eval-bootstrap
     name: Realtime Eval Scaffold
-    name_zh: Realtime Eval 脚手架
+    name_zh:
     description: You want to **start a new realtime eval** for an audio or
     category: evaluation
     tags:
@@ -3010,7 +3010,7 @@ skills:
     path: skills/remotion/SKILL.md
   - slug: render-deploy
     name: render-deploy
-    name_zh: render-部署
+    name_zh:
     description: Deploy applications to Render by analyzing codebases, 
       generating render.yaml
     category: llm-serving
@@ -3041,7 +3041,7 @@ skills:
     path: skills/response-compliance/SKILL.md
   - slug: review-checklist
     name: review-checklist
-    name_zh: 审查-checklist
+    name_zh:
     description: LobeHub code review checklist. Use when reviewing a PR, diff, 
       or branch
     category: dev-tools
@@ -3056,7 +3056,7 @@ skills:
     path: skills/review-checklist/SKILL.md
   - slug: review-standards
     name: review-standards
-    name_zh: 审查-standards
+    name_zh:
     description: Use this skill when asked to review authentication code for 
       security
     category: dev-tools
@@ -3086,7 +3086,7 @@ skills:
     path: skills/screenshot/SKILL.md
   - slug: scrub-issue
     name: scrub-issue
-    name_zh: scrub-问题
+    name_zh:
     description: Fetch, analyze, reproduce, and minimize GitHub issue 
       reproductions. Use
     category: dev-tools
@@ -3132,7 +3132,7 @@ skills:
     path: skills/secure-code-by-language/SKILL.md
   - slug: security-best-practices
     name: security-best-practices
-    name_zh: 安全-best-practices
+    name_zh:
     description: Perform language and framework specific security best-practice 
       reviews
     category: guardrails
@@ -3147,7 +3147,7 @@ skills:
     path: skills/security-best-practices/SKILL.md
   - slug: security-ownership-map
     name: security-ownership-map
-    name_zh: 安全-ownership-map
+    name_zh:
     description: 'Analyze git repositories to build a security ownership topology
       (people-to-file), compute bus factor and sensitive-code ownership, and export
       CSV/JSON for graph databases and visualization. Trigger only when the user explicitly
@@ -3181,7 +3181,7 @@ skills:
     path: skills/security-review/SKILL.md
   - slug: security-threat-model
     name: security-threat-model
-    name_zh: 安全-threat-model
+    name_zh:
     description: Repository-grounded threat modeling that enumerates trust 
       boundaries,
     category: guardrails
@@ -3226,7 +3226,7 @@ skills:
     path: skills/sentry/SKILL.md
   - slug: setup-repo
     name: setup-repo
-    name_zh: 设置 repo
+    name_zh:
     description: Initialize a worktree-based repo layout for parallel 
       development. Creates main worktree, reviews worktree, and numbered work 
       branches.
@@ -3270,7 +3270,7 @@ skills:
     path: skills/skill-creator/SKILL.md
   - slug: skill-development
     name: skill-development
-    name_zh: 技能-development
+    name_zh:
     description: Create and contribute skills to the communal knowledge base. 
       Use when
     category: dev-tools
@@ -3285,7 +3285,7 @@ skills:
     path: skills/skill-development/SKILL.md
   - slug: skill-installer
     name: skill-installer
-    name_zh: 技能-installer
+    name_zh:
     description: Install Codex skills into $CODEX_HOME/skills from a curated 
       list or a GitHub repo path. Use when a user asks to list installable 
       skills, install a curated skill, or install a skill from another rep...
@@ -3316,7 +3316,7 @@ skills:
     path: skills/skill-lookup/SKILL.md
   - slug: skill-writer
     name: skill-writer
-    name_zh: 技能-writer
+    name_zh:
     description: Guide users through creating Agent Skills for Claude Code. Use 
       when the user wants to create, write, author, or design a new Skill, or 
       needs help with SKILL.md files, frontmatter, or skill structure.
@@ -3347,7 +3347,7 @@ skills:
     path: skills/skills-audit/SKILL.md
   - slug: slack
     name: agent-slack
-    name_zh: 智能体-slack
+    name_zh:
     description: Slack automation CLI — read/send/search messages, browse 
       threads and
     category: chat-uikits
@@ -3469,7 +3469,7 @@ skills:
     path: skills/spreadsheet/SKILL.md
   - slug: sql-query-helper
     name: SQL Query Helper
-    name_zh: SQL 查询助手
+    name_zh:
     description: SQL dialect
     category: text-to-sql
     tags:
@@ -3497,7 +3497,7 @@ skills:
     path: skills/standards-check/SKILL.md
   - slug: store-data-structures
     name: store-data-structures
-    name_zh: store-数据-structures
+    name_zh:
     description: LobeHub Zustand store data-shape patterns. Use when designing 
       store state,
     category: dev-tools
@@ -3512,7 +3512,7 @@ skills:
     path: skills/store-data-structures/SKILL.md
   - slug: storybook
     name: Storybook Component Stories
-    name_zh: Storybook 组件故事编写
+    name_zh:
     description: You're writing or reviewing a **Storybook story** for a
     category: code-assistants
     tags:
@@ -3553,7 +3553,7 @@ skills:
     path: skills/task/SKILL.md
   - slug: template
     name: template-skill
-    name_zh: template-技能
+    name_zh:
     description: Replace with description of the skill and when Claude should 
       use it.
     category: dev-tools
@@ -3627,7 +3627,7 @@ skills:
     path: skills/threat-modeling/SKILL.md
   - slug: token-skill
     name: token-skill
-    name_zh: Token 技能
+    name_zh:
     description: Use this skill when the user explicitly asks to use token-skill
       and wants
     category: dev-tools
@@ -3734,7 +3734,7 @@ skills:
     path: skills/trpc-router/SKILL.md
   - slug: turborepo
     name: Turborepo Monorepo Authoring
-    name_zh: Turborepo Monorepo 编写
+    name_zh:
     description: You have a **Turborepo monorepo** and you're doing one of
     category: code-assistants
     tags:
@@ -3763,7 +3763,7 @@ skills:
     path: skills/typescript/SKILL.md
   - slug: update-provider-models
     name: update-provider-models
-    name_zh: 更新-provider-models
+    name_zh:
     description: Add new or remove obsolete model IDs for existing AI SDK 
       providers. Use
     category: llm-serving
@@ -3809,7 +3809,7 @@ skills:
     path: skills/use-ai-sdk/SKILL.md
   - slug: valid-skill
     name: valid-skill
-    name_zh: valid-技能
+    name_zh:
     description: A complete test skill with all optional directories.
     category: dev-tools
     tags:
@@ -3823,7 +3823,7 @@ skills:
     path: skills/valid-skill/SKILL.md
   - slug: vercel-composition-patterns
     name: vercel-composition-patterns
-    name_zh: Vercel 组合模式
+    name_zh:
     description: React composition patterns that scale. Use when refactoring 
       components
     category: code-assistants
@@ -3838,7 +3838,7 @@ skills:
     path: skills/vercel-composition-patterns/SKILL.md
   - slug: vercel-deploy
     name: vercel-deploy
-    name_zh: vercel-部署
+    name_zh:
     description: Deploy applications and websites to Vercel. Use when the user 
       requests
     category: llm-serving
@@ -3853,7 +3853,7 @@ skills:
     path: skills/vercel-deploy/SKILL.md
   - slug: vercel-react-best-practices
     name: vercel-react-best-practices
-    name_zh: Vercel React 最佳实践
+    name_zh:
     description: React and Next.js performance optimization guidelines from 
       Vercel Engineering.
     category: code-assistants
@@ -3915,7 +3915,7 @@ skills:
     path: skills/web-artifacts-builder/SKILL.md
   - slug: webapp-testing
     name: Webapp Testing Harness
-    name_zh: Web 应用测试脚手架
+    name_zh:
     description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 
       侦察行动模式、截图捕获。
     category: browser-automation
@@ -3945,7 +3945,7 @@ skills:
     path: skills/weekly-production-review/SKILL.md
   - slug: weekly-user-topics-digest
     name: weekly-user-topics-digest
-    name_zh: weekly-用户-topics-digest
+    name_zh:
     description: Use this skill when you need guidance on 
       weekly-user-topics-digest.
     category: case-studies
@@ -3960,7 +3960,7 @@ skills:
     path: skills/weekly-user-topics-digest/SKILL.md
   - slug: widget-generator
     name: widget-generator
-    name_zh: Widget 生成器
+    name_zh:
     description: Generate customizable widget plugins for the prompts.chat feed 
       system
     category: code-assistants
@@ -4051,7 +4051,7 @@ skills:
     path: skills/yeet/SKILL.md
   - slug: yelp-search
     name: yelp-search
-    name_zh: yelp-搜索
+    name_zh:
     description: Search Yelp for local businesses, get contact info, ratings, 
       and hours.
     category: applications

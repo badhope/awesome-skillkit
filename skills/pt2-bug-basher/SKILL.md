@@ -1,8 +1,8 @@
 ---
 name: pt2-bug-basher
-name_zh: pt2-缺陷-basher
+name_zh:
 description: 'Debug PyTorch 2 compiler stack failures including Dynamo graph breaks,'
-description_zh: '调试 PyTorch 2 compiler stack failures including Dynamo graph breaks,'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - database
   - evaluation
-source: null
+source:
 needs_review: false
 slug: pt2-bug-basher
 version: '1.0.0'

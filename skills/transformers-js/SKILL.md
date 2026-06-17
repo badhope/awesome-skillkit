@@ -1,8 +1,9 @@
 ---
 name: transformers-js
 name_zh: transformers-js
-description: 'Use Transformers.js to run state-of-the-art machine learning models directly'
-description_zh: 'Use Transformers.js to 运行 state-of-the-art machine learning models directly'
+description: 'Use Transformers.js to run state-of-the-art machine learning models
+  directly'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 license: Apache-2.0
 author: huggingface
 version: '4.0.0'

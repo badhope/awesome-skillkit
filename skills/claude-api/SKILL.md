@@ -1,8 +1,8 @@
 ---
 name: claude-api
-name_zh: claude-接口
+name_zh:
 description: 'Reference for the Claude API / Anthropic SDK — model ids, pricing, params,'
-description_zh: 'Reference for the Claude 接口 / Anthropic SDK — 模型 ids, pricing, params,'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 license: Complete terms in LICENSE.txt
 platforms:
   - claude

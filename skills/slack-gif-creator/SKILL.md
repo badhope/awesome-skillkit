@@ -2,13 +2,14 @@
 name: slack-gif-creator
 name_zh: slack-gif-creator
 slug: slack-gif-creator
-description: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts.
-description_zh: 为 Slack 创建优化的动画 GIF 的知识和工具。提供约束、验证工具和动画概念。
+description: Knowledge and utilities for creating animated GIFs optimized for 
+  Slack. Provides constraints, validation tools, and animation concepts.
+description_zh:
 category: chat-uikits
 tags: [ai, api, frontend, python, typescript]
 license: MIT
 needs_review: false
-source: null
+source:
 author: AI-SKILL
 version: '1.0.0'
 created: '2026-06-12'

@@ -9,14 +9,7 @@ description: 'Deploy a Microsoft Agent Framework (MAF) workflow as a managed onl
   workflow, create online endpoint for MAF, deploy workflow to AML, deploy workflow
   to Foundry project, managed online endpoint for agent workflow, wrap workflow in
   scoring script, deploy agent as endpoint, realtime endpoint in Foundry project.'
-description_zh: '部署 a Microsoft 智能体 Framework (MAF) workflow as a managed online endpoint
-  to an Azure ML workspace or an Azure AI Foundry hub-based project. Wraps any workflow
-  into an init()/运行() scoring script, creates conda environment, endpoint and 部署 YAMLs,
-  部署 script, and assigns RBAC. Supports managed identity auth and Application Insights
-  tracing. WHEN: 部署 MAF workflow, 部署 智能体-framework workflow, 创建 online endpoint for
-  MAF, 部署 workflow to AML, 部署 workflow to Foundry project, managed online endpoint
-  for 智能体 workflow, wrap workflow in scoring script, 部署 智能体 as endpoint, realtime
-  endpoint in Foundry project.'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -24,7 +17,7 @@ tags:
   - backend
   - cli
   - deployment
-source: null
+source:
 needs_review: false
 slug: maf-online-endpoint
 version: '1.0.0'

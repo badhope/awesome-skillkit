@@ -1,8 +1,8 @@
 ---
 name: deepeval SDK Tracing
-name_zh: DeepEval 追踪
+name_zh:
 description: Confirmation that traces are arriving in Confident AI''s
-description_zh: 使用 DeepEval 追踪功能监控和分析 LLM 应用的性能。
+description_zh:
 category: observability
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - database
   - deployment
-source: null
+source:
 license: Apache-2.0
 author: 'Confident AI (downstream pack: badhope)'
 version: '0.1.0'

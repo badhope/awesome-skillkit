@@ -1,8 +1,9 @@
 ---
 name: document-public-apis
-name_zh: 文档-public-apis
+name_zh:
 description: 'Document undocumented public APIs in PyTorch by removing functions from'
-description_zh: 'Document undocumented public APIs in PyTorch by removing functions from'
+description_zh: 'Document undocumented public APIs in PyTorch by removing functions
+  from'
 category: documentation
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 needs_review: false
 slug: document-public-apis
 version: '1.0.0'

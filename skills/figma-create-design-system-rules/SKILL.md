@@ -1,8 +1,8 @@
 ---
 name: figma-create-design-system-rules
-name_zh: figma-创建-design-system-rules
+name_zh:
 description: 'Generates custom design system rules for the user''s codebase. Use when'
-description_zh: Generates custom 设计 system rules for the 用户's codebase. Use when
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 needs_review: false
 slug: figma-create-design-system-rules
 version: '1.0.0'

@@ -1,8 +1,10 @@
 ---
 name: cloudflare-deploy
-name_zh: cloudflare-部署
-description: 'Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.'
-description_zh: '部署 applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the 用户 asks to 部署, host, publish, or set up a project on Cloudflare.'
+name_zh:
+description: 'Deploy applications and infrastructure to Cloudflare using Workers,
+  Pages, and related platform services. Use when the user asks to deploy, host, publish,
+  or set up a project on Cloudflare.'
+description_zh:
 category: llm-serving
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - database
   - deployment
-source: null
+source:
 needs_review: false
 slug: cloudflare-deploy
 version: '1.0.0'

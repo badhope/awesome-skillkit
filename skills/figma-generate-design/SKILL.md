@@ -1,8 +1,8 @@
 ---
 name: figma-generate-design
-name_zh: figma-生成-design
+name_zh:
 description: 'Use this skill alongside figma-use when the task involves translating'
-description_zh: 'Use this 技能 alongside figma-use when the task involves translating'
+description_zh:
 category: code-assistants
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - cli
   - docker
-source: null
+source:
 needs_review: false
 slug: figma-generate-design
 version: '1.0.0'

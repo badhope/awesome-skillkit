@@ -1,8 +1,8 @@
 ---
 name: ClickHouse Best Practices
-name_zh: ClickHouse 最佳实践
+name_zh:
 description: 'You''re reviewing or designing something that touches'
-description_zh: '28 条 ClickHouse schema / query / insert 规则 —— 回答任何 ClickHouse 问题前都要查的清单。规则过滤、权衡判断、反模式标记。'
+description_zh:
 category: text-to-sql
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - database
   - documentation
   - evaluation
-source: null
+source:
 license: Apache-2.0
 author: 'ClickHouse Inc + Langfuse (downstream pack: badhope)'
 version: '0.1.0'

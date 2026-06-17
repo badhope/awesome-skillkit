@@ -1,8 +1,9 @@
 ---
 name: pr-address
 name_zh: pr-address
-description: 'Address PR review comments and loop until CI green and all comments resolved.'
-description_zh: 'Address PR 审查 comments and loop until CI green and all comments resolved.'
+description: 'Address PR review comments and loop until CI green and all comments
+  resolved.'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +11,7 @@ tags:
   - backend
   - cli
   - database
-source: null
+source:
 author: autogpt-team
 version: '1.0.0'
 needs_review: false

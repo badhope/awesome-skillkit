@@ -2,7 +2,7 @@
 name: skills-audit
 name_zh: skills-audit
 description: 'Audit .agents/skills SKILL.md files. Use for recurring checks of duplicate,'
-description_zh: 'Audit .agents/skills 技能.md files. Use for recurring checks of duplicate,'
+description_zh:
 category: dev-tools
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - cli
   - database
   - documentation
-source: null
+source:
 needs_review: false
 slug: skills-audit
 version: '1.0.0'

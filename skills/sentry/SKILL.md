@@ -2,7 +2,7 @@
 name: sentry
 name_zh: sentry
 description: 'Use when the user asks to inspect Sentry issues or events, summarize'
-description_zh: 'Use when the 用户 asks to inspect Sentry issues or events, summarize'
+description_zh:
 category: observability
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - backend
   - deployment
   - frontend
-source: null
+source:
 needs_review: false
 slug: sentry
 version: '1.0.0'

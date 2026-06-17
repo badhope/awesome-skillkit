@@ -1,8 +1,8 @@
 ---
 name: deepeval
-name_zh: DeepEval 评估
+name_zh:
 description: 'DeepEval evaluation workflow for AI agents and LLM applications.'
-description_zh: 使用 DeepEval 框架评估 LLM 应用的性能和质量。
+description_zh:
 category: evaluation
 tags:
   - ai
@@ -10,7 +10,7 @@ tags:
   - documentation
   - evaluation
   - frontend
-source: null
+source:
 license: Apache-2.0
 author: unknown
 version: '0.1.0'

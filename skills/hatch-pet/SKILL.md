@@ -1,8 +1,10 @@
 ---
 name: hatch-pet
 name_zh: hatch-pet
-description: 'Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Us...'
-description_zh: '创建, repair, 验证, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a 用...'
+description: 'Create, repair, validate, visually QA, and package Codex-compatible
+  animated pets and pet spritesheets from character art, generated images, company
+  or prospect brand cues, or visual references. Us...'
+description_zh:
 category: applications
 tags:
   - ai
@@ -10,7 +12,7 @@ tags:
   - backend
   - cli
   - documentation
-source: null
+source:
 needs_review: false
 slug: hatch-pet
 version: '1.0.0'
