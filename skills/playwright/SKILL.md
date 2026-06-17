@@ -3,7 +3,7 @@ name: playwright
 name_zh: playwright
 description: 'Use when the task requires automating a real browser from the terminal'
 description_zh: 'Use when the task requires automating a real browser from the terminal'
-category: dev-tools
+category: browser-automation
 tags:
   - ai
   - cli

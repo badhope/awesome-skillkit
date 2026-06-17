@@ -3,7 +3,7 @@ name: render-deploy
 name_zh: render-部署
 description: 'Deploy applications to Render by analyzing codebases, generating render.yaml'
 description_zh: '部署 applications to Render by analyzing codebases, generating render.yaml'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

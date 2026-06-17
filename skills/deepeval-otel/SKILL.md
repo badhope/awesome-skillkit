@@ -3,7 +3,7 @@ name: deepeval OTel Trace Export
 name_zh: DeepEval OpenTelemetry
 description: Suggested follow-up actions
 description_zh: 使用 OpenTelemetry 集成 DeepEval 进行 LLM 应用的可观测性。
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

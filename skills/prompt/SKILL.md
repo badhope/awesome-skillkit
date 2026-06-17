@@ -3,7 +3,7 @@ name: Prompt
 name_zh: 提示词
 description: Create effective prompts for LLMs and AI agents
 description_zh: 为大语言模型和AI智能体创建有效的提示词
-category: applications
+category: prompt-libraries
 tags:
   - ai
   - frontend

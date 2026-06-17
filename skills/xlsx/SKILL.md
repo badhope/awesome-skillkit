@@ -3,7 +3,7 @@ name: xlsx
 name_zh: xlsx
 description: 'Use this skill any time a spreadsheet file is the primary input or output.'
 description_zh: 'Use this 技能 any time a spreadsheet file is the primary input or output.'
-category: dev-tools
+category: multimodal
 tags:
   - ai
   - api

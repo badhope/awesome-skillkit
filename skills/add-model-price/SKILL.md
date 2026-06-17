@@ -3,7 +3,7 @@ name: add-model-price
 name_zh: add-模型-price
 description: 'Use when editing worker/src/constants/default-model-prices.json, packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Verte...'
 description_zh: 'Use when editing worker/src/constants/default-模型-prices.json, packages/shared/src/服务器/llm/types.ts, pricing tiers, tokenizer IDs, or matchPattern regexes for OpenAI, Anthropic, Bedrock, Vertex, Azu...'
-category: applications
+category: finance
 tags:
   - ai
   - backend

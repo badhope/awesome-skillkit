@@ -3,7 +3,7 @@ name: agent-setup-maintenance
 name_zh: Agent 设置与维护
 description: 'Shared workflow for editing Langfuse''''s repo-owned agent setup under'
 description_zh: 设置和维护 AI agent 的配置、环境变量和依赖项。
-category: dev-tools
+category: agent-frameworks
 tags:
   - ai
   - database

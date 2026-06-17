@@ -3,7 +3,7 @@ name: skill-lookup
 name_zh: 技能查找
 description: 'Search, retrieve, and install Agent Skills from the prompts.chat registry'
 description_zh: 在技能库中查找和检索相关技能。
-category: applications
+category: dev-tools
 tags:
   - ai
   - documentation

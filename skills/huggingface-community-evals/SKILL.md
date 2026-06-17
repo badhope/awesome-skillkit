@@ -3,7 +3,7 @@ name: huggingface-community-evals
 name_zh: huggingface-community-evals
 description: 'Run evaluations for Hugging Face Hub models using inspect-ai and lighteval'
 description_zh: '运行 evaluations for Hugging Face Hub models using inspect-ai and lighteval'
-category: dev-tools
+category: evaluation
 tags:
   - ai
   - backend

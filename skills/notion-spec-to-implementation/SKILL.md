@@ -3,7 +3,7 @@ name: notion-spec-to-implementation
 name_zh: notion-spec-to-implementation
 description: 'Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.'
 description_zh: 'Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

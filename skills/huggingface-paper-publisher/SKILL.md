@@ -3,7 +3,7 @@ name: huggingface-paper-publisher
 name_zh: huggingface-paper-publisher
 description: 'Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research ar...'
 description_zh: 'Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research ar...'
-category: dev-tools
+category: case-studies
 tags:
   - ai
   - api

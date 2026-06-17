@@ -3,7 +3,7 @@ name: hf-mem
 name_zh: hf-mem
 description: 'Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub'
 description_zh: 'Hugging Face CLI to estimate the required memory to load Safetensors or GGUF 模型 weights for inference from the Hugging Face Hub'
-category: dev-tools
+category: memory
 tags:
   - ai
   - cli

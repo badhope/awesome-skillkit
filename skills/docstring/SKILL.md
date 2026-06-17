@@ -3,7 +3,7 @@ name: docstring
 name_zh: docstring
 description: 'Write docstrings for PyTorch functions and methods following PyTorch'
 description_zh: 'Write docstrings for PyTorch functions and methods following PyTorch'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

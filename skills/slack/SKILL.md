@@ -3,7 +3,7 @@ name: agent-slack
 name_zh: 智能体-slack
 description: 'Slack automation CLI — read/send/search messages, browse threads and'
 description_zh: Slack 自动化 CLI — read/send/search messages, browse threads and
-category: dev-tools
+category: chat-uikits
 tags:
   - ai
   - cli

@@ -3,7 +3,7 @@ name: theme-factory
 name_zh: theme-factory
 description: 'Toolkit for styling artifacts with a theme. These artifacts can be slides,'
 description_zh: 'Toolkit for styling artifacts with a theme. These artifacts can be slides,'
-category: applications
+category: code-assistants
 tags:
   - ai
   - api

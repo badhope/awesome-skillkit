@@ -17,7 +17,7 @@ description_zh: '部署 a Microsoft 智能体 Framework (MAF) workflow as a mana
   MAF, 部署 workflow to AML, 部署 workflow to Foundry project, managed online endpoint
   for 智能体 workflow, wrap workflow in scoring script, 部署 智能体 as endpoint, realtime
   endpoint in Foundry project.'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

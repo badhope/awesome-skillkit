@@ -3,7 +3,7 @@ name: weekly-production-review
 name_zh: 每周生产审查
 description: Prepare Langfuse weekly production reviews that explain what broke,
 description_zh: 进行每周生产环境审查，监控性能和可靠性。
-category: applications
+category: case-studies
 tags:
   - ai
   - datadog

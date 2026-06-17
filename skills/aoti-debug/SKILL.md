@@ -3,7 +3,7 @@ name: aoti-debug
 name_zh: aoti-调试
 description: 'Debug AOTInductor (AOTI) errors and crashes. Use when encountering AOTI segfaults, device mismatch errors, constant loading failures, or runtime errors from aot_compile, aot_load, aoti_compile_and_...'
 description_zh: '调试 AOTInductor (AOTI) errors and crashes. Use when encountering AOTI segfaults, device mismatch errors, constant loading failures, or runtime errors from aot_compile, aot_load, aoti_compile_and_pac...'
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: docx
 name_zh: docx
 description: 'Use this skill whenever the user wants to create, read, edit, or manipulate'
 description_zh: 'Use this 技能 whenever the 用户 wants to 创建, read, edit, or manipulate'
-category: dev-tools
+category: multimodal
 tags:
   - ai
   - api

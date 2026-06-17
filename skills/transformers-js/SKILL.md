@@ -3,7 +3,7 @@ name: transformers-js
 name_zh: transformers-js
 description: 'Use Transformers.js to run state-of-the-art machine learning models directly'
 description_zh: 'Use Transformers.js to 运行 state-of-the-art machine learning models directly'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

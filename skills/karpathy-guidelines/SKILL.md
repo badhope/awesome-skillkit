@@ -3,7 +3,7 @@ name: karpathy-guidelines
 name_zh: karpathy-guidelines
 description: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifi...'
 description_zh: 'Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring 代码 to avoid overcomplication, make surgical changes, surface assumptions, and define verifiab...'
-category: applications
+category: documentation
 tags:
   - ai
   - frontend

@@ -3,7 +3,7 @@ name: ClickHouse Best Practices
 name_zh: ClickHouse 最佳实践
 description: 'You''re reviewing or designing something that touches'
 description_zh: '28 条 ClickHouse schema / query / insert 规则 —— 回答任何 ClickHouse 问题前都要查的清单。规则过滤、权衡判断、反模式标记。'
-category: dev-tools
+category: text-to-sql
 tags:
   - ai
   - cli

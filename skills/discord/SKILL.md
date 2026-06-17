@@ -3,7 +3,7 @@ name: discord
 name_zh: discord
 description: 'Discord automation CLI — send/read/search messages, manage channels and'
 description_zh: Discord 自动化 CLI — send/read/search messages, manage channels and
-category: dev-tools
+category: chat-uikits
 tags:
   - ai
   - api

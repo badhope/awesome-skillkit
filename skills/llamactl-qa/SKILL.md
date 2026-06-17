@@ -4,7 +4,7 @@ name_zh: llamactl-qa
 slug: llamactl-qa
 description: Plan and run a design-QA of llamactl changes against a real backend. Builds a matrix of cases, runs them, and writes a design-review report.
 description_zh: 针对 llamactl 变更计划并运行设计 QA，构建案例矩阵并编写设计审查报告。
-category: dev-tools
+category: terminal-cli
 tags: [ai, api, backend, cli, deployment]
 needs_review: false
 source: null

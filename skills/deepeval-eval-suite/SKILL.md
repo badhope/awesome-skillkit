@@ -3,7 +3,7 @@ name: deepeval Pytest Eval Suite
 name_zh: DeepEval 评估套件
 description: Targeted fix to attempt next round
 description_zh: 配置和运行 DeepEval 评估套件进行全面的 LLM 测试。
-category: dev-tools
+category: evaluation
 tags:
   - ai
   - api

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit all 67 skills for quality issues."""
+"""Audit all skills for quality issues."""
 import json
 import os
 import re

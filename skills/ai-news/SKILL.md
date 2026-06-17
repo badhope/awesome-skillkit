@@ -3,7 +3,7 @@ name: ai-news
 name_zh: ai-news
 description: 'Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...'
 description_zh: 'Fetch and summarize recent AI news from curated RSS feeds (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...'
-category: applications
+category: case-studies
 tags:
   - ai
   - deployment

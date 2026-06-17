@@ -3,7 +3,7 @@ name: write-frontend-tests
 name_zh: write-frontend-tests
 description: 'Analyze the current branch diff against dev, plan integration tests for'
 description_zh: 分析 the current branch diff against dev, plan 集成 tests for
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

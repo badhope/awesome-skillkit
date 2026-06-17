@@ -3,7 +3,7 @@ name: cookbook-audit
 name_zh: cookbook-audit
 description: 'Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook review or audit is requested.'
 description_zh: 'Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook 审查 or audit is requested.'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

@@ -143,7 +143,7 @@ name_zh: PDF 摘要
 version: 0.1.0
 description: 给 PDF 出 N 条 bullet 摘要，分受众。
 description_zh: 给 PDF 出 N 条 bullet 摘要。
-category: document-processing
+category: dev-tools
 tags: [pdf, summarization, document]
 inputs:
   - name: pdf_path

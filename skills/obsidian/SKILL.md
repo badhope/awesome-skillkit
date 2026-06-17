@@ -3,7 +3,7 @@ name: obsidian
 name_zh: obsidian
 description: 'Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.'
 description_zh: 'Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - cli

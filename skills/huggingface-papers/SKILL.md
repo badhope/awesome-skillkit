@@ -3,7 +3,7 @@ name: huggingface-papers
 name_zh: huggingface-papers
 description: 'Look up and read Hugging Face paper pages in markdown, and use the papers'
 description_zh: 'Look up and read Hugging Face paper pages in markdown, and use the papers'
-category: dev-tools
+category: case-studies
 tags:
   - ai
   - api

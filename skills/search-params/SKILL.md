@@ -3,7 +3,7 @@ name: search-params
 name_zh: search-params
 description: 'URL search param and hash state management. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or h...'
 description_zh: 'URL search param and hash state 管理. Use when adding or modifying URL search params, working with useSearchParams, setSearchParams, useSearchParamState, or navigate() with query strings or hash frag...'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - cli

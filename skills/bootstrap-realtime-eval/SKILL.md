@@ -3,7 +3,7 @@ name: bootstrap-realtime-eval
 name_zh: bootstrap-realtime-eval
 description: 'Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding prompt/tools/data files, generating a useful README, and...'
 description_zh: 'Bootstrap a new realtime eval folder inside this cookbook repo by choosing the right harness from examples/evals/realtime_evals, scaffolding 提示词/tools/data files, generating a useful README, and va...'
-category: dev-tools
+category: evaluation
 tags:
   - ai
   - cli

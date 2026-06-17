@@ -3,7 +3,7 @@ name: fetch-buildkite-logs
 name_zh: fetch-buildkite-logs
 description: Fetch and analyze Buildkite CI build logs for failures
 description_zh: Fetch and 分析 Buildkite CI 构建 logs for failures
-category: applications
+category: observability
 tags:
   - ai
   - api

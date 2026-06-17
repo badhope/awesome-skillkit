@@ -3,7 +3,7 @@ name: react
 name_zh: react
 description: 'LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state.'
 description_zh: 'LobeHub React component conventions. Use when editing TSX UI, choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing, desktop variants, layouts, or component state.'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: vercel-react-best-practices
 name_zh: Vercel React 最佳实践
 description: 'React and Next.js performance optimization guidelines from Vercel Engineering.'
 description_zh: 遵循 Vercel 上 React 应用的最佳实践。
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

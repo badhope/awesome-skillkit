@@ -3,7 +3,7 @@ name: canvas-design
 name_zh: canvas-设计
 description: 'Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ...'
 description_zh: '创建 beautiful visual art in .png and .pdf documents using 设计 philosophy. You should use this 技能 when the 用户 asks to 创建 a poster, piece of art, 设计, or other static piece. 创建 original visual designs, ...'
-category: dev-tools
+category: image-generation
 tags:
   - ai
   - api

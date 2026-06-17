@@ -3,7 +3,7 @@ name: huggingface-vision-trainer
 name_zh: huggingface-vision-trainer
 description: 'Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...'
 description_zh: 'Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...'
-category: dev-tools
+category: fine-tuning
 tags:
   - ai
   - api

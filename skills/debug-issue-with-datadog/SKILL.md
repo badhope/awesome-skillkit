@@ -3,7 +3,7 @@ name: debug-issue-with-datadog
 name_zh: 使用 Datadog 调试问题
 description: 'Debug a user-reported issue, Linear ticket, or incident report by combining'
 description_zh: 使用 Datadog 监控和日志数据诊断和调试问题。
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

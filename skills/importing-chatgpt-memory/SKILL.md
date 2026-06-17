@@ -3,7 +3,7 @@ name: importing-chatgpt-memory
 name_zh: importing-chatgpt-内存
 description: 'Clone ChatGPT saved memory into Letta, then optionally enrich it with'
 description_zh: 'Clone ChatGPT saved memory into Letta, then optionally enrich it with'
-category: dev-tools
+category: memory
 tags:
   - ai
   - api

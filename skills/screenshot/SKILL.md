@@ -3,7 +3,7 @@ name: screenshot
 name_zh: screenshot
 description: 'Use when the user explicitly asks for a desktop or system screenshot'
 description_zh: 'Use when the 用户 explicitly asks for a desktop or system screenshot'
-category: dev-tools
+category: browser-automation
 tags:
   - ai
   - database

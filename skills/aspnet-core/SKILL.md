@@ -3,7 +3,7 @@ name: aspnet-core
 name_zh: aspnet-core
 description: 'Build, review, refactor, or architect ASP.NET Core web applications using'
 description_zh: '构建, 审查, refactor, or architect ASP.NET Core web applications using'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

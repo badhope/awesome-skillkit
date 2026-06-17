@@ -3,7 +3,7 @@ name: speech
 name_zh: speech
 description: 'Use when the user asks for text-to-speech narration or voiceover, accessibility'
 description_zh: 'Use when the 用户 asks for text-to-speech narration or voiceover, accessibility'
-category: dev-tools
+category: audio-speech
 tags:
   - ai
   - api

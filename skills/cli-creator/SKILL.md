@@ -3,7 +3,7 @@ name: cli-creator
 name_zh: cli-creator
 description: 'Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ...'
 description_zh: '构建 a composable CLI for Codex from 接口 docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the 用户 wants Codex to 创建 a command-line tool that ...'
-category: dev-tools
+category: terminal-cli
 tags:
   - ai
   - api

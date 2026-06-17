@@ -3,7 +3,7 @@ name: zustand
 name_zh: zustand
 description: 'LobeHub Zustand store conventions. Use when editing src/store, store'
 description_zh: 'LobeHub Zustand store conventions. Use when editing src/store, store'
-category: applications
+category: code-assistants
 tags:
   - ai
   - api

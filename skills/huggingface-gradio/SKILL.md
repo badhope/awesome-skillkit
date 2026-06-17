@@ -3,7 +3,7 @@ name: huggingface-gradio
 name_zh: huggingface-gradio
 description: 'Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.'
 description_zh: '构建 Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: define-goal
 name_zh: define-goal
 description: 'Help the user define a concrete, measurable goal before starting work,'
 description_zh: 'Help the 用户 define a concrete, measurable goal before starting work,'
-category: dev-tools
+category: prompt-libraries
 tags:
   - ai
   - api

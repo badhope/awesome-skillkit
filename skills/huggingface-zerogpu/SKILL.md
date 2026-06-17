@@ -3,7 +3,7 @@ name: huggingface-zerogpu
 name_zh: huggingface-zerogpu
 description: 'AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.'
 description_zh: 'AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU.'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

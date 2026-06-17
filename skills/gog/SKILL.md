@@ -3,7 +3,7 @@ name: gog
 name_zh: gog
 description: 'Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and'
 description_zh: 'Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and'
-category: dev-tools
+category: applications
 tags:
   - ai
   - api

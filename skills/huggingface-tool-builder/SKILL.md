@@ -3,7 +3,7 @@ name: huggingface-tool-builder
 name_zh: huggingface-tool-builder
 description: 'Use this skill when the user wants to build tool/scripts or achieve a task where using data from the Hugging Face API would help. This is especially useful when chaining or combining API calls or t...'
 description_zh: 'Use this 技能 when the 用户 wants to 构建 tool/scripts or achieve a task where using data from the Hugging Face 接口 would help. This is especially useful when chaining or combining 接口 calls or the task wi...'
-category: dev-tools
+category: tool-use
 tags:
   - ai
   - api

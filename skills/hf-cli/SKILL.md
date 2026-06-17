@@ -3,7 +3,7 @@ name: hf-cli
 name_zh: hf-cli
 description: 'Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing'
 description_zh: 'Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing'
-category: dev-tools
+category: terminal-cli
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: promptfoo Eval Suite Author
 name_zh: Promptfoo 评估
 description: Confirmation of the suite path, the assertion mix, and the
 description_zh: 使用 Promptfoo 运行和评估 prompt 的性能。
-category: dev-tools
+category: evaluation
 tags:
   - ai
   - api

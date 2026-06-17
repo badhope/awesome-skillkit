@@ -3,7 +3,7 @@ name: letta-api-client
 name_zh: letta-接口-客户端
 description: 'Build applications with the Letta API — a model-agnostic, stateful API'
 description_zh: 构建 applications with the Letta 接口 — a 模型-agnostic, stateful 接口
-category: dev-tools
+category: agent-frameworks
 tags:
   - ai
   - api

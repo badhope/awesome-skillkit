@@ -3,7 +3,7 @@ name: Unit Test Generator
 name_zh: 单元测试生成器
 description: whether to add edge case tests (None, empty, overflow)
 description_zh: 为函数或类生成单元测试。无厂商依赖，识别测试框架。
-category: applications
+category: dev-tools
 tags:
   - ai
   - evaluation

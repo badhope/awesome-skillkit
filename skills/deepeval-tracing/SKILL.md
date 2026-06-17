@@ -3,7 +3,7 @@ name: deepeval SDK Tracing
 name_zh: DeepEval 追踪
 description: Confirmation that traces are arriving in Confident AI''s
 description_zh: 使用 DeepEval 追踪功能监控和分析 LLM 应用的性能。
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

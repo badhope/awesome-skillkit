@@ -3,7 +3,7 @@ name: frontend-browser-review
 name_zh: 前端浏览器审查
 description: 'Shared workflow for browser-based review of user-visible frontend changes'
 description_zh: 审查前端代码的浏览器兼容性、性能和可访问性。
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - backend

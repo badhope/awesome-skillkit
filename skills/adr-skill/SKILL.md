@@ -3,7 +3,7 @@ name: adr-skill
 name_zh: adr-技能
 description: 'Create and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, update, accept/reject, deprecate, or supersede an ADR; bootstra...'
 description_zh: '创建 and maintain Architecture Decision Records (ADRs) optimized for agentic coding workflows. Use when you need to propose, write, 更新, accept/reject, deprecate, or supersede an ADR; bootstrap an adr...'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: doc
 name_zh: doc
 description: 'Use when the task involves reading, creating, or editing `.docx` documents,'
 description_zh: 'Use when the task involves reading, creating, or editing `.docx` documents,'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - cli

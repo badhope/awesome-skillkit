@@ -14,7 +14,7 @@ description_zh: '分析 git repositories to 构建 a 安全 ownership topology (
   or bus-factor analysis grounded in git history (for example: orphaned sensitive
   代码, 安全 maintainers, CODEOWNERS reality checks for risk, sensitive hotspots, or ownership
   clusters). Do not trigger for general maintainer lists or non-安全 ownership questions.'
-category: dev-tools
+category: guardrails
 tags:
   - ai
   - database

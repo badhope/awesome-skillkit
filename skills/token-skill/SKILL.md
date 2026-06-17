@@ -3,7 +3,7 @@ name: token-skill
 name_zh: Token 技能
 description: 'Use this skill when the user explicitly asks to use token-skill and wants'
 description_zh: 管理和优化 LLM 的 token 使用。
-category: applications
+category: dev-tools
 tags:
   - ai
   - frontend

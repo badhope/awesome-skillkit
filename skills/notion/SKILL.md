@@ -3,7 +3,7 @@ name: notion
 name_zh: notion
 description: Notion API for creating and managing pages, databases, and blocks.
 description_zh: 'Notion 接口 for creating and managing pages, databases, and blocks.'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

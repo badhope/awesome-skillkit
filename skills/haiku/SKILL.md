@@ -3,7 +3,7 @@ name: Haiku
 name_zh: 俳句
 description: Write haiku poems following specific style conventions
 description_zh: 按照特定风格规范创作俳句诗
-category: applications
+category: llm-serving
 tags:
   - ai
   - frontend

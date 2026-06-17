@@ -3,7 +3,7 @@ name: figma-generate-design
 name_zh: figma-生成-design
 description: 'Use this skill alongside figma-use when the task involves translating'
 description_zh: 'Use this 技能 alongside figma-use when the task involves translating'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: spa-routes
 name_zh: spa-routes
 description: 'LobeHub SPA route architecture. Use when editing src/routes, src/features'
 description_zh: 'LobeHub SPA route architecture. Use when editing src/routes, src/features'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

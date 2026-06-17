@@ -3,7 +3,7 @@ name: builtin-tool
 name_zh: builtin-tool
 description: 'Build LobeHub builtin tool packages. Use when adding agent-callable tools,'
 description_zh: '构建 LobeHub builtin tool packages. Use when adding 智能体-callable tools,'
-category: dev-tools
+category: tool-use
 tags:
   - ai
   - api

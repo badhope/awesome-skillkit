@@ -3,7 +3,7 @@ name: discount-review
 name_zh: discount-审查
 description: 'Inspect the discount policy fixture with a repeatable review checklist'
 description_zh: 'Inspect the discount policy fixture with a repeatable 审查 checklist'
-category: dev-tools
+category: finance
 tags:
   - ai
   - frontend

@@ -3,7 +3,7 @@ name: modal
 name_zh: modal
 description: 'LobeHub imperative modal conventions. Use when creating or migrating modals, dialogs, popups, confirm flows, ModalHost wiring, createModal, confirmModal, useModalContext, or base-ui modal APIs.'
 description_zh: 'LobeHub imperative modal conventions. Use when creating or migrating modals, dialogs, popups, confirm flows, ModalHost wiring, createModal, confirmModal, useModalContext, or base-ui modal APIs.'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

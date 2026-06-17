@@ -3,7 +3,7 @@ name: promptfoo-redteam-run
 name_zh: 运行 Promptfoo 红队测试
 description: 'Run, rerun, inspect, and QA promptfoo redteam scans from generated redteam'
 description_zh: 执行 Promptfoo 红队测试场景并分析结果。
-category: dev-tools
+category: safety-alignment
 tags:
   - ai
   - cli

@@ -3,7 +3,7 @@ name: add-or-fix-type-checking
 name_zh: add-or-fix-type-checking
 description: 'Fixes broken typing checks detected by ty, make typing, or make check-repo. Use when typing errors appear in local runs, CI, or PR logs.'
 description_zh: 'Fixes broken typing checks detected by ty, make typing, or make 检查-repo. Use when typing errors appear in local runs, CI, or PR logs.'
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

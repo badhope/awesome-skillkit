@@ -3,7 +3,7 @@ name: Code Reviewer
 name_zh: 代码审查员
 description: minimum severity to report
 description_zh: 审查代码 diff，看 bug、安全问题、风格。无厂商依赖，识别语言。
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

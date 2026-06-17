@@ -3,7 +3,7 @@ name: system-info
 name_zh: system-info
 description: Get system information using executable scripts
 description_zh: Get system information using executable scripts
-category: applications
+category: dev-tools
 tags:
   - ai
   - python

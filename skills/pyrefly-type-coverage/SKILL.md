@@ -3,7 +3,7 @@ name: pyrefly-type-coverage
 name_zh: pyrefly-类型-coverage
 description: 'Migrate a file to use stricter Pyrefly type checking with annotations'
 description_zh: 'Migrate a file to use stricter Pyrefly type checking with annotations'
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

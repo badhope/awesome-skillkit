@@ -3,7 +3,7 @@ name: add-function-examples
 name_zh: add-函数-examples
 description: 'Guide for adding new AI function examples, for testing specific features against the actual provider APIs.'
 description_zh: 'Guide for adding new AI 函数 examples, for 测试 specific features against the actual provider APIs.'
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

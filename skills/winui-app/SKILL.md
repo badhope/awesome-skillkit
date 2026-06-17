@@ -3,7 +3,7 @@ name: winui-app
 name_zh: winui-app
 description: 'Bootstrap, develop, and design modern WinUI 3 desktop applications with'
 description_zh: 'Bootstrap, develop, and 设计 modern WinUI 3 desktop applications with'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

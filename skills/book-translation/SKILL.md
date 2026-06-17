@@ -3,7 +3,7 @@ name: book-translation
 name_zh: 书籍翻译
 description: 'Translate "The Interactive Book of Prompting" chapters and UI strings'
 description_zh: 将书籍内容从一种语言翻译成另一种语言，保持风格和语调。
-category: applications
+category: translation
 tags:
   - ai
   - api

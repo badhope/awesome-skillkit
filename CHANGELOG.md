@@ -8,6 +8,54 @@ where it makes sense.
 
 ## [Unreleased]
 
+### Changed
+
+- **Full recategorization of all 267 skills.** Previously 201/267
+  skills (75%) were dumped into `dev-tools`; only 3 of 49 categories
+  were used. After a content-aware audit (slug + name + description +
+  tags + body), skills are now spread across 31 categories. `dev-tools`
+  drops to 69, with meaningful distribution in `code-assistants` (35),
+  `documentation` (21), `llm-serving` (13), `agent-frameworks` (11),
+  `observability` (10), `evaluation` (9), `multimodal` (8), etc.
+  See `scripts/recategorize-skills.py` for the full mapping.
+- **`platforms` field now populated.** Three skills that genuinely
+  require a specific platform now carry `platforms:` in frontmatter
+  with a matching `**<platform>-only**` body disclaimer:
+  `pdf-vision-extractor` (claude), `claude-api` (claude),
+  `migrate-to-codex` (codex). The frontend platform filter now
+  returns real results.
+- **`CATEGORY_LABELS` in `frontend/src/shared.ts`** expanded from
+  15 to all 49 categories defined in `external-index/skills.yaml`,
+  so any category will display a proper localized label instead of
+  falling back to raw slug text.
+- **Dependabot** now also watches `npm` (frontend) and `pip`
+  (requirements.txt) in addition to `github-actions`.
+- **Python version unified** to 3.11 across all CI workflows
+  (was 3.12 in `check-links.yml`).
+
+### Fixed
+
+- `README.md` — removed stale `dev-tools: 201, ai: 66` stat (the
+  `ai` category doesn't exist); updated `pdf-vision-extractor`
+  description to note the body disclaimer rather than a non-existent
+  frontmatter `platforms` field.
+- `docs/next-steps.md` — updated skill count from 35 → 267; fixed
+  N1 to reflect that `pdf-vision-extractor` uses a body disclaimer
+  (not frontmatter `platforms`).
+- `docs/schema.md` — example `category: document-processing` →
+  `dev-tools` (the former is not a valid category).
+- `scripts/audit-all-skills.py` — docstring `67 skills` → `all skills`.
+- `frontend/src/types.ts` — comment referencing non-existent
+  `scripts/sync-data.mjs` → `scripts/validate-skill.py`.
+- `frontend/src/i18n.ts` — grammar fix `we don't vendored` →
+  `we haven't vendored`.
+- `skills/pdf-vision-extractor/SKILL.md` — `description` field no
+  longer contains a `> **Claude-only**` disclaimer (moved to body);
+  now holds a proper one-line functional summary.
+- `skills/invalid-name/SKILL.md` — was a test fixture with
+  `Invalid--Name` and duplicate `# Example` sections; rewritten as
+  a real skill (identifier naming-convention auditor).
+
 ### Added
 
 - **Local skill vault, take 1.** The repo used to be a curated

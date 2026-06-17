@@ -3,7 +3,7 @@ name: spreadsheet
 name_zh: spreadsheet
 description: 'Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review.'
 description_zh: 'Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual 审查.'
-category: dev-tools
+category: multimodal
 tags:
   - ai
   - api

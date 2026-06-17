@@ -3,7 +3,7 @@ name: analyze-cloud-costs
 name_zh: 分析云成本
 description: Analyze Langfuse Cloud infrastructure cost structure using Metabase
 description_zh: 分析和优化云服务的成本，识别浪费和优化机会。
-category: dev-tools
+category: finance
 tags:
   - ai
   - cli

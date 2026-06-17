@@ -3,7 +3,7 @@ name: skill-development
 name_zh: 技能-development
 description: 'Create and contribute skills to the communal knowledge base. Use when'
 description_zh: '创建 and contribute skills to the communal knowledge base. Use when'
-category: applications
+category: dev-tools
 tags:
   - ai
   - api

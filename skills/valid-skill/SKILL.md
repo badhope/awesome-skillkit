@@ -3,7 +3,7 @@ name: valid-skill
 name_zh: valid-技能
 description: A complete test skill with all optional directories.
 description_zh: A complete 测试 技能 with all optional directories.
-category: applications
+category: dev-tools
 tags:
   - frontend
   - llm

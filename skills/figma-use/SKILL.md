@@ -3,7 +3,7 @@ name: figma-use
 name_zh: figma-use
 description: '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every'
 description_zh: '**MANDATORY prerequisite** — you MUST invoke this 技能 BEFORE every'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

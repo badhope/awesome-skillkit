@@ -3,7 +3,7 @@ name: template-skill
 name_zh: template-技能
 description: 'Replace with description of the skill and when Claude should use it.'
 description_zh: 'Replace with description of the 技能 and when Claude should use it.'
-category: applications
+category: dev-tools
 tags:
   - ai
   - frontend

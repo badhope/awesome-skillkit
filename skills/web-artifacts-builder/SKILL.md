@@ -3,7 +3,7 @@ name: web-artifacts-builder
 name_zh: web-artifacts-builder
 description: 'Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma...'
 description_zh: 'Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern 前端 web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state 管理, rout...'
-category: applications
+category: code-assistants
 tags:
   - ai
   - documentation

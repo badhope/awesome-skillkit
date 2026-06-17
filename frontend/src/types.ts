@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 // Skill data types — kept in sync with docs/schema.md.
-// The build pipeline (scripts/sync-data.mjs) writes
+// The build pipeline (scripts/validate-skill.py) writes
 // public/skills.json from the SKILL.md files in /skills/.
 // We use the slim index (name, slug, category, tags) and
 // fetch full SKILL.md text on demand for the detail page.

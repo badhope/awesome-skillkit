@@ -3,7 +3,7 @@ name: claude-api
 name_zh: claude-接口
 description: 'Reference for the Claude API / Anthropic SDK — model ids, pricing, params,'
 description_zh: 'Reference for the Claude 接口 / Anthropic SDK — 模型 ids, pricing, params,'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api
@@ -12,6 +12,8 @@ tags:
   - database
 source: null
 license: Complete terms in LICENSE.txt
+platforms:
+  - claude
 needs_review: false
 slug: claude-api
 version: '1.0.0'
@@ -28,6 +30,8 @@ output:
 author: AI-SKILL
 ---
 # When to use
+
+> **Claude-only** — this skill references Claude API / Anthropic SDK specifics.
 
 Use this skill when you need to work with claude-api.
 

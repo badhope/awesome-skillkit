@@ -3,7 +3,7 @@ name: promptfoo-provider-setup
 name_zh: promptfoo-provider-设置
 description: Configure promptfoo providers or redteam targets for hosted models,
 description_zh: 'Configure promptfoo providers or redteam targets for hosted models,'
-category: dev-tools
+category: evaluation
 tags:
   - ai
   - api

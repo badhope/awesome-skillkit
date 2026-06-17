@@ -3,7 +3,7 @@ name: huggingface-llm-trainer
 name_zh: huggingface-大语言模型-trainer
 description: 'Train or fine-tune language and vision models using TRL (Transformer'
 description_zh: 'Train or fine-tune language and vision models using TRL (Transformer'
-category: dev-tools
+category: fine-tuning
 tags:
   - ai
   - api

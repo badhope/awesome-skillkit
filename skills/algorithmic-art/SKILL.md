@@ -3,7 +3,7 @@ name: algorithmic-art
 name_zh: algorithmic-art
 description: 'Creating algorithmic art using p5.js with seeded randomness and interactive'
 description_zh: 'Creating algorithmic art using p5.js with seeded randomness and interactive'
-category: applications
+category: image-generation
 tags:
   - ai
   - api

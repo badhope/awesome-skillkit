@@ -3,7 +3,7 @@ name: sentry
 name_zh: sentry
 description: 'Use when the user asks to inspect Sentry issues or events, summarize'
 description_zh: 'Use when the 用户 asks to inspect Sentry issues or events, summarize'
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

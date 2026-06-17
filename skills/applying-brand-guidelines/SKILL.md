@@ -3,7 +3,7 @@ name: applying-brand-guidelines
 name_zh: 应用品牌指南
 description: 'This skill applies consistent corporate branding and styling to all generated'
 description_zh: 确保内容符合品牌指南，包括视觉、语调和消息传递。
-category: dev-tools
+category: documentation
 tags:
   - ai
   - cli

@@ -3,7 +3,7 @@ name: vercel-deploy
 name_zh: vercel-部署
 description: 'Deploy applications and websites to Vercel. Use when the user requests'
 description_zh: 部署 applications and websites to Vercel. Use when the 用户 requests
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - cli

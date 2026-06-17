@@ -3,7 +3,7 @@ name: minimal-skill
 name_zh: minimal-技能
 description: A minimal skill with only required fields.
 description_zh: A minimal 技能 with only required fields.
-category: applications
+category: dev-tools
 tags:
   - frontend
   - llm

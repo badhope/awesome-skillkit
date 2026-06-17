@@ -3,7 +3,7 @@ name: transcribe
 name_zh: transcribe
 description: 'Transcribe audio files to text with optional diarization and known-speaker'
 description_zh: 'Transcribe audio files to text with optional diarization and known-speaker'
-category: dev-tools
+category: audio-speech
 tags:
   - ai
   - api

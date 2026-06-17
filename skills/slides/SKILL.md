@@ -3,7 +3,7 @@ name: slides
 name_zh: slides
 description: 'Create and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled'
 description_zh: '创建 and edit presentation slide decks (`.pptx`) with PptxGenJS, bundled'
-category: dev-tools
+category: multimodal
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: Agent
 name_zh: 智能体
 description: 'Manage AI agents: create, edit, delete, list, run, and check status'
 description_zh: 管理AI智能体：创建、编辑、删除、列表、运行和检查状态
-category: dev-tools
+category: agent-frameworks
 tags:
   - ai
   - backend

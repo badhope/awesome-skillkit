@@ -3,7 +3,7 @@ name: redteam-plugin-development
 name_zh: 红队插件开发
 description: 'Standards for creating redteam plugins and graders. Use when creating'
 description_zh: 开发红队测试插件和评分器，扩展安全测试能力。
-category: applications
+category: safety-alignment
 tags:
   - ai
   - documentation

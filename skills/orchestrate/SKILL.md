@@ -3,7 +3,7 @@ name: orchestrate
 name_zh: orchestrate
 description: 'Meta-agent supervisor that manages a fleet of Claude Code agents running'
 description_zh: 'Meta-智能体 supervisor that manages a fleet of Claude 代码 agents running'
-category: dev-tools
+category: agent-frameworks
 tags:
   - ai
   - api

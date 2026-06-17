@@ -3,7 +3,7 @@ name: cli-backend-testing
 name_zh: cli-backend-testing
 description: 'CLI + Backend integration testing workflow. Use when verifying backend'
 description_zh: CLI + 后端 集成 测试 workflow. Use when verifying 后端
-category: dev-tools
+category: terminal-cli
 tags:
   - ai
   - api

@@ -222,7 +222,7 @@ const STRINGS = {
 
   // ----- external repos page -----
   "external.title":      { en: "External repositories",           zh: "外部仓库索引" },
-  "external.subtitle":   { en: "We don't have every skill in the world — here are the upstream repos we pull from. Click through to grab anything we don't vendored.", zh: "我们没把全世界的技能都收齐 —— 这里列出我们抓取过的上游仓库。没收录的，可以自己去原仓库挑。" },
+  "external.subtitle":   { en: "We don't have every skill in the world — here are the upstream repos we pull from. Click through to grab anything we haven't vendored.", zh: "我们没把全世界的技能都收齐 —— 这里列出我们抓取过的上游仓库。没收录的，可以自己去原仓库挑。" },
   "external.vendor":     { en: "Vendor",                          zh: "厂商" },
   "external.skills":     { en: "skills",                          zh: "条技能" },
   "external.category":   { en: "Category",                        zh: "分类" },

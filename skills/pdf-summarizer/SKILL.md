@@ -3,7 +3,7 @@ name: PDF Summarizer
 name_zh: PDF 摘要器
 description: number of bullets in the summary
 description_zh: 把 PDF 总结成 N 条要点，按受众调整深度。无厂商依赖。
-category: applications
+category: multimodal
 tags:
   - ai
   - api

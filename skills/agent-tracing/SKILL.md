@@ -3,7 +3,7 @@ name: agent-tracing
 name_zh: 智能体-tracing
 description: 'Agent tracing CLI for execution snapshots. Use for agent-tracing, traces,'
 description_zh: '智能体 tracing CLI for execution snapshots. Use for 智能体-tracing, traces,'
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: security-best-practices
 name_zh: 安全-best-practices
 description: 'Perform language and framework specific security best-practice reviews'
 description_zh: Perform language and framework specific 安全 best-practice reviews
-category: dev-tools
+category: guardrails
 tags:
   - ai
   - api

@@ -38,7 +38,7 @@ description_zh: "Convert an existing 提示词 Flow Parallel 运行 Step (PRS) p
   workflow as flow_node in AML pipeline, load_component('workflow.py') doesn't work.
   DO NOT USE FOR: converting the flow itself (use promptflow-to-maf), deploying as
   online endpoint (use maf-online-endpoint), enabling tracing only (use maf-tracing)."
-category: dev-tools
+category: data-pipelines
 tags:
   - ai
   - api

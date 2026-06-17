@@ -3,7 +3,7 @@ name: analyzing-financial-statements
 name_zh: 分析财务报表
 description: 'This skill calculates key financial ratios and metrics from financial'
 description_zh: 计算关键财务比率和指标，用于投资分析和公司评估。
-category: applications
+category: finance
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: trl-training
 name_zh: trl-training
 description: 'Train and fine-tune transformer language models using TRL (Transformers'
 description_zh: 'Train and fine-tune transformer language models using TRL (Transformers'
-category: dev-tools
+category: fine-tuning
 tags:
   - ai
   - cli

@@ -3,7 +3,7 @@ name: 1password
 name_zh: 1password
 description: 'Set up and use 1Password CLI (op). Use when installing the CLI, enabling'
 description_zh: 'Set up and use 1Password CLI (op). Use when installing the CLI, enabling'
-category: dev-tools
+category: applications
 tags:
   - ai
   - cli

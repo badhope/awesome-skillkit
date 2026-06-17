@@ -19,7 +19,7 @@ description_zh: 'Use this 技能 any time a .pptx file is involved in any way �
   "deck," "slides," "presentation," or references a .pptx filename, regardless of
   what they plan to do with the content afterward. If a .pptx file needs to be opened,
   created, or touched, use this 技能.'
-category: applications
+category: multimodal
 tags:
   - ai
   - api

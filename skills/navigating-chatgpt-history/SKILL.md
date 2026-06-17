@@ -3,7 +3,7 @@ name: navigating-chatgpt-history
 name_zh: navigating-chatgpt-history
 description: 'Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specif...'
 description_zh: 'Navigates archived ChatGPT or Claude-style conversation exports and a MemFS reference archive on demand. Use when recalling what a past assistant knew, searching old conversations, rendering specif...'
-category: applications
+category: memory
 tags:
   - ai
   - evaluation

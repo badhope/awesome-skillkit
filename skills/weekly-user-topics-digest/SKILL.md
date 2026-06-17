@@ -3,7 +3,7 @@ name: weekly-user-topics-digest
 name_zh: weekly-用户-topics-digest
 description: 'Use this skill when you need guidance on weekly-user-topics-digest.'
 description_zh: 'Use this skill when you need guidance on weekly-user-topics-digest.'
-category: dev-tools
+category: case-studies
 tags:
   - ai
   - api

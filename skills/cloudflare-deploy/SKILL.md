@@ -3,7 +3,7 @@ name: cloudflare-deploy
 name_zh: cloudflare-部署
 description: 'Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.'
 description_zh: '部署 applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the 用户 asks to 部署, host, publish, or set up a project on Cloudflare.'
-category: dev-tools
+category: llm-serving
 tags:
   - ai
   - api

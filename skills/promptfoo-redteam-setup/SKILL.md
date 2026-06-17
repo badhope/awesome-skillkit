@@ -3,7 +3,7 @@ name: promptfoo-redteam-setup
 name_zh: 设置 Promptfoo 红队测试
 description: 'Create or refine promptfoo redteam setup configs: purpose, targets,'
 description_zh: 配置 Promptfoo 红队测试环境和测试用例。
-category: dev-tools
+category: safety-alignment
 tags:
   - ai
   - api

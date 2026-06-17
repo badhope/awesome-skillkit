@@ -3,7 +3,7 @@ name: huggingface-best
 name_zh: huggingface-best
 description: 'Use this skill when you need guidance on huggingface-best.'
 description_zh: 'Use this skill when you need guidance on huggingface-best.'
-category: dev-tools
+category: applications
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: remotion-best-practices
 name_zh: remotion-best-practices
 description: Best practices for Remotion - Video creation in React
 description_zh: Best practices for Remotion - Video creation in React
-category: applications
+category: video-generation
 tags:
   - ai
   - docker

@@ -3,7 +3,7 @@ name: notion-research-documentation
 name_zh: notion-research-documentation
 description: 'Research across Notion and synthesize into structured documentation;'
 description_zh: Research across Notion and synthesize into structured 文档;
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

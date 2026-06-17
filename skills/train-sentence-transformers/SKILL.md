@@ -3,7 +3,7 @@ name: train-sentence-transformers
 name_zh: train-sentence-transformers
 description: 'Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding model; for retrieval, similarity, clustering, classification, paraphrase mining, ...'
 description_zh: 'Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder; dense or static embedding 模型; for retrieval, similarity, clustering, classification, paraphrase mining, ded...'
-category: dev-tools
+category: embeddings
 tags:
   - ai
   - api

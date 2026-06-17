@@ -3,7 +3,7 @@ name: memfs-search
 name_zh: memfs-搜索
 description: 'Semantic search over agent memory files. Use when you need to find conceptually'
 description_zh: 'Semantic search over 智能体 memory files. Use when you need to find conceptually'
-category: dev-tools
+category: memory
 tags:
   - ai
   - documentation

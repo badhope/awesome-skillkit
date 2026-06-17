@@ -3,7 +3,7 @@ name: upstash-workflow
 name_zh: upstash-workflow
 description: 'LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute'
 description_zh: 'LobeHub Upstash Workflow and QStash guide. Use for async workflows, process/paginate/execute'
-category: applications
+category: code-assistants
 tags:
   - ai
   - api

@@ -3,7 +3,7 @@ name: i18n
 name_zh: i18n
 description: 'LobeHub i18n with react-i18next. Use for user-facing strings, locale'
 description_zh: 'LobeHub i18n with react-i18next. Use for 用户-facing strings, locale'
-category: dev-tools
+category: translation
 tags:
   - ai
   - cli

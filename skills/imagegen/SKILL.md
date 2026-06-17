@@ -3,7 +3,7 @@ name: imagegen
 name_zh: imagegen
 description: 'Generate or edit raster images when the task benefits from AI-created'
 description_zh: 生成 or edit raster images when the task benefits from AI-created
-category: dev-tools
+category: image-generation
 tags:
   - ai
   - api

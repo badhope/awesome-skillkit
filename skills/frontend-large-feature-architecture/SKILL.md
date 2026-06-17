@@ -3,7 +3,7 @@ name: Frontend Large-Feature Architecture
 name_zh: 前端大型功能架构
 description: 'You''re about to build a **non-trivial frontend feature** —'
 description_zh: 在写代码前规划非平凡的前端功能 —— 控制器组件、状态归属、列表 vs 详情获取、虚拟化。通用模式，框架感知但不绑死。
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

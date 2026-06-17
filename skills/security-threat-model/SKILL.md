@@ -3,7 +3,7 @@ name: security-threat-model
 name_zh: 安全-threat-model
 description: 'Repository-grounded threat modeling that enumerates trust boundaries,'
 description_zh: 'Repository-grounded threat modeling that enumerates trust boundaries,'
-category: dev-tools
+category: guardrails
 tags:
   - ai
   - backend

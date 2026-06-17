@@ -3,7 +3,7 @@ name: notion-knowledge-capture
 name_zh: notion-knowledge-capture
 description: 'Capture conversations and decisions into structured Notion pages; use'
 description_zh: 'Capture conversations and decisions into structured Notion pages; use'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

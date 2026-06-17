@@ -3,7 +3,7 @@ name: metal-kernel
 name_zh: metal-kernel
 description: 'Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml di...'
 description_zh: 'Write Metal/MPS kernels for PyTorch operators. Use when adding MPS device support to operators, implementing Metal shaders, or porting CUDA kernels to Apple Silicon. Covers native_functions.yaml di...'
-category: applications
+category: gpu-kernels
 tags:
   - ai
   - api

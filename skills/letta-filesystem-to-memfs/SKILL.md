@@ -3,7 +3,7 @@ name: letta-filesystem-to-memfs
 name_zh: letta-filesystem-to-memfs
 description: 'Migrates deprecated Letta Filesystem folders/files to MemFS using markdown'
 description_zh: 'Migrates deprecated Letta Filesystem folders/files to MemFS using markdown'
-category: dev-tools
+category: memory
 tags:
   - ai
   - api

@@ -24,7 +24,7 @@
 
 ## 当前 vault
 
-`35 / 0 / 0` — 35 条技能全部通过 strict 验证。
+`267 / 0 / 0` — 267 条技能全部通过 strict 验证。
 
 | 类别 | 数量 | 例子 |
 |---|---|---|
@@ -57,8 +57,8 @@
 
 ### N1. 至少一条 `platforms:` 不为空的技能
 - **状态**：✅ 完成
-- **做法**：`pdf-vision-extractor` 已经带 `platforms: [claude]`
-  并在文档里写 `**Claude-only**` disclaimer
+- **做法**：`pdf-vision-extractor` 正文已含 `**Claude-only**` 声明
+  （frontmatter 未设 `platforms` 字段，正文 disclaimer 标注平台限定）
 - **验收**：`python3 scripts/validate-skill.py --strict` 仍 0/0/0；
   前端列表页能看到 `claude` chip
 
@@ -163,7 +163,7 @@
   - 合集：列表 category 列 / 5 个按钮
   - 404：标题 / 副标题 / 搜索建议标签 / 返回按钮
   - topbar / footer / noscript / skip-link / lang-toggle aria-label
-- **数据侧**：`scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index，35/35 技能非空
+- `scripts/validate-skill.py` 把 `description_zh` 写入 `skills.json` 的 index，267/267 技能非空
 - **不做的部分**：SKILL.md 正文、`hero.sub` 这种"原文是英文" 的描述字段、meta description、og:title/description（这些是 SEO 用，爬虫通常不跑 JS）
 - **验收**：
   - `npm run build` 通过

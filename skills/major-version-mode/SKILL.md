@@ -3,7 +3,7 @@ name: major-version-mode
 name_zh: major-版本-mode
 description: 'Context for working on the next AI SDK major release. Only use when explicitly'
 description_zh: 'Context for working on the next AI SDK major release. Only use when explicitly'
-category: applications
+category: dev-tools
 tags:
   - ai
   - deployment

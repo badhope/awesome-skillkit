@@ -3,7 +3,7 @@ name: datadog-query-recipes
 name_zh: Datadog 查询配方
 description: 'Langfuse-specific Datadog query recipes for production telemetry research.'
 description_zh: 使用 Datadog 查询语言分析和可视化监控数据。
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

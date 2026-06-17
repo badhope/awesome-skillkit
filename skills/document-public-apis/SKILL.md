@@ -3,7 +3,7 @@ name: document-public-apis
 name_zh: 文档-public-apis
 description: 'Document undocumented public APIs in PyTorch by removing functions from'
 description_zh: 'Document undocumented public APIs in PyTorch by removing functions from'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - api

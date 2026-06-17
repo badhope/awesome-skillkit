@@ -3,7 +3,7 @@ name: imsg
 name_zh: imsg
 description: 'iMessage/SMS CLI for listing chats, history, and sending messages via'
 description_zh: 'iMessage/SMS CLI for listing chats, history, and sending messages via'
-category: dev-tools
+category: applications
 tags:
   - ai
   - cli

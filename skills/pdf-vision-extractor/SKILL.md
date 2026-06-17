@@ -1,9 +1,9 @@
 ---
 name: PDF Vision Extractor
 name_zh: PDF 视觉抽取器
-description: '> **Claude-only** — 这个技能假设模型有 vision 能力读 PDF 里的图像。'
+description: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
 description_zh: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
-category: applications
+category: multimodal
 tags:
   - ai
   - documentation
@@ -14,6 +14,8 @@ source: null
 license: MIT
 author: badhope
 version: '0.1.0'
+platforms:
+  - claude
 needs_review: false
 slug: pdf-vision-extractor
 created: '2026-06-12'

@@ -3,7 +3,7 @@ name: typescript
 name_zh: typescript
 description: 'LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,'
 description_zh: 'LobeHub TypeScript style and type-safety guide. Use when editing TS/TSX/MTS,'
-category: applications
+category: code-assistants
 tags:
   - ai
   - api

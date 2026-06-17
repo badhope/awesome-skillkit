@@ -3,7 +3,7 @@ name: frontend-design
 name_zh: frontend-design
 description: 'Guidance for distinctive, intentional visual design when building new'
 description_zh: 'Guidance for distinctive, intentional visual 设计 when building new'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

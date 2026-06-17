@@ -3,7 +3,7 @@ name: datadog
 name_zh: datadog
 description: 'Query Datadog observability data (logs, metrics, monitors, dashboards,'
 description_zh: 'Query Datadog observability data (logs, metrics, monitors, dashboards,'
-category: dev-tools
+category: observability
 tags:
   - ai
   - api

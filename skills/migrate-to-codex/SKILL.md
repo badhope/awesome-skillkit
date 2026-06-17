@@ -3,7 +3,7 @@ name: migrate-to-codex
 name_zh: 迁移-to-codex
 description: 'Migrate supported instruction files, skills, agents, and MCP config into'
 description_zh: 'Migrate supported instruction files, skills, agents, and MCP 配置 into'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - backend
@@ -11,6 +11,8 @@ tags:
   - database
   - deployment
 source: null
+platforms:
+  - codex
 needs_review: false
 slug: migrate-to-codex
 version: '1.0.0'
@@ -28,6 +30,8 @@ author: AI-SKILL
 license: MIT
 ---
 # When to use
+
+> **Codex-only** — this skill migrates artifacts into OpenAI Codex format.
 
 Use this skill when you need to work with migrate-to-codex.
 

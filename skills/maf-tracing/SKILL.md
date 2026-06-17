@@ -15,7 +15,7 @@ description_zh: 'Enable tracing and logging for Microsoft 智能体 Framework (M
   Application Insights for MAF, OTLP export, observe workflow, 监控 智能体 workflow, trace
   智能体 framework, instrument MAF, add observability, trace workflow executions, 调试
   workflow.'
-category: applications
+category: observability
 tags:
   - ai
   - api

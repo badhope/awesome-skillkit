@@ -3,7 +3,7 @@ name: spotify-player
 name_zh: spotify-player
 description: 'Terminal Spotify playback/search via spogo (preferred) or spotify_player.'
 description_zh: 'Terminal Spotify playback/search via spogo (preferred) or spotify_player.'
-category: dev-tools
+category: applications
 tags:
   - ai
   - cli

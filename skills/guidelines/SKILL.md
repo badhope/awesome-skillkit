@@ -3,7 +3,7 @@ name: guidelines
 name_zh: guidelines
 description: 'Response formatting and communication guidelines for generating clear, accurate, and well-structured replies.'
 description_zh: 'Response formatting and communication guidelines for generating clear, accurate, and well-structured replies.'
-category: applications
+category: documentation
 tags:
   - ai
   - frontend

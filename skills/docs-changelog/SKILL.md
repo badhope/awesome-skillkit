@@ -3,7 +3,7 @@ name: docs-changelog
 name_zh: docs-changelog
 description: 'Write website changelog pages under docs/changelog/*.mdx. Use for EN/ZH'
 description_zh: 'Write website changelog pages under docs/changelog/*.mdx. Use for EN/ZH'
-category: dev-tools
+category: documentation
 tags:
   - ai
   - deployment

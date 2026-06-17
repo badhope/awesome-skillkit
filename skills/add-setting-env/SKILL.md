@@ -3,7 +3,7 @@ name: add-setting-env
 name_zh: 添加-设置-env
 description: 'Add server-side environment variables that control default values for'
 description_zh: 'Add 服务器-side environment variables that control default values for'
-category: applications
+category: dev-tools
 tags:
   - ai
   - backend

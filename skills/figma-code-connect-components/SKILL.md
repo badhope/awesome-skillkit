@@ -3,7 +3,7 @@ name: figma-code-connect-components
 name_zh: figma-代码-connect-components
 description: 'Connects Figma design components to code components using Code Connect'
 description_zh: Connects Figma 设计 components to 代码 components using 代码 Connect
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - api

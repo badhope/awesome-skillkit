@@ -3,7 +3,7 @@ name: openai-docs
 name_zh: openai-docs
 description: 'Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the lates...'
 description_zh: 'Use when the 用户 asks how to 构建 with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official 文档 with citations, help choosing the latest 模型 for a use c...'
-category: dev-tools
+category: official-cookbooks
 tags:
   - ai
   - api

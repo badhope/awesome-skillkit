@@ -3,7 +3,7 @@ name: playwright-interactive
 name_zh: playwright-interactive
 description: 'Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.'
 description_zh: 'Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.'
-category: dev-tools
+category: browser-automation
 tags:
   - ai
   - api

@@ -17,7 +17,7 @@ description_zh: 'Convert 提示词 Flow flow definitions to Microsoft 智能体 
   LLM flow. DO NOT USE FOR: writing new MAF workflows from scratch (no source flow),
   deploying MAF workflows (use maf-online-endpoint), enabling tracing (use maf-tracing),
   or general 智能体-framework Q&A.'
-category: dev-tools
+category: data-pipelines
 tags:
   - ai
   - api

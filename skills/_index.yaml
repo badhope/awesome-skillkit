@@ -9,7 +9,7 @@ skills:
     name_zh: 1password
     description: Set up and use 1Password CLI (op). Use when installing the CLI,
       enabling
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - cli
@@ -24,7 +24,7 @@ skills:
     name_zh: add-函数-examples
     description: Guide for adding new AI function examples, for testing specific
       features against the actual provider APIs.
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -41,7 +41,7 @@ skills:
       worker/src/constants/default-model-prices.json, 
       packages/shared/src/server/llm/types.ts, pricing tiers, tokenizer IDs, or 
       matchPattern regexes for OpenAI, Anthropic, Bedrock, Verte...
-    category: applications
+    category: finance
     tags:
       - ai
       - backend
@@ -56,7 +56,7 @@ skills:
     name_zh: add-or-fix-type-checking
     description: Fixes broken typing checks detected by ty, make typing, or make
       check-repo. Use when typing errors appear in local runs, CI, or PR logs.
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -101,7 +101,7 @@ skills:
     name_zh: 添加-设置-env
     description: Add server-side environment variables that control default 
       values for
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - backend
@@ -117,7 +117,7 @@ skills:
     description: Add unsigned integer (uint) type support to PyTorch operators 
       by updating AT_DISPATCH macros. Use when adding support for uint16, 
       uint32, uint64 types to operators, kernels, or when user mentions e...
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - frontend
@@ -133,7 +133,7 @@ skills:
     description: Create and maintain Architecture Decision Records (ADRs) 
       optimized for agentic coding workflows. Use when you need to propose, 
       write, update, accept/reject, deprecate, or supersede an ADR; bootstra...
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -147,7 +147,7 @@ skills:
     name: Agent
     name_zh: 智能体
     description: 'Manage AI agents: create, edit, delete, list, run, and check status'
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - backend
@@ -162,7 +162,7 @@ skills:
     name_zh: letta-development-guide
     description: Comprehensive guide for developing Letta agents, including 
       architecture
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -178,7 +178,7 @@ skills:
     description: Agent runtime lifecycle hooks. Use for before/after tool or 
       step hooks, tool mocks, human intervention, sub-agent calls, context 
       compression, evals, tracing, callAgent, or lifecycle events.
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -193,7 +193,7 @@ skills:
     name_zh: Agent 设置与维护
     description: Shared workflow for editing Langfuse''s repo-owned agent setup 
       under
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - database
@@ -223,7 +223,7 @@ skills:
     name_zh: 智能体-tracing
     description: Agent tracing CLI for execution snapshots. Use for 
       agent-tracing, traces,
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -239,7 +239,7 @@ skills:
     description: Fetch and summarize recent AI news from curated RSS feeds 
       (Hugging Face, VentureBeat, The Verge, OpenAI, Anthropic, DeepMind, etc.) 
       and YouTube channels (Yannic Kilcher, Two Minute Papers, AI Expla...
-    category: applications
+    category: case-studies
     tags:
       - ai
       - deployment
@@ -254,7 +254,7 @@ skills:
     name_zh: algorithmic-art
     description: Creating algorithmic art using p5.js with seeded randomness and
       interactive
-    category: applications
+    category: image-generation
     tags:
       - ai
       - api
@@ -269,7 +269,7 @@ skills:
     name_zh: 分析云成本
     description: Analyze Langfuse Cloud infrastructure cost structure using 
       Metabase
-    category: dev-tools
+    category: finance
     tags:
       - ai
       - cli
@@ -284,7 +284,7 @@ skills:
     name_zh: 分析财务报表
     description: This skill calculates key financial ratios and metrics from 
       financial
-    category: applications
+    category: finance
     tags:
       - ai
       - api
@@ -301,7 +301,7 @@ skills:
       encountering AOTI segfaults, device mismatch errors, constant loading 
       failures, or runtime errors from aot_compile, aot_load, 
       aoti_compile_and_...
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -330,7 +330,7 @@ skills:
     name_zh: 应用品牌指南
     description: This skill applies consistent corporate branding and styling to
       all generated
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - cli
@@ -345,7 +345,7 @@ skills:
     name_zh: aspnet-core
     description: Build, review, refactor, or architect ASP.NET Core web 
       applications using
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -390,7 +390,7 @@ skills:
     name_zh: 书籍翻译
     description: Translate "The Interactive Book of Prompting" chapters and UI 
       strings
-    category: applications
+    category: translation
     tags:
       - ai
       - api
@@ -406,7 +406,7 @@ skills:
     description: Bootstrap a new realtime eval folder inside this cookbook repo 
       by choosing the right harness from examples/evals/realtime_evals, 
       scaffolding prompt/tools/data files, generating a useful README, and...
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - cli
@@ -422,7 +422,7 @@ skills:
     description: Applies Anthropic's official brand colors and typography to any
       sort of artifact that may benefit from having Anthropic's look-and-feel. 
       Use it when brand colors or style guidelines, visual formatt...
-    category: applications
+    category: documentation
     tags:
       - ai
       - api
@@ -436,7 +436,7 @@ skills:
     name: Browser ML in JavaScript
     name_zh: 浏览器端机器学习（JavaScript）
     description: The user wants to run an ML model in JavaScript
-    category: dev-tools
+    category: browser-automation
     tags:
       - ai
       - api
@@ -451,7 +451,7 @@ skills:
     name_zh: builtin-tool
     description: Build LobeHub builtin tool packages. Use when adding 
       agent-callable tools,
-    category: dev-tools
+    category: tool-use
     tags:
       - ai
       - api
@@ -467,7 +467,7 @@ skills:
     description: Create beautiful visual art in .png and .pdf documents using 
       design philosophy. You should use this skill when the user asks to create 
       a poster, piece of art, design, or other static piece. Create ...
-    category: dev-tools
+    category: image-generation
     tags:
       - ai
       - api
@@ -481,7 +481,7 @@ skills:
     name: capture-api-response-test-fixture
     name_zh: capture-接口-response-测试-fixture
     description: Capture API response test fixture.
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -496,7 +496,7 @@ skills:
     name_zh: 编写变更日志
     description: Shared workflow for writing Langfuse changelog entries after a 
       feature
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - deployment
@@ -511,7 +511,7 @@ skills:
     name_zh: chat-sdk
     description: Build multi-platform chat bots with the chat SDK. Use for 
       Slack, Teams,
-    category: dev-tools
+    category: chat-uikits
     tags:
       - ai
       - api
@@ -526,7 +526,7 @@ skills:
     name_zh: chatgpt-apps
     description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK 
       applications
-    category: dev-tools
+    category: chat-uikits
     tags:
       - ai
       - api
@@ -541,14 +541,15 @@ skills:
     name_zh: claude-接口
     description: Reference for the Claude API / Anthropic SDK — model ids, 
       pricing, params,
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
       - backend
       - cli
       - database
-    platforms: []
+    platforms:
+      - claude
     needs_review: false
     path: skills/claude-api/SKILL.md
   - slug: cli
@@ -556,7 +557,7 @@ skills:
     name_zh: cli
     description: LobeHub CLI (@lobehub/cli) development guide — commands, 
       subcommands,
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -571,7 +572,7 @@ skills:
     name_zh: cli-backend-testing
     description: CLI + Backend integration testing workflow. Use when verifying 
       backend
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -585,7 +586,7 @@ skills:
     name: CLI Builder
     name_zh: CLI 工具构造
     description: The user wants a **real CLI** they can run by name
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -601,7 +602,7 @@ skills:
     description: Build a composable CLI for Codex from API docs, an OpenAPI 
       spec, existing curl examples, an SDK, a web app, an admin tool, or a local
       script. Use when the user wants Codex to create a command-line ...
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -615,7 +616,7 @@ skills:
     name: ClickHouse Best Practices
     name_zh: ClickHouse 最佳实践
     description: You're reviewing or designing something that touches
-    category: dev-tools
+    category: text-to-sql
     tags:
       - ai
       - cli
@@ -631,7 +632,7 @@ skills:
     description: Deploy applications and infrastructure to Cloudflare using 
       Workers, Pages, and related platform services. Use when the user asks to 
       deploy, host, publish, or set up a project on Cloudflare.
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -661,7 +662,7 @@ skills:
     name: Code Reviewer
     name_zh: 代码审查员
     description: minimum severity to report
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -690,7 +691,7 @@ skills:
     name_zh: compaction-prompts
     description: Configures Letta agent compaction settings and custom 
       summarization prompts.
-    category: dev-tools
+    category: prompt-libraries
     tags:
       - ai
       - api
@@ -706,7 +707,7 @@ skills:
     description: Guide for using the Letta Conversations API to manage isolated 
       message threads on agents. Use when building multi-user chat applications,
       session management, or any scenario requiring separate conv...
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -721,7 +722,7 @@ skills:
     name_zh: cookbook-audit
     description: Audit an Anthropic Cookbook notebook based on a rubric. Use 
       whenever a notebook review or audit is requested.
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -736,7 +737,7 @@ skills:
     name_zh: 创建财务模型
     description: This skill provides an advanced financial modeling suite with 
       DCF analysis,
-    category: dev-tools
+    category: finance
     tags:
       - ai
       - api
@@ -752,7 +753,7 @@ skills:
     description: Builds and debugs Letta Code channels, including first-party 
       channel adapters and dynamic user channel plugins under ~/.letta/channels.
       Use when adding Telegram, WhatsApp, Bluesky, Slack, Discord, ...
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -768,7 +769,7 @@ skills:
     description: LobeHub data-fetching pipeline guide. Use for service layer, 
       Zustand store, SWR, lambdaClient, useClientDataSWR, useFetchXxx hooks, or 
       migrating useEffect fetches.
-    category: dev-tools
+    category: data-pipelines
     tags:
       - ai
       - api
@@ -783,7 +784,7 @@ skills:
     name_zh: datadog
     description: Query Datadog observability data (logs, metrics, monitors, 
       dashboards,
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -798,7 +799,7 @@ skills:
     name_zh: Datadog 查询配方
     description: Langfuse-specific Datadog query recipes for production 
       telemetry research.
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -813,7 +814,7 @@ skills:
     name_zh: db-migrations
     description: 'Use for Drizzle migrations: schema/table/column changes, migration
       generation'
-    category: dev-tools
+    category: text-to-sql
     tags:
       - ai
       - cli
@@ -828,7 +829,7 @@ skills:
     name_zh: 使用 Datadog 调试问题
     description: Debug a user-reported issue, Linear ticket, or incident report 
       by combining
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -859,7 +860,7 @@ skills:
     name_zh: DeepEval 评估
     description: DeepEval evaluation workflow for AI agents and LLM 
       applications.
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - cli
@@ -873,7 +874,7 @@ skills:
     name: deepeval Pytest Eval Suite
     name_zh: DeepEval 评估套件
     description: Targeted fix to attempt next round
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - api
@@ -887,7 +888,7 @@ skills:
     name: deepeval OTel Trace Export
     name_zh: DeepEval OpenTelemetry
     description: Suggested follow-up actions
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -901,7 +902,7 @@ skills:
     name: deepeval SDK Tracing
     name_zh: DeepEval 追踪
     description: Confirmation that traces are arriving in Confident AI''s
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -916,7 +917,7 @@ skills:
     name_zh: define-goal
     description: Help the user define a concrete, measurable goal before 
       starting work,
-    category: dev-tools
+    category: prompt-libraries
     tags:
       - ai
       - api
@@ -931,7 +932,7 @@ skills:
     name_zh: desktop
     description: Electron desktop development guide — IPC handlers, controllers,
       preload scripts, window/menu management.
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - api
@@ -947,7 +948,7 @@ skills:
     description: Develop examples for AI SDK functions. Use when creating, 
       running, or modifying examples under examples/ai-functions/src to validate
       provider support, demonstrate features, or create test fixtures.
-    category: dev-tools
+    category: tool-use
     tags:
       - ai
       - api
@@ -962,7 +963,7 @@ skills:
     name_zh: discord
     description: Discord automation CLI — send/read/search messages, manage 
       channels and
-    category: dev-tools
+    category: chat-uikits
     tags:
       - ai
       - api
@@ -977,7 +978,7 @@ skills:
     name_zh: discount-审查
     description: Inspect the discount policy fixture with a repeatable review 
       checklist
-    category: dev-tools
+    category: finance
     tags:
       - ai
       - frontend
@@ -1007,7 +1008,7 @@ skills:
     name_zh: doc
     description: Use when the task involves reading, creating, or editing 
       `.docx` documents,
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - cli
@@ -1037,7 +1038,7 @@ skills:
     name_zh: docs-changelog
     description: Write website changelog pages under docs/changelog/*.mdx. Use 
       for EN/ZH
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - deployment
@@ -1052,7 +1053,7 @@ skills:
     name_zh: docstring
     description: Write docstrings for PyTorch functions and methods following 
       PyTorch
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -1067,7 +1068,7 @@ skills:
     name_zh: 文档-public-apis
     description: Document undocumented public APIs in PyTorch by removing 
       functions from
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -1082,7 +1083,7 @@ skills:
     name_zh: docx
     description: Use this skill whenever the user wants to create, read, edit, 
       or manipulate
-    category: dev-tools
+    category: multimodal
     tags:
       - ai
       - api
@@ -1098,7 +1099,7 @@ skills:
     description: LobeHub Drizzle ORM schema and query style. Use for pgTable 
       schemas, indexes, joins, inferred types, db.select/db.query, schema 
       fields, foreign keys, junction tables, or postgres query patterns.
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1112,7 +1113,7 @@ skills:
     name: Embedding Model Training
     name_zh: 嵌入模型训练
     description: The user wants to train, fine-tune, or adapt an
-    category: applications
+    category: embeddings
     tags:
       - ai
       - backend
@@ -1126,7 +1127,7 @@ skills:
     name: fetch-buildkite-logs
     name_zh: fetch-buildkite-logs
     description: Fetch and analyze Buildkite CI build logs for failures
-    category: applications
+    category: observability
     tags:
       - ai
       - api
@@ -1141,7 +1142,7 @@ skills:
     name_zh: figma
     description: Use the Figma MCP server to fetch design context, screenshots, 
       variables,
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - backend
@@ -1156,7 +1157,7 @@ skills:
     name_zh: figma-代码-connect-components
     description: Connects Figma design components to code components using Code 
       Connect
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1171,7 +1172,7 @@ skills:
     name_zh: figma-创建-design-system-rules
     description: Generates custom design system rules for the user's codebase. 
       Use when
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1186,7 +1187,7 @@ skills:
     name_zh: figma-创建-new-文件
     description: Create a new blank Figma file. Use when the user wants to 
       create a new
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - figma
@@ -1201,7 +1202,7 @@ skills:
     name_zh: figma-生成-design
     description: Use this skill alongside figma-use when the task involves 
       translating
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1216,7 +1217,7 @@ skills:
     name_zh: figma-生成-library
     description: Build or update a professional-grade design system in Figma 
       from a codebase.
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1231,7 +1232,7 @@ skills:
     name_zh: figma-implement-design
     description: Translates Figma designs into production-ready application code
       with
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - backend
@@ -1245,7 +1246,7 @@ skills:
     name: figma-use
     name_zh: figma-use
     description: '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every'
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1276,7 +1277,7 @@ skills:
     description: Manage Letta AI agent fleets declaratively with kubectl-style 
       CLI. Use when creating, updating, or managing multiple Letta agents with 
       shared configurations, memory blocks, tools, folders, canary d...
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -1291,7 +1292,7 @@ skills:
     name_zh: 前端浏览器审查
     description: Shared workflow for browser-based review of user-visible 
       frontend changes
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - backend
@@ -1306,7 +1307,7 @@ skills:
     name_zh: frontend-design
     description: Guidance for distinctive, intentional visual design when 
       building new
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1320,7 +1321,7 @@ skills:
     name: Frontend Large-Feature Architecture
     name_zh: 前端大型功能架构
     description: You're about to build a **non-trivial frontend feature** —
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1336,7 +1337,7 @@ skills:
     description: Use when the task asks for a visually strong landing page, 
       website, app, prototype, demo, or game UI. This skill enforces restrained 
       composition, image-led hierarchy, cohesive content structure, an...
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1350,7 +1351,7 @@ skills:
     name: Frontend Visual Design Taste
     name_zh: 前端视觉设计品味
     description: The user is building something where the quality
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -1446,7 +1447,7 @@ skills:
     name: Goal Definition
     name_zh: 目标定义
     description: The user said "I want to…" or "let's set a goal" or
-    category: dev-tools
+    category: prompt-libraries
     tags:
       - ai
       - api
@@ -1461,7 +1462,7 @@ skills:
     name_zh: gog
     description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, 
       Sheets, and
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - api
@@ -1476,7 +1477,7 @@ skills:
     name_zh: guidelines
     description: Response formatting and communication guidelines for generating
       clear, accurate, and well-structured replies.
-    category: applications
+    category: documentation
     tags:
       - ai
       - frontend
@@ -1490,7 +1491,7 @@ skills:
     name: Haiku
     name_zh: 俳句
     description: Write haiku poems following specific style conventions
-    category: applications
+    category: llm-serving
     tags:
       - ai
       - frontend
@@ -1507,7 +1508,7 @@ skills:
       Codex-compatible animated pets and pet spritesheets from character art, 
       generated images, company or prospect brand cues, or visual references. 
       Us...
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - api
@@ -1523,7 +1524,7 @@ skills:
     description: Implement or debug LobeHub heterogeneous agents. Use for Claude
       Code/Codex adapters, external CLI agents, event mapping, IPC, persistence,
       tool-call chains, sessions, traces, or adapter bugs.
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - backend
@@ -1538,7 +1539,7 @@ skills:
     name_zh: hf-cli
     description: Hugging Face Hub CLI (`hf`) for downloading, uploading, and 
       managing
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -1554,7 +1555,7 @@ skills:
     description: Use Hugging Face Hub via MCP server tools. Search models, 
       datasets, Spaces, papers. Get repo details, fetch documentation, run 
       compute jobs, and use Gradio Spaces as AI tools. Available when connec...
-    category: dev-tools
+    category: mcp-protocol
     tags:
       - ai
       - backend
@@ -1569,7 +1570,7 @@ skills:
     name_zh: hf-mem
     description: Hugging Face CLI to estimate the required memory to load 
       Safetensors or GGUF model weights for inference from the Hugging Face Hub
-    category: dev-tools
+    category: memory
     tags:
       - ai
       - cli
@@ -1598,7 +1599,7 @@ skills:
     name: huggingface-best
     name_zh: huggingface-best
     description: Use this skill when you need guidance on huggingface-best.
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - api
@@ -1613,7 +1614,7 @@ skills:
     name_zh: huggingface-community-evals
     description: Run evaluations for Hugging Face Hub models using inspect-ai 
       and lighteval
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - backend
@@ -1629,7 +1630,7 @@ skills:
     description: Use this skill for Hugging Face Dataset Viewer API workflows 
       that fetch subset/split metadata, paginate rows, search text, apply 
       filters, download parquet URLs, and read size or statistics.
-    category: dev-tools
+    category: data-pipelines
     tags:
       - ai
       - api
@@ -1644,7 +1645,7 @@ skills:
     name_zh: huggingface-gradio
     description: Build Gradio web UIs and demos in Python. Use when creating or 
       editing Gradio apps, components, event listeners, layouts, or chatbots.
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -1659,7 +1660,7 @@ skills:
     name_zh: huggingface-大语言模型-trainer
     description: Train or fine-tune language and vision models using TRL 
       (Transformer
-    category: dev-tools
+    category: fine-tuning
     tags:
       - ai
       - api
@@ -1675,7 +1676,7 @@ skills:
     description: Use to select models to run locally with llama.cpp and GGUF on 
       CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, 
       running servers, exact GGUF file lookup, conversion, and OpenAI-...
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -1691,7 +1692,7 @@ skills:
     description: Build and publish a Gradio demo on Hugging Face Spaces for a 
       user-provided LoRA. Use when someone asks to create, generate, ship, or 
       publish a Space, demo, Gradio app, or playground for a LoRA — in...
-    category: dev-tools
+    category: fine-tuning
     tags:
       - ai
       - api
@@ -1707,7 +1708,7 @@ skills:
     description: Publish and manage research papers on Hugging Face Hub. 
       Supports creating paper pages, linking papers to models/datasets, claiming
       authorship, and generating professional markdown-based research ar...
-    category: dev-tools
+    category: case-studies
     tags:
       - ai
       - api
@@ -1722,7 +1723,7 @@ skills:
     name_zh: huggingface-papers
     description: Look up and read Hugging Face paper pages in markdown, and use 
       the papers
-    category: dev-tools
+    category: case-studies
     tags:
       - ai
       - api
@@ -1737,7 +1738,7 @@ skills:
     name_zh: huggingface-spaces
     description: Build, deploy, and maintain applications on Hugging Face Spaces
       — Gradio
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -1753,7 +1754,7 @@ skills:
     description: Use this skill when the user wants to build tool/scripts or 
       achieve a task where using data from the Hugging Face API would help. This
       is especially useful when chaining or combining API calls or t...
-    category: dev-tools
+    category: tool-use
     tags:
       - ai
       - api
@@ -1768,7 +1769,7 @@ skills:
     name_zh: huggingface-trackio
     description: Track and visualize ML training experiments with Trackio. Use 
       when logging
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -1784,7 +1785,7 @@ skills:
     description: Trains and fine-tunes vision models for object detection 
       (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — 
       MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers cl...
-    category: dev-tools
+    category: fine-tuning
     tags:
       - ai
       - api
@@ -1799,7 +1800,7 @@ skills:
     name_zh: huggingface-zerogpu
     description: AI demos and GPU compute with Gradio Spaces and Hugging Face 
       Spaces ZeroGPU.
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -1814,7 +1815,7 @@ skills:
     name_zh: i18n
     description: LobeHub i18n with react-i18next. Use for user-facing strings, 
       locale
-    category: dev-tools
+    category: translation
     tags:
       - ai
       - cli
@@ -1829,7 +1830,7 @@ skills:
     name_zh: imagegen
     description: Generate or edit raster images when the task benefits from 
       AI-created
-    category: dev-tools
+    category: image-generation
     tags:
       - ai
       - api
@@ -1844,7 +1845,7 @@ skills:
     name_zh: importing-chatgpt-内存
     description: Clone ChatGPT saved memory into Letta, then optionally enrich 
       it with
-    category: dev-tools
+    category: memory
     tags:
       - ai
       - api
@@ -1859,7 +1860,7 @@ skills:
     name_zh: imsg
     description: iMessage/SMS CLI for listing chats, history, and sending 
       messages via
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - cli
@@ -1873,7 +1874,7 @@ skills:
     name: Internal Comms Authoring
     name_zh: 内部沟通文档写作
     description: You're drafting a **piece of internal communication** —
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -1884,15 +1885,15 @@ skills:
     needs_review: false
     path: skills/internal-comms/SKILL.md
   - slug: invalid-name
-    name: Invalid--Name
-    name_zh: Invalid--Name
-    description: This skill has an invalid name.
-    category: applications
+    name: Invalid Name Handler
+    name_zh: 无效名称处理
+    description: Validates and repairs identifier naming conventions in 
+      codebases.
+    category: dev-tools
     tags:
-      - frontend
-      - llm
-      - python
-      - typescript
+      - linting
+      - code-quality
+      - naming
     platforms: []
     needs_review: false
     path: skills/invalid-name/SKILL.md
@@ -1931,7 +1932,7 @@ skills:
     description: Behavioral guidelines to reduce common LLM coding mistakes. Use
       when writing, reviewing, or refactoring code to avoid overcomplication, 
       make surgical changes, surface assumptions, and define verifi...
-    category: applications
+    category: documentation
     tags:
       - ai
       - frontend
@@ -1946,7 +1947,7 @@ skills:
     name_zh: letta-接口-客户端
     description: Build applications with the Letta API — a model-agnostic, 
       stateful API
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -1962,7 +1963,7 @@ skills:
     description: Configure LLM models and providers for Letta agents and 
       servers. Use when setting model handles, adjusting temperature/tokens, 
       configuring provider-specific settings, setting up BYOK providers, or ...
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -1977,7 +1978,7 @@ skills:
     name_zh: letta-filesystem-to-memfs
     description: Migrates deprecated Letta Filesystem folders/files to MemFS 
       using markdown
-    category: dev-tools
+    category: memory
     tags:
       - ai
       - api
@@ -2053,7 +2054,7 @@ skills:
     description: Plan and run a design-QA of llamactl changes against a real 
       backend. Builds a matrix of cases, runs them, and writes a design-review 
       report.
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -2067,7 +2068,7 @@ skills:
     name: LLM Model Pricing File Update
     name_zh: LLM 模型价目文件更新
     description: You maintain an internal **per-token LLM pricing data file** —
-    category: dev-tools
+    category: finance
     tags:
       - ai
       - api
@@ -2103,7 +2104,7 @@ skills:
       AML, deploy workflow to Foundry project, managed online endpoint for agent workflow,
       wrap workflow in scoring script, deploy agent as endpoint, realtime endpoint
       in Foundry project.'
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -2136,7 +2137,7 @@ skills:
       doesn't work. DO NOT USE FOR: converting the flow itself (use promptflow-to-maf),
       deploying as online endpoint (use maf-online-endpoint), enabling tracing only
       (use maf-tracing)."
-    category: dev-tools
+    category: data-pipelines
     tags:
       - ai
       - api
@@ -2156,7 +2157,7 @@ skills:
       Application Insights for MAF, OTLP export, observe workflow, monitor agent workflow,
       trace agent framework, instrument MAF, add observability, trace workflow executions,
       debug workflow.'
-    category: applications
+    category: observability
     tags:
       - ai
       - api
@@ -2171,7 +2172,7 @@ skills:
     name_zh: major-版本-mode
     description: Context for working on the next AI SDK major release. Only use 
       when explicitly
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - deployment
@@ -2186,7 +2187,7 @@ skills:
     name_zh: MCP Server 构建指南
     description: You're building an **MCP server** that lets an LLM call into 
       some
-    category: dev-tools
+    category: mcp-protocol
     tags:
       - ai
       - api
@@ -2201,7 +2202,7 @@ skills:
     name_zh: memfs-搜索
     description: Semantic search over agent memory files. Use when you need to 
       find conceptually
-    category: dev-tools
+    category: memory
     tags:
       - ai
       - documentation
@@ -2217,7 +2218,7 @@ skills:
     description: Write Metal/MPS kernels for PyTorch operators. Use when adding 
       MPS device support to operators, implementing Metal shaders, or porting 
       CUDA kernels to Apple Silicon. Covers native_functions.yaml di...
-    category: applications
+    category: gpu-kernels
     tags:
       - ai
       - api
@@ -2232,7 +2233,7 @@ skills:
     name_zh: microcopy
     description: UI copy and microcopy guidelines. Use for user-facing copy, 
       buttons,
-    category: applications
+    category: documentation
     tags:
       - ai
       - api
@@ -2247,21 +2248,22 @@ skills:
     name_zh: 迁移-to-codex
     description: Migrate supported instruction files, skills, agents, and MCP 
       config into
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - backend
       - cli
       - database
       - deployment
-    platforms: []
+    platforms:
+      - codex
     needs_review: false
     path: skills/migrate-to-codex/SKILL.md
   - slug: minimal-skill
     name: minimal-skill
     name_zh: minimal-技能
     description: A minimal skill with only required fields.
-    category: applications
+    category: dev-tools
     tags:
       - frontend
       - llm
@@ -2276,7 +2278,7 @@ skills:
     description: LobeHub imperative modal conventions. Use when creating or 
       migrating modals, dialogs, popups, confirm flows, ModalHost wiring, 
       createModal, confirmModal, useModalContext, or base-ui modal APIs.
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -2290,7 +2292,7 @@ skills:
     name: integrating-models
     name_zh: integrating-models
     description: 'Integrate a new model into diffusers end-to-end. The overall flow:'
-    category: dev-tools
+    category: fine-tuning
     tags:
       - ai
       - api
@@ -2321,7 +2323,7 @@ skills:
     description: Navigates archived ChatGPT or Claude-style conversation exports
       and a MemFS reference archive on demand. Use when recalling what a past 
       assistant knew, searching old conversations, rendering specif...
-    category: applications
+    category: memory
     tags:
       - ai
       - evaluation
@@ -2337,7 +2339,7 @@ skills:
     description: Deploy web projects to Netlify using the Netlify CLI (`npx 
       netlify`). Use when the user asks to deploy, host, publish, or link a 
       site/repo on Netlify, including preview and production deploys.
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -2352,7 +2354,7 @@ skills:
     name_zh: notion
     description: Notion API for creating and managing pages, databases, and 
       blocks.
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -2367,7 +2369,7 @@ skills:
     name_zh: notion-knowledge-capture
     description: Capture conversations and decisions into structured Notion 
       pages; use
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -2383,7 +2385,7 @@ skills:
     description: Prepare meeting materials with Notion context and Codex 
       research; use when gathering context, drafting agendas/pre-reads, and 
       tailoring materials to attendees.
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -2398,7 +2400,7 @@ skills:
     name_zh: notion-research-documentation
     description: Research across Notion and synthesize into structured 
       documentation;
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -2414,7 +2416,7 @@ skills:
     description: Turn Notion specs into implementation plans, tasks, and 
       progress tracking; use when implementing PRDs/feature specs and creating 
       Notion plans + tasks from them.
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -2429,7 +2431,7 @@ skills:
     name_zh: obsidian
     description: Work with Obsidian vaults (plain Markdown notes) and automate 
       via obsidian-cli.
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - cli
@@ -2460,7 +2462,7 @@ skills:
     description: Use when the user asks how to build with OpenAI products or 
       APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date
       official documentation with citations, help choosing the lates...
-    category: dev-tools
+    category: official-cookbooks
     tags:
       - ai
       - api
@@ -2475,7 +2477,7 @@ skills:
     name_zh: orchestrate
     description: Meta-agent supervisor that manages a fleet of Claude Code 
       agents running
-    category: dev-tools
+    category: agent-frameworks
     tags:
       - ai
       - api
@@ -2505,7 +2507,7 @@ skills:
     description: '> **Note**: Parity testing is **separate from** the unit-level tests
       that ship in `tests/`. If you are integrating a new model, the model-level test
       suite under `tests/models/` is still required — ...'
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - cli
@@ -2521,7 +2523,7 @@ skills:
     description: Use when tasks involve reading, creating, or reviewing PDF 
       files where rendering and layout matter; prefer visual checks by rendering
       pages (Poppler) and use Python tools such as `reportlab`, `pdfp...
-    category: dev-tools
+    category: multimodal
     tags:
       - ai
       - cli
@@ -2535,7 +2537,7 @@ skills:
     name: PDF Summarizer
     name_zh: PDF 摘要器
     description: number of bullets in the summary
-    category: applications
+    category: multimodal
     tags:
       - ai
       - api
@@ -2548,15 +2550,16 @@ skills:
   - slug: pdf-vision-extractor
     name: PDF Vision Extractor
     name_zh: PDF 视觉抽取器
-    description: '> **Claude-only** — 这个技能假设模型有 vision 能力读 PDF 里的图像。'
-    category: applications
+    description: 从扫描版 PDF 抽取发票号、日期、金额等字段，靠 Claude vision。
+    category: multimodal
     tags:
       - ai
       - documentation
       - javascript
       - llm
       - typescript
-    platforms: []
+    platforms:
+      - claude
     needs_review: false
     path: skills/pdf-vision-extractor/SKILL.md
   - slug: playwright
@@ -2564,7 +2567,7 @@ skills:
     name_zh: playwright
     description: Use when the task requires automating a real browser from the 
       terminal
-    category: dev-tools
+    category: browser-automation
     tags:
       - ai
       - cli
@@ -2579,7 +2582,7 @@ skills:
     name_zh: playwright-interactive
     description: Persistent browser and Electron interaction through `js_repl` 
       for fast iterative UI debugging.
-    category: dev-tools
+    category: browser-automation
     tags:
       - ai
       - api
@@ -2595,7 +2598,7 @@ skills:
     description: Create and scaffold plugin directories for Codex with a 
       required `.codex-plugin/plugin.json`, optional plugin folders/files, and 
       baseline placeholders you can edit before publishing or testing. Use...
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - frontend
@@ -2631,7 +2634,7 @@ skills:
       whenever the user mentions "deck," "slides," "presentation," or references a
       .pptx filename, regardless of what they plan to do with the content afterward.
       If a .pptx file needs to be opened, created, or touched, use this skill.'
-    category: applications
+    category: multimodal
     tags:
       - ai
       - api
@@ -2752,7 +2755,7 @@ skills:
     name: Prompt
     name_zh: 提示词
     description: Create effective prompts for LLMs and AI agents
-    category: applications
+    category: prompt-libraries
     tags:
       - ai
       - frontend
@@ -2767,7 +2770,7 @@ skills:
     name_zh: Prompt 查找
     description: Activates when the user asks about AI prompts, needs prompt 
       templates,
-    category: applications
+    category: prompt-libraries
     tags:
       - ai
       - backend
@@ -2788,7 +2791,7 @@ skills:
       convert DAG flow to workflow, migrate LLM flow. DO NOT USE FOR: writing new
       MAF workflows from scratch (no source flow), deploying MAF workflows (use maf-online-endpoint),
       enabling tracing (use maf-tracing), or general agent-framework Q&A.'
-    category: dev-tools
+    category: data-pipelines
     tags:
       - ai
       - api
@@ -2802,7 +2805,7 @@ skills:
     name: promptfoo Eval Suite Author
     name_zh: Promptfoo 评估
     description: Confirmation of the suite path, the assertion mix, and the
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - api
@@ -2817,7 +2820,7 @@ skills:
     name_zh: promptfoo-provider-设置
     description: Configure promptfoo providers or redteam targets for hosted 
       models,
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - api
@@ -2831,7 +2834,7 @@ skills:
     name: promptfoo Redteam Plugin Author
     name_zh: Promptfoo 红队测试
     description: How many fail conditions the rubric covers (self-check)
-    category: applications
+    category: safety-alignment
     tags:
       - ai
       - api
@@ -2846,7 +2849,7 @@ skills:
     name_zh: 运行 Promptfoo 红队测试
     description: Run, rerun, inspect, and QA promptfoo redteam scans from 
       generated redteam
-    category: dev-tools
+    category: safety-alignment
     tags:
       - ai
       - cli
@@ -2860,7 +2863,7 @@ skills:
     name: promptfoo-redteam-setup
     name_zh: 设置 Promptfoo 红队测试
     description: 'Create or refine promptfoo redteam setup configs: purpose, targets,'
-    category: dev-tools
+    category: safety-alignment
     tags:
       - ai
       - api
@@ -2875,7 +2878,7 @@ skills:
     name_zh: pt2-缺陷-basher
     description: Debug PyTorch 2 compiler stack failures including Dynamo graph 
       breaks,
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -2890,7 +2893,7 @@ skills:
     name_zh: pyrefly-类型-coverage
     description: Migrate a file to use stricter Pyrefly type checking with 
       annotations
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -2906,7 +2909,7 @@ skills:
     description: Manage Python dependencies in Ray — add/remove/upgrade 
       packages, work with raydepsets lock files, debug dependency conflicts, and
       regenerate compiled requirements. Covers `python/requirements*`, `p...
-    category: dev-tools
+    category: distributed-training
     tags:
       - ai
       - api
@@ -2922,7 +2925,7 @@ skills:
     description: LobeHub React component conventions. Use when editing TSX UI, 
       choosing base-ui vs @lobehub/ui vs antd, styling with antd-style, routing,
       desktop variants, layouts, or component state.
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -2937,7 +2940,7 @@ skills:
     name_zh: React Router 搜索参数状态管理
     description: 在 React Router 里为 URL 状态变化选 replace 还是 push。包含 
       useSearchParamState hook 模式和决策表。
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -2951,7 +2954,7 @@ skills:
     name: Realtime Eval Scaffold
     name_zh: Realtime Eval 脚手架
     description: You want to **start a new realtime eval** for an audio or
-    category: applications
+    category: evaluation
     tags:
       - ai
       - documentation
@@ -2981,7 +2984,7 @@ skills:
     name_zh: 红队插件开发
     description: Standards for creating redteam plugins and graders. Use when 
       creating
-    category: applications
+    category: safety-alignment
     tags:
       - ai
       - documentation
@@ -2995,7 +2998,7 @@ skills:
     name: remotion-best-practices
     name_zh: remotion-best-practices
     description: Best practices for Remotion - Video creation in React
-    category: applications
+    category: video-generation
     tags:
       - ai
       - docker
@@ -3010,7 +3013,7 @@ skills:
     name_zh: render-部署
     description: Deploy applications to Render by analyzing codebases, 
       generating render.yaml
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - api
@@ -3026,7 +3029,7 @@ skills:
     description: OpenResponses API compliance testing. Use for Response API 
       endpoint tests, compliance runs, schema debugging, response api test, or 
       openresponses test tasks.
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - api
@@ -3056,7 +3059,7 @@ skills:
     name_zh: 审查-standards
     description: Use this skill when asked to review authentication code for 
       security
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - frontend
@@ -3071,7 +3074,7 @@ skills:
     name_zh: screenshot
     description: Use when the user explicitly asks for a desktop or system 
       screenshot
-    category: dev-tools
+    category: browser-automation
     tags:
       - ai
       - database
@@ -3103,7 +3106,7 @@ skills:
       modifying URL search params, working with useSearchParams, 
       setSearchParams, useSearchParamState, or navigate() with query strings or 
       h...
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - cli
@@ -3117,7 +3120,7 @@ skills:
     name: Secure Code by Language
     name_zh: 按语言的安全编码指南
     description: The user said "write this securely", "do a security
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - api
@@ -3132,7 +3135,7 @@ skills:
     name_zh: 安全-best-practices
     description: Perform language and framework specific security best-practice 
       reviews
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - api
@@ -3152,7 +3155,7 @@ skills:
       (for example: orphaned sensitive code, security maintainers, CODEOWNERS reality
       checks for risk, sensitive hotspots, or ownership clusters). Do not trigger
       for general maintainer lists or non-security ownership questions.'
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - database
@@ -3166,7 +3169,7 @@ skills:
     name: Security Review Checklist
     name_zh: 安全审查清单
     description: You're reviewing or designing a change that touches a
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - api
@@ -3181,7 +3184,7 @@ skills:
     name_zh: 安全-threat-model
     description: Repository-grounded threat modeling that enumerates trust 
       boundaries,
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - backend
@@ -3211,7 +3214,7 @@ skills:
     name_zh: sentry
     description: Use when the user asks to inspect Sentry issues or events, 
       summarize
-    category: dev-tools
+    category: observability
     tags:
       - ai
       - api
@@ -3270,7 +3273,7 @@ skills:
     name_zh: 技能-development
     description: Create and contribute skills to the communal knowledge base. 
       Use when
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -3301,7 +3304,7 @@ skills:
     name_zh: 技能查找
     description: Search, retrieve, and install Agent Skills from the 
       prompts.chat registry
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - documentation
@@ -3347,7 +3350,7 @@ skills:
     name_zh: 智能体-slack
     description: Slack automation CLI — read/send/search messages, browse 
       threads and
-    category: dev-tools
+    category: chat-uikits
     tags:
       - ai
       - cli
@@ -3362,7 +3365,7 @@ skills:
     name_zh: slack-gif-creator
     description: Knowledge and utilities for creating animated GIFs optimized 
       for Slack. Provides constraints, validation tools, and animation concepts.
-    category: applications
+    category: chat-uikits
     tags:
       - ai
       - api
@@ -3377,7 +3380,7 @@ skills:
     name_zh: slides
     description: Create and edit presentation slide decks (`.pptx`) with 
       PptxGenJS, bundled
-    category: dev-tools
+    category: multimodal
     tags:
       - ai
       - api
@@ -3393,7 +3396,7 @@ skills:
     description: Agent-optimized CLI for Bluesky (ATProto) and X (Twitter). YAML
       in, YAML out, exit codes for automation. Use when the task involves 
       posting, replying, reading feeds, searching, annotating URLs, or ...
-    category: dev-tools
+    category: terminal-cli
     tags:
       - ai
       - api
@@ -3408,7 +3411,7 @@ skills:
     name_zh: spa-routes
     description: LobeHub SPA route architecture. Use when editing src/routes, 
       src/features
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3423,7 +3426,7 @@ skills:
     name_zh: speech
     description: Use when the user asks for text-to-speech narration or 
       voiceover, accessibility
-    category: dev-tools
+    category: audio-speech
     tags:
       - ai
       - api
@@ -3438,7 +3441,7 @@ skills:
     name_zh: spotify-player
     description: Terminal Spotify playback/search via spogo (preferred) or 
       spotify_player.
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - cli
@@ -3454,7 +3457,7 @@ skills:
     description: Use when tasks involve creating, editing, analyzing, or 
       formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware 
       workflows, cached recalculation, and visual review.
-    category: dev-tools
+    category: multimodal
     tags:
       - ai
       - api
@@ -3468,7 +3471,7 @@ skills:
     name: SQL Query Helper
     name_zh: SQL 查询助手
     description: SQL dialect
-    category: dev-tools
+    category: text-to-sql
     tags:
       - ai
       - cli
@@ -3497,7 +3500,7 @@ skills:
     name_zh: store-数据-structures
     description: LobeHub Zustand store data-shape patterns. Use when designing 
       store state,
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - api
@@ -3511,7 +3514,7 @@ skills:
     name: Storybook Component Stories
     name_zh: Storybook 组件故事编写
     description: You're writing or reviewing a **Storybook story** for a
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3525,7 +3528,7 @@ skills:
     name: system-info
     name_zh: system-info
     description: Get system information using executable scripts
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - python
@@ -3553,7 +3556,7 @@ skills:
     name_zh: template-技能
     description: Replace with description of the skill and when Claude should 
       use it.
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - frontend
@@ -3567,7 +3570,7 @@ skills:
     name: Unit Test Generator
     name_zh: 单元测试生成器
     description: whether to add edge case tests (None, empty, overflow)
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - evaluation
@@ -3583,7 +3586,7 @@ skills:
     description: Vitest testing guide. Use when writing or updating tests, 
       fixing failing tests, improving coverage, debugging test issues, or 
       setting up mocks.
-    category: dev-tools
+    category: evaluation
     tags:
       - ai
       - api
@@ -3598,7 +3601,7 @@ skills:
     name_zh: theme-factory
     description: Toolkit for styling artifacts with a theme. These artifacts can
       be slides,
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3612,7 +3615,7 @@ skills:
     name: Repository Threat Model
     name_zh: 仓库威胁建模
     description: The user said "threat model this", "what could go
-    category: dev-tools
+    category: guardrails
     tags:
       - ai
       - api
@@ -3627,7 +3630,7 @@ skills:
     name_zh: Token 技能
     description: Use this skill when the user explicitly asks to use token-skill
       and wants
-    category: applications
+    category: dev-tools
     tags:
       - ai
       - frontend
@@ -3643,7 +3646,7 @@ skills:
     description: Train or fine-tune sentence-transformers models across 
       `SentenceTransformer` (bi-encoder; dense or static embedding model; for 
       retrieval, similarity, clustering, classification, paraphrase mining, ...
-    category: dev-tools
+    category: embeddings
     tags:
       - ai
       - api
@@ -3658,7 +3661,7 @@ skills:
     name_zh: transcribe
     description: Transcribe audio files to text with optional diarization and 
       known-speaker
-    category: dev-tools
+    category: audio-speech
     tags:
       - ai
       - api
@@ -3673,7 +3676,7 @@ skills:
     name_zh: transformers-js
     description: Use Transformers.js to run state-of-the-art machine learning 
       models directly
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3704,7 +3707,7 @@ skills:
     name_zh: trl-training
     description: Train and fine-tune transformer language models using TRL 
       (Transformers
-    category: dev-tools
+    category: fine-tuning
     tags:
       - ai
       - cli
@@ -3719,7 +3722,7 @@ skills:
     name_zh: trpc-router
     description: TRPC router development guide. Use when creating or modifying 
       apps/server/src/routers,
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3733,7 +3736,7 @@ skills:
     name: Turborepo Monorepo Authoring
     name_zh: Turborepo Monorepo 编写
     description: You have a **Turborepo monorepo** and you're doing one of
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3748,7 +3751,7 @@ skills:
     name_zh: typescript
     description: LobeHub TypeScript style and type-safety guide. Use when 
       editing TS/TSX/MTS,
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3763,7 +3766,7 @@ skills:
     name_zh: 更新-provider-models
     description: Add new or remove obsolete model IDs for existing AI SDK 
       providers. Use
-    category: applications
+    category: llm-serving
     tags:
       - ai
       - api
@@ -3778,7 +3781,7 @@ skills:
     name_zh: upstash-workflow
     description: LobeHub Upstash Workflow and QStash guide. Use for async 
       workflows, process/paginate/execute
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3794,7 +3797,7 @@ skills:
     description: Answer questions about the AI SDK and help build AI-powered 
       features. Use when developers ask about AI SDK functions, want to build AI
       agents, or have questions about AI providers.
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3808,7 +3811,7 @@ skills:
     name: valid-skill
     name_zh: valid-技能
     description: A complete test skill with all optional directories.
-    category: applications
+    category: dev-tools
     tags:
       - frontend
       - llm
@@ -3823,7 +3826,7 @@ skills:
     name_zh: Vercel 组合模式
     description: React composition patterns that scale. Use when refactoring 
       components
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3838,7 +3841,7 @@ skills:
     name_zh: vercel-部署
     description: Deploy applications and websites to Vercel. Use when the user 
       requests
-    category: dev-tools
+    category: llm-serving
     tags:
       - ai
       - cli
@@ -3853,7 +3856,7 @@ skills:
     name_zh: Vercel React 最佳实践
     description: React and Next.js performance optimization guidelines from 
       Vercel Engineering.
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -3884,7 +3887,7 @@ skills:
     description: Build and maintain a persistent visual identity for your agent 
       using Flux Kontext Pro. Use when the user asks the agent to generate 
       selfies, avatars, character art, or any image that should look li...
-    category: dev-tools
+    category: documentation
     tags:
       - ai
       - api
@@ -3900,7 +3903,7 @@ skills:
     description: Suite of tools for creating elaborate, multi-component 
       claude.ai HTML artifacts using modern frontend web technologies (React, 
       Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma...
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - documentation
@@ -3915,7 +3918,7 @@ skills:
     name_zh: Web 应用测试脚手架
     description: 用 Playwright 和 Python 对本地 Web 应用做端到端测试。带服务器生命周期 helper、DOM 
       侦察行动模式、截图捕获。
-    category: dev-tools
+    category: browser-automation
     tags:
       - ai
       - api
@@ -3930,7 +3933,7 @@ skills:
     name_zh: 每周生产审查
     description: Prepare Langfuse weekly production reviews that explain what 
       broke,
-    category: applications
+    category: case-studies
     tags:
       - ai
       - datadog
@@ -3945,7 +3948,7 @@ skills:
     name_zh: weekly-用户-topics-digest
     description: Use this skill when you need guidance on 
       weekly-user-topics-digest.
-    category: dev-tools
+    category: case-studies
     tags:
       - ai
       - api
@@ -3960,7 +3963,7 @@ skills:
     name_zh: Widget 生成器
     description: Generate customizable widget plugins for the prompts.chat feed 
       system
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - backend
@@ -3975,7 +3978,7 @@ skills:
     name_zh: winui-app
     description: Bootstrap, develop, and design modern WinUI 3 desktop 
       applications with
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -4006,7 +4009,7 @@ skills:
     name_zh: write-frontend-tests
     description: Analyze the current branch diff against dev, plan integration 
       tests for
-    category: dev-tools
+    category: code-assistants
     tags:
       - ai
       - api
@@ -4021,7 +4024,7 @@ skills:
     name_zh: xlsx
     description: Use this skill any time a spreadsheet file is the primary input
       or output.
-    category: dev-tools
+    category: multimodal
     tags:
       - ai
       - api
@@ -4051,7 +4054,7 @@ skills:
     name_zh: yelp-搜索
     description: Search Yelp for local businesses, get contact info, ratings, 
       and hours.
-    category: dev-tools
+    category: applications
     tags:
       - ai
       - api
@@ -4066,7 +4069,7 @@ skills:
     name_zh: zustand
     description: LobeHub Zustand store conventions. Use when editing src/store, 
       store
-    category: applications
+    category: code-assistants
     tags:
       - ai
       - api

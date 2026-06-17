@@ -3,7 +3,7 @@ name: figma
 name_zh: figma
 description: 'Use the Figma MCP server to fetch design context, screenshots, variables,'
 description_zh: 'Use the Figma MCP 服务器 to fetch 设计 context, screenshots, variables,'
-category: dev-tools
+category: code-assistants
 tags:
   - ai
   - backend

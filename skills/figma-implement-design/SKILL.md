@@ -3,7 +3,7 @@ name: figma-implement-design
 name_zh: figma-implement-design
 description: 'Translates Figma designs into production-ready application code with'
 description_zh: 'Translates Figma designs into production-ready application 代码 with'
-category: applications
+category: code-assistants
 tags:
   - ai
   - backend

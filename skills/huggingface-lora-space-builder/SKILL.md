@@ -3,7 +3,7 @@ name: huggingface-lora-space-builder
 name_zh: huggingface-lora-space-builder
 description: 'Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — in...'
 description_zh: '构建 and publish a Gradio demo on Hugging Face Spaces for a 用户-provided LoRA. Use when someone asks to 创建, 生成, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs f...'
-category: dev-tools
+category: fine-tuning
 tags:
   - ai
   - api
