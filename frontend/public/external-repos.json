@@ -28963,6 +28963,34 @@
       "archived": false,
       "pushed_at": "2024-10-11",
       "subgroup": ""
+    },
+    {
+      "slug": "agent-qa-authoring",
+      "title": "Agent QA Authoring",
+      "title_zh": "Agent QA 测试编写",
+      "vendor": "Vostride",
+      "repo": "vostride/agent-qa",
+      "url": "https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-authoring",
+      "category": "dev-tools",
+      "domain": "dev-tools",
+      "vendor_type": "indie",
+      "tags": [
+        "qa",
+        "testing",
+        "agent-skill"
+      ],
+      "skills": [
+        "test authoring",
+        "definition validation"
+      ],
+      "summary_en": "Agent Skill for authoring and validating natural-language web and mobile QA tests with Agent QA.",
+      "summary_zh": "使用 Agent QA 编写并验证自然语言网页和移动应用测试的 Agent Skill。",
+      "stars": 0,
+      "star_tier": "none",
+      "license": "",
+      "archived": false,
+      "pushed_at": "",
+      "subgroup": ""
     }
   ],
   "domains": {
@@ -29021,5 +29049,5 @@
       "zh": "个人项目"
     }
   },
-  "total": 928
+  "total": 929
 }

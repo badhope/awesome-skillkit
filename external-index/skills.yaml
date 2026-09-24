@@ -22919,3 +22919,21 @@ skills:
   - social-data
   - mcp
   - api
+- slug: agent-qa-authoring
+  title: Agent QA Authoring
+  title_zh: Agent QA 测试编写
+  source: vostride/agent-qa
+  source_url: https://github.com/vostride/agent-qa/tree/main/skills/agent-qa-authoring
+  category: dev-tools
+  tags:
+  - qa
+  - testing
+  - agent-skill
+  summary: Agent Skill for authoring and validating natural-language web and mobile QA tests with Agent QA.
+  summary_zh: 使用 Agent QA 编写并验证自然语言网页和移动应用测试的 Agent Skill。
+  added: '2026-09-25'
+  vendor_type: indie
+  domain: dev-tools
+  skills:
+  - test authoring
+  - definition validation
